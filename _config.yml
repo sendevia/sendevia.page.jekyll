@@ -1,0 +1,11 @@
+url: ""
+baseurl: ""
+title: "AincradMix"
+description: 
+  这是一个osu!皮肤，它以游戏补丁的方式实现了对osu!全部界面元素的覆盖。
+  设计风格延伸了《刀剑神域》第1和2季中操作界面的设计，结合更现代的设计理念，并将两者和谐相融。
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
