@@ -1,21 +1,13 @@
 $backgroundColor: #131313;
 $bodyColor: #FFFFFF;
 
-body{
+html , body {
   background-color: $backgroundColor;
   margin: auto;
   height: 100%;
 }
 
-#lottie{
-  background-color: $backgroundColor;
+#lottie {
   width: 100%;
   height: 100%;
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  display: block;
-  transform: translate3d(0,0,0);
-  text-align: center;
-  opacity: 1;
 }
