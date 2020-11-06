@@ -1,13 +1,63 @@
-$backgroundColor: #131313;
-$bodyColor: #FFFFFF;
+$black: #131313;
+$white: #fff;
 
 html , body {
-  background-color: $backgroundColor;
+  background-color: $black;
   margin: auto;
   height: 100%;
+  display: block;
+}
+
+@font-face {
+  font-family: sao-ui;
+  src: url(/assets/fonts/SAOUI-Regular.woff2) format("woff2");
 }
 
 #lottie {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 35%;
+  top: 35%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50% , -50%);
+}
+
+a.button {
+  height: 80px;
+  width: 300px;
+  border: 3px $white solid;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  transition: 1s;
+  text-align: center;
+  text-indent: 6px;
+  line-height: 80px;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: sao-ui;
+  color: $white;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+a.button:hover {
+  width: 370px;
+  background-color: $white;
+  letter-spacing: 10px;
+  text-indent: 11px;
+  transition: 0.5s;
+  color: $black;
+}
+
+#part2 {
+  top: 40%;
+  left: 50%;
+  box-sizing: border-box;
+  position: relative;
+  block-size: 15%;
+  transform: translate(-50% , -50%);
+  user-select: none;
 }
