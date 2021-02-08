@@ -1,11 +1,26 @@
-url: ""
+title: AincradMix
+email: sendevialol@gmail.com
+description: >- 
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: ""
-title: "AincradMix"
-description: 
-  这是一个osu!皮肤，它以游戏补丁的方式实现了对osu!全部界面元素的覆盖。
-  设计风格延伸了《刀剑神域》第1和2季中操作界面的设计，结合更现代的设计理念，并将两者和谐相融。
+url: ""
+twitter_username: Sendevia_lol
+github_username: Sendevia
+
+theme: 
+plugins:
+  - jekyll-feed
+
 exclude:
-  - README.md
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - .gitignore
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

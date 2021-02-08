@@ -22,6 +22,16 @@ html , body {
   transform: translate(-50% , -50%);
 }
 
+#middle {
+  top: 40%;
+  left: 50%;
+  box-sizing: border-box;
+  position: relative;
+  block-size: 15%;
+  transform: translate(-50% , -50%);
+  user-select: none;
+}
+
 a.button {
   height: 75px;
   width: 300px;
@@ -50,12 +60,3 @@ a.button:hover {
   color: $black;
 }
 
-#middle {
-  top: 40%;
-  left: 50%;
-  box-sizing: border-box;
-  position: relative;
-  block-size: 15%;
-  transform: translate(-50% , -50%);
-  user-select: none;
-}
