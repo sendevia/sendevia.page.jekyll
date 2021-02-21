@@ -4,10 +4,39 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>< {{ site.title }} > {{ page.title }}</title>
+    <title>{{ site.title }} {{ page.title }}</title>
   </head>
   <body>
-    {{ content }}
+    <div class="topbar">
+      <h1>
+        <a href="/">
+          {{ site.github_username }}
+        </a>
+      </h1>
+      <span class="empty_topbar"></span>
+
+      <p>
+        <a href="/about">
+          about
+        </a>
+      </p>
+      <p>
+        <a href="mailto:{{ site.email }}" target="_blank">
+          contact
+        </a>
+      </p>
+      <p>
+        <a href="{{ site.github_amix }}/releases/latest" target="_blank">
+          <span class="material-icons">
+            file_download
+          </span>
+        </a>
+      </p>
+
+    </div>
+    <div class="content">
+      {{ content }}
+    </div>
     <script src="{{ "assets/js/lottie.js" | relative_url }}" type="text/javascript"></script>
     <script src="{{ "assets/js/under_construction.js" | relative_url }}" type="text/javascript"></script>
   </body>

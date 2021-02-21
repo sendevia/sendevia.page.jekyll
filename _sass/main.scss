@@ -1,62 +1,113 @@
 $black: #131313;
-$white: #fff;
+$white: #ffffff;
+$accent:#ff4949;
+$normal:#eeeeee;
+$red:   #ff3333;
+$green: #14f043;
+$blue:  #338bff;
 
-html , body {
+@font-face {
+  font-family: "SAO UI";
+  font-style: normal;
+  src: url(/assets/fonts/SAOUI-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+html,body {
   background-color: $black;
   margin: auto;
   height: 100%;
   display: block;
-}
-
-@font-face {
-  font-family: sao-ui;
-  src: url(/assets/fonts/SAOUI-Regular.woff2) format("woff2");
-}
-
-#lottie {
-  width: 50%;
-  height: 35%;
-  top: 35%;
-  left: 50%;
-  position: relative;
-  transform: translate(-50% , -50%);
-}
-
-#middle {
-  top: 40%;
-  left: 50%;
-  box-sizing: border-box;
-  position: relative;
-  block-size: 15%;
-  transform: translate(-50% , -50%);
   user-select: none;
+  font-family: "SAO UI";
+  text-rendering: optimizeLegibility;
+  letter-spacing: 2px;
+  word-wrap: normal;
+  white-space: nowrap;
 }
 
-a.button {
-  height: 75px;
-  width: 300px;
+.topbar {
+  background: $white;
+  display: flex;
+  justify-content: flex-end;
+  height: 60px;
+  width: calc(100%);
+  position: fixed;
+  margin: auto;
+  top: 0px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  font-weight: normal;
+  z-index: 2;
+}
+.topbar a {
+  text-decoration: none;
+  color: $black;
+}
+.topbar h1 {
+  font-size: 25px;
+  position: absolute;
+  top: 2%;
+  left: 15px;
+  cursor: pointer;
+}
+.topbar h1:hover {
+  text-decoration: none;
+}
+.topbar p {
+  margin: auto 15px;
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.topbar p:hover {
+  text-decoration: underline;
+}
+
+.content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
-  transition: 1s;
-  text-align: center;
-  text-indent: 6px;
-  line-height: 80px;
-  text-decoration: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  color: #eeeeee;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: center;
+  align-items: center;
+  margin: auto;
+}
+.content img {
+  max-width: 300px;
+  left: 10px;
+}
+.content h1 {
   font-size: 30px;
-  font-family: sao-ui;
-  color: $white;
-  letter-spacing: 5px;
-  cursor: pointer;
 }
 
-a.button:hover {
-  width: 370px;
-  background-color: $white;
-  letter-spacing: 10px;
-  text-indent: 11px;
-  transition: 0.5s;
-  color: $black;
+.material-icons {
+  margin: auto;
+  font-family: "Material Icons";
+  font-size: 24px;
+  display: inline-block;
+  text-transform: none;
+  text-decoration: none;
 }
 
+.empty_topbar {
+  width: calc(50%);
+  background: $white;
+}
+
+#lottie {
+  max-width: 50%;
+}

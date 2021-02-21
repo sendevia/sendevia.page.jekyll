@@ -7,7 +7,9 @@ description: >-
 baseurl: ""
 url: ""
 twitter_username: Sendevia_lol
+email: sendevialol@gmail.com
 github_username: Sendevia
+github_amix: https://github.com/Sendevia/AincradMix
 
 theme: 
 plugins:
@@ -24,3 +26,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+include:
+  - assets/favicons
