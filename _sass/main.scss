@@ -5,6 +5,7 @@ $normal:#eeeeee;
 $red:   #ff3333;
 $green: #14f043;
 $blue:  #338bff;
+$gray:  #464646;
 
 @font-face {
   font-family: "SAO UI";
@@ -23,53 +24,10 @@ html,body {
   margin: auto;
   height: 100%;
   display: block;
-  user-select: none;
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
   letter-spacing: 2px;
-  word-wrap: normal;
   white-space: nowrap;
-}
-
-.topbar {
-  background: $white;
-  display: flex;
-  justify-content: flex-end;
-  height: 60px;
-  width: calc(100%);
-  position: fixed;
-  margin: auto;
-  top: 0px;
-  text-transform: uppercase;
-  transition: 0.2s;
-  font-weight: normal;
-  z-index: 2;
-}
-.topbar a {
-  text-decoration: none;
-  color: $black;
-}
-.topbar h1 {
-  font-size: 25px;
-  position: absolute;
-  top: 2%;
-  left: 15px;
-  cursor: pointer;
-}
-.topbar h1:hover {
-  text-decoration: none;
-}
-.topbar p {
-  margin: auto 15px;
-  cursor: pointer;
-  position: relative;
-  top: 3px;
-  text-align: center;
-  text-transform: capitalize;
-  font-size: 20px;
-}
-.topbar p:hover {
-  text-decoration: underline;
 }
 
 .content {
@@ -98,7 +56,6 @@ html,body {
   margin: auto;
   font-family: "Material Icons";
   font-size: 24px;
-  display: inline-block;
   text-transform: none;
   text-decoration: none;
 }
@@ -106,6 +63,59 @@ html,body {
 .empty_topbar {
   width: calc(50%);
   background: $white;
+}
+
+.footer {
+  bottom: 0px;
+  position: relative;
+  height: 40px;
+  width: calc(100%);
+  background-color: $gray;
+}
+.footer p {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: $white;
+}
+
+.nav {
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  width: auto;
+  background-color: $white;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 1;
+  line-height: 2;
+  user-select: none;
+}
+.nav-item {
+  transition: 0.2s;
+  height: 50px;
+}
+.nav-item:hover {
+  transition: 0.2s;
+  background-color: #e7e7e7;
+}
+.nav-link,
+.nav-link:hover {
+  color: $black;
+}
+
+.navbar-brand h1 {
+  color: $black;
+  font-size: 25px;
+  position: absolute;
+  padding: 0px 16px;
+  top: 9px;
+  z-index: 2;
+  user-select: none;
 }
 
 #lottie {
