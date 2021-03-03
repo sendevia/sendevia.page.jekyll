@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ site.title }} {{ page.title }}</title>
-  </head>
+  {% include head.html %}
+
   <body>
-      {% include topbar.html %}
-      {% include content.html %}
-
-
+    {% include header.html %} {% include content.html %}
 
     <script src="/assets/js/lottie.js"></script>
     <script src="/assets/js/under_construction.js"></script>
-    <script src="/assets/js/jquery-3.5.1.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/aincradmix.js"></script>
+    {% include footer.html %}
   </body>
 </html>
