@@ -116,6 +116,7 @@ body {
 
 .float-index-btn-icon-close {
   margin: -5px auto;
+  text-shadow: $black;
 }
 
 .float-index-bg {
@@ -148,6 +149,11 @@ body {
 
   a {
     color: $black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   ul {
@@ -160,13 +166,18 @@ body {
     padding: 20px;
     list-style-type: none;
   }
+
+  li:hover {
+    background: rgba($color: $black, $alpha: 0.2);
+  }
 }
 
 .logo-header {
   display: flex;
   position: relative;
   img {
-    max-width: 50%;
+    min-width: 300px;
+    max-width: 300px;
     margin: auto;
     padding: 15px;
   }
@@ -200,4 +211,8 @@ body {
     margin: auto;
     transition: 0.5s;
   }
+}
+
+.color-invert {
+  filter: invert(100%);
 }
