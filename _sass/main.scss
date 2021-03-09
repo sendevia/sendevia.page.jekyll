@@ -10,14 +10,14 @@ $gray: #464646;
 @font-face {
   font-family: "SAO UI";
   font-style: normal;
-  src: url(/assets/fonts/SAOUI-Regular.woff2) format("woff2");
+  src: url(/assets/font/SAOUI-Regular.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(/assets/fonts/MaterialIcons-Regular.ttf) format("truetype");
+  src: url(/assets/font/MaterialIcons-Regular.ttf) format("truetype");
 }
 
 @keyframes float-top-down {
@@ -52,6 +52,7 @@ body {
   display: block;
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
+  color: $white;
 }
 
 .material-icons {
@@ -79,14 +80,15 @@ body {
 .float-index-btn {
   display: flex;
   position: fixed;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 32px;
+  right: 20px;
   background-color: $white;
-  top: 25px;
-  right: 25px;
+  transform-origin: center;
+  transform: rotate(45deg);
   transition: 0.3s;
-  z-index: 9;
+  z-index: 4;
 }
 
 .float-index-btn:hover {
@@ -112,8 +114,12 @@ body {
 .float-index-btn-icon-close {
   align-items: center;
   font-size: 30px;
+  color: $black;
 }
 
+.float-index-btn-icon-toc {
+  transform: rotate(135deg);
+}
 .float-index-btn-icon-close {
   margin: -5px auto;
   text-shadow: $black;
@@ -174,7 +180,10 @@ body {
 
 .logo-header {
   display: flex;
-  position: relative;
+  position: sticky;
+  top: 0px;
+  background: rgba($color: $black, $alpha: 0.5);
+  border-bottom: $gray dashed 2px;
   img {
     min-width: 300px;
     max-width: 300px;
@@ -183,10 +192,11 @@ body {
   }
 }
 
-.main {
+.main-page {
   color: $white;
   margin: auto;
   padding: 20px;
+  z-index: 3;
 
   mark {
     position: relative;
@@ -198,6 +208,18 @@ body {
   }
 }
 
+.top-figure {
+  padding: 0px;
+}
+
+footer {
+  padding: 20px;
+  position: sticky;
+  top: 100%;
+  text-align: center;
+  color: $white;
+  letter-spacing: 5px;
+}
 @media screen and (max-width: 600px) {
   .float-index-content {
     width: 100%;
