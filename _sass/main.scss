@@ -53,6 +53,9 @@ body {
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
   color: $white;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .material-icons {
@@ -183,6 +186,7 @@ body {
   position: sticky;
   top: 0px;
   background: rgba($color: $black, $alpha: 0.5);
+  z-index: 5;
   img {
     min-width: 300px;
     max-width: 300px;
@@ -218,6 +222,7 @@ footer {
   text-align: center;
   color: $white;
   letter-spacing: 5px;
+  z-index: 10;
 }
 @media screen and (max-width: 600px) {
   .float-index-content {
@@ -233,20 +238,38 @@ footer {
     transition: 0.5s;
   }
 }
-#corner-left,
-#corner-right {
+.corner-left,
+.corner-right {
   position: fixed;
   z-index: 5;
 }
 
-#corner-left {
+.corner-left {
   bottom: 0px;
   left: 0px;
+  #restrict {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+    background-image: linear-gradient(0deg, $black, transparent);
+  }
 }
 
-#corner-right {
+.corner-right {
   top: 0px;
   right: 0px;
+  #restrict {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+    background-image: linear-gradient(180deg, $black, transparent);
+  }
 }
 
 .color-invert {

@@ -10,7 +10,7 @@ btnClose.addEventListener("click", function () {
   floatIndex.style.display = "none";
 });
 
-window.onscroll = function(){
+window.onscroll = function () {
   var p = document.documentElement.scrollTop || document.body.scrollTop;
-  var onTop = document.getElementById
-}
+  var onTop = document.getElementById;
+};
