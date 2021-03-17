@@ -1,24 +1,18 @@
-<div class="logo-header">
-  <img src="/assets/images/s0_logo_text.png?v=1.1" alt="logo_text" />
-</div>
+<span class="corner-left">
+  <img src="/assets/images/s0_corner_left.png?v=1.0" draggable="false" />
+  <span id="restrict"></span>
+</span>
+<span class="corner-right">
+  <img src="/assets/images/s0_corner_right.png?v=1.0" draggable="false" />
+  <span id="restrict"></span>
+</span>
 
-<div>
-  <span class="corner-left">
-    <img src="/assets/images/s0_corner_left.png?v=1.0" draggable="false" />
-    <span id="restrict"></span>
-  </span>
-  <span class="corner-right">
-    <img src="/assets/images/s0_corner_right.png?v=1.0" draggable="false" />
-    <span id="restrict"></span>
-  </span>
-</div>
-
-<div class="btn-item float-index-btn" id="float-index-btn">
+<div class="btn-item float-index-btn float-btn">
   <span class="material-icons float-index-btn-icon-toc">toc</span>
 </div>
 
-<div class="float-index-bg" id="float-index">
-  <div class="float-index-content">
+<div class="float-index-bg">
+  <div class="float-index-content" data-tilt>
     <div class="float-index-item">
       <ul>
         <li>
@@ -35,7 +29,7 @@
         </li>
       </ul>
     </div>
-    <div class="btn-item float-index-btn-close" id="float-index-btn-close">
+    <div class="btn-item float-index-btn-close float-btn">
       <img
         src="/assets/images/btn-close.svg?v=1.0"
         alt="close"
@@ -44,3 +38,11 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  VanillaTilt.init(document.querySelector(".float-index-content"), {
+    reverse: true,
+    max: 10,
+    scale: 1.05,
+    axis: "y",
+  });
+</script>
