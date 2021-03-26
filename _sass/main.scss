@@ -32,13 +32,14 @@ $gray: #464646;
 
 html,
 body {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
   background-color: $black;
-  margin: auto;
   height: 100%;
   display: block;
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
-  color: $white;
   ::-webkit-scrollbar {
     width: 0;
   }
@@ -55,10 +56,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
-}
-
-#lottie {
-  max-width: 50%;
 }
 
 .float-index-btn {
@@ -86,11 +83,11 @@ body {
 }
 
 .float-index-btn-close {
+  margin: 15px auto;
   display: flex;
   position: relative;
   width: 60px;
   height: 60px;
-  margin: 15px auto;
 }
 
 .float-index-btn-icon-toc,
@@ -101,7 +98,7 @@ body {
 }
 
 .float-index-btn-icon-toc {
-  transform: rotate(135deg);
+  transform: rotate(-45deg);
 }
 .float-index-btn-icon-close {
   margin: -5px auto;
@@ -161,6 +158,21 @@ body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .float-index-content {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin: auto;
+    transition: 0.5s;
+  }
+
+  .float-index-btn-close {
+    margin: auto;
+    transition: 0.5s;
+  }
+}
+
 .main-page {
   color: $white;
   margin: auto;
@@ -186,20 +198,7 @@ footer {
   letter-spacing: 5px;
   z-index: 10;
 }
-@media screen and (max-width: 600px) {
-  .float-index-content {
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    margin: auto;
-    transition: 0.5s;
-  }
 
-  .float-index-btn-close {
-    margin: auto;
-    transition: 0.5s;
-  }
-}
 .corner-left,
 .corner-right {
   position: fixed;
@@ -231,5 +230,26 @@ footer {
     top: 0px;
     z-index: -1;
     background-image: linear-gradient(180deg, $black, transparent);
+  }
+}
+
+#top-header {
+  margin: -45px;
+  padding: 75px 0px;
+  img {
+    max-width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: 0;
+  }
+  h1 {
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 25%;
+    text-align: center;
+    letter-spacing: 12px;
+    z-index: 1;
   }
 }
