@@ -3,23 +3,44 @@ permalink: /404.html
 layout: default
 ---
 
-<style type="text/css" media="screen">
+<div class="container">
+  <div class="sign">
+    <span id="warn"></span>
+    <h1>404</h1>
+  </div>
+  <div class="info-msg">
+    <h2>页面不存在</h2>
+    <p>您所访问页面不存在或已失效,<br />请检查链接是否正确。</p>
+  </div>
+</div>
+
+<style>
   .container {
-    margin: 10px auto;
-    max-width: 600px;
     text-align: center;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+  .sign {
+    margin: auto;
+    padding: 10px 0px;
+    position: relative;
+    top: 100px;
+    min-width: 200px;
+    max-width: 200px;
+    letter-spacing: 5px;
+  }
+  .sign h1 {
+    font-size: 70px;
+  }
+  #warn {
+    width: 200px;
+    height: 200px;
+  }
+  .info-msg {
+    padding: 40px 0px;
+  }
+  .info-msg h2 {
+    font-size: 40px;
+  }
+  .info-msg p {
+    letter-spacing: 2px;
   }
 </style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>

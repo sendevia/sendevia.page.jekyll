@@ -36,6 +36,7 @@ body {
   padding: 0px;
   font-weight: normal;
   background-color: $black;
+  color: $white;
   height: 100%;
   display: block;
   font-family: "SAO UI";
@@ -203,6 +204,7 @@ footer {
 .corner-right {
   position: fixed;
   z-index: 5;
+  user-select: none;
 }
 
 .corner-left {
