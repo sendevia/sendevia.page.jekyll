@@ -3,8 +3,130 @@ layout: default
 title: 关于
 ---
 
-<img
-  src="/assets/images/s0_logo_only.png?v=1.0"
-  alt="logo"
-  style="max-width: 45%"
-/>
+<div class="container-amix">
+  <div id="logo">
+    <img
+      src="/assets/images/s0_logo_only.png?v=1.0"
+      alt="logo"
+      width="360"
+      height="360"
+    />
+  </div>
+  <div class="title">
+    <h1>AincradMix ver1.8</h1>
+    <p>发布日期：2021/4/30</p>
+  </div>
+</div>
+<div class="container-aboutme">
+  <h1>扩展链接</h1>
+  <div class="grid">
+    <a href="https://space.bilibili.com/84041790">
+      <div class="item-about">
+        <h1>Bilibili</h1>
+        <img
+          src="/assets/images/avater_bilibili.jpg"
+          alt="avatar"
+          width="130"
+          height="130"
+        />
+        <p>Sendevia</p>
+      </div>
+    </a>
+    <a href="https://music.163.com/#/user/home?id=352619241">
+      <div class="item-about">
+        <h1>网易云</h1>
+        <img
+          src="/assets/images/avater.jpg"
+          alt="avatar"
+          width="130"
+          height="130"
+        />
+        <p>sendevia</p>
+      </div>
+    </a>
+    <a href="https://twitter.com/Sendevia_lol">
+      <div class="item-about">
+        <h1>twitter</h1>
+        <img
+          src="/assets/images/avater.jpg"
+          alt="avatar"
+          width="130"
+          height="130"
+        />
+        <p>@Sendevia_lol</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  .container-amix {
+    padding: 18px 0px;
+    text-align: center;
+    border-bottom: #4e4e4e dashed;
+  }
+  .container-aboutme {
+    text-align: center;
+  }
+  .container-aboutme h1 {
+    font-size: 30px;
+  }
+  .title {
+    line-height: 0%;
+  }
+  .title h1 {
+    font-size: 60px;
+    font-weight: normal;
+  }
+  .title p {
+    font-size: 16px;
+  }
+  #logo {
+    margin: auto;
+  }
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .grid a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .item-about {
+    margin: 30px;
+    padding: 0px 10px;
+    width: 260px;
+    height: 340px;
+    background: #1b1b1b;
+    border: #2e2e2e solid 2px;
+    line-height: 0%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .item-about h1 {
+    line-height: 0%;
+    letter-spacing: 5px;
+    font-size: 65px;
+    position: relative;
+    top: -25px;
+    left: -20px;
+    text-align: left;
+    opacity: 0.1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .item-about p {
+    line-height: 100%;
+    font-size: 30px;
+    text-align: center;
+  }
+  .item-about img {
+    max-width: 50%;
+    border-radius: 50%;
+    position: relative;
+    top: -15px;
+  }
+  .item-about:hover {
+    border: #4e4e4e solid 5px;
+  }
+</style>

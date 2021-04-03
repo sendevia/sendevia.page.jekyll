@@ -54,8 +54,8 @@ body {
 }
 
 .btn-item {
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -192,18 +192,20 @@ body {
 
 footer {
   padding: 20px;
+  position: -webkit-sticky;
   position: sticky;
   top: 100%;
   text-align: center;
   color: $white;
   letter-spacing: 5px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .corner-left,
 .corner-right {
   position: fixed;
   z-index: 5;
+  -webkit-user-select: none;
   user-select: none;
 }
 
