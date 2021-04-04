@@ -64,11 +64,12 @@ body {
   position: fixed;
   width: 40px;
   height: 40px;
-  top: 45px;
-  right: 45px;
+  top: 20px;
+  right: 20px;
   background-color: $white;
   transform-origin: center;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
+  opacity: 0;
   transition: 0.3s;
   z-index: 10;
 }
@@ -80,6 +81,7 @@ body {
 
 .float-index-btn:active {
   box-shadow: 0px 0px 0px 5px $white;
+  border: $black solid 2px;
   transition: 0.2s;
 }
 
@@ -207,6 +209,7 @@ footer {
   z-index: 5;
   -webkit-user-select: none;
   user-select: none;
+  transition: 0.4s;
 }
 
 .corner-left {
@@ -236,7 +239,11 @@ footer {
     background-image: linear-gradient(180deg, $black, transparent);
   }
 }
-
+.corner-left:hover,
+.corner-right:hover {
+  opacity: 0.3;
+  transition: 0.4s;
+}
 #top-header {
   margin: -45px;
   padding: 75px 0px;

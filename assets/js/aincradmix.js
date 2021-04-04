@@ -1,3 +1,4 @@
+//杂烩一锅粥
 $(document).ready(function(){
   $(".float-btn").click(function(){
     $(".float-index-bg").fadeToggle(500);
@@ -23,9 +24,18 @@ VanillaTilt.init(document.querySelector(".float-index-content"), {
 VanillaTilt.init(document.querySelectorAll(".item-about"), {
   reverse: true,
   max: 10,
-  scale: 0.95,
+  scale: 1.05,
   axis: "xy",
   glare: true,
   "max-glare": 0.3,
   gyroscope: true,
+});
+
+anime({
+  targets: ".float-index-btn",
+  duration: 200,
+  top: "45px",
+  right: "45px",
+  opacity: 1,
+  rotate: 45,
 });
