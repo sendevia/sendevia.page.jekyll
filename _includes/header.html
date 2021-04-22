@@ -1,21 +1,17 @@
-<span class="corner-left">
-  <img
-    src="/assets/images/s0_corner_left.svg?v=1.0"
-    alt="corner-left"
-    draggable="false"
-  />
-  <span id="restrict-l"></span>
-</span>
-<span class="corner-right">
-  <img
-    src="/assets/images/s0_corner_right.svg?v=1.0"
-    alt="corner-right"
-    draggable="false"
-  />
-  <span id="restrict-r"></span>
-</span>
+<div>
+  <div>
+    <span class="corner-left">
+      <img src="/assets/images/s0_corner_left.svg?v=1.0" alt="corner-left" draggable="false" />
+      <span id="restrict-l" />
+  </div>
+  <div>
+    <span class="corner-right">
+      <img src="/assets/images/s0_corner_right.svg?v=1.0" alt="corner-right" draggable="false" />
+      <span id="restrict-r" />
+  </div>
+</div>
 
-<div class="btn-item float-index-btn float-btn">
+<div class="btn-item float-index-btn float-btn" id="bar">
   <span class="material-icons float-index-btn-icon-toc">toc</span>
 </div>
 
@@ -38,12 +34,7 @@
       </ul>
     </div>
     <div class="btn-item float-index-btn-close float-btn">
-      <img
-        src="/assets/images/btn-close.svg?v=1.0"
-        alt="close"
-        class="float-index-btn-icon-close"
-        draggable="false"
-      />
+      <img src="/assets/images/btn-close.svg?v=1.0" alt="close" class="float-index-btn-icon-close" draggable="false" />
     </div>
   </div>
 </div>
@@ -65,26 +56,24 @@
   .float-index-btn {
     display: flex;
     position: fixed;
-    width: 40px;
-    height: 40px;
-    top: 20px;
-    right: 20px;
+    width: 60px;
+    height: 60px;
+    top: 35px;
+    right: 35px;
     background-color: #ffffff;
     transform-origin: center;
-    transform: rotate(0deg);
-    opacity: 0;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     transition: 0.3s;
     z-index: 10;
   }
 
   .float-index-btn:hover {
-    box-shadow: 0px 0px 0px 3px #ffffff;
-    transition: 0.3s;
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 0.5s;
   }
 
   .float-index-btn:active {
-    box-shadow: 0px 0px 0px 5px #ffffff;
-    border: #131313 solid 2px;
+    transform: scale3d(0.8, 0.8, 1);
     transition: 0.2s;
   }
 
@@ -94,6 +83,17 @@
     position: relative;
     width: 60px;
     height: 60px;
+    transition: 0.5s;
+  }
+
+  .float-index-btn-close:hover {
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 0.5s;
+  }
+
+  .float-index-btn-close:active {
+    transform: scale3d(0.8, 0.8, 1);
+    transition: 0.2s;
   }
 
   .float-index-btn-icon-toc,
@@ -101,10 +101,6 @@
     align-items: center;
     font-size: 30px;
     color: #131313;
-  }
-
-  .float-index-btn-icon-toc {
-    transform: rotate(-45deg);
   }
 
   .float-index-btn-icon-close {
@@ -141,27 +137,27 @@
     font-size: 25px;
   }
 
-  a {
+  .float-index-item a {
     color: #131313;
     text-decoration: none;
   }
 
-  a:hover {
+  .float-index-item a:hover {
     text-decoration: underline;
   }
 
-  ul {
+  .float-index-item ul {
     margin: auto;
     padding: 0px;
   }
 
-  li {
+  .float-index-item li {
     margin: 15px auto;
     padding: 20px;
     list-style-type: none;
   }
 
-  li:hover {
+  .float-index-item li:hover {
     background: #1313131f;
   }
 
