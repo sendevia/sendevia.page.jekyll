@@ -3,9 +3,62 @@ layout: default
 title: "主页"
 ---
 
-<div class="col-1">
-  <h1>AincradMix</h1>
+<div>
+  <h1><span class="symbol">///</span>AINCRADMIX<span class="symbol">///临时页面</span></h1>
+  <p class="title">一个有着刀剑神域ui风格的osu!皮肤项目</p>
+  <h2>皮肤介绍</h2>
+  <h3>这是一个 osu! 皮肤，它以游戏补丁的方式实现了对 osu! 全部界面元素的覆盖。</h3>
+  <h3>它的设计风格扩展了《刀剑神域》第1、2季中操作界面的设计，结合更现代的设计风格，再将两者和谐相融。</h3>
+  <h2>皮肤展示</h2>
+  <p class="content">截图</p>
+  <h2>皮肤下载</h2>
+  <p class="content">下载</p>
+  <h2>自定义</h2>
+  <p class="content">自定义介绍</p>
+  <p class="content">自定义选项</p>
 </div>
 
 <style>
+  html, body {
+    margin: auto;
+  }
+  .symbol {
+    font-size: 0.4em;
+  }
+  p.title {
+    position: relative;
+    top: -40px;
+    text-align: center;
+    box-shadow: none;
+    color: #fff;
+    padding: 0;
+  }
+  p.content {
+    color: #fff;
+    padding: 0px 85px;
+    font-size: 1.2em;
+    position: relative;
+    top: -40px;
+  }
+  p.content::before {
+    content: "·";
+    color: #fff;
+    font-size: 4em;
+  }
+  h1 {
+    padding: 150px 0px 0px;
+    font-size: 4em;
+    letter-spacing: 8px;
+    text-align: center;
+  }
+  h2 {
+    padding: 10px 35px 10px;
+  }
+  h2::before {
+    content: "/ ";
+    font-size: 0.7em;
+  }
+  h3 {
+    text-align: center;
+  }
 </style>
