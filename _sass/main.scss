@@ -17,10 +17,12 @@ $white: #ffffff;
 @keyframes float-top-down {
   from {
     top: -30px;
+    transform: scale(0.5)
   }
 
   to {
     top: 0px;
+    transform: scale(1)
   }
 }
 
@@ -33,10 +35,9 @@ body {
     center center;
   color: $white;
   height: 100%;
-  display: block;
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
   ::-webkit-scrollbar {
-    width: 0;
+    width: 0px;
   }
 }

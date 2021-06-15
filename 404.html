@@ -4,28 +4,48 @@ layout: default
 ---
 
 <div class="container">
-  <div class="sign">
-    <span id="warn"></span>
-    <h1>404</h1>
-  </div>
-  <div class="info-msg">
-    <h2>页面不存在</h2>
-    <p>您所访问页面不存在或已失效,<br />请检查链接是否正确。</p>
+  <div class="row">
+    <div class="columnleft">
+      <div class="sign">
+          <span id="warn"></span>
+          <span id="errcode"></span>
+      </div>
+    </div>
+    <div class="columnright">
+      <div class="info-msg">
+        <h2>页面不存在</h2>
+        <p>您所访问页面不存在或已失效,<br />请检查链接是否正确。</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-  .container {
-    text-align: center;
+  * {
+    position: relative;
+    margin: auto;
+  }
+  .columnleft {
+    float: left;
+    width: 30%;
+    left: 70px;
+    top: 100px;
+  }
+  .columnright {
+    float: left;
+    width: 50%;
+    right: -70px;
+    top: 100px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   .sign {
-    margin: auto;
     padding: 10px 0px;
-    position: relative;
-    top: 100px;
     min-width: 200px;
     max-width: 200px;
-    letter-spacing: 5px;
   }
   .sign h1 {
     font-size: 70px;
@@ -34,13 +54,20 @@ layout: default
     width: 200px;
     height: 200px;
   }
+  #errcode {
+    width: 100px;
+    height: 100px;
+  }
   .info-msg {
-    padding: 40px 0px;
+    padding: 20px 30px 10px 30px;
+    text-align: left;
   }
   .info-msg h2 {
+    padding: 0px 0px 30px 0px;
     font-size: 40px;
   }
   .info-msg p {
+    padding: 0px 0px 10px 0px;
     letter-spacing: 2px;
   }
 </style>

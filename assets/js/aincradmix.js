@@ -5,9 +5,17 @@ $(document).ready(function () {
   });
 });
 
-var animation = lottie.loadAnimation({
+lottie.loadAnimation({
   container: document.getElementById("warn"),
   path: "assets/animations/warn.json",
+  renderer: "svg",
+  loop: false,
+  autoplay: true,
+});
+
+lottie.loadAnimation({
+  container: document.getElementById("errcode"),
+  path: "assets/animations/404.json",
   renderer: "svg",
   loop: false,
   autoplay: true,
@@ -30,18 +38,3 @@ VanillaTilt.init(document.querySelectorAll(".item-about"), {
   "max-glare": 0.3,
   gyroscope: true,
 });
-
-anime({
-  targets: ".float-index-btn1",
-  duration: 200,
-  top: "45px",
-  right: "45px",
-  opacity: 1,
-  rotate: 45,
-});
-
-//let topbar = document.getElementById("bar")
-//window.addEventListener("scroll", function(){
-//  let value = window.scrollY;
-//  topbar.style.opacity = value + 0.1;
-//})
