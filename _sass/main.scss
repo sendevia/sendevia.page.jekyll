@@ -1,10 +1,30 @@
+//主题色开始
 $black: #131313;
 $white: #ffffff;
+$transparent: #ffffff00;
+$black-transparent-20: #1313132d;
+$black-transparent-40: #1313136c;
+$black-transparent-60: #1313138a;
+$black-transparent-80: #131313e0;
+$white-transparent-20: #ffffff2d;
+$white-transparent-40: #ffffff6c;
+$white-transparent-60: #ffffff8a;
+$white-transparent-80: #ffffffe0;
+//主题色结束
+
+//字体开始
+@font-face {
+  font-family: "SAOUI-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/assets/fonts/SAOUI-Regular.otf?v=1.0) format("opentype");
+}
 
 @font-face {
-  font-family: "SAO UI";
+  font-family: "SAOUI-Bold";
   font-style: normal;
-  src: url(/assets/fonts/SAOUI-Regular.woff2?v=1.0) format("woff2");
+  font-weight: bold;
+  src: url(/assets/fonts/SAOUI-Bold.otf?v=1.0) format("opentype");
 }
 
 @font-face {
@@ -13,31 +33,335 @@ $white: #ffffff;
   font-weight: 400;
   src: url(/assets/fonts/MaterialIcons-Regular.ttf?v=1.0) format("truetype");
 }
+//字体结束
 
+//动画开始
 @keyframes float-top-down {
-  from {
-    top: -30px;
-    transform: scale(0.5)
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
-
-  to {
-    top: 0px;
-    transform: scale(1)
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
   }
 }
+//动画结束
 
+//主体开始
 html,
 body {
-  margin: 0px;
+  margin: auto;
   padding: 0px;
-  font-weight: normal;
   background: $black url(/assets/images/s0_amix_head_bg.png) no-repeat fixed
     center center;
   color: $white;
-  height: 100%;
   font-family: "SAO UI";
   text-rendering: optimizeLegibility;
   ::-webkit-scrollbar {
     width: 0px;
   }
 }
+//主体结束
+
+//header开始
+.btn-item {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-item:hover {
+  transform: scale3d(1.1, 1.1, 1);
+  transition: 0.2s;
+}
+
+.btn-item:active {
+  transform: scale3d(0.8, 0.8, 1);
+  transition: 0.2s;
+}
+
+.float-btn {
+  display: flex;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 35px;
+  right: 35px;
+  background-color: $white;
+  transform-origin: center;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: 10;
+}
+
+.float-btn-close {
+  margin: auto;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  background-color: $transparent;
+  clip-path: none;
+}
+
+.float-btn-icon-toc {
+  align-items: center;
+  font-size: 1.7em;
+  color: $black;
+}
+
+.float-btn-icon-toc {
+  margin: auto;
+  font-family: "Material Icons";
+  text-transform: none;
+  text-decoration: none;
+}
+.float-btn-icon-close {
+  margin: -5px auto;
+}
+
+.float-index-bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: $black-transparent-60;
+  z-index: 10;
+}
+
+.float-index-content {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 540px;
+  height: 480px;
+  margin: 180px auto;
+  animation: float-top-down 0.5s;
+  background-color: $white-transparent-80;
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 10px 100px $black;
+}
+
+.float-index-item {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.float-index-item a {
+  color: $black;
+  text-decoration: none;
+}
+
+.float-index-item ul {
+  margin: auto;
+  padding: 0px;
+}
+
+.float-index-item li {
+  margin: 15px auto;
+  padding: 20px;
+  list-style-type: none;
+}
+
+.float-index-item li:hover {
+  background: $black-transparent-20;
+}
+
+.corner-left,
+.corner-right {
+  position: fixed;
+  z-index: 5;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: 0.4s;
+}
+
+.corner-left:hover,
+.corner-right:hover {
+  opacity: 0.3;
+  transition: 0.4s;
+}
+
+.corner-left {
+  bottom: 0px;
+  left: 0px;
+}
+
+.corner-left:hover {
+  bottom: -10px;
+}
+
+.corner-right {
+  top: 0px;
+  right: 0px;
+}
+
+.corner-right:hover {
+  top: -10px;
+}
+
+.corner-left #restrict-l {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+  background-image: linear-gradient(0deg, $black, $transparent);
+}
+
+.corner-right #restrict-r {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  right: 0px;
+  top: 0px;
+  z-index: -1;
+  background-image: linear-gradient(180deg, $black, $transparent);
+}
+//header结束
+
+//index开始
+.symbol {
+  font-size: 0.4em;
+}
+
+p.title {
+  position: relative;
+  top: -40px;
+  text-align: center;
+  box-shadow: none;
+  color: $white;
+  padding: 0;
+}
+
+p.content {
+  color: $white;
+  padding: 0px 85px;
+  font-size: 1.2em;
+  position: relative;
+  top: -40px;
+}
+
+p.content:before {
+  content: "·";
+  color: $white;
+  font-size: 4em;
+}
+
+h1 {
+  padding: 150px 0px 0px;
+  font-size: 4em;
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+h2 {
+  padding: 10px 35px 10px;
+}
+
+h2:before {
+  content: "/ ";
+  font-size: 0.7em;
+}
+
+h3 {
+  text-align: center;
+}
+//index结束
+
+//about开始
+.container-amix {
+  padding: 18px 0px;
+  text-align: center;
+  border-bottom: $white-transparent-20 dashed;
+}
+
+.container-aboutme {
+  text-align: center;
+}
+
+.container-aboutme h1 {
+  padding: 15px;
+  font-size: 1.6em;
+}
+
+.title {
+  line-height: 0%;
+}
+
+.title h1 {
+  font-size: 3.3em;
+  font-weight: normal;
+}
+
+.title p {
+  font-size: 1.2em;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  background-color: $black-transparent-60;
+  backdrop-filter: blur(10px);
+}
+
+.grid a {
+  color: $white;
+  text-decoration: none;
+}
+
+.item-about {
+  margin: 30px;
+  line-height: 0%;
+}
+
+.item-about h1 {
+  line-height: 0%;
+  letter-spacing: 5px;
+  font-size: 5em;
+  text-align: center;
+  opacity: 0.2;
+  -webkit-user-select: none;
+  user-select: none;
+}
+//about结束
+
+//footer开始
+footer {
+  padding: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+  text-align: center;
+  color: $white;
+  letter-spacing: 5px;
+  z-index: 1;
+}
+//footer结束
+
+//设备适配开始
+@media screen and (max-width: 600px) {
+  .float-index-content {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin: auto;
+    transition: 0.5s;
+  }
+
+  .float-btn-close {
+    margin: auto;
+    transition: 0.5s;
+  }
+}
+//设备适配结束

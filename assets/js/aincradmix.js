@@ -1,7 +1,7 @@
 //杂烩一锅粥
 $(document).ready(function () {
   $(".float-btn").click(function () {
-    $(".float-index-bg").fadeToggle(500);
+    $(".float-index-bg").fadeToggle(200);
   });
 });
 
