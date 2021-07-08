@@ -21,20 +21,18 @@ lottie.loadAnimation({
   autoplay: true,
 });
 
-VanillaTilt.init(document.querySelector(".float-index-content"), {
+VanillaTilt.init(document.querySelectorAll(".acrylic-w"), {
   reverse: true,
-  max: 10,
-  scale: 1.05,
-  axis: "y",
-  gyroscope: false,
+  max: 5,
+  scale: 0.98,
+  speed: 1000,
+  axis: "xy",
 });
 
-VanillaTilt.init(document.querySelectorAll(".item-about"), {
+VanillaTilt.init(document.querySelectorAll(".acrylic-b"), {
   reverse: true,
-  max: 10,
-  scale: 1.05,
+  max: 5,
+  scale: 0.98,
+  speed: 1000,
   axis: "xy",
-  glare: true,
-  "max-glare": 0.3,
-  gyroscope: true,
 });

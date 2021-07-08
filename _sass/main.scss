@@ -17,14 +17,14 @@ $white-transparent-80: #ffffffe0;
   font-family: "SAOUI-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url(/assets/fonts/SAOUI-Regular.ttf?v=1.0) format("truetype");
+  src: url(/assets/fonts/SAOUI-Regular.woff2?v=1.0) format("woff2");
 }
 
 @font-face {
   font-family: "SAOUI-Bold";
   font-style: normal;
   font-weight: bold;
-  src: url(/assets/fonts/SAOUI-Bold.ttf?v=1.0) format("truetype");
+  src: url(/assets/fonts/SAOUI-Bold.woff2?v=1.0) format("woff2");
 }
 
 @font-face {
@@ -67,23 +67,6 @@ body {
 //主体结束
 
 //header开始
-.btn-item {
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-item:hover {
-  transform: scale3d(1.1, 1.1, 1);
-  transition: 0.2s;
-}
-
-.btn-item:active {
-  transform: scale3d(0.8, 0.8, 1);
-  transition: 0.2s;
-}
-
 .float-btn {
   display: flex;
   position: fixed;
@@ -140,10 +123,8 @@ body {
   justify-content: space-between;
   width: 540px;
   height: 480px;
-  margin: 180px auto;
+  margin: 90px auto auto;
   animation: float-top-down 0.5s;
-  background-color: $white-transparent-80;
-  backdrop-filter: blur(15px);
   box-shadow: 0px 10px 100px $black;
 }
 
@@ -311,8 +292,6 @@ h3 {
   flex-direction: row;
   align-items: center;
   align-content: center;
-  background-color: $black-transparent-60;
-  backdrop-filter: blur(10px);
 }
 
 .grid a {
@@ -345,7 +324,6 @@ footer {
   text-align: center;
   color: $white;
   letter-spacing: 5px;
-  z-index: 1;
 }
 //footer结束
 
@@ -365,3 +343,34 @@ footer {
   }
 }
 //设备适配结束
+
+//特殊效果开始
+.acrylic-w {
+  background-color: $white-transparent-60;
+  backdrop-filter: blur(15px);
+  border: solid 2px $black-transparent-20;
+}
+
+.acrylic-b {
+  background-color: $black-transparent-60;
+  backdrop-filter: blur(15px);
+  border: solid 2px $white-transparent-20;
+}
+
+.btn-item {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-item:hover {
+  transform: scale3d(1.1, 1.1, 1);
+  transition: 0.2s;
+}
+
+.btn-item:active {
+  transform: scale3d(0.8, 0.8, 1);
+  transition: 0.2s;
+}
+//特殊效果结束
