@@ -3,7 +3,7 @@
 ## 安装运行环境（Archlinux + ruby3.0.0）
 
 ```shell
-$ pacman -Sy ruby
+$ sudo pacman -Sy ruby
 $ echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
 $ echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
 $ source ~/.bashrc
