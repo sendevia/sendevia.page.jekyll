@@ -348,12 +348,14 @@ footer {
 .acrylic-w {
   background-color: $white-transparent-60;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: solid 2px $black-transparent-20;
 }
 
 .acrylic-b {
   background-color: $black-transparent-60;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: solid 2px $white-transparent-20;
 }
 
