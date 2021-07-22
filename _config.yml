@@ -1,15 +1,10 @@
 title: AincradMix
 email: sendevialol@gmail.com
-description: >- 
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: ""
-url: ""
-twitter_username: Sendevia_lol
+twitter_username: sendevia
 email: sendevialol@gmail.com
 github_username: Sendevia
 github: https://github.com/Sendevia/AincradMix
+timezone: Asia/Shanghai
 
 theme: 
 plugins:
