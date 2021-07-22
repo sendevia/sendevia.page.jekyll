@@ -17,14 +17,14 @@ $white-transparent-80: #ffffffe0;
   font-family: "SAOUI-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url(/assets/fonts/SAOUI-Regular.woff2?v=1.0) format("woff2");
+  src: url(/assets/fonts/SAOUI-Regular.otf?v=1.0) format("opentype");
 }
 
 @font-face {
   font-family: "SAOUI-Bold";
   font-style: normal;
   font-weight: bold;
-  src: url(/assets/fonts/SAOUI-Bold.woff2?v=1.0) format("woff2");
+  src: url(/assets/fonts/SAOUI-Bold.otf?v=1.0) format("opentype");
 }
 
 @font-face {
@@ -58,7 +58,7 @@ body {
   background: $black url(/assets/images/s0_amix_head_bg.png) no-repeat fixed
     center center;
   color: $white;
-  font-family: "SAO UI";
+  font-family: "SAOUI-Regular";
   text-rendering: optimizeLegibility;
   ::-webkit-scrollbar {
     width: 0px;
