@@ -1,6 +1,6 @@
 # AincradMix 发布网站
 
-## 安装运行环境（Archlinux + ruby3.0.0）
+## 安装运行环境 (Archlinux + ruby3.0.0)
 
 ```shell
 $ sudo pacman -Sy ruby
@@ -14,7 +14,7 @@ $ gem install bundler jekyll
 $ bundle install
 ```
 
-## 运行 jekyll
+## 运行 jekyll (包含局域网调试)
 
 ```shell
 $ bundle exec jekyll serve --host 0.0.0.0
