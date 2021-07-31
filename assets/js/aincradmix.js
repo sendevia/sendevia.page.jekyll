@@ -19,19 +19,3 @@ lottie.loadAnimation({
   loop: false,
   autoplay: true,
 });
-
-VanillaTilt.init(document.querySelectorAll(".acrylic-w"), {
-  reverse: true,
-  max: 5,
-  scale: 0.98,
-  speed: 1000,
-  axis: "xy",
-});
-
-VanillaTilt.init(document.querySelectorAll(".acrylic-b"), {
-  reverse: true,
-  max: 5,
-  scale: 0.98,
-  speed: 1000,
-  axis: "xy",
-});
