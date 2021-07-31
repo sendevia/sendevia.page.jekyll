@@ -1,0 +1,77 @@
+.symbol {
+  font-size: 0.4em;
+}
+
+p.title {
+  position: relative;
+  top: -40px;
+  text-align: center;
+  box-shadow: none;
+  color: $white;
+  padding: 0;
+}
+
+p.content {
+  color: $white;
+  padding: 0px 85px;
+  font-size: 1.2em;
+  position: relative;
+  top: -40px;
+}
+
+p.content:before {
+  content: "·";
+  color: $white;
+  font-size: 4em;
+}
+
+h1 {
+  padding: 150px 0px 0px;
+  font-size: 4em;
+  letter-spacing: 8px;
+  text-align: center;
+  animation: fadeIn-left-right 1s ease-out 0.2s 1 both normal;
+}
+
+h2 {
+  padding: 10px 35px 10px;
+}
+
+h2:before {
+  content: "/ ";
+  font-size: 0.7em;
+}
+
+h3 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .float-index-content {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin: auto;
+    transition: 0.5s;
+  }
+
+  .float-btn-close {
+    margin: auto;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .float-index-content {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    margin: auto;
+    transition: 0.5s;
+  }
+
+  .float-btn-close {
+    margin: auto;
+    transition: 0.5s;
+  }
+}

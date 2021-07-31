@@ -12,44 +12,6 @@ $white-transparent-60: #ffffff8a;
 $white-transparent-80: #ffffffe0;
 //主题色结束
 
-//字体开始
-@font-face {
-  font-family: "SAOUI-Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: url(/assets/fonts/SAOUI-Regular.otf?v=1.0) format("opentype");
-}
-
-@font-face {
-  font-family: "SAOUI-Bold";
-  font-style: normal;
-  font-weight: bold;
-  src: url(/assets/fonts/SAOUI-Bold.otf?v=1.0) format("opentype");
-}
-
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/assets/fonts/MaterialIcons-Regular.ttf?v=1.0) format("truetype");
-}
-//字体结束
-
-//动画开始
-@keyframes float-top-down {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-//动画结束
-
 //主体开始
 html,
 body {
@@ -89,18 +51,12 @@ body {
   clip-path: none;
 }
 
-.float-btn-icon-toc {
+.float-btn-icon {
   align-items: center;
-  font-size: 1.7em;
   color: $black;
+  margin: auto;
 }
 
-.float-btn-icon-toc {
-  margin: auto;
-  font-family: "Material Icons";
-  text-transform: none;
-  text-decoration: none;
-}
 .float-btn-icon-close {
   margin: -5px auto;
 }
@@ -124,8 +80,8 @@ body {
   width: 540px;
   height: 480px;
   margin: 90px auto auto;
-  animation: float-top-down 0.5s;
   box-shadow: 0px 10px 100px $black;
+  animation: floatIn-top-down 0.5s;
 }
 
 .float-index-item {
@@ -157,8 +113,6 @@ body {
 .corner-right {
   position: fixed;
   z-index: 5;
-  -webkit-user-select: none;
-  user-select: none;
   transition: 0.4s;
 }
 
@@ -206,55 +160,6 @@ body {
   background-image: linear-gradient(180deg, $black, $transparent);
 }
 //header结束
-
-//index开始
-.symbol {
-  font-size: 0.4em;
-}
-
-p.title {
-  position: relative;
-  top: -40px;
-  text-align: center;
-  box-shadow: none;
-  color: $white;
-  padding: 0;
-}
-
-p.content {
-  color: $white;
-  padding: 0px 85px;
-  font-size: 1.2em;
-  position: relative;
-  top: -40px;
-}
-
-p.content:before {
-  content: "·";
-  color: $white;
-  font-size: 4em;
-}
-
-h1 {
-  padding: 150px 0px 0px;
-  font-size: 4em;
-  letter-spacing: 8px;
-  text-align: center;
-}
-
-h2 {
-  padding: 10px 35px 10px;
-}
-
-h2:before {
-  content: "/ ";
-  font-size: 0.7em;
-}
-
-h3 {
-  text-align: center;
-}
-//index结束
 
 //about开始
 .container-amix {
@@ -310,8 +215,6 @@ h3 {
   font-size: 5em;
   text-align: center;
   opacity: 0.2;
-  -webkit-user-select: none;
-  user-select: none;
 }
 //about结束
 
@@ -326,23 +229,6 @@ footer {
   letter-spacing: 5px;
 }
 //footer结束
-
-//设备适配开始
-@media screen and (max-width: 600px) {
-  .float-index-content {
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    margin: auto;
-    transition: 0.5s;
-  }
-
-  .float-btn-close {
-    margin: auto;
-    transition: 0.5s;
-  }
-}
-//设备适配结束
 
 //特殊效果开始
 .acrylic-w {
@@ -360,7 +246,6 @@ footer {
 }
 
 .btn-item {
-  -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
   transition: 0.3s;
@@ -374,5 +259,27 @@ footer {
 .btn-item:active {
   transform: scale3d(0.8, 0.8, 1);
   transition: 0.2s;
+}
+
+.icon {
+  font-family: "Material Icons";
+  font-size: 1.6em;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  text-decoration: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.disable-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
 }
 //特殊效果结束
