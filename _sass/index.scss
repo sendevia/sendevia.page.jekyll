@@ -52,6 +52,7 @@ span.nav {
   height: 80%;
   position: fixed;
   background-color: $white;
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
