@@ -1,0 +1,129 @@
+.float-btn {
+  display: flex;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 35px;
+  right: 35px;
+  background-color: $white;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: 10;
+}
+
+.float-btn-close {
+  margin: auto;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  background-color: $transparent;
+  clip-path: none;
+}
+
+.float-btn-icon {
+  margin: auto;
+  align-items: center;
+  color: $black;
+}
+
+.float-btn-icon-close {
+  margin: -5px auto;
+}
+
+.float-index-bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: $black-transparent-60;
+  z-index: 10;
+}
+
+.float-index-content {
+  margin: 90px auto auto;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 540px;
+  height: 480px;
+  box-shadow: 0px 10px 100px $black;
+  animation: floatIn-top-down 0.5s;
+}
+
+.float-index-item {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+span.float-index-item a {
+  color: $black;
+  text-decoration: none;
+}
+
+span.float-index-item ul {
+  margin: auto;
+  padding: 0px;
+}
+
+span.float-index-item li {
+  margin: 15px auto;
+  padding: 20px;
+  list-style-type: none;
+}
+
+span.float-index-item li:hover {
+  background: $black-transparent-20;
+}
+
+.corner-left,
+.corner-right {
+  position: fixed;
+  z-index: 5;
+  transition: 0.4s;
+}
+
+.corner-left:hover,
+.corner-right:hover {
+  opacity: 0.3;
+  transition: 0.4s;
+}
+
+.corner-left {
+  left: 0px;
+  bottom: 0px;
+}
+
+.corner-left:hover {
+  bottom: -10px;
+}
+
+.corner-right {
+  top: 0px;
+  right: 0px;
+}
+
+.corner-right:hover {
+  top: -10px;
+}
+
+span.corner-left #restrict-l {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+  background-image: linear-gradient(0deg, $black, $transparent);
+}
+
+span.corner-right #restrict-r {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  background-image: linear-gradient(180deg, $black, $transparent);
+}

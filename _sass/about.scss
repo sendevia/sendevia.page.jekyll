@@ -1,0 +1,54 @@
+.container-amix {
+  padding: 18px 0px;
+  text-align: center;
+  border-bottom: $white-transparent-20 dashed;
+}
+
+.container-aboutme {
+  text-align: center;
+}
+
+h1.container-aboutme {
+  padding: 15px;
+  font-size: 1.6em;
+}
+
+.title {
+  line-height: 0%;
+}
+
+h1.title {
+  font-size: 3.3em;
+  font-weight: normal;
+}
+
+p.title {
+  font-size: 1.2em;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
+a.grid {
+  color: $white;
+  text-decoration: none;
+}
+
+.item-about {
+  margin: 30px;
+  line-height: 0%;
+}
+
+h1.item-about {
+  line-height: 0%;
+  letter-spacing: 5px;
+  font-size: 5em;
+  text-align: center;
+  opacity: 0.2;
+}

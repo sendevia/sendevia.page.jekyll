@@ -8,15 +8,14 @@ p.title {
   text-align: center;
   box-shadow: none;
   color: $white;
-  padding: 0;
 }
 
 p.content {
-  color: $white;
   padding: 0px 85px;
-  font-size: 1.2em;
   position: relative;
+  color: $white;
   top: -40px;
+  font-size: 1.2em;
 }
 
 p.content:before {
@@ -46,17 +45,24 @@ h3 {
   text-align: center;
 }
 
+span.nav {
+  content: "";
+  margin: 40px;
+  width: 6px;
+  height: 80%;
+  position: fixed;
+  background-color: $white;
+}
+
 @media screen and (max-width: 600px) {
   .float-index-content {
     width: 100%;
     height: 100%;
     top: 0px;
-    margin: auto;
     transition: 0.5s;
   }
 
   .float-btn-close {
-    margin: auto;
     transition: 0.5s;
   }
 }
@@ -66,12 +72,10 @@ h3 {
     width: 100%;
     height: 100%;
     top: 0px;
-    margin: auto;
     transition: 0.5s;
   }
 
   .float-btn-close {
-    margin: auto;
     transition: 0.5s;
   }
 }
