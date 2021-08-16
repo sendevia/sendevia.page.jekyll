@@ -80,4 +80,9 @@ body {
   -moz-user-select: none;
   -webkit-user-drag: none;
 }
+
+.el-hide {
+  opacity: 0;
+  transition: 0.5s;
+}
 //特殊效果结束

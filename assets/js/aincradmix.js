@@ -4,6 +4,14 @@ $(document).ready(function () {
   });
 });
 
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 50) {
+    $(".corner-left,.corner-right").addClass("el-hide");
+  } else {
+    $(".corner-right").removeClass("el-hide");
+  }
+});
+
 lottie.loadAnimation({
   container: document.getElementById("warn"),
   path: "assets/animations/warn.json",
