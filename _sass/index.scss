@@ -1,56 +1,65 @@
-.symbol {
-  font-size: 0.4em;
+.container-title {
+  margin: auto;
+  z-index: 10;
+
+  h1 {
+    margin: 2.3em auto auto auto;
+    font-size: 4em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    animation: t-FadeIn 1s ease-out 0.2s 1 both normal;
+  }
+
+  p {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    color: $white;
+    animation: t-FadeIn 1s cubic-bezier(0.39, 0.58, 0.57, 1) 0.5s 1 both normal;
+  }
 }
 
-p.title {
-  position: relative;
-  top: -40px;
-  text-align: center;
-  box-shadow: none;
-  color: $white;
-}
+.container-detail {
+  h1 {
+    margin: 1.2em 0.4em 0.6em 0.8em;
+    font-size: 1.6em;
+  }
 
-p.content {
-  padding: 0px 85px;
-  position: relative;
-  color: $white;
-  top: -40px;
-  font-size: 1.2em;
-}
+  @for $a from 1 to 7 {
+    h1:nth-of-type(#{$a}) {
+      animation: t-FadeIn
+        1s
+        cubic-bezier(0.39, 0.58, 0.57, 1)
+        $a *
+        0.1s
+        1
+        both
+        normal;
+    }
+  }
 
-p.content:before {
-  content: "·";
-  color: $white;
-  font-size: 4em;
-}
+  h2 {
+    margin: 0.6em 0.4em 0.6em 2em;
+    font-size: 1.4em;
+    font-style: italic;
+  }
 
-h1 {
-  padding: 150px 0px 0px;
-  font-size: 4em;
-  letter-spacing: 8px;
-  text-align: center;
-  animation: fadeIn-left-right 1s ease-out 0.2s 1 both normal;
-}
+  p {
+    margin: 0.2em 0.4em auto 2.4em;
+    color: $white;
+    font-size: 1.2em;
+  }
 
-h2 {
-  padding: 10px 35px 10px;
-}
-
-h2:before {
-  content: "/ ";
-  font-size: 0.7em;
-}
-
-h3 {
-  text-align: center;
-}
-
-span.nav {
-  content: "";
-  margin: 40px;
-  width: 6px;
-  height: 80%;
-  position: fixed;
-  background-color: $white;
-  display: none;
+  @for $b from 1 to 100 {
+    p:nth-of-type(#{$b}) {
+      animation: FadeIn-lr
+        1s
+        cubic-bezier(0.39, 0.58, 0.57, 1)
+        $b *
+        0.05s
+        1
+        both
+        normal;
+    }
+  }
 }

@@ -12,15 +12,20 @@ $white-transparent-60: #ffffff8a;
 $white-transparent-80: #ffffffe0;
 //主题色结束
 
+//全局变量开始
+
+//全局变量结束
+
 //主体开始
 html,
 body {
   margin: auto;
   padding: 0px;
-  background: $black url(/assets/images/s0_amix_head_bg.png) no-repeat fixed
-    center center;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
   color: $white;
-  font-family: "SAOUI-Regular";
+  font-family: "SAOUI-Regular" !important;
   text-rendering: optimizeLegibility;
   ::-webkit-scrollbar {
     width: 0px;
@@ -30,7 +35,7 @@ body {
 
 //特殊效果开始
 .acrylic-w {
-  background-color: $white-transparent-60;
+  background-color: $white-transparent-80;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: solid 2px $black-transparent-20;
@@ -82,7 +87,7 @@ body {
 }
 
 .el-hide {
-  opacity: 0;
+  animation: e-FadeOut 0.5s both;
   transition: 0.5s;
 }
 //特殊效果结束

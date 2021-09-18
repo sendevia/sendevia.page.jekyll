@@ -1,4 +1,4 @@
-@keyframes floatIn-top-down {
+@keyframes FloatIn-td {
   0% {
     opacity: 0;
     transform: scale(0.5);
@@ -11,7 +11,7 @@
   }
 }
 
-@keyframes fadeIn-left-right {
+@keyframes FadeIn-lr {
   0% {
     opacity: 0;
     transform: translateX(-10px);
@@ -22,16 +22,18 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes t-FadeIn {
   0% {
     opacity: 0;
+    letter-spacing: 0.15em;
   }
   100% {
     opacity: 1;
+    letter-spacing: 0.1em;
   }
 }
 
-@keyframes fadeOut {
+@keyframes e-FadeOut {
   80% {
     opacity: 0;
   }

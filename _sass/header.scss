@@ -49,33 +49,33 @@
   width: 540px;
   height: 480px;
   box-shadow: 0px 10px 100px $black;
-  animation: floatIn-top-down 0.5s;
+  animation: FloatIn-td 0.5s;
   transition: 0.5s;
 }
 
 .float-index-item {
   text-align: center;
   font-size: 1.5em;
-}
 
-span.float-index-item a {
-  color: $black;
-  text-decoration: none;
-}
+  a {
+    color: $black;
+    text-decoration: none;
+  }
 
-span.float-index-item ul {
-  margin: auto;
-  padding: 0px;
-}
+  ul {
+    margin: auto;
+    padding: 0px;
+  }
 
-span.float-index-item li {
-  margin: 15px auto;
-  padding: 20px;
-  list-style-type: none;
-}
+  li {
+    margin: 15px auto;
+    padding: 20px;
+    list-style-type: none;
+  }
 
-span.float-index-item li:hover {
-  background: $black-transparent-20;
+  li:hover {
+    background: $black-transparent-20;
+  }
 }
 
 .corner-left,
@@ -94,6 +94,16 @@ span.float-index-item li:hover {
 .corner-left {
   left: 0px;
   bottom: 0px;
+
+  #restrict-l {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+    background-image: linear-gradient(0deg, $black, $transparent);
+  }
 }
 
 .corner-left:hover {
@@ -103,30 +113,20 @@ span.float-index-item li:hover {
 .corner-right {
   top: 0px;
   right: 0px;
+
+  #restrict-r {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    background-image: linear-gradient(180deg, $black, $transparent);
+  }
 }
 
 .corner-right:hover {
   top: -10px;
-}
-
-span.corner-left #restrict-l {
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  left: 0px;
-  bottom: 0px;
-  z-index: -1;
-  background-image: linear-gradient(0deg, $black, $transparent);
-}
-
-span.corner-right #restrict-r {
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  top: 0px;
-  right: 0px;
-  z-index: -1;
-  background-image: linear-gradient(180deg, $black, $transparent);
 }
 
 @media screen and (max-width: 600px) {

@@ -1,21 +1,8 @@
-# AincradMix 发布网站
-
-## 安装运行环境 (Archlinux + ruby3.0.0)
-
-```shell
-$ sudo pacman -Sy ruby
-$ echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
-$ echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
-$ source ~/.bashrc
 ```
-
-```shell
-$ gem install bundler jekyll
-$ bundle install
+    ___    _                           ____  ____
+   /   |  (_)___  ______________ _____/ /  |/  (_)  __
+  / /| | / / __ \/ ___/ ___/ __ `/ __  / /|_/ / / |/_/
+ / ___ |/ / / / / /__/ /  / /_/ / /_/ / /  / / />  <
+/_/  |_/_/_/ /_/\___/_/   \__,_/\__,_/_/  /_/_/_/|_|
 ```
-
-## 运行 jekyll (包含局域网调试)
-
-```shell
-$ bundle exec jekyll serve --host 0.0.0.0
-```
+### 发布网站
