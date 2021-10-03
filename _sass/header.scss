@@ -1,35 +1,37 @@
-.float-btn {
+.btn-menu {
   display: flex;
   position: fixed;
-  width: 60px;
-  height: 60px;
-  top: 35px;
-  right: 35px;
+  width: 100%;
+  height: 2em;
+  bottom: 0%;
   background-color: $white;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: 0.2s;
   z-index: 10;
+
+  &:hover {
+    height: 2.5em;
+  }
+
+  &:active {
+    background-color: $white-transparent-40;
+  }
 }
 
-.float-btn-close {
+.btn-close {
   margin: auto;
   position: relative;
   top: 0px;
   right: 0px;
   background-color: $transparent;
-  clip-path: none;
 }
 
-.float-btn-icon {
+.icon-menu {
   margin: auto;
   align-items: center;
   color: $black;
 }
 
-.float-btn-icon-close {
-  margin: -5px auto;
-}
-
-.float-index-bg {
+.menu-bg {
   display: none;
   width: 100%;
   height: 100%;
@@ -40,7 +42,7 @@
   z-index: 10;
 }
 
-.float-index-content {
+.menu-content-bg {
   margin: 90px auto auto;
   display: flex;
   position: relative;
@@ -53,13 +55,16 @@
   transition: 0.5s;
 }
 
-.float-index-item {
-  text-align: center;
+.menu-item {
+  @extend .container-flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 1.5em;
 
   a {
     color: $black;
     text-decoration: none;
+    width: 100%;
   }
 
   ul {
@@ -71,88 +76,77 @@
     margin: 15px auto;
     padding: 20px;
     list-style-type: none;
-  }
+    text-align: center;
+    cursor: url(/assets/images/cursor.cur) 16 16, auto;
 
-  li:hover {
-    background: $black-transparent-20;
+    &:hover {
+      background: $black-transparent-20;
+    }
   }
 }
 
-.corner-left,
-.corner-right {
+.corner {
   position: fixed;
-  z-index: 5;
-  transition: 0.4s;
-}
-
-.corner-left:hover,
-.corner-right:hover {
-  opacity: 0.3;
-  transition: 0.4s;
-}
-
-.corner-left {
-  left: 0px;
-  bottom: 0px;
-
-  #restrict-l {
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    left: 0px;
-    bottom: 0px;
-    z-index: -1;
-    background-image: linear-gradient(0deg, $black, $transparent);
-  }
-}
-
-.corner-left:hover {
-  bottom: -10px;
-}
-
-.corner-right {
   top: 0px;
   right: 0px;
+  transition: 0.4s;
+  z-index: 5;
 
-  #restrict-r {
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    top: 0px;
-    right: 0px;
-    z-index: -1;
-    background-image: linear-gradient(180deg, $black, $transparent);
+  &:hover {
+    top: -10px;
+    opacity: 0.3;
+    transition: 0.4s;
   }
 }
 
-.corner-right:hover {
-  top: -10px;
+.bg {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+
+  #aincrad {
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    text-align: center;
+  }
+}
+
+.overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: $white;
+  z-index: 15;
 }
 
 @media screen and (max-width: 600px) {
-  .float-index-content {
+  .menu-content-bg {
     margin: auto;
     width: 100%;
     height: 100%;
-    top: 0px;
-    transition: 0.5s;
-  }
-
-  .float-btn-close {
+    justify-content: space-around;
     transition: 0.5s;
   }
 }
 
 @media screen and (max-height: 600px) {
-  .float-index-content {
+  .menu-content-bg {
     margin: auto;
     width: 100%;
     height: 100%;
-    top: 0px;
+    transition: 0.5s;
+    justify-content: space-evenly;
+  }
+
+  .btn-close {
     transition: 0.5s;
   }
 
-  .float-btn-close {
-    transition: 0.5s;
+  .menu-item {
+    li {
+      margin: auto;
+    }
   }
 }

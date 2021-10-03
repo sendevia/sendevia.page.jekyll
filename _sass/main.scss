@@ -12,11 +12,11 @@ $white-transparent-60: #ffffff8a;
 $white-transparent-80: #ffffffe0;
 //主题色结束
 
-//全局变量开始
-
-//全局变量结束
-
 //主体开始
+* {
+  cursor: url(/assets/images/cursor.cur) 16 16, auto;
+}
+
 html,
 body {
   margin: auto;
@@ -30,8 +30,26 @@ body {
   ::-webkit-scrollbar {
     width: 0px;
   }
+  scrollbar-width: none;
 }
 //主体结束
+
+//页面布局开始
+.container-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.cf-l {
+  flex-grow: 1;
+}
+
+.cf-r {
+  flex-grow: 10;
+}
+//页面布局结束
 
 //特殊效果开始
 .acrylic-w {
@@ -49,22 +67,23 @@ body {
 }
 
 .btn-item {
-  user-select: none;
+  @extend .disable-select;
   cursor: pointer;
   transition: 0.3s;
-}
 
-.btn-item:hover {
-  transform: scale3d(1.1, 1.1, 1);
-  transition: 0.2s;
-}
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1);
+    transition: 0.2s;
+  }
 
-.btn-item:active {
-  transform: scale3d(0.8, 0.8, 1);
-  transition: 0.2s;
+  &:active {
+    transform: scale3d(0.8, 0.8, 1);
+    transition: 0.2s;
+  }
 }
 
 .icon {
+  @extend .disable-select;
   font-family: "Material Icons";
   font-size: 1.6em;
   display: inline-block;
@@ -86,8 +105,16 @@ body {
   -webkit-user-drag: none;
 }
 
-.el-hide {
-  animation: e-FadeOut 0.5s both;
-  transition: 0.5s;
+.flex-box-center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
+//button {
+//  .btn-menu {
+//
+//  }
+//}
 //特殊效果结束

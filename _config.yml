@@ -13,6 +13,8 @@ plugins:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - .gitignore
+  - .vscode/
   - gemfiles/
   - Gemfile
   - Gemfile.lock
