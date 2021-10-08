@@ -1,12 +1,17 @@
 footer {
+  @extend .flex-box-center;
+  flex-direction: column;
   padding: 20px;
   position: sticky;
   position: -webkit-sticky;
   top: 100%;
-  text-align: center;
   letter-spacing: 5px;
 
   a {
     text-decoration: none;
   }
+}
+
+.icon-heart {
+  font-size: 1em;
 }

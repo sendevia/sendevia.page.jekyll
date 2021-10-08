@@ -6,11 +6,19 @@ $(document).ready(function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
       $(".btn-menu").css({
-        opacity: "0",
+        right: "2em",
+        bottom: "2em",
+        opacity: "0.5",
+        width: "5%",
+        transform: "scale3d(1.2, 1.2, 1)",
       });
     } else {
       $(".btn-menu").css({
+        right: "0",
+        bottom: "0",
         opacity: "1",
+        width: "100%",
+        transform: "scale3d(1, 1, 1)",
       });
     }
   });
