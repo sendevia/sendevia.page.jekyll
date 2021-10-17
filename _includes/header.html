@@ -1,3 +1,9 @@
+<div class="container-title">
+  <img src="/assets/images/s0_logo_only.png?v=1.1" alt="logo" />
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+</div>
+
 <div class="btn-menu toggle-btn">
   <span class="icon icon-menu">menu</span>
 </div>
@@ -15,12 +21,12 @@
           <li class="btn-item">关于</li>
         </ul>
       </a>
-      <a href="{{ site.github }}/releases/latest">
+      <a href="{{ site.github }}/releases/{{ site.release_version }}">
         <ul>
           <li class="btn-item">下载</li>
         </ul>
       </a>
-      <a href="{{ site.github }}/commits/master">
+      <a href="{{ site.github }}/compare/{{ site.last_version }}...{{ site.current_version }}">
         <ul>
           <li class="btn-item">更新日志</li>
         </ul>

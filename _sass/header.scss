@@ -1,3 +1,32 @@
+.container-title {
+  @extend .container-flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2em 0;
+  border-bottom: $white-transparent-20 dashed;
+  z-index: 1;
+
+  h1 {
+    font-size: 4em;
+    letter-spacing: 0.1em;
+    line-height: 0;
+    animation: t-FadeIn 1s ease-out 0.2s 1 both normal;
+  }
+
+  p {
+    line-height: 0;
+    animation: t-FadeIn 1s cubic-bezier(0.39, 0.58, 0.57, 1) 0.5s 1 both normal;
+  }
+
+  img {
+    @extend .disable-select;
+    position: fixed;
+    top: 0;
+    opacity: 0.2;
+  }
+}
+
 .btn-menu {
   display: flex;
   position: fixed;
@@ -34,9 +63,9 @@
 
 .menu-bg {
   display: none;
+  position: fixed;
   width: 100%;
   height: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   background-color: $black-transparent-60;
@@ -44,11 +73,11 @@
 }
 
 .menu-content-bg {
-  margin: 90px auto auto;
   display: flex;
-  position: relative;
   flex-flow: column;
   justify-content: space-between;
+  margin: 90px auto auto;
+  position: relative;
   width: 540px;
   height: 480px;
   box-shadow: 0px 10px 100px $black;
@@ -63,9 +92,9 @@
   font-size: 1.5em;
 
   a {
+    width: 100%;
     color: $black;
     text-decoration: none;
-    width: 100%;
   }
 
   ul {
@@ -94,37 +123,56 @@
   #aincrad {
     width: 100%;
     height: 100%;
-    transform: translate3d(0, 0, 0);
     text-align: center;
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .overlay {
   display: block;
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   background-color: $white;
   z-index: 15;
 }
 
+@media screen and (max-width: 900px) {
+  .container-title {
+    img {
+      width: 200%;
+      top: 90%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container-title {
+    h1 {
+      font-size: 3em;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .menu-content-bg {
+    justify-content: space-around;
     margin: auto;
     width: 100%;
     height: 100%;
-    justify-content: space-around;
     transition: 0.5s;
   }
 }
 
 @media screen and (max-height: 600px) {
   .menu-content-bg {
+    justify-content: space-evenly;
     margin: auto;
     width: 100%;
     height: 100%;
     transition: 0.5s;
-    justify-content: space-evenly;
   }
 
   .btn-close {

@@ -9,7 +9,7 @@ $(document).ready(function () {
         right: "2em",
         bottom: "2em",
         opacity: "0.5",
-        width: "5%",
+        width: "3em",
         transform: "scale3d(1.2, 1.2, 1)",
       });
     } else {

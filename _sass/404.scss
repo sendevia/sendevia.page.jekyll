@@ -1,54 +1,7 @@
-.columnleft {
-  float: left;
-  width: 30%;
-  left: 70px;
-  top: 100px;
-}
+.container-detail {
+  padding: 2em 0;
 
-.columnright {
-  float: left;
-  width: 50%;
-  right: -70px;
-  top: 100px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.sign {
-  padding: 10px 0;
-  min-width: 200px;
-  max-width: 200px;
-
-  h1 {
-    font-size: 70px;
-  }
-}
-
-#warn {
-  width: 200px;
-  height: 200px;
-}
-
-#errcode {
-  width: 100px;
-  height: 100px;
-}
-
-.info-msg {
-  padding: 20px 30px 10px 30px;
-  text-align: left;
-
-  h2 {
-    padding: 0 0 30px 0;
-    font-size: 40px;
-  }
-
-  p {
-    padding: 0 0 10px 0;
-    letter-spacing: 2px;
+  #warn {
+    width: 20em;
   }
 }

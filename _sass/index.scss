@@ -1,23 +1,7 @@
-.container-title {
-  margin: auto;
-  text-align: center;
-  z-index: 10;
-
-  h1 {
-    margin: 2.3em auto auto auto;
-    font-size: 4em;
-    letter-spacing: 0.1em;
-    animation: t-FadeIn 1s ease-out 0.2s 1 both normal;
-  }
-
-  p {
-    margin: auto;
-    position: relative;
-    animation: t-FadeIn 1s cubic-bezier(0.39, 0.58, 0.57, 1) 0.5s 1 both normal;
-  }
-}
-
 .container-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   h1 {
     margin: 1.2em 0.4em 0.6em 0.8em;
     font-size: 1.6em;
@@ -60,3 +44,4 @@
     }
   }
 }
+

@@ -1,12 +1,11 @@
 title: AincradMix
 email: sendevialol@gmail.com
-twitter_username: sendevia
-email: sendevialol@gmail.com
-github_username: Sendevia
 github: https://github.com/Sendevia/AincradMix
 timezone: Asia/Shanghai
+last_version: 210601-1.8a
+current_version: master
+release_version: 210601-1.8a
 
-theme: 
 plugins:
   - jekyll-feed
 
@@ -24,4 +23,3 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - readme.md
- 

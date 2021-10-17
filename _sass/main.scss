@@ -14,7 +14,7 @@ $white-transparent-80: #ffffffe0;
 
 //主体开始
 * {
-  cursor: url(/assets/images/cursor.cur) 16 16, auto;
+  cursor: url(/assets/images/cursor.cur?v=1.1) 16 16, auto;
 }
 
 html,
@@ -68,7 +68,6 @@ body {
 
 .btn-item {
   @extend .disable-select;
-  cursor: pointer;
   transition: 0.3s;
 
   &:hover {
@@ -112,9 +111,4 @@ body {
   align-items: center;
 }
 
-//button {
-//  .btn-menu {
-//
-//  }
-//}
 //特殊效果结束
