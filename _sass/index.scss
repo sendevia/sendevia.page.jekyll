@@ -45,3 +45,13 @@
   }
 }
 
+.co-rt {
+  p {
+    display: flex;
+    align-items: center;
+    icon {
+      padding: 0 0.2em 0 0;
+      font-size: 1.5em;
+    }
+  }
+}

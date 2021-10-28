@@ -2,8 +2,8 @@ footer {
   @extend .flex-box-center;
   flex-direction: column;
   padding: 20px;
-  position: sticky;
   position: -webkit-sticky;
+  position: sticky;
   top: 100%;
   letter-spacing: 5px;
 

@@ -54,15 +54,15 @@ body {
 //特殊效果开始
 .acrylic-w {
   background-color: $white-transparent-80;
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: solid 2px $black-transparent-20;
 }
 
 .acrylic-b {
   background-color: $black-transparent-60;
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: solid 2px $white-transparent-20;
 }
 
@@ -81,7 +81,7 @@ body {
   }
 }
 
-.icon {
+icon {
   @extend .disable-select;
   font-family: "Material Icons";
   font-size: 1.6em;
@@ -98,10 +98,10 @@ body {
 }
 
 .disable-select {
-  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
+  user-select: none;
 }
 
 .flex-box-center {
