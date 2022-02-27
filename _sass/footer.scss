@@ -1,11 +1,12 @@
 footer {
   @extend .flex-box-center;
-  flex-direction: column;
-  padding: 20px;
-  position: -webkit-sticky;
-  position: sticky;
   top: 100%;
+  padding: 20px;
+  position: sticky;
   letter-spacing: 5px;
+  flex-direction: column;
+  font-family: "Fredoka";
+  position: -webkit-sticky;
 
   a {
     text-decoration: none;
@@ -13,6 +14,6 @@ footer {
 }
 
 .icon-heart {
-  padding: 0 0 0 0.3em;
   font-size: 1em;
+  padding: 0 0 0 0.35em;
 }
