@@ -55,3 +55,25 @@
     }
   }
 }
+
+#animation_button {
+  @extend .flex-box-center;
+  width: 7em;
+  margin: 1rem;
+  font-size: 2em;
+  padding: 1rem 2em;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  flex-direction: row-reverse;
+
+  &:hover {
+    background-color: $white-transparent-20;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #animation_button {
+    margin: 0;
+    padding: 1rem;
+  }
+}
