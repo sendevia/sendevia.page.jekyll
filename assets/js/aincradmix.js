@@ -50,10 +50,12 @@ $(document).ready(function () {
     $(".toggle-item").slideToggle(200);
   });
 
-  $("#animation_button").hover(function () {
-      lottie.play("ani_delimiter")
-    }, function () {
-      lottie.stop("ani_delimiter")
+  $("#animation_button").hover(
+    function () {
+      lottie.play("ani_delimiter");
+    },
+    function () {
+      lottie.stop("ani_delimiter");
     }
   );
 
