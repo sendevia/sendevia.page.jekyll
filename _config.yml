@@ -2,9 +2,7 @@ title: AincradMix
 email: sendevialol@gmail.com
 github: https://github.com/Sendevia/AincradMix
 timezone: Asia/Shanghai
-last_version: 210601-1.8a
-current_version: master
-release_version: 210601-1.8a
+current_version: release1.0
 
 plugins:
   - jekyll-feed
