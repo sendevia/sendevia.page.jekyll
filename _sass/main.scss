@@ -27,9 +27,11 @@ body {
   scrollbar-width: none;
   font-family: "ZCOOL XiaoWei";
   text-rendering: optimizeLegibility;
+
   ::-webkit-scrollbar {
     width: 0;
   }
+
   text-shadow: 0 2px 6px #131313;
 }
 
@@ -55,6 +57,7 @@ a {
 .cf-r {
   flex-grow: 10;
 }
+
 //页面布局结束
 
 //特殊效果开始
