@@ -360,7 +360,22 @@ a {
       }
 
       #segment-inactive {
-        @extend #segment-active;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 0px 16px;
+
+        position: static;
+        width: 137.33px;
+        left: calc(50% - 137.33px / 2 - 137.33px);
+        top: 0%;
+        bottom: 0%;
+
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+        margin: 0px 0px;
       }
     }
   }
