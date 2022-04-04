@@ -110,6 +110,8 @@ a {
   -webkit-user-drag: none;
   -webkit-user-select: none;
 
+  z-index: 1;
+
   .menu-fab {
     display: flex;
     flex-direction: column;
@@ -146,8 +148,8 @@ a {
       left: 12px;
       top: 40px;
 
-      box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+      box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.05);
+      filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
 
       flex: none;
       order: 1;
@@ -298,6 +300,89 @@ a {
 .content {
   position: absolute;
   margin: 0px 24px 0px 125px;
+
+  z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+
+  .m3-navigation-rail {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    bottom: 0px;
+    padding: 0px;
+
+    .menu-fab {
+      display: none;
+    }
+
+    .destinations {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      padding: 0px;
+      margin: 0px;
+
+      position: absolute;
+      width: 100%;
+      height: 80px;
+      left: 0px;
+      top: 0px;
+
+      overflow: hidden;
+
+      #segment-active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 0px 16px;
+
+        position: static;
+        width: 137.33px;
+        left: calc(50% - 137.33px / 2 - 137.33px);
+        top: 0%;
+        bottom: 0%;
+
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+        margin: 0px 0px;
+      }
+
+      #segment-inactive {
+        @extend #segment-active;
+      }
+    }
+  }
+  .content {
+    position: absolute;
+    margin: 0px 24px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .m3-navigation-rail {
+      background: $light-surface;
+      border-right: none;
+      border-top: 1px solid $light-outline;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .m3-navigation-rail {
+      background: $dark-surface;
+      border-right: none;
+      border-top: 1px solid $dark-outline;
+    }
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -358,7 +443,7 @@ a {
       }
     }
 
-    #segment-active {
+    #segment-inactive {
       #accent {
         background: none;
 
@@ -444,7 +529,7 @@ a {
       }
     }
 
-    #segment-active {
+    #segment-inactive {
       #accent {
         background: none;
 
