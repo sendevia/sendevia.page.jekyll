@@ -260,6 +260,8 @@ a {
 
   z-index: 0;
 
+  animation: fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
+
   toptitle {
     display: flex;
     flex-direction: column;
@@ -587,5 +589,18 @@ a {
       border-right: none;
       border-top: 1px solid $dark-outline;
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
   }
 }
