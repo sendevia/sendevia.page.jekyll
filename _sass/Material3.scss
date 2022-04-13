@@ -55,6 +55,7 @@ a {
   grid-column-end: 2;
 
   position: fixed;
+  width: 80px;
   height: 100%;
 
   flex: none;
@@ -62,7 +63,7 @@ a {
   flex-grow: 0;
   overflow-x: hidden;
 
-  transition: 0.3s ease-out;
+  transition: 0.3s cubic-bezier(0.21, 0.66, 0.57, 1);
 
   user-select: none;
   -moz-user-select: none;
@@ -77,15 +78,14 @@ a {
     align-items: center;
 
     position: static;
-    width: 80px;
-    height: 96px;
+    width: 100%;
     left: 0px;
     top: 56px;
 
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 40px 0px;
+    margin: 40px 0px 0px;
 
     #menu {
       position: static;
@@ -97,7 +97,9 @@ a {
       flex: none;
       order: 0;
       flex-grow: 0;
-      margin: 10px 0px;
+      padding: 20px;
+
+      cursor: pointer;
     }
 
     #fab {
@@ -147,7 +149,7 @@ a {
     align-items: center;
 
     position: static;
-    width: 80px;
+    width: 100%;
     left: 0px;
     top: calc(50% - 426px / 2 - 45px);
 
@@ -253,11 +255,14 @@ a {
       }
     }
   }
+
 }
+
 .content-gird {
   display: grid;
   grid-template-columns: 80px auto;
   grid-auto-rows: auto;
+  transition: 1s;
 }
 
 .content-container {

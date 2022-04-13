@@ -65,5 +65,20 @@
       .attr("id", "segment-active")
       .find("span")
       .attr("class", "material-icons");
+
+    var clickTime = 1;
+    $("#menu").click(function () {
+      if (clickTime++ % 2 != 0) {
+        $(".content-gird").css("grid-template-columns", "200px auto");
+        $(".m3-navigation-rail").css("width", "200px");
+        $("#fab").css({
+          width: "170px",
+          "box-shadow": "none",
+          filter: "brightness(1)",
+        });
+      } else {
+        $("*").removeAttr("style");
+      }
+    });
   });
 </script>
