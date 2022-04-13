@@ -60,6 +60,10 @@
 <script>
   $(document).ready(function () {
     var currentPage = window.location.pathname;
-    $("a[href='" + currentPage + "']").find("#segment-inactive").attr("id", "segment-active");
+    $("a[href='" + currentPage + "']")
+      .find("#segment-inactive")
+      .attr("id", "segment-active")
+      .find("span")
+      .attr("class", "material-icons");
   });
 </script>

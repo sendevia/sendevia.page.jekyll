@@ -29,10 +29,21 @@ a {
   text-decoration: none;
 
   &#in-content {
+    display: block;
     font-weight: bold;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 2px;
+
+    padding: 1rem;
+
+    &:after {
+      font-family: "Material Icons";
+      content: " arrow_forward";
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
   }
 }
 
@@ -255,8 +266,7 @@ a {
   align-items: flex-start;
   grid-column-start: 2;
   grid-column-end: 3;
-
-  margin: 40px 100px 20px;
+  margin: 6rem 3rem 1rem;
 
   z-index: 0;
 
@@ -266,10 +276,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
+    border-radius: 64px;
     width: 100%;
-    padding: 45px 0px 60px;
+    padding: 7rem 0rem;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
 
     img {
       width: 100%;
@@ -277,10 +290,14 @@ a {
     }
 
     h1 {
-      border-radius: 20px;
-      font-size: 45px;
-      padding: 100px 300px;
-      margin: 0px;
+      font-size: 4rem;
+      letter-spacing: 0.1rem;
+      margin: 0rem 0rem 0rem 5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0rem 0rem 0rem 5rem;
     }
   }
 }
@@ -371,10 +388,20 @@ a {
   }
 
   .content-container {
-    margin: 40px 20px 20px;
+    margin: 0rem 2rem 1rem;
+
     toptitle {
+      align-items: center;
+      border-radius: 0px;
+
       h1 {
+        font-size: 3rem;
+        margin: 0rem;
         padding: 0px;
+      }
+
+      p {
+        display: none;
       }
     }
   }
@@ -471,14 +498,21 @@ a {
 
   .content-container {
     toptitle {
+      background-color: $light-secondary-container;
+
       h1 {
         color: $light-on-secondary-container;
-        background-color: $light-secondary-container;
       }
     }
   }
 
   @media screen and (max-width: 768px) {
+    .content-container {
+      toptitle {
+        background-color: #00000000;
+      }
+    }
+
     .m3-navigation-rail {
       border-right: none;
       border-top: 1px solid $light-outline;
@@ -577,14 +611,21 @@ a {
 
   .content-container {
     toptitle {
+      background-color: $dark-secondary-container;
+
       h1 {
         color: $dark-on-secondary-container;
-        background-color: $dark-secondary-container;
       }
     }
   }
 
   @media screen and (max-width: 768px) {
+    .content-container {
+      toptitle {
+        background-color: #00000000;
+      }
+    }
+
     .m3-navigation-rail {
       border-right: none;
       border-top: 1px solid $dark-outline;
