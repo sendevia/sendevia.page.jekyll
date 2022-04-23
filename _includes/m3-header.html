@@ -1,26 +1,12 @@
 <div class="m3-navigation-rail">
-  <div class="menu-fab">
-    <div id="menu">
-      <span class="material-icons" id="menu-icon"> menu </span>
-    </div>
-
-    <div id="fab">
-      <a href="/">
-        <div id="base">
-          <div id="primary-icon">
-            <span class="material-icons" id="fab-icon"> apps </span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-
   <div class="destinations">
+    <!-- 标签页面指示开始 -->
     <a href="/">
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
             <span class="material-icons-outlined" id="segment-icon">
+              <!-- https://fonts.google.com/icons?icon.style=Outlined -->
               home
             </span>
           </div>
@@ -42,6 +28,32 @@
       </div>
     </a>
 
+    <a href="/components.html">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              draw
+            </span>
+          </div>
+        </div>
+        <p id="label">M3 组件</p>
+      </div>
+    </a>
+
+    <a href="/about-theme.html">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              info
+            </span>
+          </div>
+        </div>
+        <p id="label">关于主题</p>
+      </div>
+    </a>
+
     <a href="https://drive.sendevia.top">
       <div id="segment-inactive">
         <div id="accent">
@@ -59,6 +71,7 @@
 
 <script>
   $(document).ready(function () {
+    // 控制激活样式
     var currentPage = window.location.pathname;
     $("a[href='" + currentPage + "']")
       .find("#segment-inactive")
@@ -66,19 +79,21 @@
       .find("span")
       .attr("class", "material-icons");
 
-    var clickTime = 1;
-    $("#menu").click(function () {
-      if (clickTime++ % 2 != 0) {
-        $(".content-gird").css("grid-template-columns", "200px auto");
-        $(".m3-navigation-rail").css("width", "200px");
-        $("#fab").css({
-          width: "170px",
-          "box-shadow": "none",
-          filter: "brightness(1)",
-        });
-      } else {
-        $("*").removeAttr("style");
-      }
-    });
+    // 侧边栏展开控制
+    // var clickTime = 1;
+    // $("#menu").click(function () {
+    //   if (clickTime++ % 2 != 0) {
+    //     $(".content-gird").css("grid-template-columns", "200px auto");
+    //     $(".m3-navigation-rail").css("width", "200px");
+    //     $("#fab").css({
+    //       width: "170px",
+    //       "box-shadow": "none",
+    //       filter: "drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1))",
+    //     });
+    //   } else {
+    //     $("*").removeAttr("style");
+    //     let clickTime = 1;
+    //   }
+    // });
   });
 </script>
