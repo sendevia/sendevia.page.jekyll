@@ -60,306 +60,27 @@ a {
   }
 }
 
-button {
-  height: 40px;
+.page-about {
+  padding: 60px 0px;
+  width: 100%;
 
-  padding: 10px 24px;
-
-  background: none;
-  border-radius: 100px;
-
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-
-  transition: 1s cubic-bezier(0, 0.35, 0, 1);
-  @extend .disable-select;
-
-  cursor: pointer;
-
-  &.filled {
-    border-style: none;
-
-    color: var(--md-sys-color-on-primary);
-    background: var(--md-sys-color-primary);
-
-    &:hover {
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
-        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-      background: #1f1f1f66;
-      opacity: 0.38;
-      pointer-events: none;
-    }
-  }
-
-  &.outlined {
-    padding: 10px 23px;
-
-    color: var(--md-sys-color-primary);
-    border: 1px solid var(--md-sys-color-outline);
-
-    &:focus {
-      border: 1px solid var(--md-sys-color-primary);
-    }
-
-    &:active {
-      border: 1px solid var(--md-sys-color-outline);
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-      border: 1px solid #1f1f1f66;
-      opacity: 0.38;
-      pointer-events: none;
-    }
-  }
-}
-
-.m3-select-menu {
-  height: 56px;
-
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: 4px;
-
-  .drop-down {
-    display: flex;
-    align-items: center;
-
-    position: relative;
-    top: calc(50% - 24px / 2);
-
-    @extend .disable-select;
-
-    label {
-      margin: 0px 85px 0px 20px;
-    }
-
-    span.arrow {
-      position: absolute;
-      right: 10px;
-    }
-  }
-
-  ul {
-    display: none;
-    margin: 0px;
-    padding: 0px;
-
-    position: relative;
-    top: -24px;
-    left: -2px;
-    width: calc(100% + 4px);
-
-    border-radius: 4px;
-
-    color: var(--md-sys-color-on-secondary-container);
-    background: var(--md-sys-color-secondary-container);
-
-    list-style-type: none;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
-      0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-
-    li {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-
-      height: 48px;
-
-      span {
-        padding: 0px 20px;
-        @extend .disable-select;
-      }
-
-      div {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.5px;
-      }
-
-      &:nth-child(1) {
-        padding: 6px 0px 10px 0px;
-        border-bottom: 2px solid var(--md-sys-color-on-surface-variant);
-      }
-    }
-  }
-}
-
-.m3-navigation-rail {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  position: fixed;
-  width: 80px;
-  height: 100%;
-
-  background: var(--md-sys-color-surface);
-  border-right: 1px solid var(--md-sys-color-outline);
-
-  overflow-x: hidden;
-
-  transition: 0.3s cubic-bezier(0.21, 0.66, 0.57, 1);
-  @extend .disable-select;
-
-  z-index: 1;
-
-  .destinations {
+  div.figure {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
 
-    margin: 20px 0px;
-    position: static;
-    width: 100%;
-    left: 0px;
-    top: calc(50% - 426px / 2 - 45px);
-
-    #segment-active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0px;
-
-      position: static;
-      width: 70px;
-      height: 56px;
-      left: 5px;
-      top: 5px;
-
-      flex: none;
-      order: 0;
-      align-self: stretch;
-      flex-grow: 0;
-      margin: 4px 5px;
-
-      #accent {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        width: 56px;
-        height: 32px;
-        left: 10%;
-        right: 10%;
-        top: 0%;
-        bottom: 42.86%;
-
-        background: var(--md-sys-color-secondary-container);
-
-        border-radius: 100px;
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        margin: 4px 0px;
-
-        #segment-primary-icon {
-          position: absolute;
-          width: 24px;
-          height: 24px;
-
-          color: var(--md-sys-color-on-secondary-container);
-        }
-      }
-
-      #label {
-        position: static;
-        left: 10%;
-        right: 10%;
-        top: 64.29%;
-        bottom: 7.14%;
-
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
-
-        text-align: center;
-        letter-spacing: 0.5px;
-
-        color: var(--md-sys-color-on-surface);
-
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-        margin: 4px 0px;
-      }
-    }
-
-    #segment-inactive {
-      @extend #segment-active;
-
-      #accent {
-        @extend #accent;
-        width: 32px;
-        height: 32px;
-
-        background: none;
-
-        transition: 0.3s cubic-bezier(0.08, 0.82, 0.17, 1);
-
-        #segment-primary-icon {
-          @extend #segment-primary-icon;
-          color: var(--md-sys-color-on-secondary-container);
-        }
-      }
-
-      #label {
-        @extend #label;
-        line-height: 0px;
-        color: #00000000;
-        transition: 0.3s ease-out;
-      }
-
-      &:hover {
-        #accent {
-          width: 56px;
-          height: 32px;
-          background: var(--md-sys-color-secondary-container);
-        }
-
-        #label {
-          line-height: 12px;
-          color: var(--md-sys-color-on-secondary-container);
-        }
-      }
+    img {
+      -webkit-mask-image: url(/assets/images/mask.png);
+      -webkit-mask-size: 100%;
+      -webkit-mask-repeat: no-repeat;
+      background-size: 250px 250px;
+      width: 250px;
+      height: 250px;
     }
   }
-}
 
-.m3-text-field {
-  display: flex;
-  align-items: center;
-
-  position: relative;
-
-  height: 56px;
-
-  border: 1px solid var(--md-sys-color-outline);
-  box-sizing: border-box;
-  border-radius: 4px;
-
-  label {
-    margin: 0px 85px 0px 20px;
-  }
-
-  span.clear {
-    position: absolute;
-    right: 10px;
+  .links {
+    padding: 0px 90px;
   }
 }
 
@@ -381,7 +102,7 @@ button {
 
   animation: fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
 
-  toptitle {
+  .toptitle {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -389,40 +110,46 @@ button {
 
     background-color: var(--md-sys-color-secondary-container);
 
-    border-radius: 64px;
     width: 100%;
     padding: 7rem 0rem;
+    clip-path: inset(0 round 64px);
 
-    img {
-      width: 100%;
-      border-radius: 64px;
+    h1,
+    p {
+      z-index: 1;
     }
 
     h1 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 4rem;
-      letter-spacing: 0.1rem;
+      font-family: "Plus Jakarta Sans", sans-serif !important;
       margin: 0rem 0rem 0rem 5rem;
       color: var(--md-sys-color-on-secondary-container);
     }
 
     p {
-      font-size: 1.5rem;
       margin: 0rem 0rem 0rem 5rem;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+
+      z-index: 0;
     }
   }
 }
 
 .disable-select {
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
+  user-select: none;
 }
 
 @media screen and (max-width: 1200px) {
   .content-container {
-    toptitle {
+    .toptitle {
       h1,
       p {
         margin: 0rem 2rem 0rem 2rem;
@@ -443,7 +170,23 @@ button {
     padding: 0px 0px 120px 0px;
   }
 
-  .m3-navigation-rail {
+  .page-about {
+    padding: 0px;
+
+    .links {
+      padding: 0px;
+    }
+  }
+
+  .content-container {
+    .toptitle {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .material-navigation-rail {
     grid-row-start: 1;
     grid-row-end: 2;
 
@@ -518,7 +261,7 @@ button {
   .content-container {
     margin: 0rem 2rem 1rem;
 
-    toptitle {
+    .toptitle {
       background-color: #00000000;
       border-radius: 0px;
 
@@ -537,7 +280,7 @@ button {
 }
 
 @media screen and (max-width: 400px) {
-  .m3-navigation-rail {
+  .material-navigation-rail {
     .destinations {
       justify-content: flex-start;
     }
