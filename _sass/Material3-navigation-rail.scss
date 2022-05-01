@@ -120,6 +120,7 @@
         @extend #label;
         line-height: 0px;
         color: #00000000;
+        visibility: hidden;
         transition: 0.3s ease-out;
       }
 
@@ -133,6 +134,7 @@
         #label {
           line-height: 12px;
           color: var(--md-sys-color-on-secondary-container);
+          visibility: visible;
         }
       }
     }
