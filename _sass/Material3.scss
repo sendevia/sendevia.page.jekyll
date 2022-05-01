@@ -66,16 +66,39 @@ a {
 
   div.figure {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
 
-    img {
-      -webkit-mask-image: url(/assets/images/mask.png);
-      -webkit-mask-size: 100%;
-      -webkit-mask-repeat: no-repeat;
-      background-size: 250px 250px;
-      width: 250px;
-      height: 250px;
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        background-size: 300px;
+        width: 300px;
+
+        -webkit-mask-image: url(/assets/images/mask.svg);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 300px;
+        mask-image: url(/assets/images/mask.svg);
+        mask-repeat: no-repeat;
+        mask-size: 300px;
+      }
+    }
+
+    div {
+      @extend div, :first-child;
+
+      img {
+        background-size: 200px;
+        width: 200px;
+
+        -webkit-mask-size: 200px;
+        mask-size: 200px;
+      }
     }
   }
 
