@@ -11,7 +11,7 @@
     position: relative;
     top: calc(50% - 24px / 2);
 
-    @extend .disable-select;
+    @extend [disable-select];
 
     label {
       margin: 0px 85px 0px 20px;
@@ -54,7 +54,7 @@
 
       span {
         padding: 0px 20px;
-        @extend .disable-select;
+        @extend [disable-select];
       }
 
       div {

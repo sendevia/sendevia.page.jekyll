@@ -1,8 +1,9 @@
-title: AincradMix
+title: sendevia 的博客
 email: sendevialol@gmail.com
-github: https://github.com/Sendevia/AincradMix
+github: https://github.com/Sendevia/sendvia.github.io
+github_amix: https://github.com/Sendevia/AincradMix
+current_version_amix: release1.0
 timezone: Asia/Shanghai
-current_version: release1.0
 
 plugins:
   - jekyll-feed

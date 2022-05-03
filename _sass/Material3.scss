@@ -60,6 +60,35 @@ a {
   }
 }
 
+h1 {
+  @extend .headline1;
+}
+
+h2 {
+  @extend .headline2;
+}
+
+h3 {
+  @extend .headline3;
+}
+
+h4 {
+  @extend .headline4;
+}
+
+h5 {
+  @extend .headline5;
+}
+
+h6 {
+  @extend .headline6;
+}
+
+[disabled] {
+  @extend [disable-select];
+  pointer-events: none;
+}
+
 .page-about {
   padding: 60px 0px;
   width: 100%;
@@ -125,6 +154,12 @@ a {
 
   animation: fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
 
+  div {
+    &.block {
+      padding: 20px;
+    }
+  }
+  
   .toptitle {
     display: flex;
     flex-direction: column;
@@ -158,12 +193,15 @@ a {
       top: 0px;
       left: 0px;
 
+      -webkit-mask: linear-gradient(to right, transparent, #000);
+      mask: linear-gradient(to right, transparent, #000);
+
       z-index: 0;
     }
   }
 }
 
-.disable-select {
+[disable-select] {
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;

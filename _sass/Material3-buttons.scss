@@ -1,5 +1,5 @@
 material-button {
-  @extend .disable-select, .button;
+  @extend [disable-select], .button;
   padding: calc(var(--md-sys-typescale-button-line-height) / 2) 24px;
 
   border-radius: 100px;
