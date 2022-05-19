@@ -1,1 +1,34 @@
-// place holder
+material-dialog {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    gap: 24px;
+  }
+
+  &[basic] {
+    .container {
+      padding: 24px;
+      color: var(--md-sys-color-on-tertiary-container);
+      background: var(--md-sys-color-tertiary-container);
+
+      border-radius: 28px;
+
+      div {
+        h1 {
+          @extend .headline-small;
+          margin: 0px 0px 8px 0px;
+        }
+
+        p {
+          @extend .body-medium;
+          margin: 8px 0px 0px 0px;
+        }
+      }
+    }
+  }
+}

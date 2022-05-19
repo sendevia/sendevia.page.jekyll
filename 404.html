@@ -1,6 +1,24 @@
 ---
 permalink: /404.html
 layout: Material3
-title: 404 NOT FOUND
-description: 您所访问页面不存在或已失效，<p>请检查链接是否正确。
+title: 404_NOT_FOUND
+description: 所访问页面不存在或已失效，请检查链接是否正确。
 ---
+
+<div class="page-404">
+  <h1>:(</h1>
+  <p>你的网页遇到问题，不需要重启。</p>
+  <p>我们不收集某些错误信息，然后你可以 <a href="/">返回本站首页</a></p>
+  <br /><br />
+  <p>100% 完成</p>
+  <br />
+  <div id="qr-code">
+    <div>
+      <img src="/assets/images/qrcode.svg" alt="QR Code" />
+    </div>
+    <div>
+      <p>{{ page.description }}</p>
+      <p>终止代码：{{ page.title }}</p>
+    </div>
+  </div>
+</div>

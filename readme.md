@@ -19,11 +19,7 @@ sudo pacman -Sy ruby base-devel --noconfirm
 2. 配置环境变量
 
 ```bash
-echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
-```
-
-```bash
-echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/.local/share/gem"\nexport PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
 ```
 
 3. 使变量生效
@@ -32,7 +28,13 @@ echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-4. 切换到 sendevia.github.io 文件夹
+4. 安装 Jekyll
+
+```ruby
+gem install bundler jekyll
+```
+
+5. 切换到 sendevia.github.io 文件夹
 
 ```ruby
 bundle install

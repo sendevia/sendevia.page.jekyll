@@ -1,48 +1,175 @@
 ---
 layout: Material3
-title: "Material3 Components"
-description: "Material3 组件示例"
+title: Material3 Components
+description: Material3 组件示例
 ---
 
 <div class="page-components">
-  <material-button class="filled">Button</material-button>
-  <material-button class="filled" disabled>Disabled</material-button>
-  <material-button class="outlined">Button</material-button>
-  <material-button class="outlined" disabled>Disabled</material-button>
-  <div class="material-select-menu" id="menu-1">
-    <div class="drop-down">
-      <label>Menu</label>
-      <span class="material-icons arrow"> arrow_drop_down </span>
-    </div>
-    <ul class="lists" style="display: none">
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>1</div>
-      </li>
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>2</div>
-      </li>
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>3</div>
-      </li>
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>4</div>
-      </li>
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>5</div>
-      </li>
-      <li class="item">
-        <span class="material-icons-outlined"> category </span>
-        <div>6</div>
-      </li>
-    </ul>
+  <div class="part-typography">
+    <h1>Typography</h1>
+    <h1>Headline 1</h1>
+    <h2>Headline 2</h2>
+    <h3>Headline 3</h3>
+    <h4>Headline 4</h4>
+    <h5>Headline 5</h5>
+    <h6>Headline 6</h6>
   </div>
-  <div class="material-text-field">
-    <label>Label</label>
-    <span class="material-icons-outlined clear"> cancel </span>
+
+  <div class="part-buttons" style="gap: 10px">
+    <h1>Buttons</h1>
+
+    <material-button class="elevated">
+      <div class="container">
+        <div id="label-text">Elevated</div>
+      </div>
+    </material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="elevated icon">
+      <div class="container">
+        <span>add</span>
+        <div id="label-text">Elevated</div>
+      </div>
+    </material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="filled">Filled</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="filled icon"
+      ><span>add</span> Filled</material-button
+    >
+    <!--  -->
+    <!--  -->
+    <material-button class="filled-tonal">Filled tonal</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="outlined">Outlined</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="text">Text</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="elevated" disabled>Elevated</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="filled" disabled>Filled</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="filled-tonal" disabled
+      >Filled tonal</material-button
+    >
+    <!--  -->
+    <!--  -->
+    <material-button class="outlined" disabled>Outlined</material-button>
+    <!--  -->
+    <!--  -->
+    <material-button class="text" disabled>Text</material-button>
+  </div>
+
+  <div class="part-menus">
+    <h1>Menus</h1>
+    <div class="material-select-menu" id="menu-1">
+      <div class="drop-down">
+        <label>Menu</label>
+        <span class="material-icons arrow"> arrow_drop_down </span>
+      </div>
+      <ul class="lists" style="display: none">
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>1</div>
+        </li>
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>2</div>
+        </li>
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>3</div>
+        </li>
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>4</div>
+        </li>
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>5</div>
+        </li>
+        <li class="item">
+          <span class="material-icons-outlined"> category </span>
+          <div>6</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="part-text-fields">
+    <h1>Text fields</h1>
+    <div class="material-text-field">
+      <label>Label</label>
+      <span class="material-icons-outlined clear"> cancel </span>
+    </div>
+  </div>
+
+  <div class="part-cards">
+    <h1>Cards</h1>
+    <!-- https://m3.material.io/components/cards/ -->
+    <material-card elevated>
+      <div class="container">123</div>
+    </material-card>
+  </div>
+
+  <div class="part-chips">
+    <h1>Chips</h1>
+    <!-- https://m3.material.io/components/chips/ -->
+    <material-chip class="assist" enabled>
+      <div class="container">
+        <p class="label-text">Enabled</p>
+      </div>
+    </material-chip>
+
+    <material-chip class="assist" enabled>
+      <div class="container">
+        <span class="material-icons-outlined leading-icon">info</span>
+        <p class="label-text">Enabled</p>
+      </div>
+    </material-chip>
+
+    <material-chip class="assist" disabled>
+      <div class="container">
+        <span class="material-icons-outlined leading-icon">info</span>
+        <p class="label-text">Disabled</p>
+      </div>
+    </material-chip>
+
+    <material-chip class="assist" id="elevated" enabled>
+      <div class="container">
+        <span class="material-icons-outlined leading-icon">info</span>
+        <p class="label-text">Enabled</p>
+      </div>
+    </material-chip>
+
+    <material-chip class="assist" id="elevated" disabled>
+      <div class="container">
+        <span class="material-icons-outlined leading-icon">info</span>
+        <p class="label-text">Disabled</p>
+      </div>
+    </material-chip>
+  </div>
+
+  <div class="part-dialogs">
+    <h1>Dialogs</h1>
+    <!-- https://m3.material.io/components/dialogs/ -->
+    <material-dialog basic>
+      <div class="container">
+        <div>
+          <h1>Simple dialog</h1>
+          <p>This is a simple description.</p>
+        </div>
+        <material-button class="filled">okey</material-button>
+      </div>
+    </material-dialog>
+
+    <material-dialog class="basic" icon></material-dialog>
   </div>
 </div>
