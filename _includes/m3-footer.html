@@ -1,5 +1,41 @@
 <footer></footer>
-<script
-  type="text/javascript"
-  src="/assets/js/material-control.js?v=0.0.1"
-></script>
+<script>
+  $(function () {
+    var currentPage = window.location.pathname;
+    $("a[href='" + currentPage + "']")
+      .find("#segment-inactive")
+      .attr("id", "segment-active")
+      .find("span")
+      .attr("class", "material-icons");
+
+    $(".material-select-menu").click(function () {
+      var isMenuClick = $(this).attr("id");
+      if (isMenuClick) {
+        $("#" + isMenuClick)
+          .find("ul")
+          .css("display", "block");
+      }
+    });
+
+    function changeRail() {
+      $("div")
+        .find(".material-navigation-rail")
+        .attr("class", "material-navigation-bar");
+    }
+
+    if ($(document.body).width() <= 768) {
+      changeRail();
+    }
+
+    $(window).resize(function () {
+      var bodyWidth = $(document.body).width();
+      if (bodyWidth > 768) {
+        $("div")
+          .find(".material-navigation-bar")
+          .attr("class", "material-navigation-rail");
+      } else {
+        changeRail();
+      }
+    });
+  });
+</script>

@@ -69,7 +69,7 @@
       </div>
     </a>
 
-    <a href="/posts">
+    <!-- <a href="/posts">
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
@@ -80,20 +80,8 @@
         </div>
         <p id="label">文章</p>
       </div>
-    </a>
+    </a> -->
   </div>
   <!-- 页面指示结束 -->
   <span></span>
 </div>
-
-<script>
-  $(document).ready(function () {
-    // 控制激活样式
-    var currentPage = window.location.pathname;
-    $("a[href='" + currentPage + "']")
-      .find("#segment-inactive")
-      .attr("id", "segment-active")
-      .find("span")
-      .attr("class", "material-icons");
-  });
-</script>

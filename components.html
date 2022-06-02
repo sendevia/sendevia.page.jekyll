@@ -6,7 +6,7 @@ description: Material3 组件示例
 
 <div class="page-components">
   <div class="part-typography">
-    <h1>Typography</h1>
+    <p id="title">Typography</p>
     <h1>Headline 1</h1>
     <h2>Headline 2</h2>
     <h3>Headline 3</h3>
@@ -15,60 +15,103 @@ description: Material3 组件示例
     <h6>Headline 6</h6>
   </div>
 
-  <div class="part-buttons" style="gap: 10px">
-    <h1>Buttons</h1>
+  <div class="part-buttons">
+    <p id="title">Buttons</p>
+    <div style="display: grid; justify-items: center; gap: 10px">
+      <material-button class="elevated">
+        <p>Elevated</p>
+      </material-button>
 
-    <material-button class="elevated">
-      <div class="container">
-        <div id="label-text">Elevated</div>
-      </div>
-    </material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="elevated icon">
-      <div class="container">
+      <material-button class="elevated icon">
         <span>add</span>
-        <div id="label-text">Elevated</div>
-      </div>
-    </material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="filled">Filled</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="filled icon"
-      ><span>add</span> Filled</material-button
-    >
-    <!--  -->
-    <!--  -->
-    <material-button class="filled-tonal">Filled tonal</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="outlined">Outlined</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="text">Text</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="elevated" disabled>Elevated</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="filled" disabled>Filled</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="filled-tonal" disabled
-      >Filled tonal</material-button
-    >
-    <!--  -->
-    <!--  -->
-    <material-button class="outlined" disabled>Outlined</material-button>
-    <!--  -->
-    <!--  -->
-    <material-button class="text" disabled>Text</material-button>
+        <p>Elevated</p>
+      </material-button>
+
+      <material-button class="filled">
+        <p>Filled</p>
+      </material-button>
+
+      <material-button class="filled icon">
+        <span>add</span>
+        <p>Filled</p>
+      </material-button>
+
+      <material-button class="filled-tonal">
+        <p>Filled tonal</p>
+      </material-button>
+
+      <material-button class="filled-tonal icon">
+        <span>add</span>
+        <p>Filled tonal</p>
+      </material-button>
+
+      <material-button class="outlined">
+        <p>Outlined</p>
+      </material-button>
+
+      <material-button class="outlined icon">
+        <span>add</span>
+        <p>Outlined</p>
+      </material-button>
+
+      <material-button class="text">
+        <p>Text</p>
+      </material-button>
+
+      <material-button class="text icon">
+        <span>add</span>
+        <p>Text</p>
+      </material-button>
+
+      <material-button class="elevated" disabled>
+        <p>Elevated</p>
+      </material-button>
+
+      <material-button class="elevated icon" disabled>
+        <span>add</span>
+        <p>Elevated</p>
+      </material-button>
+
+      <material-button class="filled" disabled>
+        <p>Filled</p>
+      </material-button>
+
+      <material-button class="filled icon" disabled>
+        <span>add</span>
+        <p>Filled</p>
+      </material-button>
+
+      <material-button class="filled-tonal" disabled>
+        <p>Filled tonal</p>
+      </material-button>
+
+      <material-button class="filled-tonal icon" disabled>
+        <span>add</span>
+        <p>Filled tonal</p>
+      </material-button>
+
+      <material-button class="outlined" disabled>
+        <p>Outlined</p>
+      </material-button>
+
+      <material-button class="outlined icon" disabled>
+        <span>add</span>
+        <p>Outlined</p>
+      </material-button>
+
+      <material-button class="text" disabled>
+        <p>Text</p>
+      </material-button>
+
+      <material-button class="text icon" disabled>
+        <span>add</span>
+        <p>Text</p>
+      </material-button>
+    </div>
   </div>
 
   <div class="part-menus">
-    <h1>Menus</h1>
+    <p id="title">Menus</p>
     <div class="material-select-menu" id="menu-1">
       <div class="drop-down">
         <label>Menu</label>
@@ -104,7 +147,7 @@ description: Material3 组件示例
   </div>
 
   <div class="part-text-fields">
-    <h1>Text fields</h1>
+    <p id="title">Text fields</p>
     <div class="material-text-field">
       <label>Label</label>
       <span class="material-icons-outlined clear"> cancel </span>
@@ -112,7 +155,7 @@ description: Material3 组件示例
   </div>
 
   <div class="part-cards">
-    <h1>Cards</h1>
+    <p id="title">Cards</p>
     <!-- https://m3.material.io/components/cards/ -->
     <material-card elevated>
       <div class="container">123</div>
@@ -120,7 +163,7 @@ description: Material3 组件示例
   </div>
 
   <div class="part-chips">
-    <h1>Chips</h1>
+    <p id="title">Chips</p>
     <!-- https://m3.material.io/components/chips/ -->
     <material-chip class="assist" enabled>
       <div class="container">
@@ -158,15 +201,17 @@ description: Material3 组件示例
   </div>
 
   <div class="part-dialogs">
-    <h1>Dialogs</h1>
+    <p id="title">Dialogs</p>
     <!-- https://m3.material.io/components/dialogs/ -->
     <material-dialog basic>
       <div class="container">
         <div>
-          <h1>Simple dialog</h1>
+          <p>Simple dialog</p>
           <p>This is a simple description.</p>
         </div>
-        <material-button class="filled">okey</material-button>
+        <material-button class="text">
+          <p>OK</p>
+        </material-button>
       </div>
     </material-dialog>
 

@@ -2,6 +2,7 @@ material-chip {
   .leading-icon {
     @extend .disable-select;
   }
+
   &.assist {
     &[enabled] {
       .container {
@@ -38,6 +39,7 @@ material-chip {
         flex-grow: 0;
       }
     }
+
     &[disabled] {
       .container {
         display: flex;
@@ -46,8 +48,7 @@ material-chip {
         padding: 6px 16px 6px 8px;
 
         height: 32px;
-        border: 1px solid
-          change-color($color: $md-sys-color-on-surface-variant, $alpha: 0.12);
+        border: 1px solid change-color($color: $md-sys-color-on-surface-variant, $alpha: 0.12);
         box-sizing: border-box;
         border-radius: 8px;
       }
@@ -78,6 +79,7 @@ material-chip {
         opacity: 0.38;
       }
     }
+
     &#elevated {
       &[enabled] {
         .container {
@@ -116,6 +118,7 @@ material-chip {
           flex-grow: 0;
         }
       }
+
       &[disabled] {
         .container {
           display: flex;

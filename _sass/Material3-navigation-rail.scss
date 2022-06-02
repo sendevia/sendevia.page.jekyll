@@ -14,8 +14,8 @@
   border-right: 1px solid var(--md-sys-color-outline);
 
   overflow-x: hidden;
-  transition: 0.3s cubic-bezier(0.21, 0.66, 0.57, 1);
-  z-index: 1;
+  animation: fade 0.4s;
+  z-index: 100;
 
   .destinations {
     display: flex;
@@ -116,6 +116,7 @@
 
         #segment-primary-icon {
           @extend #segment-primary-icon;
+
           #segment-icon {
             @extend #segment-icon;
           }
@@ -144,11 +145,5 @@
         }
       }
     }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .material-navigation-rail {
-    display: none;
   }
 }

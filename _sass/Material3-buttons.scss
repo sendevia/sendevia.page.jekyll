@@ -1,7 +1,13 @@
 material-button {
-  @extend [disable-select], .label-large;
+  @extend [disable-select];
   display: flex;
-  padding: calc(var(--md-sys-typescale-button-line-height) / 2) 24px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+
+  padding: 10px 24px;
 
   border-radius: 100px;
 
@@ -9,14 +15,18 @@ material-button {
   cursor: pointer;
 
   &.icon {
-    padding: calc(var(--md-sys-typescale-button-line-height) / 2) 24px
-      calc(var(--md-sys-typescale-button-line-height) / 2) 16px;
+    padding: 10px 24px 10px 16px;
 
-    span {
+    &>span {
       padding-right: 8px;
       font-family: "Material Icons";
       font-size: 18px;
     }
+  }
+
+  &>p {
+    @extend .label-large;
+    margin: 0px;
   }
 
   &.elevated {
@@ -27,9 +37,14 @@ material-button {
       0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 
     &[disabled] {
-      color: var(--md-sys-color-on-surface);
-      background: #1f1f1f66;
-      opacity: 0.38;
+      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
+      box-shadow: none;
+
+      &.icon>span,
+      &>p {
+        color: var(--md-sys-color-on-surface);
+        opacity: 0.38;
+      }
     }
   }
 
@@ -37,36 +52,185 @@ material-button {
     color: var(--md-sys-color-on-primary);
     background: var(--md-sys-color-primary);
 
-    &:hover {
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
-        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    &[disabled] {
+      color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
     }
 
+    &:hover {
+      background: change-color($color: $md-sys-color-primary, $lightness: 60%);
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      background: change-color($color: $md-sys-color-primary, $lightness: 50%);
+    }
+
+    &:active {
+      background: change-color($color: $md-sys-color-primary, $lightness: 50%);
+    }
+  }
+
+  &.filled-tonal {
+    color: var(--md-sys-color-on-secondary-container);
+    background: var(--md-sys-color-secondary-container);
+
     &[disabled] {
-      color: var(--md-sys-color-on-surface);
-      background: #1f1f1f66;
-      opacity: 0.38;
+      color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
+    }
+
+    &:hover {
+      background: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-hover-state-layer-opacity);
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      background: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-focus-state-layer-opacity);
+    }
+
+    &:active {
+      background: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-pressed-state-layer-opacity);
     }
   }
 
   &.outlined {
-    padding: 10px 23px;
+    padding: 9px 23px;
 
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
+    &.icon {
+      padding: 9px 15px 9px 11px;
+    }
+
+    &[disabled] {
+      color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+      border: 1px solid change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
+    }
+
+    &:hover {
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-hover-state-layer-opacity);
+    }
+
     &:focus {
       border: 1px solid var(--md-sys-color-primary);
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-focus-state-layer-opacity);
     }
 
     &:active {
-      border: 1px solid var(--md-sys-color-outline);
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
+    }
+  }
+
+  &.text {
+    padding: 10px 12px;
+    min-width: 40px;
+
+    color: var(--md-sys-color-primary);
+
+    &.icon {
+      padding: 10px 16px 10px 12px;
     }
 
     &[disabled] {
       color: var(--md-sys-color-on-surface);
-      border: 1px solid #1f1f1f66;
       opacity: 0.38;
+    }
+
+    &:hover {
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-hover-state-layer-opacity);
+    }
+
+    &:focus {
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-focus-state-layer-opacity);
+    }
+
+    &:active {
+      background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
+    }
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  material-button {
+    &.elevated {
+      &[disabled] {
+        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
+      }
+    }
+
+    &.filled {
+      &[disabled] {
+        color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
+      }
+  
+      &:hover {
+        background: change-color($color: $md-sys-color-primary-dark, $lightness: 75%);
+      }
+  
+      &:focus {
+        background: change-color($color: $md-sys-color-primary-dark, $lightness: 80%);
+      }
+  
+      &:active {
+        background: change-color($color: $md-sys-color-primary-dark, $lightness: 80%);
+      }
+    }
+  
+    &.filled-tonal {
+      &[disabled] {
+        color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
+      }
+
+      &:hover {
+        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
+      }
+
+      &:focus {
+        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
+      }
+
+      &:active {
+        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      }
+
+    }
+
+    &.outlined {
+      &[disabled] {
+        color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+        border: 1px solid change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
+      }
+
+      &:hover {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
+      }
+
+      &:focus {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
+      }
+
+      &:active {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      }
+    }
+
+    &.text {
+      &:hover {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
+      }
+
+      &:focus {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
+      }
+
+      &:active {
+        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      }
     }
   }
 }
