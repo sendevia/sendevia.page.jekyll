@@ -4,7 +4,6 @@
   <body class="material-theme">
     <!-- 判断是否404 -->
     {% if page.permalink == "/404.html" %}
-    <!-- 404样式开始 -->
     <style>
       body {
         color: var(--md-sys-color-on-error-container);
@@ -14,25 +13,18 @@
         padding: 80px;
       }
     </style>
-    <!-- 404样式结束 -->
-    <!-- 引入内容 -->
     {% include content.html %}
     <!-- 404结束 -->
-    <!-- 以下是非404页面 -->
     {% else %}
     <!-- 此处只在屏幕的长小于290px或高小于100px时显示 -->
-    <div class="window-size-error">
+    <div class="window-size-error" style="display: none;">
       <h1>窗口尺寸异常，内容无法正常显示</h1>
     </div>
-    <!-- 屏幕尺寸判断结束 -->
-    <!-- 主要页面布局开始 -->
+    <!-- 主要页面布局 -->
     <div class="content-gird">
       {% include m3-header.html %}
       <div class="content-container">{% include content.html %}</div>
     </div>
-    {% include m3-footer.html %}
-    <!-- 主要页面布局结束 -->
-    <!-- 结束判断 -->
-    {% endif %}
+    {% include m3-footer.html %} {% endif %}
   </body>
 </html>

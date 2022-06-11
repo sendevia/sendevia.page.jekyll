@@ -6,8 +6,8 @@ material-button {
   justify-content: center;
   align-items: center;
 
-
   padding: 10px 24px;
+  width: max-content;
 
   border-radius: 100px;
 
@@ -25,8 +25,9 @@ material-button {
   }
 
   &>p {
-    @extend .label-large;
     margin: 0px;
+    @extend .label-large;
+    text-transform: capitalize;
   }
 
   &.elevated {

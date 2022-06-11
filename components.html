@@ -7,214 +7,404 @@ description: Material3 组件示例
 <div class="page-components">
   <div class="part-typography">
     <p id="title">Typography</p>
-    <h1>Headline 1</h1>
-    <h2>Headline 2</h2>
-    <h3>Headline 3</h3>
-    <h4>Headline 4</h4>
-    <h5>Headline 5</h5>
-    <h6>Headline 6</h6>
+    <table>
+      <thead>
+        <tr>
+          <th>效果</th>
+          <th>元素</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <h1>Headline 1</h1>
+          </td>
+          <td>h1</td>
+        </tr>
+        <tr>
+          <td>
+            <h2>Headline 2</h2>
+          </td>
+          <td>h2</td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Headline 3</h3>
+          </td>
+          <td>h3</td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Headline 4</h4>
+          </td>
+          <td>h4</td>
+        </tr>
+        <tr>
+          <td>
+            <h5>Headline 5</h5>
+          </td>
+          <td>h5</td>
+        </tr>
+        <tr>
+          <td>
+            <h6>Headline 6</h6>
+          </td>
+          <td>h6</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="part-buttons">
     <p id="title">Buttons</p>
-    <div style="display: grid; justify-items: center; gap: 10px">
-      <material-button class="elevated">
-        <p>Elevated</p>
-      </material-button>
-
-      <material-button class="elevated icon">
-        <span>add</span>
-        <p>Elevated</p>
-      </material-button>
-
-      <material-button class="filled">
-        <p>Filled</p>
-      </material-button>
-
-      <material-button class="filled icon">
-        <span>add</span>
-        <p>Filled</p>
-      </material-button>
-
-      <material-button class="filled-tonal">
-        <p>Filled tonal</p>
-      </material-button>
-
-      <material-button class="filled-tonal icon">
-        <span>add</span>
-        <p>Filled tonal</p>
-      </material-button>
-
-      <material-button class="outlined">
-        <p>Outlined</p>
-      </material-button>
-
-      <material-button class="outlined icon">
-        <span>add</span>
-        <p>Outlined</p>
-      </material-button>
-
-      <material-button class="text">
-        <p>Text</p>
-      </material-button>
-
-      <material-button class="text icon">
-        <span>add</span>
-        <p>Text</p>
-      </material-button>
-
-      <material-button class="elevated" disabled>
-        <p>Elevated</p>
-      </material-button>
-
-      <material-button class="elevated icon" disabled>
-        <span>add</span>
-        <p>Elevated</p>
-      </material-button>
-
-      <material-button class="filled" disabled>
-        <p>Filled</p>
-      </material-button>
-
-      <material-button class="filled icon" disabled>
-        <span>add</span>
-        <p>Filled</p>
-      </material-button>
-
-      <material-button class="filled-tonal" disabled>
-        <p>Filled tonal</p>
-      </material-button>
-
-      <material-button class="filled-tonal icon" disabled>
-        <span>add</span>
-        <p>Filled tonal</p>
-      </material-button>
-
-      <material-button class="outlined" disabled>
-        <p>Outlined</p>
-      </material-button>
-
-      <material-button class="outlined icon" disabled>
-        <span>add</span>
-        <p>Outlined</p>
-      </material-button>
-
-      <material-button class="text" disabled>
-        <p>Text</p>
-      </material-button>
-
-      <material-button class="text icon" disabled>
-        <span>add</span>
-        <p>Text</p>
-      </material-button>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>正常</th>
+          <th>正常，有图标</th>
+          <th>失效</th>
+          <th>失效，有图标</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>elevated</code></td>
+          <td>
+            <material-button class="elevated">
+              <p>Elevated</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="elevated icon">
+              <span>add</span>
+              <p>Elevated</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="elevated" disabled>
+              <p>Elevated</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="elevated icon" disabled>
+              <span>add</span>
+              <p>Elevated</p>
+            </material-button>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filled</code></td>
+          <td>
+            <material-button class="filled">
+              <p>Filled</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled icon">
+              <span>add</span>
+              <p>filled</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled" disabled>
+              <p>filled</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled icon" disabled>
+              <span>add</span>
+              <p>filled</p>
+            </material-button>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filled-tonal</code></td>
+          <td>
+            <material-button class="filled-tonal">
+              <p>filled-tonal</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled-tonal icon">
+              <span>add</span>
+              <p>filled-tonal</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled-tonal" disabled>
+              <p>filled-tonal</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="filled-tonal icon" disabled>
+              <span>add</span>
+              <p>filled-tonal</p>
+            </material-button>
+          </td>
+        </tr>
+        <tr>
+          <td><code>outlined</code></td>
+          <td>
+            <material-button class="outlined">
+              <p>outlined</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="outlined icon">
+              <span>add</span>
+              <p>outlined</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="outlined" disabled>
+              <p>outlined</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="outlined icon" disabled>
+              <span>add</span>
+              <p>outlined</p>
+            </material-button>
+          </td>
+        </tr>
+        <tr>
+          <td><code>text</code></td>
+          <td>
+            <material-button class="text">
+              <p>text</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="text icon">
+              <span>add</span>
+              <p>text</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="text" disabled>
+              <p>text</p>
+            </material-button>
+          </td>
+          <td>
+            <material-button class="text icon" disabled>
+              <span>add</span>
+              <p>text</p>
+            </material-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="part-menus">
     <p id="title">Menus</p>
-    <div class="material-select-menu" id="menu-1">
-      <div class="drop-down">
-        <label>Menu</label>
-        <span class="material-icons arrow"> arrow_drop_down </span>
-      </div>
-      <ul class="lists" style="display: none">
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>1</div>
-        </li>
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>2</div>
-        </li>
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>3</div>
-        </li>
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>4</div>
-        </li>
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>5</div>
-        </li>
-        <li class="item">
-          <span class="material-icons-outlined"> category </span>
-          <div>6</div>
-        </li>
-      </ul>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>效果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>material-select-menu</code></td>
+          <td>
+            <div class="material-select-menu" id="menu-1">
+              <div class="drop-down">
+                <label>Menu</label>
+                <span class="material-icons arrow"> arrow_drop_down </span>
+              </div>
+              <ul class="lists" style="display: none">
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>1</div>
+                </li>
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>2</div>
+                </li>
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>3</div>
+                </li>
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>4</div>
+                </li>
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>5</div>
+                </li>
+                <li class="item">
+                  <span class="material-icons-outlined"> category </span>
+                  <div>6</div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="part-text-fields">
     <p id="title">Text fields</p>
-    <div class="material-text-field">
-      <label>Label</label>
-      <span class="material-icons-outlined clear"> cancel </span>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>样式</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>material-text-field</code></td>
+          <td>
+            <div class="material-text-field">
+              <label>Label</label>
+              <span class="material-icons-outlined clear"> cancel </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
+  <!-- https://m3.material.io/components/cards/ -->
   <div class="part-cards">
     <p id="title">Cards</p>
-    <!-- https://m3.material.io/components/cards/ -->
-    <material-card elevated>
-      <div class="container">123</div>
-    </material-card>
+    <table>
+      <thead>
+        <tr>
+          <th>元素</th>
+          <th>Class</th>
+          <th>Id</th>
+          <th>样式</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>div</code></td>
+          <td><code>material-card</code></td>
+          <td><code>elevated</code></td>
+          <td>
+            <material-card elevated>
+              <div class="container">123</div>
+            </material-card>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
+  <!-- https://m3.material.io/components/chips/ -->
   <div class="part-chips">
     <p id="title">Chips</p>
-    <!-- https://m3.material.io/components/chips/ -->
-    <material-chip class="assist" enabled>
-      <div class="container">
-        <p class="label-text">Enabled</p>
-      </div>
-    </material-chip>
-
-    <material-chip class="assist" enabled>
-      <div class="container">
-        <span class="material-icons-outlined leading-icon">info</span>
-        <p class="label-text">Enabled</p>
-      </div>
-    </material-chip>
-
-    <material-chip class="assist" disabled>
-      <div class="container">
-        <span class="material-icons-outlined leading-icon">info</span>
-        <p class="label-text">Disabled</p>
-      </div>
-    </material-chip>
-
-    <material-chip class="assist" id="elevated" enabled>
-      <div class="container">
-        <span class="material-icons-outlined leading-icon">info</span>
-        <p class="label-text">Enabled</p>
-      </div>
-    </material-chip>
-
-    <material-chip class="assist" id="elevated" disabled>
-      <div class="container">
-        <span class="material-icons-outlined leading-icon">info</span>
-        <p class="label-text">Disabled</p>
-      </div>
-    </material-chip>
+    <table>
+      <thead>
+        <tr>
+          <th>元素</th>
+          <th>Class</th>
+          <th>Id</th>
+          <th>正常样式</th>
+          <th>正常样式，带图标</th>
+          <th>失效样式</th>
+          <th>失效样式，带图标</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2"><code>material-chip</code></td>
+          <td><code>assist</code></td>
+          <td>-</td>
+          <td>
+            <material-chip class="assist" enabled>
+              <div class="container">
+                <p class="label-text">Enabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="assist" enabled>
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">info</span>
+                <p class="label-text">Enabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="assist" disabled>
+              <div class="container">
+                <p class="label-text">Disabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="assist" disabled>
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">info</span>
+                <p class="label-text">Disabled</p>
+              </div>
+            </material-chip>
+          </td>
+        </tr>
+        <tr>
+          <td><code>assist</code></td>
+          <td><code>elevated</code></td>
+          <td></td>
+          <td>
+            <material-chip class="assist" id="elevated" enabled>
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">info</span>
+                <p class="label-text">Enabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td></td>
+          <td>
+            <material-chip class="assist" id="elevated" disabled>
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">info</span>
+                <p class="label-text">Disabled</p>
+              </div>
+            </material-chip>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
+  <!-- https://m3.material.io/components/dialogs/ -->
   <div class="part-dialogs">
     <p id="title">Dialogs</p>
-    <!-- https://m3.material.io/components/dialogs/ -->
-    <material-dialog basic>
-      <div class="container">
-        <div>
-          <p>Simple dialog</p>
-          <p>This is a simple description.</p>
-        </div>
-        <material-button class="text">
-          <p>OK</p>
-        </material-button>
-      </div>
-    </material-dialog>
-
-    <material-dialog class="basic" icon></material-dialog>
+    <table>
+      <thead>
+        <tr>
+          <th>元素</th>
+          <th>Attribute</th>
+          <th>预览</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>material-dialog</code></td>
+          <td><code>basic</code></td>
+          <td>
+            <material-dialog basic>
+              <div class="container">
+                <div>
+                  <p>Simple dialog</p>
+                  <p>This is a simple description.</p>
+                </div>
+                <material-button class="text">
+                  <p>OK</p>
+                </material-button>
+              </div>
+            </material-dialog>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

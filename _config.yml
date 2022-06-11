@@ -1,6 +1,5 @@
 title: sendevia 的博客
 email: sendevialol@gmail.com
-github: https://github.com/Sendevia
 github_amix: https://github.com/Sendevia/AincradMix
 current_version_amix: release1.0
 timezone: Asia/Shanghai
@@ -10,8 +9,16 @@ twitter: https://twitter.com/sendevia
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-github-metadata
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: coderay
+  math_engine: katex
 
 exclude:
   - .sass-cache/

@@ -20,6 +20,4 @@ header_image: /assets/images/76542723.jpg
 通过修改 osu! 的资源 dll，实现了覆盖 osu! 的几乎所有界面元素  
 定制化选项较为丰富  
 
-# 皮肤展示
-
-[皮肤下载]({{ site.github_amix }}/releases/{{ site.current_version_amix }})
+# [皮肤下载]({{ site.github_amix }}/releases/{{ site.current_version_amix }})

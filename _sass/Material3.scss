@@ -20,24 +20,19 @@ body {
     height: 5px;
   }
 
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
-
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--md-sys-color-secondary);
   }
 
+  ::-webkit-scrollbar-corner,
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
   ::selection {
     color: var(--md-sys-color-surface-variant);
     background: var(--md-sys-color-on-surface-variant);
-  }
-
-  div {
-    &.window-size-error {
-      display: none;
-    }
   }
 }
 
@@ -88,7 +83,6 @@ hr {
 
 .page-about {
   padding: 60px 0px;
-  width: 100%;
 
   div.figure {
     display: flex;
@@ -153,24 +147,8 @@ hr {
     margin: 10px;
     padding: 20px;
 
-    border-radius: 12px;
-    border: 1px solid var(--md-sys-color-outline);
-
-    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-
     p#title {
-      @extend [disabled];
       padding: 0px 5px;
-      position: fixed;
-
-      background: var(--md-sys-color-background);
-      transform: translate(-6px, -48px);
-    }
-
-    &:hover {
-      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-      box-shadow: 0px 14px 14px change-color($color: $md-sys-color-shadow, $alpha: 0.1);
-      z-index: 666;
     }
   }
 }
@@ -214,31 +192,151 @@ hr {
     }
   }
 
+  // 基础元素样式开始
   a {
-    display: block;
-    padding: 1rem;
+    display: inline-grid;
+    align-items: center;
+    grid-template-columns: auto 30px;
+
+    margin: 0px 5px;
+    padding: 0.4em 1em 0.4em 0.8em;
 
     font-weight: bold;
 
+    border: 1px solid #00000000;
+    border-radius: 5px;
+
+    transition: 0.2s;
+
     &:after {
-      position: fixed;
+      padding-left: 0.1em;
       content: " arrow_forward";
 
       font-family: "Material Icons";
-
-      transform: translateX(4px);
       transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
     }
 
     &:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
+      background: change-color($color: $md-sys-color-primary, $alpha: 0.2);
+      transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
       &:after {
-        transform: translateX(10px);
-        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding-left: 0.5em;
       }
+    }
+
+    &:active {
+      border: 1px solid var(--md-sys-color-primary);
+
+      &:after {
+        content: " check";
+      }
+    }
+
+  }
+
+  blockquote {
+    margin: 10px;
+    padding: 25px;
+    border-radius: 30px;
+    color: var(--md-sys-color-on-tertiary-container);
+    background: var(--md-sys-color-tertiary-container);
+  }
+
+  code,
+  .language-plaintext,
+  .highlighter-rouge {
+    font-family: 'Source Code Pro', monospace !important;
+  }
+
+  hr {
+    width: 70%;
+    height: 2px;
+    background: var(--md-sys-color-on-surface-variant);
+
+    ::before {
+      width: 20px;
+      border: #000;
+
+    }
+  }
+
+  table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 24px;
+    border-spacing: 0px;
+
+    white-space: nowrap;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+
+    thead {
+      tr {
+        th {
+          padding: 20px 40px;
+          background: var(--md-sys-color-surface-variant);
+
+          border-left: 1px solid var(--md-sys-color-outline);
+          border-bottom: 1px solid var(--md-sys-color-outline);
+
+          &:nth-child(1) {
+            border-left: 0px;
+            border-right: 0px;
+          }
+        }
+
+        &:nth-last-child(1) {
+          th {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding: 15px;
+
+          border-left: 1px solid var(--md-sys-color-outline);
+          border-bottom: 1px solid var(--md-sys-color-outline);
+
+          &:nth-child(1) {
+            border-left: 0px;
+            border-right: 0px;
+          }
+        }
+
+        &:nth-child(1) {
+          td {
+            border-top: 2px solid var(--md-sys-color-outline);
+          }
+        }
+
+        &:nth-last-child(1) {
+          td {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  // 基础元素样式结束
+
+  .content {
+    img {
+      max-width: 50%;
+      border-radius: 30px;
     }
   }
 
@@ -263,10 +361,11 @@ hr {
         h1 {
           margin: 0px;
 
+          color: var(--md-sys-color-on-secondary-container);
           @extend .display1;
           font-family: "Plus Jakarta Sans", sans-serif !important;
           font-weight: bold;
-          color: var(--md-sys-color-on-secondary-container);
+          word-spacing: 8px;
         }
 
         p {
@@ -396,7 +495,8 @@ hr {
   body {
     div {
       &.window-size-error {
-        display: block;
+        display: block !important;
+        margin: 0px;
       }
     }
   }
