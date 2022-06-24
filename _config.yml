@@ -12,13 +12,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-github-metadata
 
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: coderay
-  math_engine: katex
 
 exclude:
   - .sass-cache/

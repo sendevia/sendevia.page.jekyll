@@ -6,12 +6,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap', '~> 1.4'
   gem 'jekyll-paginate', '~> 1.1'
   gem 'jekyll-seo-tag', '~> 2.8'
-  gem 'jekyll-github-metadata', '~> 2.15'
 end
-
-gem 'mini_racer', '~> 0.6.2'
-gem 'kramdown-syntax-coderay', '~> 1.0', '>= 1.0.1'
-gem 'kramdown-math-katex', '~> 1.0', '>= 1.0.1'
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem 'tzinfo', '~> 1.2'
