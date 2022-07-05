@@ -5,5 +5,3 @@ description: Material 3 (Material You) 在 jekyll 上的轻量化实现
 ---
 
 # jekyll-theme-materialyou
-
-<button>add 123</button>
