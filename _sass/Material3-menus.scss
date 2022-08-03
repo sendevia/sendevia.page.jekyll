@@ -1,3 +1,4 @@
+// https://m3.material.io/components/menus/
 .material-select-menu {
   height: 56px;
 
@@ -5,13 +6,12 @@
   border-radius: 4px;
 
   .drop-down {
+    @extend .disable-select;
     display: flex;
     align-items: center;
 
     position: relative;
     top: calc(50% - 24px / 2);
-
-    @extend [disable-select];
 
     label {
       margin: 0px 85px 0px 20px;
@@ -53,8 +53,8 @@
       height: 48px;
 
       span {
+        @extend .disable-select;
         padding: 0px 20px;
-        @extend [disable-select];
       }
 
       div {

@@ -2,6 +2,7 @@
 layout: Material3
 title: Material3 Components
 description: Material3 组件示例
+author: sendevia
 ---
 
 <div class="page-components">
@@ -10,56 +11,83 @@ description: Material3 组件示例
     <table>
       <thead>
         <tr>
-          <th>效果</th>
-          <th>元素</th>
+          <th>概述</th>
+          <th>详细描述</th>
+          <th>Element</th>
+          <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>整个页面的文字</td>
+          <td>一级标题</td>
+          <td><code>h1</code></td>
           <td>
             <h1>Headline 1</h1>
           </td>
-          <td>h1</td>
         </tr>
         <tr>
+          <td></td>
+          <td>二级标题</td>
+          <td><code>h2</code></td>
           <td>
             <h2>Headline 2</h2>
           </td>
-          <td>h2</td>
         </tr>
         <tr>
+          <td></td>
+          <td>三级标题</td>
+          <td><code>h3</code></td>
           <td>
             <h3>Headline 3</h3>
           </td>
-          <td>h3</td>
         </tr>
         <tr>
+          <td></td>
+          <td>四级标题</td>
+          <td><code>h4</code></td>
           <td>
             <h4>Headline 4</h4>
           </td>
-          <td>h4</td>
         </tr>
         <tr>
+          <td></td>
+          <td>五级标题</td>
+          <td><code>h5</code></td>
           <td>
             <h5>Headline 5</h5>
           </td>
-          <td>h5</td>
         </tr>
         <tr>
+          <td></td>
+          <td>六级标题</td>
+          <td><code>h6</code></td>
           <td>
             <h6>Headline 6</h6>
           </td>
-          <td>h6</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>段落</td>
+          <td><code>p</code></td>
+          <td>
+            <p>Sample text</p>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <hr />
 
   <div class="part-buttons">
     <p id="title">Buttons</p>
     <table>
       <thead>
         <tr>
+          <th>概述</th>
+          <th>详细描述</th>
+          <th>Element</th>
           <th>Class</th>
           <th>正常</th>
           <th>正常，有图标</th>
@@ -69,133 +97,150 @@ description: Material3 组件示例
       </thead>
       <tbody>
         <tr>
+          <td>整个网站应使用统一的按钮样式，以保证视觉的统一性</td>
+          <td>Elevated buttons are essentially filled buttons with a lighter background color and a shadow. To prevent shadow creep, only use them when absolutely necessary, such as when the button requires visual separation from a patterned background.</td>
+          <td>button</td>
           <td><code>elevated</code></td>
           <td>
-            <material-button class="elevated">
+            <button class="elevated">
               <p>Elevated</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="elevated icon">
+            <button class="elevated icon">
               <span>add</span>
               <p>Elevated</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="elevated" disabled>
+            <button class="elevated" disabled>
               <p>Elevated</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="elevated icon" disabled>
+            <button class="elevated icon" disabled>
               <span>add</span>
               <p>Elevated</p>
-            </material-button>
+            </button>
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td>The filled button’s contrasting surface color makes it the most prominent button after the FAB. It’s used for final or unblocking actions in a flow.</td>
+          <td></td>
           <td><code>filled</code></td>
           <td>
-            <material-button class="filled">
+            <button class="filled">
               <p>Filled</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled icon">
+            <button class="filled icon">
               <span>add</span>
               <p>filled</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled" disabled>
+            <button class="filled" disabled>
               <p>filled</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled icon" disabled>
+            <button class="filled icon" disabled>
               <span>add</span>
               <p>filled</p>
-            </material-button>
+            </button>
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td>Filled tonal buttons have a lighter background color and darker label color, making them less visually prominent than a regular, filled button. They’re still used for final or unblocking actions in a flow, but do so with less emphasis.</td>
+          <td></td>
           <td><code>filled-tonal</code></td>
           <td>
-            <material-button class="filled-tonal">
+            <button class="filled-tonal">
               <p>filled-tonal</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled-tonal icon">
+            <button class="filled-tonal icon">
               <span>add</span>
               <p>filled-tonal</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled-tonal" disabled>
+            <button class="filled-tonal" disabled>
               <p>filled-tonal</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="filled-tonal icon" disabled>
+            <button class="filled-tonal icon" disabled>
               <span>add</span>
               <p>filled-tonal</p>
-            </material-button>
+            </button>
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td>Use an outlined button for actions that need attention but aren’t the primary action, such as See all or Add to cart. This is also the button to use for giving someone the opportunity to change their mind or escape a flow.</td>
+          <td></td>
           <td><code>outlined</code></td>
           <td>
-            <material-button class="outlined">
+            <button class="outlined">
               <p>outlined</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="outlined icon">
+            <button class="outlined icon">
               <span>add</span>
               <p>outlined</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="outlined" disabled>
+            <button class="outlined" disabled>
               <p>outlined</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="outlined icon" disabled>
+            <button class="outlined icon" disabled>
               <span>add</span>
               <p>outlined</p>
-            </material-button>
+            </button>
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td>Text buttons have less visual prominence, so should be used for low emphasis actions, such as an alternative option.</td>
+          <td></td>
           <td><code>text</code></td>
           <td>
-            <material-button class="text">
+            <button class="text">
               <p>text</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="text icon">
+            <button class="text icon">
               <span>add</span>
               <p>text</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="text" disabled>
+            <button class="text" disabled>
               <p>text</p>
-            </material-button>
+            </button>
           </td>
           <td>
-            <material-button class="text icon" disabled>
+            <button class="text icon" disabled>
               <span>add</span>
               <p>text</p>
-            </material-button>
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <hr />
 
   <div class="part-menus">
     <p id="title">Menus</p>
@@ -248,6 +293,8 @@ description: Material3 组件示例
     </table>
   </div>
 
+  <hr />
+
   <div class="part-text-fields">
     <p id="title">Text fields</p>
     <table>
@@ -271,7 +318,8 @@ description: Material3 组件示例
     </table>
   </div>
 
-  <!-- https://m3.material.io/components/cards/ -->
+  <hr />
+
   <div class="part-cards">
     <p id="title">Cards</p>
     <table>
@@ -298,7 +346,8 @@ description: Material3 组件示例
     </table>
   </div>
 
-  <!-- https://m3.material.io/components/chips/ -->
+  <hr />
+
   <div class="part-chips">
     <p id="title">Chips</p>
     <table>
@@ -315,20 +364,20 @@ description: Material3 组件示例
       </thead>
       <tbody>
         <tr>
-          <td rowspan="2"><code>material-chip</code></td>
-          <td><code>assist</code></td>
+          <td><code>material-chip</code></td>
+          <td><code>Assist</code></td>
           <td>-</td>
           <td>
-            <material-chip class="assist" enabled>
+            <material-chip class="assist">
               <div class="container">
                 <p class="label-text">Enabled</p>
               </div>
             </material-chip>
           </td>
           <td>
-            <material-chip class="assist" enabled>
+            <material-chip class="assist">
               <div class="container">
-                <span class="material-icons-outlined leading-icon">info</span>
+                <span class="material-icons-outlined leading-icon">directions_car</span>
                 <p class="label-text">Enabled</p>
               </div>
             </material-chip>
@@ -343,20 +392,21 @@ description: Material3 组件示例
           <td>
             <material-chip class="assist" disabled>
               <div class="container">
-                <span class="material-icons-outlined leading-icon">info</span>
+                <span class="material-icons-outlined leading-icon">directions_car</span>
                 <p class="label-text">Disabled</p>
               </div>
             </material-chip>
           </td>
         </tr>
         <tr>
-          <td><code>assist</code></td>
+          <td></td>
+          <td></td>
           <td><code>elevated</code></td>
           <td></td>
           <td>
-            <material-chip class="assist" id="elevated" enabled>
+            <material-chip class="assist" id="elevated">
               <div class="container">
-                <span class="material-icons-outlined leading-icon">info</span>
+                <span class="material-icons-outlined leading-icon">directions_car</span>
                 <p class="label-text">Enabled</p>
               </div>
             </material-chip>
@@ -365,17 +415,54 @@ description: Material3 组件示例
           <td>
             <material-chip class="assist" id="elevated" disabled>
               <div class="container">
-                <span class="material-icons-outlined leading-icon">info</span>
+                <span class="material-icons-outlined leading-icon">directions_car</span>
                 <p class="label-text">Disabled</p>
               </div>
             </material-chip>
           </td>
         </tr>
+        <tr>
+          <td></td>
+          <td><code>Filter</code></td>
+          <td>-</td>
+          <td>
+            <material-chip class="filter">
+              <div class="container">
+                <p class="label-text">Enabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="filter">
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">directions_car</span>
+                <p class="label-text">Enabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="filter" disabled>
+              <div class="container">
+                <p class="label-text">Disabled</p>
+              </div>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="filter" disabled>
+              <div class="container">
+                <span class="material-icons-outlined leading-icon">directions_car</span>
+                <p class="label-text">Disabled</p>
+              </div>
+            </material-chip>
+          </td>
+        </tr>
+
       </tbody>
     </table>
   </div>
 
-  <!-- https://m3.material.io/components/dialogs/ -->
+  <hr />
+
   <div class="part-dialogs">
     <p id="title">Dialogs</p>
     <table>
@@ -397,12 +484,66 @@ description: Material3 组件示例
                   <p>Simple dialog</p>
                   <p>This is a simple description.</p>
                 </div>
-                <material-button class="text">
+                <button class="text">
                   <p>OK</p>
-                </material-button>
+                </button>
               </div>
             </material-dialog>
           </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr />
+
+  <div>
+    <p id="title">Table</p>
+    <table>
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1:1</td>
+          <td>2:1</td>
+          <td>3:1</td>
+          <td>4:1</td>
+          <td>5:1</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>2:2</td>
+          <td></td>
+          <td>4:2</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>1:3</td>
+          <td>2:3</td>
+          <td>3:3</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>2:4</td>
+          <td>3:4</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>2:5</td>
+          <td></td>
+          <td>4:5</td>
+          <td></td>
         </tr>
       </tbody>
     </table>

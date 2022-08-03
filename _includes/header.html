@@ -1,0 +1,109 @@
+<div class="material-navigation-rail disable-select">
+  <!-- 占位符 -->
+  <span></span>
+  <!-- 页面指示开始 -->
+  <div class="destinations">
+    <a href="/">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <!-- https://fonts.google.com/icons?icon.style=Outlined&icon.set=Material+Icons -->
+            <span class="material-icons-outlined" id="segment-icon">
+              home
+            </span>
+          </div>
+        </div>
+        <p id="label">首页</p>
+      </div>
+    </a>
+
+    <a href="/about">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              person
+            </span>
+          </div>
+        </div>
+        <p id="label">关于我</p>
+      </div>
+    </a>
+
+    <a href="/components">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              draw
+            </span>
+          </div>
+        </div>
+        <p id="label">M3 组件</p>
+      </div>
+    </a>
+
+    <a href="/about-theme">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              info
+            </span>
+          </div>
+        </div>
+        <p id="label">关于主题</p>
+      </div>
+    </a>
+
+    <a href="https://drive.sendevia.top" target="_blank">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              cloud
+            </span>
+          </div>
+        </div>
+        <p id="label">资源网盘</p>
+      </div>
+    </a>
+
+    <a href="/posts">
+      <div id="segment-inactive">
+        <div id="accent">
+          <div id="segment-primary-icon">
+            <span class="material-icons-outlined" id="segment-icon">
+              articles
+            </span>
+          </div>
+        </div>
+        <p id="label">文章</p>
+      </div>
+    </a>
+  </div>
+  <span></span>
+</div>
+
+<script>
+  function changeNav() {
+    $("div")
+      .find(".material-navigation-rail")
+      .attr("class", "material-navigation-bar");
+  }
+
+  if ($(document.body).width() <= 768) {
+    changeNav();
+  }
+
+  $(window).resize(function () {
+    var bodyWidth = $(document.body).width();
+    if (bodyWidth > 768) {
+      $("div")
+        .find(".material-navigation-bar")
+        .attr("class", "material-navigation-rail");
+    } else {
+      changeNav();
+    }
+  });
+</script>
