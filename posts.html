@@ -4,11 +4,20 @@ title: Posts
 description: 文章
 ---
 
+<h2>文章列表</h2>
+{%- assign total_posts = site.posts | size -%}
+{%- if total_posts > 0 -%}
 <ul>
-  {% for post in site.posts %}
+  {%- for post in site.posts -%}
   <li>
     <a href="{{ post.url }}">{{ post.title }}</a>
-    <p>{{ post.date | date: "%Y 年 %m 月 %e 日" }}</p>
+    <p>发表于 {{ post.date | date: "%Y 年 %m 月 %e 日" }}</p>
   </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
+{%- else -%}
+<div class="nothing">
+  <h1>≡[。。]≡</h1>
+  <h6>还没有文章发布，待会再来看看吧</h6>
+</div>
+{%- endif -%}

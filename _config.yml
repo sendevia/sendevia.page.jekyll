@@ -9,9 +9,10 @@ twitter: https://twitter.com/sendevia
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-tsc
 
 markdown: kramdown
 kramdown:
@@ -32,3 +33,12 @@ exclude:
   - vendor/ruby/
   - readme.md
   - _redirects
+  - sendevia.github.io.code-workspace
+  - .typescript
+
+typescript:
+  temp_dir: .typescript
+  extensions: [".ts", ".tsx"]
+  copy_ext: []
+  command: ["tsc"]
+  cache: true

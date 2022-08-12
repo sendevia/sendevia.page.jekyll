@@ -3,28 +3,28 @@ body {
   margin: auto;
   padding: 0px;
 
-  width: 100%;
   height: 100%;
+  width: 100%;
 
   font-family: "Roboto", sans-serif !important;
   font-style: normal;
   text-rendering: optimizeLegibility;
 
-  color: var(--md-sys-color-on-background);
   background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
 
   transition: 0.5s cubic-bezier(0.4, 0, 0.25, 1);
 
   scrollbar-width: thin;
 
   ::-webkit-scrollbar {
-    width: 5px;
     height: 5px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
     background-color: var(--md-sys-color-secondary);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-corner,
@@ -33,21 +33,21 @@ body {
   }
 
   ::selection {
-    color: var(--md-sys-color-surface-variant);
     background: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-surface-variant);
   }
 
   @media screen and (max-width: 768px) {
     ::-webkit-scrollbar {
-      width: 2px;
       height: 2px;
+      width: 2px;
     }
   }
 }
 
 a {
-  text-decoration: none;
   color: var(--md-sys-color-primary);
+  text-decoration: none;
 }
 
 
@@ -115,11 +115,11 @@ p {
 }
 
 hr {
-  width: 100%;
-  height: 2px;
   background: var(--md-sys-color-on-surface-variant);
   border: none;
+  height: 2px;
   opacity: 0.2;
+  width: 100%;
 }
 
 ul {
@@ -136,18 +136,18 @@ p {
 
 table {
   display: block;
-  width: 100%;
   max-width: max-content;
+  width: 100%;
 
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: 24px;
   border-collapse: collapse;
+  border-radius: 24px;
+  border: 1px solid var(--md-sys-color-outline);
 
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 0px;
     height: 0px;
+    width: 0px;
   }
 
   thead {
@@ -155,14 +155,14 @@ table {
 
     tr {
       th {
-        padding: 16px 24px;
         min-width: 10ch;
+        padding: 16px 24px;
 
-        font-weight: 500;
         background: var(--md-sys-color-surface-variant);
+        font-weight: 500;
 
-        border-top: 1px solid var(--md-sys-color-outline);
         border-left: 1px solid var(--md-sys-color-outline);
+        border-top: 1px solid var(--md-sys-color-outline);
 
         &:first-child {
           border-left: none;
@@ -199,11 +199,11 @@ table {
       vertical-align: top;
 
       td {
-        padding: 16px 24px;
         background: var(--md-sys-color-background);
+        padding: 16px 24px;
 
-        border-top: 1px solid var(--md-sys-color-outline);
         border-left: 1px solid var(--md-sys-color-outline);
+        border-top: 1px solid var(--md-sys-color-outline);
 
         &:first-child {
           border-left: none;
@@ -238,14 +238,16 @@ footer {
 
 [disabled] {
   @extend .disable-select;
-  pointer-events: none;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .content-gird {
   display: grid;
-  grid-template-columns: 80px auto;
   grid-auto-rows: auto;
+  grid-template-columns: 80px auto;
+
+  height: inherit;
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -253,15 +255,15 @@ footer {
 }
 
 .content-container {
+  align-items: stretch;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  grid-column-start: 2;
   grid-column-end: 3;
+  grid-column-start: 2;
 
   margin: 6vh 6vw;
 
-  animation: fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
+  animation: page-fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
   z-index: 0;
 
   div {
@@ -271,11 +273,11 @@ footer {
   }
 
   blockquote {
-    margin: 10px;
-    padding: 25px;
+    background: var(--md-sys-color-tertiary-container);
     border-radius: 12px;
     color: var(--md-sys-color-on-tertiary-container);
-    background: var(--md-sys-color-tertiary-container);
+    margin: 10px;
+    padding: 25px;
   }
 
   code,
@@ -286,10 +288,10 @@ footer {
   }
 
   .content-header {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
 
     padding: 40px 64px;
 
@@ -304,24 +306,23 @@ footer {
       h1 {
         margin: 0px;
 
-        color: var(--md-sys-color-on-secondary-container);
         @extend .display1;
+        color: var(--md-sys-color-on-secondary-container);
         font-family: "Plus Jakarta Sans", sans-serif !important;
         font-weight: bold;
         word-spacing: 8px;
       }
 
       p {
-        margin: 16px 0px 0px;
         @extend .title-large;
+        margin: 16px 0px 0px;
       }
 
       img {
-        width: 100%;
-
+        left: 0px;
         position: absolute;
         top: 0px;
-        left: 0px;
+        width: 100%;
 
         -webkit-mask: linear-gradient(to right, transparent, #000);
         mask: linear-gradient(to right, transparent, #000);
@@ -339,8 +340,8 @@ footer {
   .post-information {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 6px;
+    justify-content: center;
 
     margin-top: 10px;
   }
@@ -349,8 +350,8 @@ footer {
     margin: 6vh 3vw;
 
     img {
-      max-width: 100%;
       border-radius: 24px;
+      max-width: 100%;
     }
   }
 
@@ -361,10 +362,10 @@ footer {
   }
 
   @media screen and (max-width: 768px) {
-    margin: 0rem 1.5rem;
+    margin: 0vw 5vw;
 
     .content-header {
-      padding: 24px;
+      padding: 0px;
 
       background-color: #00000000;
       border-radius: 0px;
@@ -373,15 +374,15 @@ footer {
 
       .header-container {
         h1 {
+          font-size: calc(1.5rem + 4vw);
+          line-height: 8vh;
           margin: 0rem;
           padding: 0px;
-          font-size: calc(1.5rem + 4vw);
-          line-height: 15vw;
         }
 
         p {
-          margin: 0rem;
           font-size: calc(1rem + 1vw);
+          margin: 0rem;
         }
 
         img {
@@ -396,20 +397,20 @@ footer {
   padding: 60px 0px;
 
   div.figure {
+    align-items: flex-end;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end;
 
     div:first-child {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
 
       img {
-        width: calc(100% - 40px);
         max-width: 300px;
+        width: calc(100% - 40px);
 
         -webkit-mask-image: url(/assets/images/mask.svg);
         -webkit-mask-repeat: no-repeat;
@@ -425,8 +426,8 @@ footer {
       :first-child;
 
       img {
-        width: calc(100% - 50px);
         max-width: 260px;
+        width: calc(100% - 50px);
 
         -webkit-mask-size: 100%;
         mask-size: 100%;
@@ -445,16 +446,17 @@ footer {
 }
 
 .nothing {
-  margin: 10vw;
+  @extend [disabled];
+  margin: 2vw;
   padding: 4vw;
 
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
 
   border-radius: 24px;
-  background: var(--md-sys-color-tertiary-container);
+  border: 2px dashed var(--md-sys-color-outline);
 
   opacity: 0.5;
 

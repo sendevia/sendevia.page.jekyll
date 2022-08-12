@@ -2,54 +2,56 @@
   <div class="header-container">
     <div>
       <h1>{{ page.title }}</h1>
+      {%- if page.description -%}
       <!-- 如果存在副标题，则显示 -->
-      {% if page.description %}
       <p>{{ page.description }}</p>
-      {% endif %}
+      {%- endif -%}
+      {%- if page.header_image -%}
       <!-- 如果存在标题图片，则显示 -->
-      {% if page.header_image %}
       <img
         src="{{ page.header_image }}"
         alt="header image"
         class="disable-select"
         draggable="false"
       />
-      {% endif %}
+      {%- endif -%}
     </div>
   </div>
 </div>
-
-{% assign page_words = page.content | number_of_words %} {% if page_words == 0 %}
+{%- assign page_words = page.content | number_of_words: "auto" -%}
+{%- if page_words == 0 -%}
 <div class="nothing">
   <h1>:/</h1>
   <h6>这里暂时还什么都没有呢</h6>
 </div>
-{% else %}
+{%- else -%}
 <div class="post-information">
-  {% if page.date %}
+  {%- if page.date -%}
   <material-chip class="assist" disabled>
     <div class="container">
       <span class="material-icons-outlined leading-icon">calendar_month</span>
-      <p class="label-text">{{ page.date | date: "%y 年 %m 月 %e 日" }}</p>
+      <p class="label-text">{{ page.date | date: "%y 年 %m 月 %d 日" }}</p>
     </div>
   </material-chip>
-  {% endif %} {% if page.author %}
+  {%- endif -%}
+  {%- if page.author -%}
   <material-chip class="assist" disabled>
     <div class="container">
       <span class="material-icons-outlined leading-icon">person</span>
       <p class="label-text">{{ page.author }}</p>
     </div>
   </material-chip>
-  {% endif %}
+  {%- endif -%}
   <material-chip class="assist" disabled>
     <div class="container">
       <span class="material-icons-outlined leading-icon">schedule</span>
       <p class="label-text">
-        {% assign read_estimate = page_words | divided_by: 120 %} 估计阅读时间:
-        {% if read_estimate > 0 %} {{ read_estimate }} {% else %} 少于 1 {% endif %} 分钟
+        {%- assign read_estimate = page_words | divided_by: 120 -%}
+        估计阅读时间: {%- if read_estimate > 0 -%} {{ read_estimate }}
+        {%- else -%} 少于 1 {%- endif -%} 分钟
       </p>
     </div>
   </material-chip>
 </div>
 <div class="content">{{ content }}</div>
-{% endif %}
+{%- endif -%}

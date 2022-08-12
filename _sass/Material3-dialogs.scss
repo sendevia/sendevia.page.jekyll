@@ -1,21 +1,20 @@
 // https://m3.material.io/components/dialogs/
 material-dialog {
   .container {
+    align-content: flex-start;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: flex-start;
-    justify-content: flex-start;
-    align-items: flex-end;
-
     gap: 24px;
+    justify-content: flex-start;
   }
 
   &[basic] {
     .container {
-      padding: 24px;
-      color: var(--md-sys-color-on-tertiary-container);
       background: var(--md-sys-color-tertiary-container);
+      color: var(--md-sys-color-on-tertiary-container);
+      padding: 24px;
 
       border-radius: 28px;
 

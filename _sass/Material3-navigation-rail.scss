@@ -1,104 +1,104 @@
 // https://m3.material.io/components/navigation-rail/
 .material-navigation-rail {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  grid-column-start: 1;
   grid-column-end: 2;
+  grid-column-start: 1;
+  justify-content: space-between;
 
+  height: 100%;
   position: fixed;
   width: 80px;
-  height: 100%;
 
   background: var(--md-sys-color-surface);
   border-right: 1px solid var(--md-sys-color-outline);
 
-  overflow-x: hidden;
   animation: fade 0.4s;
+  overflow-x: hidden;
   z-index: 100;
 
   .destinations {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
 
+    left: 0px;
     margin: 20px 0px;
     position: static;
-    width: 100%;
-    left: 0px;
     top: calc(50% - 426px / 2 - 45px);
+    width: 100%;
 
     #segment-active {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       padding: 0px;
 
-      position: static;
-      width: 70px;
       height: 56px;
       left: 5px;
+      position: static;
       top: 5px;
+      width: 70px;
 
-      flex: none;
-      order: 0;
       align-self: stretch;
       flex-grow: 0;
+      flex: none;
       margin: 4px 5px;
+      order: 0;
 
       #accent {
+        align-items: center;
         display: flex;
         justify-content: center;
-        align-items: center;
 
-        flex: none;
-        order: 0;
         flex-grow: 0;
+        flex: none;
         margin: 4px 0px;
+        order: 0;
 
-        position: static;
-        width: 56px;
+        bottom: 42.86%;
         height: 32px;
         left: 10%;
+        position: static;
         right: 10%;
         top: 0%;
-        bottom: 42.86%;
+        width: 56px;
 
         background: var(--md-sys-color-secondary-container);
         border-radius: 100px;
 
         #segment-primary-icon {
+          color: var(--md-sys-color-on-secondary-container);
+          height: 24px;
           position: absolute;
           width: 24px;
-          height: 24px;
-          color: var(--md-sys-color-on-secondary-container);
 
           #segment-icon {
-            width: 24px;
             height: 24px;
+            width: 24px;
           }
         }
       }
 
       #label {
-        flex: none;
-        order: 1;
         flex-grow: 0;
+        flex: none;
         margin: 4px 0px;
+        order: 1;
 
-        position: static;
+        bottom: 7.14%;
         left: 10%;
+        position: static;
         right: 10%;
         top: 64.29%;
-        bottom: 7.14%;
 
-        font-weight: 500;
         font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
         line-height: 16px;
         text-align: center;
-        letter-spacing: 0.5px;
 
         color: var(--md-sys-color-on-surface);
       }
@@ -109,8 +109,8 @@
 
       #accent {
         @extend #accent;
-        width: 32px;
         height: 32px;
+        width: 32px;
 
         background: none;
         transition: 0.3s cubic-bezier(0.08, 0.82, 0.17, 1);
@@ -126,22 +126,22 @@
 
       #label {
         @extend #label;
-        line-height: 0px;
         color: #00000000;
-        visibility: hidden;
+        line-height: 0px;
         transition: 0.3s ease-out;
+        visibility: hidden;
       }
 
       &:hover {
         #accent {
-          width: 56px;
-          height: 32px;
           background: var(--md-sys-color-secondary-container);
+          height: 32px;
+          width: 56px;
         }
 
         #label {
-          line-height: 12px;
           color: var(--md-sys-color-on-secondary-container);
+          line-height: 12px;
           visibility: visible;
         }
       }

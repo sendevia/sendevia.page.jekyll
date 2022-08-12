@@ -2,13 +2,13 @@
 .material-select-menu {
   height: 56px;
 
-  border: 1px solid var(--md-sys-color-outline);
   border-radius: 4px;
+  border: 1px solid var(--md-sys-color-outline);
 
   .drop-down {
     @extend .disable-select;
-    display: flex;
     align-items: center;
+    display: flex;
 
     position: relative;
     top: calc(50% - 24px / 2);
@@ -28,27 +28,26 @@
     margin: 0px;
     padding: 0px;
 
+    left: -2px;
     position: relative;
     top: -24px;
-    left: -2px;
     width: calc(100% + 4px);
 
     border-radius: 4px;
 
-    color: var(--md-sys-color-on-secondary-container);
     background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
 
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
     list-style-type: none;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
-      0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 
     li {
+      align-content: center;
+      align-items: center;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      align-content: center;
       justify-content: flex-start;
-      align-items: center;
 
       height: 48px;
 
@@ -58,30 +57,30 @@
       }
 
       div {
-        font-weight: 400;
         font-size: 16px;
-        line-height: 24px;
+        font-weight: 400;
         letter-spacing: 0.5px;
+        line-height: 24px;
       }
 
       &:nth-child(1) {
-        padding: 6px 0px 10px 0px;
         border-bottom: 2px solid var(--md-sys-color-on-surface-variant);
+        padding: 6px 0px 10px 0px;
       }
     }
   }
 }
 
 .material-text-field {
-  display: flex;
   align-items: center;
   box-sizing: border-box;
+  display: flex;
 
-  position: relative;
   height: 56px;
+  position: relative;
 
-  border: 1px solid var(--md-sys-color-outline);
   border-radius: 4px;
+  border: 1px solid var(--md-sys-color-outline);
 
   label {
     margin: 0px 85px 0px 20px;

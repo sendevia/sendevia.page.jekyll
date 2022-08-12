@@ -8,15 +8,15 @@ material-chip {
 
   &.assist {
     .container {
+      align-items: center;
       display: flex;
       flex-direction: row;
-      align-items: center;
       padding: 6px 16px 6px 8px;
 
-      height: 32px;
+      border-radius: 8px;
       border: 1px solid var(--md-sys-color-outline);
       box-sizing: border-box;
-      border-radius: 8px;
+      height: 32px;
     }
 
     .label-text {
@@ -25,10 +25,10 @@ material-chip {
 
       color: var(--md-sys-color-on-surface);
 
-      white-space: nowrap;
-      order: 1;
       flex-grow: 0;
       margin: 0px 0px 0px 8px;
+      order: 1;
+      white-space: nowrap;
     }
 
     .leading-icon {
@@ -36,22 +36,22 @@ material-chip {
 
       color: var(--md-sys-color-primary);
 
+      flex-grow: 0;
       flex: none;
       order: 0;
-      flex-grow: 0;
     }
 
     &[disabled] {
       .container {
+        align-items: center;
         display: flex;
         flex-direction: row;
-        align-items: center;
         padding: 6px 16px 6px 8px;
 
-        height: 32px;
+        border-radius: 8px;
         border: 1px solid change-color($color: $md-sys-color-on-surface-variant, $alpha: 0.12);
         box-sizing: border-box;
-        border-radius: 8px;
+        height: 32px;
       }
 
       .label-text {
@@ -60,10 +60,10 @@ material-chip {
 
         color: var(--md-sys-color-on-surface);
 
-        white-space: nowrap;
-        order: 1;
         flex-grow: 0;
         margin: 0px 0px 0px 8px;
+        order: 1;
+        white-space: nowrap;
 
         opacity: 0.38;
       }
@@ -73,9 +73,9 @@ material-chip {
 
         color: var(--md-sys-color-on-surface);
 
+        flex-grow: 0;
         flex: none;
         order: 0;
-        flex-grow: 0;
 
         opacity: 0.38;
       }
@@ -83,8 +83,8 @@ material-chip {
 
     &:hover {
       .container {
-        cursor: pointer;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
       }
     }
 
