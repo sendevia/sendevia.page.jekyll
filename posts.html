@@ -11,7 +11,7 @@ description: 文章
   {%- for post in site.posts -%}
   <li>
     <a href="{{ post.url }}">{{ post.title }}</a>
-    <p>发表于 {{ post.date | date: "%Y 年 %m 月 %e 日" }}</p>
+    <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
   </li>
   {%- endfor -%}
 </ul>

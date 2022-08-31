@@ -8,74 +8,84 @@ material-chip {
 
   &.assist {
     .container {
-      align-items: center;
       display: flex;
+
+      align-items: center;
       flex-direction: row;
+
       padding: 6px 16px 6px 8px;
+
+      height: 32px;
+
+      box-sizing: border-box;
 
       border-radius: 8px;
       border: 1px solid var(--md-sys-color-outline);
-      box-sizing: border-box;
-      height: 32px;
     }
 
     .label-text {
       @extend .label-large;
+
+      flex-grow: 0;
+      order: 1;
+
+      margin: 0 0 0 8px;
+
       position: static;
 
       color: var(--md-sys-color-on-surface);
-
-      flex-grow: 0;
-      margin: 0px 0px 0px 8px;
-      order: 1;
       white-space: nowrap;
     }
 
     .leading-icon {
-      font-size: 18px;
-
-      color: var(--md-sys-color-primary);
-
       flex-grow: 0;
       flex: none;
       order: 0;
+
+      color: var(--md-sys-color-primary);
+      font-size: 18px;
     }
 
     &[disabled] {
       .container {
-        align-items: center;
         display: flex;
+
+        align-items: center;
         flex-direction: row;
+
         padding: 6px 16px 6px 8px;
+
+        height: 32px;
+
+        box-sizing: border-box;
 
         border-radius: 8px;
         border: 1px solid change-color($color: $md-sys-color-on-surface-variant, $alpha: 0.12);
-        box-sizing: border-box;
-        height: 32px;
       }
 
       .label-text {
         @extend .label-large;
+
+        flex-grow: 0;
+        order: 1;
+
+        margin: 0 0 0 8px;
+
         position: static;
 
         color: var(--md-sys-color-on-surface);
-
-        flex-grow: 0;
-        margin: 0px 0px 0px 8px;
-        order: 1;
         white-space: nowrap;
 
         opacity: 0.38;
       }
 
       .leading-icon {
-        font-size: 18px;
-
-        color: var(--md-sys-color-on-surface);
-
         flex-grow: 0;
         flex: none;
         order: 0;
+
+        color: var(--md-sys-color-on-surface);
+        font-size: 18px;
 
         opacity: 0.38;
       }
@@ -83,17 +93,14 @@ material-chip {
 
     &:hover {
       .container {
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
+
         cursor: pointer;
       }
     }
 
     &:focus {
       border: 12px solid var(--md-sys-color-outline);
-    }
-
-    &:active {
-
     }
   }
 }

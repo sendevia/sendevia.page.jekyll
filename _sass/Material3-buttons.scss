@@ -1,13 +1,15 @@
 // https://m3.material.io/components/all-buttons/
 
 button {
-  align-items: center;
   display: flex;
+
+  align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
 
   padding: 10px 24px;
+
   width: max-content;
 
   border-radius: 100px;
@@ -20,24 +22,28 @@ button {
     padding: 10px 24px 10px 16px;
 
     &>span {
+      padding-right: 8px;
+
       font-family: "Material Icons";
       font-size: 18px;
-      padding-right: 8px;
     }
   }
 
   &>p {
     @extend .label-large;
-    margin: 0px;
+
+    margin: 0;
+
     text-transform: capitalize;
   }
 
   &.elevated {
-    background: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
 
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
-      0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    background: var(--md-sys-color-surface);
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+      0 1px 3px 1px rgba(0, 0, 0, 0.15);
 
     &[disabled] {
       background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
@@ -50,23 +56,26 @@ button {
       &.icon>span,
       &>p {
         color: var(--md-sys-color-on-surface);
+
         opacity: 0.38;
       }
     }
   }
 
   &.filled {
-    background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 
+    background: var(--md-sys-color-primary);
+
     &[disabled] {
-      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
       color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+
+      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
     }
 
     &:hover {
       background: change-color($color: $md-sys-color-primary, $lightness: 60%);
-      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
     }
 
     &:focus {
@@ -79,8 +88,9 @@ button {
 
     @media (prefers-color-scheme: dark) {
       &[disabled] {
-        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
         color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+
+        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
       }
 
       &:hover {
@@ -98,17 +108,19 @@ button {
   }
 
   &.filled-tonal {
-    background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 
+    background: var(--md-sys-color-secondary-container);
+
     &[disabled] {
-      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
       color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+
+      background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
     }
 
     &:hover {
       background: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-hover-state-layer-opacity);
-      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
     }
 
     &:focus {
@@ -121,8 +133,9 @@ button {
 
     @media (prefers-color-scheme: dark) {
       &[disabled] {
-        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
         color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+
+        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
       }
 
       &:hover {
@@ -142,16 +155,18 @@ button {
   &.outlined {
     padding: 9px 23px;
 
-    border: 1px solid var(--md-sys-color-outline);
     color: var(--md-sys-color-primary);
+
+    border: 1px solid var(--md-sys-color-outline);
 
     &.icon {
       padding: 9px 15px 9px 11px;
     }
 
     &[disabled] {
-      border: 1px solid change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
       color: change-color($color: $md-sys-color-on-surface, $alpha: 0.38);
+
+      border: 1px solid change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
     }
 
     &:hover {
@@ -169,8 +184,9 @@ button {
 
     @media (prefers-color-scheme: dark) {
       &[disabled] {
-        border: 1px solid change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
         color: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.38);
+
+        border: 1px solid change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
       }
 
       &:hover {
@@ -190,6 +206,7 @@ button {
 
   &.text {
     min-width: 40px;
+
     padding: 10px 12px;
 
     color: var(--md-sys-color-primary);
@@ -200,6 +217,7 @@ button {
 
     &[disabled] {
       color: var(--md-sys-color-on-surface);
+
       opacity: 0.38;
     }
 
@@ -233,11 +251,12 @@ button {
 
 .content-container {
   a {
-    align-items: center;
     display: inline-grid;
+
+    align-items: center;
     grid-template-columns: auto 20px;
 
-    margin: 0px 2px;
+    margin: 0 2px;
     padding: 0.4ex 0.6ch 0.4ex 0.8ch;
 
     font-weight: bold;
@@ -252,12 +271,14 @@ button {
       padding-left: 0.1ch;
 
       font-family: "Material Icons";
+
       transition: 0.5s cubic-bezier(0.25, 0.45, 0.45, 1);
 
     }
 
     &:hover {
       background: change-color($color: $md-sys-color-primary, $alpha: 0.2);
+
       transition: 0.3s cubic-bezier(0.25, 0.45, 0.45, 1);
 
       &::after {

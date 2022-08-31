@@ -30,7 +30,7 @@
   <material-chip class="assist" disabled>
     <div class="container">
       <span class="material-icons-outlined leading-icon">calendar_month</span>
-      <p class="label-text">{{ page.date | date: "%y 年 %m 月 %d 日" }}</p>
+      <p class="label-text">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
     </div>
   </material-chip>
   {%- endif -%}
@@ -47,8 +47,8 @@
       <span class="material-icons-outlined leading-icon">schedule</span>
       <p class="label-text">
         {%- assign read_estimate = page_words | divided_by: 120 -%}
-        估计阅读时间: {%- if read_estimate > 0 -%} {{ read_estimate }}
-        {%- else -%} 少于 1 {%- endif -%} 分钟
+        估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }}
+        {%- else -%} 少于1 {%- endif -%} 分钟
       </p>
     </div>
   </material-chip>
