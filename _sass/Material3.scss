@@ -157,6 +157,7 @@ table {
         min-width: 10ch;
 
         font-weight: 500;
+        text-transform: uppercase;
 
         background: var(--md-sys-color-surface-variant);
 
@@ -243,19 +244,6 @@ footer {
   pointer-events: none;
 }
 
-.content-gird {
-  display: grid;
-
-  grid-auto-rows: auto;
-  grid-template-columns: 80px auto;
-
-  height: inherit;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-}
-
 .content-container {
   display: flex;
 
@@ -264,7 +252,7 @@ footer {
   grid-column-end: 3;
   grid-column-start: 2;
 
-  margin: 6vh 6vw;
+  padding: 40px 40px 40px 120px;
 
   animation: page-fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
   z-index: 0;
@@ -374,6 +362,7 @@ footer {
 
   @media screen and (max-width: 768px) {
     margin: 0 5vw;
+    padding: 0;
 
     .content-header {
       padding: 0;
@@ -409,6 +398,11 @@ footer {
 
 .page-about {
   padding: 60px 0;
+
+  h6,
+  p {
+    margin: 0;
+  }
 
   div.figure {
     display: flex;

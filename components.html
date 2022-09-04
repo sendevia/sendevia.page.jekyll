@@ -5,70 +5,55 @@ description: Material3 组件示例
 author: sendevia
 ---
 
-<div class="page-components">
+<div>
   <div>
-    <p id="title">Typography</p>
+    <h1>Typography</h1>
+    <p>一般用于页面的排版</p>
     <table>
       <thead>
         <tr>
-          <th>概述</th>
-          <th>详细描述</th>
-          <th>Element</th>
+          <th>element</th>
           <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>整个页面的文字</td>
-          <td>一级标题</td>
           <td><code>h1</code></td>
           <td>
             <h1>Headline 1</h1>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>二级标题</td>
           <td><code>h2</code></td>
           <td>
             <h2>Headline 2</h2>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>三级标题</td>
           <td><code>h3</code></td>
           <td>
             <h3>Headline 3</h3>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>四级标题</td>
           <td><code>h4</code></td>
           <td>
             <h4>Headline 4</h4>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>五级标题</td>
           <td><code>h5</code></td>
           <td>
             <h5>Headline 5</h5>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>六级标题</td>
           <td><code>h6</code></td>
           <td>
             <h6>Headline 6</h6>
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>段落</td>
           <td><code>p</code></td>
           <td>
             <p>Sample text</p>
@@ -79,29 +64,21 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Buttons</p>
+    <h1>Buttons</h1>
+    <p>用户交互控件 - 按钮</p>
     <table>
       <thead>
         <tr>
-          <th>概述</th>
-          <th>详细描述</th>
-          <th>Element</th>
-          <th>Class</th>
+          <th>element</th>
+          <th>class</th>
           <th>正常</th>
-          <th>正常，有图标</th>
-          <th>失效</th>
-          <th>失效，有图标</th>
+          <th>正常，带图标</th>
+          <th>失效/禁用</th>
+          <th>失效/禁用，带图标</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>整个网站应使用统一的按钮样式，以保证视觉的统一性</td>
-          <td>
-            Elevated buttons are essentially filled buttons with a lighter
-            background color and a shadow. To prevent shadow creep, only use
-            them when absolutely necessary, such as when the button requires
-            visual separation from a patterned background.
-          </td>
           <td>button</td>
           <td><code>elevated</code></td>
           <td>
@@ -129,12 +106,6 @@ author: sendevia
         </tr>
         <tr>
           <td></td>
-          <td>
-            The filled button’s contrasting surface color makes it the most
-            prominent button after the FAB. It’s used for final or unblocking
-            actions in a flow.
-          </td>
-          <td></td>
           <td><code>filled</code></td>
           <td>
             <button class="filled">
@@ -160,13 +131,6 @@ author: sendevia
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>
-            Filled tonal buttons have a lighter background color and darker
-            label color, making them less visually prominent than a regular,
-            filled button. They’re still used for final or unblocking actions in
-            a flow, but do so with less emphasis.
-          </td>
           <td></td>
           <td><code>filled-tonal</code></td>
           <td>
@@ -194,13 +158,6 @@ author: sendevia
         </tr>
         <tr>
           <td></td>
-          <td>
-            Use an outlined button for actions that need attention but aren’t
-            the primary action, such as See all or Add to cart. This is also the
-            button to use for giving someone the opportunity to change their
-            mind or escape a flow.
-          </td>
-          <td></td>
           <td><code>outlined</code></td>
           <td>
             <button class="outlined">
@@ -226,11 +183,6 @@ author: sendevia
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td>
-            Text buttons have less visual prominence, so should be used for low
-            emphasis actions, such as an alternative option.
-          </td>
           <td></td>
           <td><code>text</code></td>
           <td>
@@ -261,12 +213,13 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Menus</p>
+    <h1>Menus</h1>
+    <p>用户交互控件 - 下拉菜单</p>
     <table>
       <thead>
         <tr>
-          <th>Class</th>
-          <th>效果</th>
+          <th>class</th>
+          <th>预览</th>
         </tr>
       </thead>
       <tbody>
@@ -306,37 +259,46 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Text fields</p>
+    <h1>Text fields</h1>
+    <p>用户交互控件 - 输入区域</p>
     <table>
       <thead>
         <tr>
-          <th>Class</th>
-          <th>样式</th>
+          <th>element</th>
+          <th>class</th>
+          <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td><code>input</code></td>
           <td><code>material-text-field</code></td>
           <td>
             <div class="material-text-field">
               <label>Label</label>
-              <span class="material-icons-outlined clear"> cancel </span>
+              <span class="material-icons-outlined clear"> close </span>
             </div>
           </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><input type="text" title="123"></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div>
-    <p id="title">Cards</p>
+    <h1>Cards</h1>
+    <p>醒目的内容展示区域</p>
     <table>
       <thead>
         <tr>
-          <th>元素</th>
-          <th>Class</th>
-          <th>Id</th>
-          <th>样式</th>
+          <th>element</th>
+          <th>class</th>
+          <th>id</th>
+          <th>预览</th>
         </tr>
       </thead>
       <tbody>
@@ -346,7 +308,7 @@ author: sendevia
           <td><code>elevated</code></td>
           <td>
             <material-card elevated>
-              <div class="container">123</div>
+              <div class="container">Title</div>
             </material-card>
           </td>
         </tr>
@@ -355,17 +317,18 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Chips</p>
+    <h1>Chips</h1>
+    <p>通常用于内容的提示，项目的筛选，并且有时它是可以被拖拽的</p>
     <table>
       <thead>
         <tr>
-          <th>元素</th>
-          <th>Class</th>
-          <th>Id</th>
-          <th>正常样式</th>
-          <th>正常样式，带图标</th>
-          <th>失效样式</th>
-          <th>失效样式，带图标</th>
+          <th>element</th>
+          <th>class</th>
+          <th>id</th>
+          <th>正常</th>
+          <th>正常，带图标</th>
+          <th>失效/禁用</th>
+          <th>失效/禁用，带图标</th>
         </tr>
       </thead>
       <tbody>
@@ -479,11 +442,12 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Dialogs</p>
+    <h1>Dialogs</h1>
+    <p>弹出的对话框</p>
     <table>
       <thead>
         <tr>
-          <th>元素</th>
+          <th>element</th>
           <th>Attribute</th>
           <th>预览</th>
         </tr>
@@ -511,7 +475,8 @@ author: sendevia
   </div>
 
   <div>
-    <p id="title">Table</p>
+    <h1>Table</h1>
+    <p>通用的表格</p>
     <table>
       <thead>
         <tr>
@@ -562,6 +527,9 @@ author: sendevia
           <td colspan="2">1:6</td>
           <td></td>
           <td colspan="2">4:6</td>
+        </tr>
+        <tr>
+          <td colspan="5">1:7</td>
         </tr>
       </tbody>
     </table>

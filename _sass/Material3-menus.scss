@@ -92,11 +92,13 @@
 
   box-sizing: border-box;
 
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
 
   label {
     margin: 0 85px 0 20px;
+
+    cursor: text;
   }
 
   span.clear {
