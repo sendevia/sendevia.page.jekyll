@@ -4,8 +4,6 @@
 
   align-items: flex-start;
   flex-direction: column;
-  grid-column-end: 2;
-  grid-column-start: 1;
   justify-content: space-between;
 
   position: fixed;
@@ -14,8 +12,6 @@
   width: 80px;
 
   background: var(--md-sys-color-surface);
-
-  border-right: 1px solid var(--md-sys-color-outline);
 
   animation: fade 0.4s;
   overflow-x: hidden;

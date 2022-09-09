@@ -1,8 +1,11 @@
 <footer>
-  <div class="left">
+  <div class="site-information">
+    <img src="/favicon.ico" alt="logo">
     <h6>Jekyll Theme MaterialYou</h6>
+    <p>{{ site.title }}</p>
   </div>
-  <div class="right">
+  <div class="articles">
+    <h6>文章列表</h6>
     <ul>
       {%- for post in site.posts -%}
       <li>
@@ -10,6 +13,13 @@
       </li>
       {%- endfor -%}
     </ul>
+  </div>
+  <div class="personal-information">
+    <h6>联系方式</h6>
+    <div>
+      <p>电子邮件</p>
+      <a href="mailto://{{ site.email }}">{{ site.email }}</a>
+    </div>
   </div>
 </footer>
 

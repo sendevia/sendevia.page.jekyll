@@ -226,8 +226,51 @@ table {
   }
 }
 
-footer {
-  padding-bottom: 15vh;
+details {
+  margin: 1.5vh 2vw;
+  padding: 10px;
+
+  border-radius: 12px;
+
+  transition: cubic-bezier(0, 1, 1, 1) 0.4s;
+
+  summary {
+    display: flex;
+
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+
+    cursor: pointer;
+
+    &::before {
+      @extend .material-icons-outlined;
+
+      content: "expand_more";
+      font-family: "Material Icons";
+    }
+  }
+
+  &:hover {
+    background-color: change-color($color: $md-sys-color-tertiary, $alpha: 0.2);
+  }
+
+  &[open] {
+    summary::before {
+      content: "expand_less";
+    }
+
+    background-color: change-color($color: $md-sys-color-tertiary, $alpha: 0.2);
+    
+    border-radius: 24px;
+
+    transition: cubic-bezier(0, 1, 1, 1) 0.3s;
+  }
+
+  img {
+    border-radius: 14px !important;
+  }
 }
 
 .disable-select {
@@ -249,8 +292,6 @@ footer {
 
   align-items: stretch;
   flex-direction: column;
-  grid-column-end: 3;
-  grid-column-start: 2;
 
   padding: 40px 40px 40px 120px;
 
@@ -269,7 +310,8 @@ footer {
 
     color: var(--md-sys-color-on-tertiary-container);
 
-    background: var(--md-sys-color-tertiary-container);
+    background-color: change-color($color: $md-sys-color-tertiary-container, $alpha: 0.2);
+    
     border-radius: 12px;
   }
 
@@ -362,7 +404,7 @@ footer {
 
   @media screen and (max-width: 768px) {
     margin: 0 5vw;
-    padding: 0;
+    padding: 0 0 10vh 0;
 
     .content-header {
       padding: 0;
@@ -478,5 +520,50 @@ footer {
 
   h6 {
     font-size: 20px;
+  }
+}
+
+footer {
+  display: flex;
+
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  padding: 3vh 2vw;
+
+  background-color: change-color($color: $md-sys-color-secondary, $alpha: 0.2);
+
+  border-radius: 24px;
+
+  h6,
+  p {
+    margin: 0;
+  }
+
+  .site-information,
+  .articles,
+  .personal-information {
+    padding: 20px;
+  }
+
+  .articles {
+    ul {
+      padding-inline-start: 0;
+    }
+  }
+
+  .personal-information {
+    @extend .subhead1;
+
+    &>div {
+      display: flex;
+
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
   }
 }
