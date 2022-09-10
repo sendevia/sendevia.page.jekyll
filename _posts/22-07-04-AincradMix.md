@@ -156,20 +156,20 @@ excerpt_separator: <!--more-->
 
 #### 插件
 
-[Saber]  
+[Saber](https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/)  
 Trapcode Suite  
 AESweets Halftone
 
 #### 脚本
 
-[Duik]  
-[GridGuide]
+[Duik](https://rainboxprod.coop/en/tools/duik/duik-download/)  
+[GridGuide](https://aescripts.com/gridguide-for-after-effects/)  
 
 #### 字体
 
-[SAO-UI]  
-[KD-Tramcar]  
-[Aller]  
+[SAO-UI](https://fontmeme.com/fonts/sao-ui-font/)  
+[KD-Tramcar](https://fontmeme.com/fonts/kd-tramcar-font/)  
+[Aller](https://fontmeme.com/fonts/aller-font/)  
 Electrolize  
 Century Gothic
 
@@ -195,27 +195,7 @@ Century Gothic
 
 ## 引用素材来源
 
-- `style_lazer/old` 来自 [`ppy/osu-resources`]
-- 部分颜色取自 SAO 动画的[官方网站]
+- `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
+- 部分颜色取自 SAO 动画的[官方网站](https://www.swordart-online.net/)
 
 _非常感谢这些资源的贡献者_
-
-<!-- 链接索引 -->
-
-[saber]: https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/
-[duik]: https://rainboxprod.coop/en/tools/duik/duik-download/
-[gridguide]: https://aescripts.com/gridguide-for-after-effects/
-[sao-ui]: https://fontmeme.com/fonts/sao-ui-font/
-[kd-tramcar]: https://fontmeme.com/fonts/kd-tramcar-font/
-[aller]: https://fontmeme.com/fonts/aller-font/
-[官方网站]: https://www.swordart-online.net/
-[`ppy/osu-resources`]: https://github.com/ppy/osu-resources/
-
-<!--
-    ___    _                           ____  ____
-   /   |  (_)___  ______________ _____/ /  |/  (_)  __
-  / /| | / / __ \/ ___/ ___/ __ `/ __  / /|_/ / / |/_/
- / ___ |/ / / / / /__/ /  / /_/ / /_/ / /  / / />  <
-/_/  |_/_/_/ /_/\___/_/   \__,_/\__,_/_/  /_/_/_/|_|
-designed by sendevia, 2022
--->
