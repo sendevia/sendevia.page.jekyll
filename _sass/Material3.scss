@@ -228,7 +228,7 @@ table {
 
 details {
   margin: 1.5vh 2vw;
-  padding: 10px;
+  padding: 6px 10px;
 
   border-radius: 12px;
 
@@ -241,6 +241,8 @@ details {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 10px;
+
+    padding: 10px;
 
     cursor: pointer;
 
@@ -404,7 +406,7 @@ details {
 
   @media screen and (max-width: 768px) {
     margin: 0 5vw;
-    padding: 0 0 10vh 0;
+    padding: 0 0 calc(80px + 2vh) 0;
 
     .content-header {
       padding: 0;
