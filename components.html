@@ -5,7 +5,7 @@ description: Material3 组件示例
 author: sendevia
 ---
 
-<div>
+<div class="page-components">
   <div>
     <h1>Typography</h1>
     <p>一般用于页面的排版</p>
@@ -13,51 +13,90 @@ author: sendevia
       <thead>
         <tr>
           <th>element</th>
+          <th>class</th>
           <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>h1</code></td>
-          <td>
-            <h1>Headline 1</h1>
-          </td>
+          <td>-</td>
+          <td><code>display1</code></td>
+          <td class="display1">Display 1</td>
         </tr>
         <tr>
-          <td><code>h2</code></td>
-          <td>
-            <h2>Headline 2</h2>
-          </td>
+          <td>-</td>
+          <td><code>display2</code><br /><code>display-large</code></td>
+          <td class="display2">Display 2</td>
         </tr>
         <tr>
-          <td><code>h3</code></td>
-          <td>
-            <h3>Headline 3</h3>
-          </td>
+          <td>-</td>
+          <td><code>display3</code><br /><code>display-medium</code></td>
+          <td class="display3">Display 3</td>
         </tr>
         <tr>
-          <td><code>h4</code></td>
-          <td>
-            <h4>Headline 4</h4>
-          </td>
+          <td>h1</td>
+          <td><code>headline1</code><br /><code>display-small</code></td>
+          <td class="headline1">Headline 1</td>
         </tr>
         <tr>
-          <td><code>h5</code></td>
-          <td>
-            <h5>Headline 5</h5>
-          </td>
+          <td>h2</td>
+          <td><code>headline2</code><br /><code>headline-large</code></td>
+          <td class="headline2">Headline 2</td>
         </tr>
         <tr>
-          <td><code>h6</code></td>
-          <td>
-            <h6>Headline 6</h6>
-          </td>
+          <td>h3</td>
+          <td><code>headline3</code><br /><code>headline-medium</code></td>
+          <td class="headline3">Headline 3</td>
         </tr>
         <tr>
-          <td><code>p</code></td>
-          <td>
-            <p>Sample text</p>
-          </td>
+          <td>h4</td>
+          <td><code>headline4</code><br /><code>headline-small</code></td>
+          <td class="headline4">Headline 4</td>
+        </tr>
+        <tr>
+          <td>h5</td>
+          <td><code>headline5</code><br /><code>title-large</code></td>
+          <td class="headline5">Headline 5</td>
+        </tr>
+        <tr>
+          <td>h6</td>
+          <td><code>headline6</code></td>
+          <td class="headline6">Headline 6</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>subhead1</code><br /><code>title-medium</code></td>
+          <td class="subhead1">Subhead 1</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>subhead2</code><br /><code>title-small</code></td>
+          <td class="subhead2">Subhead 2</td>
+        </tr>
+        <tr>
+          <td>p</td>
+          <td><code>body1</code><br /><code>body-large</code></td>
+          <td class="body1">Body 1</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>body2</code><br /><code>body-medium</code></td>
+          <td class="body2">Body 2</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>caption</code><br /><code>body-small</code></td>
+          <td class="body-small">Caption</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>button</code><br /><code>label-large</code></td>
+          <td class="label-large">Button</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td><code>overline</code><br /><code>label-medium</code></td>
+          <td class="label-medium">Overline</td>
         </tr>
       </tbody>
     </table>
@@ -271,7 +310,7 @@ author: sendevia
       </thead>
       <tbody>
         <tr>
-          <td><code>input</code></td>
+          <td>input</td>
           <td><code>material-text-field</code></td>
           <td>
             <div class="material-text-field">
@@ -283,7 +322,7 @@ author: sendevia
         <tr>
           <td></td>
           <td></td>
-          <td><input type="text" title="123"></td>
+          <td><input type="text" title="123" /></td>
         </tr>
       </tbody>
     </table>
@@ -303,7 +342,7 @@ author: sendevia
       </thead>
       <tbody>
         <tr>
-          <td><code>div</code></td>
+          <td>div</td>
           <td><code>material-card</code></td>
           <td><code>elevated</code></td>
           <td>
@@ -333,7 +372,7 @@ author: sendevia
       </thead>
       <tbody>
         <tr>
-          <td><code>material-chip</code></td>
+          <td>material-chip</td>
           <td><code>Assist</code></td>
           <td>-</td>
           <td>
@@ -454,7 +493,7 @@ author: sendevia
       </thead>
       <tbody>
         <tr>
-          <td><code>material-dialog</code></td>
+          <td>material-dialog</td>
           <td><code>basic</code></td>
           <td>
             <material-dialog basic>
@@ -474,6 +513,26 @@ author: sendevia
     </table>
   </div>
 
+  <div>
+    <h1>MathJax V3</h1>
+    <p><b>仅适用于 Markdown。</b>显示数学公式，使用 <code>$$</code> 包住要显示的公式</p>
+    <table>
+      <thead>
+        <tr>
+          <th>markdown</th>
+          <th>预览</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$$<br />ax^2 + bx + c = 0<br />$$</code></td>
+          <td>$$
+            ax^2 + bx + c = 0
+            $$</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div>
     <h1>Table</h1>
     <p>通用的表格</p>

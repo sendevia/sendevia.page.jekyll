@@ -114,6 +114,7 @@
         letter-spacing: 0.5px;
         line-height: 16px;
         text-align: center;
+        text-decoration: none;
       }
     }
 
@@ -144,6 +145,7 @@
 
         color: #00000000;
         line-height: 0px;
+        text-decoration: none;
 
         transition: 0.3s ease-out;
         visibility: hidden;
@@ -160,6 +162,7 @@
         #label {
           color: var(--md-sys-color-on-secondary-container);
           line-height: 16px;
+          text-decoration: none;
 
           visibility: visible;
         }
