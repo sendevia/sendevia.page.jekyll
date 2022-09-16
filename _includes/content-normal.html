@@ -23,9 +23,12 @@
 {%- assign page_words = page.content | number_of_words: "auto" -%}
 {%- if page_words == 0 -%}
 <div class="nothing">
-  <h1>:/</h1>
+  <h1>o(=•ェ•=)m</h1>
   <h6>这里暂时还什么都没有呢</h6>
 </div>
+{%- else -%}
+{%- if page.notips == true -%}
+<div class="content">{{ content }}</div>
 {%- else -%}
 <div class="post-information">
   {%- if page.date -%}
@@ -56,4 +59,5 @@
   </material-chip>
 </div>
 <div class="content">{{ content }}</div>
+{%- endif -%}
 {%- endif -%}

@@ -2,22 +2,28 @@
 layout: Material3
 title: Posts
 description: 文章
+notips: true
 ---
 
-<h2>文章列表</h2>
-{%- assign total_posts = site.posts | size -%}
-{%- if total_posts > 0 -%}
-<ul>
-  {%- for post in site.posts -%}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
-  </li>
-  {%- endfor -%}
-</ul>
-{%- else -%}
-<div class="nothing">
-  <h1>≡[。。]≡</h1>
-  <h6>还没有文章发布，待会再来看看吧</h6>
+<div class="page-posts">
+  {%- assign total_posts = site.posts | size -%} {%- if total_posts > 0 -%}
+  <ul>
+    {%- for post in site.posts -%}
+    <a href="{{ post.url }}">
+      <li>
+        {%- if post.header_image -%}
+        <img src="{{ post.header_image }}" alt="header_image" />
+        {%- endif -%}
+        <p>{{ post.title }}</p>
+        <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
+      </li>
+    </a>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <div class="nothing">
+    <h1>≡[。。]≡</h1>
+    <h6>还没有文章发布，待会再来看看吧</h6>
+  </div>
+  {%- endif -%}
 </div>
-{%- endif -%}

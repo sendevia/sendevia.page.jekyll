@@ -1,29 +1,51 @@
 <style>
   body {
     color: var(--md-sys-color-on-error-container);
+
     background-color: var(--md-sys-color-error-container);
   }
 
   h1 {
     margin: 10vh 0;
+
     font-size: 6vw;
   }
 
+  h3 {
+    margin: 1vh 0;
+
+    font-size: 3vh;
+  }
+
+  h4 {
+    font-size: 2.5vh;
+  }
+
   .page-404 {
-    padding: 80px;
+    padding: 5vw;
   }
 
   #qr-code {
     display: flex;
+
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-
     gap: 20px;
   }
 
+  #qr-code p {
+    margin: 0;
+  }
+  
   #qr-code img {
     width: 120px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    h1 {
+      font-size: 8vh;
+    }
   }
 </style>
 {{ content }}
