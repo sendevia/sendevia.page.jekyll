@@ -18,7 +18,7 @@ button {
   cursor: pointer;
   transition: 1s cubic-bezier(0, 0.35, 0, 1);
 
-  &.icon {
+  &#icon {
     padding: 10px 24px 10px 16px;
 
     &>span {
@@ -37,7 +37,7 @@ button {
     text-transform: capitalize;
   }
 
-  &.elevated {
+  &#elevated {
     color: var(--md-sys-color-primary);
 
     background: var(--md-sys-color-surface);
@@ -53,14 +53,14 @@ button {
         background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
       }
 
-      &.icon>span,
+      &#icon>span,
       &>p {
         color: var(--md-sys-color-on-surface);
       }
     }
   }
 
-  &.filled {
+  &#filled {
     color: var(--md-sys-color-on-primary);
 
     background: var(--md-sys-color-primary);
@@ -103,7 +103,7 @@ button {
     }
   }
 
-  &.filled-tonal {
+  &#filled-tonal {
     color: var(--md-sys-color-on-secondary-container);
 
     background: var(--md-sys-color-secondary-container);
@@ -146,14 +146,14 @@ button {
     }
   }
 
-  &.outlined {
+  &#outlined {
     padding: 9px 23px;
 
     color: var(--md-sys-color-primary);
 
     border: 1px solid var(--md-sys-color-outline);
 
-    &.icon {
+    &#icon {
       padding: 9px 15px 9px 11px;
     }
 
@@ -196,14 +196,14 @@ button {
     }
   }
 
-  &.text {
+  &#text {
     min-width: 40px;
 
     padding: 10px 12px;
 
     color: var(--md-sys-color-primary);
 
-    &.icon {
+    &#icon {
       padding: 10px 16px 10px 12px;
     }
 
@@ -249,7 +249,7 @@ button {
     margin: 0 2px;
     padding: 0.4ex 0.6ch 0.4ex 0.8ch;
 
-    font-weight: bold;
+    font-weight: bold !important;
 
     border-radius: 5px;
     border: 1px solid #00000000;
