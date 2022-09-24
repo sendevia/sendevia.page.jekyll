@@ -5,3 +5,4 @@ _site
 vendor
 *.code-workspace
 .typescript
+*.sf

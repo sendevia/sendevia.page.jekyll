@@ -49,10 +49,6 @@ button {
       background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
       box-shadow: none;
 
-      @media (prefers-color-scheme: dark) {
-        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
-      }
-
       &#icon>span,
       &>p {
         color: var(--md-sys-color-on-surface);
@@ -83,24 +79,6 @@ button {
     &:active {
       background: change-color($color: $md-sys-color-primary, $lightness: 50%);
     }
-
-    @media (prefers-color-scheme: dark) {
-      &[disabled] {
-        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
-      }
-
-      &:hover {
-        background: change-color($color: $md-sys-color-primary-dark, $lightness: 75%);
-      }
-
-      &:focus {
-        background: change-color($color: $md-sys-color-primary-dark, $lightness: 80%);
-      }
-
-      &:active {
-        background: change-color($color: $md-sys-color-primary-dark, $lightness: 80%);
-      }
-    }
   }
 
   &#filled-tonal {
@@ -125,24 +103,6 @@ button {
 
     &:active {
       background: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-pressed-state-layer-opacity);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      &[disabled] {
-        background: change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
-      }
-
-      &:hover {
-        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
-      }
-
-      &:focus {
-        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
-      }
-
-      &:active {
-        background: change-color($color: $md-sys-color-on-secondary-container-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
-      }
     }
   }
 
@@ -175,25 +135,6 @@ button {
     &:active {
       background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
     }
-
-    @media (prefers-color-scheme: dark) {
-      &[disabled] {
-        border: 1px solid change-color($color: $md-sys-color-on-surface-dark, $alpha: 0.12);
-      }
-
-      &:hover {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
-      }
-
-      &:focus {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
-      }
-
-      &:active {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
-      }
-
-    }
   }
 
   &#text {
@@ -221,20 +162,6 @@ button {
 
     &:active {
       background: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-hover-state-layer-opacity);
-      }
-
-      &:focus {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-focus-state-layer-opacity);
-      }
-
-      &:active {
-        background: change-color($color: $md-sys-color-primary-dark, $alpha: $md-sys-state-pressed-state-layer-opacity);
-      }
     }
   }
 }
