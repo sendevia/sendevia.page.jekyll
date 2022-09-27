@@ -8,10 +8,11 @@
 [disabled] {
   @extend .disable-select;
 
-  cursor: not-allowed;
-  pointer-events: none;
-
-  opacity: 0.38;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  filter: none !important;
+  opacity: 0.38 !important;
+  pointer-events: none !important;
 }
 
 * {
@@ -77,6 +78,7 @@ body {
 a {
   color: var(--md-sys-color-primary);
   text-decoration: none;
+  font-weight: bold !important;
 }
 
 br {
@@ -84,12 +86,18 @@ br {
 }
 
 details {
-  margin: 0.5vh 1vw;
+  margin: 0.5vh 0;
 
   border-radius: 12px;
 
   overflow: hidden;
   transition: cubic-bezier(0, 1, 1, 1) 0.4s;
+
+  img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 
   summary {
     @extend .body-large;
@@ -123,7 +131,7 @@ details {
 
     background-color: change-color($color: $md-sys-color-tertiary, $alpha: 0.2);
 
-    border-radius: 24px;
+    border-radius: 24px 24px 12px 12px;
 
     transition: cubic-bezier(0, 1, 1, 1) 0.3s;
   }
@@ -261,6 +269,10 @@ table {
         border-left: 1px solid var(--md-sys-color-outline);
         border-top: 1px solid var(--md-sys-color-outline);
 
+        code {
+          white-space: nowrap;
+        }
+
         &:first-child {
           border-left: none;
         }
@@ -302,6 +314,22 @@ ol {
 
   animation: page-fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
   z-index: 0;
+
+  a {
+    padding: 2px;
+
+    border: 2px solid #00000000;
+
+    transition: 0.1s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      border: 2px dashed var(--md-sys-color-primary);
+    }
+  }
 
   div {
     &.block {
