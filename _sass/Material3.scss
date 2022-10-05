@@ -76,9 +76,12 @@ body {
 }
 
 a {
+  height: max-content;
+  width: max-content;
+
   color: var(--md-sys-color-primary);
-  text-decoration: none;
   font-weight: bold !important;
+  text-decoration: none;
 }
 
 br {
@@ -202,6 +205,7 @@ table {
 
     padding: 16px 0;
 
+    font-weight: bold !important;
     text-transform: uppercase;
 
     background: var(--md-sys-color-surface-variant);
@@ -295,12 +299,20 @@ table {
 
 ul,
 ol {
+  display: flex;
+
+  flex-direction: column;
+
   padding-inline-start: 20px;
 
   li {
     @extend .body-large;
 
-    list-style: none;
+    display: inline-flex;
+
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -312,12 +324,13 @@ ol {
 
   padding: 40px 40px 40px 120px;
 
-  animation: page-fade-in cubic-bezier(0.4, 1.06, 0.55, 1.06) 1s 1 both normal;
+  -webkit-animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both
+    page-fade-in;
+  animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
+  overflow: hidden;
   z-index: 0;
 
   a {
-    padding: 2px;
-
     border: 2px solid #00000000;
 
     transition: 0.1s;
@@ -327,6 +340,8 @@ ol {
     }
 
     &:active {
+      text-decoration: none;
+
       border: 2px dashed var(--md-sys-color-primary);
     }
   }
@@ -377,7 +392,7 @@ ol {
     clip-path: inset(0 round 64px);
 
     .header-container {
-      padding: 40px 0;
+      padding: 80px 0;
       width: 100%;
 
       h1 {
@@ -394,14 +409,17 @@ ol {
       }
 
       img {
+        @extend .disable-select;
+
         width: 100%;
 
         position: absolute;
 
-        left: 0;
-        top: 0;
+        top: 40px;
 
+        -webkit-animation: 60s ease-in-out infinite normal header-img;
         -webkit-mask: linear-gradient(to right, transparent, #000);
+        animation: 60s ease-in-out infinite normal header-img;
         mask: linear-gradient(to right, transparent, #000);
         z-index: -1;
       }
@@ -409,6 +427,12 @@ ol {
       h1,
       p {
         z-index: 1;
+      }
+
+      @media screen and (max-width: 1024px) {
+        img {
+          visibility: hidden;
+        }
       }
     }
   }
@@ -496,10 +520,9 @@ ol {
 
       a {
         margin: 0 0 15px 0;
-
-        width: max-content;
       }
 
+      h3,
       h6,
       p {
         margin: 0;
@@ -510,10 +533,6 @@ ol {
         padding: 32px 32px 15px;
 
         border-bottom: 1px solid var(--md-sys-color-outline);
-
-        p {
-          margin-block-end: 10px;
-        }
       }
 
       &:nth-child(2) {
@@ -538,12 +557,25 @@ ol {
       }
 
       img {
-        width: 40px;
+        width: 50px;
+
+        -webkit-mask-image: url(/assets/images/mask.svg);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 100%;
+        mask-image: url(/assets/images/mask.svg);
+        mask-repeat: no-repeat;
+        mask-size: 100%;
       }
 
       ul {
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+
         margin-block-end: 0;
-        margin-block-start: 0;
+        margin-block-start: 10px;
         padding-inline-start: 0;
 
         a {
@@ -644,14 +676,18 @@ ol {
 }
 
 .page-posts {
-  ul {
-    display: flex;
+  display: flex;
 
-    align-items: stretch;
-    flex-direction: row;
-    justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
 
-    padding: 0;
+  material-card {
+    padding: 10px;
+
+    max-width: 40%;
+
+    text-align: end;
 
     a {
       max-width: 30%;
@@ -659,9 +695,7 @@ ol {
   }
 
   @media screen and (max-width: 768px) {
-    ul {
-      flex-direction: column;
-
+    material-card {
       a {
         max-width: 100%;
       }

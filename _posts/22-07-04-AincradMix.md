@@ -1,25 +1,22 @@
 ---
-layout: Material3
-title: AincradMix
-description: 一个 osu! 皮肤
 author: sendevia
+description: 一个 osu! 皮肤
 excerpt_separator: <!--more-->
+header_image: /assets/images/22/06/11/s0_amix_vision.png
+layout: Material3
+notips:
+title: AincradMix
 ---
 
-<div align="center">
-  <img src="/assets/images/22/06/11/s0_aincradmix.png" width="400" alt="project_logo">
-</div>
----
+# 介绍
 
-## 介绍
-
-### 关于
+## 关于
 
 > 这是一个 osu! 皮肤，它以游戏补丁的方式实现了对 osu! 全部界面元素的覆盖。  
 > 它的设计风格扩展了《刀剑神域》第 1、2 季中操作界面的设计，结合更现代的设计风格，再将两者和谐相融。  
 >  ~~是一块测试技术的大型试验田~~
 
-### 优点
+## 优点
 
 1. 扩展了刀剑神域系列番剧中 UI 的设计
 2. 拥有较好的打图手感
@@ -33,22 +30,18 @@ excerpt_separator: <!--more-->
 - 在应用全局皮肤时，要注意备份 `osu!ui.dll` 和 `osu!gameplay.dll`
 - 本皮肤所提供的 dll 文件仅替换了图像资源，未做其他修改。如果不放心，你可以使用 dnSpy 自行替换文件
 
-## 皮肤预览
-
-<div align="center">
-  <img src="/assets/images/22/06/11/s0_amix_vision.png">
-</div>
+# 皮肤预览
 
 <details>
   <summary>主界面</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot01.jpg">
     </div>
 </details>
 
 <details>
   <summary>选歌界面</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot02.jpg">
       <img src="/assets/images/22/06/11/screenshot06.jpg">
       <img src="/assets/images/22/06/11/screenshot07.jpg">
@@ -57,7 +50,7 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>std 模式</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot03.jpg">
       <img src="/assets/images/22/06/11/screenshot04.jpg">
     </div>
@@ -65,7 +58,7 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>mania 模式</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot09.jpg">
       <img src="/assets/images/22/06/11/screenshot08.jpg">
     </div>
@@ -73,7 +66,7 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>taiko 模式</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot10.jpg">
       <img src="/assets/images/22/06/11/screenshot11.jpg">
     </div>
@@ -81,7 +74,7 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>catch 模式</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot12.jpg">
       <img src="/assets/images/22/06/11/screenshot13.jpg">
     </div>
@@ -89,83 +82,79 @@ excerpt_separator: <!--more-->
 
 <details>
   <summary>成绩结算</summary>
-    <div align="center">
+    <div>
       <img src="/assets/images/22/06/11/screenshot05.jpg">
     </div>
 </details>
 
-## 推荐设置
+<div align="center">
+  <button id="elevated" onclick="location.href='//github.com/ SendeviaAincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
+    <span>download</span>
+    最新版下载
+  </button>
+</div>
 
-### 详细设置
+# 推荐设置
+
+## 详细设置
 
 > 🔴 渐出滑条  
 > 🔴 连击提示图  
 > ⭕ 击打闪光  
 > 🔴 着色器效果  
-> ⭕ 柔化滤镜  
+> ⭕ 柔化滤镜
 
-### 主菜单
+## 主菜单
 
-> 🔴 飘雪效果  
+> 🔴 飘雪效果
 
-### 选歌页面
+## 选歌页面
 
-> 🔴 显示略缩图  
+> 🔴 显示略缩图
 
-### 常规
+## 常规
 
-> 🔴 进度条位置： 右上角（条状）  
+> 🔴 进度条位置： 右上角（条状）
 
-### 音量
+## 音量
 
-> ⭕ 禁用谱面自带音效  
+> ⭕ 禁用谱面自带音效
 
-### 皮肤
+## 皮肤
 
 > 🔴 忽略所有谱面自带的皮肤  
 > ⭕ 使用皮肤的音效  
 > 🔴 总是使用皮肤中的光标  
 > 🔴 光标大小： _0.7x_  
 > ⭕ 自动缩放光标  
-> ⭕ 拖球的颜色随滑条改变  
+> ⭕ 拖球的颜色随滑条改变
 
-### 鼠标
+## 鼠标
 
-> ⭕ 点击波纹  
-
-## 最新版下载
-
-<div align="center">
-  <a href="https://github.com/Sendevia/AincradMix/releases/latest">
-    <img src="/assets/images/22/06/11/s0_button_download_1.png" width="300" alt="download">
-  </a>
-  <p align="right">
-    Release 1.0 / 2022.3.21
-  </p>
-</div>
+> ⭕ 点击波纹
 
 ---
 
-## `.aep` 的打开方式
+# `.aep` 的打开方式
 
-### **注意：**
+## **注意：**
 
 1. 推荐使用`Adobe After Effects CC2021 (18.0)`或更高版本。
 2. **注意要经常保存文件**
 3. 你**必须**拥有以下的插件、脚本和字体：
 
-#### 插件
+### 插件
 
 [Saber](https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/)  
 Trapcode Suite  
 AESweets Halftone
 
-#### 脚本
+### 脚本
 
 [Duik](https://rainboxprod.coop/en/tools/duik/duik-download/)  
-[GridGuide](https://aescripts.com/gridguide-for-after-effects/)  
+[GridGuide](https://aescripts.com/gridguide-for-after-effects/)
 
-#### 字体
+### 字体
 
 [SAO-UI](https://fontmeme.com/fonts/sao-ui-font/)  
 [KD-Tramcar](https://fontmeme.com/fonts/kd-tramcar-font/)  
@@ -173,7 +162,7 @@ AESweets Halftone
 Electrolize  
 Century Gothic
 
-## 图像导出说明
+# 图像导出说明
 
 1. 将图片导出格式设置为 `.PNG`，通道为 `RGB+Alpha`，名称为`合成名称`
 2. 将动画导出格式设置为 `.PNG（序列）`，通道为 `RGB+Alpha`，根据情况选择使用合成帧编号，名称为`合成名称`，删去文件名的 **`_[#]`** 后缀 **（噔噔咚~ 是 `_[#]` ！不是 `-[#]` 或 `[#]` ！）**
@@ -181,7 +170,7 @@ Century Gothic
    - `AOM` After Effects 的输出模块模板
    - `ARS` After Effects 的渲染模块模板
 
-## 目录说明
+# 目录说明
 
 | 名称          | 说明     |
 | ------------- | -------- |
@@ -193,9 +182,16 @@ Century Gothic
 | sounds        | 可选音效 |
 | sources       | 工程文件 |
 
-## 引用素材来源
+# 引用素材来源
 
 - `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
 - 部分颜色取自 SAO 动画的[官方网站](https://www.swordart-online.net/)
 
 _非常感谢这些资源的贡献者_
+
+<div align="center">
+  <button id="elevated" onclick="location.href='//github.com/ SendeviaAincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
+    <span>download</span>
+    最新版 (1.0/2022.3.21) 下载
+  </button>
+</div>

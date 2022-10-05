@@ -1,6 +1,8 @@
 // https://m3.material.io/components/all-buttons/
 button,
 button[noicon] {
+  @extend .label-large;
+
   display: flex;
 
   align-items: center;
@@ -9,6 +11,8 @@ button[noicon] {
   justify-content: center;
 
   padding: 10px 24px;
+
+  text-transform: capitalize;
 
   min-width: 58px;
   width: max-content;
@@ -27,15 +31,8 @@ button[noicon] {
 
       font-family: "Material Icons";
       font-size: 18px;
+      text-transform: none;
     }
-  }
-
-  p {
-    @extend .label-large;
-
-    margin: 0;
-
-    text-transform: capitalize;
   }
 
   &#elevated {

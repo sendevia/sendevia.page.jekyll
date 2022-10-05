@@ -1,42 +1,61 @@
-## ArchLinux 安装运行环境
+# 安装运行环境
+
+## ArchLinux
 
 1. 安装 ruby 环境
 
-```bash
+```
 sudo pacman -Sy ruby base-devel --noconfirm
 ```
 
 2. 配置环境变量
 
 ```bash
-echo 'export GEM_HOME="$HOME/.local/share/gem"\nexport PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
+echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
 ```
 
-3. 使变量生效
+## Ubuntu 22.04
+
+1. 安装 ruby 环境
+
+```
+sudo apt install ruby-full build-essential zlib1g-dev -y
+```
+
+2. 配置环境变量
+
+```bash
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+# 使变量生效
 
 ```bash
 source ~/.bashrc
 ```
 
-4. 安装 Jekyll
+# 安装 Jekyll
 
 ```ruby
 gem install bundler jekyll
 ```
 
-5. 切换到 sendevia.github.io 文件夹
+# 运行 Jekyll
+
+1. 切换到本项目文件夹
 
 ```ruby
 bundle install
 ```
 
-## 运行 jekyll
-
 ```ruby
 bundle exec jekyll serve --livereload
 ```
 
-## 环境报错解决方案
+# 环境报错解决方案
 
 1. **WARNING: You don't have ... in your PATH, gem executables will not run.**
 

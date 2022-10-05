@@ -22,3 +22,65 @@
     opacity: 1;
   }
 }
+
+@keyframes header-img {
+  0% {
+    left: 120px;
+    right: unset;
+
+    opacity: 0;
+    transform: translateY(0%);
+  }
+
+  5% {
+    left: 120px;
+    right: unset;
+
+    opacity: 1;
+  }
+
+  40% {
+    left: 120px;
+    right: unset;
+
+    opacity: 1;
+  }
+
+  45% {
+    left: 120px;
+    right: unset;
+
+    opacity: 0;
+    transform: translateY(-35%);
+  }
+
+  50% {
+    left: unset;
+    right: 40px;
+
+    opacity: 0;
+    transform: translateY(-35%);
+  }
+
+  55% {
+    left: unset;
+    right: 40px;
+
+    opacity: 1;
+  }
+
+  95% {
+    left: unset;
+    right: 40px;
+
+    opacity: 1;
+  }
+
+  100% {
+    left: unset;
+    right: 40px;
+
+    opacity: 0;
+    transform: translateY(0%);
+  }
+}

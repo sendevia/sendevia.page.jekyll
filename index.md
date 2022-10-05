@@ -1,10 +1,16 @@
 ---
+author: sendevia
+description:
+excerpt_separator: <!--more-->
+header_image: /assets/images/97367522_p0.png
 layout: Material3
-title: Sendevia 的博客小站
-description: 
-header_image: /assets/images/76542723.jpg
 notips: true
+title: Sendevia 的博客小站
 ---
 
 # 来看看 AincradMix 吧，是个 osu! 皮肤呦
-## [点我看看](/2022/07/04/AincradMix.html)
+
+<button id="elevated" onclick="location.href='/2022/07/04/AincradMix.html'" icon>
+    <span>open_in_new</span>
+    点我跳转
+</button>
