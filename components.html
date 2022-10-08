@@ -37,37 +37,37 @@ title: Material3 Components
           <td class="display-small">Display Small</td>
         </tr>
         <tr>
-          <td>h1</td>
+          <td><code>h1</code></td>
           <td><code>headline-large</code></td>
           <td class="headline-large">Headline Large</td>
         </tr>
         <tr>
-          <td>h2</td>
+          <td><code>h2</code></td>
           <td><code>headline-medium</code></td>
           <td class="headline-medium">Headline Medium</td>
         </tr>
         <tr>
-          <td>h3</td>
+          <td><code>h3</code></td>
           <td><code>headline-small</code></td>
           <td class="headline-small">Headline Small</td>
         </tr>
         <tr>
-          <td>h4</td>
+          <td><code>h4</code></td>
           <td><code>title-large</code></td>
           <td class="title-large">Title Large</td>
         </tr>
         <tr>
-          <td>h5</td>
+          <td><code>h5</code></td>
           <td><code>title-medium</code></td>
           <td class="title-medium">Title Medium</td>
         </tr>
         <tr>
-          <td>h6</td>
+          <td><code>h6</code></td>
           <td><code>title-small</code></td>
           <td class="title-small">Title Small</td>
         </tr>
         <tr>
-          <td>p</td>
+          <td><code>p</code></td>
           <td><code>body-large</code></td>
           <td class="body-large">Body Large</td>
         </tr>
@@ -107,7 +107,7 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>id</th>
+          <th>ID</th>
           <th>正常</th>
           <th>正常，带图标</th>
           <th>失效/禁用</th>
@@ -116,10 +116,10 @@ title: Material3 Components
       </thead>
       <tbody>
         <tr>
-          <td>button</td>
+          <td><code>button</code><br /><code>material-button</code></td>
           <td><code>elevated</code></td>
           <td>
-            <button id="elevated" noicon>elevated</button>
+            <button id="elevated">elevated</button>
           </td>
           <td>
             <button id="elevated" icon>
@@ -128,7 +128,7 @@ title: Material3 Components
             </button>
           </td>
           <td>
-            <button id="elevated" noicon disabled>elevated</button>
+            <button id="elevated" disabled>elevated</button>
           </td>
           <td>
             <button id="elevated" icon disabled>
@@ -141,7 +141,7 @@ title: Material3 Components
           <td></td>
           <td><code>filled</code></td>
           <td>
-            <button id="filled" noicon>filled</button>
+            <button id="filled">filled</button>
           </td>
           <td>
             <button id="filled" icon>
@@ -150,7 +150,7 @@ title: Material3 Components
             </button>
           </td>
           <td>
-            <button id="filled" noicon disabled>filled</button>
+            <button id="filled" disabled>filled</button>
           </td>
           <td>
             <button id="filled" icon disabled>
@@ -163,7 +163,7 @@ title: Material3 Components
           <td></td>
           <td><code>tonal</code></td>
           <td>
-            <button id="tonal" noicon>tonal</button>
+            <button id="tonal">tonal</button>
           </td>
           <td>
             <button id="tonal" icon>
@@ -172,7 +172,7 @@ title: Material3 Components
             </button>
           </td>
           <td>
-            <button id="tonal" noicon disabled>tonal</button>
+            <button id="tonal" disabled>tonal</button>
           </td>
           <td>
             <button id="tonal" icon disabled>
@@ -185,7 +185,7 @@ title: Material3 Components
           <td></td>
           <td><code>outlined</code></td>
           <td>
-            <button id="outlined" noicon>outlined</button>
+            <button id="outlined">outlined</button>
           </td>
           <td>
             <button id="outlined" icon>
@@ -194,7 +194,7 @@ title: Material3 Components
             </button>
           </td>
           <td>
-            <button id="outlined" noicon disabled>outlined</button>
+            <button id="outlined" disabled>outlined</button>
           </td>
           <td>
             <button id="outlined" icon disabled>
@@ -207,7 +207,7 @@ title: Material3 Components
           <td></td>
           <td><code>text</code></td>
           <td>
-            <button id="text" noicon>text</button>
+            <button id="text">text</button>
           </td>
           <td>
             <button id="text" icon>
@@ -216,7 +216,7 @@ title: Material3 Components
             </button>
           </td>
           <td>
-            <button id="text" noicon disabled>text</button>
+            <button id="text" disabled>text</button>
           </td>
           <td>
             <button id="text" icon disabled>
@@ -235,13 +235,13 @@ title: Material3 Components
     <table>
       <thead>
         <tr>
-          <th>class</th>
+          <th>element</th>
           <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>material-select-menu</code></td>
+          <td><code>select</code><br /><code>material-select-menu</code></td>
           <td>
             <select class="material-select-menu" id="menu-1">
               <option class="item">
@@ -282,25 +282,22 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>class</th>
           <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>input</td>
-          <td><code>material-text-field</code></td>
+          <td><code>input</code><br /><code>material-text-field</code></td>
           <td>
-            <div class="material-text-field">
+            <material-text-field>
               <label>Label</label>
               <span class="material-icons-outlined clear"> close </span>
-            </div>
+            </material-text-field>
           </td>
         </tr>
         <tr>
           <td></td>
-          <td></td>
-          <td><input type="text" title="123" /></td>
+          <td><input /></td>
         </tr>
       </tbody>
     </table>
@@ -313,19 +310,113 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>class</th>
-          <th>id</th>
+          <th>attribute</th>
           <th>预览</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>div</td>
           <td><code>material-card</code></td>
+          <td><code>outlined</code></td>
+          <td>
+            <material-card outlined>
+              <div class="header">
+                <div id="content">
+                  <div id="monogram">
+                    <span id="initial">A</span>
+                    <span id="background" />
+                  </div>
+                  <div id="text">
+                    <span id="header">Header</span>
+                    <span id="subhead">Subhead</span>
+                  </div>
+                </div>
+                <span class="material-icons-outlined">more_horiz</span>
+              </div>
+              <div class="headline">
+                <span id="title">Title</span>
+                <span id="subhead">Subhead</span>
+              </div>
+              <div class="supporting-container">
+                <span id="supporting-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor</span
+                >
+              </div>
+              <div class="actions">
+                <button>action 1</button>
+                <button>action 2</button>
+              </div>
+            </material-card>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
           <td><code>elevated</code></td>
           <td>
             <material-card elevated>
-              <div class="container">Title</div>
+              <div class="header">
+                <div id="content">
+                  <div id="monogram">
+                    <span id="initial">A</span>
+                    <span id="background" />
+                  </div>
+                  <div id="text">
+                    <span id="header">Header</span>
+                    <span id="subhead">Subhead</span>
+                  </div>
+                </div>
+                <span class="material-icons-outlined">more_horiz</span>
+              </div>
+              <div class="headline">
+                <span id="title">Title</span>
+                <span id="subhead">Subhead</span>
+              </div>
+              <div class="supporting-container">
+                <span id="supporting-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor</span
+                >
+              </div>
+              <div class="actions">
+                <button>action 1</button>
+                <button>action 2</button>
+              </div>
+            </material-card>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>filled</code></td>
+          <td>
+            <material-card filled>
+              <div class="header">
+                <div id="content">
+                  <div id="monogram">
+                    <span id="initial">A</span>
+                    <span id="background" />
+                  </div>
+                  <div id="text">
+                    <span id="header">Header</span>
+                    <span id="subhead">Subhead</span>
+                  </div>
+                </div>
+                <span class="material-icons-outlined">more_horiz</span>
+              </div>
+              <div class="headline">
+                <span id="title">Title</span>
+                <span id="subhead">Subhead</span>
+              </div>
+              <div class="supporting-container">
+                <span id="supporting-text"
+                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor</span
+                >
+              </div>
+              <div class="actions">
+                <button>action 1</button>
+                <button>action 2</button>
+              </div>
             </material-card>
           </td>
         </tr>
@@ -341,7 +432,7 @@ title: Material3 Components
         <tr>
           <th>element</th>
           <th>class</th>
-          <th>id</th>
+          <th>ID</th>
           <th>正常</th>
           <th>正常，带图标</th>
           <th>失效/禁用</th>
@@ -350,8 +441,8 @@ title: Material3 Components
       </thead>
       <tbody>
         <tr>
-          <td>material-chip</td>
-          <td><code>Assist</code></td>
+          <td><code>material-chip</code></td>
+          <td><code>assist</code></td>
           <td>-</td>
           <td>
             <material-chip class="assist">
@@ -417,7 +508,7 @@ title: Material3 Components
         </tr>
         <tr>
           <td></td>
-          <td><code>Filter</code></td>
+          <td><code>filter</code></td>
           <td>-</td>
           <td>
             <material-chip class="filter">
@@ -471,7 +562,7 @@ title: Material3 Components
       </thead>
       <tbody>
         <tr>
-          <td>material-dialog</td>
+          <td><code>material-dialog</code></td>
           <td><code>basic</code></td>
           <td>
             <material-dialog basic>

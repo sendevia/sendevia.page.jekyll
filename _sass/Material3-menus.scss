@@ -1,5 +1,6 @@
 // https://m3.material.io/components/menus/
-.material-select-menu {
+select,
+material-select-menu {
   height: 56px;
 
   border-radius: 4px;
@@ -81,7 +82,8 @@
   }
 }
 
-.material-text-field {
+input,
+material-text-field {
   display: flex;
 
   align-items: center;
