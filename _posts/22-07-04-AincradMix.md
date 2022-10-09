@@ -2,7 +2,7 @@
 author: sendevia
 description: 一个 osu! 皮肤
 excerpt_separator: <!--more-->
-header_image: /assets/images/22/06/11/s0_amix_vision.png
+header_image: /assets/images/22/06/11/s0_amix_vision.webp
 layout: Material3
 notips:
 title: AincradMix
@@ -35,7 +35,7 @@ title: AincradMix
 <details>
   <summary>主界面</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot01.jpg">
+      <img srcset="/assets/images/22/06/11/screenshot01.jpg">
     </div>
 </details>
 
