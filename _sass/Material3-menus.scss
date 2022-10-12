@@ -3,8 +3,20 @@ select,
 material-select-menu {
   height: 56px;
 
-  border-radius: 4px;
+  color: var(--md-sys-color-on-surface);
+
+  background: var(--md-sys-color-surface);
+
+  border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
+
+  option {
+    span {
+      display: block;
+      font-family: "Material Icons";
+      font-size: 18px;
+    }
+  }
 
   .drop-down {
     @extend .disable-select;
@@ -94,14 +106,12 @@ material-text-field {
 
   height: 56px;
 
-  box-sizing: border-box;
+  color: var(--md-sys-color-on-surface);
+
+  background: var(--md-sys-color-surface);
 
   border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
-
-  label {
-    cursor: text;
-  }
 
   span.clear {
     position: absolute;

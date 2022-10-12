@@ -183,9 +183,15 @@ Century Gothic
 
 _非常感谢这些资源的贡献者_
 
-<div align="center">
+<div>
   <button id="elevated" onclick="location.href='//github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
     <span>download</span>
     最新版 (1.0/2022.3.21) 下载
   </button>
+  <br />
+  <button id="elevated" onclick="location.href='//github.com/Sendevia/AincradMix'" icon>
+    <span>code</span>
+    Github
+  </button>
+
 </div>

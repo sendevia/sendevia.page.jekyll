@@ -1,35 +1,38 @@
 // https://m3.material.io/components/chips/
 material-chip {
-  min-width: max-content;
+  display: flex;
 
-  .leading-icon {
-    @extend .disable-select;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  padding: 0 16px;
+
+  height: 32px;
+  width: max-content;
+
+  border-radius: 8px;
+
+  transition: 0.4s cubic-bezier(0, 1.2, 1, 1);
+
+  &[icon] {
+    gap: 8px;
+
+    padding: 6px 16px 6px 8px;
+
+    span {
+      color: var(--md-sys-color-primary);
+      font-family: "Material Icons";
+      font-size: 18px;
+    }
   }
 
   &.assist {
-    .container {
-      display: flex;
-
-      align-items: center;
-      flex-direction: row;
-
-      padding: 6px 16px 6px 8px;
-
-      height: 32px;
-
-      box-sizing: border-box;
-
-      border-radius: 8px;
-      border: 1px solid var(--md-sys-color-outline);
-    }
+    border: 1px solid var(--md-sys-color-outline);
 
     .label-text {
       @extend .label-large;
-
-      flex-grow: 0;
-      order: 1;
-
-      margin: 0 0 0 8px;
 
       position: static;
 
@@ -37,66 +40,32 @@ material-chip {
       white-space: nowrap;
     }
 
-    .leading-icon {
-      flex-grow: 0;
-      flex: none;
-      order: 0;
-
-      color: var(--md-sys-color-primary);
-      font-size: 18px;
-    }
-
-    &[disabled] {
-      .container {
-        display: flex;
-
-        align-items: center;
-        flex-direction: row;
-
-        padding: 6px 16px 6px 8px;
-
-        height: 32px;
-
-        box-sizing: border-box;
-
-        border-radius: 8px;
-        border: 1px solid change-color($color: $md-sys-color-on-surface-variant, $alpha: 0.12);
-      }
-
-      .label-text {
-        @extend .label-large;
-
-        flex-grow: 0;
-        order: 1;
-
-        margin: 0 0 0 8px;
-
-        position: static;
-
-        color: var(--md-sys-color-on-surface);
-        white-space: nowrap;
-      }
-
-      .leading-icon {
-        flex-grow: 0;
-        flex: none;
-        order: 0;
-
-        color: var(--md-sys-color-on-surface);
-        font-size: 18px;
-      }
-    }
-
     &:hover {
-      .container {
-        box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
 
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
 
     &:focus {
       border: 12px solid var(--md-sys-color-outline);
+    }
+
+    &[elevated] {
+      background: var(--md-sys-color-surface);
+
+      border: none;
+
+      box-shadow: var(--md-sys-elevation-level1);
+    }
+  }
+
+  &[disabled] {
+    span {
+      color: var(--md-sys-color-on-surface);
+    }
+
+    &[elevated] {
+      background: rgba(31, 31, 31, 0.12);
     }
   }
 }

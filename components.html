@@ -243,29 +243,29 @@ title: Material3 Components
         <tr>
           <td><code>select</code><br /><code>material-select-menu</code></td>
           <td>
-            <select class="material-select-menu" id="menu-1">
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+            <select title="select box">
+              <option>
+                <span> category </span>
                 <div>1</div>
               </option>
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+              <option>
+                <span>category</span>
                 <div>2</div>
               </option>
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+              <option>
+                <span>category</span>
                 <div>3</div>
               </option>
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+              <option>
+                <span>category</span>
                 <div>4</div>
               </option>
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+              <option>
+                <span>category</span>
                 <div>5</div>
               </option>
-              <option class="item">
-                <span class="material-icons-outlined"> category </span>
+              <option>
+                <span>category</span>
                 <div>6</div>
               </option>
             </select>
@@ -288,16 +288,7 @@ title: Material3 Components
       <tbody>
         <tr>
           <td><code>input</code><br /><code>material-text-field</code></td>
-          <td>
-            <material-text-field>
-              <label>Label</label>
-              <span class="material-icons-outlined clear"> close </span>
-            </material-text-field>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><input /></td>
+          <td><input placeholder="label"/></td>
         </tr>
       </tbody>
     </table>
@@ -446,36 +437,24 @@ title: Material3 Components
           <td>-</td>
           <td>
             <material-chip class="assist">
-              <div class="container">
-                <p class="label-text">Enabled</p>
-              </div>
+              <p class="label-text">Enabled</p>
             </material-chip>
           </td>
           <td>
-            <material-chip class="assist">
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Enabled</p>
-              </div>
+            <material-chip class="assist" icon>
+              <span>add_shopping_cart</span>
+              <p class="label-text">Enabled</p>
             </material-chip>
           </td>
           <td>
             <material-chip class="assist" disabled>
-              <div class="container">
-                <p class="label-text">Disabled</p>
-              </div>
+              <p class="label-text">Disabled</p>
             </material-chip>
           </td>
           <td>
-            <material-chip class="assist" disabled>
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Disabled</p>
-              </div>
+            <material-chip class="assist" icon disabled>
+              <span>add_shopping_cart</span>
+              <p class="label-text">Disabled</p>
             </material-chip>
           </td>
         </tr>
@@ -483,26 +462,26 @@ title: Material3 Components
           <td></td>
           <td></td>
           <td><code>elevated</code></td>
-          <td></td>
           <td>
-            <material-chip class="assist" id="elevated">
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Enabled</p>
-              </div>
+            <material-chip class="assist" elevated>
+              <p class="label-text">Enabled</p>
             </material-chip>
           </td>
-          <td></td>
           <td>
-            <material-chip class="assist" id="elevated" disabled>
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Disabled</p>
-              </div>
+            <material-chip class="assist" elevated icon>
+              <span>add_shopping_cart</span>
+              <p class="label-text">Enabled</p>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="assist" elevated disabled>
+              <p class="label-text">Disabled</p>
+            </material-chip>
+          </td>
+          <td>
+            <material-chip class="assist" elevated icon disabled>
+              <span>add_shopping_cart</span>
+              <p class="label-text">Disabled</p>
             </material-chip>
           </td>
         </tr>
@@ -512,36 +491,24 @@ title: Material3 Components
           <td>-</td>
           <td>
             <material-chip class="filter">
-              <div class="container">
-                <p class="label-text">Enabled</p>
-              </div>
+              <p class="label-text">Enabled</p>
             </material-chip>
           </td>
           <td>
-            <material-chip class="filter">
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Enabled</p>
-              </div>
+            <material-chip class="filter" icon>
+              <span>check</span>
+              <p class="label-text">Enabled</p>
             </material-chip>
           </td>
           <td>
             <material-chip class="filter" disabled>
-              <div class="container">
-                <p class="label-text">Disabled</p>
-              </div>
+              <p class="label-text">Disabled</p>
             </material-chip>
           </td>
           <td>
-            <material-chip class="filter" disabled>
-              <div class="container">
-                <span class="material-icons-outlined leading-icon"
-                  >directions_car</span
-                >
-                <p class="label-text">Disabled</p>
-              </div>
+            <material-chip class="filter" icon disabled>
+              <span>check</span>
+              <p class="label-text">Disabled</p>
             </material-chip>
           </td>
         </tr>
@@ -599,69 +566,6 @@ title: Material3 Components
             <code>$<br />ax^2 + bx + c = 0<br />$</code>
           </td>
           <td>$ ax^2 + bx + c = 0 $</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <h1>Table</h1>
-    <p>通用的表格</p>
-    <table>
-      <caption>
-        表格示例 table example
-      </caption>
-      <thead>
-        <tr>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>
-          <th>5</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1:1</td>
-          <td>2:1</td>
-          <td>3:1</td>
-          <td>4:1</td>
-          <td>5:1</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>2:2</td>
-          <td></td>
-          <td>4:2</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>1:3</td>
-          <td>2:3</td>
-          <td>3:3</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>2:4</td>
-          <td>3:4</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>2:5</td>
-          <td></td>
-          <td>4:5</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="2">1:6</td>
-          <td></td>
-          <td colspan="2">4:6</td>
-        </tr>
-        <tr>
-          <td colspan="5">1:7</td>
         </tr>
       </tbody>
     </table>
