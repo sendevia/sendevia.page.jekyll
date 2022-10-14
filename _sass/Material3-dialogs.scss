@@ -9,6 +9,10 @@ material-dialog {
     flex-wrap: nowrap;
     gap: 24px;
     justify-content: flex-start;
+
+    min-height: 120px;
+    min-width: 240px;
+  
   }
 
   &[basic] {

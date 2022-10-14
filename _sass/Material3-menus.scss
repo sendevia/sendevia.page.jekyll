@@ -1,9 +1,22 @@
 // https://m3.material.io/components/menus/
-.material-select-menu {
+select,
+material-select-menu {
   height: 56px;
 
-  border-radius: 4px;
+  color: var(--md-sys-color-on-surface);
+
+  background: var(--md-sys-color-surface);
+
+  border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
+
+  option {
+    span {
+      display: block;
+      font-family: "Material Icons";
+      font-size: 18px;
+    }
+  }
 
   .drop-down {
     @extend .disable-select;
@@ -81,25 +94,24 @@
   }
 }
 
-.material-text-field {
+input,
+material-text-field {
   display: flex;
 
   align-items: center;
+
+  padding: 0 85px 0 20px;
 
   position: relative;
 
   height: 56px;
 
-  box-sizing: border-box;
+  color: var(--md-sys-color-on-surface);
+
+  background: var(--md-sys-color-surface);
 
   border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
-
-  label {
-    margin: 0 85px 0 20px;
-
-    cursor: text;
-  }
 
   span.clear {
     position: absolute;
