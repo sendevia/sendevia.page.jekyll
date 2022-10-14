@@ -126,62 +126,7 @@ title: AincradMix
 
 > ⭕ 点击波纹
 
----
-
-# `.aep` 的打开方式
-
-## **注意：**
-
-1. 推荐使用`Adobe After Effects CC2021 (18.0)`或更高版本。
-2. **注意要经常保存文件**
-3. 你**必须**拥有以下的插件、脚本和字体：
-
-### 插件
-
-[Saber](https://www.videocopilot.net/blog/2016/03/new-plug-in-saber-now-available-100-free/)  
-Trapcode Suite  
-AESweets Halftone
-
-### 脚本
-
-[Duik](https://rainboxprod.coop/en/tools/duik/duik-download/)  
-[GridGuide](https://aescripts.com/gridguide-for-after-effects/)
-
-### 字体
-
-[SAO-UI](https://fontmeme.com/fonts/sao-ui-font/)  
-[KD-Tramcar](https://fontmeme.com/fonts/kd-tramcar-font/)  
-[Aller](https://fontmeme.com/fonts/aller-font/)  
-Electrolize  
-Century Gothic
-
-# 图像导出说明
-
-1. 将图片导出格式设置为 `.PNG`，通道为 `RGB+Alpha`，名称为`合成名称`
-2. 将动画导出格式设置为 `.PNG（序列）`，通道为 `RGB+Alpha`，根据情况选择使用合成帧编号，名称为`合成名称`，删去文件名的 **`_[#]`** 后缀 **（噔噔咚~ 是 `_[#]` ！不是 `-[#]` 或 `[#]` ！）**
-3. 你也可以导入本项目提供的 `AOM` 和 `ARS` 文件，具体导入方法恕请另行搜索
-   - `AOM` After Effects 的输出模块模板
-   - `ARS` After Effects 的渲染模块模板
-
-# 目录说明
-
-| 名称          | 说明     |
-| ------------- | -------- |
-| additions     | 皮肤扩展 |
-| animations    | 可选动画 |
-| core          | 皮肤主体 |
-| optimizations | 优化选项 |
-| patches       | 可选补丁 |
-| sounds        | 可选音效 |
-| sources       | 工程文件 |
-
-# 引用素材来源
-
-## 音效
-
-- `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
-
-_非常感谢这些资源的贡献者_
+# 下载
 
 <div>
   <button id="elevated" onclick="location.href='//github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
@@ -193,5 +138,13 @@ _非常感谢这些资源的贡献者_
     <span>code</span>
     Github
   </button>
-
 </div>
+
+# 引用素材来源
+
+## 音效
+
+- `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
+
+_非常感谢这些资源的贡献者_
+

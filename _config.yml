@@ -1,10 +1,9 @@
+timezone: Asia/Shanghai
 title: sendevia 的博客
+
+current_version_amix: release1.0
 email: sendevia@sendevia.top
 github_amix: https://github.com/Sendevia/AincradMix
-current_version_amix: release1.0
-timezone: Asia/Shanghai
-
-bilibili: https://space.bilibili.com/84041790
 twitter: https://twitter.com/sendevia
 
 plugins:
@@ -12,34 +11,41 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-toc
   - jekyll-tsc
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      toc: true
 
 markdown: kramdown
 kramdown:
   input: GFM
 
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
+  - _redirects
   - .gitignore
+  - .jekyll-cache/
+  - .sass-cache/
+  - .typescript
   - .vscode/
-  - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - gemfiles/
   - node_modules/
+  - readme.md
+  - sendevia.github.io.code-workspace
+  - tsconfig.json
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - readme.md
-  - _redirects
-  - sendevia.github.io.code-workspace
-  - .typescript
-  - tsconfig.json
 
 typescript:
-  temp_dir: .typescript
-  extensions: [".ts", ".tsx"]
-  copy_ext: []
-  command: ["tsc"]
   cache: true
+  command: ["tsc"]
+  copy_ext: []
+  extensions: [".ts", ".tsx"]
+  temp_dir: .typescript

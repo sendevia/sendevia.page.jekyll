@@ -11,7 +11,7 @@ body {
   width: 100%;
 
   font-family: "Roboto", sans-serif;
-  font-size: 1.2px;
+  font-size: 1px;
   font-style: normal;
   text-rendering: optimizeLegibility;
 
@@ -437,6 +437,30 @@ ol {
     img {
       max-width: 100%;
     }
+
+    &#nothing {
+      @extend [disabled];
+    
+      margin: 2vw;
+      padding: 4vw;
+    
+      display: flex;
+    
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    
+      border-radius: 32px;
+      border: 2px dashed var(--md-sys-color-outline);
+    
+      h1 {
+        margin: 0;
+      }
+    
+      h6 {
+        margin: 0;
+      }
+    }    
   }
 
   @media screen and (max-width: 1024px) {
@@ -469,12 +493,7 @@ ol {
         padding-block-end: 10px;
 
         #title {
-          font-size: calc(1em + 10vw);
-          line-height: calc(1rem + 10vw);
-        }
-
-        #subtitle {
-          font-size: calc(1em + 4vw);
+          line-height: 1em;
         }
 
         img {
@@ -494,7 +513,6 @@ ol {
       .header-container {
         #title {
           font-size: calc(1em + 15vw);
-          line-height: calc(1rem + 10vw);
         }
 
         #subtitle {
@@ -597,30 +615,6 @@ ol {
 
   @media screen and (max-width: 768px) {
     margin: 2vh 0;
-  }
-}
-
-.nothing {
-  @extend [disabled];
-
-  margin: 2vw;
-  padding: 4vw;
-
-  display: flex;
-
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-
-  border-radius: 32px;
-  border: 2px dashed var(--md-sys-color-outline);
-
-  h1 {
-    margin: 0;
-  }
-
-  h6 {
-    margin: 0;
   }
 }
 
