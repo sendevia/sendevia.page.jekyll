@@ -63,7 +63,6 @@ a {
   width: max-content;
 
   color: var(--md-sys-color-primary);
-  font-weight: bold !important;
   text-decoration: none;
 }
 
@@ -306,27 +305,10 @@ ol {
   margin: 10px 10px 0 80px;
   padding-block-end: 40px;
 
-  -webkit-animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both
-    page-fade-in;
+  -webkit-animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
   animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
   overflow: hidden;
   z-index: 0;
-
-  a {
-    border: 2px solid #00000000;
-
-    transition: 0.1s;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:active {
-      text-decoration: none;
-
-      border: 2px dashed var(--md-sys-color-primary);
-    }
-  }
 
   div {
     &.block {
@@ -340,10 +322,7 @@ ol {
 
     color: var(--md-sys-color-on-tertiary-container);
 
-    background-color: change-color(
-      $color: $md-sys-color-tertiary-container,
-      $alpha: 0.2
-    );
+    background-color: change-color($color: $md-sys-color-tertiary-container, $alpha: 0.2);
 
     border-radius: 12px;
   }
@@ -440,27 +419,27 @@ ol {
 
     &#nothing {
       @extend [disabled];
-    
+
       margin: 2vw;
       padding: 4vw;
-    
+
       display: flex;
-    
+
       align-items: center;
       flex-direction: column;
       gap: 20px;
-    
+
       border-radius: 32px;
       border: 2px dashed var(--md-sys-color-outline);
-    
+
       h1 {
         margin: 0;
       }
-    
+
       h6 {
         margin: 0;
       }
-    }    
+    }
   }
 
   @media screen and (max-width: 1024px) {
@@ -526,9 +505,6 @@ ol {
 .footer-container {
   margin: 2vh 12vw;
 
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: 32px;
-
   footer {
     display: flex;
 
@@ -536,6 +512,7 @@ ol {
     align-items: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 4px;
     justify-content: flex-start;
 
     section {
@@ -545,6 +522,8 @@ ol {
       flex-direction: column;
 
       width: 100%;
+
+      background: change-color($color: $md-sys-color-surface-variant, $alpha: 0.5);
 
       a {
         margin: 0 0 15px 0;
@@ -560,11 +539,13 @@ ol {
       &:nth-child(1) {
         padding: 32px 32px 15px;
 
-        border-bottom: 1px solid var(--md-sys-color-outline);
+        border-radius: 32px 32px 6px 6px;
       }
 
       &:nth-child(2) {
         padding: 32px;
+
+        border-radius: 6px 6px 32px 32px;
 
         div {
           display: flex;

@@ -83,6 +83,8 @@
 
           color: var(--md-sys-color-on-secondary-container);
 
+          transition: 0.3s;
+
           #segment-icon {
             height: 24px;
             width: 24px;
@@ -106,6 +108,12 @@
         letter-spacing: 0.5px;
         line-height: 16px;
         text-align: center;
+      }
+
+      &:hover {
+        #segment-primary-icon {
+          text-shadow: 0px 0px 1px var(--md-sys-color-on-secondary-container);
+        }
       }
     }
 

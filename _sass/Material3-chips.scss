@@ -7,14 +7,15 @@ material-chip {
   flex-wrap: nowrap;
   justify-content: center;
 
-  padding: 0 16px;
+  padding: 6px 16px;
 
   height: 32px;
   width: max-content;
 
   border-radius: 8px;
 
-  transition: 0.4s cubic-bezier(0, 1.2, 1, 1);
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0, 1, 1, 1);
 
   &[icon] {
     gap: 8px;
@@ -23,7 +24,7 @@ material-chip {
 
     span {
       color: var(--md-sys-color-primary);
-      font-family: "Material Icons";
+      font-family: "Material Icons Outlined";
       font-size: 18px;
     }
   }
@@ -31,23 +32,11 @@ material-chip {
   &.assist {
     border: 1px solid var(--md-sys-color-outline);
 
-    .label-text {
+    p {
       @extend .label-large;
-
-      position: static;
 
       color: var(--md-sys-color-on-surface);
       white-space: nowrap;
-    }
-
-    &:hover {
-      box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
-
-      cursor: pointer;
-    }
-
-    &:focus {
-      border: 12px solid var(--md-sys-color-outline);
     }
 
     &[elevated] {
@@ -57,15 +46,35 @@ material-chip {
 
       box-shadow: var(--md-sys-elevation-level1);
     }
-  }
 
-  &[disabled] {
-    span {
-      color: var(--md-sys-color-on-surface);
+    &:hover {
+      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-hover-state-layer-opacity);
+
+      &[elevated] {
+        box-shadow: var(--md-sys-elevation-level2);
+      }
     }
 
-    &[elevated] {
-      background: rgba(31, 31, 31, 0.12);
+    &:focus {
+      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-focus-state-layer-opacity);
+
+      &[elevated] {
+        box-shadow: var(--md-sys-elevation-level1);
+      }
+    }
+
+    &:active {
+      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-pressed-state-layer-opacity);
+
+      &[elevated] {
+        box-shadow: var(--md-sys-elevation-level1);
+      }
+    }
+
+    &[disabled] {
+      &[elevated] {
+        background: rgba(31, 31, 31, 0.12);
+      }
     }
   }
 }

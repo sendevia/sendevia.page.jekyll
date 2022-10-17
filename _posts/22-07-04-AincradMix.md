@@ -147,4 +147,3 @@ title: AincradMix
 - `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
 
 _非常感谢这些资源的贡献者_
-

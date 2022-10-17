@@ -6,3 +6,4 @@ vendor
 *.code-workspace
 .typescript
 *.sf
+.vscode

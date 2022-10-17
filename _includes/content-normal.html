@@ -1,8 +1,5 @@
 {%- if page.title & page.description -%}
-<div
-  class="content-header"
-  id="{%- if page.header_image -%} large {%- endif -%}"
->
+<div class="content-header" id="{%- if page.header_image -%} large {%- endif -%}">
   <div class="header-container">
     <span id="title">{{ page.title }}</span>
     <br />
@@ -51,13 +48,13 @@
   <material-chip class="assist" icon disabled>
     <span>schedule</span>
     <p class="label-text">
-      {%- assign read_estimate = page_words | divided_by: 120 -%}
-      估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {%- else
-      -%} 少于1 {%- endif -%} 分钟
+      {%- assign read_estimate = page_words | divided_by: 120 -%}  
+      估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {%- else -%}
+      少于1 {%- endif -%} 分钟
     </p>
   </material-chip>
 </div>
-<div class="content">{{ content }}</div>
+<div class="content">{{ content | toc }}</div>
 <!--  -->
 <!--  -->
 {%- endif -%}
