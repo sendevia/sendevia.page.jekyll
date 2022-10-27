@@ -8,6 +8,8 @@
 
   position: fixed;
 
+  top: 0;
+
   height: 100%;
   width: 80px;
 
@@ -32,6 +34,10 @@
     margin: 20px 0;
 
     width: 100%;
+
+    a {
+      text-decoration: none;
+    }
 
     #segment-active {
       display: flex;
@@ -121,7 +127,7 @@
 
       &:hover {
         #segment-primary-icon {
-          text-shadow: 0px 0px 1px var(--md-sys-color-on-secondary-container);
+          text-shadow: 0px 0px 0px var(--md-sys-color-on-secondary-container);
         }
       }
     }
