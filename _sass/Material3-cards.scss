@@ -110,9 +110,11 @@ material-card {
       &:nth-child(1) {
         @extend button, #filled;
       }
+
       &:nth-child(2) {
         @extend button, #outlined;
       }
+      
       &:nth-child(n + 3) {
         @extend button, #text;
       }

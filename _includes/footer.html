@@ -9,9 +9,9 @@
         {%- for post in site.posts limit:3 -%}
         <li>
           <a href="{{ post.url }}">
-            <material-chip class="assist" elevated>
+            <material-button id="text">
               <p>{{ post.title }}</p>
-            </material-chip>
+            </material-button>
           </a>
         </li>
         {%- endfor -%}
@@ -23,26 +23,18 @@
       <ul>
         <li>
           <a href="mailto:{{ site.email }}" target="_blank">
-            <material-chip class="assist" elevated icon>
+            <material-button id="text" icon>
               <span class="material-icons-outlined">email</span>
               <p>{{ site.email }}</p>
-            </material-chip>
+            </material-button>
           </a>
         </li>
         <li>
           <a href="{{ site.twitter }}" target="_blank">
-            <material-chip class="assist" elevated icon>
+            <material-button id="text" icon>
               <span class="material-icons-outlined">share</span>
               <p>Twitter</p>
-            </material-chip>
-          </a>
-        </li>
-        <li>
-          <a href="https://space.bilibili.com/84041790" target="_blank">
-            <material-chip class="assist" elevated icon>
-              <span class="material-icons-outlined">videocam</span>
-              <p>Bilibili</p>
-            </material-chip>
+            </material-button>
           </a>
         </li>
       </ul>
