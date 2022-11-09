@@ -10,6 +10,7 @@ material-card {
   border-radius: 12px;
 
   overflow: hidden;
+  transition: 0.4s;
 
   #title {
     @extend .body-large;
@@ -109,9 +110,11 @@ material-card {
       &:nth-child(1) {
         @extend button, #filled;
       }
+
       &:nth-child(2) {
         @extend button, #outlined;
       }
+      
       &:nth-child(n + 3) {
         @extend button, #text;
       }
@@ -138,5 +141,9 @@ material-card {
     color: var(--md-sys-color-on-surface);
 
     background: var(--md-sys-color-surface-variant);
+  }
+
+  &:hover {
+    border-radius: 24px;
   }
 }

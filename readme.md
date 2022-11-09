@@ -12,6 +12,9 @@ sudo pacman -Sy ruby base-devel --noconfirm
 
 ```bash
 echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
+```
+
+```bash
 echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
 ```
 
@@ -27,7 +30,13 @@ sudo apt install ruby-full build-essential zlib1g-dev -y
 
 ```bash
 echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+```
+
+```bash
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+```
+
+```bash
 source ~/.bashrc
 ```
 
@@ -66,11 +75,4 @@ bundle exec jekyll serve --livereload
    - 使更改生效
      ```bash
      source ~/.bashrc
-     ```
-
-2. **bundler: failed to load command: jekyll (...)
-   ...ffi-_1.15.1_/lib/ffi.rb:5:in `require': libffi.so.7: cannot open shared object file.**
-   - 单独安装 1.15.1 版本
-     ```ruby
-     gem install ffi -v 1.15.1
      ```

@@ -21,6 +21,10 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
       filter: none;
       opacity: 0.38;
       pointer-events: none;
+
+      span {
+        color: var(--md-sys-color-on-surface);
+      }
     }
 
     --md-sys-state-dragged-state-layer-opacity: 0.16;
@@ -122,169 +126,74 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
       --md-sys-color-background: var(--md-sys-color-background-light);
       --md-sys-color-error-container: var(--md-sys-color-error-container-light);
       --md-sys-color-error: var(--md-sys-color-error-light);
-      --md-sys-color-inverse-on-surface: var(
-        --md-sys-color-inverse-on-surface-light
-      );
+      --md-sys-color-inverse-on-surface: var(--md-sys-color-inverse-on-surface-light);
       --md-sys-color-inverse-primary: var(--md-sys-color-inverse-primary-light);
       --md-sys-color-inverse-surface: var(--md-sys-color-inverse-surface-light);
       --md-sys-color-on-background: var(--md-sys-color-on-background-light);
-      --md-sys-color-on-error-container: var(
-        --md-sys-color-on-error-container-light
-      );
+      --md-sys-color-on-error-container: var(--md-sys-color-on-error-container-light);
       --md-sys-color-on-error: var(--md-sys-color-on-error-light);
-      --md-sys-color-on-primary-container: var(
-        --md-sys-color-on-primary-container-light
-      );
+      --md-sys-color-on-primary-container: var(--md-sys-color-on-primary-container-light);
       --md-sys-color-on-primary: var(--md-sys-color-on-primary-light);
-      --md-sys-color-on-secondary-container: var(
-        --md-sys-color-on-secondary-container-light
-      );
+      --md-sys-color-on-secondary-container: var(--md-sys-color-on-secondary-container-light);
       --md-sys-color-on-secondary: var(--md-sys-color-on-secondary-light);
-      --md-sys-color-on-surface-variant: var(
-        --md-sys-color-on-surface-variant-light
-      );
+      --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-light);
       --md-sys-color-on-surface: var(--md-sys-color-on-surface-light);
-      --md-sys-color-on-tertiary-container: var(
-        --md-sys-color-on-tertiary-container-light
-      );
+      --md-sys-color-on-tertiary-container: var(--md-sys-color-on-tertiary-container-light);
       --md-sys-color-on-tertiary: var(--md-sys-color-on-tertiary-light);
       --md-sys-color-outline: var(--md-sys-color-outline-light);
-      --md-sys-color-primary-container: var(
-        --md-sys-color-primary-container-light
-      );
+      --md-sys-color-primary-container: var(--md-sys-color-primary-container-light);
       --md-sys-color-primary: var(--md-sys-color-primary-light);
-      --md-sys-color-secondary-container: var(
-        --md-sys-color-secondary-container-light
-      );
+      --md-sys-color-secondary-container: var(--md-sys-color-secondary-container-light);
       --md-sys-color-secondary: var(--md-sys-color-secondary-light);
       --md-sys-color-shadow: var(--md-sys-color-shadow-light);
-      --md-sys-color-surface-tint-color: var(
-        --md-sys-color-surface-tint-color-light
-      );
+      --md-sys-color-surface-tint-color: var(--md-sys-color-surface-tint-color-light);
       --md-sys-color-surface-tint: var(--md-sys-color-surface-tint-light);
       --md-sys-color-surface-variant: var(--md-sys-color-surface-variant-light);
       --md-sys-color-surface: var(--md-sys-color-surface-light);
-      --md-sys-color-tertiary-container: var(
-        --md-sys-color-tertiary-container-light
-      );
+      --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-container-light);
       --md-sys-color-tertiary: var(--md-sys-color-tertiary-light);
-      --md-sys-elevation-level1: 0px 1px 2px rgba(0, 0, 0, 0.3),
-        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      --md-sys-elevation-level2: 0px 1px 2px rgba(0, 0, 0, 0.3),
-        0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-
-      $md-sys-color-background: $md-sys-color-background-light;
-      $md-sys-color-error-container: $md-sys-color-error-container-light;
-      $md-sys-color-error: $md-sys-color-error-light;
-      $md-sys-color-inverse-on-surface: $md-sys-color-inverse-on-surface-light;
-      $md-sys-color-inverse-primary: $md-sys-color-inverse-primary-light;
-      $md-sys-color-inverse-surface: $md-sys-color-inverse-surface-light;
-      $md-sys-color-on-background: $md-sys-color-on-background-light;
-      $md-sys-color-on-error-container: $md-sys-color-on-error-container-light;
-      $md-sys-color-on-error: $md-sys-color-on-error-light;
-      $md-sys-color-on-primary-container: $md-sys-color-on-primary-container-light;
-      $md-sys-color-on-primary: $md-sys-color-on-primary-light;
-      $md-sys-color-on-secondary-container: $md-sys-color-on-secondary-container-light;
-      $md-sys-color-on-secondary: $md-sys-color-on-secondary-light;
-      $md-sys-color-on-surface-variant: $md-sys-color-on-surface-variant-light;
-      $md-sys-color-on-surface: $md-sys-color-on-surface-light;
-      $md-sys-color-on-tertiary-container: $md-sys-color-on-tertiary-container-light;
-      $md-sys-color-on-tertiary: $md-sys-color-on-tertiary-light;
-      $md-sys-color-outline: $md-sys-color-outline-light;
-      $md-sys-color-primary-container: $md-sys-color-primary-container-light;
-      $md-sys-color-primary: $md-sys-color-primary-light;
-      $md-sys-color-secondary-container: $md-sys-color-secondary-container-light;
-      $md-sys-color-secondary: $md-sys-color-secondary-light;
-      $md-sys-color-shadow: $md-sys-color-shadow-light;
-      $md-sys-color-surface-tint-color: $md-sys-color-surface-tint-color-light;
-      $md-sys-color-surface-tint: $md-sys-color-surface-tint-light;
-      $md-sys-color-surface-variant: $md-sys-color-surface-variant-light;
-      $md-sys-color-surface: $md-sys-color-surface-light;
-      $md-sys-color-tertiary-container: $md-sys-color-tertiary-container-light;
-      $md-sys-color-tertiary: $md-sys-color-tertiary-light;
+      --md-sys-elevation-level1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      --md-sys-elevation-level2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+      --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
     }
 
     @media (prefers-color-scheme: dark) {
       --md-sys-color-background: var(--md-sys-color-background-dark);
       --md-sys-color-error-container: var(--md-sys-color-error-container-dark);
       --md-sys-color-error: var(--md-sys-color-error-dark);
-      --md-sys-color-inverse-on-surface: var(
-        --md-sys-color-inverse-on-surface-dark
-      );
+      --md-sys-color-inverse-on-surface: var(--md-sys-color-inverse-on-surface-dark);
       --md-sys-color-inverse-primary: var(--md-sys-color-inverse-primary-dark);
       --md-sys-color-inverse-surface: var(--md-sys-color-inverse-surface-dark);
       --md-sys-color-on-background: var(--md-sys-color-on-background-dark);
-      --md-sys-color-on-error-container: var(
-        --md-sys-color-on-error-container-dark
-      );
+      --md-sys-color-on-error-container: var(--md-sys-color-on-error-container-dark);
       --md-sys-color-on-error: var(--md-sys-color-on-error-dark);
-      --md-sys-color-on-primary-container: var(
-        --md-sys-color-on-primary-container-dark
-      );
+      --md-sys-color-on-primary-container: var(--md-sys-color-on-primary-container-dark);
       --md-sys-color-on-primary: var(--md-sys-color-on-primary-dark);
-      --md-sys-color-on-secondary-container: var(
-        --md-sys-color-on-secondary-container-dark
-      );
+      --md-sys-color-on-secondary-container: var(--md-sys-color-on-secondary-container-dark);
       --md-sys-color-on-secondary: var(--md-sys-color-on-secondary-dark);
-      --md-sys-color-on-surface-variant: var(
-        --md-sys-color-on-surface-variant-dark
-      );
+      --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-dark);
       --md-sys-color-on-surface: var(--md-sys-color-on-surface-dark);
-      --md-sys-color-on-tertiary-container: var(
-        --md-sys-color-on-tertiary-container-dark
-      );
+      --md-sys-color-on-tertiary-container: var(--md-sys-color-on-tertiary-container-dark);
       --md-sys-color-on-tertiary: var(--md-sys-color-on-tertiary-dark);
       --md-sys-color-outline: var(--md-sys-color-outline-dark);
-      --md-sys-color-primary-container: var(
-        --md-sys-color-primary-container-dark
-      );
+      --md-sys-color-primary-container: var(--md-sys-color-primary-container-dark);
       --md-sys-color-primary: var(--md-sys-color-primary-dark);
-      --md-sys-color-secondary-container: var(
-        --md-sys-color-secondary-container-dark
-      );
+      --md-sys-color-secondary-container: var(--md-sys-color-secondary-container-dark);
       --md-sys-color-secondary: var(--md-sys-color-secondary-dark);
       --md-sys-color-shadow: var(--md-sys-color-shadow-dark);
-      --md-sys-color-surface-tint-color: var(
-        --md-sys-color-surface-tint-color-dark
-      );
+      --md-sys-color-surface-tint-color: var(--md-sys-color-surface-tint-color-dark);
       --md-sys-color-surface-tint: var(--md-sys-color-surface-tint-dark);
       --md-sys-color-surface-variant: var(--md-sys-color-surface-variant-dark);
       --md-sys-color-surface: var(--md-sys-color-surface-dark);
-      --md-sys-color-tertiary-container: var(
-        --md-sys-color-tertiary-container-dark
-      );
+      --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-container-dark);
       --md-sys-color-tertiary: var(--md-sys-color-tertiary-dark);
-      --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-      $md-sys-color-background: $md-sys-color-background-dark;
-      $md-sys-color-error-container: $md-sys-color-error-container-dark;
-      $md-sys-color-error: $md-sys-color-error-dark;
-      $md-sys-color-inverse-on-surface: $md-sys-color-inverse-on-surface-dark;
-      $md-sys-color-inverse-primary: $md-sys-color-inverse-primary-dark;
-      $md-sys-color-inverse-surface: $md-sys-color-inverse-surface-dark;
-      $md-sys-color-on-background: $md-sys-color-on-background-dark;
-      $md-sys-color-on-error-container: $md-sys-color-on-error-container-dark;
-      $md-sys-color-on-error: $md-sys-color-on-error-dark;
-      $md-sys-color-on-primary-container: $md-sys-color-on-primary-container-dark;
-      $md-sys-color-on-primary: $md-sys-color-on-primary-dark;
-      $md-sys-color-on-secondary-container: $md-sys-color-on-secondary-container-dark;
-      $md-sys-color-on-secondary: $md-sys-color-on-secondary-dark;
-      $md-sys-color-on-surface-variant: $md-sys-color-on-surface-variant-dark;
-      $md-sys-color-on-surface: $md-sys-color-on-surface-dark;
-      $md-sys-color-on-tertiary-container: $md-sys-color-on-tertiary-container-dark;
-      $md-sys-color-on-tertiary: $md-sys-color-on-tertiary-dark;
-      $md-sys-color-outline: $md-sys-color-outline-dark;
-      $md-sys-color-primary-container: $md-sys-color-primary-container-dark;
-      $md-sys-color-primary: $md-sys-color-primary-dark;
-      $md-sys-color-secondary-container: $md-sys-color-secondary-container-dark;
-      $md-sys-color-secondary: $md-sys-color-secondary-dark;
-      $md-sys-color-shadow: $md-sys-color-shadow-dark;
-      $md-sys-color-surface-tint-color: $md-sys-color-surface-tint-color-dark;
-      $md-sys-color-surface-tint: $md-sys-color-surface-tint-dark;
-      $md-sys-color-surface-variant: $md-sys-color-surface-variant-dark;
-      $md-sys-color-surface: $md-sys-color-surface-dark;
-      $md-sys-color-tertiary-container: $md-sys-color-tertiary-container-dark;
-      $md-sys-color-tertiary: $md-sys-color-tertiary-dark;
+      --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
     }
   }
 }
