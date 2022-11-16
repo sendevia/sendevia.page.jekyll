@@ -9,16 +9,21 @@ title: About
 ---
 
 <div class="page-about">
-  <div class="figure">
-    <div>
-      <img src="/assets/images/avatar.webp" alt="avatar" />
-      <h6>作者</h6>
-      <p class="headline-small">sendevia</p>
+  <material-card elevated>
+    <div class="header">
+      <div id="content">
+        <div id="text">
+          <span id="header">sendevia</span>
+          <span id="subhead">作者</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div>
-    <p>访问我的 <a href="{{ site.bilibili }}">Bilibili 主页 </a></p>
-    <p>我的更多项目，访问 <a href="https://github.com/Sendevia">Github </a></p>
-  </div>
+    <div class="supporting-container">
+      <img src="/assets/images/avatar.webp" alt="avatar" />
+    </div>
+    <div class="actions">
+      <button onclick="location.href='//space.bilibili.com/84041790'">Bilibili</button>
+      <button onclick="location.href='//github.com/Sendevia'">Github</button>
+    </div>
+  </material-card>
 </div>

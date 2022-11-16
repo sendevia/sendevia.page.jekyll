@@ -48,6 +48,7 @@ body {
 .material-icons,
 .material-icons-outlined {
   @extend .disable-select;
+  -webkit-font-smoothing: antialiased;
 }
 
 .material-theme {
@@ -56,6 +57,12 @@ body {
   background-color: var(--md-sys-color-background);
 
   transition: 0.5s cubic-bezier(0.4, 0, 0.25, 1);
+}
+
+@font-face {
+  font-family: Smiley Sans;
+  font-style: italic;
+  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2");
 }
 
 a {
@@ -113,6 +120,8 @@ details {
 
       content: "expand_more";
       font-family: "Material Icons";
+      transform: rotateZ(-90deg);
+      transition: 0.5s cubic-bezier(0, 0.25, 0.25, 1);
     }
   }
 
@@ -128,7 +137,7 @@ details {
       }
 
       &::before {
-        content: "expand_less";
+        transform: rotateZ(0deg);
       }
     }
 
@@ -172,6 +181,10 @@ hr {
 
   border: none;
   opacity: 0.2;
+}
+
+em {
+  font-family: "Smiley Sans";
 }
 
 mjx-container {
@@ -366,11 +379,14 @@ ol {
       width: 100%;
 
       #title {
-        @extend .display-large;
-
         margin: 0;
+        padding-inline-start: 5px;
 
         color: var(--md-sys-color-on-secondary-container);
+        font-family: "Smiley Sans" !important;
+        font-size: 90em;
+        letter-spacing: 1px;
+        line-height: 1em;
       }
 
       #subtitle {
@@ -420,7 +436,8 @@ ol {
   .content {
     margin: 5vh 10vw;
 
-    a:hover {
+    a:hover,
+    a:hover:not(.page-about) {
       text-decoration: underline;
     }
 
@@ -459,7 +476,10 @@ ol {
 
       .header-container {
         img {
-          visibility: hidden;
+          -webkit-animation: none;
+          animation: none;
+          opacity: 0.5;
+          transition: 0.3s;
         }
       }
     }
@@ -482,10 +502,6 @@ ol {
       .header-container {
         padding-block-end: 10px;
 
-        #title {
-          line-height: 1em;
-        }
-
         img {
           display: none;
         }
@@ -502,11 +518,22 @@ ol {
     .content-header#large {
       .header-container {
         #title {
-          font-size: calc(1em + 15vw);
+          font-size: 70em;
         }
 
         #subtitle {
-          font-size: calc(1em + 5vw);
+          font-size: 20em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .content-header,
+    .content-header#large {
+      .header-container {
+        #title {
+          font-size: 50em;
         }
       }
     }
@@ -544,6 +571,11 @@ ol {
 
       a {
         margin: 0 0 15px 0;
+      }
+
+      h3 {
+        font-family: "Smiley Sans" !important;
+        letter-spacing: 1px;
       }
 
       h3,
@@ -594,7 +626,6 @@ ol {
 
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 10px;
 
         margin-block-end: 0;
         margin-block-start: 10px;
@@ -613,55 +644,33 @@ ol {
 }
 
 .page-about {
-  padding: 60px 0;
+  display: flex;
 
-  h6,
-  p {
-    margin: 0;
-  }
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 
-  div.figure {
-    display: flex;
+  material-card {
+    max-width: 300px;
 
-    align-items: flex-end;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    div:first-child {
+    .supporting-container {
       display: flex;
-
-      align-items: center;
-      flex-direction: column;
-
-      img {
-        max-width: 300px;
-        width: calc(100% - 40px);
-
-        -webkit-mask-image: url(/assets/images/mask.svg);
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 100%;
-        mask-image: url(/assets/images/mask.svg);
-        mask-repeat: no-repeat;
-        mask-size: 100%;
-      }
+      justify-content: center;
     }
 
-    div {
-      @extend div, :first-child;
+    img {
+      max-width: 300px;
+      width: calc(100% - 40px);
 
-      img {
-        max-width: 260px;
-        width: calc(100% - 50px);
-
-        -webkit-mask-size: 100%;
-        mask-size: 100%;
-      }
+      -webkit-mask-image: url(/assets/images/mask.svg);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100%;
+      mask-image: url(/assets/images/mask.svg);
+      mask-repeat: no-repeat;
+      mask-size: 100%;
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0;
   }
 }
 
