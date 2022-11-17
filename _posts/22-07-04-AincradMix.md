@@ -2,7 +2,7 @@
 author: sendevia
 description: 一个 osu! 皮肤
 excerpt_separator: <!--more-->
-header_image: /assets/images/22/06/11/s0_amix_vision.webp
+header_image: /assets/images/22/06/11/s0_amix_head_bg.webp
 layout: Material3
 notips:
 title: AincradMix
@@ -35,55 +35,55 @@ title: AincradMix
 <details>
   <summary>主界面</summary>
     <div>
-      <img srcset="/assets/images/22/06/11/screenshot01.jpg">
+      <img srcset="/assets/images/22/06/11/screenshot01.webp">
     </div>
 </details>
 
 <details>
   <summary>选歌界面</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot02.jpg">
-      <img src="/assets/images/22/06/11/screenshot06.jpg">
-      <img src="/assets/images/22/06/11/screenshot07.jpg">
+      <img src="/assets/images/22/06/11/screenshot02.webp">
+      <img src="/assets/images/22/06/11/screenshot06.webp">
+      <img src="/assets/images/22/06/11/screenshot07.webp">
     </div>
 </details>
 
 <details>
   <summary>std 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot03.jpg">
-      <img src="/assets/images/22/06/11/screenshot04.jpg">
+      <img src="/assets/images/22/06/11/screenshot03.webp">
+      <img src="/assets/images/22/06/11/screenshot04.webp">
     </div>
 </details>
 
 <details>
   <summary>mania 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot09.jpg">
-      <img src="/assets/images/22/06/11/screenshot08.jpg">
+      <img src="/assets/images/22/06/11/screenshot09.webp">
+      <img src="/assets/images/22/06/11/screenshot08.webp">
     </div>
 </details>
 
 <details>
   <summary>taiko 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot10.jpg">
-      <img src="/assets/images/22/06/11/screenshot11.jpg">
+      <img src="/assets/images/22/06/11/screenshot10.webp">
+      <img src="/assets/images/22/06/11/screenshot11.webp">
     </div>
 </details>
 
 <details>
   <summary>catch 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot12.jpg">
-      <img src="/assets/images/22/06/11/screenshot13.jpg">
+      <img src="/assets/images/22/06/11/screenshot12.webp">
+      <img src="/assets/images/22/06/11/screenshot13.webp">
     </div>
 </details>
 
 <details>
   <summary>成绩结算</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot05.jpg">
+      <img src="/assets/images/22/06/11/screenshot05.webp">
     </div>
 </details>
 
