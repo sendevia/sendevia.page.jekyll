@@ -2,7 +2,7 @@
 author: sendevia
 description: Material 3 (Material You) 在 jekyll 上的轻量化实现
 excerpt_separator: <!--more-->
-header_image: /assets/images/97367522_p0.webp
+header_image: /assets/images/102772957_p0.webp
 layout: Material3
 notips: true
 title: A Material3 Theme for Jekyll
@@ -14,16 +14,16 @@ title: A Material3 Theme for Jekyll
     <div class="header">
         <div id="content">
             <div id="text">
-                <span id="header">深海</span>
-                <a href="https://www.pixiv.net/users/17965967" target="_blank">
-                    <span id="subhead">sas</span>
+                <span id="header">璃月にて</span>
+                <a href="https://www.pixiv.net/users/8103614" target="_blank">
+                    <span id="subhead">nocras</span>
                 </a>
             </div>
         </div>
   </div>
-  <img src="/assets/images/97367522_p0.webp" />
+  <img src="{{ page.header_image }}" />
   <div class="actions">
-    <button onclick="location.href='//pixiv.net/artworks/97367522'" icon>
+    <button onclick="location.href='//pixiv.net/artworks/102772957'" icon>
         <span>open_in_new</span>
         标题背景图来源
     </button>

@@ -324,7 +324,7 @@ ol {
   align-items: stretch;
   flex-direction: column;
 
-  margin: 10px 10px 0 80px;
+  margin: 12px 10px 0 94px;
   padding-block-end: 40px;
 
   -webkit-animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
@@ -379,8 +379,11 @@ ol {
       width: 100%;
 
       #title {
-        margin: 0;
         padding-inline-start: 5px;
+
+        position: relative;
+
+        top: -5px;
 
         color: var(--md-sys-color-on-secondary-container);
         font-family: "Smiley Sans" !important;
@@ -392,7 +395,11 @@ ol {
       #subtitle {
         @extend .headline-small;
 
-        margin: 16px 0 0;
+        padding-inline-start: 5px;
+
+        position: relative;
+
+        bottom: -5px;
       }
 
       img {
@@ -501,6 +508,13 @@ ol {
 
       .header-container {
         padding-block-end: 10px;
+
+        #title {
+          position: relative;
+          
+          left: 10px;
+          top: -15px;
+        }
 
         img {
           display: none;
