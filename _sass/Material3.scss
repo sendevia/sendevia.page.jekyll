@@ -360,13 +360,10 @@ ol {
   }
 
   .content-header {
-    display: flex;
+    display: grid;
+    align-content: center;
 
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 40px 64px;
+    padding: 80px 64px;
 
     max-height: 480px;
 
@@ -375,31 +372,25 @@ ol {
     clip-path: inset(0 round 26px);
 
     .header-container {
-      padding: 80px 0;
+      display: flex;
+
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
+
       width: 100%;
 
       #title {
-        padding-inline-start: 5px;
-
-        position: relative;
-
-        top: -5px;
-
         color: var(--md-sys-color-on-secondary-container);
         font-family: "Smiley Sans" !important;
-        font-size: 90em;
+        font-size: 140em;
         letter-spacing: 1px;
         line-height: 1em;
       }
 
       #subtitle {
         @extend .headline-small;
-
-        padding-inline-start: 5px;
-
-        position: relative;
-
-        bottom: -5px;
       }
 
       img {
@@ -426,7 +417,7 @@ ol {
     }
 
     &#large {
-      padding: 100px 64px;
+      padding: 180px 64px;
     }
   }
 
@@ -479,14 +470,21 @@ ol {
 
   @media screen and (max-width: 1024px) {
     .content-header#large {
-      padding: 40px 64px;
+      padding: 140px 64px;
 
       .header-container {
+        #title {
+          font-size: 100em;
+        }
+
         img {
+          width: 150%;
+
+          top: inherit;
+
           -webkit-animation: none;
           animation: none;
           opacity: 0.5;
-          transition: 0.3s;
         }
       }
     }
@@ -507,13 +505,17 @@ ol {
       clip-path: none;
 
       .header-container {
+        padding-block-start: 50px;
         padding-block-end: 10px;
 
         #title {
-          position: relative;
-          
-          left: 10px;
-          top: -15px;
+          padding-inline-start: 5px;
+
+          font-size: 70em;
+        }
+
+        #subtitle {
+          padding-inline-start: 8px;
         }
 
         img {
@@ -532,7 +534,7 @@ ol {
     .content-header#large {
       .header-container {
         #title {
-          font-size: 70em;
+          font-size: 60em;
         }
 
         #subtitle {
