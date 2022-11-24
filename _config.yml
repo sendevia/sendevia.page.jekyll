@@ -12,7 +12,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-toc
-  - jekyll-tsc
 
 defaults:
   - scope:
@@ -42,10 +41,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-typescript:
-  cache: true
-  command: ["tsc"]
-  copy_ext: []
-  extensions: [".ts", ".tsx"]
-  temp_dir: .typescript

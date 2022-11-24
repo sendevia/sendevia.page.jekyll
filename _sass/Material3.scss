@@ -369,6 +369,7 @@ ol {
 
     background-color: var(--md-sys-color-secondary-container);
 
+    transition: 1s;
     clip-path: inset(0 round 26px);
 
     .header-container {
@@ -384,7 +385,7 @@ ol {
       #title {
         color: var(--md-sys-color-on-secondary-container);
         font-family: "Smiley Sans" !important;
-        font-size: 140em;
+        font-size: 100em;
         letter-spacing: 1px;
         line-height: 1em;
       }
@@ -418,6 +419,12 @@ ol {
 
     &#large {
       padding: 180px 64px;
+
+      .header-container {
+        #title {
+          font-size: 140em;
+        }
+      }
     }
   }
 
