@@ -7,7 +7,3 @@ layout: Material3
 notips: true
 title: Gifts
 ---
-
-<section align="center">
-  <img src="/assets/images/qrcode.svg" alt="QR Code" width="200px" />
-</section>

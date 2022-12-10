@@ -9,3 +9,21 @@ function isScroll() {
     header.style.opacity = "1";
   }
 }
+
+$(function () {
+  var currentPage = window.location.pathname;
+  $("a[href='" + currentPage + "']")
+    .find("#segment-inactive")
+    .attr("id", "segment-active")
+    .find("span")
+    .attr("class", "material-icons");
+
+  $(".material-select-menu").click(function () {
+    var isMenuClick = $(this).attr("id");
+    if (isMenuClick) {
+      $("#" + isMenuClick)
+        .find("ul")
+        .css("display", "block");
+    }
+  });
+});

@@ -12,8 +12,8 @@ title: AincradMix
 
 ## 关于
 
-> 1. 这是一个 osu! 皮肤，它以游戏补丁的方式实现了对 osu! 全部界面元素的覆盖。  
-> 2. 它的设计风格扩展了《刀剑神域》第 1、2 季中操作界面的设计，结合更现代的设计风格，再将两者和谐相融。  
+> 1. 这是一个 osu! 皮肤，它以游戏补丁的方式实现了对 osu! 全部界面元素的覆盖。
+> 2. 它的设计风格扩展了《刀剑神域》第 1、2 季中操作界面的设计，结合更现代的设计风格，再将两者和谐相融。
 > 3. ~~是一块测试技术的大型试验田~~
 
 ## 优点
@@ -35,55 +35,55 @@ title: AincradMix
 <details>
   <summary>主界面</summary>
     <div>
-      <img srcset="/assets/images/22/06/11/screenshot01.webp">
+      <img srcset="/assets/images/22/06/11/screenshot01.webp" alt="主界面">
     </div>
 </details>
 
 <details>
   <summary>选歌界面</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot02.webp">
-      <img src="/assets/images/22/06/11/screenshot06.webp">
-      <img src="/assets/images/22/06/11/screenshot07.webp">
+      <img src="/assets/images/22/06/11/screenshot02.webp" alt="选歌界面1">
+      <img src="/assets/images/22/06/11/screenshot06.webp" alt="选歌界面2">
+      <img src="/assets/images/22/06/11/screenshot07.webp" alt="选歌界面3">
     </div>
 </details>
 
 <details>
   <summary>std 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot03.webp">
-      <img src="/assets/images/22/06/11/screenshot04.webp">
+      <img src="/assets/images/22/06/11/screenshot03.webp" alt="std 模式1">
+      <img src="/assets/images/22/06/11/screenshot04.webp" alt="std 模式2">
     </div>
 </details>
 
 <details>
   <summary>mania 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot09.webp">
-      <img src="/assets/images/22/06/11/screenshot08.webp">
+      <img src="/assets/images/22/06/11/screenshot09.webp" alt="mania 模式1">
+      <img src="/assets/images/22/06/11/screenshot08.webp" alt="mania 模式2">
     </div>
 </details>
 
 <details>
   <summary>taiko 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot10.webp">
-      <img src="/assets/images/22/06/11/screenshot11.webp">
+      <img src="/assets/images/22/06/11/screenshot10.webp" alt="taiko 模式1">
+      <img src="/assets/images/22/06/11/screenshot11.webp" alt="taiko 模式2">
     </div>
 </details>
 
 <details>
   <summary>catch 模式</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot12.webp">
-      <img src="/assets/images/22/06/11/screenshot13.webp">
+      <img src="/assets/images/22/06/11/screenshot12.webp" alt="catch 模式1">
+      <img src="/assets/images/22/06/11/screenshot13.webp" alt="catch 模式2">
     </div>
 </details>
 
 <details>
   <summary>成绩结算</summary>
     <div>
-      <img src="/assets/images/22/06/11/screenshot05.webp">
+      <img src="/assets/images/22/06/11/screenshot05.webp" alt="成绩结算">
     </div>
 </details>
 

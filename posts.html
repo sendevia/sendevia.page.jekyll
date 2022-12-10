@@ -11,14 +11,17 @@ title: Posts
 {%- assign total_posts = site.posts | size -%}
 <div class="page-posts">
   {%- if total_posts > 0 -%} {%- for post in site.posts -%}
-  <material-card>
-    <a href="{{ post.url }}">
-      {%- if post.header_image -%}
-      <img src="{{ post.header_image }}" alt="header_image" />
-      {%- endif -%}
-      <p>{{ post.title }}</p>
-      <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
-    </a>
+  <material-card filled>
+    <div class="headline">
+      <span id="header">{{ post.title }}</span>
+      <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
+    </div>
+    {%- if post.header_image -%}
+    <img src="{{ post.header_image }}" alt="header_image" />
+    {%- endif -%}
+    <div class="actions">
+      <button onclick="location.href='{{ post.url }}'">访问文章</button>
+    </div>
   </material-card>
   {%- endfor -%} {%- else -%}
   <div class="nothing">

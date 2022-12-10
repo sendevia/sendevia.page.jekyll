@@ -10,7 +10,7 @@ body {
   height: 100%;
   width: 100%;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans SC", sans-serif;
   font-size: 1px;
   font-style: normal;
   text-rendering: optimizeLegibility;
@@ -80,15 +80,27 @@ br {
 details {
   margin: 0.5vh 0;
 
+  border: 2px solid #00000000;
   border-radius: 12px;
 
   overflow: hidden;
   transition: cubic-bezier(0, 1, 1, 1) 0.4s;
 
+  &:active,
+  &:focus-visible {
+    border: 2px solid var(--md-sys-color-on-background);
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 0 2px var(--md-sys-color-background);
+
+    outline: none;
+  }
+
   img {
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+
+    border-radius: 10px;
   }
 
   summary {
@@ -102,18 +114,7 @@ details {
 
     padding: 10px;
 
-    border: 2px solid #00000000;
-
     cursor: pointer;
-
-    &:active,
-    &:focus-visible {
-      border: 2px solid var(--md-sys-color-on-background);
-      border-radius: 12px;
-      box-shadow: inset 0px 0px 0 2px var(--md-sys-color-background);
-
-      outline: none;
-    }
 
     &::before {
       @extend .material-icons-outlined;
@@ -185,11 +186,6 @@ hr {
 
 em {
   font-family: "Smiley Sans";
-}
-
-mjx-container {
-  font-size: 16rem !important;
-  text-align: start !important;
 }
 
 p {
@@ -327,14 +323,10 @@ ol {
   margin: 12px 10px 0 94px;
   padding-block-end: 40px;
 
-  -webkit-animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
-  animation: 1s cubic-bezier(0.4, 1.06, 0.55, 1.06) 1 normal both page-fade-in;
+  -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
+  animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   overflow: hidden;
   z-index: 0;
-
-  div.block {
-    padding: 20px;
-  }
 
   blockquote {
     margin: 10px;
@@ -715,22 +707,9 @@ ol {
   align-items: flex-start;
   flex-direction: row;
   justify-content: center;
+  gap: 8px;
 
   material-card {
-    padding: 10px;
-
-    max-width: 40%;
-
-    text-align: end;
-
-    a {
-      max-width: 30%;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    material-card > a {
-      max-width: 100%;
-    }
+    max-width: 360px;
   }
 }
