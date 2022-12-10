@@ -706,10 +706,13 @@ ol {
 
   align-items: flex-start;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 
   material-card {
+    flex-grow: 1;
+
     max-width: 360px;
   }
 }
