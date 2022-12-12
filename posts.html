@@ -10,20 +10,24 @@ title: Posts
 
 {%- assign total_posts = site.posts | size -%}
 <div class="page-posts">
-  {%- if total_posts > 0 -%} {%- for post in site.posts -%}
-  <material-card filled>
-    <div class="headline">
-      <span id="header">{{ post.title }}</span>
-      <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
-    </div>
-    {%- if post.header_image -%}
-    <img src="{{ post.header_image }}" alt="header_image" />
-    {%- endif -%}
-    <div class="actions">
-      <button onclick="location.href='{{ post.url }}'">访问文章</button>
-    </div>
-  </material-card>
-  {%- endfor -%} {%- else -%}
+  {%- if total_posts > 0 -%}
+  <div class="cards">
+    {%- for post in site.posts -%}
+    <material-card filled onclick="location.href='{{ post.url }}'">
+      <div class="headline">
+        <span id="header">{{ post.title }}</span>
+        <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
+      </div>
+      {%- if post.header_image -%}
+      <img src="{{ post.header_image }}" alt="header_image" />
+      {%- endif -%}
+      <div class="actions">
+        <button>访问文章</button>
+      </div>
+    </material-card>
+    {%- endfor -%}
+  </div>
+  {%- else -%}
   <div class="nothing">
     <h1>≡[。。]≡</h1>
     <h6>还没有文章发布，待会再来看看吧</h6>

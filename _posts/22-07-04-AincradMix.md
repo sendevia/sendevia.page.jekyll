@@ -1,8 +1,10 @@
 ---
 author: sendevia
+categories: skins
 description: 一个 osu! 皮肤
 excerpt_separator: <!--more-->
-header_image: /assets/images/22/06/11/s0_amix_head_bg.webp
+header_image: /assets/images/22/06/11/s0_amix_vision.webp
+tags: readme
 layout: Material3
 notips:
 title: AincradMix
