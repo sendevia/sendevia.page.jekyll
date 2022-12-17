@@ -7,3 +7,6 @@ vendor
 .typescript
 *.sf
 .vscode
+*.d.ts
+*.map
+tsconfig.tsbuildinfo

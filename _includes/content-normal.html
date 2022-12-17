@@ -51,6 +51,12 @@
       分钟
     </p>
   </material-chip>
+  {%- if page.categories.size > 0 -%}
+  <material-chip class="assist" icon disabled>
+    <span>category</span>
+    <p class="label-text">{{ page.categories }}</p>
+  </material-chip>
+  {%- endif -%}
 </div>
 <div class="content">{{ content }}</div>
 <!--  -->

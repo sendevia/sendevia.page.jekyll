@@ -14,7 +14,15 @@
             </material-button>
           </a>
         </li>
-        {%- endfor -%}
+        {%- endfor -%} {%- if site.posts.size >= 3 -%}
+        <li>
+          <a href="/posts">
+            <material-button id="text">
+              <p>···</p>
+            </material-button>
+          </a>
+        </li>
+        {%- endif -%}
       </ul>
     </section>
     <section>
@@ -24,15 +32,23 @@
         <li>
           <a href="mailto:{{ site.email }}" target="_blank">
             <material-button id="text" icon>
-              <span class="material-icons-outlined">email</span>
+              <span>email</span>
               <p>{{ site.email }}</p>
+            </material-button>
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.github }}" target="_blank">
+            <material-button id="text" icon>
+              <span>open_in_new</span>
+              <p>Github</p>
             </material-button>
           </a>
         </li>
         <li>
           <a href="{{ site.twitter }}" target="_blank">
             <material-button id="text" icon>
-              <span class="material-icons-outlined">share</span>
+              <span>share</span>
               <p>Twitter</p>
             </material-button>
           </a>

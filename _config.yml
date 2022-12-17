@@ -1,9 +1,8 @@
 timezone: Asia/Shanghai
 title: sendevia 的博客
 
-current_version_amix: release1.0
 email: me@sendevia.top
-github_amix: https://github.com/Sendevia/AincradMix
+github: https://github.com/Sendevia
 twitter: https://twitter.com/sendevia
 
 plugins:
@@ -35,7 +34,7 @@ exclude:
   - gemfiles/
   - node_modules/
   - readme.md
-  - sendevia.github.io.code-workspace
+  - sendevia.page.jekyll.code-workspace
   - tsconfig.json
   - vendor/bundle/
   - vendor/cache/

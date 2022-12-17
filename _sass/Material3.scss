@@ -73,10 +73,6 @@ a {
   text-decoration: none;
 }
 
-br {
-  @extend .disable-select;
-}
-
 details {
   margin: 0.5vh 0;
 
@@ -151,30 +147,6 @@ details {
   }
 }
 
-h1 {
-  @extend .headline-large;
-}
-
-h2 {
-  @extend .headline-medium;
-}
-
-h3 {
-  @extend .headline-small;
-}
-
-h4 {
-  @extend .title-large;
-}
-
-h5 {
-  @extend .title-medium;
-}
-
-h6 {
-  @extend .title-small;
-}
-
 hr {
   height: 2px;
   width: 100%;
@@ -187,10 +159,6 @@ hr {
 
 em {
   font-family: "Smiley Sans";
-}
-
-p {
-  @extend .body-large;
 }
 
 table {
@@ -267,6 +235,8 @@ table {
 
       td {
         padding: 16px 24px;
+
+        vertical-align: middle;
 
         border-left: 1px solid var(--md-sys-color-outline);
         border-top: 1px solid var(--md-sys-color-outline);
@@ -429,7 +399,7 @@ ol {
   }
 
   .content {
-    margin: 5vh 10vw;
+    margin: 5vh 20vw;
 
     a:hover,
     a:hover:not(.page-about) {
@@ -437,7 +407,8 @@ ol {
     }
 
     img {
-      max-width: 100%;
+      max-width: -webkit-fill-available;
+      max-width: -moz-available;
     }
 
     &#nothing {
@@ -618,7 +589,7 @@ ol {
           }
         }
         ul {
-          left: -18px;
+          left: -12px;
         }
       }
 
@@ -643,7 +614,7 @@ ol {
         padding-inline-start: 0;
 
         position: relative;
-        left: -25px;
+        left: -20px;
 
         a {
           margin: 0;
@@ -721,13 +692,5 @@ ol {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-
-    h3 {
-      min-width: 200px;
-
-      &::before {
-        content: "#";
-      }
-    }
   }
 }

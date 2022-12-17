@@ -10,7 +10,7 @@ title: Sendevia 的博客小站
 
 # 来看看 AincradMix 吧，是个 osu! 皮肤呦
 
-<button id="elevated" onclick="location.href='/2022/07/04/AincradMix.html'" icon>
+<button id="elevated" onclick="location.href='osu!皮肤/2022/07/04/AincradMix.html'" icon>
     <span>open_in_new</span>
     点我跳转
 </button>
