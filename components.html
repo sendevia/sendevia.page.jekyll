@@ -107,7 +107,7 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>ID</th>
+          <th>class</th>
           <th>正常</th>
           <th>正常，带图标</th>
           <th>失效/禁用</th>
@@ -119,19 +119,19 @@ title: Material3 Components
           <td><code>button</code>,<br /><code>material-button</code></td>
           <td><code>elevated</code></td>
           <td>
-            <button id="elevated">elevated</button>
+            <button class="elevated">elevated</button>
           </td>
           <td>
-            <button id="elevated" icon>
+            <button class="elevated" icon>
               <span>add</span>
               elevated
             </button>
           </td>
           <td>
-            <button id="elevated" disabled>elevated</button>
+            <button class="elevated" disabled>elevated</button>
           </td>
           <td>
-            <button id="elevated" icon disabled>
+            <button class="elevated" icon disabled>
               <span>add</span>
               elevated
             </button>
@@ -141,19 +141,19 @@ title: Material3 Components
           <td></td>
           <td><code>filled</code></td>
           <td>
-            <button id="filled">filled</button>
+            <button class="filled">filled</button>
           </td>
           <td>
-            <button id="filled" icon>
+            <button class="filled" icon>
               <span>add</span>
               filled
             </button>
           </td>
           <td>
-            <button id="filled" disabled>filled</button>
+            <button class="filled" disabled>filled</button>
           </td>
           <td>
-            <button id="filled" icon disabled>
+            <button class="filled" icon disabled>
               <span>add</span>
               filled
             </button>
@@ -163,19 +163,19 @@ title: Material3 Components
           <td></td>
           <td><code>tonal</code></td>
           <td>
-            <button id="tonal">tonal</button>
+            <button class="tonal">tonal</button>
           </td>
           <td>
-            <button id="tonal" icon>
+            <button class="tonal" icon>
               <span>add</span>
               tonal
             </button>
           </td>
           <td>
-            <button id="tonal" disabled>tonal</button>
+            <button class="tonal" disabled>tonal</button>
           </td>
           <td>
-            <button id="tonal" icon disabled>
+            <button class="tonal" icon disabled>
               <span>add</span>
               tonal
             </button>
@@ -185,19 +185,19 @@ title: Material3 Components
           <td></td>
           <td><code>outlined</code></td>
           <td>
-            <button id="outlined">outlined</button>
+            <button class="outlined">outlined</button>
           </td>
           <td>
-            <button id="outlined" icon>
+            <button class="outlined" icon>
               <span>add</span>
               outlined
             </button>
           </td>
           <td>
-            <button id="outlined" disabled>outlined</button>
+            <button class="outlined" disabled>outlined</button>
           </td>
           <td>
-            <button id="outlined" icon disabled>
+            <button class="outlined" icon disabled>
               <span>add</span>
               outlined
             </button>
@@ -207,22 +207,89 @@ title: Material3 Components
           <td></td>
           <td><code>text</code></td>
           <td>
-            <button id="text">text</button>
+            <button class="text">text</button>
           </td>
           <td>
-            <button id="text" icon>
+            <button class="text" icon>
               <span>add</span>
               text
             </button>
           </td>
           <td>
-            <button id="text" disabled>text</button>
+            <button class="text" disabled>text</button>
           </td>
           <td>
-            <button id="text" icon disabled>
+            <button class="text" icon disabled>
               <span>add</span>
               text
             </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h1>Radio button</h1>
+    <p>用户交互控件 - 单选框</p>
+    <table>
+      <thead>
+        <tr>
+          <th>element</th>
+          <th>正常</th>
+          <th>失效/禁用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>input[type="radio"]</code>,<br /><code>material-input[type="radio"]</code></td>
+          <td>
+            <input type="radio" />
+          </td>
+          <td>
+            <input type="radio" disabled />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" checked />
+          </td>
+          <td>
+            <input type="radio" checked disabled />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h1>Checkbox</h1>
+    <p>用户交互控件 - 多选框</p>
+    <table>
+      <thead>
+        <tr>
+          <th>element</th>
+          <th>正常</th>
+          <th>失效/禁用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>input[type="checkbox"]</code>,<br /><code>material-checkbox</code></td>
+          <td>
+            <input type="checkbox"/>
+          </td>
+          <td>
+            <input type="checkbox" disabled/>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox"/>
+          </td>
+          <td>
+            <input type="checkbox" disabled/>
           </td>
         </tr>
       </tbody>
@@ -529,9 +596,30 @@ title: Material3 Components
                   <p>Simple dialog</p>
                   <p>This is a simple description.</p>
                 </div>
-                <button id="text">OK</button>
+                <button class="text">OK</button>
               </div>
             </material-dialog>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h1>Dividers</h1>
+    <p>分隔线</p>
+    <table>
+      <thead>
+        <tr>
+          <th>element</th>
+          <th>预览</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>hr</code></td>
+          <td>
+            <hr>
           </td>
         </tr>
       </tbody>

@@ -10,3 +10,4 @@ vendor
 *.d.ts
 *.map
 tsconfig.tsbuildinfo
+*TEST*.md

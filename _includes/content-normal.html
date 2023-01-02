@@ -29,22 +29,22 @@
 <div class="content">{{ content }}</div>
 {%- else -%}
 <!--  -->
-<div class="content-information">
+<div class="content-information" disabled>
   {%- if page.date -%}
-  <material-chip class="assist" icon disabled>
+  <material-chip class="assist" icon>
     <span>calendar_month</span>
     <p class="label-text">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
   </material-chip>
   {%- endif -%}
   <!--  -->
   {%- if page.author -%}
-  <material-chip class="assist" icon disabled>
+  <material-chip class="assist" icon>
     <span>person</span>
     <p class="label-text">{{ page.author }}</p>
   </material-chip>
   {%- endif -%}
   <!--  -->
-  <material-chip class="assist" icon disabled>
+  <material-chip class="assist" icon>
     <span>schedule</span>
     <p class="label-text">
       {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}
@@ -52,7 +52,7 @@
     </p>
   </material-chip>
   {%- if page.categories.size > 0 -%}
-  <material-chip class="assist" icon disabled>
+  <material-chip class="assist" icon>
     <span>category</span>
     <p class="label-text">{{ page.categories }}</p>
   </material-chip>

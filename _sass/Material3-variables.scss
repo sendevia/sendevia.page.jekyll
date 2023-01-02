@@ -13,19 +13,15 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
       user-select: none;
     }
 
+    :disabled,
     [disabled] {
       @extend .disable-select;
 
-      -webkit-filter: none;
+      -webkit-filter: grayscale(1);
       box-shadow: none;
-      cursor: not-allowed;
-      filter: none;
+      filter: grayscale(1);
       opacity: 0.38;
       pointer-events: none;
-
-      span {
-        color: var(--md-sys-color-on-surface);
-      }
     }
 
     --md-sys-state-dragged-state-layer-opacity: 0.16;
@@ -131,6 +127,7 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
     }
 
     @media (prefers-color-scheme: light) {
+      --via-color-background: #fff;
       --md-sys-color-background: var(--md-sys-color-background-light);
       --md-sys-color-error-container: var(--md-sys-color-error-container-light);
       --md-sys-color-error: var(--md-sys-color-error-light);
@@ -168,6 +165,7 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
     }
 
     @media (prefers-color-scheme: dark) {
+      --via-color-background: #101010;
       --md-sys-color-background: var(--md-sys-color-background-dark);
       --md-sys-color-error-container: var(--md-sys-color-error-container-dark);
       --md-sys-color-error: var(--md-sys-color-error-dark);

@@ -35,7 +35,7 @@ material-button {
     }
   }
 
-  &#elevated {
+  &.elevated {
     color: var(--md-sys-color-primary);
 
     background: var(--md-sys-color-surface);
@@ -73,7 +73,7 @@ material-button {
       }
     }
 
-    &[disabled] {
+    &:disabled {
       color: var(--md-sys-color-on-surface);
 
       background: rgba(31, 31, 31, 0.12);
@@ -84,7 +84,7 @@ material-button {
     }
   }
 
-  &#filled {
+  &.filled {
     color: var(--md-sys-color-on-primary);
 
     background: var(--md-sys-color-primary);
@@ -111,7 +111,7 @@ material-button {
       }
     }
 
-    &[disabled] {
+    &:disabled {
       color: var(--md-sys-color-on-surface);
 
       background: rgba(31, 31, 31, 0.12);
@@ -122,12 +122,12 @@ material-button {
     }
   }
 
-  &#tonal {
+  &.tonal {
     color: var(--md-sys-color-on-secondary-container);
 
     background: var(--md-sys-color-secondary-container);
 
-    &[disabled] {
+    &:disabled {
       color: var(--md-sys-color-on-surface);
 
       background: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
@@ -147,14 +147,14 @@ material-button {
     }
   }
 
-  &#outlined {
+  &.outlined {
     color: var(--md-sys-color-primary);
 
     background: none;
 
     border: 1px solid var(--md-sys-color-outline);
 
-    &[disabled] {
+    &:disabled {
       color: var(--md-sys-color-on-surface);
 
       border: 1px solid change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
@@ -174,12 +174,12 @@ material-button {
     }
   }
 
-  &#text {
+  &.text {
     color: var(--md-sys-color-primary);
 
     background: none;
 
-    &[disabled] {
+    &:disabled {
       color: var(--md-sys-color-on-surface);
     }
 
