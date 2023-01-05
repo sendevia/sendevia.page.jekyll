@@ -5,7 +5,7 @@
     <!-- 判断是否404 -->
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
     <!-- 主要页面布局 -->
-    <div>
+    <div class="container">
       {%- include header.html -%}
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
     </div>

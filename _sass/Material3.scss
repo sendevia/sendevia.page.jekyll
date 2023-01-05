@@ -293,18 +293,28 @@ ol {
   padding-inline-start: 20px;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 80px auto;
+  justify-items: start;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+}
+
 .content-container {
   display: flex;
   align-items: stretch;
   flex-direction: column;
 
-  margin: 12px 10px 0 94px;
   padding-block-end: 40px;
+
+  width: 100%;
 
   -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   overflow: hidden;
-  z-index: 0;
 
   blockquote {
     margin: 10px;
@@ -333,6 +343,7 @@ ol {
     display: grid;
     align-content: center;
 
+    margin: 12px;
     padding: 80px 64px;
 
     max-height: 480px;
@@ -340,7 +351,7 @@ ol {
     background-color: var(--md-sys-color-secondary-container);
 
     transition: 1s;
-    clip-path: inset(0 round 26px);
+    clip-path: inset(0 round 15px);
 
     .header-container {
       display: flex;
