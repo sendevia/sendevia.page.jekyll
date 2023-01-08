@@ -10,7 +10,7 @@
   height: 100%;
   width: 80px;
 
-  background: var(--md-sys-color-surface);
+  background-color: var(--md-sys-color-surface);
 
   animation: fade 0.4s;
   overflow-x: hidden;
@@ -54,7 +54,7 @@
         height: 32px;
         width: 56px;
 
-        background: var(--md-sys-color-secondary-container);
+        background-color: var(--md-sys-color-secondary-container);
 
         border-radius: 100px;
 
@@ -125,7 +125,7 @@
           height: 32px;
           width: 56px;
 
-          background: var(--md-sys-color-secondary-container);
+          background-color: var(--md-sys-color-secondary-container);
         }
 
         #label {
@@ -149,7 +149,7 @@
     height: 20px;
     width: 20px;
 
-    background: var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface);
     
     -webkit-mask-image: url(/assets/images/corner.svg);
     -webkit-mask-repeat: no-repeat;

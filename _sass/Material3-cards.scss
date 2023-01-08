@@ -60,7 +60,7 @@ material-card {
           height: 40px;
           width: 40px;
 
-          background: var(--md-sys-color-primary);
+          background-color: var(--md-sys-color-primary);
 
           border-radius: 100%;
         }
@@ -118,7 +118,7 @@ material-card {
   &[outlined] {
     color: var(--md-sys-color-on-surface);
 
-    background: var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface);
 
     border: 1px solid var(--md-sys-color-outline);
   }
@@ -126,7 +126,7 @@ material-card {
   &[elevated] {
     color: var(--md-sys-color-on-surface);
 
-    background: var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface);
 
     box-shadow: var(--md-sys-elevation-level2);
   }
@@ -134,7 +134,7 @@ material-card {
   &[filled] {
     color: var(--md-sys-color-on-surface);
 
-    background: var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-surface-variant);
   }
 
   &:hover {

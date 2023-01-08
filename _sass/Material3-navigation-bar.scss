@@ -11,7 +11,7 @@
   height: 80px;
   width: 100%;
 
-  background: var(--md-sys-color-surface);
+  background-color: var(--md-sys-color-surface);
 
   animation: fade 0.4s;
   overflow-y: hidden;
@@ -21,7 +21,8 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-grow: 1;
 
     margin: 12px 8px 16px 8px;
 
@@ -52,7 +53,7 @@
         height: 32px;
         width: 64px;
 
-        background: var(--md-sys-color-secondary-container);
+        background-color: var(--md-sys-color-secondary-container);
 
         border-radius: 100px;
 
@@ -112,39 +113,9 @@
           height: 32px;
           width: 64px;
 
-          background: var(--md-sys-color-secondary-container);
+          background-color: var(--md-sys-color-secondary-container);
         }
       }
     }
-  }
-
-  &::before,
-  &::after {
-    content: "";
-
-    position: fixed;
-    bottom: 80px;
-
-    height: 20px;
-    width: 20px;
-
-    background: var(--md-sys-color-surface);
-
-    -webkit-mask-image: url(/assets/images/corner.svg);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100%;
-    mask-image: url(/assets/images/corner.svg);
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-  }
-
-  &::before {
-    transform: rotate(-90deg);
-  }
-
-  &::after {
-    right: 0;
-
-    transform: rotate(180deg);
   }
 }

@@ -40,7 +40,7 @@ material-chip {
     }
 
     &[elevated] {
-      background: var(--md-sys-color-surface);
+      background-color: var(--md-sys-color-surface);
 
       border: none;
 
@@ -48,7 +48,7 @@ material-chip {
     }
 
     &:hover {
-      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-hover-state-layer-opacity);
+      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-hover-state-layer-opacity);
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level2);
@@ -56,7 +56,7 @@ material-chip {
     }
 
     &:focus {
-      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-focus-state-layer-opacity);
+      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-focus-state-layer-opacity);
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level1);
@@ -64,7 +64,7 @@ material-chip {
     }
 
     &:active {
-      background: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-pressed-state-layer-opacity);
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level1);
@@ -73,7 +73,7 @@ material-chip {
 
     &[disabled] {
       &[elevated] {
-        background: rgba(31, 31, 31, 0.12);
+        background-color: rgba(31, 31, 31, 0.12);
       }
     }
   }

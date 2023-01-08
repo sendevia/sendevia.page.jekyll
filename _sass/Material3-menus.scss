@@ -5,7 +5,7 @@ material-select-menu {
 
   color: var(--md-sys-color-on-surface);
 
-  background: var(--md-sys-color-surface);
+  background-color: var(--md-sys-color-surface);
 
   border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
@@ -56,7 +56,7 @@ material-select-menu {
     color: var(--md-sys-color-on-secondary-container);
     list-style-type: none;
 
-    background: var(--md-sys-color-secondary-container);
+    background-color: var(--md-sys-color-secondary-container);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
 
     border-radius: 4px;
@@ -117,7 +117,7 @@ material-text-field {
       height: inherit;
       width: 100%;
 
-      background: transparent;
+      background-color: transparent;
 
       caret-color: var(--md-sys-color-surface-tint);
       color: var(--md-sys-color-on-surface);

@@ -298,6 +298,8 @@ ol {
   grid-template-columns: 80px auto;
   justify-items: start;
 
+  background-color: var(--md-sys-color-surface);
+
   @media screen and (max-width: 768px) {
     display: flex;
   }
@@ -311,6 +313,8 @@ ol {
   padding-block-end: 40px;
 
   width: 100%;
+
+  background-color: var(--via-color-background);
 
   -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
@@ -464,8 +468,6 @@ ol {
         }
 
         img {
-          width: 150%;
-
           top: inherit;
 
           -webkit-animation: none;
@@ -477,7 +479,7 @@ ol {
   }
 
   @media screen and (max-width: 768px) {
-    margin: 0 5vw;
+    padding: 0 5vw;
     padding-block-end: calc(80px + 2vh);
 
     .content-header,
