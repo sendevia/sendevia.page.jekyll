@@ -14,15 +14,14 @@ title: AincradMix
 
 ## 关于
 
-> 1. 这是一个 osu! 皮肤，它以游戏补丁的方式实现了对 osu! 全部界面元素的覆盖。
-> 2. 它的设计风格扩展了《刀剑神域》第 1、2 季中操作界面的设计，结合更现代的设计风格，再将两者和谐相融。
-> 3. ~~是一块测试技术的大型试验田~~
+> 1. 它通过游戏补丁的方式，可皮肤化了几乎全部的 osu! 的界面元素。
+> 2. 它的设计风格扩展了《刀剑神域》第 1、2 季中操作界面的设计，并结合更现代的设计风格，将两者和谐相融。
 
 ## 优点
 
-1. 扩展了刀剑神域系列番剧中 UI 的设计
-2. 拥有较好的打图手感
-3. 简洁而美观的视觉体验
+1. 扩展了刀剑神域系列番剧中系统 UI 的设计
+2. 有较好的打图手感
+3. 简而美的视觉体验
 4. 覆盖了 osu! 的绝大部分的界面元素（通过修改 osu! 的资源 dll）
 5. 可进行简单的个性化搭配
 
@@ -37,7 +36,7 @@ title: AincradMix
 <details>
   <summary>主界面</summary>
     <div>
-      <img srcset="/assets/images/22/06/11/screenshot01.webp" alt="主界面">
+      <img src="/assets/images/22/06/11/screenshot01.webp" alt="主界面">
     </div>
 </details>
 
@@ -89,14 +88,28 @@ title: AincradMix
     </div>
 </details>
 
+# 下载
+
+<div>
+  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
+    <span>download</span>
+    最新版 (1.0/2022.3.21) 下载
+  </button>
+  <br />
+  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix'" icon>
+    <span>code</span>
+    Github
+  </button>
+</div>
+
 # 推荐设置
 
 ## 详细设置
 
-> - [x] 渐出滑条  
-> - [x] 连击提示图  
-> - [ ] 击打闪光  
-> - [x] 着色器效果  
+> - [x] 渐出滑条
+> - [x] 连击提示图
+> - [ ] 击打闪光
+> - [x] 着色器效果
 > - [ ] 柔化滤镜
 
 ## 主菜单
@@ -117,30 +130,16 @@ title: AincradMix
 
 ## 皮肤
 
-> - [x] 忽略所有谱面自带的皮肤  
-> - [ ] 使用皮肤的音效  
-> - [x] 总是使用皮肤中的光标  
-> - [x] 光标大小： _0.7x_  
-> - [ ] 自动缩放光标  
+> - [x] 忽略所有谱面自带的皮肤
+> - [ ] 使用皮肤的音效
+> - [x] 总是使用皮肤中的光标
+> - [x] 光标大小： _0.7x_
+> - [ ] 自动缩放光标
 > - [ ] 拖球的颜色随滑条改变
 
 ## 鼠标
 
 > - [ ] 点击波纹
-
-# 下载
-
-<div>
-  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
-    <span>download</span>
-    最新版 (1.0/2022.3.21) 下载
-  </button>
-  <br />
-  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix'" icon>
-    <span>code</span>
-    Github
-  </button>
-</div>
 
 # 引用素材来源
 

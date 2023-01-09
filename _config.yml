@@ -1,3 +1,4 @@
+baseurl: ""
 timezone: Asia/Shanghai
 title: sendevia 的博客
 
@@ -18,9 +19,11 @@ defaults:
     values:
       toc: true
 
+highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
 
 exclude:
   - _redirects

@@ -13,7 +13,7 @@ title: Posts
   {%- if total_posts > 0 -%}
   <div class="cards">
     {%- for post in site.posts -%}
-    <material-card filled onclick="location.href='{{ post.url }}'">
+    <material-card elevated onclick="location.href='{{ post.url }}'">
       <div class="headline">
         <span id="header">{{ post.title }}</span>
         <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
