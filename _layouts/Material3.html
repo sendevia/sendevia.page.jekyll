@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
   {%- include head.html -%}
-  <body class="material-theme">
+  <body class="material-theme" onpageshow="isLoaded()">
     <!-- 判断是否404 -->
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
     <!-- 主要页面布局 -->

@@ -310,7 +310,6 @@ ol {
   align-items: stretch;
   flex-direction: column;
 
-  margin: 64px 0 0;
   padding-block-end: 40px;
 
   width: 100%;
@@ -320,26 +319,6 @@ ol {
   -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   overflow: hidden;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    left: 80px;
-
-    height: 20px;
-    width: 20px;
-
-    background-color: var(--md-sys-color-surface);
-
-    -webkit-mask-image: url(/assets/images/corner.svg);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100%;
-    mask-image: url(/assets/images/corner.svg);
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-    z-index: 100;
-  }
 
   blockquote {
     margin: 10px;

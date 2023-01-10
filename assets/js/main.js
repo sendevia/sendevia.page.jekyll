@@ -1,8 +1,10 @@
 window.addEventListener("scroll", isScroll);
+window.addEventListener("resize", isResize);
 
 function isScroll() {
   var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
   var header = document.querySelector(".content-header");
+
   if (scrollY >= 400) {
     header.style.opacity = "0";
   } else {
@@ -10,23 +12,34 @@ function isScroll() {
   }
 }
 
-$(function () {
-  var currentPage = window.location.pathname;
-  $("a[href='" + currentPage + "']")
-    .find("#segment-inactive")
-    .attr("id", "segment-active")
-    .find("span")
-    .attr("class", "material-icons");
-
-  $(".material-select-menu").click(function () {
-    var isMenuClick = $(this).attr("id");
-    if (isMenuClick) {
-      $("#" + isMenuClick)
-        .find("ul")
-        .css("display", "block");
+function isLoaded() {
+  try {
+    if (window.innerWidth > 768) {
+      document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
     }
-  });
-});
+
+    var currentPage = window.location.pathname;
+    var activatedSegment = document.querySelector("a[href='" + currentPage + "']");
+    activatedSegment.querySelector("#segment-inactive").id = "segment-active";
+    
+  } catch (err) {
+    document.querySelector("a[href='/posts']").querySelector("#segment-inactive").id = "segment-active";
+  } finally {
+    document.querySelector("div#segment-active span").className = "material-icons";
+  }
+}
+
+function isResize() {
+  try {
+    if (window.innerWidth > 768) {
+      document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
+    } else {
+      document.querySelector(".material-navigation-rail").className = "material-navigation-bar";
+    }
+  } catch (err) {
+    return null;
+  }
+}
 
 /*!
  * https://github.com/christian-fei/Simple-Jekyll-Search
