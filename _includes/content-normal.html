@@ -1,13 +1,20 @@
 {%- if page.title & page.description -%}
-<div class="content-header" id="{%- if page.header_image -%} large {%- endif -%}">
+<!--  -->
+{%- if page.header_image -%} {%- assign headerImage = page.header_image -%}
+<!--  -->
+{%- elsif site.header_image -%} {%- assign headerImage = site.header_image -%}
+<!--  -->
+{%- else -%} {%- assign headerImage = none -%} {%- endif -%}
+<!--  -->
+<div class="content-header" {%- if headerImage != "none" -%} id="large" {%- endif -%}>
   <div class="header-container">
     <span id="title">{{ page.title }}</span>
     {%- if page.description -%}
     <span id="subtitle">{{ page.description }}</span>
     {%- endif -%}
     <!--  -->
-    {%- if page.header_image -%}
-    <img src="{{ page.header_image }}" alt="header_image" />
+    {%- if headerImage != "none" -%}
+    <img src="{{ headerImage }}" alt="头图" />
     {%- endif -%}
   </div>
 </div>

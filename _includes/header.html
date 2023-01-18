@@ -72,3 +72,11 @@
   </div>
   <span></span>
 </div>
+
+<script>
+  if (window.innerWidth > 768) {
+    document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
+  } else {
+    document.querySelector(".material-navigation-rail").className = "material-navigation-bar";
+  }
+</script>

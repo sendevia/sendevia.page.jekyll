@@ -2,11 +2,14 @@
 author: sendevia
 description: 文章
 excerpt_separator: <!--more-->
-header_image: /assets/images/99066746_p0.webp
+header_image:
 layout: Material3
 notips: true
 title: Posts
 ---
+
+<input type="text" id="search-input" placeholder="Search blog posts.." />
+<ul id="results-container"></ul>
 
 {%- assign total_posts = site.posts | size -%}
 <div class="page-posts">
@@ -18,8 +21,8 @@ title: Posts
         <span id="header">{{ post.title }}</span>
         <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
       </div>
-      {%- if post.header_image -%}
-      <img src="{{ post.header_image }}" alt="header_image" />
+      {%- if post.header_image != "none" -%}
+      <img src="{{ post.header_image }}" alt="封面" />
       {%- endif -%}
       <div class="tags">
         {% for tag in post.tags %}
@@ -44,3 +47,14 @@ title: Posts
   </div>
   {%- endif -%}
 </div>
+
+<script>
+  window.simpleJekyllSearch = new SimpleJekyllSearch({
+    searchInput: document.getElementById("search-input"),
+    resultsContainer: document.getElementById("results-container"),
+    json: "{{ site.baseurl }}/search.json",
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: "＞︿＜ 无结果",
+    fuzzy: false,
+  });
+</script>

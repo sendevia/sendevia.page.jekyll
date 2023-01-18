@@ -6,6 +6,8 @@ email: me@sendevia.top
 github: https://github.com/Sendevia
 twitter: https://twitter.com/sendevia
 
+header_image: /assets/images/102911375_p0.webp
+
 plugins:
   - jekyll-feed
   - jekyll-paginate

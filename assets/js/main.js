@@ -14,14 +14,9 @@ function isScroll() {
 
 function isLoaded() {
   try {
-    if (window.innerWidth > 768) {
-      document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
-    }
-
     var currentPage = window.location.pathname;
     var activatedSegment = document.querySelector("a[href='" + currentPage + "']");
     activatedSegment.querySelector("#segment-inactive").id = "segment-active";
-    
   } catch (err) {
     document.querySelector("a[href='/posts']").querySelector("#segment-inactive").id = "segment-active";
   } finally {

@@ -12,7 +12,6 @@
 
   background-color: var(--md-sys-color-surface);
 
-  animation: fade 0.4s;
   overflow-x: hidden;
   z-index: 100;
 
@@ -150,7 +149,7 @@
     width: 20px;
 
     background-color: var(--md-sys-color-surface);
-    
+
     -webkit-mask-image: url(/assets/images/corner.svg);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100%;

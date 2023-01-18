@@ -5,8 +5,10 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
 
 :root {
   .material-theme {
-    br,
-    .disable-select {
+    .disable-select,
+    .material-navigation-bar,
+    .material-navigation-rail,
+    br {
       -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
