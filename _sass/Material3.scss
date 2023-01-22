@@ -155,6 +155,7 @@ hr {
 }
 
 em {
+  display: contents;
   font-family: "Smiley Sans";
 }
 
@@ -262,11 +263,11 @@ ul,
 ol > li {
   @extend .body-large;
 
-  input[type="checkbox"],
-  material-input[type="checkbox"] {
-    margin: 0px 6px 0px 0px;
-
-    top: 3px;
+  .task-list-item {
+    display: grid;
+    align-items: start;
+    gap: 4px;
+    grid-template-columns: 24px auto;
   }
 }
 
@@ -279,7 +280,7 @@ ul {
     content: " ";
 
     margin-inline-end: 10px;
-    padding: 2px;
+    padding: 1px;
 
     background: var(--md-sys-color-outline);
 
@@ -297,6 +298,9 @@ ol {
   display: grid;
   grid-template-columns: 80px auto;
   justify-items: start;
+  flex-wrap: wrap;
+
+  height: 100%;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -316,7 +320,6 @@ ol {
 
   -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
   animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
-  overflow: hidden;
 
   blockquote {
     margin: 10px;
@@ -425,8 +428,7 @@ ol {
     }
 
     img {
-      max-width: -webkit-fill-available;
-      max-width: -moz-available;
+      max-width: 100%;
     }
 
     &#nothing {
@@ -697,7 +699,6 @@ ol {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
 
     material-card {
       flex-grow: 1;
@@ -712,282 +713,5 @@ ol {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-  }
-}
-
-.highlight {
-  color: #ffffff;
-  background-color: #272822;
-
-  table {
-    td {
-      padding: 5px;
-    }
-    pre {
-      margin: 0;
-    }
-  }
-
-  .gh {
-    color: #999999;
-  }
-
-  .sr,
-  .gs {
-    color: #f6aa11;
-  }
-
-  .go {
-    color: #888888;
-  }
-
-  .gp {
-    color: #555555;
-  }
-
-  gu {
-    color: #aaaaaa;
-  }
-
-  .nb {
-    color: #f6aa11;
-  }
-
-  cm {
-    color: #75715e;
-  }
-
-  .cp {
-    color: #75715e;
-  }
-
-  .c1 {
-    color: #75715e;
-  }
-
-  .cs {
-    color: #75715e;
-  }
-
-  .c,
-  .ch,
-  .cd,
-  .cpf {
-    color: #75715e;
-  }
-
-  .err {
-    color: #960050;
-  }
-
-  .gr {
-    color: #960050;
-  }
-
-  .gt {
-    color: #960050;
-  }
-
-  .gd {
-    color: #49483e;
-  }
-
-  .gi {
-    color: #49483e;
-  }
-
-  .ge {
-    color: #49483e;
-  }
-
-  .kc {
-    color: #66d9ef;
-  }
-
-  .kd {
-    color: #66d9ef;
-  }
-
-  .kr {
-    color: #66d9ef;
-  }
-
-  .no {
-    color: #66d9ef;
-  }
-
-  .kt {
-    color: #66d9ef;
-  }
-
-  .mf {
-    color: #ae81ff;
-  }
-
-  .mh {
-    color: #ae81ff;
-  }
-
-  .il {
-    color: #ae81ff;
-  }
-
-  .mi {
-    color: #ae81ff;
-  }
-
-  .mo {
-    color: #ae81ff;
-  }
-
-  .m,
-  .mb,
-  .mx {
-    color: #ae81ff;
-  }
-
-  .sc {
-    color: #ae81ff;
-  }
-
-  .se {
-    color: #ae81ff;
-  }
-
-  .ss {
-    color: #ae81ff;
-  }
-
-  .sd {
-    color: #e6db74;
-  }
-
-  .s2 {
-    color: #e6db74;
-  }
-
-  .sb {
-    color: #e6db74;
-  }
-
-  .sh {
-    color: #e6db74;
-  }
-
-  .si {
-    color: #e6db74;
-  }
-
-  .sx {
-    color: #e6db74;
-  }
-
-  .s1 {
-    color: #e6db74;
-  }
-
-  .s,
-  .sa,
-  .dl {
-    color: #e6db74;
-  }
-
-  .na {
-    color: #a6e22e;
-  }
-
-  .nc {
-    color: #a6e22e;
-  }
-
-  .nd {
-    color: #a6e22e;
-  }
-
-  .ne {
-    color: #a6e22e;
-  }
-
-  .nf,
-  .fm {
-    color: #a6e22e;
-  }
-
-  .vc {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .nn {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .nl {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .ni {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .bp {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .vg {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .vi {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .nv,
-  .vm {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .w {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .n,
-  .py,
-  .nx {
-    color: #ffffff;
-    background-color: #272822;
-  }
-
-  .ow {
-    color: #f92672;
-  }
-
-  .nt {
-    color: #f92672;
-  }
-
-  .k,
-  .kv {
-    color: #f92672;
-  }
-
-  .kn {
-    color: #f92672;
-  }
-
-  .kp {
-    color: #f92672;
-  }
-
-  .o {
-    color: #f92672;
   }
 }

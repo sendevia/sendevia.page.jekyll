@@ -9,17 +9,17 @@
         {%- for post in site.posts limit:3 -%}
         <li>
           <a href="{{ post.url }}">
-            <material-button class="text">
+            <button class="text">
               <p>{{ post.title }}</p>
-            </material-button>
+            </button>
           </a>
         </li>
         {%- endfor -%} {%- if site.posts.size >= 3 -%}
         <li>
           <a href="/posts">
-            <material-button class="text">
+            <button class="text">
               <p>···</p>
-            </material-button>
+            </button>
           </a>
         </li>
         {%- endif -%}
@@ -31,26 +31,26 @@
       <ul>
         <li>
           <a href="mailto:{{ site.email }}" target="_blank">
-            <material-button class="text" icon>
+            <button class="text" icon>
               <span>email</span>
               <p>{{ site.email }}</p>
-            </material-button>
+            </button>
           </a>
         </li>
         <li>
           <a href="{{ site.github }}" target="_blank">
-            <material-button class="text" icon>
+            <button class="text" icon>
               <span>open_in_new</span>
               <p>Github</p>
-            </material-button>
+            </button>
           </a>
         </li>
         <li>
           <a href="{{ site.twitter }}" target="_blank">
-            <material-button class="text" icon>
+            <button class="text" icon>
               <span>share</span>
               <p>Twitter</p>
-            </material-button>
+            </button>
           </a>
         </li>
       </ul>
