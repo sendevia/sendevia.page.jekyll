@@ -14,11 +14,13 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-toc
+  - jemoji
 
 defaults:
   - scope:
       path: "_posts"
     values:
+      layout: "Material3"
       toc: true
 
 highlighter: rouge
@@ -26,6 +28,10 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+webrick:
+  headers:
+    Cache-Control: max-age=302400, must-revalidate
 
 exclude:
   - _redirects

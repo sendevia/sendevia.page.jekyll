@@ -1,59 +1,40 @@
 <div class="footer-container">
   <footer>
     <section>
-      <a href="/"><img src="/assets/images/avatar.webp" alt="logo" /></a>
+      <a href="/" class="site-logo">
+        <img src="/assets/images/avatar.webp" alt="logo" />
+      </a>
       <h3>{{ page.title }}</h3>
       <h6>{{ page.description }}</h6>
       <p>来自 {{ site.title }}</p>
-      <ul>
+      <div class="links">
         {%- for post in site.posts limit:3 -%}
-        <li>
-          <a href="{{ post.url }}">
-            <button class="text">
-              <p>{{ post.title }}</p>
-            </button>
-          </a>
-        </li>
+        <a href="{{ post.url }}" class="material-button text">
+          <p>{{ post.title }}</p>
+        </a>
         {%- endfor -%} {%- if site.posts.size >= 3 -%}
-        <li>
-          <a href="/posts">
-            <button class="text">
-              <p>···</p>
-            </button>
-          </a>
-        </li>
+        <a href="/posts" class="material-button text">
+          <p>···</p>
+        </a>
         {%- endif -%}
-      </ul>
+      </div>
     </section>
     <section>
-      <p class="subhead1">Jekyll Theme MaterialYou</p>
-      <p class="subhead1">Designer: sendevia</p>
-      <ul>
-        <li>
-          <a href="mailto:{{ site.email }}" target="_blank">
-            <button class="text" icon>
-              <span>email</span>
-              <p>{{ site.email }}</p>
-            </button>
-          </a>
-        </li>
-        <li>
-          <a href="{{ site.github }}" target="_blank">
-            <button class="text" icon>
-              <span>open_in_new</span>
-              <p>Github</p>
-            </button>
-          </a>
-        </li>
-        <li>
-          <a href="{{ site.twitter }}" target="_blank">
-            <button class="text" icon>
-              <span>share</span>
-              <p>Twitter</p>
-            </button>
-          </a>
-        </li>
-      </ul>
+      <p class="subhead1">jekyll-theme-m3</p>
+      <div class="links">
+        <a href="mailto:{{ site.email }}" target="_blank" class="material-button text" icon>
+          <span>email</span>
+          <p>{{ site.email }}</p>
+        </a>
+        <a href="{{ site.github }}" target="_blank" class="material-button text" icon>
+          <span>open_in_new</span>
+          <p>Github</p>
+        </a>
+        <a href="https://github.com/Sendevia/jekyll-theme-m3" target="_blank" class="material-button text" icon>
+          <span>open_in_new</span>
+          <p>Github (theme)</p>
+        </a>
+      </div>
     </section>
   </footer>
 </div>

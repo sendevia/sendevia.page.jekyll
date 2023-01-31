@@ -1,4 +1,6 @@
 input {
+  position: relative;
+
   &[type="checkbox"],
   &[type="radio"] {
     appearance: none;
@@ -42,12 +44,13 @@ input {
       content: "radio_button_checked";
     }
   }
-  
+
   &[type="text"] {
     appearance: none;
 
-    padding: 15px;
+    padding: 15px 5px 15px 15px;
 
+    width: 220px;
     height: 45px;
 
     background-color: var(--md-sys-color-surface);
@@ -58,27 +61,24 @@ input {
     border-radius: 24px 0 0 24px;
     border: none;
     outline: none;
-  }
-}
+    transition: 0.6s;
 
-.input-text-container {
-  display: inline-grid;
-  grid-template-columns: auto 35px;
+    & + span {
+      @extend .disable-select;
 
-  span {
-    @extend .disable-select;
+      width: 38px;
 
-    position: relative;
+      background-color: var(--md-sys-color-surface);
 
-    height: 45px;
-    width: 35px;
+      line-height: 1.8;
+      font-family: "Material Icons";
+      font-size: 25px;
 
-    background-color: var(--md-sys-color-surface);
+      border-radius: 0 24px 24px 0;
+    }
 
-    line-height: 1.8;
-    font-family: "Material Icons";
-    font-size: 25px;
-
-    border-radius: 0 24px 24px 0;
+    &:focus {
+      width: 320px;
+    }
   }
 }

@@ -1,0 +1,21 @@
+@media screen and (max-width: 1024px) {
+  .content-container {
+    .content-header#large {
+      padding: 140px 64px;
+
+      .header-container {
+        #title {
+          font-size: 100em;
+        }
+
+        img {
+          top: inherit;
+
+          -webkit-animation: none;
+          animation: none;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

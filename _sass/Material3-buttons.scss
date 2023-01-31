@@ -1,5 +1,6 @@
 // https://m3.material.io/components/all-buttons/
-button {
+button,
+.material-button {
   @extend .label-large;
 
   display: flex;
@@ -28,7 +29,7 @@ button {
     span {
       padding-right: 8px;
 
-      font-family: "Material Icons";
+      font-family: "Material Icons Outlined";
       font-size: 18px;
       text-transform: none;
     }

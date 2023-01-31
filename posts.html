@@ -1,6 +1,6 @@
 ---
 author: sendevia
-description: 文章
+description: 全部文章
 excerpt_separator: <!--more-->
 header_image:
 layout: Material3
@@ -8,18 +8,18 @@ notips: true
 title: Posts
 ---
 
-<div class="input-text-container">
-  <input type="text" id="search-input" placeholder="搜索博客" />
+<div class="input-container">
+  <input type="text" id="search-input" placeholder="搜索文章" autofocus />
   <span>search</span>
 </div>
-<ul id="results-container"></ul>
+<div id="results-container"></div>
 
 {%- assign total_posts = site.posts | size -%}
 <div class="page-posts">
   {%- if total_posts > 0 -%}
   <div class="cards">
     {%- for post in site.posts -%}
-    <material-card elevated onclick="location.href='{{ post.url }}'">
+    <material-card filled onclick="location.href='{{ post.url }}'">
       <div class="headline">
         <span id="header">{{ post.title }}</span>
         <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
@@ -56,7 +56,7 @@ title: Posts
     searchInput: document.getElementById("search-input"),
     resultsContainer: document.getElementById("results-container"),
     json: "{{ site.baseurl }}/search.json",
-    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    searchResultTemplate: '<a href="{url}">{title}</a>',
     noResultsText: "＞︿＜ 无结果",
     fuzzy: false,
   });

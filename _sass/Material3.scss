@@ -37,13 +37,6 @@ body {
     color: var(--md-sys-color-surface-variant);
     background: var(--md-sys-color-on-surface-variant);
   }
-
-  @media screen and (max-width: 768px) {
-    ::-webkit-scrollbar {
-      height: 2px;
-      width: 2px;
-    }
-  }
 }
 
 .material-icons,
@@ -114,7 +107,7 @@ details {
     cursor: pointer;
 
     &::before {
-      @extend .material-icons-outlined;
+      @extend .material-icons;
 
       content: "expand_more";
       font-family: "Material Icons";
@@ -156,18 +149,25 @@ hr {
 
 em {
   display: contents;
+
   font-family: "Smiley Sans";
+}
+
+pre {
+  overflow: auto;
 }
 
 table {
   display: block;
 
+  margin: 10px;
+
   max-width: max-content;
-  width: 100%;
 
   border-collapse: collapse;
   border-radius: 24px;
-  border: 1px solid var(--md-sys-color-outline);
+
+  box-shadow: 0 0 0 1.5px var(--md-sys-color-outline);
 
   overflow: auto;
 
@@ -259,24 +259,10 @@ table {
   }
 }
 
-ul,
-ol > li {
+li {
   @extend .body-large;
 
-  .task-list-item {
-    display: grid;
-    align-items: start;
-    gap: 4px;
-    grid-template-columns: 24px auto;
-  }
-}
-
-ul {
-  padding: 0;
-
-  list-style-type: none;
-
-  li::before {
+  &::before {
     content: " ";
 
     margin-inline-end: 10px;
@@ -290,21 +276,35 @@ ul {
   }
 }
 
+ul,
 ol {
-  padding-inline-start: 20px;
+  padding-inline-start: 1em;
+
+  &.task-list {
+    list-style-type: none;
+
+    .task-list-item {
+      margin: 5px 0;
+
+      input {
+        margin-inline-end: 4px;
+
+        top: 7px;
+
+        height: 0;
+
+        line-height: 0;
+      }
+    }
+  }
 }
 
 .container {
   display: grid;
   grid-template-columns: 80px auto;
   justify-items: start;
-  flex-wrap: wrap;
 
   height: 100%;
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-  }
 }
 
 .content-container {
@@ -318,8 +318,8 @@ ol {
 
   background-color: var(--via-color-background);
 
-  -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
-  animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both page-fade-in;
+  -webkit-animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both fade-in;
+  animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both fade-in;
 
   blockquote {
     margin: 10px;
@@ -330,18 +330,6 @@ ol {
     background-color: change-color($color: $md-sys-color-tertiary-container, $alpha: 0.2);
 
     border-radius: 12px;
-  }
-
-  code,
-  .language-plaintext,
-  .highlighter-rouge {
-    padding: 0 4px;
-
-    font-family: "Source Code Pro", monospace !important;
-
-    background-color: #c7c7c74f;
-
-    border-radius: 4px;
   }
 
   .content-header {
@@ -420,7 +408,7 @@ ol {
   }
 
   .content {
-    margin: 5vh 20vw;
+    margin: 5vh 18vw;
 
     a:hover,
     a:hover:not(.page-about) {
@@ -429,6 +417,11 @@ ol {
 
     img {
       max-width: 100%;
+    }
+
+    p {
+      overflow-x: auto;
+      overflow-y: hidden;
     }
 
     &#nothing {
@@ -453,95 +446,28 @@ ol {
         margin: 0;
       }
     }
-  }
 
-  @media screen and (max-width: 1024px) {
-    .content-header#large {
-      padding: 140px 64px;
+    .input-container {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+    }
 
-      .header-container {
-        #title {
-          font-size: 100em;
-        }
+    #results-container {
+      display: flex;
+      flex-direction: column;
 
-        img {
-          top: inherit;
+      padding: 20px;
 
-          -webkit-animation: none;
-          animation: none;
-          opacity: 0.5;
-        }
-      }
+      width: max-content;
     }
   }
 
-  @media screen and (max-width: 768px) {
-    margin: 0;
-    padding: 0 5vw 80px;
-
-    &::before {
-      display: none;
-    }
-
-    .content-header,
-    .content-header#large {
-      padding: 0;
-
-      background-color: #0000;
-
-      border-radius: 0;
-
-      clip-path: none;
-
-      .header-container {
-        padding-block-start: 50px;
-        padding-block-end: 10px;
-
-        #title {
-          padding-inline-start: 5px;
-
-          font-size: 70em;
-        }
-
-        #subtitle {
-          padding-inline-start: 8px;
-        }
-
-        img {
-          display: none;
-        }
-      }
-    }
-
-    .content {
-      margin: 1vh 5vw;
-    }
-  }
-
-  @media screen and (max-width: 425px) {
-    .content-header,
-    .content-header#large {
-      .header-container {
-        #title {
-          font-size: 60em;
-        }
-
-        #subtitle {
-          font-size: 20em;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 375px) {
-    .content-header,
-    .content-header#large {
-      .header-container {
-        #title {
-          font-size: 50em;
-        }
-      }
-    }
+  .emoji {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
@@ -570,9 +496,9 @@ ol {
 
       width: 100%;
 
-      border: 1px solid var(--md-sys-color-secondary);
+      box-shadow: 0 0 0 1px var(--md-sys-color-secondary);
 
-      a {
+      .site-logo {
         margin: 0 0 15px 0;
       }
 
@@ -595,22 +521,7 @@ ol {
       &:nth-child(2) {
         border-radius: 6px 6px 32px 32px;
 
-        div {
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-
-          margin-block-start: 10px;
-
-          a {
-            @extend .body-large;
-
-            margin: 0;
-          }
-        }
-        ul {
+        .links {
           left: -12px;
         }
       }
@@ -626,7 +537,7 @@ ol {
         mask-size: 100%;
       }
 
-      ul {
+      .links {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -637,16 +548,8 @@ ol {
 
         position: relative;
         left: -20px;
-
-        a {
-          margin: 0;
-        }
       }
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    margin: 2vh 0;
   }
 }
 
@@ -699,11 +602,12 @@ ol {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: space-between;
 
     material-card {
       flex-grow: 1;
 
-      max-width: 360px;
+      width: min-content;
 
       cursor: pointer;
     }

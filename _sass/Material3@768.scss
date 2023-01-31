@@ -1,0 +1,61 @@
+@media screen and (max-width: 768px) {
+  html,
+  body > {
+    ::-webkit-scrollbar {
+      height: 2px;
+      width: 2px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content-container {
+    margin: 0;
+    padding: 0 5vw 80px;
+
+    &::before {
+      display: none;
+    }
+
+    .content-header,
+    .content-header#large {
+      padding: 0;
+
+      background-color: #0000;
+
+      border-radius: 0;
+
+      clip-path: none;
+
+      .header-container {
+        padding-block-start: 50px;
+        padding-block-end: 10px;
+
+        #title {
+          padding-inline-start: 5px;
+
+          font-size: 70em;
+        }
+
+        #subtitle {
+          padding-inline-start: 8px;
+        }
+
+        img {
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      margin: 1vh 5vw;
+    }
+  }
+
+  .footer-container {
+    margin: 2vh 0;
+  }
+}
