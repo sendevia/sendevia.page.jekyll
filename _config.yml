@@ -31,7 +31,7 @@ kramdown:
 
 webrick:
   headers:
-    Cache-Control: max-age=302400, must-revalidate
+    Cache-Control: max-age=600, must-revalidate
 
 exclude:
   - _redirects

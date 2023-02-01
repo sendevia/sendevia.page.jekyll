@@ -261,26 +261,15 @@ table {
 
 li {
   @extend .body-large;
-
-  &::before {
-    content: " ";
-
-    margin-inline-end: 10px;
-    padding: 1px;
-
-    background: var(--md-sys-color-outline);
-
-    &.task-list-item {
-      display: none;
-    }
-  }
 }
 
 ul,
 ol {
-  padding-inline-start: 1em;
+  padding-inline-start: 20px;
 
   &.task-list {
+    padding-inline-start: 1em;
+
     list-style-type: none;
 
     .task-list-item {
@@ -422,6 +411,10 @@ ol {
     p {
       overflow-x: auto;
       overflow-y: hidden;
+    }
+
+    mjx-container {
+      margin-inline: 10px;
     }
 
     &#nothing {
