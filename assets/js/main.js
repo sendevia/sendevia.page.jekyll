@@ -1,14 +1,33 @@
 window.addEventListener("scroll", isScroll);
 window.addEventListener("resize", isResize);
 
+var scrollAction = null;
+document.getElementById("scrolltotop").onclick = function () {
+  cancelAnimationFrame(scrollAction);
+  scrollAction = requestAnimationFrame(function fn() {
+    var currentYpos = document.body.scrollTop || document.documentElement.scrollTop;
+    if (currentYpos > 0) {
+      document.body.scrollTop = document.documentElement.scrollTop = currentYpos - 100;
+      scrollAction = requestAnimationFrame(fn);
+    } else {
+      cancelAnimationFrame(scrollAction);
+    }
+  });
+};
+
 function isScroll() {
   var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
   var header = document.querySelector(".content-header");
+  var topButton = document.getElementById("scrolltotop");
 
-  if (scrollY >= 400) {
-    header.style.opacity = "0";
-  } else {
-    header.style.opacity = "1";
+  switch (true) {
+    case scrollY >= 400:
+      header.style.opacity = "0";
+      topButton.style.cssText = "opacity: 1; visibility: visible; animation: 0.6s cubic-bezier(0.4, 1, 0.6, 0.6) pop-out";
+      break;
+    default:
+      header.style.opacity = "1";
+      topButton.style.cssText = "opacity: 0; visibility: hidden";
   }
 }
 
@@ -270,3 +289,12 @@ function isResize() {
     };
   })(window);
 })();
+
+window.simpleJekyllSearch = new SimpleJekyllSearch({
+  searchInput: document.getElementById("search-input"),
+  resultsContainer: document.getElementById("results-container"),
+  json: "search.json",
+  searchResultTemplate: '<a href="{url}" class="material-button text">{title}</a>',
+  noResultsText: "＞︿＜ 无结果",
+  fuzzy: false,
+});

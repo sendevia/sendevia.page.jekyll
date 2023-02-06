@@ -2,13 +2,12 @@
 <html lang="zh-hans">
   {%- include head.html -%}
   <body class="material-theme" onpageshow="isLoaded()">
-    <!-- 判断是否404 -->
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
-    <!-- 主要页面布局 -->
     <div class="container">
       {%- include header.html -%}
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
     </div>
     {%- endif -%}
   </body>
+  <script type="application/javascript" src="/assets/js/main.js?v=0.3" charset="utf-8"></script>
 </html>

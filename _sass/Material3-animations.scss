@@ -8,6 +8,20 @@
   }
 }
 
+@keyframes pop-out {
+  0% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1.1);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes header-img {
   0% {
     -webkit-filter: blur(50px);

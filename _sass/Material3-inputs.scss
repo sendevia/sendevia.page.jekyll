@@ -47,6 +47,7 @@ input {
 
   &[type="text"] {
     appearance: none;
+    flex-grow: 1;
 
     padding: 15px 5px 15px 15px;
 
@@ -75,10 +76,6 @@ input {
       font-size: 25px;
 
       border-radius: 0 24px 24px 0;
-    }
-
-    &:focus {
-      width: 320px;
     }
   }
 }
