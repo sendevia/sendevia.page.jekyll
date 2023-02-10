@@ -39,10 +39,14 @@ body {
   }
 }
 
-.material-icons,
-.material-icons-outlined {
-  @extend .disable-select;
-  -webkit-font-smoothing: antialiased;
+.material-symbols-rounded {
+  transition: 0.3s;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+
+  &:hover {
+    transition: 0.5s;
+    font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+  }
 }
 
 .material-theme {
@@ -107,10 +111,10 @@ details {
     cursor: pointer;
 
     &::before {
-      @extend .material-icons;
+      @extend .material-symbols-rounded;
 
       content: "expand_more";
-      font-family: "Material Icons";
+      font-family: "Material Symbols Rounded";
 
       transform: rotateZ(-90deg);
       transition: 0.5s cubic-bezier(0, 0.25, 0.25, 1);
@@ -310,14 +314,50 @@ ol {
   animation: 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both fade-in;
 
   blockquote {
+    display: grid;
+    align-items: start;
+    gap: 20px;
+    grid-template-columns: auto 1px;
+    justify-content: space-between;
+
     margin: 10px;
-    padding: 25px;
+    padding: 20px;
 
     color: var(--md-sys-color-on-tertiary-container);
 
-    background-color: change-color($color: $md-sys-color-tertiary-container, $alpha: 0.2);
+    background-color: change-color($color: $md-sys-color-tertiary-container, $alpha: 0.1);
 
     border-radius: 12px;
+    box-shadow: 0px 4px 0px -1px var(--md-sys-color-tertiary-container);
+
+    .task-list-item {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      input {
+        top: 0;
+
+        line-height: 1;
+      }
+    }
+
+    &::after {
+      content: "format_quote";
+
+      position: relative;
+      top: -10px;
+      left: -80px;
+
+      color: var(--md-sys-color-tertiary-container);
+      font-family: "Material Symbols Rounded";
+      font-size: 90em;
+      line-height: 0;
+
+      opacity: 0.5;
+    }
   }
 
   .content-header {
@@ -553,7 +593,7 @@ ol {
 }
 
 #scrolltotop {
-  @extend .disable-select;
+  @extend .disable-select, .material-symbols-rounded;
 
   display: flex;
   align-items: center;
@@ -575,7 +615,7 @@ ol {
   background-color: var(--md-sys-color-tertiary-container);
 
   color: var(--md-sys-color-on-tertiary-container);
-  font-family: "Material Icons";
+  font-family: "Material Symbols Rounded";
   font-size: 24px;
 
   box-shadow: var(--md-sys-elevation-level3);
@@ -633,18 +673,17 @@ ol {
 
 .page-posts {
   .cards {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: space-between;
+    width: 100%;
+
+    column-count: 3;
+    column-gap: 8px;
 
     material-card {
-      flex-grow: 1;
+      margin-block-end: 8px;
 
-      width: min-content;
+      min-width: auto;
 
+      break-inside: avoid;
       cursor: pointer;
     }
   }

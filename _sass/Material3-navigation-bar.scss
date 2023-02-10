@@ -25,6 +25,10 @@
 
     margin: 12px 8px 16px 8px;
 
+    .material-symbols-rounded {
+      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+    }
+
     a {
       text-decoration: none;
     }
@@ -83,10 +87,22 @@
         line-height: 16px;
         text-align: center;
       }
+
+      &:hover {
+        .material-symbols-rounded {
+          transition: 0.5s;
+          font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+        }
+      }
     }
 
     #segment-inactive {
       @extend #segment-active;
+
+      .material-symbols-rounded {
+        transition: 0.3s;
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
 
       #accent {
         @extend #accent;
@@ -108,6 +124,11 @@
       }
 
       &:hover {
+        .material-symbols-rounded {
+          transition: 0.5s;
+          font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+        }
+
         #accent {
           height: 32px;
           width: 64px;

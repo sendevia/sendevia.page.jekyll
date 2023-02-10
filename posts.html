@@ -11,7 +11,7 @@ title: Posts
 <div class="search-container">
   <div class="input-container">
     <input type="text" id="search-input" placeholder="搜索文章" autofocus />
-    <span>search</span>
+    <span class="material-symbols-rounded">search</span>
   </div>
   <div id="results-container"></div>
 </div>
@@ -52,3 +52,15 @@ title: Posts
   </div>
   {%- endif -%}
 </div>
+
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script>
+  window.simpleJekyllSearch = new SimpleJekyllSearch({
+    searchInput: document.getElementById("search-input"),
+    resultsContainer: document.getElementById("results-container"),
+    json: "search.json",
+    searchResultTemplate: '<a href="{url}" class="material-button text">{title}</a>',
+    noResultsText: "＞︿＜ 无结果",
+    fuzzy: false,
+  });
+</script>

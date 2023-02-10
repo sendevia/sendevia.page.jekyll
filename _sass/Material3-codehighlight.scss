@@ -1,12 +1,13 @@
 code.language-plaintext,
 table code {
-  padding-inline: 8px;
+  padding: 0 8px;
 
   border-radius: 10px;
 
   background-color: var(--md-sys-color-primary-container);
 
   font-family: "Source Code Pro", monospace;
+  line-height: 1.5;
 }
 
 .highlighter-rouge {

@@ -102,15 +102,15 @@ material-card {
 
     button {
       &:nth-child(1) {
-        @extend button, .filled;
+        @extend .filled;
       }
 
       &:nth-child(2) {
-        @extend button, .outlined;
+        @extend .outlined;
       }
 
       &:nth-child(n + 3) {
-        @extend button, .text;
+        @extend .text;
       }
     }
   }
