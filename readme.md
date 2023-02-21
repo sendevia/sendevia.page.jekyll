@@ -40,13 +40,15 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-# 使变量生效
+# 安装 Jekyll
+
+1. 设置国内镜像（可选）
 
 ```bash
-source ~/.bashrc
+gem sources --add https://mirrors.bfsu.edu.cn/rubygems/ --remove https://rubygems.org/
 ```
 
-# 安装 Jekyll
+2. 安装
 
 ```ruby
 gem install bundler jekyll

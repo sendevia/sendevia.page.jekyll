@@ -23,6 +23,10 @@ defaults:
       layout: "Material3"
       toc: true
 
+toc:
+  max_level: 2
+  ordered_list: true
+
 highlighter: rouge
 markdown: kramdown
 kramdown:
@@ -31,7 +35,7 @@ kramdown:
 
 webrick:
   headers:
-    Cache-Control: max-age=600, must-revalidate
+    Cache-Control: must-revalidate
 
 exclude:
   - _redirects

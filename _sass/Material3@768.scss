@@ -1,27 +1,27 @@
 @media screen and (max-width: 768px) {
   html,
-  body > {
+  body {
     ::-webkit-scrollbar {
       height: 2px;
       width: 2px;
     }
   }
 
-  .container {
+  .content-grid {
     display: flex;
     flex-wrap: wrap;
   }
 
   .content-container {
     margin: 0;
-    padding: 0 5vw 80px;
+    padding: 0 5vw 90px;
 
     &::before {
       display: none;
     }
 
-    .content-header,
-    .content-header#large {
+    #content-header,
+    #content-header[large] {
       padding: 0;
 
       background-color: #0000;
@@ -50,16 +50,16 @@
       }
     }
 
-    .content {
-      margin: 1vh 5vw;
+    #content {
+      width: 80vw;
+    }
+
+    #footer-container {
+      padding: 0;
     }
   }
 
-  .footer-container {
-    margin: 2vh 0;
-  }
-
-  #scrolltotop {
+  .right-corner-fabs {
     bottom: 100px;
   }
 }

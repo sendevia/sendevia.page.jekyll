@@ -3,11 +3,14 @@
   {%- include head.html -%}
   <body class="material-theme" onpageshow="isLoaded()">
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
-    <div class="container">
+    <div class="content-grid">
       {%- include header.html -%}
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
     </div>
+    <div class="right-corner-fabs">
+      <material-fab id="scrolltotop">keyboard_double_arrow_up</material-fab>
+    </div>
     {%- endif -%}
   </body>
-  <script type="application/javascript" src="/assets/js/main.js?v=0.4" charset="utf-8"></script>
+  <script type="application/javascript" src="/assets/js/main.js?v=0.5.1" charset="utf-8"></script>
 </html>

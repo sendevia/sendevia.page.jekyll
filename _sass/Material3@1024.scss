@@ -1,12 +1,11 @@
 @media screen and (max-width: 1024px) {
   .content-container {
-    .content-header#large {
+    #content-header[large] {
       padding: 140px 64px;
 
-      .header-container {
-        #title {
-          font-size: 100em;
-        }
+      .header-container > #title {
+        font-size: 100em;
+        word-break: keep-all;
 
         img {
           top: inherit;
@@ -16,11 +15,17 @@
         }
       }
     }
+
+    #content {
+      width: 70vw;
+    }
+
+    #footer-container {
+      padding: 0 8vw;
+    }
   }
 
-  .page-posts {
-    .cards {
-      column-count: 2;
-    }
+  .page-posts > .cards {
+    column-count: 2;
   }
 }

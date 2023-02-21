@@ -7,7 +7,7 @@
     {%- assign headerImage = none -%}
   {%- endif -%}
 
-  <div class="content-header" {%- if headerImage != "none" -%} id="large" {%- endif -%}>
+  <div id="content-header" {%- if headerImage != "none" -%} large {%- endif -%}>
     <div class="header-container">
       <span id="title">{{ page.title }}</span>
       {%- if page.description -%}
@@ -21,18 +21,17 @@
   </div>
 {%- endif -%}
 
-
 {%- assign page_words = page.content | number_of_words: "auto" -%}
 {%- if page_words == 0 -%}
-  <div class="content" id="nothing">
+  <div id="content" id="nothing">
     <h1>o(=•ェ•=)m</h1>
     <h6>这里暂时还什么都没有呢</h6>
   </div>
 {%- else -%}
   {%- if page.notips == true -%}
-    <div class="content">{{ content }}</div>
+    <div id="content">{{ content }}</div>
   {%- else -%}
-    <div class="content-information" disabled>
+    <div id="content-information" disabled>
 
       {%- if page.date -%}
       <material-chip class="assist" icon>
@@ -64,8 +63,10 @@
       {%- endif -%}
 
     </div>
-    <div class="content">{{ content | toc }}</div>
+
+    <!-- {%- if page.toc == true -%}
+    {% toc %}
+    {%- endif -%} -->
+    <div id="content">{{ content }}</div>
   {%- endif -%}
 {%- endif -%}
-
-<div id="scrolltotop">keyboard_double_arrow_up</div>

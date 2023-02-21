@@ -1,7 +1,7 @@
 @media screen and (max-width: 425px) {
   .content-container {
-    .content-header,
-    .content-header#large {
+    #content-header,
+    #content-header[large] {
       .header-container {
         #title {
           font-size: 60em;
@@ -12,11 +12,17 @@
         }
       }
     }
+
+    #content {
+      width: 85vw;
+    }
   }
 
-  .page-posts {
-    .cards {
-      column-count: 1;
-    }
+  .page-about > material-card {
+    max-width: 100%;
+  }
+
+  .page-posts > .cards {
+    column-count: 1;
   }
 }

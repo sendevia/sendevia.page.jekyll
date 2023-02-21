@@ -30,7 +30,7 @@ material-chip {
   }
 
   &.assist {
-    border: 1px solid var(--md-sys-color-outline);
+    box-shadow: 0 0 0 1px var(--md-sys-color-outline);
 
     p {
       @extend .label-large;

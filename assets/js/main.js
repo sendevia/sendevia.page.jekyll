@@ -17,7 +17,7 @@ document.getElementById("scrolltotop").onclick = function () {
 
 function isScroll() {
   var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
-  var header = document.querySelector(".content-header");
+  var header = document.getElementById("content-header");
   var topButton = document.getElementById("scrolltotop");
 
   switch (true) {

@@ -1,11 +1,12 @@
 // https://m3.material.io/components/navigation-rail/
 .material-navigation-rail {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
 
   position: relative;
+  left: 0;
 
   height: 100%;
   width: 80px;
@@ -13,18 +14,28 @@
   background-color: var(--md-sys-color-surface);
 
   overflow-x: hidden;
-  z-index: 100;
+  z-index: 10;
+
+  material-fab {
+    position: fixed;
+    top: 20px;
+
+    z-index: 12;
+  }
 
   .destinations {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     position: fixed;
-    bottom: 0;
 
-    margin: 12px 0;
+    padding: 10px 0;
+
+    height: 100%;
+
+    z-index: 11;
 
     .material-symbols-rounded {
       font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
@@ -177,7 +188,7 @@
     mask-image: url(/assets/images/corner.svg);
     mask-repeat: no-repeat;
     mask-size: 100%;
-    z-index: 100;
+    z-index: 10;
   }
 
   &::before {

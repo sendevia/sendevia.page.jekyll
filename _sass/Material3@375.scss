@@ -1,10 +1,11 @@
 @media screen and (max-width: 375px) {
   .content-container {
     .content-header,
-    .content-header#large {
+    .content-header[large] {
       .header-container {
         #title {
           font-size: 50em;
+          word-break: break-word;
         }
       }
     }
