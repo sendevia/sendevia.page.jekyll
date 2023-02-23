@@ -1,5 +1,7 @@
 // https://m3.material.io/components/chips/
 material-chip {
+  @extend .disable-select;
+
   display: flex;
 
   align-items: center;
@@ -9,12 +11,15 @@ material-chip {
 
   padding: 6px 16px;
 
+  position: relative;
+
   height: 32px;
   width: max-content;
 
   border-radius: 8px;
 
   cursor: pointer;
+  overflow: hidden;
   transition: 0.4s cubic-bezier(0, 1, 1, 1);
 
   &[icon] {

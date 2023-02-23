@@ -72,16 +72,8 @@
 </div>
 
 <script>
-  try {
-    const navTarget = window.innerWidth;
-    switch (true) {
-      case navTarget > 768:
-        document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
-        break;
-      default:
-        document.querySelector(".material-navigation-rail").className = "material-navigation-bar";
-    }
-  } catch (err) {
-    console.log("material-navigation-rail 未找到，可能为移动设备。");
+  const navTarget = window.innerWidth;
+  if (navTarget > 768) {
+    document.querySelector(".material-navigation-bar").classList.replace("material-navigation-bar", "material-navigation-rail");
   }
 </script>

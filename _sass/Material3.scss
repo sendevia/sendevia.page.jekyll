@@ -691,3 +691,21 @@ ol {
     justify-content: flex-start;
   }
 }
+
+.ripple {
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+
+    background-color: var(--md-sys-color-primary);
+
+    border-radius: 50%;
+
+    animation: ripple 0.5s ease-in both;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+  }
+}

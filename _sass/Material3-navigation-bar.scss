@@ -59,12 +59,16 @@
 
         margin: 0 0 4px 0;
 
+        position: relative;
+
         height: 32px;
         width: 64px;
 
         background-color: var(--md-sys-color-secondary-container);
 
         border-radius: 100px;
+
+        overflow: hidden;
 
         #segment-primary-icon {
           position: absolute;

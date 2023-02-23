@@ -78,3 +78,32 @@
     letter-spacing: 1px;
   }
 }
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+
+    filter: blur(10px);
+    opacity: 0;
+  }
+
+  40% {
+    width: calc(var(--d) * 2px);
+    height: calc(var(--d) * 2px);
+    opacity: 0.4;
+  }
+
+  60% {
+    filter: blur(2px);
+    opacity: 0.2;
+  }
+
+  70% {
+    filter: blur(20px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

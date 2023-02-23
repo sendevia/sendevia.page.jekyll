@@ -15,6 +15,24 @@ document.getElementById("scrolltotop").onclick = function () {
   });
 };
 
+const rippleElements = document.querySelectorAll("button, a.material-button, material-fab, material-chip, #accent");
+rippleElements.forEach((btn) => {
+  btn.addEventListener("mousedown", function (e) {
+    let x = e.offsetX;
+    let y = e.offsetY;
+    let d = Math.max(btn.clientWidth, btn.clientHeight);
+
+    this.classList.add("ripple");
+    this.style.setProperty("--x", x);
+    this.style.setProperty("--y", y);
+    this.style.setProperty("--d", d);
+
+    setTimeout(() => {
+      this.classList.remove("ripple");
+    }, 500);
+  });
+});
+
 function isScroll() {
   var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
   var header = document.getElementById("content-header");
@@ -44,9 +62,9 @@ function isLoaded() {
 function isResize() {
   try {
     if (window.innerWidth > 768) {
-      document.querySelector(".material-navigation-bar").className = "material-navigation-rail";
+      document.querySelector(".material-navigation-bar").classList.replace("material-navigation-bar", "material-navigation-rail");
     } else {
-      document.querySelector(".material-navigation-rail").className = "material-navigation-bar";
+      document.querySelector(".material-navigation-rail").classList.replace("material-navigation-rail", "material-navigation-bar");
     }
   } catch (err) {
     return null;
