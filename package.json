@@ -1,0 +1,30 @@
+{
+  "name": "sendevia.page.jekyll",
+  "version": "3.14.0",
+  "description": "一个博客",
+  "scripts": {
+    "dev": "webpack && bundle exec jekyll serve --livereload",
+    "build": "webpack && bundle exec jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sendevia/sendevia.page.jekyll.git"
+  },
+  "author": "sendevia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sendevia/sendevia.page.jekyll/issues"
+  },
+  "homepage": "https://sendevia.top",
+  "dependencies": {
+    "@material/material-color-utilities": "^0.2.3"
+  },
+  "devDependencies": {
+    "@webpack-cli/generators": "^3.0.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

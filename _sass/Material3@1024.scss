@@ -25,7 +25,8 @@
     }
   }
 
-  .page-posts > .cards {
+  .page-posts > .cards,
+  .page-index > .posts-card {
     column-count: 2;
   }
 }

@@ -18,6 +18,8 @@ body {
   scrollbar-width: auto;
   scrollbar-color: var(--md-sys-color-secondary) #0000;
 
+  -webkit-tap-highlight-color: transparent;
+
   ::-webkit-scrollbar {
     height: 5px;
     width: 5px;
@@ -40,12 +42,15 @@ body {
 }
 
 .material-symbols-rounded {
-  transition: 0.3s;
+  font-family: "Material Symbols Rounded";
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 
+  transition: 0.3s;
+
   &:hover {
-    transition: 0.5s;
     font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+
+    transition: 0.5s;
   }
 }
 
@@ -69,6 +74,10 @@ a {
 
   color: var(--md-sys-color-primary);
   text-decoration: none;
+}
+
+abbr {
+  cursor: help;
 }
 
 details {
@@ -449,11 +458,6 @@ ol {
   #content {
     width: 60vw;
 
-    a:hover,
-    a:hover:not(.page-about) {
-      text-decoration: underline;
-    }
-
     img {
       max-width: 100%;
     }
@@ -616,9 +620,38 @@ ol {
   bottom: 20px;
   right: 20px;
 
+  material-fab {
+    color: var(--md-sys-color-on-primary-container);
+
+    background-color: var(--md-sys-color-primary-container);
+  }
+
   #scrolltotop {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+.page-index {
+  .block {
+    display: grid;
+    justify-items: center;
+
+    .posts-card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+
+      a {
+        display: block;
+      }
+
+      material-card {
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -670,17 +703,11 @@ ol {
 
 .page-posts {
   .cards {
-    width: 100%;
-
-    column-count: 3;
-    column-gap: 8px;
-
     material-card {
       margin-block-end: 8px;
 
       min-width: auto;
 
-      break-inside: avoid;
       cursor: pointer;
     }
   }

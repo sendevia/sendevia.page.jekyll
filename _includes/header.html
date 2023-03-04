@@ -70,10 +70,15 @@
     </a> -->
   </div>
 </div>
-
+<div class="material-top-app-bar" spec="small-centered" id="totop">
+  <span id="leading-icon">menu</span>
+  <h4>{{ page.title }}</h4>
+  <span id="trailing-icon">search</span>
+</div>
 <script>
   const navTarget = window.innerWidth;
   if (navTarget > 768) {
     document.querySelector(".material-navigation-bar").classList.replace("material-navigation-bar", "material-navigation-rail");
+    document.querySelector(".material-top-app-bar").style.visibility = "hidden";
   }
 </script>

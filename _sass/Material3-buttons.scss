@@ -4,7 +4,6 @@ button,
   @extend .label-large;
 
   display: flex;
-
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -38,7 +37,7 @@ button,
     }
   }
 
-  &.elevated {
+  &[type="elevated"] {
     color: var(--md-sys-color-primary);
 
     background-color: var(--md-sys-color-surface);
@@ -46,7 +45,6 @@ button,
     box-shadow: var(--md-sys-elevation-level1);
 
     &:hover {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-hover-state-layer-opacity);
       box-shadow: var(--md-sys-elevation-level2);
     }
 
@@ -87,7 +85,7 @@ button,
     }
   }
 
-  &.filled {
+  &[type="filled"] {
     color: var(--md-sys-color-on-primary);
 
     background-color: var(--md-sys-color-primary);
@@ -125,7 +123,7 @@ button,
     }
   }
 
-  &.tonal {
+  &[type="tonal"] {
     color: var(--md-sys-color-on-secondary-container);
 
     background-color: var(--md-sys-color-secondary-container);
@@ -150,7 +148,7 @@ button,
     }
   }
 
-  &.outlined {
+  &[type="outlined"] {
     color: var(--md-sys-color-primary);
 
     background: none;
@@ -177,7 +175,7 @@ button,
     }
   }
 
-  &.text {
+  &[type="text"] {
     color: var(--md-sys-color-primary);
 
     background: none;

@@ -1,7 +1,7 @@
 // https://m3.material.io/components/navigation-rail/
 .material-navigation-rail {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
 
@@ -18,7 +18,8 @@
 
   material-fab {
     position: fixed;
-    top: 20px;
+
+    margin: 12px;
 
     z-index: 12;
   }

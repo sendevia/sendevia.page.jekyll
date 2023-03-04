@@ -38,7 +38,6 @@ webrick:
     Cache-Control: must-revalidate
 
 exclude:
-  - _redirects
   - .gitignore
   - .jekyll-cache/
   - .sass-cache/
@@ -47,12 +46,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - gemfiles/
+  - LICENSE
   - node_modules/
+  - package-lock.json
   - package.json
-  - readme.md
+  - README.MD
   - sendevia.page.jekyll.code-workspace
   - tsconfig.json
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
+  - webpack.config.js
+  - webpack/

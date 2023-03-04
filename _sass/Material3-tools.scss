@@ -1,13 +1,9 @@
-$md-sys-state-dragged-state-layer-opacity: 0.16;
-$md-sys-state-focus-state-layer-opacity: 0.12;
-$md-sys-state-hover-state-layer-opacity: 0.08;
-$md-sys-state-pressed-state-layer-opacity: 0.12;
-
 :root {
   .material-theme {
     .disable-select,
     .material-navigation-bar,
     .material-navigation-rail,
+    .material-symbols-rounded,
     br {
       -moz-user-select: none;
       -webkit-user-drag: none;
@@ -25,10 +21,5 @@ $md-sys-state-pressed-state-layer-opacity: 0.12;
       opacity: 0.38;
       pointer-events: none;
     }
-
-    --md-sys-state-dragged-state-layer-opacity: 0.16;
-    --md-sys-state-focus-state-layer-opacity: 0.12;
-    --md-sys-state-hover-state-layer-opacity: 0.08;
-    --md-sys-state-pressed-state-layer-opacity: 0.12;
   }
 }

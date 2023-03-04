@@ -107,7 +107,7 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>class</th>
+          <th>type</th>
           <th>正常</th>
           <th>正常，带图标</th>
           <th>失效/禁用</th>
@@ -119,19 +119,19 @@ title: Material3 Components
           <td><code>button</code></td>
           <td><code>elevated</code></td>
           <td>
-            <button class="elevated">elevated</button>
+            <button type="elevated">elevated</button>
           </td>
           <td>
-            <button class="elevated" icon>
+            <button type="elevated" icon>
               <span>add</span>
               elevated
             </button>
           </td>
           <td>
-            <button class="elevated" disabled>elevated</button>
+            <button type="elevated" disabled>elevated</button>
           </td>
           <td>
-            <button class="elevated" icon disabled>
+            <button type="elevated" icon disabled>
               <span>add</span>
               elevated
             </button>
@@ -141,19 +141,19 @@ title: Material3 Components
           <td></td>
           <td><code>filled</code></td>
           <td>
-            <button class="filled">filled</button>
+            <button type="filled">filled</button>
           </td>
           <td>
-            <button class="filled" icon>
+            <button type="filled" icon>
               <span>add</span>
               filled
             </button>
           </td>
           <td>
-            <button class="filled" disabled>filled</button>
+            <button type="filled" disabled>filled</button>
           </td>
           <td>
-            <button class="filled" icon disabled>
+            <button type="filled" icon disabled>
               <span>add</span>
               filled
             </button>
@@ -163,19 +163,19 @@ title: Material3 Components
           <td></td>
           <td><code>tonal</code></td>
           <td>
-            <button class="tonal">tonal</button>
+            <button type="tonal">tonal</button>
           </td>
           <td>
-            <button class="tonal" icon>
+            <button type="tonal" icon>
               <span>add</span>
               tonal
             </button>
           </td>
           <td>
-            <button class="tonal" disabled>tonal</button>
+            <button type="tonal" disabled>tonal</button>
           </td>
           <td>
-            <button class="tonal" icon disabled>
+            <button type="tonal" icon disabled>
               <span>add</span>
               tonal
             </button>
@@ -185,19 +185,19 @@ title: Material3 Components
           <td></td>
           <td><code>outlined</code></td>
           <td>
-            <button class="outlined">outlined</button>
+            <button type="outlined">outlined</button>
           </td>
           <td>
-            <button class="outlined" icon>
+            <button type="outlined" icon>
               <span>add</span>
               outlined
             </button>
           </td>
           <td>
-            <button class="outlined" disabled>outlined</button>
+            <button type="outlined" disabled>outlined</button>
           </td>
           <td>
-            <button class="outlined" icon disabled>
+            <button type="outlined" icon disabled>
               <span>add</span>
               outlined
             </button>
@@ -207,19 +207,19 @@ title: Material3 Components
           <td></td>
           <td><code>text</code></td>
           <td>
-            <button class="text">text</button>
+            <button type="text">text</button>
           </td>
           <td>
-            <button class="text" icon>
+            <button type="text" icon>
               <span>add</span>
               text
             </button>
           </td>
           <td>
-            <button class="text" disabled>text</button>
+            <button type="text" disabled>text</button>
           </td>
           <td>
-            <button class="text" icon disabled>
+            <button type="text" icon disabled>
               <span>add</span>
               text
             </button>
@@ -304,6 +304,7 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
+          <th>spec</th>
           <th>attribute</th>
           <th>预览</th>
         </tr>
@@ -311,9 +312,10 @@ title: Material3 Components
       <tbody>
         <tr>
           <td><code>material-card</code></td>
+          <td><code>normal</code></td>
           <td><code>outlined</code></td>
           <td>
-            <material-card outlined>
+            <material-card spec="normal" outlined>
               <div class="header">
                 <div id="content">
                   <div id="monogram">
@@ -342,10 +344,11 @@ title: Material3 Components
           </td>
         </tr>
         <tr>
+          <td></td>
           <td></td>
           <td><code>elevated</code></td>
           <td>
-            <material-card elevated>
+            <material-card spec="normal" elevated>
               <div class="header">
                 <div id="content">
                   <div id="monogram">
@@ -375,9 +378,10 @@ title: Material3 Components
         </tr>
         <tr>
           <td></td>
+          <td></td>
           <td><code>filled</code></td>
           <td>
-            <material-card filled>
+            <material-card spec="normal" filled>
               <div class="header">
                 <div id="content">
                   <div id="monogram">
@@ -401,6 +405,20 @@ title: Material3 Components
               <div class="actions">
                 <button>action 1</button>
                 <button>action 2</button>
+              </div>
+            </material-card>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>focus</code></td>
+          <td>-</td>
+          <td>
+            <material-card spec="focus">
+              <img src="{{ site.header_image }}" alt="image" />
+              <div class="supporting-container">
+                <h3>Lorem ipsum dolor sit amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
               </div>
             </material-card>
           </td>

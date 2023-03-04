@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
+  <script>
+    function isLoaded() {
+      try {
+        var currentPage = window.location.pathname;
+        var activatedSegment = document.querySelector("a[href='" + currentPage + "']");
+        activatedSegment.querySelector("#segment-inactive").id = "segment-active";
+      } catch (err) {
+        document.querySelector("a[href='/posts']").querySelector("#segment-inactive").id = "segment-active";
+      }
+    }
+  </script>
+  <!--  -->
+  <!--  -->
+  <!--  -->
   {%- include head.html -%}
   <body class="material-theme" onpageshow="isLoaded()">
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
@@ -12,5 +26,92 @@
     </div>
     {%- endif -%}
   </body>
-  <script type="application/javascript" src="/assets/js/main.js?v=0.6" charset="utf-8"></script>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.1"></script>
+  <script>
+    window.addEventListener("scroll", isScroll);
+    window.addEventListener("resize", isResize);
+
+    const rippleElements = document.querySelectorAll(
+      "a.material-button, #accent, button, material-fab, material-chip, material-card[spec='focus'], .material-top-app-bar span"
+    );
+
+    const scrollTopEl = document.querySelectorAll("#scrolltotop, #totop");
+
+    scrollTopEl.forEach((e) => {
+      e.addEventListener("click", function () {
+        var scrollAction = null;
+        cancelAnimationFrame(scrollAction);
+        scrollAction = requestAnimationFrame(function fn() {
+          var currentYpos = document.body.scrollTop || document.documentElement.scrollTop;
+          if (currentYpos > 0) {
+            document.body.scrollTop = document.documentElement.scrollTop = currentYpos - 100;
+            scrollAction = requestAnimationFrame(fn);
+          } else {
+            cancelAnimationFrame(scrollAction);
+          }
+        });
+      });
+    });
+
+    rippleElements.forEach((btn) => {
+      btn.addEventListener("mousedown", function (e) {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let d = Math.max(btn.clientWidth, btn.clientHeight);
+
+        this.classList.add("ripple");
+        this.style.setProperty("--x", x);
+        this.style.setProperty("--y", y);
+        this.style.setProperty("--d", d);
+
+        setTimeout(() => {
+          this.classList.remove("ripple");
+        }, 500);
+      });
+    });
+
+    function isScroll() {
+      var header = document.getElementById("content-header");
+      var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+      var topAppBar = document.querySelector(".material-top-app-bar");
+      var topButton = document.getElementById("scrolltotop");
+
+      if (scrollY >= 64) {
+        topAppBar.setAttribute("on-scroll", "");
+      } else {
+        topAppBar.removeAttribute("on-scroll", "");
+      }
+
+      switch (true) {
+        case scrollY >= 400:
+          header.style.opacity = "0";
+          topButton.style.cssText = "opacity: 1; visibility: visible; animation: 0.6s cubic-bezier(0.4, 1, 0.6, 0.6) pop-out";
+          break;
+        default:
+          header.style.opacity = "1";
+          topButton.style.cssText = "opacity: 0; visibility: hidden";
+      }
+    }
+
+    function isResize() {
+      var navBar = document.querySelector(".material-navigation-bar");
+      var navRail = document.querySelector(".material-navigation-rail");
+      var topAppBar = document.querySelector(".material-top-app-bar");
+
+      try {
+        if (window.innerWidth > 768) {
+          topAppBar.style.visibility = "hidden";
+          navBar.classList.replace("material-navigation-bar", "material-navigation-rail");
+        } else {
+          topAppBar.style.visibility = "visible";
+          navRail.classList.replace("material-navigation-rail", "material-navigation-bar");
+        }
+      } catch (err) {
+        return null;
+      }
+    }
+  </script>
 </html>

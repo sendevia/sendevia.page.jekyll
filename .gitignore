@@ -10,6 +10,6 @@ _site
 *.map
 *.sf
 *TEST*.md
+/assets/js/material-color-utilities.js
 node_modules
-tsconfig.tsbuildinfo
-vendor
+package-lock.json

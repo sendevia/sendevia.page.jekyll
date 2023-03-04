@@ -21,7 +21,7 @@ title: Posts
   {%- if total_posts > 0 -%}
   <div class="cards">
     {%- for post in site.posts -%}
-    <material-card filled onclick="location.href='{{ post.url }}'">
+    <material-card spec="normal" filled>
       <div class="headline">
         <span id="header">{{ post.title }}</span>
         <span id="subhead">发表于 {{ post.date | date: "%Y/%m/%d" }}</span>
@@ -40,7 +40,7 @@ title: Posts
         {% endfor %}
       </div>
       <div class="actions">
-        <button>访问文章</button>
+        <a href="{{ post.url }}"><button>访问文章</button></a>
       </div>
     </material-card>
     {%- endfor -%}
@@ -53,14 +53,26 @@ title: Posts
   {%- endif -%}
 </div>
 
-<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script type="application/javascript" src="/assets/js/simple-jekyll-search.min.js?v=1.10.0"></script>
+<script type="application/javascript" src="/assets/js/macy.js?v=2.5.1"></script>
 <script>
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     searchInput: document.getElementById("search-input"),
     resultsContainer: document.getElementById("results-container"),
     json: "search.json",
-    searchResultTemplate: '<a href="{url}" class="material-button text">{title}</a>',
+    searchResultTemplate: '<a href="{url}"><button type="text">{title}</button></a>',
     noResultsText: "＞︿＜ 无结果",
     fuzzy: false,
+  });
+  var macy = Macy({
+    container: ".cards",
+    margin: 8,
+    trueOrder: false,
+    waitForImages: false,
+    columns: 3,
+    breakAt: {
+      768: 2,
+      425: 1,
+    },
   });
 </script>
