@@ -10,6 +10,6 @@ _site
 *.map
 *.sf
 *TEST*.md
-/assets/js/material-color-utilities.js
+/assets/js/bundle.js
 node_modules
 package-lock.json
