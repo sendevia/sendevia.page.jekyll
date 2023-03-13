@@ -1,21 +1,21 @@
-{%- if page.title & page.description -%}
-  {%- if page.header_image -%}
+{%- if page.title or page.description -%}
+  {%- if page.header_image and page.header_image != "" -%}
     {%- assign headerImage = page.header_image -%}
   {%- elsif site.header_image -%}
     {%- assign headerImage = site.header_image -%}
   {%- else -%}
-    {%- assign headerImage = none -%}
+    {%- assign headerImage = false -%}
   {%- endif -%}
 
-  <div id="content-header" {%- if headerImage != "none" -%} large {%- endif -%}>
+  <div id="content-header" {%- if headerImage != false -%} spec="large"  {%- endif -%}>
     <div class="header-container">
       <span id="title">{{ page.title }}</span>
-      {%- if page.description -%}
+      {%- if page.description and page.description != "" -%}
       <span id="subtitle">{{ page.description }}</span>
       {%- endif -%}
 
-      {%- if headerImage != "none" -%}
-      <img src="{{ headerImage }}" alt="头图" />
+      {%- if headerImage != false -%}
+      <img src="{{ headerImage }}" id="header_image" alt="头图" />
       {%- endif -%}
     </div>
   </div>
@@ -34,32 +34,32 @@
     <div id="content-information" disabled>
 
       {%- if page.date -%}
-      <material-chip class="assist" icon>
+      <div class="mcp assist" icon>
         <span>calendar_month</span>
         <p class="label-text">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
-      </material-chip>
+      </div>
       {%- endif -%}
 
       {%- if page.author -%}
-      <material-chip class="assist" icon>
+      <div class="mcp assist" icon>
         <span>person</span>
         <p class="label-text">{{ page.author }}</p>
-      </material-chip>
+      </div>
       {%- endif -%}
 
-      <material-chip class="assist" icon>
+      <div class="mcp assist" icon>
         <span>schedule</span>
         <p class="label-text">
           {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}
           分钟
         </p>
-      </material-chip>
+      </div>
 
       {%- if page.categories.size > 0 -%}
-      <material-chip class="assist" icon>
+      <div class="mcp assist" icon>
         <span>category</span>
         <p class="label-text">{{ page.categories }}</p>
-      </material-chip>
+      </div>
       {%- endif -%}
 
     </div>

@@ -1,5 +1,5 @@
-<div class="material-navigation-bar disable-select">
-  <material-fab> menu </material-fab>
+<div class="mnb">
+  <div class="mfb"> menu </div>
 
   <div class="destinations">
     <a href="/">
@@ -70,15 +70,15 @@
     </a> -->
   </div>
 </div>
-<div class="material-top-app-bar" spec="small-centered" id="totop">
+<div class="mtp" spec="small-centered">
   <span id="leading-icon">menu</span>
-  <h4>{{ page.title }}</h4>
+  <h4 id="totop">{{ page.title }}</h4>
   <span id="trailing-icon">search</span>
 </div>
 <script>
   const navTarget = window.innerWidth;
   if (navTarget > 768) {
-    document.querySelector(".material-navigation-bar").classList.replace("material-navigation-bar", "material-navigation-rail");
-    document.querySelector(".material-top-app-bar").style.visibility = "hidden";
+    document.querySelector(".mnb").classList.replace("mnb", "mnr");
+    document.querySelector(".mtp").style.visibility = "hidden";
   }
 </script>

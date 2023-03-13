@@ -1,12 +1,13 @@
 baseurl: ""
 timezone: Asia/Shanghai
-title: sendevia 的博客
+title: "sendevia 的博客"
 
-email: me@sendevia.top
-github: https://github.com/Sendevia
-twitter: https://twitter.com/sendevia
+email: "me@sendevia.top"
+github: "https://github.com/Sendevia"
+twitter: "https://twitter.com/sendevia"
 
-header_image: /assets/images/102911375_p0.webp
+header_image: "/assets/images/102911375_p0.webp"
+custom_color: "#ffac63"
 
 plugins:
   - jekyll-feed
@@ -27,15 +28,15 @@ toc:
   max_level: 2
   ordered_list: true
 
-highlighter: rouge
-markdown: kramdown
+highlighter: "rouge"
+markdown: "kramdown"
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  input: "GFM"
+  syntax_highlighter: "rouge"
 
 webrick:
   headers:
-    Cache-Control: must-revalidate
+    Cache-Control: "must-revalidate"
 
 exclude:
   - .gitignore

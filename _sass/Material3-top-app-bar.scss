@@ -1,11 +1,10 @@
-.material-top-app-bar {
+.mtp {
   position: fixed;
   top: 0;
 
   width: 100%;
 
   overflow: hidden;
-  transition: 0.5s;
   z-index: 15;
 
   &[spec="small"] {
@@ -47,12 +46,14 @@
     }
 
     h4 {
+      display: flex;
+      align-items: center;
       flex-grow: 1;
+      justify-content: center;
 
-      position: relative;
-      top: 0;
+      margin: auto;
 
-      margin: 0;
+      height: 100%;
 
       text-align: center;
     }

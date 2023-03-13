@@ -1,23 +1,32 @@
-input {
+input,
+.mip {
   position: relative;
 
   &[type="checkbox"],
   &[type="radio"] {
     appearance: none;
 
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
     margin: 0;
     padding: 0;
 
-    width: 24px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
 
     font-family: "Material Symbols Rounded";
     font-size: 24px;
 
+    border-radius: 50%;
+
     cursor: pointer;
+    overflow: hidden;
 
     &::after {
       color: var(--md-sys-color-on-surface-variant);
+      line-height: 1;
     }
 
     &:checked::after {

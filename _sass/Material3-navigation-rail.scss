@@ -1,11 +1,12 @@
 // https://m3.material.io/components/navigation-rail/
-.material-navigation-rail {
+.mnr {
+  @extend .disable-select;
+
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
 
-  position: relative;
+  position: fixed;
   left: 0;
 
   height: 100%;
@@ -16,7 +17,7 @@
   overflow-x: hidden;
   z-index: 10;
 
-  material-fab {
+  .mfb {
     position: fixed;
 
     margin: 12px;
@@ -26,15 +27,12 @@
 
   .destinations {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: flex-end;
 
-    position: fixed;
-
-    padding: 10px 0;
-
-    height: 100%;
+    padding: 80px 0 10px 0;
 
     z-index: 11;
 
@@ -161,7 +159,7 @@
           height: 32px;
           width: 56px;
 
-          background-color: var(--md-sys-color-secondary-container);
+          background-color: var(--md-sys-color-surface-variant);
         }
 
         #label {
@@ -187,12 +185,8 @@
 
     background-color: var(--md-sys-color-surface);
 
-    -webkit-mask-image: url(/assets/images/corner.svg);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100%;
-    mask-image: url(/assets/images/corner.svg);
-    mask-repeat: no-repeat;
-    mask-size: 100%;
+    -webkit-mask: var(--via-svg-corner) no-repeat;
+    mask: var(--via-svg-corner) no-repeat;
     z-index: 10;
   }
 

@@ -14,28 +14,29 @@
   <!--  -->
   <!--  -->
   <!--  -->
-  {%- include head.html -%}
-  <body class="material-theme" onpageshow="isLoaded()">
+  {%- if page.custom_color and page.custom_color != "" -%} {%- assign color = page.custom_color -%} {%- else -%} {%- assign color = site.custom_color -%} {%-
+  endif -%} {%- include head.html -%}
+  <body class="material-theme" onpageshow="isLoaded()" color="{{ color }}">
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
     <div class="content-grid">
       {%- include header.html -%}
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
     </div>
     <div class="right-corner-fabs">
-      <material-fab id="scrolltotop">keyboard_double_arrow_up</material-fab>
+      <div class="mfb" id="scrolltotop">keyboard_double_arrow_up</div>
     </div>
     {%- endif -%}
   </body>
   <!--  -->
   <!--  -->
   <!--  -->
-  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.1"></script>
+  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.2"></script>
   <script>
     window.addEventListener("scroll", isScroll);
     window.addEventListener("resize", isResize);
 
     const rippleElements = document.querySelectorAll(
-      "a.material-button, #accent, button, material-fab, material-chip, material-card[spec='focus'], .material-top-app-bar span"
+      ".mcd a, #accent, button, .mbt, .mfb, .mcp, .mcd[spec='focus'], .mtp span, input[type='checkbox'], input[type='radio']"
     );
 
     const scrollTopEl = document.querySelectorAll("#scrolltotop, #totop");
@@ -76,7 +77,7 @@
     function isScroll() {
       var header = document.getElementById("content-header");
       var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
-      var topAppBar = document.querySelector(".material-top-app-bar");
+      var topAppBar = document.querySelector(".mtp");
       var topButton = document.getElementById("scrolltotop");
 
       if (scrollY >= 64) {
@@ -97,17 +98,17 @@
     }
 
     function isResize() {
-      var navBar = document.querySelector(".material-navigation-bar");
-      var navRail = document.querySelector(".material-navigation-rail");
-      var topAppBar = document.querySelector(".material-top-app-bar");
+      var navBar = document.querySelector(".mnb");
+      var navRail = document.querySelector(".mnr");
+      var topAppBar = document.querySelector(".mtp");
 
       try {
         if (window.innerWidth > 768) {
           topAppBar.style.visibility = "hidden";
-          navBar.classList.replace("material-navigation-bar", "material-navigation-rail");
+          navBar.classList.replace("mnb", "mnr");
         } else {
           topAppBar.style.visibility = "visible";
-          navRail.classList.replace("material-navigation-rail", "material-navigation-bar");
+          navRail.classList.replace("mnr", "mnb");
         }
       } catch (err) {
         return null;

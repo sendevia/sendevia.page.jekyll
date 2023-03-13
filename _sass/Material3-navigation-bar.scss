@@ -1,5 +1,7 @@
 // https://m3.material.io/components/navigation-bar/
-.material-navigation-bar {
+.mnb {
+  @extend .disable-select;
+
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -16,7 +18,7 @@
   overflow-y: hidden;
   z-index: 10;
 
-  material-fab {
+  .mfb {
     display: none;
   }
 
@@ -143,7 +145,7 @@
           height: 32px;
           width: 64px;
 
-          background-color: var(--md-sys-color-secondary-container);
+          background-color: var(--md-sys-color-surface-variant);
         }
       }
     }

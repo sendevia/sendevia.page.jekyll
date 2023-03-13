@@ -1,7 +1,7 @@
 @media screen and (max-width: 425px) {
   .content-container {
     #content-header,
-    #content-header[large] {
+    #content-header[spec="large"] {
       .header-container {
         #title {
           font-size: 60em;

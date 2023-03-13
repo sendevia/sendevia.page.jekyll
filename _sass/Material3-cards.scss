@@ -1,5 +1,5 @@
 // https://m3.material.io/components/cards/
-material-card {
+.mcd {
   display: flex;
   flex-direction: column;
 
@@ -15,17 +15,9 @@ material-card {
 
     transition: 0.4s;
 
-    #title,
-    #header {
+    .mcd-header {
       @extend .body-large;
-    }
 
-    #subhead,
-    #supporting-text {
-      @extend .body-medium;
-    }
-
-    .header {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -36,6 +28,8 @@ material-card {
       width: 100%;
 
       & > span {
+        @extend .material-symbols-rounded;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,19 +37,18 @@ material-card {
         height: 48px;
         width: 48px;
 
-        font-family: "Material Symbols Rounded";
         font-size: 24px;
 
         cursor: pointer;
       }
 
-      #content {
+      #mcd-header-content {
         display: flex;
         align-items: center;
         flex-direction: row;
         gap: 16px;
 
-        #monogram {
+        #mcd--monogram {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -64,7 +57,7 @@ material-card {
           filter: opacity(1);
           overflow: hidden;
 
-          #initial {
+          #mcd--monogram-initial {
             @extend .title-medium;
 
             position: fixed;
@@ -72,7 +65,7 @@ material-card {
             color: var(--md-sys-color-surface);
           }
 
-          #background {
+          #mcd--monogram-background {
             display: inline-block;
 
             height: 40px;
@@ -84,32 +77,48 @@ material-card {
           }
         }
 
-        #text {
+        #mcd--text {
           display: flex;
           align-items: flex-start;
           flex-direction: column;
           gap: 4px;
 
-          #header {
+          #mcd--text-header {
             @extend .title-medium;
+          }
+
+          #mcd--text-subhead {
+            @extend .body-medium;
           }
         }
       }
     }
 
-    .headline {
+    .mcd-headline {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
 
       padding: 16px;
+
+      #mcd-headline-title {
+        @extend .body-large;
+      }
+
+      #mcd-headline-subhead {
+        @extend .body-medium;
+      }
     }
 
-    .supporting-container {
+    .mcd-supporting {
       padding: 16px;
+
+      #mcd-supporting-text {
+        @extend .body-medium;
+      }
     }
 
-    .actions {
+    .mcd-actions {
       display: flex;
       align-items: center;
       flex-direction: row-reverse;
@@ -118,17 +127,17 @@ material-card {
 
       padding: 16px;
 
-      button {
+      a {
         &:nth-child(1) {
-          @extend [type="filled"];
+          @extend .mbt, [spec="filled"];
         }
 
         &:nth-child(2) {
-          @extend [type="outlined"];
+          @extend .mbt, [spec="outlined"];
         }
 
         &:nth-child(n + 3) {
-          @extend [type="text"];
+          @extend .mbt, [spec="text"];
         }
       }
     }
@@ -177,7 +186,7 @@ material-card {
       object-fit: cover;
     }
 
-    .supporting-container {
+    .mcd-supporting {
       display: flex;
       flex-direction: column;
       gap: 10px;

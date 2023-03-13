@@ -1,13 +1,15 @@
 ---
-author: sendevia
+author: "sendevia"
 categories: osu!皮肤
-description: 一个 osu! 皮肤
+custom_color: "#4285F4"
+custom_scheme: "dark"
+description: "一个 osu! 皮肤"
 excerpt_separator: <!--more-->
-header_image: /assets/images/22/06/11/s0_amix_vision.webp
-tags: readme skin amix
-layout: Material3
+header_image: "/assets/images/22/06/11/s0_amix_vision.webp"
+layout: "Material3"
 notips:
-title: AincradMix
+tags: readme skin amix
+title: "AincradMix"
 ---
 
 # 介绍
@@ -91,15 +93,15 @@ title: AincradMix
 # 下载
 
 <div>
-  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk'" icon>
+  <a href="https://github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk" class="mbt" spec="tonal" icon>
     <span>download</span>
     最新版 (1.0/2022.3.21) 下载
-  </button>
+  </a>
   <br />
-  <button class="elevated" onclick="location.href='//github.com/Sendevia/AincradMix'" icon>
+  <a href="https://github.com/Sendevia/AincradMix" class="mbt" spec="tonal" icon>
     <span>code</span>
     Github
-  </button>
+  </a>
 </div>
 
 # 推荐设置

@@ -1,6 +1,6 @@
-import { Hct } from "@material/material-color-utilities";
+import { themeFromSourceColor, applyTheme, argbFromHex } from "@material/material-color-utilities";
 
-const color = Hct.fromInt(0xff4285f4);
-console.log(`Hue: ${color.hue}`);
-console.log(`Chrome: ${color.chroma}`);
-console.log(`Tone: ${color.tone}`);
+const theme = themeFromSourceColor(argbFromHex(document.body.getAttribute("color")));
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+applyTheme(theme, { target: document.body, dark: systemDark });

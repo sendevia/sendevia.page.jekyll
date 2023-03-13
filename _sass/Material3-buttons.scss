@@ -1,13 +1,12 @@
 // https://m3.material.io/components/all-buttons/
 button,
-.material-button {
+.mbt {
   @extend .label-large;
 
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
 
   padding: 10px 24px;
 
@@ -23,21 +22,165 @@ button,
 
   cursor: pointer;
   overflow: hidden;
-  transition: 0.4s cubic-bezier(0, 1, 1, 1);
+  transition: 0.4s;
 
-  &[icon] {
-    padding: 10px 24px 10px 16px;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
 
-    span {
-      padding-right: 8px;
+    height: 100%;
+    width: 100%;
 
-      font-family: "Material Symbols Rounded";
-      font-size: 18px;
-      text-transform: none;
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  &:hover {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-hover-state-layer-opacity);
     }
   }
 
-  &[type="elevated"] {
+  &:focus {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-focus-state-layer-opacity);
+    }
+  }
+
+  &:active {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-pressed-state-layer-opacity);
+    }
+  }
+
+  &[icon] {
+    gap: 8px;
+
+    padding: 10px 24px 10px 16px;
+
+    span {
+      @extend .material-symbols-rounded;
+
+      height: 18px;
+      width: 18px;
+
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+
+  &[spec="filled"] {
+    color: var(--md-sys-color-on-primary);
+
+    background-color: var(--md-sys-color-primary);
+
+    &:hover {
+      &::after {
+        background-color: var(--md-sys-color-on-primary);
+      }
+
+      box-shadow: var(--md-sys-elevation-level1);
+    }
+
+    &:focus {
+      &::after {
+        background-color: var(--md-sys-color-on-primary);
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: var(--md-sys-color-on-primary);
+      }
+    }
+
+    &:disabled {
+      color: var(--md-sys-color-on-surface);
+
+      background: none;
+
+      opacity: 0.38;
+
+      &::after {
+        background-color: var(--md-sys-color-on-surface);
+
+        opacity: 0.18;
+      }
+    }
+  }
+
+  &[spec="outlined"] {
+    color: var(--md-sys-color-primary);
+
+    background: none;
+
+    border: 1px solid var(--md-sys-color-outline);
+
+    &:hover {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+    }
+
+    &:focus {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+    }
+
+    &:disabled {
+      color: var(--md-sys-color-on-surface);
+
+      background: none;
+
+      opacity: 0.38;
+    }
+  }
+
+  &[spec="text"] {
+    color: var(--md-sys-color-primary);
+
+    background: none;
+
+    &:hover {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+    }
+
+    &:focus {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: var(--md-sys-color-p);
+      }
+    }
+
+    &:disabled {
+      color: var(--md-sys-color-on-surface);
+
+      background: none;
+
+      opacity: 0.38;
+    }
+  }
+
+  &[spec="elevated"] {
     color: var(--md-sys-color-primary);
 
     background-color: var(--md-sys-color-surface);
@@ -45,155 +188,77 @@ button,
     box-shadow: var(--md-sys-elevation-level1);
 
     &:hover {
+      &::after {
+        background-color: var(--md-sys-color-primary);
+      }
+
       box-shadow: var(--md-sys-elevation-level2);
     }
 
     &:focus {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-focus-state-layer-opacity);
-    }
-
-    &:active {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      -webkit-filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-
-      &:hover {
-        background-color: change-color($color: $md-sys-color-surface, $alpha: $md-sys-state-hover-state-layer-opacity);
-        box-shadow: var(--md-sys-elevation-level2);
-      }
-
-      &:focus {
-        background-color: change-color($color: $md-sys-color-surface, $alpha: $md-sys-state-focus-state-layer-opacity);
-      }
-
-      &:active {
-        background-color: change-color($color: $md-sys-color-surface, $alpha: $md-sys-state-pressed-state-layer-opacity);
-      }
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background-color: rgba(31, 31, 31, 0.12);
-
-      @media (prefers-color-scheme: dark) {
-        background-color: rgba(227, 227, 227, 0.12);
-      }
-    }
-  }
-
-  &[type="filled"] {
-    color: var(--md-sys-color-on-primary);
-
-    background-color: var(--md-sys-color-primary);
-
-    &:hover {
-      opacity: 0.92;
       box-shadow: var(--md-sys-elevation-level1);
     }
 
-    &:focus {
-      opacity: 0.88;
-    }
-
     &:active {
-      opacity: 0.88;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      -webkit-filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-
-      &:hover {
-        box-shadow: var(--md-sys-elevation-level2);
+      &::after {
+        background-color: var(--md-sys-color-primary);
       }
+
+      box-shadow: var(--md-sys-elevation-level1);
     }
 
     &:disabled {
       color: var(--md-sys-color-on-surface);
 
-      background-color: rgba(31, 31, 31, 0.12);
+      background: none;
 
-      @media (prefers-color-scheme: dark) {
-        background-color: rgba(227, 227, 227, 0.12);
+      opacity: 0.38;
+
+      &::after {
+        background-color: var(--md-sys-color-on-surface);
+
+        opacity: 0.18;
       }
     }
   }
 
-  &[type="tonal"] {
+  &[spec="tonal"] {
     color: var(--md-sys-color-on-secondary-container);
 
     background-color: var(--md-sys-color-secondary-container);
 
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background-color: change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
-    }
-
     &:hover {
-      background-color: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-hover-state-layer-opacity);
-      box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.25);
+      &::after {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
+
+      box-shadow: var(--md-sys-elevation-level1);
     }
 
     &:focus {
-      background-color: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-focus-state-layer-opacity);
+      &::after {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
     }
 
     &:active {
-      background-color: change-color($color: $md-sys-color-on-secondary-container, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      &::after {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
     }
-  }
-
-  &[type="outlined"] {
-    color: var(--md-sys-color-primary);
-
-    background: none;
-
-    border: 1px solid var(--md-sys-color-outline);
 
     &:disabled {
       color: var(--md-sys-color-on-surface);
 
-      border: 1px solid change-color($color: $md-sys-color-on-surface, $alpha: 0.12);
-    }
+      background: none;
 
-    &:hover {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-hover-state-layer-opacity);
-    }
+      opacity: 0.38;
 
-    &:focus {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-focus-state-layer-opacity);
-      border: 1px solid var(--md-sys-color-primary);
-    }
+      &::after {
+        background-color: var(--md-sys-color-on-surface);
 
-    &:active {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
-    }
-  }
-
-  &[type="text"] {
-    color: var(--md-sys-color-primary);
-
-    background: none;
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-    }
-
-    &:hover {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-hover-state-layer-opacity);
-    }
-
-    &:focus {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-focus-state-layer-opacity);
-    }
-
-    &:active {
-      background-color: change-color($color: $md-sys-color-primary, $alpha: $md-sys-state-pressed-state-layer-opacity);
+        opacity: 0.18;
+      }
     }
   }
 }

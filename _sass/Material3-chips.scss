@@ -1,26 +1,60 @@
 // https://m3.material.io/components/chips/
-material-chip {
-  @extend .disable-select;
+.mcp {
+  @extend .disable-select, .label-large;
 
   display: flex;
-
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
 
   padding: 6px 16px;
 
   position: relative;
 
-  height: 32px;
   width: max-content;
 
   border-radius: 8px;
 
+  line-height: 20px;
+  white-space: nowrap;
+
   cursor: pointer;
   overflow: hidden;
-  transition: 0.4s cubic-bezier(0, 1, 1, 1);
+  transition: 0.4s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  &:hover {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-hover-state-layer-opacity);
+    }
+  }
+
+  &:focus {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-focus-state-layer-opacity);
+    }
+  }
+
+  &:active {
+    &::after {
+      transition: 0.2s;
+      opacity: var(--md-sys-state-pressed-state-layer-opacity);
+    }
+  }
 
   &[icon] {
     gap: 8px;
@@ -28,21 +62,21 @@ material-chip {
     padding: 6px 16px 6px 8px;
 
     span {
+      @extend .material-symbols-rounded;
+
+      height: 18px;
+      width: 18px;
+
       color: var(--md-sys-color-primary);
-      font-family: "Material Symbols Rounded";
       font-size: 18px;
+      line-height: 18px;
     }
   }
 
-  &.assist {
-    box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+  &[spec="assist"] {
+    color: var(--md-sys-color-on-surface);
 
-    p {
-      @extend .label-large;
-
-      color: var(--md-sys-color-on-surface);
-      white-space: nowrap;
-    }
+    border: 1px solid var(--md-sys-color-outline);
 
     &[elevated] {
       background-color: var(--md-sys-color-surface);
@@ -53,7 +87,9 @@ material-chip {
     }
 
     &:hover {
-      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-hover-state-layer-opacity);
+      &::after {
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level2);
@@ -61,7 +97,9 @@ material-chip {
     }
 
     &:focus {
-      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-focus-state-layer-opacity);
+      &::after {
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level1);
@@ -69,7 +107,9 @@ material-chip {
     }
 
     &:active {
-      background-color: change-color($color: $md-sys-color-on-surface, $alpha: $md-sys-state-pressed-state-layer-opacity);
+      &::after {
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
 
       &[elevated] {
         box-shadow: var(--md-sys-elevation-level1);
@@ -77,8 +117,22 @@ material-chip {
     }
 
     &[disabled] {
+      span {
+        color: var(--md-sys-color-on-surface);
+      }
+
+      background: none;
+
+      opacity: 0.38;
+
       &[elevated] {
-        background-color: rgba(31, 31, 31, 0.12);
+        box-shadow: none;
+
+        &::after {
+          background-color: var(--md-sys-color-on-surface-variant);
+
+          opacity: 0.38;
+        }
       }
     }
   }

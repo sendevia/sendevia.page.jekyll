@@ -1,6 +1,6 @@
 @media screen and (max-width: 1024px) {
   .content-container {
-    #content-header[large] {
+    #content-header[spec="large"] {
       padding: 140px 64px;
 
       .header-container > #title {
@@ -20,8 +20,8 @@
       width: 70vw;
     }
 
-    #footer-container {
-      padding: 0 8vw;
+    #footer-container > footer {
+      margin: 0 8vw;
     }
   }
 

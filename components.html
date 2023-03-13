@@ -107,121 +107,125 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
-          <th>type</th>
-          <th>正常</th>
-          <th>正常，带图标</th>
-          <th>失效/禁用</th>
-          <th>失效/禁用，带图标</th>
+          <th>class (Fallback)</th>
+          <th>spec</th>
+          <th colspan="2">正常</th>
+          <th colspan="2">失效</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><code>button</code></td>
+          <td><code>mbt</code></td>
           <td><code>elevated</code></td>
           <td>
-            <button type="elevated">elevated</button>
+            <button spec="elevated">Enabled</button>
           </td>
           <td>
-            <button type="elevated" icon>
+            <button spec="elevated" icon>
               <span>add</span>
-              elevated
+              Enabled
             </button>
           </td>
           <td>
-            <button type="elevated" disabled>elevated</button>
+            <button spec="elevated" disabled>Disabled</button>
           </td>
           <td>
-            <button type="elevated" icon disabled>
+            <button spec="elevated" icon disabled>
               <span>add</span>
-              elevated
+              Disabled
             </button>
           </td>
         </tr>
         <tr>
+          <td></td>
           <td></td>
           <td><code>filled</code></td>
           <td>
-            <button type="filled">filled</button>
+            <button spec="filled">Enabled</button>
           </td>
           <td>
-            <button type="filled" icon>
+            <button spec="filled" icon>
               <span>add</span>
-              filled
+              Enabled
             </button>
           </td>
           <td>
-            <button type="filled" disabled>filled</button>
+            <button spec="filled" disabled>Disabled</button>
           </td>
           <td>
-            <button type="filled" icon disabled>
+            <button spec="filled" icon disabled>
               <span>add</span>
-              filled
+              Disabled
             </button>
           </td>
         </tr>
         <tr>
+          <td></td>
           <td></td>
           <td><code>tonal</code></td>
           <td>
-            <button type="tonal">tonal</button>
+            <button spec="tonal">Enabled</button>
           </td>
           <td>
-            <button type="tonal" icon>
+            <button spec="tonal" icon>
               <span>add</span>
-              tonal
+              Enabled
             </button>
           </td>
           <td>
-            <button type="tonal" disabled>tonal</button>
+            <button spec="tonal" disabled>Disabled</button>
           </td>
           <td>
-            <button type="tonal" icon disabled>
+            <button spec="tonal" icon disabled>
               <span>add</span>
-              tonal
+              Disabled
             </button>
           </td>
         </tr>
         <tr>
+          <td></td>
           <td></td>
           <td><code>outlined</code></td>
           <td>
-            <button type="outlined">outlined</button>
+            <button spec="outlined">Enabled</button>
           </td>
           <td>
-            <button type="outlined" icon>
+            <button spec="outlined" icon>
               <span>add</span>
-              outlined
+              Enabled
             </button>
           </td>
           <td>
-            <button type="outlined" disabled>outlined</button>
+            <button spec="outlined" disabled>Disabled</button>
           </td>
           <td>
-            <button type="outlined" icon disabled>
+            <button spec="outlined" icon disabled>
               <span>add</span>
-              outlined
+              Disabled
             </button>
           </td>
         </tr>
         <tr>
           <td></td>
+          <td></td>
           <td><code>text</code></td>
           <td>
-            <button type="text">text</button>
+            <button spec="text">Enabled</button>
           </td>
           <td>
-            <button type="text" icon>
+            <button spec="text" icon>
               <span>add</span>
-              text
+              Enabled
             </button>
           </td>
           <td>
-            <button type="text" disabled>text</button>
+            <button spec="text" disabled>Disabled</button>
           </td>
           <td>
-            <button type="text" icon disabled>
+            <button spec="text" icon disabled>
               <span>add</span>
-              text
+              Disabled
             </button>
           </td>
         </tr>
@@ -236,13 +240,17 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
+          <th>class (Fallback)</th>
+          <th>type</th>
           <th>正常</th>
-          <th>失效/禁用</th>
+          <th>失效</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>input[type="radio"]</code></td>
+          <td><code>input</code></td>
+          <td><code>mip</code></td>
+          <td><code>radio</code></td>
           <td>
             <input type="radio" />
           </td>
@@ -251,6 +259,8 @@ title: Material3 Components
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td></td>
           <td></td>
           <td>
             <input type="radio" checked />
@@ -270,13 +280,17 @@ title: Material3 Components
       <thead>
         <tr>
           <th>element</th>
+          <th>class (Fallback)</th>
+          <th>type</th>
           <th>正常</th>
-          <th>失效/禁用</th>
+          <th>失效</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>input[type="checkbox"]</code></td>
+          <td><code>input</code></td>
+          <td><code>mip</code></td>
+          <td><code>checkbox</code></td>
           <td>
             <input type="checkbox" />
           </td>
@@ -285,6 +299,8 @@ title: Material3 Components
           </td>
         </tr>
         <tr>
+          <td></td>
+          <td></td>
           <td></td>
           <td>
             <input type="checkbox" checked />
@@ -303,7 +319,7 @@ title: Material3 Components
     <table>
       <thead>
         <tr>
-          <th>element</th>
+          <th>class</th>
           <th>spec</th>
           <th>attribute</th>
           <th>预览</th>
@@ -311,36 +327,36 @@ title: Material3 Components
       </thead>
       <tbody>
         <tr>
-          <td><code>material-card</code></td>
+          <td><code>mcd</code></td>
           <td><code>normal</code></td>
           <td><code>outlined</code></td>
           <td>
-            <material-card spec="normal" outlined>
-              <div class="header">
-                <div id="content">
-                  <div id="monogram">
-                    <span id="initial">A</span>
-                    <span id="background" />
+            <div class="mcd" spec="normal" outlined>
+              <div class="mcd-header">
+                <div id="mcd-header-content">
+                  <div id="mcd--monogram">
+                    <span id="mcd--monogram-initial">A</span>
+                    <span id="mcd--monogram-background" />
                   </div>
-                  <div id="text">
-                    <span id="header">Header</span>
-                    <span id="subhead">Subhead</span>
+                  <div id="mcd--text">
+                    <span id="mcd--text-header">Header</span>
+                    <span id="mcd--text-subhead">Subhead</span>
                   </div>
                 </div>
                 <span>more_vert</span>
               </div>
-              <div class="headline">
-                <span id="title">Title</span>
-                <span id="subhead">Subhead</span>
+              <div class="mcd-headline">
+                <span id="mcd-headline-title">Title</span>
+                <span id="mcd-headline-subhead">Subhead</span>
               </div>
-              <div class="supporting-container">
-                <span id="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+              <div class="mcd-supporting">
+                <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
               </div>
-              <div class="actions">
-                <button>action 1</button>
-                <button>action 2</button>
+              <div class="mcd-actions">
+                <a>action 1</a>
+                <a>action 2</a>
               </div>
-            </material-card>
+            </div>
           </td>
         </tr>
         <tr>
@@ -348,32 +364,32 @@ title: Material3 Components
           <td></td>
           <td><code>elevated</code></td>
           <td>
-            <material-card spec="normal" elevated>
-              <div class="header">
-                <div id="content">
-                  <div id="monogram">
-                    <span id="initial">A</span>
-                    <span id="background" />
+            <div class="mcd" spec="normal" elevated>
+              <div class="mcd-header">
+                <div id="mcd-header-content">
+                  <div id="mcd--monogram">
+                    <span id="mcd--monogram-initial">A</span>
+                    <span id="mcd--monogram-background" />
                   </div>
-                  <div id="text">
-                    <span id="header">Header</span>
-                    <span id="subhead">Subhead</span>
+                  <div id="mcd--text">
+                    <span id="mcd--text-header">Header</span>
+                    <span id="mcd--text-subhead">Subhead</span>
                   </div>
                 </div>
                 <span>more_vert</span>
               </div>
-              <div class="headline">
-                <span id="title">Title</span>
-                <span id="subhead">Subhead</span>
+              <div class="mcd-headline">
+                <span id="mcd-headline-title">Title</span>
+                <span id="mcd-headline-subhead">Subhead</span>
               </div>
-              <div class="supporting-container">
-                <span id="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+              <div class="mcd-supporting">
+                <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
               </div>
-              <div class="actions">
-                <button>action 1</button>
-                <button>action 2</button>
+              <div class="mcd-actions">
+                <a>action 1</a>
+                <a>action 2</a>
               </div>
-            </material-card>
+            </div>
           </td>
         </tr>
         <tr>
@@ -381,32 +397,32 @@ title: Material3 Components
           <td></td>
           <td><code>filled</code></td>
           <td>
-            <material-card spec="normal" filled>
-              <div class="header">
-                <div id="content">
-                  <div id="monogram">
-                    <span id="initial">A</span>
-                    <span id="background" />
+            <div class="mcd" spec="normal" filled>
+              <div class="mcd-header">
+                <div id="mcd-header-content">
+                  <div id="mcd--monogram">
+                    <span id="mcd--monogram-initial">A</span>
+                    <span id="mcd--monogram-background" />
                   </div>
-                  <div id="text">
-                    <span id="header">Header</span>
-                    <span id="subhead">Subhead</span>
+                  <div id="mcd--text">
+                    <span id="mcd--text-header">Header</span>
+                    <span id="mcd--text-subhead">Subhead</span>
                   </div>
                 </div>
                 <span>more_vert</span>
               </div>
-              <div class="headline">
-                <span id="title">Title</span>
-                <span id="subhead">Subhead</span>
+              <div class="mcd-headline">
+                <span id="mcd-headline-title">Title</span>
+                <span id="mcd-headline-subhead">Subhead</span>
               </div>
-              <div class="supporting-container">
-                <span id="supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+              <div class="mcd-supporting">
+                <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
               </div>
-              <div class="actions">
-                <button>action 1</button>
-                <button>action 2</button>
+              <div class="mcd-actions">
+                <a>action 1</a>
+                <a>action 2</a>
               </div>
-            </material-card>
+            </div>
           </td>
         </tr>
         <tr>
@@ -414,13 +430,13 @@ title: Material3 Components
           <td><code>focus</code></td>
           <td>-</td>
           <td>
-            <material-card spec="focus">
+            <div class="mcd" spec="focus">
               <img src="{{ site.header_image }}" alt="image" />
-              <div class="supporting-container">
-                <h3>Lorem ipsum dolor sit amet</h1>
+              <div class="mcd-supporting">
+                <h3>Lorem ipsum dolor sit amet</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
               </div>
-            </material-card>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -433,41 +449,65 @@ title: Material3 Components
     <table>
       <thead>
         <tr>
-          <th>element</th>
           <th>class</th>
-          <th>ID</th>
-          <th>正常</th>
-          <th>正常，带图标</th>
-          <th>失效/禁用</th>
-          <th>失效/禁用，带图标</th>
+          <th>spec</th>
+          <th>attribute</th>
+          <th colspan="2">正常</th>
+          <th colspan="2">失效</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>material-chip</code></td>
+          <td><code>mcp</code></td>
+          <td><code>input</code></td>
+          <td>-</td>
+          <td>
+            <div class="mcp" spec="input">
+              Enabled
+            </div>
+          </td>
+          <td>
+            <div class="mcp" spec="input" icon>
+              <span>check</span>
+              Enabled
+            </div>
+          </td>
+          <td>
+            <div class="mcp" spec="input" disabled>
+              Disabled
+            </div>
+          </td>
+          <td>
+            <div class="mcp" spec="input" icon disabled>
+              <span>check</span>
+              Disabled
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
           <td><code>assist</code></td>
           <td>-</td>
           <td>
-            <material-chip class="assist">
-              <p>Enabled</p>
-            </material-chip>
+            <div class="mcp" spec="assist">Enabled</div>
           </td>
           <td>
-            <material-chip class="assist" icon>
+            <div class="mcp" spec="assist" icon>
               <span>add_shopping_cart</span>
-              <p>Enabled</p>
-            </material-chip>
+              Enabled
+            </div>
           </td>
           <td>
-            <material-chip class="assist" disabled>
-              <p>Disabled</p>
-            </material-chip>
+            <div class="mcp" spec="assist" disabled>
+              Disabled
+            </div>
           </td>
           <td>
-            <material-chip class="assist" icon disabled>
+            <div class="mcp" spec="assist" icon disabled>
               <span>add_shopping_cart</span>
-              <p>Disabled</p>
-            </material-chip>
+              Disabled
+            </div>
           </td>
         </tr>
         <tr>
@@ -475,26 +515,26 @@ title: Material3 Components
           <td></td>
           <td><code>elevated</code></td>
           <td>
-            <material-chip class="assist" elevated>
-              <p class="label-text">Enabled</p>
-            </material-chip>
+            <div class="mcp" spec="assist" elevated>
+              Enabled
+            </div>
           </td>
           <td>
-            <material-chip class="assist" elevated icon>
+            <div class="mcp" spec="assist" elevated icon>
               <span>add_shopping_cart</span>
-              <p class="label-text">Enabled</p>
-            </material-chip>
+              Enabled
+            </div>
           </td>
           <td>
-            <material-chip class="assist" elevated disabled>
-              <p class="label-text">Disabled</p>
-            </material-chip>
+            <div class="mcp" spec="assist" elevated disabled>
+              Disabled
+            </div>
           </td>
           <td>
-            <material-chip class="assist" elevated icon disabled>
+            <div class="mcp" spec="assist" elevated icon disabled>
               <span>add_shopping_cart</span>
-              <p class="label-text">Disabled</p>
-            </material-chip>
+              Disabled
+            </div>
           </td>
         </tr>
         <tr>
@@ -502,26 +542,26 @@ title: Material3 Components
           <td><code>filter</code></td>
           <td>-</td>
           <td>
-            <material-chip class="filter">
-              <p class="label-text">Enabled</p>
-            </material-chip>
+            <div class="mcp" spec="filter">
+              Enabled
+            </div>
           </td>
           <td>
-            <material-chip class="filter" icon>
+            <div class="mcp" spec="filter" icon>
               <span>check</span>
-              <p class="label-text">Enabled</p>
-            </material-chip>
+              Enabled
+            </div>
           </td>
           <td>
-            <material-chip class="filter" disabled>
-              <p class="label-text">Disabled</p>
-            </material-chip>
+            <div class="mcp" spec="filter" disabled>
+              Disabled
+            </div>
           </td>
           <td>
-            <material-chip class="filter" icon disabled>
+            <div class="mcp" spec="filter" icon disabled>
               <span>check</span>
-              <p class="label-text">Disabled</p>
-            </material-chip>
+              Disabled
+            </div>
           </td>
         </tr>
       </tbody>
