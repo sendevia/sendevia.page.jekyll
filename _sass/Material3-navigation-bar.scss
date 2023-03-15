@@ -33,10 +33,6 @@
 
     z-index: 11;
 
-    .material-symbols-rounded {
-      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-    }
-
     a {
       text-decoration: none;
     }
@@ -82,9 +78,17 @@
 
           transition: 0.3s;
 
-          #segment-icon {
+          span {
+            @extend .material-symbols-rounded;
+
+            display: block;
+
             height: 24px;
             width: 24px;
+
+            font-size: 24px;
+            line-height: 24px;
+            font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
           }
         }
       }
@@ -101,9 +105,10 @@
       }
 
       &:hover {
-        .material-symbols-rounded {
-          transition: 0.5s;
-          font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+        #accent {
+          #segment-primary-icon span {
+            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+          }
         }
       }
     }
@@ -111,14 +116,7 @@
     #segment-inactive {
       @extend #segment-active;
 
-      .material-symbols-rounded {
-        transition: 0.3s;
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-      }
-
       #accent {
-        @extend #accent;
-
         height: 32px;
         width: 32px;
 
@@ -126,26 +124,21 @@
 
         transition: 0.3s cubic-bezier(0.08, 0.82, 0.17, 1);
 
-        #segment-primary-icon {
-          @extend #segment-primary-icon;
-
-          #segment-icon {
-            @extend #segment-icon;
-          }
+        #segment-primary-icon span {
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
         }
       }
 
       &:hover {
-        .material-symbols-rounded {
-          transition: 0.5s;
-          font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
-        }
-
         #accent {
           height: 32px;
           width: 64px;
 
           background-color: var(--md-sys-color-surface-variant);
+
+          #segment-primary-icon span {
+            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+          }
         }
       }
     }

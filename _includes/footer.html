@@ -5,10 +5,11 @@
       <a href="/" class="site-logo">
         <img src="/assets/images/avatar.webp" alt="logo" />
       </a>
-      <h3>{{ page.title }}</h3>
-      <h6>{{ page.description }}</h6>
-      <p>来自 {{ site.title }}</p>
-      <div class="links">
+      <div class="descriptions">
+        <h3>{{ page.title }} {%- if page.description and page.description != "" -%} &nbsp &amp &nbsp {{- page.description -}} {%- endif -%}</h3>
+        <p>来自 {{ site.title }}&nbsp;&times;&nbsp;jekyll-theme-m3</p>
+      </div>
+      <div class="site_posts">
         {%- for post in site.posts limit:3 -%}
         <a href="{{ post.url }}" class="mbt" spec="text">
           <p>{{ post.title }}</p>
@@ -18,23 +19,6 @@
           <p>···</p>
         </a>
         {%- endif -%}
-      </div>
-    </section>
-    <section>
-      <p class="subhead1">jekyll-theme-m3</p>
-      <div class="links">
-        <a href="mailto:{{ site.email }}" class="mbt" spec="text" icon target="_blank">
-          <span>email</span>
-          <p>{{ site.email }}</p>
-        </a>
-        <a href="{{ site.github }}" class="mbt" spec="text" icon target="_blank">
-          <span>open_in_new</span>
-          <p>Github</p>
-        </a>
-        <a href="https://github.com/Sendevia/jekyll-theme-m3" class="mbt" spec="text" icon target="_blank">
-          <span>open_in_new</span>
-          <p>Github (theme)</p>
-        </a>
       </div>
     </section>
   </footer>

@@ -129,7 +129,7 @@ hr {
 
   &[spec="wave"] {
     height: 15px;
-    width: 75%;
+    width: 100%;
 
     background: var(--md-sys-color-outline);
 
@@ -320,7 +320,8 @@ ol {
     margin: 10px;
     padding: 20px;
 
-    width: max-content;
+    width: -moz-fit-content;
+    width: fit-content;
 
     color: var(--md-sys-color-on-tertiary-container);
 
@@ -466,10 +467,15 @@ ol {
   #footer-container {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
-    padding-top: 20px;
+    padding-top: 5vh;
 
     width: 100%;
+
+    hr {
+      width: 75%;
+    }
 
     ul > li::before {
       display: none;
@@ -479,19 +485,16 @@ ol {
       display: flex;
       flex-wrap: wrap;
 
-      margin: 0 12vw;
+      margin: 0 14vw;
 
       section {
         display: flex;
         align-items: stretch;
         flex-direction: column;
-        gap: 5px;
-
-        padding: 10px 35px;
-
-        width: 100%;
 
         .site-logo {
+          margin-bottom: 20px;
+
           height: 58px;
           width: max-content;
 
@@ -516,31 +519,29 @@ ol {
           }
         }
 
-        h3 {
-          font-family: "Smiley Sans" !important;
-          letter-spacing: 1px;
-        }
+        .descriptions {
+          margin-bottom: 1vh;
 
-        h3,
-        h6,
-        p {
-          margin: 0;
-          padding: 0;
-        }
+          h3 {
+            font-family: "Smiley Sans";
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          }
 
-        &:nth-child(2) {
-          .links {
-            left: -12px;
+          h3,
+          p {
+            margin: 0 0 0 10px;
           }
         }
 
-        .links {
+        .site_posts {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
 
-          position: relative;
-          left: -20px;
+          p {
+            margin: 0;
+          }
         }
       }
     }

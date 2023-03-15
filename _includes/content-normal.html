@@ -1,72 +1,65 @@
 {%- if page.title or page.description -%}
-  {%- if page.header_image and page.header_image != "" -%}
-    {%- assign headerImage = page.header_image -%}
-  {%- elsif site.header_image -%}
-    {%- assign headerImage = site.header_image -%}
-  {%- else -%}
-    {%- assign headerImage = false -%}
-  {%- endif -%}
+<!--  -->
+<!--  -->{%- if page.header_image and page.header_image != "" -%}
+<!--  --><!--  -->{%- assign headerImage = page.header_image -%}
+<!--  -->{%- elsif site.header_image -%}
+<!--  --><!--  -->{%- assign headerImage = site.header_image -%}
+<!--  -->{%- else -%}
+<!--  --><!--  -->{%- assign headerImage = false -%}
+<!--  -->{%- endif -%}
 
-  <div id="content-header" {%- if headerImage != false -%} spec="large"  {%- endif -%}>
-    <div class="header-container">
-      <span id="title">{{ page.title }}</span>
-      {%- if page.description and page.description != "" -%}
-      <span id="subtitle">{{ page.description }}</span>
-      {%- endif -%}
-
-      {%- if headerImage != false -%}
-      <img src="{{ headerImage }}" id="header_image" alt="头图" />
-      {%- endif -%}
-    </div>
+<div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>
+  <div class="header-container">
+    <span id="title">{{ page.title }}</span>
+    <!--  -->{%- if page.description and page.description != "" -%}
+    <span id="subtitle">{{ page.description }}</span>
+    <!--  -->{%- endif -%}
+    <!--  -->{%- if headerImage != false -%}
+    <img src="{{ headerImage }}" id="header_image" alt="头图" />
+    <!--  -->{%- endif -%}
   </div>
+</div>
 {%- endif -%}
 
-{%- assign page_words = page.content | number_of_words: "auto" -%}
-{%- if page_words == 0 -%}
-  <div id="content" id="nothing">
-    <h1>o(=•ェ•=)m</h1>
-    <h6>这里暂时还什么都没有呢</h6>
+<!--  -->{%- assign page_words = page.content | number_of_words: "auto" -%}
+<!--  -->{%- if page_words == 0 -%}
+<div id="content" id="nothing">
+  <h1>o(=•ェ•=)m</h1>
+  <h6>这里暂时还什么都没有呢</h6>
+</div>
+<!--  -->{%- else -%}
+<!--  -->{%- if page.notips == true -%}
+<div id="content">{{ content }}</div>
+<!--  -->{%- else -%}
+<!--  -->
+<div id="content-information" disabled>
+  <!--  -->{%- if page.date -%}
+  <div class="mcp" spec="assist" icon>
+    <span>calendar_month</span>
+    {{ page.date | date: "%Y 年 %m 月 %d 日" }}
   </div>
-{%- else -%}
-  {%- if page.notips == true -%}
-    <div id="content">{{ content }}</div>
-  {%- else -%}
-    <div id="content-information" disabled>
-
-      {%- if page.date -%}
-      <div class="mcp assist" icon>
-        <span>calendar_month</span>
-        <p class="label-text">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
-      </div>
-      {%- endif -%}
-
-      {%- if page.author -%}
-      <div class="mcp assist" icon>
-        <span>person</span>
-        <p class="label-text">{{ page.author }}</p>
-      </div>
-      {%- endif -%}
-
-      <div class="mcp assist" icon>
-        <span>schedule</span>
-        <p class="label-text">
-          {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}
-          分钟
-        </p>
-      </div>
-
-      {%- if page.categories.size > 0 -%}
-      <div class="mcp assist" icon>
-        <span>category</span>
-        <p class="label-text">{{ page.categories }}</p>
-      </div>
-      {%- endif -%}
-
-    </div>
-
-    <!-- {%- if page.toc == true -%}
-    {% toc %}
-    {%- endif -%} -->
-    <div id="content">{{ content }}</div>
+  <!--  -->{%- endif -%}
+  <!--  -->{%- if page.author -%}
+  <div class="mcp" spec="assist" icon>
+    <span>person</span>
+    {{ page.author }}
+  </div>
+  <!--  -->{%- endif -%}
+  <!--  -->
+  <div class="mcp" spec="assist" icon>
+    <span>schedule</span>
+    {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif
+    -%}分钟
+  </div>
+  <!--  -->
+  {%- if page.categories.size > 0 -%}
+  <div class="mcp" spec="assist" icon>
+    <span>category</span>
+    {{ page.categories }}
+  </div>
   {%- endif -%}
-{%- endif -%}
+</div>
+
+<div id="content">{{ content }}</div>
+<!--  --><!--  -->{%- endif -%}
+<!--  -->{%- endif -%}

@@ -18,7 +18,7 @@
 
   .content-container {
     margin: 0;
-    padding: 0 5vw 90px;
+    padding: 0 5vw 120px;
 
     &::before {
       display: none;
@@ -58,8 +58,14 @@
       width: 80vw;
     }
 
-    #footer-container > footer {
-      margin: 0;
+    #footer-container {
+      hr {
+        width: 100%;
+      }
+
+      footer {
+        margin: 0;
+      }
     }
   }
 

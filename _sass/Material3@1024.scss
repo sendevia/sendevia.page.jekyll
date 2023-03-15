@@ -20,13 +20,14 @@
       width: 70vw;
     }
 
-    #footer-container > footer {
-      margin: 0 8vw;
-    }
-  }
+    #footer-container {
+      hr {
+        width: 90%;
+      }
 
-  .page-posts > .cards,
-  .page-index > .posts-card {
-    column-count: 2;
+      footer {
+        margin: 0 8vw;
+      }
+    }
   }
 }

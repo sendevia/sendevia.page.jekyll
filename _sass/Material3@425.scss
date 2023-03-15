@@ -18,12 +18,7 @@
     }
   }
 
-  .page-about > material-card {
+  .page-about .mcd {
     max-width: 100%;
-  }
-
-  .page-posts > .cards,
-  .page-index > .posts-card {
-    column-count: 1;
   }
 }
