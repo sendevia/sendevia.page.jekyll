@@ -5,20 +5,10 @@
   align-items: center;
   justify-content: center;
 
-  padding: 15px;
-
   position: relative;
 
-  height: 56px;
-  width: 56px;
-
-  color: var(--md-sys-color-on-tertiary-container);
   font-family: "Material Symbols Rounded";
   font-size: 24px;
-
-  border-radius: 16px;
-
-  background-color: var(--md-sys-color-tertiary-container);
 
   box-shadow: var(--md-sys-elevation-level3);
   cursor: pointer;
@@ -29,7 +19,31 @@
     box-shadow: var(--md-sys-elevation-level4);
   }
 
-  &[small] {
+  &[spec="surface"] {
+    color: var(--md-sys-color-surface);
+
+    background-color: var(--md-sys-color-on-surface);
+
+  }
+  &[spec="primary"] {
+    color: var(--md-sys-color-on-primary-container);
+
+    background-color: var(--md-sys-color-primary-container);
+
+  }
+  &[spec="secondary"] {
+    color: var(--md-sys-color-on-secondary-container);
+
+    background-color: var(--md-sys-color-secondary-container);
+
+  }
+  &[spec="tertiary"] {
+    color: var(--md-sys-color-on-tertiary-container);
+
+    background-color: var(--md-sys-color-tertiary-container);
+  }
+
+  &[size="small"] {
     padding: 8px;
 
     height: 40px;
@@ -38,7 +52,17 @@
     border-radius: 12px;
   }
 
-  &[large] {
+  &,
+  &[size="normal"] {
+    padding: 15px;
+
+    height: 56px;
+    width: 56px;
+
+    border-radius: 16px;
+  }
+
+  &[size="large"] {
     padding: 30px;
 
     height: 96px;

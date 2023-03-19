@@ -1,5 +1,7 @@
-<div class="mnb">
-  <div class="mfb"> menu </div>
+<div class="mnb" spec="top">
+  <div class="menu-and-fab">
+    <div class="mib">menu</div>
+  </div>
 
   <div class="destinations">
     <a href="/">
@@ -7,7 +9,7 @@
         <div id="accent">
           <div id="segment-primary-icon">
             <!-- https://fonts.google.com/icons?selected=Material+Icons&icon.set=Material+Symbols -->
-            <span> home </span>
+            <span>home</span>
           </div>
         </div>
         <p id="label">首页</p>
@@ -18,7 +20,7 @@
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span> person </span>
+            <span>person</span>
           </div>
         </div>
         <p id="label">关于我</p>
@@ -29,29 +31,29 @@
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span> draw </span>
+            <span>draw</span>
           </div>
         </div>
         <p id="label">M3 组件</p>
       </div>
     </a>
 
-    <!-- <a href="/gallery">
+    <a href="/gallery">
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span> collections </span>
+            <span>collections</span>
           </div>
         </div>
         <p id="label">作品集</p>
       </div>
-    </a> -->
+    </a>
 
     <a href="/posts">
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span> article </span>
+            <span>article</span>
           </div>
         </div>
         <p id="label">文章</p>
@@ -62,7 +64,7 @@
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span> redeem </span>
+            <span>redeem</span>
           </div>
         </div>
         <p id="label">福利</p>
@@ -70,7 +72,7 @@
     </a> -->
   </div>
 </div>
-<div class="mtp" spec="small-centered">
+<div class="mtb" spec="small-centered">
   <span id="leading-icon">menu</span>
   <h4 id="totop">{{ page.title }}</h4>
   <span id="trailing-icon">search</span>
@@ -79,6 +81,6 @@
   const navTarget = window.innerWidth;
   if (navTarget > 768) {
     document.querySelector(".mnb").classList.replace("mnb", "mnr");
-    document.querySelector(".mtp").style.visibility = "hidden";
+    document.querySelector(".mtb").style.visibility = "hidden";
   }
 </script>

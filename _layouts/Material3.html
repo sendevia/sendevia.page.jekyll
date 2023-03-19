@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  <script>
-    function isLoaded() {
-      try {
-        var currentPage = window.location.pathname;
-        var activatedSegment = document.querySelector("a[href='" + currentPage + "']");
-        activatedSegment.querySelector("#segment-inactive").id = "segment-active";
-      } catch (err) {
-        document.querySelector("a[href='/posts']").querySelector("#segment-inactive").id = "segment-active";
-      }
-    }
-  </script>
+  <script src="/assets/js/domcontrol.js?v=0.0.1"></script>
   <!--  -->
   <!--  -->
   <!--  -->
@@ -23,96 +13,12 @@
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
     </div>
     <div class="right-corner-fabs">
-      <div class="mfb" id="scrolltotop">keyboard_double_arrow_up</div>
+      <div class="mfb" spec="primary" id="scrolltotop">keyboard_double_arrow_up</div>
     </div>
     {%- endif -%}
   </body>
   <!--  -->
   <!--  -->
   <!--  -->
-  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.2"></script>
-  <script>
-    window.addEventListener("scroll", isScroll);
-    window.addEventListener("resize", isResize);
-
-    const rippleElements = document.querySelectorAll(
-      ".mcd a, #accent, button, .mbt, .mfb, .mcp, .mcd[spec='focus'], .mtp span, input[type='checkbox'], input[type='radio']"
-    );
-
-    const scrollTopEl = document.querySelectorAll("#scrolltotop, #totop");
-
-    scrollTopEl.forEach((e) => {
-      e.addEventListener("click", function () {
-        var scrollAction = null;
-        cancelAnimationFrame(scrollAction);
-        scrollAction = requestAnimationFrame(function fn() {
-          var currentYpos = document.body.scrollTop || document.documentElement.scrollTop;
-          if (currentYpos > 0) {
-            document.body.scrollTop = document.documentElement.scrollTop = currentYpos - 100;
-            scrollAction = requestAnimationFrame(fn);
-          } else {
-            cancelAnimationFrame(scrollAction);
-          }
-        });
-      });
-    });
-
-    rippleElements.forEach((btn) => {
-      btn.addEventListener("mousedown", function (e) {
-        let x = e.offsetX;
-        let y = e.offsetY;
-        let d = Math.max(btn.clientWidth, btn.clientHeight);
-
-        this.classList.add("ripple");
-        this.style.setProperty("--x", x);
-        this.style.setProperty("--y", y);
-        this.style.setProperty("--d", d);
-
-        setTimeout(() => {
-          this.classList.remove("ripple");
-        }, 500);
-      });
-    });
-
-    function isScroll() {
-      var header = document.getElementById("content-header");
-      var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
-      var topAppBar = document.querySelector(".mtp");
-      var topButton = document.getElementById("scrolltotop");
-
-      if (scrollY >= 64) {
-        topAppBar.setAttribute("on-scroll", "");
-      } else {
-        topAppBar.removeAttribute("on-scroll", "");
-      }
-
-      switch (true) {
-        case scrollY >= 400:
-          header.style.opacity = "0";
-          topButton.style.cssText = "opacity: 1; visibility: visible; animation: 0.6s cubic-bezier(0.4, 1, 0.6, 0.6) pop-out";
-          break;
-        default:
-          header.style.opacity = "1";
-          topButton.style.cssText = "opacity: 0; visibility: hidden";
-      }
-    }
-
-    function isResize() {
-      var navBar = document.querySelector(".mnb");
-      var navRail = document.querySelector(".mnr");
-      var topAppBar = document.querySelector(".mtp");
-
-      try {
-        if (window.innerWidth > 768) {
-          topAppBar.style.visibility = "hidden";
-          navBar.classList.replace("mnb", "mnr");
-        } else {
-          topAppBar.style.visibility = "visible";
-          navRail.classList.replace("mnr", "mnb");
-        }
-      } catch (err) {
-        return null;
-      }
-    }
-  </script>
+  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.2" async></script>
 </html>

@@ -3,7 +3,7 @@
   @extend .disable-select;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
 
@@ -18,7 +18,7 @@
   overflow-y: hidden;
   z-index: 10;
 
-  .mfb {
+  .menu-and-fab {
     display: none;
   }
 
@@ -26,14 +26,17 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-around;
     flex-grow: 1;
+    justify-content: space-around;
 
-    padding: 12px 8px 16px 8px;
+    padding: 5px;
 
     z-index: 11;
 
     a {
+      width: 70px;
+      height: 100%;
+
       text-decoration: none;
     }
 
@@ -47,7 +50,6 @@
       padding: 0;
 
       height: 56px;
-      width: 70px;
 
       #accent {
         display: flex;

@@ -234,6 +234,63 @@ title: Material3 Components
   </div>
 
   <div>
+    <h1>Icon Buttons</h1>
+    <p>用户交互控件 - 图标按钮</p>
+    <table>
+      <thead>
+        <tr>
+          <th>class</th>
+          <th>spec</th>
+          <th>正常</th>
+          <th>失效</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>mib</code></td>
+          <td><code>standard</code></td>
+          <td>
+            <div class="mib" spec="standard">settings</div>
+          </td>
+          <td>
+            <div class="mib" spec="standard" disabled>settings</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>filled</code></td>
+          <td>
+            <div class="mib" spec="filled">settings</div>
+          </td>
+          <td>
+            <div class="mib" spec="filled" disabled>settings</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>tonal</code></td>
+          <td>
+            <div class="mib" spec="tonal">settings</div>
+          </td>
+          <td>
+            <div class="mib" spec="tonal" disabled>settings</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>outlined</code></td>
+          <td>
+            <div class="mib" spec="outlined">settings</div>
+          </td>
+          <td>
+            <div class="mib" spec="outlined" disabled>settings</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
     <h1>Radio button</h1>
     <p>用户交互控件 - 单选框</p>
     <table>
@@ -462,9 +519,7 @@ title: Material3 Components
           <td><code>input</code></td>
           <td>-</td>
           <td>
-            <div class="mcp" spec="input">
-              Enabled
-            </div>
+            <div class="mcp" spec="input">Enabled</div>
           </td>
           <td>
             <div class="mcp" spec="input" icon>
@@ -473,9 +528,7 @@ title: Material3 Components
             </div>
           </td>
           <td>
-            <div class="mcp" spec="input" disabled>
-              Disabled
-            </div>
+            <div class="mcp" spec="input" disabled>Disabled</div>
           </td>
           <td>
             <div class="mcp" spec="input" icon disabled>
@@ -499,9 +552,7 @@ title: Material3 Components
             </div>
           </td>
           <td>
-            <div class="mcp" spec="assist" disabled>
-              Disabled
-            </div>
+            <div class="mcp" spec="assist" disabled>Disabled</div>
           </td>
           <td>
             <div class="mcp" spec="assist" icon disabled>
@@ -515,9 +566,7 @@ title: Material3 Components
           <td></td>
           <td><code>elevated</code></td>
           <td>
-            <div class="mcp" spec="assist" elevated>
-              Enabled
-            </div>
+            <div class="mcp" spec="assist" elevated>Enabled</div>
           </td>
           <td>
             <div class="mcp" spec="assist" elevated icon>
@@ -526,9 +575,7 @@ title: Material3 Components
             </div>
           </td>
           <td>
-            <div class="mcp" spec="assist" elevated disabled>
-              Disabled
-            </div>
+            <div class="mcp" spec="assist" elevated disabled>Disabled</div>
           </td>
           <td>
             <div class="mcp" spec="assist" elevated icon disabled>
@@ -542,9 +589,7 @@ title: Material3 Components
           <td><code>filter</code></td>
           <td>-</td>
           <td>
-            <div class="mcp" spec="filter">
-              Enabled
-            </div>
+            <div class="mcp" spec="filter">Enabled</div>
           </td>
           <td>
             <div class="mcp" spec="filter" icon>
@@ -553,15 +598,85 @@ title: Material3 Components
             </div>
           </td>
           <td>
-            <div class="mcp" spec="filter" disabled>
-              Disabled
-            </div>
+            <div class="mcp" spec="filter" disabled>Disabled</div>
           </td>
           <td>
             <div class="mcp" spec="filter" icon disabled>
               <span>check</span>
               Disabled
             </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h1>Fabs</h1>
+    <p>用户交互控件 - FAB</p>
+    <table>
+      <thead>
+        <tr>
+          <th>class</th>
+          <th>size</th>
+          <th colspan="4">spec</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>surface</th>
+          <th>primary</th>
+          <th>secondary</th>
+          <th>tertiary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>mfb</code></td>
+          <td><code>small</code></td>
+          <td>
+            <div class="mfb" spec="surface" size="small">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="primary" size="small">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="secondary" size="small">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="tertiary" size="small">edit</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>normal</code><br />(可选，默认)</td>
+          <td>
+            <div class="mfb" spec="surface" size="normal">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="primary" size="normal">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="secondary" size="normal">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="tertiary" size="normal">edit</div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><code>large</code></td>
+          <td>
+            <div class="mfb" spec="surface" size="large">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="primary" size="large">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="secondary" size="large">edit</div>
+          </td>
+          <td>
+            <div class="mfb" spec="tertiary" size="large">edit</div>
           </td>
         </tr>
       </tbody>

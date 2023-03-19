@@ -1,4 +1,7 @@
-.mtp {
+// https://m3.material.io/components/top-app-bar/
+.mtb {
+  @extend .disable-select;
+
   position: fixed;
   top: 0;
 
