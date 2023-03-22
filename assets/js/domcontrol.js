@@ -1,10 +1,11 @@
 function isPageShow() {
   const currentPage = window.location.pathname;
   const activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
-  const segmentInactive = activatedSegment.querySelector("#segment-inactive");
-  if (segmentInactive) {
-    segmentInactive.id = "segment-active";
-  } else {
+  const inactiveSegment = activatedSegment.querySelector("#segment-inactive");
+
+  try {
+    inactiveSegment.id = "segment-active";
+  } catch (error) {
     document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
   }
 
