@@ -8,6 +8,7 @@
   width: 100%;
 
   overflow: hidden;
+  transition: 0.4s;
   z-index: 15;
 
   &[spec="small"] {
@@ -61,7 +62,7 @@
       text-align: center;
     }
 
-    &[on-scroll] {
+    &[on-scroll="true"] {
       background-color: var(--md-sys-color-surface);
     }
   }

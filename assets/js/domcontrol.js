@@ -1,11 +1,13 @@
-function isLoaded() {
-  try {
-    var currentPage = window.location.pathname;
-    var activatedSegment = document.querySelector("a[href='" + currentPage + "']");
-    activatedSegment.querySelector("#segment-inactive").id = "segment-active";
-  } catch (err) {
-    document.querySelector("a[href='/posts']").querySelector("#segment-inactive").id = "segment-active";
+function isPageShow() {
+  const currentPage = window.location.pathname;
+  const activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
+  const segmentInactive = activatedSegment.querySelector("#segment-inactive");
+  if (segmentInactive) {
+    segmentInactive.id = "segment-active";
+  } else {
+    document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
   }
+
   window.addEventListener("scroll", isScroll);
   window.addEventListener("resize", isResize);
 
@@ -17,16 +19,9 @@ function isLoaded() {
 
   scrollTopEl.forEach((e) => {
     e.addEventListener("click", function () {
-      var scrollAction = null;
-      cancelAnimationFrame(scrollAction);
-      scrollAction = requestAnimationFrame(function fn() {
-        var currentYpos = document.body.scrollTop || document.documentElement.scrollTop;
-        if (currentYpos > 0) {
-          document.body.scrollTop = document.documentElement.scrollTop = currentYpos - 100;
-          scrollAction = requestAnimationFrame(fn);
-        } else {
-          cancelAnimationFrame(scrollAction);
-        }
+      window.scrollTo({
+        behavior: "smooth",
+        top: 0,
       });
     });
   });
@@ -49,26 +44,19 @@ function isLoaded() {
   });
 
   function isScroll() {
-    var header = document.getElementById("content-header");
-    var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
-    var topAppBar = document.querySelector(".mtb");
-    var topButton = document.getElementById("scrolltotop");
+    const header = document.querySelector("#content-header");
+    const scrollY = window.scrollY;
+    const topAppBar = document.querySelector(".mtb");
+    const topButton = document.querySelector("#scrolltotop");
 
-    if (scrollY >= 64) {
-      topAppBar.setAttribute("on-scroll", "");
-    } else {
-      topAppBar.removeAttribute("on-scroll", "");
-    }
+    topAppBar.setAttribute("on-scroll", scrollY >= 64 ? "true" : "false");
 
-    switch (true) {
-      case scrollY >= 400:
-        header.style.opacity = "0";
-        topButton.style.cssText = "opacity: 1; visibility: visible; animation: 0.6s cubic-bezier(0.4, 1, 0.6, 0.6) pop-out";
-        break;
-      default:
-        header.style.opacity = "1";
-        topButton.style.cssText = "opacity: 0; visibility: hidden";
-    }
+    header.style.opacity = scrollY >= 400 ? "0" : "1";
+    topButton.style.cssText = `
+      opacity: ${scrollY >= 400 ? "1" : "0"};
+      visibility: ${scrollY >= 400 ? "visible" : "hidden"};
+      animation: ${scrollY >= 400 ? "0.6s cubic-bezier(0.4, 1, 0.6, 0.6) popOut" : ""}
+    `;
   }
 
   function isResize() {
@@ -77,7 +65,7 @@ function isLoaded() {
     var topAppBar = document.querySelector(".mtb");
 
     try {
-      if (window.innerWidth > 768) {
+      if (window.matchMedia("(min-width: 768px)").matches) {
         topAppBar.style.visibility = "hidden";
         navBar.classList.replace("mnb", "mnr");
       } else {
@@ -88,4 +76,16 @@ function isLoaded() {
       return null;
     }
   }
+}
+
+function isLoad() {
+  const splashScreen = document.querySelector(".content-loading");
+  const mainContent = document.querySelector(".content-grid");
+
+  splashScreen.style.animation = "forwards fadeOut 0.4s";
+
+  splashScreen.addEventListener("animationend", function () {
+    this.style.display = "none";
+    mainContent.style.overflow = "initial";
+  });
 }

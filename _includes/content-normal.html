@@ -8,7 +8,7 @@
 <!--  --><!--  -->{%- assign headerImage = false -%}
 <!--  -->{%- endif -%}
 
-<div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>
+<div id="content-header" {%- if headerImage != false -%} spec="large" {%- endif -%}>
   <div class="header-container">
     <span id="title">{{ page.title }}</span>
     <!--  -->{%- if page.description and page.description != "" -%}

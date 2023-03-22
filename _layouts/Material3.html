@@ -4,10 +4,12 @@
   <!--  -->
   <!--  -->
   <!--  -->
-  {%- if page.custom_color and page.custom_color != "" -%} {%- assign color = page.custom_color -%} {%- else -%} {%- assign color = site.custom_color -%} {%-
-  endif -%} {%- include head.html -%}
-  <body class="material-theme" onpageshow="isLoaded()" color="{{ color }}">
+  {%- include head.html -%}
+  <body class="material-theme" onpageshow="isPageShow()" onload="isLoad()">
     {%- if page.permalink == "/404.html" -%} {%- include content-404.html -%} {%- else -%}
+    <div class="content-loading">
+      <h1>加载中</h1>
+    </div>
     <div class="content-grid">
       {%- include header.html -%}
       <div class="content-container">{%- include content-normal.html -%} {%- include footer.html -%}</div>
@@ -20,5 +22,5 @@
   <!--  -->
   <!--  -->
   <!--  -->
-  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.2" async></script>
+  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.3" async></script>
 </html>
