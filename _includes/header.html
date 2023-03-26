@@ -72,15 +72,15 @@
     </a> -->
   </div>
 </div>
+
 <div class="mtb" spec="small-centered">
-  <span id="leading-icon">menu</span>
+  <div class="mib" id="mtb-mib-menu">menu</div>
   <h4 id="totop">{{ page.title }}</h4>
-  <span id="trailing-icon">search</span>
+  <div class="mib" id="mtb-mib-search">search</div>
 </div>
 <script>
   const navTarget = window.innerWidth;
   if (navTarget > 768) {
     document.querySelector(".mnb").classList.replace("mnb", "mnr");
-    document.querySelector(".mtb").style.visibility = "hidden";
   }
 </script>

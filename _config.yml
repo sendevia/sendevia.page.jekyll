@@ -7,7 +7,6 @@ github: "https://github.com/Sendevia"
 twitter: "https://twitter.com/sendevia"
 
 header_image: "/assets/images/102911375_p0.webp"
-custom_color: "#ffac63"
 
 plugins:
   - jekyll-feed
@@ -25,8 +24,12 @@ defaults:
       toc: true
 
 toc:
+  item_class: mnd-entry
+  item_prefix: mnd-
+  list_class: mnd-section
+  list_id:
   max_level: 2
-  ordered_list: true
+  ordered_list: false
 
 highlighter: "rouge"
 markdown: "kramdown"

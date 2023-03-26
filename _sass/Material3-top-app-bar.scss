@@ -3,12 +3,13 @@
   @extend .disable-select;
 
   position: fixed;
-  top: 0;
+  top: -64px;
 
   width: 100%;
 
   overflow: hidden;
   transition: 0.4s;
+  visibility: hidden;
   z-index: 15;
 
   &[spec="small"] {
@@ -28,27 +29,6 @@
 
     background-color: var(--via-color-background);
 
-    span {
-      @extend .material-symbols-rounded;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-
-      height: 48px;
-      width: 48px;
-
-      font-size: 24px;
-      line-height: 0;
-
-      border-radius: 50%;
-
-      overflow: hidden;
-      cursor: pointer;
-    }
-
     h4 {
       display: flex;
       align-items: center;
@@ -62,7 +42,7 @@
       text-align: center;
     }
 
-    &[on-scroll="true"] {
+    &[scroll="true"] {
       background-color: var(--md-sys-color-surface);
     }
   }

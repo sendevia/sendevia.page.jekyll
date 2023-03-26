@@ -1,26 +1,26 @@
-# 安装运行环境
+# 简介
 
-## ArchLinux
+部署本项目需要两个运行环境：nodejs 和 ruby。
 
-1. 安装 ruby 环境
+## 安装运行环境
+
+### 以 Ubuntu 22.04 为例
+
+1. 使用 nvm 安装 nodejs
 
 ```
-sudo pacman -Sy ruby base-devel --noconfirm
+nvm install 12.18
 ```
 
-2. 配置环境变量
+2. 安装依赖
 
-```bash
-echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
+在工作目录中
+
+```
+npm i
 ```
 
-```bash
-echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
-```
-
-## Ubuntu 22.04
-
-1. 安装 ruby 环境
+3. 安装 ruby 环境
 
 ```
 sudo apt install ruby-full build-essential zlib1g-dev -y
@@ -40,21 +40,13 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-# 安装 Jekyll
-
-1. 设置国内镜像（可选）
-
-```bash
-gem sources --add https://mirrors.bfsu.edu.cn/rubygems/ --remove https://rubygems.org/
-```
-
-2. 安装
+3. 安装 Jekyll
 
 ```ruby
 gem install bundler jekyll
 ```
 
-# 运行 Jekyll
+# 运行和部署本项目
 
 1. 切换到本项目文件夹
 
@@ -62,19 +54,16 @@ gem install bundler jekyll
 bundle install
 ```
 
-```ruby
-bundle exec jekyll serve --livereload
+2. 开发模式
+
+```bash
+npm run dev
 ```
 
-# 环境报错解决方案
+3. 发布模式
 
-1. **WARNING: You don't have ... in your PATH, gem executables will not run.**
+```bash
+npm run build
+```
 
-   - 在 `~/.bashrc` 里添加
-     ```shell
-     PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-     ```
-   - 使更改生效
-     ```bash
-     source ~/.bashrc
-     ```
+### 推荐在 CloudFlare 上部署本项目

@@ -56,6 +56,15 @@
 
     #content {
       width: 80vw;
+
+      section:nth-child(2) {
+        h1,
+        h2 {
+          &:target {
+            padding-top: 84px;
+          }
+        }
+      }
     }
 
     #footer-container {
@@ -71,5 +80,20 @@
 
   .right-corner-fabs {
     bottom: 100px;
+  }
+
+  .mnd {
+    top: 64px;
+
+    height: calc(100% - 144px);
+
+    &[show] {
+      left: 0px;
+    }
+  }
+
+  .mtb {
+    top: 0;
+    visibility: visible;
   }
 }

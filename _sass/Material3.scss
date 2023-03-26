@@ -314,6 +314,7 @@ ol {
 
   height: 100%;
 
+  transition: 0.3s;
   overflow: hidden;
 }
 
@@ -383,12 +384,10 @@ ol {
 
       #title {
         color: var(--md-sys-color-on-secondary-container);
-        font-family: "Smiley Sans" !important;
+        font-family: "Smiley Sans";
         font-size: 100em;
         letter-spacing: 1px;
         line-height: 1em;
-
-        animation: headerTextEffect 1s cubic-bezier(0, 0.5, 0.65, 1);
       }
 
       #subtitle {
@@ -445,6 +444,15 @@ ol {
 
   #content {
     width: 60vw;
+
+    section:nth-child(2) {
+      h1,
+      h2 {
+        &:target {
+          padding-top: 24px;
+        }
+      }
+    }
 
     img {
       max-width: 100%;
@@ -685,5 +693,56 @@ ol {
 
       font-size: 15em;
     }
+  }
+}
+
+.page-404 {
+  padding: 5vw;
+
+  #qr-code {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: flex-start;
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      height: 120px;
+      width: 120px;
+
+      background-image: var(--via-svg-qrcode-rickroll);
+      background-repeat: no-repeat;
+    }
+  }
+
+  html,
+  body {
+    color: var(--md-sys-color-on-error-container);
+
+    background-color: var(--md-sys-color-error-container);
+  }
+
+  h1 {
+    margin: 10vh 0;
+
+    font-size: 6vw !important;
+  }
+
+  h3 {
+    margin: 1vh 0;
+
+    font-size: 3vh !important;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  h4 {
+    font-size: 2.5vh !important;
   }
 }
