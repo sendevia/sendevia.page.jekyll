@@ -1,4 +1,4 @@
-function isPageShow() {
+window.onpageshow = function () {
   // 页面指示
   try {
     const currentPage = window.location.pathname;
@@ -13,16 +13,34 @@ function isPageShow() {
   window.addEventListener("resize", isResize);
 
   // 滚动到页面顶部
-  const scrollTopEl = document.querySelectorAll("#scrolltotop, #totop");
+  const scrollTopElDesktop = document.querySelector("#rcf-mfb-topbutton");
+  const scrollTopElMobile = document.querySelector("#mtb-dc-area");
 
-  scrollTopEl.forEach((e) => {
-    e.addEventListener("click", function () {
-      window.scrollTo({
-        behavior: "smooth",
-        top: 0,
-      });
+  function scrollToTop() {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 0,
     });
+  }
+
+  scrollTopElDesktop.addEventListener("click", () => {
+    scrollToTop();
   });
+
+  var lastTouchEnd = 0;
+  scrollTopElMobile.addEventListener(
+    "touchend",
+    (e) => {
+      var now = new Date().getTime();
+
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+        scrollToTop();
+      }
+      lastTouchEnd = now;
+    },
+    false
+  );
 
   // 涟漪效果
   const rippleElements = document.querySelectorAll(
@@ -49,7 +67,7 @@ function isPageShow() {
     const header = document.querySelector("#content-header");
     const scrollY = window.scrollY;
     const topAppBar = document.querySelector(".mtb");
-    const topButton = document.querySelector("#scrolltotop");
+    const topButton = document.querySelector("#rcf-mfb-topbutton");
 
     topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
 
@@ -102,9 +120,9 @@ function isPageShow() {
       mndSection.toggleAttribute("show", false);
     }
   });
-}
+};
 
-function isLoad() {
+window.onload = function () {
   const splashScreen = document.querySelector(".content-loading");
   const mainContent = document.querySelector(".content-grid");
 
@@ -114,4 +132,4 @@ function isLoad() {
     splashScreen.style.display = "none";
     mainContent.style.overflow = "initial";
   });
-}
+};
