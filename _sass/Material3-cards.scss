@@ -39,9 +39,9 @@
         height: 48px;
         width: 48px;
 
-        border-radius: 100%;
-
         font-size: 24px;
+
+        border-radius: 100%;
 
         cursor: pointer;
         overflow: hidden;
@@ -76,9 +76,9 @@
             height: 40px;
             width: 40px;
 
-            background-color: var(--md-sys-color-primary);
-
             border-radius: 100%;
+
+            background-color: var(--md-sys-color-primary);
           }
         }
 
@@ -184,10 +184,11 @@
     transition: 0.3s;
 
     img {
-      width: 100%;
       height: 240px;
+      width: 100%;
 
       border-radius: 0 0 24px 24px;
+
       object-fit: cover;
     }
 
@@ -205,11 +206,13 @@
 
     &:hover {
       color: var(--md-sys-color-on-primary);
+
       background-color: var(--md-sys-color-primary);
     }
 
     &:active {
       border-radius: 44px;
+
       box-shadow: 0 0 0 3px var(--md-sys-color-on-surface);
       transition: 0.2s;
     }

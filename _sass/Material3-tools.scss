@@ -1,7 +1,8 @@
 @font-face {
+  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
+
   font-family: Smiley Sans;
   font-style: italic;
-  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
 }
 
 :root {
@@ -54,9 +55,9 @@
         left: calc(var(--x) * 1px);
         top: calc(var(--y) * 1px);
 
-        background-color: var(--md-sys-color-primary);
-
         border-radius: 50%;
+
+        background-color: var(--md-sys-color-primary);
 
         animation: ripple 0.5s ease-in both;
         pointer-events: none;

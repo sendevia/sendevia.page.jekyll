@@ -28,6 +28,7 @@
 
     span {
       @extend .material-symbols-rounded;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -56,12 +57,12 @@
     z-index: 11;
 
     a {
-      width: 100%;
       height: 70px;
-
-      border-radius: 100%;
+      width: 100%;
 
       text-decoration: none;
+
+      border-radius: 100%;
     }
 
     #segment-active {
@@ -88,9 +89,9 @@
         height: 32px;
         width: 56px;
 
-        background-color: var(--md-sys-color-secondary-container);
-
         border-radius: 100px;
+
+        background-color: var(--md-sys-color-secondary-container);
 
         overflow: hidden;
 
@@ -113,8 +114,8 @@
             width: 24px;
 
             font-size: 24px;
-            line-height: 24px;
             font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+            line-height: 24px;
           }
         }
       }

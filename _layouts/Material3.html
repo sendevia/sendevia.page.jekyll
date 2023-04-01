@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  <script src="/assets/js/domcontrol.js?v=0.0.4"></script>
+  <script src="/assets/js/domcontrol.js?v=0.0.5"></script>
   <!--  -->
   <!--  -->
   <!--  -->
@@ -9,6 +9,7 @@
     {%- if page.permalink == "/404.html" -%} {{ content }} {%- else -%}
     <div class="content-loading">
       <h1>加载中</h1>
+      <button class="mbt" spec="tonal" onclick="removeLoadScreen()">跳过加载</button>
     </div>
 
     <div class="mnd">

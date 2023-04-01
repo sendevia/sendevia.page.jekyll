@@ -34,8 +34,8 @@
     z-index: 11;
 
     a {
-      width: 70px;
       height: 100%;
+      width: 70px;
 
       text-decoration: none;
     }
@@ -64,9 +64,9 @@
         height: 32px;
         width: 64px;
 
-        background-color: var(--md-sys-color-secondary-container);
-
         border-radius: 100px;
+
+        background-color: var(--md-sys-color-secondary-container);
 
         overflow: hidden;
 
@@ -89,8 +89,8 @@
             width: 24px;
 
             font-size: 24px;
-            line-height: 24px;
             font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+            line-height: 24px;
           }
         }
       }

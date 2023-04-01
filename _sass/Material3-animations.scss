@@ -34,10 +34,13 @@
 
 @keyframes headerImageTransform {
   0% {
+    left: 0;
+    right: unset;
+
     -webkit-filter: blur(50px);
     filter: blur(50px);
     opacity: 0;
-    transform: translate(80px, 0%);
+    transform: translate(80px, 0px);
   }
 
   2%,
@@ -51,14 +54,17 @@
     -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 0;
-    transform: translate(80px, calc(-85% + 25vh + 160em));
+    transform: translate(80px, calc(var(--via-transfrom-header-image) * -1px));
   }
 
   50% {
+    left: unset;
+    right: 0;
+
     -webkit-filter: blur(50px);
     filter: blur(50px);
     opacity: 0;
-    transform: translate(0px, calc(-85% + 25vh + 160em));
+    transform: translate(0px, calc(var(--via-transfrom-header-image) * -1px));
   }
 
   52%,
@@ -70,7 +76,7 @@
 
   100% {
     opacity: 0;
-    transform: translate(0px, 0%);
+    transform: translate(0px, 0px);
   }
 }
 
@@ -98,7 +104,7 @@
     opacity: 0;
   }
 
-  20%{
+  20% {
     filter: blur(10px);
     opacity: 0.12;
   }

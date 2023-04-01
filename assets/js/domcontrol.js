@@ -9,9 +9,6 @@ window.onpageshow = function () {
     document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
   }
 
-  window.addEventListener("scroll", isScroll);
-  window.addEventListener("resize", isResize);
-
   // 滚动到页面顶部
   const scrollTopElDesktop = document.querySelector("#rcf-mfb-topbutton");
   const scrollTopElMobile = document.querySelector("#mtb-dc-area");
@@ -23,10 +20,12 @@ window.onpageshow = function () {
     });
   }
 
+  /// 桌面端
   scrollTopElDesktop.addEventListener("click", () => {
     scrollToTop();
   });
 
+  /// 移动端
   var lastTouchEnd = 0;
   scrollTopElMobile.addEventListener(
     "touchend",
@@ -63,7 +62,8 @@ window.onpageshow = function () {
     });
   });
 
-  function isScroll() {
+  // 滚动事件
+  window.onscroll = function () {
     const header = document.querySelector("#content-header");
     const scrollY = window.scrollY;
     const topAppBar = document.querySelector(".mtb");
@@ -75,13 +75,16 @@ window.onpageshow = function () {
     topButton.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-      animation: ${scrollY >= 400 ? "0.6s cubic-bezier(0.4, 1, 0.6, 0.6) popOut" : ""}
+      animation: ${scrollY >= 400 ? "popOut 0.6s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
-  }
+  };
 
-  function isResize() {
+  // 缩放事件
+  window.onresize = function () {
     const navBar = document.querySelector(".mnb");
     const navRail = document.querySelector(".mnr");
+
+    changeHeaderTransfrom();
 
     try {
       if (window.innerWidth > 768) {
@@ -92,7 +95,7 @@ window.onpageshow = function () {
     } catch (err) {
       return null;
     }
-  }
+  };
 
   // 侧边栏
   const mndSection = document.querySelector(".mnd");
@@ -123,13 +126,25 @@ window.onpageshow = function () {
 };
 
 window.onload = function () {
+  removeLoadScreen();
+  changeHeaderTransfrom();
+};
+
+function changeHeaderTransfrom() {
+  const isImageSource = document.querySelector("#header_image");
+  const isImageOffset = isImageSource.offsetHeight;
+
+  isImageSource.style.setProperty("--via-transfrom-header-image", isImageOffset - 484);
+}
+
+function removeLoadScreen() {
   const splashScreen = document.querySelector(".content-loading");
   const mainContent = document.querySelector(".content-grid");
 
-  splashScreen.style.animation = "forwards fadeOut 0.4s";
+  splashScreen.style.animation = "fadeOut 0.4s forwards";
 
   splashScreen.addEventListener("animationend", () => {
     splashScreen.style.display = "none";
     mainContent.style.overflow = "initial";
   });
-};
+}

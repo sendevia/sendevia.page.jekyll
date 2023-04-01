@@ -28,15 +28,15 @@
     #content-header[spec="large"] {
       padding: 0;
 
-      background-color: #0000;
-
       border-radius: 0;
+
+      background-color: #0000;
 
       clip-path: none;
 
       .header-container {
-        padding-block-start: 100px;
         padding-block-end: 10px;
+        padding-block-start: 100px;
 
         #title {
           padding-inline-start: 5px;
@@ -94,6 +94,7 @@
 
   .mtb {
     top: 0;
+
     visibility: visible;
   }
 }
