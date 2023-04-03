@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  <script src="/assets/js/domcontrol.js?v=0.0.5"></script>
-  <!--  -->
-  <!--  -->
+  <script src="/assets/js/domcontrol.js?v=0.0.6"></script>
   <!--  -->
   {%- include head.html -%}
+  <!--  -->
   <body class="material-theme">
-    {%- if page.permalink == "/404.html" -%} {{ content }} {%- else -%}
+    {%- if page.permalink == "/404.html" -%}
+    {{ content }}
+    {%- else -%}
     <div class="content-loading">
       <h1>加载中</h1>
       <button class="mbt" spec="tonal" onclick="removeLoadScreen()">跳过加载</button>
@@ -22,9 +23,12 @@
       {%- endif -%}
     </div>
 
-    <div class="content-grid">
-      {%- include header.html -%}
-      <div class="content-container">{%- include content.html -%} {%- include footer.html -%}</div>
+    <div class="content-container">
+      {%- include navigation.html -%}
+      <div class="content-flow">
+        {%- include content.html -%}
+        {%- include footer.html -%}
+      </div>
     </div>
 
     <div class="right-corner-fabs">
@@ -32,8 +36,5 @@
     </div>
     {%- endif -%}
   </body>
-  <!--  -->
-  <!--  -->
-  <!--  -->
   <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.4" async></script>
 </html>

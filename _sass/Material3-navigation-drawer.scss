@@ -4,30 +4,33 @@
   align-items: flex-start;
   flex-direction: column;
 
-  position: fixed;
-  left: -360px;
-
   padding: 12px;
 
+  position: fixed;
+  left: -240px;
+
   height: 100%;
-  width: 360px;
+  width: 240px;
 
   border-radius: 0 16px 16px 0;
 
   background-color: var(--md-sys-color-surface);
 
-  opacity: 0;
-  transition: left 0.2s, opacity 0.3s;
-  z-index: 999;
+  transition: 0.2s;
+  z-index: 9;
 
   .mnd-section {
+    opacity: 0;
     overflow: auto;
+    transition: 1s;
   }
 
   &[show] {
     left: 80px;
 
-    opacity: 1;
+    .mnd-section {
+      opacity: 1;
+    }
   }
 
   a,

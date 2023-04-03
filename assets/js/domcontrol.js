@@ -14,7 +14,7 @@ window.onpageshow = function () {
   const scrollTopElMobile = document.querySelector("#mtb-dc-area");
 
   function scrollToTop() {
-    window.scrollTo({
+    document.querySelector(".content-container").scrollTo({
       behavior: "smooth",
       top: 0,
     });
@@ -63,9 +63,9 @@ window.onpageshow = function () {
   });
 
   // 滚动事件
-  window.onscroll = function () {
+  document.querySelector(".content-container").onscroll = function () {
     const header = document.querySelector("#content-header");
-    const scrollY = window.scrollY;
+    const scrollY = document.querySelector(".content-container").scrollTop;
     const topAppBar = document.querySelector(".mtb");
     const topButton = document.querySelector("#rcf-mfb-topbutton");
 
@@ -84,7 +84,7 @@ window.onpageshow = function () {
     const navBar = document.querySelector(".mnb");
     const navRail = document.querySelector(".mnr");
 
-    changeHeaderTransfrom();
+    changeHeaderTransform();
 
     try {
       if (window.innerWidth > 768) {
@@ -98,6 +98,7 @@ window.onpageshow = function () {
   };
 
   // 侧边栏
+  const mainContent = document.querySelector(".content-container");
   const mndSection = document.querySelector(".mnd");
   const mndEntries = mndSection.querySelectorAll(".mnd-entry");
   const mnbMenuBtn = document.querySelectorAll(".menu-and-fab > .mib, .mtb > #mtb-mib-menu");
@@ -105,12 +106,14 @@ window.onpageshow = function () {
   mnbMenuBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       mndSection.toggleAttribute("show");
+      mainContent.toggleAttribute("compress");
     });
   });
 
   mndEntries.forEach((item) => {
     item.addEventListener("click", () => {
       mndSection.toggleAttribute("show", false);
+      mainContent.toggleAttribute("compress", false);
     });
   });
 
@@ -121,16 +124,23 @@ window.onpageshow = function () {
 
     if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
       mndSection.toggleAttribute("show", false);
+      mainContent.toggleAttribute("compress", false);
     }
   });
 };
 
 window.onload = function () {
   removeLoadScreen();
-  changeHeaderTransfrom();
+  changeHeaderTransform();
+
+  // 监听颜色主题更改
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  mediaQuery.addEventListener("change", () => {
+    location.reload();
+  });
 };
 
-function changeHeaderTransfrom() {
+function changeHeaderTransform() {
   const isImageSource = document.querySelector("#header_image");
   const isImageOffset = isImageSource.offsetHeight;
 
@@ -139,12 +149,12 @@ function changeHeaderTransfrom() {
 
 function removeLoadScreen() {
   const splashScreen = document.querySelector(".content-loading");
-  const mainContent = document.querySelector(".content-grid");
+  const mainContent = document.querySelector(".content-container");
 
   splashScreen.style.animation = "fadeOut 0.4s forwards";
 
   splashScreen.addEventListener("animationend", () => {
     splashScreen.style.display = "none";
-    mainContent.style.overflow = "initial";
+    mainContent.style.overflow = "auto";
   });
 }

@@ -11,12 +11,15 @@
     width: auto;
   }
 
-  .content-grid {
-    display: flex;
-    flex-wrap: wrap;
+  .content-container {
+    margin-left: 0;
+
+    &[compress] {
+      margin-left: 0;
+    }
   }
 
-  .content-container {
+  .content-flow {
     margin: 0;
     padding: 0 5vw 120px;
 
@@ -83,9 +86,15 @@
   }
 
   .mnd {
+    left: -100%;
     top: 64px;
 
     height: calc(100% - 144px);
+    width: 100%;
+
+    border-radius: 0;
+
+    z-index: 20;
 
     &[show] {
       left: 0px;
