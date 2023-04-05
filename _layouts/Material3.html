@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  <script src="/assets/js/domcontrol.js?v=0.0.6"></script>
-  <!--  -->
-  {%- include head.html -%}
-  <!--  -->
+  <!-- 头部 -->
+  <head>
+    <script src="/assets/js/domcontrol.js?v=0.0.7"></script>
+    <link rel="stylesheet" href="/assets/css/m3-main.css?v=4.0.2" />
+    {%- include head.html -%}
+  </head>
   <body class="material-theme">
+    <!-- 404 -->
     {%- if page.permalink == "/404.html" -%}
+    <!-- 404内容 -->
     {{ content }}
     {%- else -%}
     <div class="content-loading">
@@ -16,17 +20,20 @@
     <div class="mnd">
       {%- if page.toc -%}
       <p>目录</p>
+      <!-- 目录内容 -->
       {% toc %}
-      <!--  -->
       {%- else -%}
       <p>此页面没有目录</p>
       {%- endif -%}
     </div>
 
     <div class="content-container">
+      <!-- 导航 -->
       {%- include navigation.html -%}
       <div class="content-flow">
+        <!-- 内容 -->
         {%- include content.html -%}
+        <!-- 页脚 -->
         {%- include footer.html -%}
       </div>
     </div>

@@ -1,11 +1,12 @@
 <!-- 头图选择 -->
-{%- if page.header_image and page.header_image != "" -%}<!-- 由文章提供 -->
-{%- assign headerImage = page.header_image -%}<!-- 由文章提供 -->
-{%- elsif site.header_image -%}<!-- 由全局设定提供 -->
-{%- assign headerImage = site.header_image -%}<!-- 由全局设定提供 -->
-{%- else -%}<!--  -->
-{%- assign headerImage = false -%}<!-- 不设置头图 -->
-{%- endif -%}<!--  -->
+<!-- 由文章提供 -->
+{%- if page.header_image and page.header_image != "" -%} {%- assign headerImage = page.header_image -%}
+<!-- 由全局设定提供 -->
+{%- elsif site.header_image -%} {%- assign headerImage = site.header_image -%}
+<!--  -->
+{%- else -%}
+<!-- 不设置头图 -->
+{%- assign headerImage = false -%} {%- endif -%}
 <!-- 头图选择 -->
 
 <div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>

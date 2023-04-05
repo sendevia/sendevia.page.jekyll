@@ -15,7 +15,6 @@ window.onpageshow = function () {
 
   function scrollToTop() {
     document.querySelector(".content-container").scrollTo({
-      behavior: "smooth",
       top: 0,
     });
   }

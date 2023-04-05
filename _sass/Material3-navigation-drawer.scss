@@ -12,6 +12,8 @@
   height: 100%;
   width: 240px;
 
+  white-space: nowrap;
+
   border-radius: 0 16px 16px 0;
 
   background-color: var(--md-sys-color-surface);
@@ -43,6 +45,7 @@
     width: 100%;
 
     line-height: 56px;
+    text-overflow: ellipsis;
   }
 
   & > ul > li > a {

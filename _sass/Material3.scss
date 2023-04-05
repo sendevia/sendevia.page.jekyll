@@ -321,8 +321,9 @@ ol {
 
   border-radius: 24px 0 0 24px;
 
-  transition: 0.3s;
   overflow: hidden;
+  scroll-behavior: smooth;
+  transition: 0.3s;
   z-index: 10;
 
   &[compress] {
