@@ -7,7 +7,6 @@
 {%- else -%}
 <!-- 不设置头图 -->
 {%- assign headerImage = false -%} {%- endif -%}
-<!-- 头图选择 -->
 
 <div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>
   <div class="header-container">
@@ -16,13 +15,11 @@
     {%- if page.description and page.description != "" -%}
     <span id="subtitle">{{ page.description }}</span>
     {%- endif -%}
-    <!-- 文章简介 -->
 
     <!-- 文章头图 -->
     {%- if headerImage != false -%}
     <img src="{{ headerImage }}" id="header_image" alt="头图" />
     {%- endif -%}
-    <!-- 文章头图 -->
   </div>
 </div>
 
@@ -34,55 +31,50 @@
   <h1>o(=•ェ•=)m</h1>
   <h6>这里暂时还什么都没有呢</h6>
 </div>
-<!-- 无内容时显示 -->
 {%- else -%}
 
 <!-- 正常内容 -->
-<!-- tips 区域 -->
-{%- if page.notips != true -%}
-<div id="content-information" disabled>
-  <!-- 日期 -->
-  {%- if page.date -%}
-  <div class="mcp" spec="assist" icon>
-    <span>calendar_month</span>
-    {{ page.date | date: "%Y 年 %m 月 %d 日" }}
-  </div>
-  {%- endif -%}
-  <!-- 日期 -->
-
-  <!-- 作者 -->
-  {%- if page.author -%}
-  <div class="mcp" spec="assist" icon>
-    <span>person</span>
-    {{ page.author }}
-  </div>
-  {%- endif -%}
-  <!-- 作者 -->
-
-  <!-- 阅读时间 -->
-  <div class="mcp" spec="assist" icon>
-    <span>schedule</span>
-    {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif
-    -%}分钟
-  </div>
-  <!-- 阅读时间 -->
-
-  <!-- 目录分类 -->
-  {%- if page.categories.size > 0 -%}
-  <div class="mcp" spec="assist" icon>
-    <span>category</span>
-    {{ page.categories }}
-  </div>
-  {%- endif -%}
-  <!-- 目录分类 -->
-</div>
-{%- endif -%}
-<!-- tips 区域 -->
-
 <div id="content">
-  <section></section>
+  {%- if page.notips != true -%}
   <section>{{ content }}</section>
-  <section></section>
+  <section id="content-information" disabled>
+    <!-- 日期 -->
+    {%- if page.date -%}
+    <div class="mcp" spec="assist" icon>
+      <span>calendar_month</span>
+      {{ page.date | date: "%Y 年 %m 月 %d 日" }}
+    </div>
+    {%- endif -%}
+    <!-- 日期 -->
+
+    <!-- 阅读时间 -->
+    <div class="mcp" spec="assist" icon>
+      <span>schedule</span>
+      {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif
+      -%}分钟
+      <div id="reading-progress"></div>
+    </div>
+    <!-- 阅读时间 -->
+
+    <!-- 作者 -->
+    {%- if page.author -%}
+    <div class="mcp" spec="assist" icon>
+      <span>person</span>
+      {{ page.author }}
+    </div>
+    {%- endif -%}
+    <!-- 作者 -->
+
+    <!-- 目录分类 -->
+    {%- if page.categories.size > 0 -%}
+    <div class="mcp" spec="assist" icon>
+      <span>category</span>
+      {{ page.categories }}
+    </div>
+    {%- endif -%}
+    <!-- 目录分类 -->
+  </section>
+  {%- else -%} {{ content }} {%- endif -%}
 </div>
+
 {%- endif -%}
-<!-- 正常内容 -->

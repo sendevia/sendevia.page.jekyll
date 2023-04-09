@@ -4,7 +4,7 @@
     #content-header[spec="large"] {
       .header-container {
         #title {
-          font-size: 60em;
+          font-size: 60rem;
         }
 
         #subtitle {
@@ -14,7 +14,16 @@
     }
 
     #content {
-      width: 85vw;
+      section:nth-child(1) {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+          margin-inline: 30px;
+        }
+      }
     }
   }
 

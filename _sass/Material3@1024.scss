@@ -1,23 +1,41 @@
 @media screen and (max-width: 1024px) {
+  html,
+  body {
+    ::-webkit-scrollbar {
+      height: 2px;
+      width: 2px;
+    }
+  }
+
   .content-flow {
     #content-header[spec="large"] {
-      padding: 140px 64px;
+      padding: 60px 50px;
 
-      .header-container > #title {
-        font-size: 100em;
-        word-break: keep-all;
+      .header-container {
+        #title {
+          font-size: 13.5vw;
+          letter-spacing: -4px;
+          line-height: 14.5vw;
+          word-break: break-word;
 
-        img {
-          top: inherit;
+          img {
+            top: inherit;
 
-          animation: none;
-          opacity: 0.5;
+            animation: none;
+            opacity: 0.5;
+          }
         }
       }
     }
 
     #content {
-      width: 65vw;
+      section:nth-child(1) {
+        width: 75vw;
+      }
+
+      section:nth-child(2) {
+        display: none;
+      }
     }
 
     #footer-container {

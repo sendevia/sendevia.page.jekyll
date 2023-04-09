@@ -2,8 +2,8 @@
   html,
   body {
     ::-webkit-scrollbar {
-      height: 2px;
-      width: 2px;
+      height: 1px;
+      width: 1px;
     }
   }
 
@@ -31,6 +31,8 @@
     #content-header[spec="large"] {
       padding: 0;
 
+      min-height: 0;
+
       border-radius: 0;
 
       background-color: #0000;
@@ -44,7 +46,9 @@
         #title {
           padding-inline-start: 5px;
 
-          font-size: 70em;
+          font-size: 70rem;
+          letter-spacing: -2px;
+          line-height: 60px;
         }
 
         #subtitle {
@@ -58,13 +62,17 @@
     }
 
     #content {
-      width: 80vw;
+      section:nth-child(1) {
+        width: 90vw;
 
-      section:nth-child(2) {
         h1,
-        h2 {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           &:target {
-            padding-top: 84px;
+            padding-block: 78px 6px;
           }
         }
       }

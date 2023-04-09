@@ -47,14 +47,14 @@
   40% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
-    opacity: 1;
+    opacity: 0.5;
   }
 
   45% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 0;
-    transform: translate(80px, calc(var(--via-transfrom-header-image) * -1px));
+    transform: translate(80px, calc(var(--via-transform-header-image) * -1px));
   }
 
   50% {
@@ -64,14 +64,14 @@
     -webkit-filter: blur(50px);
     filter: blur(50px);
     opacity: 0;
-    transform: translate(0px, calc(var(--via-transfrom-header-image) * -1px));
+    transform: translate(0px, calc(var(--via-transform-header-image) * -1px));
   }
 
   52%,
   95% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
-    opacity: 1;
+    opacity: 0.5;
   }
 
   100% {

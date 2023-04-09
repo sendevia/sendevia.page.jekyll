@@ -32,6 +32,7 @@
     h4 {
       display: flex;
       align-items: center;
+      flex-direction: column;
       flex-grow: 1;
       justify-content: center;
 
@@ -40,10 +41,42 @@
       height: 100%;
 
       text-align: center;
+
+      span {
+        position: absolute;
+
+        line-height: 1;
+
+        transition: transform 0.4s, opacity 1s;
+
+        &:nth-child(1) {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+
+        &:nth-child(2) {
+          transform: translateY(45px);
+          opacity: 0;
+        }
+      }
     }
 
     &[scroll="true"] {
       background-color: var(--md-sys-color-surface);
+
+      h4 {
+        span {
+          &:nth-child(1) {
+            transform: translateY(-45px);
+            opacity: 0;
+          }
+
+          &:nth-child(2) {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }

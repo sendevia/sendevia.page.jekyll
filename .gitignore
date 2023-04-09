@@ -13,3 +13,4 @@ _site
 /assets/js/bundle.js
 node_modules
 package-lock.json
+test.html

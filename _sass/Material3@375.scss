@@ -4,9 +4,15 @@
     .content-header[spec="large"] {
       .header-container {
         #title {
-          font-size: 50em;
+          font-size: 50rem;
           word-break: break-word;
         }
+      }
+    }
+
+    #content {
+      section:nth-child(1) {
+        width: 90vw;
       }
     }
   }

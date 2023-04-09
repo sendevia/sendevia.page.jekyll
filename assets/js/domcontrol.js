@@ -11,7 +11,6 @@ window.onpageshow = function () {
 
   // 滚动到页面顶部
   const scrollTopElDesktop = document.querySelector("#rcf-mfb-topbutton");
-  const scrollTopElMobile = document.querySelector("#mtb-dc-area");
 
   function scrollToTop() {
     document.querySelector(".content-container").scrollTo({
@@ -19,26 +18,9 @@ window.onpageshow = function () {
     });
   }
 
-  /// 桌面端
   scrollTopElDesktop.addEventListener("click", () => {
     scrollToTop();
   });
-
-  /// 移动端
-  var lastTouchEnd = 0;
-  scrollTopElMobile.addEventListener(
-    "touchend",
-    (e) => {
-      var now = new Date().getTime();
-
-      if (now - lastTouchEnd <= 300) {
-        e.preventDefault();
-        scrollToTop();
-      }
-      lastTouchEnd = now;
-    },
-    false
-  );
 
   // 涟漪效果
   const rippleElements = document.querySelectorAll(
@@ -63,8 +45,12 @@ window.onpageshow = function () {
 
   // 滚动事件
   document.querySelector(".content-container").onscroll = function () {
+    const clientHeight = this.clientHeight;
     const header = document.querySelector("#content-header");
-    const scrollY = document.querySelector(".content-container").scrollTop;
+    const progressEl = document.querySelector("#reading-progress");
+    const scrollHeight = this.scrollHeight;
+    const scrollY = this.scrollTop;
+    const scrollTop = document.documentElement.scrollTop || scrollY;
     const topAppBar = document.querySelector(".mtb");
     const topButton = document.querySelector("#rcf-mfb-topbutton");
 
@@ -76,6 +62,11 @@ window.onpageshow = function () {
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
       animation: ${scrollY >= 400 ? "popOut 0.6s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
+
+    // 阅读进度
+    const readPercent = (scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100;
+
+    progressEl.style.width = readPercent + "%";
   };
 
   // 缩放事件
@@ -102,17 +93,21 @@ window.onpageshow = function () {
   const mndEntries = mndSection.querySelectorAll(".mnd-entry");
   const mnbMenuBtn = document.querySelectorAll(".menu-and-fab > .mib, .mtb > #mtb-mib-menu");
 
-  mnbMenuBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      mndSection.toggleAttribute("show");
-      mainContent.toggleAttribute("compress");
+  const toggleMndSection = (boolean) => {
+    mndSection.toggleAttribute("show", boolean);
+    mainContent.toggleAttribute("compress", boolean);
+  };
+
+  mnbMenuBtn.forEach((i) => {
+    i.addEventListener("click", () => {
+      toggleMndSection();
     });
   });
 
-  mndEntries.forEach((item) => {
-    item.addEventListener("click", () => {
-      mndSection.toggleAttribute("show", false);
-      mainContent.toggleAttribute("compress", false);
+  mndEntries.forEach((i) => {
+    i.addEventListener("click", () => {
+      toggleMndSection(false);
+      changeHeaderTransform();
     });
   });
 
@@ -120,10 +115,10 @@ window.onpageshow = function () {
     const isMnd = e.target.closest(".mnd");
     const isMtb = e.target.closest(".mtb");
     const isMAB = e.target.closest(".menu-and-fab");
+    changeHeaderTransform();
 
     if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
-      mndSection.toggleAttribute("show", false);
-      mainContent.toggleAttribute("compress", false);
+      toggleMndSection(false);
     }
   });
 };
@@ -141,9 +136,10 @@ window.onload = function () {
 
 function changeHeaderTransform() {
   const isImageSource = document.querySelector("#header_image");
+  const isContainerOffset = document.querySelector("#content-header").offsetHeight;
   const isImageOffset = isImageSource.offsetHeight;
 
-  isImageSource.style.setProperty("--via-transfrom-header-image", isImageOffset - 484);
+  isImageSource.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
 }
 
 function removeLoadScreen() {
@@ -154,6 +150,6 @@ function removeLoadScreen() {
 
   splashScreen.addEventListener("animationend", () => {
     splashScreen.style.display = "none";
-    mainContent.style.overflow = "auto";
+    mainContent.style.overflow = "overlay";
   });
 }

@@ -44,7 +44,7 @@
 
     width: 100%;
 
-    line-height: 56px;
+    line-height: 48px;
     text-overflow: ellipsis;
   }
 
@@ -70,7 +70,7 @@
 
     .mnd-h1 {
       a:hover {
-        background: none;
+        background-color: var(--md-sys-color-secondary-container);
       }
     }
 
