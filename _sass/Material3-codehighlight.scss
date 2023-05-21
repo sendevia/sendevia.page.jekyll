@@ -1,20 +1,6 @@
-code.language-plaintext,
-table code {
-  padding: 0 5px;
-
-  border-radius: 5px;
-
-  background-color: var(--md-sys-color-primary-container);
-
+code {
   font-family: "Source Code Pro", monospace;
-  line-height: 1.5;
-}
-
-.highlighter-rouge {
-  code {
-    font-family: "Source Code Pro", monospace;
-    font-size: 15em;
-  }
+  vertical-align: top;
 }
 
 .highlight {
@@ -137,5 +123,11 @@ table code {
   .o,
   .ow {
     color: #ff6549;
+  }
+}
+
+.language-ruby {
+  .n {
+    color: #ffacac;
   }
 }

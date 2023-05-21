@@ -1,6 +1,8 @@
-<div class="mnb" spec="bottom">
+<div class="mng" spec="rail" dest="bottom">
   <div class="menu-and-fab">
-    <div class="mib">menu</div>
+    <div class="mib">
+      <span>menu</span>
+    </div>
   </div>
 
   <div class="destinations">
@@ -27,87 +29,35 @@
       </div>
     </a>
 
-    <a href="/gallery">
+    <!-- 列出有导航需求的页面 -->
+    {%- for s in site.pages -%}
+    {%- if s.navigation and s.published == true -%}
+    <a href="{{ s.url }}">
       <div id="segment-inactive">
         <div id="accent">
           <div id="segment-primary-icon">
-            <span>collections</span>
+            <span>{{ s.segment_icon }}</span>
           </div>
         </div>
-        <p id="label">作品集</p>
+        <p id="label">{{ s.segment_title }}</p>
       </div>
     </a>
-
-    <a href="/gifts">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
-            <span>local_activity</span>
-          </div>
-        </div>
-        <p id="label">福利</p>
-      </div>
-    </a>
-
-    <a href="/components">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
-            <span>draw</span>
-          </div>
-        </div>
-        <p id="label">组件</p>
-      </div>
-    </a>
-
-    <a href="/author">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
-            <span>person</span>
-          </div>
-        </div>
-        <p id="label">关于作者</p>
-      </div>
-    </a>
-
-    <a href="/about">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
-            <span>info</span>
-          </div>
-        </div>
-        <p id="label">关于主题</p>
-      </div>
-    </a>
-
-    <a href="/thirdparty">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
-            <span>package</span>
-          </div>
-        </div>
-        <p id="label">第三方库</p>
-      </div>
-    </a>
+    {%- endif -%}
+    <!--  -->
+    {%- endfor -%}
   </div>
 </div>
 
 <!-- 移动端顶栏 -->
 <div class="mtb" spec="small-centered">
-  <div class="mib" id="mtb-mib-menu">menu</div>
+  <div class="mib" id="mtb-mib-menu">
+    <span>menu</span>
+  </div>
   <h4 id="mtb-dc-area">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
   </h4>
-  <div class="mib" id="mtb-mib-search">search</div>
+  <div class="mib" id="mtb-mib-search">
+    <span>search</span>
+  </div>
 </div>
-<!-- 设置导航模式 -->
-<script>
-  const navTarget = window.innerWidth;
-  if (navTarget > 768) {
-    document.querySelector(".mnb").classList.replace("mnb", "mnr");
-  }
-</script>

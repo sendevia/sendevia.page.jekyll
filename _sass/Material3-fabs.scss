@@ -1,5 +1,5 @@
 .mfb {
-  @extend .disable-select, .material-symbols-rounded;
+  @extend .material-symbols-rounded;
 
   display: flex;
   align-items: center;
@@ -7,7 +7,6 @@
 
   position: relative;
 
-  font-family: "Material Symbols Rounded";
   font-size: 24px;
 
   box-shadow: var(--md-sys-elevation-level3);

@@ -1,12 +1,13 @@
-baseurl: ""
+baseurl:
+email: me@sendevia.top
+github: https://github.com/Sendevia
+header_image: /assets/images/102911375_p0.webp
+locale: zh_CN
 timezone: Asia/Shanghai
-title: "sendevia 的博客"
-
-email: "me@sendevia.top"
-github: "https://github.com/Sendevia"
-twitter: "https://twitter.com/sendevia"
-
-header_image: "/assets/images/102911375_p0.webp"
+title: sendevia 的博客
+twitter:
+  username: sendevia
+  card: summary
 
 plugins:
   - jekyll-feed
@@ -18,28 +19,33 @@ plugins:
 
 defaults:
   - scope:
-      path: "_posts"
+      path: ""
     values:
-      layout: "Material3"
+      layout: Material3
+      published: true
+  - scope:
+      path: _posts
+    values:
       toc: true
 
 toc:
   item_class: mnd-entry
   item_prefix: mnd-
   list_class: mnd-section
-  list_id:
+  list_id: null
   max_level: 2
   ordered_list: false
 
-highlighter: "rouge"
-markdown: "kramdown"
+highlighter: rouge
+
+markdown: kramdown
 kramdown:
-  input: "GFM"
-  syntax_highlighter: "rouge"
+  input: GFM
+  syntax_highlighter: rouge
 
 webrick:
   headers:
-    Cache-Control: "must-revalidate"
+    Cache-Control: must-revalidate
 
 exclude:
   - .gitignore

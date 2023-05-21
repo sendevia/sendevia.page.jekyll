@@ -2,18 +2,21 @@
 <html lang="zh-hans">
   <!-- 头部 -->
   <head>
-    <script src="/assets/js/domcontrol.js?v=0.0.8"></script>
-    <link rel="stylesheet" href="/assets/css/m3-main.css?v=4.0.3" />
+    <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.5" defer></script>
+    <link rel="stylesheet" href="/assets/css/m3-main.css?v=4.1.0" />
     {%- include head.html -%}
+    {%- seo -%}
   </head>
-  <body class="material-theme">
+  <body class="material-theme" {%- if page.color -%} color="{{ page.color }}" {%- endif -%}>
     <!-- 404 -->
     {%- if page.permalink == "/404.html" -%}
     <!-- 404内容 -->
     {{ content }}
+    <!--  -->
     {%- else -%}
     <div class="content-loading">
-      <h1>加载中</h1>
+      <span class="mpi" spec="circular"></span>
+      <p>{{ page.title }}</p>
       <button class="mbt" spec="tonal" onclick="removeLoadScreen()">跳过加载</button>
     </div>
 
@@ -22,6 +25,7 @@
       <p>目录</p>
       <!-- 目录内容 -->
       {% toc %}
+      <!--  -->
       {%- else -%}
       <p>此页面没有目录</p>
       {%- endif -%}
@@ -43,5 +47,4 @@
     </div>
     {%- endif -%}
   </body>
-  <script type="application/javascript" src="/assets/js/bundle.js?v=0.0.4" async></script>
 </html>

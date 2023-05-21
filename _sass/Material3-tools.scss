@@ -46,23 +46,21 @@
       pointer-events: none;
     }
 
-    .ripple-effect {
-      &::before {
-        content: "";
+    .ripple-effect::before {
+      content: "";
 
-        position: absolute;
-        left: calc(var(--x) * 1px);
-        top: calc(var(--y) * 1px);
+      position: absolute;
+      left: calc(var(--x) * 1px);
+      top: calc(var(--y) * 1px);
 
-        border-radius: 50%;
+      border-radius: 50%;
 
-        background-color: var(--md-sys-color-primary);
+      background-color: var(--md-sys-color-primary);
 
-        animation: ripple 0.5s ease-in both;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        transition: 0.5s;
-      }
+      animation: ripple 0.5s ease-in-out both;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: 0.5s;
     }
   }
 }

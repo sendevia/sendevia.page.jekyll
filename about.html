@@ -1,43 +1,180 @@
 ---
 author: "sendevia"
 categories:
+color: ""
 description: "Material 3 在 jekyll 上的轻量化实现"
-excerpt_separator: <!--more-->
-header_image: "/assets/images/87603075_p0.webp"
-layout: "Material3"
-notips:
+header_image: "/assets/images/23/04/screen_capture.png"
+navigation: true
+notips: false
+published: true
+segment_icon: "info"
+segment_title: "关于"
 tags: readme
 title: "A Material3 Theme for Jekyll"
 toc: true
 ---
 
-<h1 id="关于主题">关于主题</h1>
-<p>简单介绍一下这个项目，这是一个 Material 3 (You) 风格的 Jekyll 主题，但我没有使用任何 UI 框架，例如mui。</p>
+<h1 id="about-part1">关于主题</h1>
+<p>不太擅长介绍，既然这个页面存在了，就简单写一下吧。 这是一个不使用任何 UI 框架，完全轻量化的 Material 3 (You) 风格的 Jekyll 主题。</p>
 <p>这个主题原生实现了部分 Material 的组件样式，包括但不限于按钮、复选框、内容卡片，具体的使用范例在<a href="/components.html">这里</a>。</p>
-<p>做这个主题的灵感来源主要是 material.io 官网，我去除了大部分但保留了一点，这样你才知道在用的是一款 Material 3 风格的主题。</p>
+<p>同时，我借助 Material Foundation 的 <a href="https://github.com/material-foundation/material-color-utilities">material-color-utilities</a> 实现了动态 monet 取色。你可以设置一张头图来让主题自动取色，也可以在每页的头信息 <code>color</code> 配置中指定颜色。</p>
+<p>这个主题的参考来源主要是 <a href="https://material.io">material.io</a> 官网，其次是 Google 提供的设计规范。</p>
 
-<h1 id="主要功能">主要功能</h1>
+<h1 id="about-part2">主要功能</h1>
 <ol>
+  <li>Material 3 风格</li>
   <li>支持从头图中取色并应用颜色主题。<s>这可以是动态取色吧</s></li>
   <li>支持多种 Material 3 组件。<s>但在 markdown 中用原生 html 真的好怪啊</s></li>
   <li>响应式布局。<s>是个现代网站都有吧</s></li>
-  <li>在移动端有接近原生应用的使用体验。<s>虽然不是PWA</s></li>
 </ol>
 
-<h1 id="使用的-P-站好图">使用的 P 站好图</h1>
-<div>
-  <a href="https://pixiv.net/artworks/102911375" style="display: block">
+<h1 id="about-part3">头信息</h1>
+<p>下面是所有变量的详解：</p>
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>可接受的数据类型</th>
+      <th>功能</th>
+      <th>是否可以省略</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>author</td>
+      <td>字符串</td>
+      <td>文章作者</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td>数组</td>
+      <td>目录分类</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>字符串</td>
+      <td>自定义主题颜色</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>字符串</td>
+      <td>文章简介</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>header_image</td>
+      <td>字符串</td>
+      <td>文章头图（留空使用默认图片）</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>navigation</td>
+      <td>布尔</td>
+      <td>是否在导航中显示（只适用于用于页面（page））</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>notips</td>
+      <td>布尔</td>
+      <td>是否隐藏文章前的内容提示（阅读时间，分类，标签，作者）</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>published</td>
+      <td>布尔</td>
+      <td>是否发布文章</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>segment_icon</td>
+      <td>字符串</td>
+      <td>导航中的图标</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>segment_title</td>
+      <td>字符串</td>
+      <td>导航中的标题</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>数组</td>
+      <td>文章标签</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>字符串</td>
+      <td>文章标题</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>toc</td>
+      <td>布尔</td>
+      <td>是否生成文章目录</td>
+      <td>✔️</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="about-part4">使用的 P 站好图</h1>
+<p>根据作品 id 排序</p>
+<div id="about-pt4-pixiv-gallery">
+  <a href="https://pixiv.net/artworks/86509870">
     <div class="mcd" spec="focus">
-      <img src="{{ site.header_image }}" alt="header_image" />
+      <img src="/assets/images/86509870_p0.webp" alt="header_image" />
+      <div class="mcd-supporting">
+        <h3>Merry Christmas</h3>
+      </div>
+    </div>
+  </a>
+  <a href="https://pixiv.net/artworks/87603075">
+    <div class="mcd" spec="focus">
+      <img src="/assets/images/87603075_p0.webp" alt="header_image" />
+      <div class="mcd-supporting">
+        <h3>蛍</h3>
+      </div>
+    </div>
+  </a>
+  <a href="https://pixiv.net/artworks/100646598">
+    <div class="mcd" spec="focus">
+      <img src="/assets/images/100646598_p0.webp" alt="header_image" />
+      <div class="mcd-supporting">
+        <h3>夏の小休憩</h3>
+      </div>
+    </div>
+  </a>
+  <a href="https://pixiv.net/artworks/101545188">
+    <div class="mcd" spec="focus">
+      <img src="/assets/images/101545188_p0.webp" alt="header_image" />
+      <div class="mcd-supporting">
+        <h3>happy 2nd anniversary</h3>
+      </div>
+    </div>
+  </a>
+  <a href="https://pixiv.net/artworks/102911375">
+    <div class="mcd" spec="focus">
+      <img src="/assets/images/102911375_p0.webp" alt="header_image" />
       <div class="mcd-supporting">
         <h3>Trail of the Qilin zine cover ar</h3>
-        <p>背景图来源</p>
+      </div>
+    </div>
+  </a>
+  <a href="https://pixiv.net/artworks/106877021">
+    <div class="mcd" spec="focus">
+      <img src="/assets/images/106877021_p0.webp" alt="header_image" />
+      <div class="mcd-supporting">
+        <h3>胡桃和纳西妲~</h3>
       </div>
     </div>
   </a>
 </div>
 
-<h1>本皮肤的 Github 仓库</h1>
+<h1 id="about-part5">本皮肤的 Github 仓库</h1>
 <div>
   <a href="https://github.com/Sendevia/jekyll-theme-m3"><button class="mbt" spec="tonal">点我跳转</button></a>
 </div>

@@ -1,11 +1,14 @@
 ---
 author: "sendevia"
 categories:
+color: ""
 description: "Material3 组件示例"
-excerpt_separator: <!--more-->
 header_image: "/assets/images/100646598_p0.webp"
-layout: "Material3"
-notips:
+navigation: true
+notips: false
+published: true
+segment_icon: "draw"
+segment_title: "M3组件"
 tags:
 title: "Material3 Components"
 toc: true
@@ -231,7 +234,7 @@ toc: true
   </tbody>
 </table>
 
-<h1 id="#Icon-Buttons">Icon Buttons</h1>
+<h1 id="#Icon-buttons">Icon buttons</h1>
 <p>用户交互控件 - 图标按钮</p>
 <table>
   <thead>
@@ -247,40 +250,44 @@ toc: true
       <td><code>mib</code></td>
       <td><code>standard</code></td>
       <td>
-        <div class="mib" spec="standard">settings</div>
+        <div class="mib" spec="standard">
+          <span>settings</span>
+        </div>
       </td>
       <td>
-        <div class="mib" spec="standard" disabled>settings</div>
+        <div class="mib" spec="standard" disabled>
+          <span>settings</span>
+        </div>
       </td>
     </tr>
     <tr>
       <td></td>
       <td><code>filled</code></td>
       <td>
-        <div class="mib" spec="filled">settings</div>
+        <div class="mib" spec="filled"><span>settings</span></div>
       </td>
       <td>
-        <div class="mib" spec="filled" disabled>settings</div>
+        <div class="mib" spec="filled" disabled><span>settings</span></div>
       </td>
     </tr>
     <tr>
       <td></td>
       <td><code>tonal</code></td>
       <td>
-        <div class="mib" spec="tonal">settings</div>
+        <div class="mib" spec="tonal"><span>settings</span></div>
       </td>
       <td>
-        <div class="mib" spec="tonal" disabled>settings</div>
+        <div class="mib" spec="tonal" disabled><span>settings</span></div>
       </td>
     </tr>
     <tr>
       <td></td>
       <td><code>outlined</code></td>
       <td>
-        <div class="mib" spec="outlined">settings</div>
+        <div class="mib" spec="outlined"><span>settings</span></div>
       </td>
       <td>
-        <div class="mib" spec="outlined" disabled>settings</div>
+        <div class="mib" spec="outlined" disabled><span>settings</span></div>
       </td>
     </tr>
   </tbody>
@@ -469,6 +476,20 @@ toc: true
           <div class="mcd-actions">
             <a>action 1</a>
             <a>action 2</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>clear</code></td>
+      <td>-</td>
+      <td>
+        <div class="mcd" spec="clear">
+          <img src="{{ site.header_image }}" alt="image" />
+          <div class="mcd-supporting">
+            <h3>Lorem ipsum dolor sit amet</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
           </div>
         </div>
       </td>
@@ -664,6 +685,29 @@ toc: true
       </td>
       <td>
         <div class="mfb" spec="tertiary" size="large">edit</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="Progress-Indicators">Progress Indicators</h1>
+<p>进度条</p>
+<table>
+  <thead>
+    <tr>
+      <th>element</th>
+      <th>class</th>
+      <th>spec</th>
+      <th>示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>span</code></td>
+      <td><code>mpi</code></td>
+      <td><code>circular</code></td>
+      <td>
+        <span class="mpi" spec="circular"></span>
       </td>
     </tr>
   </tbody>

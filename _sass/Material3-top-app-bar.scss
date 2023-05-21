@@ -50,12 +50,12 @@
         transition: transform 0.4s, opacity 1s;
 
         &:nth-child(1) {
-          transform: translateY(0px);
+          transform: translateY(0px) scale(1);
           opacity: 1;
         }
 
         &:nth-child(2) {
-          transform: translateY(45px);
+          transform: translateY(45px) scale(0.9);
           opacity: 0;
         }
       }
@@ -64,15 +64,17 @@
     &[scroll="true"] {
       background-color: var(--md-sys-color-surface);
 
+      box-shadow: var(--md-sys-elevation-level2);
+
       h4 {
         span {
           &:nth-child(1) {
-            transform: translateY(-45px);
+            transform: translateY(-45px) scale(0.9);
             opacity: 0;
           }
 
           &:nth-child(2) {
-            transform: translateY(0px);
+            transform: translateY(0px) scale(1);
             opacity: 1;
           }
         }

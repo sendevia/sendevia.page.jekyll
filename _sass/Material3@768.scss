@@ -47,35 +47,32 @@
           padding-inline-start: 5px;
 
           font-size: 70rem;
-          letter-spacing: -2px;
-          line-height: 60px;
+          line-height: 66px;
         }
 
         #subtitle {
           padding-inline-start: 8px;
         }
 
-        img {
+        #header_image {
           display: none;
         }
       }
     }
 
-    #content {
-      section:nth-child(1) {
-        width: 90vw;
+    .content-layout {
+      flex-direction: column;
+    }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          &:target {
-            padding-block: 78px 6px;
-          }
-        }
-      }
+    #content-tips {
+      flex-direction: row;
+
+      position: relative;
+      top: 0;
+    }
+
+    #content {
+      width: 90vw;
     }
 
     #footer-container {
@@ -85,6 +82,19 @@
 
       footer {
         margin: 0;
+
+        section {
+          .site-logo {
+            margin: 0 0 10px 0;
+          }
+
+          .descriptions {
+            h3,
+            p {
+              margin: 0 0 0 6px;
+            }
+          }
+        }
       }
     }
   }
@@ -106,6 +116,17 @@
 
     &[show] {
       left: 0px;
+    }
+  }
+
+  .mng {
+    &[spec="bar"] {
+      transform: translateY(0%);
+      visibility: visible;
+    }
+
+    &[spec="rail"] {
+      visibility: hidden;
     }
   }
 

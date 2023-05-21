@@ -34,47 +34,39 @@
 {%- else -%}
 
 <!-- 正常内容 -->
-<div id="content">
-  {%- if page.notips != true -%}
-  <section>{{ content }}</section>
-  <section id="content-information" disabled>
+{%- if page.notips == true -%} {{ content }} {%- else -%}
+<div class="content-layout">
+  <div id="content-tips">
     <!-- 日期 -->
     {%- if page.date -%}
-    <div class="mcp" spec="assist" icon>
+    <div title="{{ page.date | date: '%Y 年 %m 月 %d 日' }}" class="mib" spec="outlined">
       <span>calendar_month</span>
-      {{ page.date | date: "%Y 年 %m 月 %d 日" }}
     </div>
     {%- endif -%}
-    <!-- 日期 -->
 
     <!-- 阅读时间 -->
-    <div class="mcp" spec="assist" icon>
+    <div
+      title="{%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟"
+      class="mib"
+      spec="outlined"
+    >
       <span>schedule</span>
-      {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif
-      -%}分钟
-      <div id="reading-progress"></div>
     </div>
-    <!-- 阅读时间 -->
 
     <!-- 作者 -->
     {%- if page.author -%}
-    <div class="mcp" spec="assist" icon>
+    <div title="{{ page.author }}" class="mib" spec="outlined">
       <span>person</span>
-      {{ page.author }}
     </div>
     {%- endif -%}
-    <!-- 作者 -->
 
     <!-- 目录分类 -->
     {%- if page.categories.size > 0 -%}
-    <div class="mcp" spec="assist" icon>
+    <div title="{{ page.categories }}" class="mib" spec="outlined">
       <span>category</span>
-      {{ page.categories }}
     </div>
     {%- endif -%}
-    <!-- 目录分类 -->
-  </section>
-  {%- else -%} {{ content }} {%- endif -%}
+  </div>
+  <div id="content">{{ content }}</div>
 </div>
-
-{%- endif -%}
+{%- endif -%} {%- endif -%}

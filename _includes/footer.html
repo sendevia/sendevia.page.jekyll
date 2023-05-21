@@ -9,6 +9,9 @@
         <h3>{{ page.title }} {%- if page.description and page.description != "" -%} &nbsp &amp &nbsp {{- page.description -}} {%- endif -%}</h3>
         <p>来自 {{ site.title }} &times jekyll-theme-m3</p>
       </div>
+    </section>
+    <section>
+      <p>更多文章</p>
       <div class="site-posts">
         {%- for post in site.posts limit:3 -%}
         <a href="{{ post.url }}" class="mbt" spec="text">

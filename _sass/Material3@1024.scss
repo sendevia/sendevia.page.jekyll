@@ -14,28 +14,18 @@
       .header-container {
         #title {
           font-size: 13.5vw;
-          letter-spacing: -4px;
-          line-height: 14.5vw;
+          line-height: 12.5vw;
           word-break: break-word;
 
-          img {
+          #header_image {
             top: inherit;
-
-            animation: none;
-            opacity: 0.5;
           }
         }
       }
     }
 
     #content {
-      section:nth-child(1) {
-        width: 75vw;
-      }
-
-      section:nth-child(2) {
-        display: none;
-      }
+      width: 75vw;
     }
 
     #footer-container {

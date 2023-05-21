@@ -1,14 +1,17 @@
 ---
 author: "sendevia"
 categories:
+color: ""
 description: "全部文章"
-excerpt_separator: <!--more-->
 header_image: ""
-layout: "Material3"
+navigation: false
 notips: true
+published: true
+segment_icon: ""
+segment_title: ""
 tags:
 title: "Posts"
-toc:
+toc: false
 ---
 
 {%- assign total_posts = site.posts | size -%}
@@ -25,9 +28,10 @@ toc:
     {%- for post in site.posts -%}
     <a href="{{ post.url }}">
       <div class="mcd" spec="focus">
-        {%- if post.header_image and post.header_image != "" -%}
-        <img src="{{ post.header_image }}" alt="封面" />
-        {%- endif -%}
+        <img
+          src="{%- if post.header_image and post.header_image != '' -%} {{ post.header_image }} {%- else -%} {{ site.header_image }} {%- endif -%}"
+          alt="封面"
+        />
         <div class="mcd-supporting">
           <h3>{{ post.title }}</h3>
           <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
@@ -43,27 +47,3 @@ toc:
   </div>
   {%- endif -%}
 </div>
-
-<script type="application/javascript" src="/assets/js/simple-jekyll-search.min.js?v=1.10.0"></script>
-<script type="application/javascript" src="/assets/js/macy.js?v=2.5.1"></script>
-<script>
-  window.simpleJekyllSearch = new SimpleJekyllSearch({
-    fuzzy: false,
-    json: "search.json",
-    noResultsText: "＞︿＜ 无结果",
-    resultsContainer: document.getElementById("results-container"),
-    searchInput: document.getElementById("search-input"),
-    searchResultTemplate: '<a href="{url}"><button spec="text">{title}</button></a>',
-  });
-  var macy = Macy({
-    breakAt: {
-      768: 2,
-      425: 1,
-    },
-    columns: 3,
-    container: ".cards",
-    margin: 8,
-    trueOrder: false,
-    waitForImages: false,
-  });
-</script>
