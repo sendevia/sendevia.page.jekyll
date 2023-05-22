@@ -34,7 +34,11 @@
 {%- else -%}
 
 <!-- 正常内容 -->
-{%- if page.notips == true -%} {{ content }} {%- else -%}
+{%- if page.notips == true -%}
+<div class="content-layout notips">
+  {{ content }}
+</div>
+{%- else -%}
 <div class="content-layout">
   <div id="content-tips">
     <!-- 日期 -->
@@ -69,4 +73,5 @@
   </div>
   <div id="content">{{ content }}</div>
 </div>
-{%- endif -%} {%- endif -%}
+{%- endif -%}
+{%- endif -%}

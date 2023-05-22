@@ -73,6 +73,19 @@
 
     #content {
       width: 90vw;
+
+      & > div,
+      & > h1,
+      & > h2,
+      & > h3,
+      & > h4,
+      & > h5,
+      & > h6,
+      & > p,
+      & > ol {
+        margin-inline: 24px;
+        padding-block: 6px;
+      }
     }
 
     #footer-container {

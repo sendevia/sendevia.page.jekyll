@@ -95,7 +95,10 @@ strong {
 table {
   display: block;
 
+  margin: auto;
+
   max-width: max-content;
+  width: 100%;
 
   border-collapse: collapse;
   border-radius: 24px;
@@ -376,8 +379,16 @@ ol {
   .content-layout {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
 
     position: relative;
+
+    width: 100%;
+
+    &.notips {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
   #content-tips {
@@ -408,7 +419,7 @@ ol {
   }
 
   #content {
-    padding-block-end: 36px;
+    padding: 6px 12px 36px 12px;
 
     width: 65vw;
 
@@ -614,7 +625,6 @@ ol {
     }
 
     & > table {
-      margin-inline: 42px;
       margin-block: 12px 6px;
     }
 

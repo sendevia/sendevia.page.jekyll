@@ -24,8 +24,9 @@
       & > h4,
       & > h5,
       & > h6,
-      & > p {
-        margin-inline: 24px;
+      & > p,
+      & > ol {
+        margin-inline: 12px;
       }
     }
   }
