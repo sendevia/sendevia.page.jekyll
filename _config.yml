@@ -68,3 +68,5 @@ exclude:
   - vendor/
   - webpack.config.js
   - webpack/
+
+version: "23.5.23.0"
