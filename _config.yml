@@ -3,6 +3,7 @@ email: me@sendevia.top
 github: https://github.com/Sendevia
 header_image: /assets/images/102911375_p0.webp
 locale: zh_CN
+permalink: /:title
 timezone: Asia/Shanghai
 title: sendevia 的博客
 twitter:
@@ -26,6 +27,7 @@ defaults:
   - scope:
       path: _posts
     values:
+      permalink: /:short_year/:month/:day/:title
       toc: true
 
 toc:

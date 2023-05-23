@@ -24,7 +24,7 @@ window.onpageshow = function () {
     const inactiveSegment = activatedSegment.querySelector("#segment-inactive");
     inactiveSegment.id = "segment-active";
   } catch (error) {
-    document.querySelector(`a[href="/posts.html"] #segment-inactive`).id = "segment-active";
+    document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
   }
 
   // 滚动到页面顶部
