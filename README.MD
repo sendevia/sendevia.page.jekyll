@@ -2,19 +2,19 @@
 
 部署本项目需要两个运行环境：nodejs 和 ruby。
 
+> 目前推荐在 CloudFlare 上部署本项目
+
 ## 安装运行环境
 
-### 以 Ubuntu 22.04 为例
+### 以 Ubuntu 22.04 / Debian bullseye 为例
 
-1. 使用 nvm 安装 nodejs
+1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 ```
-nvm install 12.18
+nvm install 12.18.0
 ```
 
 2. 安装依赖
-
-在工作目录中
 
 ```
 npm i
@@ -26,7 +26,7 @@ npm i
 sudo apt install ruby-full build-essential zlib1g-dev -y
 ```
 
-2. 配置环境变量
+4. 配置环境变量
 
 ```bash
 echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
@@ -40,7 +40,7 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-3. 安装 Jekyll
+5. 安装 Jekyll
 
 ```ruby
 gem install bundler jekyll
@@ -65,5 +65,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-### 推荐在 CloudFlare 上部署本项目
