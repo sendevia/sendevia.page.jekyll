@@ -93,7 +93,7 @@
       footer {
         margin: 0;
 
-        section {
+        section:nth-child(1) {
           .site-logo {
             margin: 0 0 10px 0;
           }
