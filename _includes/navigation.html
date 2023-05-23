@@ -1,6 +1,6 @@
 <div class="mng" spec="rail" dest="bottom">
   <div class="menu-and-fab">
-    <div class="mib">
+    <div class="mib" id="maf-mib-menu">
       <span>menu</span>
     </div>
   </div>
@@ -30,8 +30,7 @@
     </a>
 
     <!-- 列出有导航需求的页面 -->
-    {%- for s in site.pages -%}
-    {%- if s.navigation and s.published == true -%}
+    {%- for s in site.pages -%} {%- if s.navigation and s.published == true -%}
     <a href="{{ s.url }}">
       <div id="segment-inactive">
         <div id="accent">
@@ -57,7 +56,63 @@
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
   </h4>
-  <div class="mib" id="mtb-mib-search">
-    <span>search</span>
+  <div class="mib" id="mtb-mib-info">
+    <span>info</span>
   </div>
 </div>
+
+<!-- 移动端模态的页面信息 -->
+<dialog class="mdl" id="mdl-tips" icon>
+  <div class="mdl-content-layout">
+    <span class="mdl-icon">info</span>
+
+    <h3 class="mdl-headline">页面信息</h3>
+    <p class="mdl-supporting-text">此处提供了有关这个页面的一些信息</p>
+
+    <div class="mdl-supporting-list">
+      {%- if page.date -%}
+      <!-- 日期 -->
+      <div id="mdl-tips-date">
+        <div class="mib" spec="outlined">
+          <span>calendar_month</span>
+        </div>
+        <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
+      </div>
+      {%- endif -%}
+      <!--  -->
+      <!-- 阅读时间 -->
+      <div id="mdl-tips-estimate">
+        <div class="mib" spec="outlined">
+          <span>schedule</span>
+        </div>
+        <p>
+          {%- assign page_words = page.content | number_of_words: "auto" -%}
+          {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟
+        </p>
+      </div>
+      <!--  -->
+      {%- if page.author -%}
+      <!-- 作者 -->
+      <div id="mdl-tips-author">
+        <div class="mib" spec="outlined">
+          <span>person</span>
+        </div>
+        <p>{{ page.author }}</p>
+      </div>
+      {%- endif -%}
+      <!--  -->
+      {%- if page.categories.size > 0 -%}
+      <!-- 目录分类 -->
+      <div id="mdl-tips-categories">
+        <div class="mib" spec="outlined">
+          <span>category</span>
+        </div>
+        <p>{{ page.categories }}</p>
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+  <form method="dialog">
+    <button spec="text">关闭</button>
+  </form>
+</dialog>

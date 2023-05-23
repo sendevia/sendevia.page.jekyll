@@ -135,3 +135,19 @@
     transform: rotateZ(360deg);
   }
 }
+
+@keyframes mdl-show {
+  0% {
+    transform: skew(0deg, 2deg) scale(1.05);
+    opacity: 0;
+  }
+
+  30% {
+    transform: skew(0deg, 0deg) scale(1.05);
+  }
+
+  100% {
+    transform: skew(0deg, 0deg) scale(1);
+    opacity: 1;
+  }
+}

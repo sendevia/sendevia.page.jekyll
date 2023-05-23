@@ -9,12 +9,16 @@ window.onpageshow = function () {
   const contentContainer = document.querySelector(".content-container");
   const contentHeader = document.querySelector("#content-header");
   const contentNavigation = document.querySelector(".mng");
-  const contentTips = document.querySelector("#content-tips");
   const currentPage = window.location.pathname;
   const progressElement = document.querySelector("#reading-progress");
   const scrollTop = document.documentElement.scrollTop || scrollY;
   const scrollTopElement = document.querySelector("#rcf-mfb-topbutton");
   const topAppBar = document.querySelector(".mtb");
+  const mobileTipsIcon = document.querySelector("#mtb-mib-info");
+  const mobileTipsModal = document.querySelector("#mdl-tips");
+  const contentDrawer = document.querySelector(".mnd");
+  const contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
+  const contentDrawerMenuBtn = document.querySelectorAll("#maf-mib-menu, #mtb-mib-menu");
 
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
 
@@ -102,22 +106,18 @@ window.onpageshow = function () {
   };
 
   // 侧边栏
-  const mndSection = document.querySelector(".mnd");
-  const mndEntries = mndSection.querySelectorAll(".mnd-entry");
-  const mnbMenuBtn = document.querySelectorAll(".menu-and-fab > .mib, .mtb > #mtb-mib-menu");
-
   const toggleMndSection = (boolean) => {
-    mndSection.toggleAttribute("show", boolean);
+    contentDrawer.toggleAttribute("show", boolean);
     contentContainer.toggleAttribute("compress", boolean);
   };
 
-  mnbMenuBtn.forEach((i) => {
+  contentDrawerMenuBtn.forEach((i) => {
     i.addEventListener("click", () => {
       toggleMndSection();
     });
   });
 
-  mndEntries.forEach((i) => {
+  contentDrawerEntries.forEach((i) => {
     i.addEventListener("click", () => {
       toggleMndSection(false);
     });
@@ -131,6 +131,11 @@ window.onpageshow = function () {
     if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
       toggleMndSection(false);
     }
+  });
+
+  // 展示模态tips
+  mobileTipsIcon.addEventListener("click", () => {
+    mobileTipsModal.showModal();
   });
 };
 

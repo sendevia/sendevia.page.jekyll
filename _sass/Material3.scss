@@ -940,3 +940,13 @@ ol {
   gap: 12px;
   justify-content: center;
 }
+
+#mdl-tips-date,
+#mdl-tips-estimate,
+#mdl-tips-author,
+#mdl-tips-categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
