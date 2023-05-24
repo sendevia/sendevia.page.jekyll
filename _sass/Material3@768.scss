@@ -113,6 +113,18 @@
     bottom: 100px;
   }
 
+  .mng {
+    &[spec="bar"] {
+      transform: translateY(0%);
+      visibility: visible;
+      z-index: 11;
+    }
+
+    &[spec="rail"] {
+      visibility: hidden;
+    }
+  }
+
   .mnd {
     left: -100%;
     top: 64px;
@@ -126,17 +138,6 @@
 
     &[show] {
       left: 0px;
-    }
-  }
-
-  .mng {
-    &[spec="bar"] {
-      transform: translateY(0%);
-      visibility: visible;
-    }
-
-    &[spec="rail"] {
-      visibility: hidden;
     }
   }
 
