@@ -1,24 +1,27 @@
 import { applyTheme, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
 import "simple-jekyll-search";
 
-const img = new Image();
-const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+// 常用常量设置
+const themeImageProvider = new Image();
+const mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const cutsomThemeColor = document.body.getAttribute("color");
+const contentContainer = document.querySelector(".content-container");
+const contentHeader = document.querySelector("#content-header");
+const contentHeaderImage = document.querySelector("#header_image");
+const contentNavigation = document.querySelector(".mng");
+const contentDrawer = document.querySelector(".mnd");
+const contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
+const contentDrawerMenuBtn = document.querySelectorAll("#maf-mib-menu, #mtb-mib-menu");
+const contentSplashScreen = document.querySelector(".content-loading");
+const currentPage = window.location.pathname;
+const progressElement = document.querySelector("#reading-progress");
+const scrollTop = document.documentElement.scrollTop || scrollY;
+const scrollTopElement = document.querySelector("#rcf-mfb-topbutton");
+const topAppBar = document.querySelector(".mtb");
+const mobileTipsIcon = document.querySelector("#mtb-mib-info");
+const mobileTipsModal = document.querySelector("#mdl-tips");
 
 window.onpageshow = function () {
-  // 常用常量设置
-  const contentContainer = document.querySelector(".content-container");
-  const contentHeader = document.querySelector("#content-header");
-  const contentNavigation = document.querySelector(".mng");
-  const currentPage = window.location.pathname;
-  const progressElement = document.querySelector("#reading-progress");
-  const scrollTop = document.documentElement.scrollTop || scrollY;
-  const scrollTopElement = document.querySelector("#rcf-mfb-topbutton");
-  const topAppBar = document.querySelector(".mtb");
-  const mobileTipsIcon = document.querySelector("#mtb-mib-info");
-  const mobileTipsModal = document.querySelector("#mdl-tips");
-  const contentDrawer = document.querySelector(".mnd");
-  const contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
-  const contentDrawerMenuBtn = document.querySelectorAll("#maf-mib-menu, #mtb-mib-menu");
 
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
 
@@ -143,21 +146,20 @@ window.onload = function () {
   removeLoadScreen();
   changeHeaderTransform();
 
-  img.src = document.querySelector("#header_image").src;
-  const cutsomThemeColor = document.body.getAttribute("color");
+  themeImageProvider.src = contentHeaderImage.src;
 
   if (cutsomThemeColor) {
     let theme = themeFromSourceColor(argbFromHex(cutsomThemeColor));
-    applyTheme(theme, { target: document.body, dark: mediaQuery.matches });
+    applyTheme(theme, { target: document.body, dark: mediaQueryPerferScheme.matches });
   } else {
-    let theme = themeFromImage(img);
+    let theme = themeFromImage(themeImageProvider);
     theme.then(function (result) {
-      applyTheme(result, { target: document.body, dark: mediaQuery.matches });
+      applyTheme(result, { target: document.body, dark: mediaQueryPerferScheme.matches });
     });
   }
 
   // 监听颜色主题更改
-  mediaQuery.addEventListener("change", () => {
+  mediaQueryPerferScheme.addEventListener("change", () => {
     location.reload();
   });
 
@@ -174,30 +176,27 @@ window.onload = function () {
   }
 };
 
-const headerEl = document.querySelector("#content-header");
-const resizeObserverHeader = new ResizeObserver(() => {
+// 监听大标题的大小更改
+const headerResizeObserver = new ResizeObserver(() => {
   changeHeaderTransform();
 });
-resizeObserverHeader.observe(headerEl);
+headerResizeObserver.observe(contentHeader);
 
+// 更新标题背景图片的位移
 function changeHeaderTransform() {
-  const isImageSource = document.querySelector("#header_image");
-  const isContainerOffset = headerEl.offsetHeight;
-  const isImageOffset = isImageSource.offsetHeight;
+  const isContainerOffset = contentHeader.offsetHeight;
+  const isImageOffset = contentHeaderImage.offsetHeight;
 
-  isImageSource.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
+  contentHeaderImage.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
 }
 
+// 移除加载屏幕
 function removeLoadScreen() {
-  const splashScreen = document.querySelector(".content-loading");
-  const mainContent = document.querySelector(".content-container");
-  const headeImage = document.querySelector("#header_image");
+  contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
+  contentHeaderImage.style.animation = "headerImageTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
 
-  splashScreen.style.animation = "fadeOut 0.4s forwards";
-  headeImage.style.animation = "headerImageTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
-
-  splashScreen.addEventListener("animationend", () => {
-    splashScreen.style.display = "none";
-    mainContent.style.overflow = "overlay";
+  contentSplashScreen.addEventListener("animationend", () => {
+    contentSplashScreen.style.display = "none";
+    contentContainer.style.overflow = "overlay";
   });
 }
