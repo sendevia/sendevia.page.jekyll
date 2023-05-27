@@ -73,7 +73,7 @@
       {%- if page.date -%}
       <!-- 日期 -->
       <div id="mdl-tips-date">
-        <div class="mib" spec="outlined">
+        <div class="mib" spec="tonal" disabled>
           <span>calendar_month</span>
         </div>
         <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
@@ -82,7 +82,7 @@
       <!--  -->
       <!-- 阅读时间 -->
       <div id="mdl-tips-estimate">
-        <div class="mib" spec="outlined">
+        <div class="mib" spec="tonal" disabled>
           <span>schedule</span>
         </div>
         <p>
@@ -94,7 +94,7 @@
       {%- if page.author -%}
       <!-- 作者 -->
       <div id="mdl-tips-author">
-        <div class="mib" spec="outlined">
+        <div class="mib" spec="tonal" disabled>
           <span>person</span>
         </div>
         <p>{{ page.author }}</p>
@@ -104,7 +104,7 @@
       {%- if page.categories.size > 0 -%}
       <!-- 目录分类 -->
       <div id="mdl-tips-categories">
-        <div class="mib" spec="outlined">
+        <div class="mib" spec="tonal" disabled>
           <span>category</span>
         </div>
         <p>{{ page.categories }}</p>
