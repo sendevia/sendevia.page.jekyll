@@ -50,8 +50,8 @@
       content: "";
 
       position: absolute;
-      left: calc(var(--x) * 1px);
-      top: calc(var(--y) * 1px);
+      left: calc(var(--ripple-effect-x) * 1px);
+      top: calc(var(--ripple-effect-y) * 1px);
 
       border-radius: 50%;
 

@@ -109,8 +109,8 @@
   }
 
   60% {
-    width: calc(var(--d) * 2.5px);
-    height: calc(var(--d) * 2.5px);
+    width: calc(var(--ripple-effect-d) * 2.5px);
+    height: calc(var(--ripple-effect-d) * 2.5px);
   }
 
   100% {
@@ -121,16 +121,16 @@
 
 @keyframes mpi-circular {
   0% {
-    --deg: 30deg;
+    --mpi-circular-deg: 30deg;
     rotate: 0deg;
   }
 
   50% {
-    --deg: 300deg;
+    --mpi-circular-deg: 300deg;
     transform: rotateZ(0deg);
   }
   100% {
-    --deg: 30deg;
+    --mpi-circular-deg: 30deg;
     rotate: 360deg;
     transform: rotateZ(360deg);
   }

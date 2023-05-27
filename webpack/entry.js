@@ -70,9 +70,9 @@ window.onpageshow = function () {
       const d = Math.max(btn.clientWidth, btn.clientHeight);
 
       btn.classList.add("ripple-effect");
-      btn.style.setProperty("--x", x);
-      btn.style.setProperty("--y", y);
-      btn.style.setProperty("--d", d);
+      btn.style.setProperty("--ripple-effect-x", x);
+      btn.style.setProperty("--ripple-effect-y", y);
+      btn.style.setProperty("--ripple-effect-d", d);
     });
     btn.addEventListener("animationend", () => {
       btn.classList.remove("ripple-effect");
