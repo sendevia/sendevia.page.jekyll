@@ -15,36 +15,36 @@ toc: false
 ---
 
 <div class="page-index">
-  <div class="block">
-    <h2>精选文章</h2>
-    <div class="posts-card">
-      <a href="/22/07/04/AincradMix">
-        <div class="mcd" spec="clear">
-          <img src="/assets/images/22/06/11/s0_amix_vision.webp" alt="封面" />
-          <div class="mcd-supporting">
-            <h3>AincradMix</h3>
-            <p>一个 osu! 皮肤。</p>
-          </div>
+  <h1>文章时间线</h1>
+  <div class="timeline">
+    {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
+    <h1>{{ year.name }} 年</h1>
+    <div class="index-level1">
+      <!--  -->
+      {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%m'" -%} {%- for month in posts_by_month -%}
+      <span class="posts-month">{{ month.name }} 月</span>
+      <div class="index-level2">
+        <!--  -->
+        {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%d'" -%} {%- for day in posts_by_day -%}
+        <span class="posts-day">{{ day.name }}</span>
+        <div class="index-level3 posts-card">
+          <!--  -->
+          {%- for post in day.items -%}
+          <a href="{{ post.url }}">
+            <div class="mcd" spec="clear">
+              <img src="{{ post.header_image }}" alt="封面" />
+              <div class="mcd-supporting">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.description }}</p>
+              </div>
+            </div>
+          </a>
+          {%- endfor -%}
         </div>
-      </a>
-      <!-- <a href="/">
-        <div class="mcd" spec="clear">
-          <img src="{{ site.header_image }}" alt="封面" />
-          <div class="mcd-supporting">
-            <h3>标题</h3>
-            <p>简介</p>
-          </div>
-        </div>
-      </a>
-      <a href="/">
-        <div class="mcd" spec="clear">
-          <img src="{{ site.header_image }}" alt="封面" />
-          <div class="mcd-supporting">
-            <h3>标题</h3>
-            <p>简介</p>
-          </div>
-        </div>
-      </a> -->
+        {%- endfor -%}
+      </div>
+      {%- endfor -%}
     </div>
+    {%- endfor -%}
   </div>
 </div>

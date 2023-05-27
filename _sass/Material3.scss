@@ -818,16 +818,121 @@ ol {
 }
 
 .page-index {
-  .block {
-    display: grid;
-    justify-items: center;
+  width: calc(80vw - 160px);
+
+  margin-block-start: 60px;
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+
+    margin-block-start: 18px;
+
+    h1 {
+      display: inline-flex;
+      gap: 6px;
+
+      line-height: 32px;
+
+      &:before {
+        content: "";
+
+        display: inline-block;
+
+        position: relative;
+
+        width: 32px;
+        height: 32px;
+
+        background: var(--md-sys-color-primary);
+
+        -webkit-mask: var(--via-svg-timeline-point-middle) 50% 100%/100% no-repeat;
+        mask: var(--via-svg-timeline-point-middle) 50% 100%/100% no-repeat;
+      }
+
+      &:first-of-type::before {
+        -webkit-mask: var(--via-svg-timeline-point-top) 50% 100%/100% no-repeat;
+        mask: var(--via-svg-timeline-point-top) 50% 100%/100% no-repeat;
+      }
+
+      &:last-of-type::before {
+        -webkit-mask: var(--via-svg-timeline-point-bottom) 50% 100%/100% no-repeat;
+        mask: var(--via-svg-timeline-point-bottom) 50% 100%/100% no-repeat;
+      }
+    }
+
+    .index-level1 {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+
+      margin-inline-start: 14px;
+      padding-inline-start: 30px;
+      padding-block: 24px 36px;
+
+      border-left: 4px solid var(--md-sys-color-primary);
+
+      .posts-month {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: sticky;
+        top: 4px;
+
+        height: 24px;
+        width: 48px;
+
+        color: var(--md-sys-color-inverse-on-surface);
+        font-size: 18px;
+        line-height: 0;
+
+        background-color: var(--md-sys-color-inverse-surface);
+
+        border-radius: 6px;
+
+        z-index: 11;
+      }
+
+      &:last-of-type {
+        border-left: 4px solid transparent;
+      }
+    }
+
+    .index-level2 {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+
+      .posts-day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 66px;
+        width: 66px;
+
+        color: var(--md-sys-color-on-surface-variant);
+        font-family: Google Sans;
+        font-size: 42px;
+        line-height: 0;
+
+        border-radius: 6px 6px 12px;
+
+        background-color: var(--md-sys-color-surface-variant);
+      }
+    }
+
+    .index-level3 {
+      margin-inline-start: 60px;
+    }
 
     .posts-card {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 12px;
-      justify-content: center;
+      justify-content: flex-start;
 
       a {
         display: block;

@@ -126,6 +126,20 @@
     bottom: 100px;
   }
 
+  .page-index {
+    width: 100%;
+
+    margin-block-start: 30px;
+
+    .timeline {
+      .index-level1 {
+        .posts-month {
+          top: 68px;
+        }
+      }
+    }
+  }
+
   .mng {
     &[spec="bar"] {
       transform: translateY(0%);
