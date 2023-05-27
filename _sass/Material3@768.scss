@@ -69,6 +69,8 @@
     }
 
     #content {
+      padding: 12px 12px 36px 12px;
+
       width: 90vw;
 
       & > div,
@@ -77,11 +79,19 @@
       & > h3,
       & > h4,
       & > h5,
-      & > h6,
-      & > p,
-      & > ol {
-        margin-inline: 24px;
+      & > h6 {
+        margin-inline: 12px;
         padding-block: 6px;
+      }
+
+      & > p,
+      & > ol,
+      & > ul {
+        margin-inline: 24px;
+      }
+
+      & > blockquote {
+        margin-inline: 12px;
       }
     }
 
