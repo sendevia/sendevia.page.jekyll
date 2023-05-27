@@ -711,6 +711,8 @@ ol {
         flex-direction: column;
         gap: 10px;
 
+        width: 100%;
+
         &:nth-child(1) {
           align-items: stretch;
 
@@ -773,8 +775,15 @@ ol {
             flex-wrap: wrap;
             justify-content: space-evenly;
 
+            width: 100%;
+
             p {
               margin: 0;
+
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              overflow: hidden;
             }
           }
         }
