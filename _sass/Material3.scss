@@ -850,12 +850,12 @@ ol {
         mask: var(--via-svg-timeline-point-middle) 50% 100%/100% no-repeat;
       }
 
-      &:first-of-type::before {
+      &:nth-of-type(1)::before {
         -webkit-mask: var(--via-svg-timeline-point-top) 50% 100%/100% no-repeat;
         mask: var(--via-svg-timeline-point-top) 50% 100%/100% no-repeat;
       }
 
-      &:last-of-type::before {
+      &:nth-last-of-type(1)::before {
         -webkit-mask: var(--via-svg-timeline-point-bottom) 50% 100%/100% no-repeat;
         mask: var(--via-svg-timeline-point-bottom) 50% 100%/100% no-repeat;
       }
@@ -894,7 +894,7 @@ ol {
         z-index: 11;
       }
 
-      &:last-of-type {
+      &:nth-last-child(1) {
         border-left: 4px solid transparent;
       }
     }
