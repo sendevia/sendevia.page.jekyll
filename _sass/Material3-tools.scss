@@ -61,6 +61,26 @@
       pointer-events: none;
       transform: translate(-50%, -50%);
       transition: 0.5s;
+
+      &[spec="filled"] {
+        background-color: var(--md-sys-color-on-primary);
+      }
+
+      &[spec="outlined"] {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="text"] {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="elevated"] {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="tonal"] {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
     }
   }
 }
