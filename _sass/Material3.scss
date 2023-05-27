@@ -324,11 +324,15 @@ ol {
 
       #title {
         color: var(--md-sys-color-on-secondary-container);
-        font: 130rem/130rem "Google Sans", "Noto Sans SC";
+        font-family: Google Sans;
+        font-size: 130rem;
+        line-height: 130rem;
       }
 
       #subtitle {
-        font: 700 25rem "Noto Serif SC";
+        font-family: Google Sans;
+        font-size: 25rem;
+        line-height: 25rem;
       }
 
       #header_image {
@@ -359,7 +363,7 @@ ol {
       .header-container {
         #title {
           font-size: 140rem;
-          line-height: 16vh;
+          line-height: 140rem;
         }
       }
     }
