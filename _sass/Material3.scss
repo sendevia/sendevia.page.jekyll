@@ -681,6 +681,24 @@ ol {
     }
   }
 
+  #posts-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .previous-post {
+      align-items: self-start;
+
+      text-align: start;
+    }
+
+    .next-post {
+      align-items: flex-end;
+
+      text-align: end;
+    }
+  }
+
   #footer-container {
     display: flex;
     flex-direction: column;
@@ -708,83 +726,51 @@ ol {
 
       section {
         display: flex;
+        align-items: stretch;
         flex-direction: column;
         gap: 10px;
 
         width: 100%;
 
-        &:nth-child(1) {
-          align-items: stretch;
+        .site-logo {
+          margin: 0 0 10px 20px;
 
-          width: 100%;
+          height: 58px;
+          width: max-content;
 
-          .site-logo {
-            margin: 0 0 10px 20px;
+          border-radius: 5px;
 
-            height: 58px;
-            width: max-content;
+          transition: 0.2s;
 
-            border-radius: 5px;
+          img {
+            margin: 4px;
 
-            transition: 0.2s;
+            height: 50px;
 
-            img {
-              margin: 4px;
-
-              height: 50px;
-
-              -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
-              mask: var(--via-svg-mask) no-repeat 0 / 100%;
-            }
-
-            &:hover {
-              background-color: var(--md-sys-color-surface);
-            }
-
-            &:active {
-              box-shadow: 0 0 0 2px var(--md-sys-color-secondary);
-            }
+            -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
+            mask: var(--via-svg-mask) no-repeat 0 / 100%;
           }
 
-          .descriptions {
-            h3 {
-              margin: 0 0 0 26px;
+          &:hover {
+            background-color: var(--md-sys-color-surface);
+          }
 
-              font-family: "Smiley Sans", sans-serif;
-              letter-spacing: 3px;
-              text-transform: uppercase;
-            }
-
-            p {
-              margin: 0 0 0 24px;
-            }
+          &:active {
+            box-shadow: 0 0 0 2px var(--md-sys-color-secondary);
           }
         }
 
-        &:nth-child(2) {
-          align-items: center;
+        .descriptions {
+          h3 {
+            margin: 0 0 0 26px;
 
-          padding: 18px 12px 12px 12px;
+            font-family: "Smiley Sans", sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+          }
 
-          border-radius: 26px;
-
-          background-color: var(--md-sys-color-background);
-
-          .site-posts {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-            width: 100%;
-
-            p {
-              margin: 0;
-
-              text-overflow: ellipsis;
-              white-space: nowrap;
-
-              overflow: hidden;
-            }
+          p {
+            margin: 0 0 0 24px;
           }
         }
       }

@@ -10,19 +10,5 @@
         <p>来自 {{ site.title }} &times jekyll-theme-m3</p>
       </div>
     </section>
-    <section>
-      <p>更多文章</p>
-      <div class="site-posts">
-        {%- for post in site.posts limit:3 -%}
-        <a href="{{ post.url }}" class="mbt" spec="text">
-          <p>{{ post.title }}</p>
-        </a>
-        {%- endfor -%} {%- if site.posts.size >= 3 -%}
-        <a href="/posts" class="mbt" spec="text">
-          <p>···</p>
-        </a>
-        {%- endif -%}
-      </div>
-    </section>
   </footer>
 </div>

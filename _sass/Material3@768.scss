@@ -23,10 +23,6 @@
     margin: 0;
     padding: 0 5vw 120px;
 
-    &::before {
-      display: none;
-    }
-
     #content-header,
     #content-header[spec="large"] {
       padding: 0;
@@ -95,6 +91,12 @@
 
       & > blockquote {
         margin-inline: 12px;
+      }
+    }
+
+    #posts-navigation {
+      a {
+        flex-grow: 1;
       }
     }
 
