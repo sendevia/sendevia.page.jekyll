@@ -1,13 +1,11 @@
 ---
+title: "AincradMix"
+description: "一个 osu! 皮肤"
 author: "sendevia"
 categories: osu!皮肤
-color: ""
-description: "一个 osu! 皮肤"
-header_image: "/assets/images/22/06/11/s0_amix_vision.webp"
-notips: false
-published: true
 tags: readme skin amix
-title: "AincradMix"
+color: ""
+header_image: "/assets/images/22/06/11/s0_amix_vision.webp"
 ---
 
 # 介绍
