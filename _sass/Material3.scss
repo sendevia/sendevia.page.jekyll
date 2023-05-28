@@ -307,6 +307,8 @@ ol {
     min-height: 380px;
     width: 100%;
 
+    word-break: break-word;
+
     background-color: var(--md-sys-color-secondary-container);
 
     clip-path: inset(0 round 0 0 15px 15px);
@@ -358,14 +360,7 @@ ol {
     &[spec="large"] {
       padding: 50px 80px;
 
-      min-height: 480px;
-
-      .header-container {
-        #title {
-          font-size: 140rem;
-          line-height: 140rem;
-        }
-      }
+      min-height: 544px;
     }
   }
 
