@@ -47,8 +47,13 @@
       span {
         position: absolute;
 
-        line-height: 1;
+        width: calc(100% - 88px);
 
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        overflow: hidden;
         transition: transform 0.4s, opacity 1s;
 
         &:nth-child(1) {
