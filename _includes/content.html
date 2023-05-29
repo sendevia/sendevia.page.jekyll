@@ -35,43 +35,37 @@
 
 <!-- 正常内容 -->
 {%- if page.notips == true -%}
-<div class="content-layout notips">
-  {{ content }}
-</div>
+<div class="content-layout notips">{{ content }}</div>
 {%- else -%}
 <div class="content-layout">
   <div id="content-tips">
     <!-- 日期 -->
     {%- if page.date -%}
-    <div title="{{ page.date | date: '%Y 年 %m 月 %d 日' }}" class="mib" spec="outlined">
+    <div title="发布日期：{{ page.date | date: '%Y 年 %m 月 %d 日' }}" class="mib" spec="outlined">
       <span>calendar_month</span>
     </div>
     {%- endif -%}
 
     <!-- 阅读时间 -->
-    <div
-      title="{%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟"
-      class="mib"
-      spec="outlined"
-    >
+    {%- assign read_estimate = page_words | divided_by: 120 -%}
+    <div title="估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟" class="mib" spec="outlined">
       <span>schedule</span>
     </div>
 
     <!-- 作者 -->
     {%- if page.author -%}
-    <div title="{{ page.author }}" class="mib" spec="outlined">
+    <div title="作者：{{ page.author }}" class="mib" spec="outlined">
       <span>person</span>
     </div>
     {%- endif -%}
 
     <!-- 目录分类 -->
     {%- if page.categories.size > 0 -%}
-    <div title="{{ page.categories }}" class="mib" spec="outlined">
+    <div title="分类：{{ page.categories }}" class="mib" spec="outlined">
       <span>category</span>
     </div>
     {%- endif -%}
   </div>
   <div id="content">{{ content }}</div>
 </div>
-{%- endif -%}
-{%- endif -%}
+{%- endif -%} {%- endif -%}
