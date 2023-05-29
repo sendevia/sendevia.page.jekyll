@@ -985,7 +985,13 @@ ol {
 }
 
 .page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
   padding: 5vw;
+
+  height: 100%;
 
   html,
   body {
@@ -994,35 +1000,38 @@ ol {
     background-color: var(--md-sys-color-error-container);
   }
 
-  h1 {
-    margin: 10vh 0;
+  #page-404-information {
+    margin-inline-start: 15px;
 
-    font-size: 6vw !important;
-  }
+    h1 {
+      margin: 6vh 0;
 
-  h3 {
-    margin: 1vh 0;
+      font-size: 100rem;
+    }
 
-    font-size: 3vh !important;
+    h3 {
+      margin-block-start: 1vh;
 
-    a {
-      text-decoration: underline;
+      font-size: 25rem;
+
+      a {
+        text-decoration: underline;
+      }
     }
   }
 
-  h4 {
-    font-size: 2.5vh !important;
-  }
-
-  #qr-code {
+  #page-404-qrcode {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
+    flex-wrap: wrap;
     justify-content: flex-start;
 
-    p {
-      margin: 0;
+    div {
+      margin-block-start: 10px;
+
+      p {
+        margin-inline-start: 10px;
+      }
     }
 
     span {

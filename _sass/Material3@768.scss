@@ -142,6 +142,17 @@
     }
   }
 
+  .page-404 {
+    #page-404-information{
+      h1 {
+        font-size: 75rem;
+      }
+      h3 {
+        font-size: 20rem;
+      }
+    }
+  }
+
   .mng {
     &[spec="bar"] {
       transform: translateY(0%);
