@@ -136,6 +136,7 @@ table {
         min-width: 10ch;
 
         font-weight: 500;
+        letter-spacing: 0.5px;
         text-transform: capitalize;
 
         border-left: 1px solid var(--md-sys-color-outline);
@@ -437,6 +438,8 @@ ol {
     & > h6 {
       margin-inline: 24px;
       padding-block: 24px 6px;
+
+      letter-spacing: 0;
     }
 
     & > p {
@@ -760,7 +763,7 @@ ol {
             margin: 0 0 0 26px;
 
             font-family: "Smiley Sans", sans-serif;
-            letter-spacing: 3px;
+            letter-spacing: 0.2px;
             text-transform: uppercase;
           }
 
@@ -859,10 +862,10 @@ ol {
         justify-content: center;
 
         position: sticky;
-        top: 4px;
+        top: 5px;
 
         height: 24px;
-        width: 48px;
+        width: 54px;
 
         color: var(--md-sys-color-inverse-on-surface);
         font-size: 18px;
