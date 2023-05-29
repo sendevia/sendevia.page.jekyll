@@ -70,4 +70,4 @@ exclude:
   - webpack.config.js
   - webpack/
 
-version: "23.528.0"
+version: "23.529.0"
