@@ -94,7 +94,7 @@ strong {
 }
 
 table {
-  display: block;
+  display: inline-block;
 
   margin: auto;
 
@@ -420,7 +420,7 @@ ol {
   }
 
   #content {
-    padding: 6px 12px 36px 12px;
+    padding: 6px 24px 36px 24px;
 
     width: 65vw;
 
@@ -436,14 +436,14 @@ ol {
     & > h4,
     & > h5,
     & > h6 {
-      margin-inline: 24px;
+      margin-inline: 12px;
       padding-block: 24px 6px;
 
       letter-spacing: 0;
     }
 
     & > p {
-      margin-inline: 42px;
+      margin-inline: 24px;
       padding-block: 6px 6px;
 
       letter-spacing: 1px;
@@ -456,7 +456,7 @@ ol {
 
     & > blockquote {
       margin-block-start: 18px;
-      margin-inline: 24px;
+      margin-inline: 12px;
       padding: 24px;
 
       color: var(--md-sys-color-on-tertiary-container);
@@ -542,7 +542,7 @@ ol {
         flex-wrap: nowrap;
         gap: 12px;
 
-        padding: 12px 12px 12px 30px;
+        padding: 12px;
 
         cursor: pointer;
         list-style: none;
@@ -581,7 +581,7 @@ ol {
     }
 
     & > div {
-      margin-inline: 42px;
+      margin-inline: 12px;
       padding-block: 12px 6px;
 
       &.footnotes {
@@ -643,12 +643,13 @@ ol {
       display: grid;
       gap: 12px;
 
-      margin-inline: 40px;
+      margin-inline: 24px;
       padding-block: 18px 6px;
     }
 
     ul {
-      padding: 0;
+      margin: 0;
+      padding-block: 18px 0;
     }
 
     mjx-container {
@@ -694,6 +695,18 @@ ol {
       align-items: flex-end;
 
       text-align: end;
+    }
+
+    p {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+
+      span {
+        @extend .material-symbols-rounded;
+
+        font-size: 18px;
+      }
     }
   }
 
@@ -920,6 +933,8 @@ ol {
 
       a {
         display: block;
+
+        max-width: 360px;
       }
 
       .mcd {

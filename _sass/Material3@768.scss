@@ -68,9 +68,9 @@
     }
 
     #content {
-      padding: 12px 12px 36px 12px;
+      padding: 0 12px 36px 12px;
 
-      width: 90vw;
+      width: 100%;
 
       & > div,
       & > h1,
@@ -80,13 +80,13 @@
       & > h5,
       & > h6 {
         margin-inline: 12px;
-        padding-block: 6px;
+        padding-block: 18px 6px;
       }
 
-      & > p,
-      & > ol,
-      & > ul {
-        margin-inline: 24px;
+      & > p {
+        margin-inline: 12px;
+
+        line-height: 24px;
       }
 
       & > blockquote {
@@ -143,7 +143,7 @@
   }
 
   .page-404 {
-    #page-404-information{
+    #page-404-information {
       h1 {
         font-size: 75rem;
       }

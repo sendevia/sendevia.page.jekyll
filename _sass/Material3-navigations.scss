@@ -67,6 +67,12 @@
             font-size: 24px;
             font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
             line-height: 24px;
+
+            transition: 0.3s;
+
+            &:hover {
+              transition: 0.5s;
+            }
           }
         }
       }
