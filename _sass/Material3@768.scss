@@ -182,8 +182,10 @@
   }
 
   .mtb {
-    top: 0;
-
     visibility: visible;
+
+    &[spec="small-centered"] {
+      top: 0;
+    }
   }
 }

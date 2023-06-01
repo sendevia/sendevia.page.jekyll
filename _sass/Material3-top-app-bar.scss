@@ -3,7 +3,6 @@
   @extend .disable-select;
 
   position: fixed;
-  top: -64px;
 
   width: 100%;
 
@@ -14,16 +13,14 @@
   visibility: hidden;
   z-index: 15;
 
-  &[spec="small"] {
-    height: 64px;
-  }
-
   &[spec="small-centered"] {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+
+    top: -64px;
 
     padding: 8px 4px;
 
@@ -86,6 +83,12 @@
           }
         }
       }
+    }
+
+    &[hidden="true"] {
+      top: -64px;
+
+      box-shadow: none;
     }
   }
 }

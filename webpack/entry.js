@@ -22,7 +22,6 @@ const mobileTipsIcon = document.querySelector("#mtb-mib-info");
 const mobileTipsModal = document.querySelector("#mdl-tips");
 
 window.onpageshow = function () {
-
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
 
   // 页面指示
@@ -80,13 +79,12 @@ window.onpageshow = function () {
   });
 
   // 滚动事件
+  var lastScrollY = 0;
   contentContainer.onscroll = function () {
-    const clientHeight = this.clientHeight;
-    const scrollHeight = this.scrollHeight;
     const scrollY = this.scrollTop;
 
     topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
-
+    topAppBar.setAttribute("hidden", scrollY >= 500 ? "true" : "false");
     contentHeader.style.opacity = scrollY >= 400 ? "0" : "1";
     scrollTopElement.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
@@ -94,11 +92,11 @@ window.onpageshow = function () {
       animation: ${scrollY >= 400 ? "popOut 0.6s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
 
-    // 阅读进度
-    // if (contentTips) {
-    //   const readPercent = (scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100;
-    //   progressElement.style.width = readPercent + "%";
-    // }
+    if (scrollY < lastScrollY) {
+      topAppBar.removeAttribute("hidden");
+    }
+
+    lastScrollY = scrollY <= 0 ? 0 : scrollY;
   };
 
   // 缩放事件
