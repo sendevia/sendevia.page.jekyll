@@ -291,7 +291,6 @@ ol {
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 20px;
-  grid-column-start: 2;
 
   padding-block-end: 40px;
 
@@ -300,7 +299,7 @@ ol {
   animation: fadeIn 1s cubic-bezier(0.5, 1, 0.55, 1) 1 normal both;
 
   #content-header {
-    display: grid;
+    display: flex;
     align-content: center;
 
     padding: 120px 64px;
@@ -800,7 +799,7 @@ ol {
   bottom: 20px;
   right: 20px;
 
-  z-index: 11;
+  z-index: 21;
 
   .mfb {
     color: var(--md-sys-color-on-primary-container);

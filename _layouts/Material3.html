@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  <!-- 头部 -->
-  <head>
-    <script type="application/javascript" src="/assets/js/bundle.js?v={{ site.version }}" defer></script>
-    <link rel="stylesheet" href="/assets/css/m3-main.css?v={{ site.version }}" />
-    {%- include head.html -%}
-    <!--  -->
-    {%- seo -%}
-  </head>
+  {%- include head.html -%}
+  <!--  -->
   <body class="material-theme" {%- if page.color -%} color="{{ page.color }}" {%- endif -%}>
     <!-- 404 -->
     {%- if page.permalink == "/404.html" -%}
-    <!-- 404内容 -->
     {{ content }}
     <!--  -->
     {%- else -%}
@@ -23,48 +16,25 @@
     <!-- 导航 -->
     {%- include navigation.html -%}
 
+    <!-- 目录 -->
     <div class="mnd">
       {%- if page.toc -%}
       <p>目录</p>
-      <!-- 目录内容 -->
       {% toc %}
       <!--  -->
       {%- else -%}
       <p>此页面没有目录</p>
       {%- endif -%}
     </div>
-
+    
+    <!-- 内容 -->
     <div class="content-container">
       <div class="content-flow">
-        <!-- 内容 -->
         {%- include content.html -%}
-        <!-- 文章导航 -->
-        <div id="posts-navigation">
-          {% if page.previous %}
-          <a href="{{ page.previous.url }}">
-            <div class="mcd" spec="clear">
-              <div class="mcd-supporting previous-post">
-                <p><span>west</span>上一篇</p>
-                <h3>{{ page.previous.title }}</h3>
-              </div>
-            </div>
-          </a>
-          {% endif %} {% if page.next %}
-          <a href="{{ page.next.url }}">
-            <div class="mcd" spec="clear">
-              <div class="mcd-supporting next-post">
-                <p>下一篇<span>east</span></p>
-                <h3>{{ page.next.title }}</h3>
-              </div>
-            </div>
-          </a>
-          {% endif %}
-        </div>
-        <!-- 页脚 -->
-        {%- include footer.html -%}
       </div>
     </div>
 
+    <!-- 底部 Fab -->
     <div class="right-corner-fabs">
       <div class="mfb" spec="primary" id="rcf-mfb-topbutton">keyboard_double_arrow_up</div>
     </div>
