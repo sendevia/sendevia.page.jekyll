@@ -4,24 +4,26 @@ html,
 body {
   .material-theme {
     &[hide-top-app-bar="true"] {
-      .page-index {
-        .timeline {
-          .index-level1 {
-            .posts-month {
-              top: 10px;
+      @media screen and (max-width: 768px) {
+        .page-index {
+          .timeline {
+            .index-level1 {
+              .posts-month {
+                top: 10px;
 
-              transition: 0.3s;
+                transition: 0.3s;
+              }
             }
           }
         }
-      }
 
-      .mtb {
-        &[spec="small-centered"] {
-          top: -64px;
+        .mtb {
+          &[spec="small-centered"] {
+            top: -64px;
 
-          box-shadow: none;
-          transition: 0.3s;
+            box-shadow: none;
+            transition: 0.3s;
+          }
         }
       }
     }
