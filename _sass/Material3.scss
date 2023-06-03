@@ -1,18 +1,18 @@
 // 主体部分
 
+@font-face {
+  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
+
+  font-family: Smiley Sans;
+  font-style: italic;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  @font-face {
-    src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
-
-    font-family: Smiley Sans;
-    font-style: italic;
-  }
-
   margin: 0;
   padding: 0;
 
@@ -213,7 +213,6 @@ body {
 
         position: absolute;
         left: -20px;
-        top: 2px;
 
         height: 16px;
         width: 16px;
@@ -222,6 +221,7 @@ body {
 
         -webkit-mask: var(--via-svg-list-bullet) no-repeat;
         mask: var(--via-svg-list-bullet) no-repeat;
+        transform: translate(0, 30%);
       }
     }
   }
