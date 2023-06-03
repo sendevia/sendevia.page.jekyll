@@ -1,3 +1,5 @@
+// 1024px 适配
+
 @media screen and (max-width: 1024px) {
   html,
   body {
@@ -5,41 +7,41 @@
       height: 2px;
       width: 2px;
     }
-  }
 
-  .content-flow {
-    #content-header[spec="large"] {
-      padding: 60px 50px;
+    .content-flow {
+      #content-header[spec="large"] {
+        padding: 60px 50px;
 
-      .header-container {
-        #title {
-          font-size: 110rem;
-          line-height: 110rem;
+        .header-container {
+          #title {
+            font-size: 110rem;
+            line-height: 110rem;
+          }
+
+          #subtitle {
+            font-size: 23rem;
+            line-height: 23rem;
+          }
+        }
+      }
+
+      #content {
+        width: 75vw;
+      }
+
+      #footer-container {
+        hr {
+          width: 90%;
         }
 
-        #subtitle {
-          font-size: 23rem;
-          line-height: 23rem;
+        footer {
+          margin: 0 8vw;
         }
       }
     }
 
-    #content {
-      width: 75vw;
+    .page-index {
+      width: calc(90vw - 160px);
     }
-
-    #footer-container {
-      hr {
-        width: 90%;
-      }
-
-      footer {
-        margin: 0 8vw;
-      }
-    }
-  }
-
-  .page-index {
-    width: calc(90vw - 160px);
   }
 }

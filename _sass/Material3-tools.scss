@@ -1,11 +1,7 @@
-@font-face {
-  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
+// 通用的可引用片段
 
-  font-family: Smiley Sans;
-  font-style: italic;
-}
-
-:root {
+html,
+body {
   .material-theme {
     .material-symbols-rounded {
       @extend .disable-select;
@@ -19,6 +15,7 @@
     --via-svg-timeline-point-top: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGcgc3R5bGU9ImRpc3BsYXk6aW5saW5lIj48cGF0aCBkPSJNMTYgMjMuNDA0VjMyIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS13aWR0aDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZSIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjcuNDA0IiBzdHlsZT0iZGlzcGxheTppbmxpbmU7ZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS13aWR0aDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIi8+PC9nPjwvc3ZnPg==");
     --via-svg-timeline-point-middle: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGcgc3R5bGU9ImRpc3BsYXk6aW5saW5lIj48cGF0aCBkPSJNMTYgMjMuNDA0VjMyTTE2IDB2OC41OTYiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iNy40MDQiIHN0eWxlPSJkaXNwbGF5OmlubGluZTtmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz48L2c+PC9zdmc+");
     --via-svg-timeline-point-bottom: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGcgc3R5bGU9ImRpc3BsYXk6aW5saW5lIj48cGF0aCBkPSJNMTYgMHY4LjU5NiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2Utd2lkdGg6NDtzdHJva2UtZGFzaGFycmF5Om5vbmUiLz48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSI3LjQwNCIgc3R5bGU9ImRpc3BsYXk6aW5saW5lO2ZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2Utd2lkdGg6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPjwvZz48L3N2Zz4=");
+    --via-svg-list-bullet: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0ibTEzLjcxNiA3LjQ1Ni0zLjk4IDIuMTc3LTIuMTc2IDMuOTgtMi4xNzctMy45OC0zLjk4LTIuMTc3IDMuOTgtMi4xNzZMNy41NiAxLjNsMi4xNzYgMy45OFoiIHN0eWxlPSJmaWxsOiMwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMDAwNzQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxLjg2IDEuOTQ0KSBzY2FsZSguODEyMTgpIi8+PC9zdmc+");
 
     color: var(--md-sys-color-on-background);
 

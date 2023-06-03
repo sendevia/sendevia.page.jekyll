@@ -1,4 +1,6 @@
 // https://m3.material.io/components/top-app-bar/
+// 移动端标题栏
+
 .mtb {
   @extend .disable-select;
 
@@ -9,7 +11,7 @@
   letter-spacing: 0;
 
   overflow: hidden;
-  transition: 0.4s;
+  transition: 0.5s;
   visibility: hidden;
   z-index: 15;
 
@@ -83,12 +85,6 @@
           }
         }
       }
-    }
-
-    &[hidden="true"] {
-      top: -64px;
-
-      box-shadow: none;
     }
   }
 }

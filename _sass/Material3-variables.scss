@@ -1,9 +1,15 @@
-:root {
+// 通用变量
+
+html,
+body {
   .material-theme {
     --md-sys-state-dragged-state-layer-opacity: 0.16;
     --md-sys-state-focus-state-layer-opacity: 0.12;
     --md-sys-state-hover-state-layer-opacity: 0.08;
     --md-sys-state-pressed-state-layer-opacity: 0.12;
+
+    --md-sys-animate-in: 0.5s cubic-bezier(0, 0.25, 0.25, 1);
+    --md-sys-animate-out: 0.3s cubic-bezier(0, 0.25, 0.25, 1);
 
     h1,
     h2,

@@ -5,6 +5,7 @@ import "simple-jekyll-search";
 const themeImageProvider = new Image();
 const mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const cutsomThemeColor = document.body.getAttribute("color");
+const basicTheme = document.querySelector(".material-theme");
 const contentContainer = document.querySelector(".content-container");
 const contentHeader = document.querySelector("#content-header");
 const contentHeaderImage = document.querySelector("#header_image");
@@ -84,16 +85,16 @@ window.onpageshow = function () {
     const scrollY = this.scrollTop;
 
     topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
-    topAppBar.setAttribute("hidden", scrollY >= 500 ? "true" : "false");
+    basicTheme.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
     contentHeader.style.opacity = scrollY >= 400 ? "0" : "1";
     scrollTopElement.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-      animation: ${scrollY >= 400 ? "popOut 0.6s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
+      animation: ${scrollY >= 400 ? "popOut 0.5s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
 
     if (scrollY < lastScrollY) {
-      topAppBar.removeAttribute("hidden");
+      basicTheme.removeAttribute("hide-top-app-bar");
     }
 
     lastScrollY = scrollY <= 0 ? 0 : scrollY;

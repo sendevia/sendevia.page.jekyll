@@ -1,0 +1,29 @@
+// 操作覆盖层
+
+html,
+body {
+  .material-theme {
+    &[hide-top-app-bar="true"] {
+      .page-index {
+        .timeline {
+          .index-level1 {
+            .posts-month {
+              top: 10px;
+
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+
+      .mtb {
+        &[spec="small-centered"] {
+          top: -64px;
+
+          box-shadow: none;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}

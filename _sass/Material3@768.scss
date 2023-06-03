@@ -1,3 +1,5 @@
+// 768px 适配
+
 @media screen and (max-width: 768px) {
   html,
   body {
@@ -5,187 +7,189 @@
       height: 1px;
       width: 1px;
     }
-  }
 
-  a {
-    width: auto;
-  }
+    a {
+      width: auto;
+    }
 
-  .content-container {
-    margin-left: 0;
-
-    &[compress] {
+    .content-container {
       margin-left: 0;
-    }
-  }
 
-  .content-flow {
-    margin: 0;
-    padding: 0 3vw 120px;
-
-    #content-header,
-    #content-header[spec="large"] {
-      padding: 0;
-
-      min-height: 0;
-
-      border-radius: 0;
-
-      background-color: #0000;
-
-      clip-path: none;
-
-      .header-container {
-        padding-block-end: 10px;
-        padding-block-start: 100px;
-
-        #title {
-          padding-inline-start: 5px;
-
-          font-size: 70rem;
-          line-height: 70rem;
-        }
-
-        #subtitle {
-          padding-inline-start: 8px;
-
-          font-size: 23rem;
-          line-height: 23rem;
-        }
-
-        #header_image {
-          display: none;
-        }
+      &[compress] {
+        margin-left: 0;
       }
     }
 
-    .content-layout {
-      flex-direction: column;
-    }
+    .content-flow {
+      margin: 0;
+      padding: 0 3vw 120px;
 
-    #content-tips {
-      display: none;
-    }
+      #content-header,
+      #content-header[spec="large"] {
+        padding: 0;
 
-    #content {
-      padding: 0 12px 36px 12px;
+        min-height: 0;
 
-      width: 100%;
+        border-radius: 0;
 
-      & > div,
-      & > h1,
-      & > h2,
-      & > h3,
-      & > h4,
-      & > h5,
-      & > h6 {
-        margin-inline: 12px;
-        padding-block: 18px 6px;
-      }
+        background-color: #0000;
 
-      & > p {
-        margin-inline: 12px;
+        clip-path: none;
 
-        line-height: 24px;
-      }
+        .header-container {
+          padding-block-end: 10px;
+          padding-block-start: 100px;
 
-      & > blockquote {
-        margin-inline: 12px;
-      }
-    }
+          #title {
+            padding-inline-start: 5px;
 
-    #posts-navigation {
-      a {
-        flex-grow: 1;
-      }
-    }
-
-    #footer-container {
-      hr {
-        width: 100%;
-      }
-
-      footer {
-        margin: 0;
-
-        section:nth-child(1) {
-          .site-logo {
-            margin: 0 0 10px 0;
+            font-size: 70rem;
+            line-height: 70rem;
           }
 
-          .descriptions {
-            h3,
-            p {
-              margin: 0 0 0 6px;
+          #subtitle {
+            padding-inline-start: 8px;
+
+            font-size: 23rem;
+            line-height: 23rem;
+          }
+
+          #header_image {
+            display: none;
+          }
+        }
+      }
+
+      .content-layout {
+        flex-direction: column;
+      }
+
+      #content-tips {
+        display: none;
+      }
+
+      #content {
+        padding: 0 12px 36px 12px;
+
+        width: 100%;
+
+        & > div,
+        & > h1,
+        & > h2,
+        & > h3,
+        & > h4,
+        & > h5,
+        & > h6 {
+          margin-inline: 12px;
+          padding-block: 18px 6px;
+        }
+
+        & > p {
+          margin-inline: 12px;
+
+          line-height: 24px;
+        }
+
+        & > blockquote {
+          margin-inline: 12px;
+        }
+      }
+
+      #posts-navigation {
+        a {
+          flex-grow: 1;
+        }
+      }
+
+      #footer-container {
+        hr {
+          width: 100%;
+        }
+
+        footer {
+          margin: 0;
+
+          section:nth-child(1) {
+            .site-logo {
+              margin: 0 0 10px 0;
+            }
+
+            .descriptions {
+              h3,
+              p {
+                margin: 0 0 0 6px;
+              }
             }
           }
         }
       }
     }
-  }
 
-  .right-corner-fabs {
-    bottom: 100px;
-  }
+    .right-corner-fabs {
+      bottom: 100px;
+    }
 
-  .page-index {
-    width: 100%;
+    .page-index {
+      width: 100%;
 
-    margin-block-start: 30px;
+      margin-block-start: 30px;
 
-    .timeline {
-      .index-level1 {
-        .posts-month {
-          top: 68px;
+      .timeline {
+        .index-level1 {
+          .posts-month {
+            top: 68px;
+
+            transition: 0.5s;
+          }
         }
       }
     }
-  }
 
-  .page-404 {
-    #page-404-information {
-      h1 {
-        font-size: 75rem;
-      }
-      h3 {
-        font-size: 20rem;
+    .page-404 {
+      #page-404-information {
+        h1 {
+          font-size: 75rem;
+        }
+        h3 {
+          font-size: 20rem;
+        }
       }
     }
-  }
 
-  .mng {
-    &[spec="bar"] {
-      transform: translateY(0%);
+    .mng {
+      &[spec="bar"] {
+        transform: translateY(0%);
+        visibility: visible;
+        z-index: 11;
+      }
+
+      &[spec="rail"] {
+        visibility: hidden;
+      }
+    }
+
+    .mnd {
+      left: -100%;
+      top: 64px;
+
+      height: calc(100% - 144px);
+      max-width: 270px;
+
+      border-radius: 0;
+
+      z-index: 20;
+
+      &[show] {
+        left: 0px;
+      }
+    }
+
+    .mtb {
       visibility: visible;
-      z-index: 11;
-    }
 
-    &[spec="rail"] {
-      visibility: hidden;
-    }
-  }
-
-  .mnd {
-    left: -100%;
-    top: 64px;
-
-    height: calc(100% - 144px);
-    max-width: 270px;
-
-    border-radius: 0;
-
-    z-index: 20;
-
-    &[show] {
-      left: 0px;
-    }
-  }
-
-  .mtb {
-    visibility: visible;
-
-    &[spec="small-centered"] {
-      top: 0;
+      &[spec="small-centered"] {
+        top: 0;
+      }
     }
   }
 }

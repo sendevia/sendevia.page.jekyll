@@ -1,11 +1,16 @@
+// 375px 适配
+
 @media screen and (max-width: 375px) {
-  .content-flow {
-    .content-header,
-    .content-header[spec="large"] {
-      .header-container {
-        #title {
-          font-size: 50rem;
-          word-break: break-word;
+  html,
+  body {
+    .content-flow {
+      .content-header,
+      .content-header[spec="large"] {
+        .header-container {
+          #title {
+            font-size: 50rem;
+            word-break: break-word;
+          }
         }
       }
     }

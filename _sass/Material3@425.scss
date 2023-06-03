@@ -1,43 +1,48 @@
+// 425px 适配
+
 @media screen and (max-width: 425px) {
-  .content-flow {
-    #content-header,
-    #content-header[spec="large"] {
-      .header-container {
-        #title {
-          font-size: 60rem;
-          line-height: 60rem;
+  html,
+  body {
+    .content-flow {
+      #content-header,
+      #content-header[spec="large"] {
+        .header-container {
+          #title {
+            font-size: 60rem;
+            line-height: 60rem;
+          }
+
+          #subtitle {
+            font-size: 20rem;
+          }
         }
+      }
 
-        #subtitle {
-          font-size: 20rem;
+      #content {
+        & > div,
+        & > h1,
+        & > h2,
+        & > h3,
+        & > h4,
+        & > h5,
+        & > h6,
+        & > p,
+        & > ol {
+          margin-inline: 12px;
         }
       }
     }
 
-    #content {
-      & > div,
-      & > h1,
-      & > h2,
-      & > h3,
-      & > h4,
-      & > h5,
-      & > h6,
-      & > p,
-      & > ol {
-        margin-inline: 12px;
+    .page-index {
+      .timeline {
+        .index-level3 {
+          margin-inline-start: 0;
+        }
       }
     }
-  }
 
-  .page-index {
-    .timeline {
-      .index-level3 {
-        margin-inline-start: 0;
-      }
+    .page-about .mcd {
+      max-width: 100%;
     }
-  }
-
-  .page-about .mcd {
-    max-width: 100%;
   }
 }
