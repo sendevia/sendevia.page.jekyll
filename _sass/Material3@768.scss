@@ -139,7 +139,15 @@
           .posts-month {
             top: 68px;
 
-            transition: 0.5s;
+            transition: var(--md-sys-animate-in);
+          }
+        }
+
+        .index-level2 {
+          .posts-day {
+            top: 98px;
+
+            transition: var(--md-sys-animate-in);
           }
         }
       }

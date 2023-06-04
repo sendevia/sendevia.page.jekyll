@@ -9,9 +9,13 @@ body {
           .timeline {
             .index-level1 {
               .posts-month {
-                top: 10px;
+                top: 5px;
+              }
+            }
 
-                transition: 0.3s;
+            .index-level2 {
+              .posts-day {
+                top: 35px;
               }
             }
           }

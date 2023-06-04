@@ -21,6 +21,11 @@
 
     .page-index {
       .timeline {
+        .posts-month,
+        .posts-day {
+          transform: translateX(-20px);
+        }
+
         .index-level3 {
           margin-inline-start: 0;
         }

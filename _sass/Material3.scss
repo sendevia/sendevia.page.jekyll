@@ -919,7 +919,8 @@ body {
 
           background-color: var(--md-sys-color-inverse-surface);
 
-          z-index: 11;
+          z-index: 12;
+          transition: var(--md-sys-animate-out);
         }
 
         &:nth-last-child(1) {
@@ -937,6 +938,9 @@ body {
           align-items: center;
           justify-content: center;
 
+          position: sticky;
+          top: 35px;
+
           height: 66px;
           width: 66px;
 
@@ -948,11 +952,14 @@ body {
           border-radius: 6px 6px 12px;
 
           background-color: var(--md-sys-color-surface-variant);
+
+          z-index: 11;
+          transition: var(--md-sys-animate-out);
         }
       }
 
       .index-level3 {
-        margin-inline-start: 60px;
+        margin-inline-start: 72px;
       }
 
       .posts-card {
