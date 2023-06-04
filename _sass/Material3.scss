@@ -163,6 +163,10 @@ body {
         &:first-child > th:last-child {
           border-right: none;
         }
+
+        &:last-child {
+          border-bottom: 1px solid var(--md-sys-color-outline);
+        }
       }
     }
 
@@ -193,8 +197,14 @@ body {
           }
         }
 
-        &:first-child > td:last-child {
-          border-right: none;
+        &:first-child {
+          td {
+            border-top: none;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
         }
       }
     }
