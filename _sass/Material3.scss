@@ -1113,10 +1113,7 @@ body {
     justify-content: center;
   }
 
-  #mdl-tips-date,
-  #mdl-tips-estimate,
-  #mdl-tips-author,
-  #mdl-tips-categories {
+  .mdl-tips-item {
     display: flex;
     align-items: center;
     flex-direction: row;

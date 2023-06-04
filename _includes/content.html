@@ -62,6 +62,13 @@
       <span>category</span>
     </div>
     {%- endif -%}
+
+    <!-- 自定义的主题颜色 -->
+    {%- if page.color -%}
+    <div title="自定义的主题颜色：{{ page.color }}" class="mib" spec="outlined">
+      <span>palette</span>
+    </div>
+    {%- endif -%}
   </div>
   <div id="content">{{ content }}</div>
 </div>
