@@ -32,7 +32,7 @@ published: true
           {%- for post in day.items -%}
           <a href="{{ post.url }}">
             <div class="mcd" spec="clear">
-              <img src="{{ post.header_image }}" alt="封面" />
+              <img src="{{ post.header_image }}" alt="{{ post.title }}封面" />
               <div class="mcd-supporting">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
