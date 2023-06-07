@@ -1,6 +1,6 @@
 {
   "name": "sendevia.page.jekyll",
-  "version": "23.603.1",
+  "version": "23.607.0",
   "description": "一个博客",
   "scripts": {
     "dev": "npx webpack -w & bundle exec jekyll serve --livereload",
@@ -17,15 +17,15 @@
   },
   "homepage": "https://sendevia.top",
   "dependencies": {
-    "@material/material-color-utilities": "^0.2.5",
+    "@material/material-color-utilities": "^0.2.6",
     "simple-jekyll-search": "^1.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.22.1",
     "babel-loader": "^8.3.0",
     "babel-preset-env": "^1.7.0",
-    "browserslist": "^4.21.5",
-    "webpack": "^5.79.0",
+    "browserslist": "^4.21.7",
+    "webpack": "^5.85.0",
     "webpack-cli": "^4.10.0"
   }
 }
