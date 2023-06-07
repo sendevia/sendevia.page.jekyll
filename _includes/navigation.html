@@ -113,7 +113,7 @@
       {%- endif -%}
 
       <!-- 自定义的主题颜色 -->
-      {%- if page.color -%}
+      {%- if page.color and page.color != "" -%}
       <div class="mdl-tips-item">
         <div class="mib" spec="tonal" disabled>
           <span>palette</span>

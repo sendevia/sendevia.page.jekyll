@@ -64,7 +64,7 @@
     {%- endif -%}
 
     <!-- 自定义的主题颜色 -->
-    {%- if page.color -%}
+    {%- if page.color and page.color != "" -%}
     <div title="自定义的主题颜色：{{ page.color }}" class="mib" spec="outlined">
       <span>palette</span>
     </div>
