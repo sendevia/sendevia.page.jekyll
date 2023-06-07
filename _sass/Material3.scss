@@ -99,10 +99,10 @@ body {
   table {
     display: inline-block;
 
-    margin: auto;
+    margin-inline-start: 12px;
 
     max-width: max-content;
-    width: 100%;
+    width: calc(100% - 24px);
 
     border-collapse: collapse;
     border-radius: 24px;
@@ -242,6 +242,12 @@ body {
 
     li {
       @extend .body-large;
+
+      .rouge-code {
+        pre {
+          white-space: break-spaces;
+        }
+      }
     }
 
     &.task-list {
@@ -664,6 +670,12 @@ body {
               text-underline-offset: 4px;
             }
           }
+        }
+
+        &.highlighter-rouge {
+          padding-block: 0;
+
+          width: calc(100% - 24px);
         }
       }
 

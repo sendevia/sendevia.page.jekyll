@@ -8,6 +8,7 @@ code {
     padding-inline: 6px;
 
     color: var(--md-sys-color-on-tertiary);
+    word-break: break-word;
 
     border-radius: 4px;
 
@@ -15,151 +16,502 @@ code {
   }
 }
 
-div.highlight {
+div.highlighter-rouge {
+  @extend .body-large;
+
+  display: inline-block;
+
+  position: relative;
+
+  width: 100%;
+
+  margin-block-start: 18px;
+
+  color: var(--md-sys-color-on-surface);
+  word-break: break-word;
+
   border-radius: 12px;
+  outline: 1px solid var(--md-sys-color-surface-variant);
 
-  pre {
-    @extend .body-large;
+  box-shadow: 0px -12px 0 1px var(--md-sys-color-surface-variant), var(--md-sys-elevation-level5);
 
-    display: inline-block;
-
-    width: 100%;
-
-    margin-block-start: 12px;
-    padding: 12px;
-
-    color: var(--md-sys-color-on-surface);
-    white-space: pre-wrap;
-    word-break: break-word;
+  code {
+    display: flex;
 
     border-radius: 12px;
 
-    background-color: var(--md-sys-color-on-secondary);
+    background: repeating-linear-gradient(#1e1e1e 0.08px 20px, #212121 15px 40px);
+  }
+
+  pre {
+    margin: 0;
+  }
+
+  .rouge-table {
+    margin-inline: 0;
+
+    width: 100%;
+
+    border-radius: 12px;
+
+    box-shadow: none;
+
+    .rouge-gutter,
+    .rouge-code {
+      padding-block: 20px;
+      padding-inline: 20px;
+
+      line-height: 19.98px;
+
+      background: repeating-linear-gradient(#1e1e1e 0.08px 20px, #212121 15px 40px);
+    }
+
+    .rouge-gutter {
+      position: sticky;
+      left: 0;
+
+      outline: 1px solid var(--md-sys-color-surface-variant);
+    }
+
+    .rouge-code {
+      border-left: none;
+    }
+
+    .lineno,
+    .rouge-code pre {
+      color: #ffffff;
+      font-family: "Source Code Pro", monospace;
+      letter-spacing: 0;
+    }
+
+    .lineno {
+      text-align: right;
+    }
   }
 }
 
 .highlight {
-  .gh {
-    color: #999999;
-  }
-
-  .sr,
-  .gs {
-    color: #f6aa11;
-  }
-
-  .go {
-    color: #888888;
-  }
-
-  .gp {
-    color: #555555;
-  }
-
-  gu {
-    color: #aaaaaa;
-  }
-
-  .nb {
-    color: #f6aa11;
-  }
-
-  .c,
-  .c1,
-  .cd,
-  .ch,
-  .cp,
-  .cpf,
-  .cs,
-  cm {
-    color: #59574d;
-  }
-
-  .err,
-  .gr,
-  .gt {
-    color: #b80e0e;
-  }
-
-  .gd,
-  .ge,
-  .gi {
-    color: #49483e;
-  }
-
-  .kc,
-  .kd,
-  .kr,
-  .kt,
-  .no {
-    color: #00d3ff;
-  }
-
-  .il,
-  .m,
-  .mb,
-  .mf,
-  .mh,
-  .mi,
-  .mo,
-  .mx,
-  .sc,
-  .se,
-  .ss {
-    color: #ae81ff;
-  }
-
-  .dl,
-  .s,
-  .s1,
-  .s2,
-  .sa,
-  .sb,
-  .sd,
-  .sh,
-  .si,
-  .sx {
-    color: #ecffaf;
-  }
-
-  .fm,
-  .na,
-  .nc,
-  .nd,
-  .ne,
-  .nf {
-    color: #ecff00;
-  }
-
-  .bp,
-  .n,
-  .ni,
-  .nl,
-  .nn,
-  .nv,
-  .nx,
-  .py,
-  .vc,
-  .vg,
-  .vi,
-  .vm,
-  .w {
+  .w,
+  .nd {
+    // w: Specially highlighted whitespace
+    // nd: For decorators in languages such as Python or Java
     color: #ffffff;
   }
 
-  .k,
+  .err {
+    // Lexer errors
+    color: #cc4125;
+  }
+
+  .x,
+  .kp {
+    // x: Token for data not matched by a parser (e.g. HTML markup in PHP code)
+    // kp: Keywords that aren't really keywords
+    color: #ff502d;
+  }
+
+  .k {
+    // Any keyword
+    color: #ffd75f;
+  }
+
+  .kc {
+    // Keywords that are constants
+    color: #6894d9;
+  }
+
+  .kd,
+  .n,
+  .nf {
+    // kd: Keywords used for variable declaration (e.g. `var` in javascript)
+    // n: Variable/function names
+    // nf: Function names
+    color: #8ac3cf;
+  }
+
   .kn,
-  .kp,
-  .kv,
-  .nt,
+  .nn {
+    // kn: Keywords used for namespace declarations
+    // nn: Token for namespaces
+    color: #6fa8dc;
+  }
+
+  .kr {
+    // Keywords which are reserved (such as `end` in Ruby)
+    color: #b76e94;
+  }
+
+  .kt {
+    // Keywords wich refer to a type id (such as `int` in C)
+    color: #8cb878;
+  }
+
+  .na {
+    // Attributes (in HTML for instance)
+    color: #9d87dc;
+  }
+
+  .nb {
+    // Builtin names which are available in the global namespace
+    color: #84b1f7;
+  }
+
+  .bp {
+    // Builtin names that are implicit (such as `self` in Ruby)
+    color: #8ac3cf;
+  }
+
+  .nc {
+    // For class declaration
+    color: #ffc382;
+  }
+
+  .nt {
+    // Tag mainly for markup such as XML or HTML
+    color: #84b1f7;
+  }
+
+  .no,
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    // no: For constants
+    // nv: Token for variables
+    // vc: Token for class variables (e.g. `@@var` in Ruby)
+    // vg: For global variables (such as `$LOAD_PATH` in Ruby)
+    // vi: Token for instance variables (such as `@var` in Ruby)
+    color: #7cbaf2;
+  }
+
+  .ne {
+    // Exceptions and errors (e.g. `ArgumentError` in Ruby)
+    color: #ff8b8b;
+  }
+
+  .py,
+  .nl,
+  .nx {
+    // py: Token for properties
+    // nl: For label names
+    // nx: For other names
+    color: #8ac3cf;
+  }
+
+  .l,
+  .ld,
+  .sb,
+  .sc,
+  .sd,
+  .s2,
+  .se,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss,
+  .m,
+  .mf,
+  .mh,
+  .mi,
+  .il,
+  .mo,
+  .mx,
+  .mb,
+  .g,
+  .gd,
+  .ge,
+  .gr,
+  .gh,
+  .gi,
+  .go,
+  .gp,
+  .gs,
+  .gu,
+  .gt,
+  .gl {
+    color: #ffffff;
+  }
+
+  .s {
+    // String literals
+    color: #ebd8a5;
+  }
+
+  .sh {
+    // For "heredoc" strings (e.g. in Ruby)
+    color: #ffe6a1;
+  }
+
   .o,
   .ow {
-    color: #ff6549;
+    // o: Operators (commonly `+`, `-`, `/`, `*",
+    // ow: Word operators (e.g. `and",
+    color: #ff8f45;
+  }
+
+  .p {
+    // Punctuation which is not an operator
+    color: #d6d6d6;
+  }
+
+  .c,
+  .cm,
+  .c1,
+  .cs {
+    color: #474747;
+  }
+
+  .cp,
+  .cpf,
+  .ni {
+    // cp: Preprocessor comments such as `<% %>` in ERb
+    // cpf: Unknown
+    // ni: Token for entitites such as `&nbsp;` in HTML
+    color: #777777;
   }
 }
 
-.language-ruby {
-  .n {
-    color: #ffacac;
+// 最近更新：2023/2/8
+// https://github.com/rouge-ruby/rouge/blob/master/docs/Languages.md
+$language: (
+  "ABAP": "abap",
+  "ActionScript": "actionscript",
+  "Ada": "ada",
+  "Apache": "apache",
+  "Apex": "apex",
+  "API Blueprint": "apiblueprint",
+  "AppleScript": "applescript",
+  "ArmAsm": "armasm",
+  "Augeas": "augeas",
+  "Awk": "awk",
+  "Batchfile": "batchfile",
+  "BBCBASIC": "bbcbasic",
+  "BibTeX": "bibtex",
+  "BIML": "biml",
+  "BPF": "bpf",
+  "Brainfuck": "brainfuck",
+  "BrightScript": "brightscript",
+  "1C (BSL)": "bsl",
+  "C": "c",
+  "Ceylon": "ceylon",
+  "CFScript": "cfscript",
+  "Cisco IOS": "cisco_ios",
+  "Clean": "clean",
+  "Clojure": "clojure",
+  "CMake": "cmake",
+  "CMHG": "cmhg",
+  "CoffeeScript": "coffeescript",
+  "Common Lisp": "common_lisp",
+  "Config File": "conf",
+  "Console": "console",
+  "Coq": "coq",
+  "C++": "cpp",
+  "Crystal": "crystal",
+  "C#": "csharp",
+  "CSS": "css",
+  "csvs": "csvs",
+  "CUDA": "cuda",
+  "Cypher": "cypher",
+  "Cython": "cython",
+  "D": "d",
+  "Dafny": "dafny",
+  "Dart": "dart",
+  "Datastudio": "datastudio",
+  "diff": "diff",
+  "digdag": "digdag",
+  "Docker": "docker",
+  "DOT": "dot",
+  "ECL": "ecl",
+  "EEX": "eex",
+  "Eiffel": "eiffel",
+  "Elixir": "elixir",
+  "Elm": "elm",
+  "Email": "email",
+  "EPP": "epp",
+  "ERB": "erb",
+  "Erlang": "erlang",
+  "Escape": "escape",
+  "Factor": "factor",
+  "Fortran": "fortran",
+  "FreeFEM": "freefem",
+  "FSharp": "fsharp",
+  "GDScript": "gdscript",
+  "GHC Cmm (C--)": "ghc-cmm",
+  "GHC Core": "ghc-core",
+  "Gherkin": "gherkin",
+  "GLSL": "glsl",
+  "Go": "go",
+  "Gradle": "gradle",
+  "Graphql": "graphql",
+  "Groovy": "groovy",
+  "Hack": "hack",
+  "Haml": "haml",
+  "Handlebars": "handlebars",
+  "Haskell": "haskell",
+  "Haxe": "haxe",
+  "Hashicorp Configuration Language": "hcl",
+  "HLSL": "hlsl",
+  "HOCON": "hocon",
+  "HQL": "hql",
+  "HTML": "html",
+  "HTTP": "http",
+  "HyLang": "hylang",
+  "IDL": "idlang",
+  "Idris": "idris",
+  "IgorPro": "igorpro",
+  "INI": "ini",
+  "Io": "io",
+  "Irb": "irb",
+  "Irb_output": "irb_output",
+  "Isabelle": "isabelle",
+  "ISBL": "isbl",
+  "J": "j",
+  "Janet": "janet",
+  "Java": "java",
+  "JavaScript": "javascript",
+  "Jinja": "jinja",
+  "JSL": "jsl",
+  "JSON": "json",
+  "Json-doc": "json-doc",
+  "Jsonnet": "jsonnet",
+  "Jsp": "jsp",
+  "JSX": "jsx",
+  "Julia": "julia",
+  "Kotlin": "kotlin",
+  "Lasso": "lasso",
+  "Lean": "lean",
+  "Liquid": "liquid",
+  "Literate CoffeeScript": "literate_coffeescript",
+  "Literate Haskell": "literate_haskell",
+  "LiveScript": "livescript",
+  "LLVM": "llvm",
+  "Lua": "lua",
+  "Lustre": "lustre",
+  "Lutin": "lutin",
+  "M68k": "m68k",
+  "Magik": "magik",
+  "Make": "make",
+  "Markdown": "markdown",
+  "Mason": "mason",
+  "Mathematica": "mathematica",
+  "MATLAB": "matlab",
+  "Meson": "meson",
+  "MiniZinc": "minizinc",
+  "MoonScript": "moonscript",
+  "Mosel": "mosel",
+  "MessageTrans": "msgtrans",
+  "MXML": "mxml",
+  "Nasm": "nasm",
+  "NesAsm": "nesasm",
+  "nginx": "nginx",
+  "Nial": "nial",
+  "Nim": "nim",
+  "Nix": "nix",
+  "Objective-C": "objective_c",
+  "Objective-C++": "objective_cpp",
+  "OCaml": "ocaml",
+  "OCL": "ocl",
+  "OpenEdge ABL": "openedge",
+  "OpenType Feature File": "opentype_feature_file",
+  "Pascal": "pascal",
+  "Perl": "perl",
+  "PHP": "php",
+  "Plain Text": "plaintext",
+  "Plist": "plist",
+  "PLSQL": "plsql",
+  "Pony": "pony",
+  "PostScript": "postscript",
+  "powershell": "powershell",
+  "Praat": "praat",
+  "Prolog": "prolog",
+  "Prometheus": "prometheus",
+  ".properties": "properties",
+  "Protobuf": "protobuf",
+  "Puppet": "puppet",
+  "Python": "python",
+  "Q": "q",
+  "QML": "qml",
+  "R": "r",
+  "Racket": "racket",
+  "ReasonML": "reasonml",
+  "Rego": "rego",
+  "ReScript": "rescript",
+  "RML": "rml",
+  "Robot Framework": "robot_framework",
+  "Ruby": "ruby",
+  "Rust": "rust",
+  "SAS": "sas",
+  "Sass": "sass",
+  "Scala": "scala",
+  "Scheme": "scheme",
+  "SCSS": "scss",
+  "sed": "sed",
+  "shell": "shell",
+  "Sieve": "sieve",
+  "Slice": "slice",
+  "Slim": "slim",
+  "Smalltalk": "smalltalk",
+  "Smarty": "smarty",
+  "SML": "sml",
+  "SPARQL": "sparql",
+  "SQF": "sqf",
+  "SQL": "sql",
+  "SSH Config File": "ssh",
+  "Stan": "stan",
+  "Stata": "stata",
+  "SuperCollider": "supercollider",
+  "Swift": "swift",
+  "Systemd": "systemd",
+  "Syzlang": "syzlang",
+  "Syzprog": "syzprog",
+  "TAP": "tap",
+  "Tcl": "tcl",
+  "Terraform": "terraform",
+  "TeX": "tex",
+  "TOML": "toml",
+  "TSX": "tsx",
+  "TTCN3": "ttcn3",
+  "Tulip": "tulip",
+  "Turtle/TriG": "turtle",
+  "Twig": "twig",
+  "TypeScript": "typescript",
+  "Vala": "vala",
+  "Visual Basic": "vb",
+  "VCL: Varnish Configuration Language": "vcl",
+  "Velocity": "velocity",
+  "Verilog and System Verilog": "verilog",
+  "VHDL 2008": "vhdl",
+  "VimL": "viml",
+  "Vue": "vue",
+  "Wollok": "wollok",
+  "XML": "xml",
+  "Xojo": "xojo",
+  "XPath": "xpath",
+  "XQuery": "xquery",
+  "YAML": "yaml",
+  "YANG": "yang",
+  "Zig": "zig",
+);
+
+@each $name, $codename in $language {
+  div.language-#{$codename}::before {
+    @extend .body-large;
+    content: "#{$name}";
+    display: block;
+
+    position: absolute;
+    right: 18px;
+    top: -24px;
+
+    padding-inline: 8px;
+
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 24px;
+    text-transform: capitalize;
+
+    background-color: var(--md-sys-color-surface-variant);
+
+    border-radius: 4px 4px 0 0;
   }
 }
