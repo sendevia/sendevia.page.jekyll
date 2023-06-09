@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
   {%- include head.html -%}
-  <!--  -->
   <body class="material-theme" {%- if page.color -%} color="{{ page.color }}" {%- endif -%}>
-    <!-- 404 -->
     {%- if page.permalink == "/404.html" -%}
+    <!-- 404 -->
     {{ content }}
     <!--  -->
     {%- else -%}
+    <!-- 加载界面 -->
     <div class="content-loading">
       <span class="mpi" spec="circular"></span>
       <p>{{ page.title }}</p>
