@@ -77,4 +77,4 @@ exclude:
   - webpack.config.js
   - webpack/
 
-version: "23.607.1"
+version: "23.609.0"
