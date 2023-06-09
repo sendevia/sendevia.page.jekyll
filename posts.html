@@ -31,6 +31,7 @@ published: true
         <img
           src="{%- if post.header_image and post.header_image != '' -%} {{ post.header_image }} {%- else -%} {{ site.header_image }} {%- endif -%}"
           alt="封面"
+          loading="lazy"
         />
         <div class="mcd-supporting">
           <h3>{{ post.title }}</h3>

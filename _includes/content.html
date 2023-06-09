@@ -17,7 +17,7 @@
 
     <!-- 文章头图 -->
     {%- if headerImage != false -%}
-    <img src="{{ headerImage }}" id="header_image" alt="头图" />
+    <img src="{{ headerImage }}" id="header_image" alt="{{ page.title }}" loading="lazy" />
     {%- endif -%}
   </div>
 </div>
