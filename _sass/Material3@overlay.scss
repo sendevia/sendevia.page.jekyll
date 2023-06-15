@@ -29,6 +29,12 @@ body {
             transition: 0.3s;
           }
         }
+
+        .mnd {
+          top: 0;
+
+          height: calc(100% - 80px);
+        }
       }
     }
   }

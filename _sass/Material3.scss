@@ -738,16 +738,8 @@ body {
       flex-wrap: wrap;
       gap: 12px;
 
-      .previous-post {
-        align-items: self-start;
-
-        text-align: start;
-      }
-
-      .next-post {
-        align-items: flex-end;
-
-        text-align: end;
+      a {
+        min-width: 300px;
       }
 
       p {
@@ -760,6 +752,17 @@ body {
 
           font-size: 18px;
         }
+      }
+      .previous-post {
+        align-items: self-start;
+
+        text-align: start;
+      }
+
+      .next-post {
+        align-items: flex-end;
+
+        text-align: end;
       }
     }
 
