@@ -11,7 +11,7 @@
 1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 ```
-nvm install 12.18.0
+nvm install 12.18
 ```
 
 2. 安装依赖
@@ -51,7 +51,7 @@ gem install bundler jekyll
 1. 切换到本项目文件夹
 
 ```ruby
-bundle install
+bundle i
 ```
 
 2. 开发模式
