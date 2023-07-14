@@ -1,67 +1,93 @@
 # 简介
 
-部署本项目需要两个运行环境：nodejs 和 ruby。
+**推荐在 CloudFlare 上部署本项目、在 WSL2 上进行本地开发调试。**
 
-> 目前推荐在 CloudFlare 上部署本项目
+## 配置运行环境
 
-## 安装运行环境
+1. 安装依赖
 
-### 以 Ubuntu 22.04 / Debian bullseye 为例
-
-1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
+> Debian/Ubuntu
 
 ```
-nvm install 12.18
+sudo apt install ruby-full build-essential zlib1g-dev curl -y
 ```
 
-2. 安装依赖
+> Archlinux
 
 ```
-npm i
+sudo pacman -S ruby base-devel curl
 ```
 
-3. 安装 ruby 环境
+2. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 ```
-sudo apt install ruby-full build-essential zlib1g-dev -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
-4. 配置环境变量
+```
+重启终端
+```
 
-```bash
+```
+nvm i 12.18
+```
+
+1. 配置环境变量
+
+> Debian/Ubuntu
+
+```
 echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 ```
 
-```bash
+```
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 ```
 
-```bash
-source ~/.bashrc
+```
+重启终端
 ```
 
-5. 安装 Jekyll
+> Archlinux
 
-```ruby
+```
+echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
+```
+
+```
+echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
+```
+
+```
+重启终端
+```
+
+## 安装 Jekyll
+
+```
 gem install bundler jekyll
 ```
 
 # 运行和部署本项目
 
-1. 切换到本项目文件夹
+**切换到本项目文件夹**
 
-```ruby
+```
+npm i
+```
+
+```
 bundle i
 ```
 
-2. 开发模式
+## 开发模式
 
-```bash
+```
 npm run dev
 ```
 
-3. 发布模式
+## 发布模式
 
-```bash
+```
 npm run build
 ```
