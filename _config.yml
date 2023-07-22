@@ -27,7 +27,6 @@ defaults:
   - scope:
       path: _posts
     values:
-      notips: false
       permalink: /:short_year/:month/:day/:title
       toc: true
 
