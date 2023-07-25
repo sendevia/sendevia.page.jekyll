@@ -6,8 +6,6 @@
 
   letter-spacing: 0;
 
-  background-color: var(--md-sys-color-surface);
-
   z-index: 10;
 
   .destinations {
@@ -59,16 +57,14 @@
           pointer-events: none;
 
           span {
-            @extend .material-symbols-rounded;
+            @include material-icon($size: 24px);
 
             display: block;
 
             height: 24px;
             width: 24px;
 
-            font-size: 24px;
             font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-            line-height: 24px;
 
             transition: 0.3s;
 
@@ -198,7 +194,7 @@
       gap: 4px;
 
       span {
-        @extend .material-symbols-rounded;
+        @include material-icon($size: 24px);
 
         display: flex;
         align-items: center;
@@ -208,8 +204,6 @@
 
         height: 48px;
         width: 48px;
-
-        font-size: 24px;
 
         cursor: pointer;
         overflow: hidden;

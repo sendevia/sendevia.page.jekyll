@@ -33,9 +33,44 @@ body {
         .mnd {
           top: 0;
 
-          height: calc(100% - 80px);
+          height: calc(100% - 100px);
         }
       }
+    }
+
+    &[loaded] {
+      .content-loading {
+        display: none;
+      }
+
+      .content-container {
+        left: 80px;
+
+        width: calc(100% - 90px);
+
+        overflow: overlay;
+        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+      }
+
+      @media screen and (max-width: 768px) {
+        .content-container {
+          left: 0;
+
+          height: calc(100% - 80px);
+          width: 100%;
+        }
+      }
+    }
+
+    &[content-unfocused] {
+      .content-container {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    &[body-unfocused] {
+      opacity: 0.5;
     }
   }
 }

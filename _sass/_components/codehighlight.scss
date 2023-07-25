@@ -5,6 +5,8 @@ code {
   letter-spacing: 0;
 
   &.language-plaintext {
+    display: inline-block;
+
     padding-inline: 6px;
 
     color: var(--md-sys-color-on-tertiary);
@@ -17,7 +19,7 @@ code {
 }
 
 div.highlighter-rouge {
-  @extend .body-large;
+  @include body-large();
 
   display: inline-block;
 
@@ -496,7 +498,7 @@ $language: (
 
 @each $name, $codename in $language {
   div.language-#{$codename}::before {
-    @extend .body-large;
+    @include body-large();
     content: "#{$name}";
     display: block;
 

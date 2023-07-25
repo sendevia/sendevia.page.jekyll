@@ -12,9 +12,8 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/i,
-        loader: "babel-loader",
-        exclude: /(node_modules)/,
+        test: /\.worker\.js$/,
+        loader: "worker-loader",
       },
     ],
   },

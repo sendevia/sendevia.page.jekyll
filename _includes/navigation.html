@@ -1,9 +1,12 @@
 <!-- 导航 - 导航栏 -->
 <div class="mng" spec="rail" dest="bottom">
   <div class="menu-and-fab">
-    <div class="mib" id="maf-mib-menu">
-      <span>menu</span>
+    <div class="mib" id="maf-mib-modaltips">
+      <span>info</span>
     </div>
+    {%- if page.toc -%}
+    <div class="mfb" spec="tertiary" size="normal" id="maf-mfb-menu">menu</div>
+    {%- endif -%}
   </div>
 
   <div class="destinations">
@@ -50,9 +53,11 @@
 
 <!-- 导航 - 移动端顶栏 -->
 <div class="mtb" spec="small-centered">
+  {%- if page.toc -%}
   <div class="mib" id="mtb-mib-menu">
     <span>menu</span>
   </div>
+  {%- endif -%}
   <h4 id="mtb-dc-area">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
@@ -62,7 +67,7 @@
   </div>
 </div>
 
-<!-- 导航 - 移动端模态的页面信息 -->
+<!-- 导航 - 模态的页面信息 -->
 <dialog class="mdl" id="mdl-tips" icon>
   <div class="mdl-content-layout">
     <span class="mdl-icon">info</span>
@@ -123,7 +128,7 @@
       {%- endif -%}
     </div>
   </div>
-  <form method="dialog">
-    <button spec="text">关闭</button>
-  </form>
+  <div class="mdl-buttons">
+    <button spec="text" id="dialog-close">关闭</button>
+  </div>
 </dialog>

@@ -1,100 +1,120 @@
-import { applyTheme, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
 import "simple-jekyll-search";
+import { applyTheme, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
+// import Worker from "./mtu.worker.js";
+// import { applyTheme } from "@material/material-color-utilities";
+
+// var worker = new Worker();
 
 // 常用常量设置
-const themeImageProvider = new Image();
-const mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
-const cutsomThemeColor = document.body.getAttribute("color");
-const basicTheme = document.querySelector(".material-theme");
-const contentContainer = document.querySelector(".content-container");
-const contentHeader = document.querySelector("#content-header");
-const contentHeaderImage = document.querySelector("#header_image");
-const contentNavigation = document.querySelector(".mng");
-const contentDrawer = document.querySelector(".mnd");
-const contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
-const contentDrawerMenuBtn = document.querySelectorAll("#maf-mib-menu, #mtb-mib-menu");
-const contentSplashScreen = document.querySelector(".content-loading");
-const currentPage = window.location.pathname;
-const progressElement = document.querySelector("#reading-progress");
-const scrollTop = document.documentElement.scrollTop || scrollY;
-const scrollTopElement = document.querySelector("#rcf-mfb-topbutton");
-const topAppBar = document.querySelector(".mtb");
-const mobileTipsIcon = document.querySelector("#mtb-mib-info");
-const mobileTipsModal = document.querySelector("#mdl-tips");
+var themeImageProvider = new Image();
+var mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
+var cutsomThemeColor = document.body.getAttribute("color");
+var themeRoot = document.querySelector(".material-theme");
+var contentContainer = document.querySelector(".content-container");
+var contentHeader = document.querySelector("#content-header");
+var contentHeaderImage = document.querySelector("#header_image");
+var contentNavigation = document.querySelector(".mng");
+var contentDrawer = document.querySelector(".mnd");
+if (contentDrawer) {
+  var contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
+  var contentDrawerMenuBtn = document.querySelectorAll("#maf-mfb-menu, #mtb-mib-menu");
+}
+var contentSplashScreen = document.querySelector(".content-loading");
+var currentPage = window.location.pathname;
+var topAppBar = document.querySelector(".mtb");
+var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, #maf-mib-modaltips");
+var modalTips = document.querySelector("#mdl-tips");
+var dialogBtnClose = document.querySelector("#dialog-close");
+var scrollTopElements = document.querySelectorAll(`#rcf-mfb-topbutton`);
+var rippleElements = document.querySelectorAll(
+  `.mbt,
+  .mcd a,
+  .mcd-header > span,
+  .mcd[spec='clear'],
+  .mcd[spec='focus'],
+  .mcp,
+  .menu-and-fab span,
+  .mfb,
+  .mib,
+  .mnd a,
+  #accent,
+  button,
+  input[type='checkbox'],
+  input[type='radio']`
+);
 
+// worker.postMessage({
+// cutsomThemeColor: document.body.getAttribute("color"),
+// });
+
+// worker.onmessage = ({ data: { themeObject } }) => {
+//   const theme = themeObject;
+//   console.log(theme);
+//   // applyTheme(theme, { target: document.body, dark: mediaQueryPerferScheme.matches });
+// };
+
+// worker.onmessage = function (theme) {
+// console.log(theme.data);
+// applyTheme(theme.data, { target: document.body, dark: mediaQueryPerferScheme.matches });
+// };
+//
 window.onpageshow = function () {
+  // 进入后执行窗口宽度判断
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
 
   // 页面指示
   try {
-    const activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
-    const inactiveSegment = activatedSegment.querySelector("#segment-inactive");
+    let activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
+    let inactiveSegment = activatedSegment.querySelector("#segment-inactive");
     inactiveSegment.id = "segment-active";
-  } catch (error) {
+  } catch (err) {
     document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
   }
 
   // 滚动到页面顶部
-  function scrollToTop() {
-    contentContainer.scrollTo({
-      top: 0,
+  scrollTopElements.forEach((i) => {
+    i.addEventListener("click", () => {
+      contentContainer.scrollTo({
+        top: 0,
+      });
     });
-  }
-
-  scrollTopElement.addEventListener("click", () => {
-    scrollToTop();
   });
 
   // 涟漪效果
-  const rippleElements = document.querySelectorAll(
-    `.mbt,
-    .mcd a,
-    .mcd-header > span,
-    .mcd[spec='clear'],
-    .mcd[spec='focus'],
-    .mcp,
-    .menu-and-fab span,
-    .mfb,
-    .mib,
-    .mnd a,
-    #accent,
-    button,
-    input[type='checkbox'],
-    input[type='radio']`
-  );
-
-  rippleElements.forEach((btn) => {
-    btn.addEventListener("mousedown", (e) => {
+  rippleElements.forEach((i) => {
+    i.addEventListener("mousedown", (e) => {
       const x = e.offsetX;
       const y = e.offsetY;
-      const d = Math.max(btn.clientWidth, btn.clientHeight);
+      const d = Math.max(i.clientWidth, i.clientHeight);
 
-      btn.classList.add("ripple-effect");
-      btn.style.setProperty("--ripple-effect-x", x);
-      btn.style.setProperty("--ripple-effect-y", y);
-      btn.style.setProperty("--ripple-effect-d", d);
+      i.classList.add("ripple-effect");
+      i.style.setProperty("--ripple-effect-x", x);
+      i.style.setProperty("--ripple-effect-y", y);
+      i.style.setProperty("--ripple-effect-d", d);
     });
-    btn.addEventListener("animationend", () => {
-      btn.classList.remove("ripple-effect");
+    i.addEventListener("animationend", () => {
+      i.classList.remove("ripple-effect");
     });
   });
 
   // 滚动事件
-  var lastScrollY = 0;
+  let lastScrollY = 0;
   contentContainer.onscroll = function () {
-    const scrollY = this.scrollTop;
+    let scrollY = this.scrollTop;
 
     topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
-    basicTheme.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
+    themeRoot.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
     contentHeader.style.opacity = scrollY >= 400 ? "0" : "1";
-    scrollTopElement.style.cssText = `
+    scrollTopElements.forEach((i) => {
+      i.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
       animation: ${scrollY >= 400 ? "popOut 0.5s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
-    `;
+      `;
+    });
 
     if (scrollY < lastScrollY) {
-      basicTheme.removeAttribute("hide-top-app-bar");
+      themeRoot.setAttribute("hide-top-app-bar", "false");
     }
 
     lastScrollY = scrollY <= 0 ? 0 : scrollY;
@@ -108,36 +128,61 @@ window.onpageshow = function () {
   };
 
   // 侧边栏
-  const toggleMndSection = (boolean) => {
-    contentDrawer.toggleAttribute("show", boolean);
-    contentContainer.toggleAttribute("compress", boolean);
+  if (contentDrawer) {
+    const toggleMndSection = (boolean) => {
+      contentDrawer.toggleAttribute("show", boolean);
+      themeRoot.toggleAttribute("content-unfocused", boolean);
+    };
+
+    contentDrawerMenuBtn.forEach((i) => {
+      i.addEventListener("click", () => {
+        toggleMndSection();
+      });
+    });
+
+    contentDrawerEntries.forEach((i) => {
+      i.addEventListener("click", () => {
+        toggleMndSection(false);
+      });
+    });
+
+    document.addEventListener("click", (i) => {
+      let isMnd = i.target.closest(".mnd");
+      let isMtb = i.target.closest(".mtb");
+      let isMAB = i.target.closest(".menu-and-fab");
+
+      if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
+        toggleMndSection(false);
+      }
+    });
+  }
+
+  // 模态tips
+
+  const toggleDim = (boolean) => {
+    themeRoot.toggleAttribute("body-unfocused", boolean);
   };
 
-  contentDrawerMenuBtn.forEach((i) => {
+  modalTipsIcon.forEach((i) => {
     i.addEventListener("click", () => {
-      toggleMndSection();
+      modalTips.style.animation = "mdl-show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both";
+      modalTips.showModal();
+      toggleDim(true);
     });
   });
 
-  contentDrawerEntries.forEach((i) => {
-    i.addEventListener("click", () => {
-      toggleMndSection(false);
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    const isMnd = e.target.closest(".mnd");
-    const isMtb = e.target.closest(".mtb");
-    const isMAB = e.target.closest(".menu-and-fab");
-
-    if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
-      toggleMndSection(false);
-    }
-  });
-
-  // 展示模态tips
-  mobileTipsIcon.addEventListener("click", () => {
-    mobileTipsModal.showModal();
+  var isModalShowing = false;
+  dialogBtnClose.addEventListener("click", () => {
+    isModalShowing = true;
+    modalTips.style.animation = "mdl-close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both";
+    modalTips.onanimationend = function () {
+      if (isModalShowing) {
+        toggleDim();
+        this.close();
+        this.style.animation = "";
+        isModalShowing = false;
+      }
+    };
   });
 };
 
@@ -183,7 +228,7 @@ headerResizeObserver.observe(contentHeader);
 
 // 更新标题背景图片的位移
 function changeHeaderTransform() {
-  const isContainerOffset = contentHeader.offsetHeight;
+  const isContainerOffset = contentHeader.offsetHeight + 10;
   const isImageOffset = contentHeaderImage.offsetHeight;
 
   contentHeaderImage.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
@@ -195,7 +240,6 @@ function removeLoadScreen() {
   contentHeaderImage.style.animation = "headerImageTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
 
   contentSplashScreen.addEventListener("animationend", () => {
-    contentSplashScreen.style.display = "none";
-    contentContainer.style.overflow = "overlay";
+    themeRoot.setAttribute("loaded", true);
   });
 }

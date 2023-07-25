@@ -7,36 +7,34 @@
     {{ content }}
     <!--  -->
     {%- else -%}
-    <!-- 加载界面 -->
-    <div class="content-loading">
-      <span class="mpi" spec="circular"></span>
-      <p>{{ page.title }}</p>
-    </div>
 
     <!-- 导航 -->
     {%- include navigation.html -%}
 
+    <!--  -->
+    {%- if page.toc -%}
     <!-- 目录 -->
     <div class="mnd">
-      {%- if page.toc -%}
-      <p>目录</p>
+      <!--  -->
       {% toc %}
       <!--  -->
-      {%- else -%}
-      <p>此页面没有目录</p>
-      {%- endif -%}
     </div>
-    
+    {%- endif -%}
+
     <!-- 内容 -->
     <div class="content-container">
-      <div class="content-flow">
-        {%- include content.html -%}
+      <!-- 加载界面 -->
+      <div class="content-loading">
+        <span class="mpi" spec="circular"></span>
+        <p>{{ page.title }}</p>
       </div>
+      <!-- 文章布局 -->
+      <div class="content-flow">{%- include content.html -%}</div>
     </div>
 
     <!-- 底部 Fab -->
     <div class="right-corner-fabs">
-      <div class="mfb" spec="primary" id="rcf-mfb-topbutton">keyboard_double_arrow_up</div>
+      <div class="mfb" spec="primary" id="rcf-mfb-topbutton">vertical_align_top</div>
     </div>
     {%- endif -%}
   </body>

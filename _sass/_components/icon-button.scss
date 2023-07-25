@@ -2,7 +2,7 @@
 // 图标按钮
 
 .mib {
-  @extend .material-symbols-rounded;
+  @include material-icon();
 
   display: flex;
   align-items: center;

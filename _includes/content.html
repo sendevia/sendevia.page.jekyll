@@ -1,22 +1,20 @@
-<!-- 头图选择 -->
-<!-- 由文章提供 -->
-{%- if page.header_image and page.header_image != "" -%} {%- assign headerImage = page.header_image -%}
-<!-- 由全局设定提供 -->
-{%- elsif site.header_image -%} {%- assign headerImage = site.header_image -%}
-<!--  -->
-{%- else -%}
-<!-- 不设置头图 -->
-{%- assign headerImage = false -%} {%- endif -%}
-
+<!-- 大标题 -->
 <div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>
   <div class="header-container">
     <span id="title">{{ page.title }}</span>
     {%- if page.description and page.description != "" -%}
     <span id="subtitle">{{ page.description }}</span>
-    {%- endif -%}
-
-    <!-- 文章头图 -->
-    {%- if headerImage != false -%}
+    {%- endif -%} {%- if page.header_image and page.header_image != "" -%}
+    <!-- 头图 - 设置由文章提供 -->
+    {%- assign headerImage = page.header_image -%}
+    <!--  -->
+    {%- elsif site.header_image -%}
+    <!-- 头图 - 设置由全局设定提供 -->
+    {%- assign headerImage = site.header_image -%}
+    <!--  -->
+    {%- else -%}
+    <!-- 头图 - 不设置头图 -->
+    {%- assign headerImage = false -%} {%- endif -%} {%- if headerImage != false -%}
     <img src="{{ headerImage }}" id="header_image" alt="{{ page.title }}" />
     {%- endif -%}
   </div>

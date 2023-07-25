@@ -15,11 +15,9 @@
     .content-container {
       margin-left: 0;
 
-      border-radius: 0;
+      top: 0;
 
-      &[compress] {
-        margin-left: 0;
-      }
+      border-radius: 0;
     }
 
     .content-flow {
@@ -60,14 +58,6 @@
             display: none;
           }
         }
-      }
-
-      .content-layout {
-        flex-direction: column;
-      }
-
-      #content-tips {
-        display: none;
       }
 
       #content {
@@ -179,19 +169,12 @@
     }
 
     .mnd {
-      left: -100%;
+      margin: 10px;
+
+      left: 0;
       top: 64px;
 
-      height: calc(100% - 144px);
-      max-width: 270px;
-
-      border-radius: 0;
-
-      z-index: 20;
-
-      &[show] {
-        left: 0px;
-      }
+      height: calc(100% - 164px);
     }
 
     .mtb {

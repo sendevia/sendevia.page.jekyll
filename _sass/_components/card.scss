@@ -32,7 +32,7 @@
     border-radius: 12px;
 
     .mcd-header {
-      @extend .body-large;
+      @include body-large();
 
       display: flex;
       align-items: center;
@@ -44,7 +44,7 @@
       width: 100%;
 
       & > span {
-        @extend .material-symbols-rounded;
+        @include material-icon($size: 24px);
 
         display: flex;
         align-items: center;
@@ -54,8 +54,6 @@
 
         height: 48px;
         width: 48px;
-
-        font-size: 24px;
 
         border-radius: 100%;
 
@@ -79,7 +77,7 @@
           overflow: hidden;
 
           #mcd--monogram-initial {
-            @extend .title-medium;
+            @include title-medium();
 
             position: fixed;
 
@@ -105,11 +103,11 @@
           gap: 4px;
 
           #mcd--text-header {
-            @extend .title-medium;
+            @include title-medium();
           }
 
           #mcd--text-subhead {
-            @extend .body-medium;
+            @include body-medium();
           }
         }
       }
@@ -123,11 +121,11 @@
       padding: 16px;
 
       #mcd-headline-title {
-        @extend .body-large;
+        @include body-large();
       }
 
       #mcd-headline-subhead {
-        @extend .body-medium;
+        @include body-medium();
       }
     }
 
@@ -135,7 +133,7 @@
       padding: 16px;
 
       #mcd-supporting-text {
-        @extend .body-medium;
+        @include body-medium();
       }
     }
 
@@ -184,15 +182,9 @@
 
       background-color: var(--md-sys-color-surface-variant);
     }
-
-    &:hover {
-      border-radius: 6px;
-    }
   }
 
   &[spec="clear"] {
-    max-width: 450px;
-
     border-radius: 24px;
 
     background-color: var(--md-sys-color-surface);
@@ -233,7 +225,6 @@
   }
 
   &[spec="focus"] {
-    max-width: 360px;
     height: 240px;
 
     border-radius: 24px;
@@ -265,7 +256,11 @@
 
     &:hover {
       img {
-        opacity: 0.3;
+        opacity: 0.5;
+        filter: blur(20px);
+        transform: scale(1.2);
+
+        transition: opacity 0.3s, filter 0.5s, transform 0.4s;
       }
 
       .mcd-supporting {
