@@ -78,7 +78,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_portile2 (2.8.2)
+    mini_portile2 (2.8.4)
     minitest (5.18.1)
     nokogiri (1.15.3)
       mini_portile2 (~> 2.8.2)
@@ -141,4 +141,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.14
+   2.4.15
