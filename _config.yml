@@ -1,3 +1,5 @@
+version: "23.725.0"
+
 baseurl:
 email: me@sendevia.top
 github: https://github.com/Sendevia
@@ -75,5 +77,3 @@ exclude:
   - vendor/
   - webpack.config.js
   - webpack/
-
-version: "23.615.0"
