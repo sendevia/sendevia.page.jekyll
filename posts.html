@@ -13,7 +13,6 @@ segment_title: ""
 published: true
 ---
 
-{%- assign total_posts = site.posts | size -%}
 <div class="page-posts">
   <div class="search-container">
     <div class="input-container">
@@ -22,28 +21,4 @@ published: true
     </div>
     <div id="results-container"></div>
   </div>
-  {%- if total_posts > 0 -%}
-  <div class="cards">
-    {%- for post in site.posts -%}
-    <a href="{{ post.url }}">
-      <div class="mcd" spec="focus">
-        <img
-          src="{%- if post.header_image and post.header_image != '' -%} {{ post.header_image }} {%- else -%} {{ site.header_image }} {%- endif -%}"
-          alt="封面"
-          loading="lazy"
-        />
-        <div class="mcd-supporting">
-          <h3>{{ post.title }}</h3>
-          <p>发表于 {{ post.date | date: "%Y/%m/%d" }}</p>
-        </div>
-      </div>
-    </a>
-    {%- endfor -%}
-  </div>
-  {%- else -%}
-  <div class="nothing">
-    <h1>≡[。。]≡</h1>
-    <h6>还没有文章发布，待会再来看看吧</h6>
-  </div>
-  {%- endif -%}
 </div>
