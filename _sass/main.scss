@@ -3,7 +3,6 @@
 @import "@overlay";
 @import "token";
 @import "variable";
-@import "tool";
 
 @import "_components/button";
 @import "_components/card";
@@ -61,7 +60,66 @@ body {
   }
 
   .material-theme {
+    color: var(--md-sys-color-on-background);
+
+    background-color: var(--md-sys-color-surface);
+
     opacity: 1;
+
+    .disable-select {
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    :disabled,
+    [disabled] {
+      @extend .disable-select;
+
+      box-shadow: none;
+      filter: grayscale(1);
+      opacity: 0.38;
+      pointer-events: none;
+    }
+
+    .ripple-effect {
+      &::before {
+        content: "";
+
+        position: absolute;
+        left: calc(var(--ripple-effect-x) * 1px);
+        top: calc(var(--ripple-effect-y) * 1px);
+
+        border-radius: 50%;
+
+        background-color: var(--md-sys-color-primary);
+
+        animation: ripple var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) both;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+      }
+
+      &[spec="filled"]::before {
+        background-color: var(--md-sys-color-on-primary);
+      }
+
+      &[spec="outlined"]::before {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="text"]::before {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="elevated"]::before {
+        background-color: var(--md-sys-color-primary);
+      }
+
+      &[spec="tonal"]::before {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
+    }
   }
 
   h1 {
@@ -343,18 +401,6 @@ body {
         padding: 50px 80px;
 
         min-height: 544px;
-      }
-    }
-
-    #toc {
-      padding-inline-start: 0;
-
-      .toc-h1 {
-        list-style: decimal-leading-zero;
-      }
-
-      .toc-h2 {
-        list-style: circle;
       }
     }
 
