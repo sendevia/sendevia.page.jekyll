@@ -164,3 +164,23 @@
     opacity: 0;
   }
 }
+
+@keyframes doc-headline-target {
+  from {
+    transform: translateX(-10px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes doc-noteref-target {
+  from {
+    box-shadow: 0 0 0 10px var(--md-sys-color-outline);
+  }
+
+  to {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}

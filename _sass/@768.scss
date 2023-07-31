@@ -126,22 +126,12 @@
 
       margin-block-start: 30px;
 
-      .timeline {
-        .index-level1 {
-          .posts-month {
-            top: 68px;
+      .posts-date-month {
+        top: 68px;
+      }
 
-            transition: var(--md-sys-animate-in);
-          }
-        }
-
-        .index-level2 {
-          .posts-day {
-            top: 98px;
-
-            transition: var(--md-sys-animate-in);
-          }
-        }
+      .posts-date-day {
+        top: 98px;
       }
     }
 
