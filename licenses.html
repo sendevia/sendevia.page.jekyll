@@ -1,0 +1,47 @@
+---
+title: "开源许可证"
+author: "sendevia"
+description: ""
+color: ""
+header_image: ""
+categories:
+tags:
+toc: false
+navigation: true
+segment_icon: "package"
+segment_title: "许可"
+published: true
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>版本</th>
+      <th>链接</th>
+      <th>许可证</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for item in site.data.licenses -%}
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.version }}</td>
+      <td>
+        <a href="{{ item.repository }}">
+          <div class="mcp" spec="assist" icon>
+            <span>open_in_new</span>
+            Github
+          </div>
+        </a>
+      </td>
+      <td>
+        <div class="mcp" spec="assist" icon>
+          <span>balance</span>
+          {{ item.license }}
+        </div>
+      </td>
+    </tr>
+    {%- endfor-%}
+  </tbody>
+</table>

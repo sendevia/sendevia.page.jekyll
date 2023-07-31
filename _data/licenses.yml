@@ -1,0 +1,29 @@
+- name: "jekyll-theme-m3"
+  license: MIT
+  repository: https://github.com/Sendevia/jekyll-theme-m3
+  version: latest
+
+- name: "@material/material-color-utilities"
+  license: Apache-2.0
+  repository: https://github.com/material-foundation/material-color-utilities
+  version: 0.2.7
+
+- name: Simple-Jekyll-Search
+  license: MIT
+  repository: https://github.com/christian-fei/Simple-Jekyll-Search
+  version: 1.10.0
+
+- name: webpack
+  license: MIT
+  repository: https://github.com/webpack/webpack
+  version: 5.88.1
+
+- name: webpack-cli
+  license: MIT
+  repository: https://github.com/webpack/webpack-cli
+  version: 5.1.4
+
+- name: worker-loader
+  license: MIT
+  repository: https://github.com/webpack-contrib/worker-loader
+  version: 3.0.8
