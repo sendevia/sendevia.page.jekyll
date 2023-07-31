@@ -79,7 +79,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     mini_portile2 (2.8.4)
-    minitest (5.18.1)
+    minitest (5.19.0)
     nokogiri (1.15.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -102,12 +102,20 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rexml (3.2.5)
-    rouge (4.1.2)
+    rexml (3.2.6)
+    rouge (4.1.3)
     safe_yaml (1.0.5)
-    sass-embedded (1.63.6)
+    sass-embedded (1.64.1)
       google-protobuf (~> 3.23)
       rake (>= 13.0.0)
+    sass-embedded (1.64.1-aarch64-linux-gnu)
+      google-protobuf (~> 3.23)
+    sass-embedded (1.64.1-x64-mingw32)
+      google-protobuf (~> 3.23)
+    sass-embedded (1.64.1-x86-mingw32)
+      google-protobuf (~> 3.23)
+    sass-embedded (1.64.1-x86_64-linux-gnu)
+      google-protobuf (~> 3.23)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     tzinfo (2.0.6)
@@ -141,4 +149,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.15
+   2.4.17
