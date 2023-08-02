@@ -231,8 +231,8 @@ ul {
 
       background-color: var(--md-sys-color-on-surface);
 
-      -webkit-mask: var(--via-svg-list-bullet) 0 4px/100% no-repeat;
-      mask: var(--via-svg-list-bullet) 0 4px/100% no-repeat;
+      -webkit-mask: var(--via-svg-list-bullet) 0 2.5px/100% no-repeat;
+      mask: var(--via-svg-list-bullet) 0 2.5px/100% no-repeat;
     }
   }
 }
@@ -243,8 +243,11 @@ ol {
 
   li {
     @include body-large();
+    position: relative;
 
     margin-block-end: 5px;
+
+    line-height: 24px;
 
     .rouge-code {
       pre {
