@@ -13,10 +13,6 @@ table {
 
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   caption {
     @include title-medium($font-weight: bold);
 
