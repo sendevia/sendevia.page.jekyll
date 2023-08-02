@@ -38,9 +38,7 @@ var rippleElements = document.querySelectorAll(
   .mib,
   .mnd a,
   #accent,
-  button,
-  input[type='checkbox'],
-  input[type='radio']`
+  button`
 );
 
 // worker.postMessage({
@@ -87,13 +85,17 @@ window.onpageshow = function () {
       const y = e.offsetY;
       const d = Math.max(i.clientWidth, i.clientHeight);
 
-      i.classList.add("ripple-effect");
-      i.style.setProperty("--ripple-effect-x", x);
-      i.style.setProperty("--ripple-effect-y", y);
-      i.style.setProperty("--ripple-effect-d", d);
-    });
-    i.addEventListener("animationend", () => {
-      i.classList.remove("ripple-effect");
+      var rippleC = document.createElement("ripple-effect");
+      i.appendChild(rippleC);
+
+      rippleC.style.setProperty("--ripple-effect-x", x);
+      rippleC.style.setProperty("--ripple-effect-y", y);
+      rippleC.style.setProperty("--ripple-effect-d", d);
+
+      setTimeout(() => {
+        var rippleR = i.querySelector("ripple-effect");
+        i.removeChild(rippleR);
+      }, 400);
     });
   });
 
