@@ -57,6 +57,7 @@ body {
 
       @media screen and (max-width: 768px) {
         .content-container {
+          top: 0;
           left: 0;
 
           height: calc(100% - 80px);
