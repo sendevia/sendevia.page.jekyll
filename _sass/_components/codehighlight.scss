@@ -11,6 +11,7 @@ code {
 
     color: var(--md-sys-color-on-tertiary);
     word-break: break-word;
+    line-height: 20px;
 
     border-radius: 4px;
 
@@ -35,7 +36,9 @@ div.highlighter-rouge {
   border-radius: 12px;
   outline: 1px solid var(--md-sys-color-surface-variant);
 
-  box-shadow: 0px -12px 0 1px var(--md-sys-color-surface-variant), var(--md-sys-elevation-level5);
+  box-shadow: var(--md-sys-elevation-level5);
+
+  z-index: 9;
 
   code {
     display: flex;
@@ -61,7 +64,7 @@ div.highlighter-rouge {
     .rouge-gutter,
     .rouge-code {
       padding-block: 20px;
-      padding-inline: 20px;
+      padding-inline: 12px;
 
       line-height: 19.98px;
 
@@ -503,8 +506,8 @@ $language: (
     display: block;
 
     position: absolute;
-    right: 18px;
-    top: -24px;
+    left: 18px;
+    top: -12px;
 
     padding-inline: 8px;
 
@@ -514,6 +517,8 @@ $language: (
 
     background-color: var(--md-sys-color-surface-variant);
 
-    border-radius: 4px 4px 0 0;
+    border-radius: 24px;
+
+    z-index: 10;
   }
 }
