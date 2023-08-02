@@ -3,22 +3,6 @@
 @media screen and (max-width: 425px) {
   html,
   body {
-    .content-flow {
-      #content-header,
-      #content-header[spec="large"] {
-        .header-container {
-          #title {
-            font-size: 60rem;
-            line-height: 60rem;
-          }
-
-          #subtitle {
-            font-size: 20rem;
-          }
-        }
-      }
-    }
-
     .page-index {
       .timeline {
         .posts-date-month,
