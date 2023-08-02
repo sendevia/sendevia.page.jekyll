@@ -44,12 +44,15 @@ body {
       }
 
       .content-container {
+        top: 10px;
         left: 80px;
 
+        height: calc(100% - 20px);
         width: calc(100% - 90px);
 
+        border-radius: 12px;
+
         overflow: overlay;
-        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
       }
 
       @media screen and (max-width: 768px) {

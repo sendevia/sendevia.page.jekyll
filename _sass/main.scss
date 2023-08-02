@@ -67,6 +67,8 @@ body {
 
   opacity: 1;
 
+  transition: var(--md-sys-motion-duration-medium1);
+
   .disable-select {
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -286,14 +288,12 @@ ol {
   gap: 10px;
   justify-content: center;
 
-  position: absolute;
-
   height: 100%;
   width: 100%;
 
   background-color: var(--via-color-placeholder-background);
 
-  transition: 0.5s;
+  transition: var(--md-sys-motion-duration-long1);
   z-index: 20;
 
   h1 {
@@ -307,18 +307,17 @@ ol {
 
 .content-container {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
 
-  height: calc(100% - 20px);
-  width: calc(100% - 20px);
-
-  border-radius: 12px;
+  height: 100%;
+  width: 100%;
 
   background-color: var(--via-color-background);
 
   overflow: hidden;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 25%;
+  transition: var(--md-sys-motion-duration-medium1);
   z-index: 10;
 }
 
@@ -586,12 +585,16 @@ ol {
     [role="doc-noteref"] {
       display: inline;
 
+      position: absolute;
+      top: -10px;
+
       &:target {
-        animation: doc-noteref-target var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized) backwards;
-        padding: 4px 4px 2px 3px;
+        padding: 3px 6px 0 5px;
 
         border-radius: 12px 12px 12px 0;
         border: 2px solid var(--md-sys-color-outline);
+
+        animation: doc-noteref-target var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized) backwards;
       }
     }
 

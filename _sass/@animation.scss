@@ -167,17 +167,21 @@
 
 @keyframes doc-headline-target {
   from {
+    margin-block-end: 36px;
+
     transform: translateX(-10px);
   }
 
   to {
+    margin-block-end: 6px;
+
     transform: none;
   }
 }
 
 @keyframes doc-noteref-target {
   from {
-    box-shadow: 0 0 0 10px var(--md-sys-color-outline);
+    box-shadow: 0 0 0 15px var(--md-sys-color-outline);
   }
 
   to {
