@@ -7,7 +7,7 @@ code {
   &.language-plaintext {
     display: inline-block;
 
-    padding-inline: 6px;
+    padding-inline: 3px;
 
     color: var(--md-sys-color-on-tertiary);
     word-break: break-word;
@@ -34,7 +34,6 @@ div.highlighter-rouge {
   word-break: break-word;
 
   border-radius: 12px;
-  outline: 1px solid var(--md-sys-color-surface-variant);
 
   box-shadow: var(--md-sys-elevation-level5);
 
@@ -45,7 +44,7 @@ div.highlighter-rouge {
 
     border-radius: 12px;
 
-    background: repeating-linear-gradient(#1e1e1e 0.08px 20px, #212121 15px 40px);
+    background: #212121;
   }
 
   pre {
@@ -68,7 +67,7 @@ div.highlighter-rouge {
 
       line-height: 19.98px;
 
-      background: repeating-linear-gradient(#1e1e1e 0.08px 20px, #212121 15px 40px);
+      background: #212121;
     }
 
     .rouge-gutter {
@@ -131,7 +130,7 @@ div.highlighter-rouge {
     // kd: Keywords used for variable declaration (e.g. `var` in javascript)
     // n: Variable/function names
     // nf: Function names
-    color: #8ac3cf;
+    color: #98d2ff;
   }
 
   .kn,
@@ -173,7 +172,7 @@ div.highlighter-rouge {
 
   .nt {
     // Tag mainly for markup such as XML or HTML
-    color: #84b1f7;
+    color: #8e9cff;
   }
 
   .no,
@@ -200,7 +199,7 @@ div.highlighter-rouge {
     // py: Token for properties
     // nl: For label names
     // nx: For other names
-    color: #8ac3cf;
+    color: #35b2b6;
   }
 
   .l,
@@ -509,7 +508,7 @@ $language: (
     left: 18px;
     top: -12px;
 
-    padding-inline: 8px;
+    padding-inline: 12px;
 
     color: var(--md-sys-color-on-surface-variant);
     line-height: 24px;
@@ -517,7 +516,7 @@ $language: (
 
     background-color: var(--md-sys-color-surface-variant);
 
-    border-radius: 24px;
+    border-radius: 6px;
 
     z-index: 10;
   }
