@@ -27,21 +27,29 @@ button.mib {
     content: "";
 
     position: absolute;
+    left: 0;
+    top: 0;
 
     height: 100%;
     width: 100%;
-
-    border-radius: 100%;
 
     opacity: 0;
     transition: var(--md-sys-motion-duration-medium4);
   }
 
-  &:hover::after,
-  &:focus::after,
-  &:active::after {
+  &:hover::after {
     transition: var(--md-sys-motion-duration-short4);
     opacity: var(--md-sys-state-hover-state-layer-opacity);
+  }
+
+  &:focus::after {
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-focus-state-layer-opacity);
+  }
+
+  &:active::after {
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-pressed-state-layer-opacity);
   }
 
   &,
