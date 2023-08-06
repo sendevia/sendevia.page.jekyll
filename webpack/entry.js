@@ -160,26 +160,25 @@ window.onpageshow = function () {
   }
 
   // 模态tips
-
   const toggleDim = (boolean) => {
     themeRoot.toggleAttribute("body-unfocused", boolean);
   };
 
   modalTipsIcon.forEach((i) => {
     i.addEventListener("click", () => {
+      toggleDim(true);
       modalTips.style.animation = "mdl-show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both";
       modalTips.showModal();
-      toggleDim(true);
     });
   });
 
   var isModalShowing = false;
   dialogBtnClose.addEventListener("click", () => {
+    toggleDim();
     isModalShowing = true;
     modalTips.style.animation = "mdl-close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both";
     modalTips.onanimationend = function () {
       if (isModalShowing) {
-        toggleDim();
         this.close();
         this.style.animation = "";
         isModalShowing = false;
