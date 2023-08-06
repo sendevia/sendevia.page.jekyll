@@ -27,7 +27,19 @@ toc: false
           {%- for post in day.items -%}
           <a href="{{ post.url }}">
             <div class="mcd" spec="clear">
-              <img src="{{ post.header_image }}" alt="{{ post.title }}封面" loading="lazy" />
+              {%- if post.header_image and post.header_image != "" -%}
+              <!-- 头图 - 设置由文章提供 -->
+              {%- assign headerImage = post.header_image -%}
+              <!--  -->
+              {%- elsif site.header_image -%}
+              <!-- 头图 - 设置由全局设定提供 -->
+              {%- assign headerImage = site.header_image -%}
+              <!--  -->
+              {%- else -%}
+              <!-- 头图 - 不设置头图 -->
+              {%- assign headerImage = false -%} {%- endif -%} {%- if headerImage != false -%}
+              <img src="{{ headerImage }}" alt="{{ post.title }}封面" loading="lazy" />
+              {%- endif -%}
               <div class="mcd-supporting">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
