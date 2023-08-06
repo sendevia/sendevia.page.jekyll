@@ -55,8 +55,8 @@
 
           #header_image {
             animation: none !important;
-            -webkit-mask: none;
-            mask: none;
+            -webkit-mask: linear-gradient(to top right, transparent 30%, #000 70%);
+            mask: linear-gradient(to top right, transparent 30%, #000 70%);
           }
         }
       }
@@ -135,6 +135,8 @@
 
     .mng {
       &[spec="bar"] {
+        background-color: var(--via-color-background);
+
         transform: translateY(0%);
         visibility: visible;
         z-index: 11;
