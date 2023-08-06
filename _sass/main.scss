@@ -104,14 +104,8 @@ body {
     background-color: var(--md-sys-color-on-primary);
   }
 
-  [spec="outlined"]ripple-effect {
-    background-color: var(--md-sys-color-primary);
-  }
-
-  [spec="text"]ripple-effect {
-    background-color: var(--md-sys-color-primary);
-  }
-
+  [spec="outlined"]ripple-effect,
+  [spec="text"]ripple-effect,
   [spec="elevated"]ripple-effect {
     background-color: var(--md-sys-color-primary);
   }

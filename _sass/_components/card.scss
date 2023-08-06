@@ -188,7 +188,7 @@
       margin: 20px;
     }
 
-    &.ripple-effect::before {
+    ripple-effect {
       background-color: var(--md-sys-color-on-primary);
     }
 
@@ -232,7 +232,7 @@
       transition: 0.4s;
     }
 
-    &.ripple-effect::before {
+    ripple-effect {
       background-color: var(--md-sys-color-on-primary);
     }
 
