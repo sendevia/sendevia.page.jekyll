@@ -92,14 +92,19 @@ tags: readme skin amix
 # 下载
 
 <div>
-  <a href="https://github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk" class="mbt" spec="tonal" icon>
-    <span>download</span>
-    最新版 (1.0/2022.3.21) 下载
+  <a href="https://github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk">
+    <button class="mbt" spec="tonal" icon>
+      <span>download</span>
+      最新版 (1.0/2022.3.21) 下载
+    </button>
   </a>
-  <br />
+</div>
+<div>
   <a href="https://github.com/Sendevia/AincradMix" class="mbt" spec="tonal" icon>
-    <span>code</span>
-    Github
+    <button class="mbt" spec="tonal" icon>
+      <span>code</span>
+      Github
+    </button>
   </a>
 </div>
 
