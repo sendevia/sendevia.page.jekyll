@@ -1,9 +1,7 @@
 <!-- 导航 - 导航栏 -->
 <div class="mng" spec="rail" dest="bottom">
   <div class="menu-and-fab">
-    <div class="mib" id="maf-mib-modaltips">
-      <span>info</span>
-    </div>
+    <button class="mib" id="maf-mib-modaltips">info</button>
     {%- if page.toc -%}
     <div class="mfb" spec="tertiary" size="normal" id="maf-mfb-menu">menu</div>
     {%- endif -%}
@@ -54,17 +52,13 @@
 <!-- 导航 - 移动端顶栏 -->
 <div class="mtb" spec="small-centered">
   {%- if page.toc -%}
-  <div class="mib" id="mtb-mib-menu">
-    <span>menu</span>
-  </div>
+  <button class="mib" id="mtb-mib-menu">menu</button>
   {%- endif -%}
   <h4 id="mtb-dc-area">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
   </h4>
-  <div class="mib" id="mtb-mib-info">
-    <span>info</span>
-  </div>
+  <button class="mib" id="mtb-mib-info">info</button>
 </div>
 
 <!-- 导航 - 模态的页面信息 -->
@@ -79,18 +73,14 @@
       <!-- 日期 -->
       {%- if page.date -%}
       <div class="mdl-tips-item">
-        <div class="mib" spec="tonal" disabled>
-          <span>calendar_month</span>
-        </div>
+        <button class="mib" spec="tonal" disabled>calendar_month</button>
         <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
       </div>
       {%- endif -%}
 
       <!-- 阅读时间 -->
       <div class="mdl-tips-item">
-        <div class="mib" spec="tonal" disabled>
-          <span>schedule</span>
-        </div>
+        <button class="mib" spec="tonal" disabled>schedule</button>
         <p>
           {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if
           read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟
@@ -100,9 +90,7 @@
       <!-- 作者 -->
       {%- if page.author -%}
       <div class="mdl-tips-item">
-        <div class="mib" spec="tonal" disabled>
-          <span>person</span>
-        </div>
+        <button class="mib" spec="tonal" disabled>person</button>
         <p>{{ page.author }}</p>
       </div>
       {%- endif -%}
@@ -110,9 +98,7 @@
       <!-- 目录分类 -->
       {%- if page.categories.size > 0 -%}
       <div class="mdl-tips-item">
-        <div class="mib" spec="tonal" disabled>
-          <span>category</span>
-        </div>
+        <button class="mib" spec="tonal" disabled>category</button>
         <p>{{ page.categories }}</p>
       </div>
       {%- endif -%}
@@ -120,9 +106,7 @@
       <!-- 自定义的主题颜色 -->
       {%- if page.color and page.color != "" -%}
       <div class="mdl-tips-item">
-        <div class="mib" spec="tonal" disabled>
-          <span>palette</span>
-        </div>
+        <button class="mib" spec="tonal" disabled>palette</button>
         <p>{{ page.color }}</p>
       </div>
       {%- endif -%}

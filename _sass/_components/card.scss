@@ -43,24 +43,6 @@
 
       width: 100%;
 
-      & > span {
-        @include material-icon($size: 24px);
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-
-        height: 48px;
-        width: 48px;
-
-        border-radius: 100%;
-
-        cursor: pointer;
-        overflow: hidden;
-      }
-
       #mcd-header-content {
         display: flex;
         align-items: center;
@@ -148,15 +130,15 @@
 
       a {
         &:nth-child(1) {
-          @extend .mbt, [spec="filled"];
+          @extend button, .mbt, [spec="filled"];
         }
 
         &:nth-child(2) {
-          @extend .mbt, [spec="outlined"];
+          @extend button, .mbt, [spec="outlined"];
         }
 
         &:nth-child(n + 3) {
-          @extend .mbt, [spec="text"];
+          @extend button, .mbt, [spec="text"];
         }
       }
     }

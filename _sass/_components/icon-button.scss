@@ -1,7 +1,9 @@
 // https://m3.material.io/components/icon-buttons/
 // 图标按钮
 
-.mib {
+button.mib {
+  @include material-icon($size: 24px);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,22 +14,14 @@
   width: 40px;
 
   letter-spacing: 0;
+  line-height: 0;
 
-  border-radius: 100px;
+  border-radius: 100%;
   border: none;
 
   cursor: pointer;
   overflow: hidden;
-  transition: 0.4s;
-
-  span {
-    @include material-icon();
-
-    height: 24px;
-    width: 24px;
-
-    pointer-events: none;
-  }
+  transition: var(--md-sys-motion-duration-medium4);
 
   &::after {
     content: "";
@@ -40,62 +34,26 @@
     border-radius: 100%;
 
     opacity: 0;
-    transition: 0.4s;
+    transition: var(--md-sys-motion-duration-medium4);
   }
 
-  &:hover {
-    &::after {
-      transition: 0.2s;
-      opacity: var(--md-sys-state-hover-state-layer-opacity);
-    }
-  }
-
-  &:focus {
-    &::after {
-      transition: 0.2s;
-      opacity: var(--md-sys-state-focus-state-layer-opacity);
-    }
-  }
-
-  &:active {
-    &::after {
-      transition: 0.2s;
-      opacity: var(--md-sys-state-pressed-state-layer-opacity);
-    }
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-hover-state-layer-opacity);
   }
 
   &,
   &[spec="standard"] {
     color: var(--md-sys-color-on-surface-variant);
 
-    &:hover {
-      &::after {
-        background-color: var(--md-sys-color-on-surface-variant);
-      }
-    }
+    background: none;
 
-    &:focus {
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
       background-color: var(--md-sys-color-on-surface-variant);
-    }
-
-    &:active {
-      &::after {
-        background-color: var(--md-sys-color-on-surface-variant);
-      }
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background: none;
-
-      opacity: 0.38;
-
-      &::after {
-        background-color: var(--md-sys-color-on-surface);
-
-        opacity: 0.18;
-      }
     }
   }
 
@@ -104,36 +62,10 @@
 
     background-color: var(--md-sys-color-primary);
 
-    &:hover {
-      &::after {
-        background-color: var(--md-sys-color-on-primary);
-      }
-    }
-
-    &:focus {
-      &::after {
-        background-color: var(--md-sys-color-on-primary);
-      }
-    }
-
-    &:active {
-      &::after {
-        background-color: var(--md-sys-color-on-primary);
-      }
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background: none;
-
-      opacity: 0.38;
-
-      &::after {
-        background-color: var(--md-sys-color-on-surface);
-
-        opacity: 0.18;
-      }
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
+      background-color: var(--md-sys-color-on-primary);
     }
   }
 
@@ -150,30 +82,9 @@
       box-shadow: var(--md-sys-elevation-level1);
     }
 
-    &:focus {
-      &::after {
-        background-color: var(--md-sys-color-on-secondary-container);
-      }
-    }
-
-    &:active {
-      &::after {
-        background-color: var(--md-sys-color-on-secondary-container);
-      }
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background: none;
-
-      opacity: 0.38;
-
-      &::after {
-        background-color: var(--md-sys-color-on-surface);
-
-        opacity: 0.18;
-      }
+    &:focus::after,
+    &:active::after {
+      background-color: var(--md-sys-color-on-secondary-container);
     }
   }
 
@@ -184,30 +95,10 @@
 
     border: 1px solid var(--md-sys-color-outline);
 
-    &:hover {
-      &::after {
-        background-color: var(--md-sys-color-primary);
-      }
-    }
-
-    &:focus {
-      &::after {
-        background-color: var(--md-sys-color-primary);
-      }
-    }
-
-    &:active {
-      &::after {
-        background-color: var(--md-sys-color-primary);
-      }
-    }
-
-    &:disabled {
-      color: var(--md-sys-color-on-surface);
-
-      background: none;
-
-      opacity: 0.38;
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
+      background-color: var(--md-sys-color-primary);
     }
   }
 }
