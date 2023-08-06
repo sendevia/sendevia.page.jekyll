@@ -399,11 +399,11 @@ ol {
   }
 
   #content {
-    padding: 6px 24px 36px 24px;
+    padding: 16px 20% 36px 5%;
 
-    width: 65vw;
+    width: 100%;
 
-    letter-spacing: 1.6px;
+    letter-spacing: 1.3px;
 
     & > h1,
     & > h2,
@@ -429,8 +429,12 @@ ol {
       margin-inline: 12px;
       padding-block: 6px 6px;
 
-      letter-spacing: 1px;
+      letter-spacing: 0.6px;
       line-height: 22px;
+
+      & > img {
+        border-radius: 6px;
+      }
     }
 
     p {
@@ -977,16 +981,12 @@ ol {
 
 .right-corner-fabs {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0;
+  right: 0;
+
+  padding: 16px;
 
   z-index: 21;
-
-  .mfb {
-    color: var(--md-sys-color-on-primary-container);
-
-    background-color: var(--md-sys-color-primary-container);
-  }
 
   #rcf-mfb-topbutton {
     opacity: 0;

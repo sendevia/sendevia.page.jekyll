@@ -48,9 +48,9 @@ body {
         left: 80px;
 
         height: calc(100% - 20px);
-        width: calc(100% - 90px);
+        width: calc(100% - 80px);
 
-        border-radius: 12px;
+        border-radius: 12px 0 0 12px;
 
         overflow: overlay;
       }
@@ -74,6 +74,7 @@ body {
     }
 
     &[body-unfocused] {
+      filter: blur(10px);
       opacity: 0.5;
     }
   }
