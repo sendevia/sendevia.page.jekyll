@@ -43,11 +43,11 @@ body {
       --md-sys-color-surface: var(--md-sys-color-surface-light);
       --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-container-light);
       --md-sys-color-tertiary: var(--md-sys-color-tertiary-light);
-      --md-sys-elevation-level1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      --md-sys-elevation-level2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-      --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level1: var(--md-sys-elevation-level1-light);
+      --md-sys-elevation-level2: var(--md-sys-elevation-level2-light);
+      --md-sys-elevation-level3: var(--md-sys-elevation-level3-light);
+      --md-sys-elevation-level4: var(--md-sys-elevation-level4-light);
+      --md-sys-elevation-level5: var(--md-sys-elevation-level5-light);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -82,11 +82,11 @@ body {
       --md-sys-color-surface: var(--md-sys-color-surface-dark);
       --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-container-dark);
       --md-sys-color-tertiary: var(--md-sys-color-tertiary-dark);
-      --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-      --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+      --md-sys-elevation-level1: var(--md-sys-elevation-level1-dark);
+      --md-sys-elevation-level2: var(--md-sys-elevation-level2-dark);
+      --md-sys-elevation-level3: var(--md-sys-elevation-level3-dark);
+      --md-sys-elevation-level4: var(--md-sys-elevation-level4-dark);
+      --md-sys-elevation-level5: var(--md-sys-elevation-level5-dark);
     }
   }
 }
