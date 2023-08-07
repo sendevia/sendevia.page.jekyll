@@ -109,16 +109,40 @@
     }
 
     .page-index {
+      flex-direction: column-reverse;
+
       width: 100%;
 
       margin-block-start: 30px;
 
-      .posts-date-month {
-        top: 68px;
+      .timeline {
+        .posts-date-month {
+          top: 68px;
+        }
+
+        .posts-date-day {
+          top: 98px;
+        }
       }
 
-      .posts-date-day {
-        top: 98px;
+      .person-intro {
+        flex-direction: row;
+
+        position: relative;
+
+        padding: 18px;
+
+        max-width: unset;
+        min-width: unset;
+        width: 100%;
+
+        .section1 {
+          width: 70%;
+        }
+
+        .section2 {
+          width: 100%;
+        }
       }
     }
 
