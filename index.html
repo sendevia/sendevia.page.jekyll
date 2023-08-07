@@ -3,7 +3,7 @@ title: "Sendevia 的博客小站"
 description: ""
 author: "sendevia"
 color: ""
-header_image: ""
+impression: ""
 toc: false
 ---
 
@@ -27,18 +27,18 @@ toc: false
           {%- for post in day.items -%}
           <a href="{{ post.url }}">
             <div class="mcd" spec="clear">
-              {%- if post.header_image and post.header_image != "" -%}
+              {%- if post.impression and post.impression != "" -%}
               <!-- 头图 - 设置由文章提供 -->
-              {%- assign headerImage = post.header_image -%}
+              {%- assign photograph = post.impression -%}
               <!--  -->
-              {%- elsif site.header_image -%}
+              {%- elsif site.impression -%}
               <!-- 头图 - 设置由全局设定提供 -->
-              {%- assign headerImage = site.header_image -%}
+              {%- assign photograph = site.impression -%}
               <!--  -->
               {%- else -%}
               <!-- 头图 - 不设置头图 -->
-              {%- assign headerImage = false -%} {%- endif -%} {%- if headerImage != false -%}
-              <img src="{{ headerImage }}" alt="{{ post.title }}封面" loading="lazy" />
+              {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
+              <img src="{{ photograph }}" alt="{{ post.title }}封面" loading="lazy" />
               {%- endif -%}
               <div class="mcd-supporting">
                 <h3>{{ post.title }}</h3>

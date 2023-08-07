@@ -12,7 +12,7 @@ var cutsomThemeColor = document.body.getAttribute("color");
 var themeRoot = document.querySelector(".material-theme");
 var contentContainer = document.querySelector(".content-container");
 var contentHeader = document.querySelector("#content-header");
-var contentHeaderImage = document.querySelector("#header_image");
+var contentPhotograph = document.querySelector("#impression");
 var contentNavigation = document.querySelector(".mng");
 var contentDrawer = document.querySelector(".mnd");
 if (contentDrawer) {
@@ -191,7 +191,7 @@ window.onload = function () {
   removeLoadScreen();
   changeHeaderTransform();
 
-  themeImageProvider.src = contentHeaderImage.src;
+  themeImageProvider.src = contentPhotograph.src;
 
   if (cutsomThemeColor) {
     let theme = themeFromSourceColor(argbFromHex(cutsomThemeColor));
@@ -230,15 +230,15 @@ headerResizeObserver.observe(contentHeader);
 // 更新标题背景图片的位移
 function changeHeaderTransform() {
   const isContainerOffset = contentHeader.offsetHeight + 10;
-  const isImageOffset = contentHeaderImage.offsetHeight;
+  const isImageOffset = contentPhotograph.offsetHeight;
 
-  contentHeaderImage.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
+  contentPhotograph.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
 }
 
 // 移除加载屏幕
 function removeLoadScreen() {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
-  contentHeaderImage.style.animation = "headerImageTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
+  contentPhotograph.style.animation = "PhotographTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
 
   contentSplashScreen.addEventListener("animationend", () => {
     themeRoot.setAttribute("loaded", true);

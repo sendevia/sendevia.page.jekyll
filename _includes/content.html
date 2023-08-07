@@ -1,21 +1,21 @@
 <!-- 大标题 -->
-<div id="content-header" {%- if headerImage !="false" -%} spec="large" {%- endif -%}>
+<div id="content-header" {%- if photograph !="false" -%} spec="large" {%- endif -%}>
   <div class="header-container">
     <span id="title">{{ page.title }}</span>
     {%- if page.description and page.description != "" -%}
     <span id="subtitle">{{ page.description }}</span>
-    {%- endif -%} {%- if page.header_image and page.header_image != "" -%}
+    {%- endif -%} {%- if page.impression and page.impression != "" -%}
     <!-- 头图 - 设置由文章提供 -->
-    {%- assign headerImage = page.header_image -%}
+    {%- assign photograph = page.impression -%}
     <!--  -->
-    {%- elsif site.header_image -%}
+    {%- elsif site.impression -%}
     <!-- 头图 - 设置由全局设定提供 -->
-    {%- assign headerImage = site.header_image -%}
+    {%- assign photograph = site.impression -%}
     <!--  -->
     {%- else -%}
     <!-- 头图 - 不设置头图 -->
-    {%- assign headerImage = false -%} {%- endif -%} {%- if headerImage != false -%}
-    <img src="{{ headerImage }}" id="header_image" alt="{{ page.title }}" />
+    {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
+    <img src="{{ photograph }}" id="impression" alt="{{ page.title }}" />
     {%- endif -%}
   </div>
 </div>
