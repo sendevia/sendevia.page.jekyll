@@ -10,9 +10,9 @@ var contentContainer = document.querySelector(".content-container");
 var contentHeader = document.querySelector("#content-header");
 var contentPhotograph = document.querySelector("#impression");
 var contentNavigation = document.querySelector(".mng");
-var contentDrawer = document.querySelector(".mnd");
-if (contentDrawer) {
-  var contentDrawerEntries = contentDrawer.querySelectorAll(".mnd-entry");
+var contentNavigationDrawer = document.querySelector(".mnd");
+if (contentNavigationDrawer) {
+  var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".mnd-entry");
   var contentDrawerMenuBtn = document.querySelectorAll("#maf-mfb-menu, #mtb-mib-menu");
 }
 var contentSplashScreen = document.querySelector(".content-loading");
@@ -121,9 +121,9 @@ window.onpageshow = function () {
   };
 
   // 侧边栏
-  if (contentDrawer) {
+  if (contentNavigationDrawer) {
     const toggleMndSection = (boolean) => {
-      contentDrawer.toggleAttribute("show", boolean);
+      contentNavigationDrawer.toggleAttribute("show", boolean);
       themeRoot.toggleAttribute("content-unfocused", boolean);
     };
 
