@@ -239,10 +239,8 @@
     &:hover {
       img {
         opacity: 0.5;
-        filter: blur(20px);
-        transform: scale(1.2);
 
-        transition: opacity 0.3s, filter 0.5s, transform 0.4s;
+        transition: opacity 0.3s;
       }
 
       .mcd-supporting {
