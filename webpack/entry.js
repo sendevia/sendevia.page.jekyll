@@ -142,29 +142,40 @@ window.onpageshow = function () {
   }
 
   // 模态tips
-  const toggleDim = (boolean) => {
-    themeRoot.toggleAttribute("body-unfocused", boolean);
-  };
+  const toggleDim = (isDim) => themeRoot.toggleAttribute("body-unfocused", isDim);
 
   modalTipsIcon.forEach((i) => {
     i.addEventListener("click", () => {
       toggleDim(true);
-      modalTips.style.animation = "mdl-show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both";
+      modalTips.style.animation = `mdl-show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
       modalTips.showModal();
+      isModalShowing = true;
     });
   });
 
-  var isModalShowing = false;
-  dialogBtnClose.addEventListener("click", () => {
-    toggleDim();
+  let isModalShowing = false;
+
+  const closeModal = () => {
+    toggleDim(false);
     isModalShowing = true;
-    modalTips.style.animation = "mdl-close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both";
-    modalTips.onanimationend = function () {
+    modalTips.style.animation = `mdl-close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+    setTimeout(() => {
       if (isModalShowing) {
-        this.close();
-        this.style.animation = "";
+        modalTips.close();
+        modalTips.style.animation = "";
         isModalShowing = false;
       }
+    }, 400);
+  };
+
+  dialogBtnClose.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isModalShowing) {
+      closeModal();
+    }
+  });
+
   // mcp input 展示状态切换
   mcpInputElements.forEach((input) => {
     const checkSymbol = document.createElement("span");
