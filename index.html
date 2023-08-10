@@ -10,10 +10,10 @@ toc: false
 <div class="page-index">
   <div class="timeline">
     {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
-    <div class="mcp" icon>
+    <button class="mcp" spec="assist" icon>
       <span>calendar_today</span>
       {{ year.name }} 年
-    </div>
+    </button>
     <div class="index-level1">
       <!--  -->
       {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%m'" -%} {%- for month in posts_by_month -%}

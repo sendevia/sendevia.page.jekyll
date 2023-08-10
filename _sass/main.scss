@@ -788,8 +788,13 @@ ol {
   .timeline {
     display: flex;
     flex-direction: column;
+    gap: 6px;
 
     margin-block-start: 18px;
+
+    .mcp {
+      margin-inline-start: 10px;
+    }
 
     .index-level1 {
       display: inline-flex;

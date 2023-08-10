@@ -115,12 +115,16 @@
       margin-block-start: 30px;
 
       .timeline {
-        .posts-date-month {
-          top: 68px;
+        .index-level1 {
+          .posts-date-month {
+            top: 68px;
+          }
         }
 
-        .posts-date-day {
-          top: 98px;
+        .index-level2 {
+          .posts-date-day {
+            top: 98px;
+          }
         }
       }
 
