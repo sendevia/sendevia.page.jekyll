@@ -11,32 +11,55 @@ button.mbt {
   flex-wrap: nowrap;
   justify-content: center;
 
-  padding: 10px 24px;
-
-  position: relative;
-
+  height: 40px;
   min-width: 58px;
   width: max-content;
 
+  padding-inline: 24px;
+
+  position: relative;
+
+  color: var(--md-sys-color-primary);
   letter-spacing: 0;
   line-height: 20px;
 
   border-radius: 100px;
   border: none;
 
+  background: none;
+
+  box-shadow: none;
   cursor: pointer;
   overflow: hidden;
   transition: var(--md-sys-motion-duration-medium4);
 
+  &[icon] {
+    gap: 8px;
+
+    padding-inline-end: 24px;
+    padding-inline-start: 16px;
+
+    span {
+      @include material-icon($size: 18px);
+
+      height: 20px;
+      width: 20px;
+
+      line-height: 20px;
+    }
+  }
+
   &::after {
     content: "";
+
+    height: 100%;
+    width: 100%;
 
     position: absolute;
     left: 0;
     top: 0;
 
-    height: 100%;
-    width: 100%;
+    background-color: var(--md-sys-color-on-primary);
 
     opacity: 0;
     transition: var(--md-sys-motion-duration-medium4);
@@ -57,45 +80,35 @@ button.mbt {
     opacity: var(--md-sys-state-pressed-state-layer-opacity);
   }
 
-  &[icon] {
-    gap: 8px;
-
-    padding: 10px 24px 10px 16px;
-
-    span {
-      @include material-icon($size: 18px);
-
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  &,
   &[spec="filled"] {
     color: var(--md-sys-color-on-primary);
 
     background-color: var(--md-sys-color-primary);
 
     &:hover {
+      box-shadow: var(--md-sys-elevation-level1);
+
       &::after {
         background-color: var(--md-sys-color-on-primary);
       }
-
-      box-shadow: var(--md-sys-elevation-level1);
     }
 
-    &:focus::after,
-    &:active::after {
-      background-color: var(--md-sys-color-on-primary);
+    &:focus,
+    &:active {
+      box-shadow: none;
+
+      &::after {
+        background-color: var(--md-sys-color-on-primary);
+      }
     }
   }
 
   &[spec="outlined"] {
     color: var(--md-sys-color-primary);
 
-    background: none;
-
     border: 1px solid var(--md-sys-color-outline);
+
+    background: none;
 
     &:hover::after,
     &:focus::after,
@@ -128,11 +141,11 @@ button.mbt {
     box-shadow: var(--md-sys-elevation-level1);
 
     &:hover {
+      box-shadow: var(--md-sys-elevation-level2);
+
       &::after {
         background-color: var(--md-sys-color-primary);
       }
-
-      box-shadow: var(--md-sys-elevation-level2);
     }
 
     &:focus::after {
@@ -140,11 +153,11 @@ button.mbt {
     }
 
     &:active {
+      box-shadow: var(--md-sys-elevation-level1);
+
       &::after {
         background-color: var(--md-sys-color-primary);
       }
-
-      box-shadow: var(--md-sys-elevation-level1);
     }
   }
 
@@ -154,16 +167,20 @@ button.mbt {
     background-color: var(--md-sys-color-secondary-container);
 
     &:hover {
+      box-shadow: var(--md-sys-elevation-level1);
+
       &::after {
         background-color: var(--md-sys-color-on-secondary-container);
       }
-
-      box-shadow: var(--md-sys-elevation-level1);
     }
 
-    &:focus::after,
-    &:active::after {
-      background-color: var(--md-sys-color-on-secondary-container);
+    &:focus,
+    &:active {
+      box-shadow: none;
+
+      &::after {
+        background-color: var(--md-sys-color-on-secondary-container);
+      }
     }
   }
 }
