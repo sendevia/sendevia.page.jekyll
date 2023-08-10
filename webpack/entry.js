@@ -1,9 +1,5 @@
 import "simple-jekyll-search";
 import { applyTheme, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
-// import Worker from "./mtu.worker.js";
-// import { applyTheme } from "@material/material-color-utilities";
-
-// var worker = new Worker();
 
 // 常用常量设置
 var themeImageProvider = new Image();
@@ -51,11 +47,6 @@ var rippleElements = document.querySelectorAll(
 //   // applyTheme(theme, { target: document.body, dark: mediaQueryPerferScheme.matches });
 // };
 
-// worker.onmessage = function (theme) {
-// console.log(theme.data);
-// applyTheme(theme.data, { target: document.body, dark: mediaQueryPerferScheme.matches });
-// };
-//
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");

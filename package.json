@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4",
-    "worker-loader": "^3.0.8"
+    "webpack-cli": "^5.1.4"
   }
 }

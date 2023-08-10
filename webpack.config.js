@@ -9,14 +9,6 @@ const config = {
     filename: "bundle.js",
   },
   devtool: "source-map",
-  module: {
-    rules: [
-      {
-        test: /\.worker\.js$/,
-        loader: "worker-loader",
-      },
-    ],
-  },
 };
 
 module.exports = () => {
