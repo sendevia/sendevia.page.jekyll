@@ -36,16 +36,7 @@ var rippleElements = document.querySelectorAll(
   #accent,
   button`
 );
-
-// worker.postMessage({
-// cutsomThemeColor: document.body.getAttribute("color"),
-// });
-
-// worker.onmessage = ({ data: { themeObject } }) => {
-//   const theme = themeObject;
-//   console.log(theme);
-//   // applyTheme(theme, { target: document.body, dark: mediaQueryPerferScheme.matches });
-// };
+var mcpInputElements = document.querySelectorAll("label.mcp > input[type='checkbox']");
 
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
@@ -174,7 +165,24 @@ window.onpageshow = function () {
         this.style.animation = "";
         isModalShowing = false;
       }
-    };
+  // mcp input 展示状态切换
+  mcpInputElements.forEach((input) => {
+    const checkSymbol = document.createElement("span");
+    checkSymbol.innerHTML = "check";
+
+    function updateLabel() {
+      if (input.checked) {
+        input.parentElement.setAttribute("checked", "");
+        input.parentElement.appendChild(checkSymbol);
+      } else {
+        input.parentElement.removeAttribute("checked");
+        if (checkSymbol.parentNode) {
+          input.parentElement.removeChild(checkSymbol);
+        }
+      }
+    }
+    updateLabel();
+    input.addEventListener("change", updateLabel);
   });
 };
 
