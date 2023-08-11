@@ -228,7 +228,7 @@
 
       color: var(--md-sys-color-on-primary);
 
-      transform: translateY(170%);
+      transform: translateY(calc(100% + 20px));
       transition: 0.4s;
     }
 
