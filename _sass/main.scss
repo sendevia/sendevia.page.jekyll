@@ -875,20 +875,25 @@ ol {
   .person-intro {
     display: flex;
     flex-direction: column;
-
-    position: sticky;
-    top: 3vw;
-
-    margin-block-start: 3vw;
-    padding: 24px 0;
+    gap: 6px;
 
     height: max-content;
     max-width: 360px;
     min-width: 240px;
 
-    background-color: var(--md-sys-color-surface);
+    margin-block-start: 3vw;
+    padding-block-end: 12px;
+    padding-block-start: 24px;
+    padding-inline: 6px;
+
+    position: sticky;
+    top: 3vw;
+
+    text-align: center;
 
     border-radius: 24px;
+
+    background-color: var(--md-sys-color-surface);
 
     .section1 {
       display: flex;
@@ -907,21 +912,20 @@ ol {
       #nickname {
         color: var(--md-sys-color-on-surface);
       }
+    }
 
+    .section2 {
       #socialmedia {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-      }
-    }
+        justify-content: center;
 
-    .section2 {
-      p {
-        margin-block-start: 24px;
-        padding-inline: 36px;
-
-        &::before {
-          content: "TA 说：";
+        a {
+          flex-grow: 1;
+          button {
+            width: 100%;
+          }
         }
       }
     }

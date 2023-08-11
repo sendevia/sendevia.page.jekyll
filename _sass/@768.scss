@@ -129,22 +129,25 @@
       }
 
       .person-intro {
-        flex-direction: row;
-
         position: relative;
+        top: 0;
 
-        padding: 18px;
+        margin: auto;
 
-        max-width: unset;
+        max-width: 360px;
         min-width: unset;
-        width: 100%;
+        width: 80vw;
 
         .section1 {
-          width: 70%;
+          width: 100%;
         }
 
         .section2 {
           width: 100%;
+
+          #socialmedia {
+            flex-direction: column;
+          }
         }
       }
     }
