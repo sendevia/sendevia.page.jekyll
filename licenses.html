@@ -27,17 +27,17 @@ published: true
       <td>{{ item.version }}</td>
       <td>
         <a href="{{ item.repository }}" target="_blank">
-          <div class="mcp" spec="assist" icon>
+          <button class="mcp" spec="assist" icon>
             <span>open_in_new</span>
             Github
-          </div>
+          </button>
         </a>
       </td>
       <td>
-        <div class="mcp" spec="assist" icon>
+        <button class="mcp" spec="assist" icon disabled>
           <span>balance</span>
           {{ item.license }}
-        </div>
+        </button>
       </td>
     </tr>
     {%- endfor-%}
