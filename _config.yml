@@ -1,13 +1,18 @@
-version: "23.806.0"
+version: "23.811.0"
 
+title: sendevia 的博客
 baseurl:
+permalink: /:title
+locale: zh_CN
+timezone: Asia/Shanghai
+
+author: sendevia
+mugshot: /assets/images/avatar.webp
 email: me@sendevia.top
 github: https://github.com/Sendevia
+
 impression: /assets/images/100628112_p0.webp
-locale: zh_CN
-permalink: /:title
-timezone: Asia/Shanghai
-title: sendevia 的博客
+
 twitter:
   username: sendevia
   card: summary
