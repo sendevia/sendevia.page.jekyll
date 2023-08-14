@@ -1,84 +1,80 @@
 # 简介
 
-**推荐在 CloudFlare 上部署本项目、在 WSL2 上进行本地开发调试。**
+我自己的博客网站的源码仓库，使用自制的 `jekyll-theme-m3` 主题，目前正积极开发中。**推荐在 CloudFlare 上部署本项目。**
 
 ## 配置运行环境
 
-1. 安装依赖
+### 安装依赖
 
-> Debian/Ubuntu
+Debian/Ubuntu
 
-```
-sudo apt install ruby-full build-essential zlib1g-dev curl -y
-```
+> ```
+> sudo apt install ruby-full build-essential zlib1g-dev curl -y
+> ```
 
-> Archlinux
+Archlinux
 
-```
-sudo pacman -S ruby base-devel curl
-```
+> ```
+> sudo pacman -S ruby base-devel curl
+> ```
 
-2. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
+1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-```
+> ```
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+> ```
 
-```
-重启终端
-```
+> `重启终端`
 
-```
-nvm i 12.18
-```
+> ```
+> nvm i 12.18
+> ```
 
-1. 配置环境变量
+### 配置环境变量
 
-> Debian/Ubuntu
+_以 bash 为例_
 
-```
-echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-```
+Debian/Ubuntu
 
-```
-echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-```
+> ```
+> echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+> ```
+>
+> ```
+> echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+> ```
 
-```
-重启终端
-```
+> `重启终端`
 
-> Archlinux
+Archlinux
 
-```
-echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
-```
+> ```
+> echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
+> ```
+>
+> ```
+> echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
+> ```
 
-```
-echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
-```
+> `重启终端`
 
-```
-重启终端
-```
+### 安装 Jekyll
 
-## 安装 Jekyll
-
-```
-gem install bundler jekyll
-```
+> ```
+> gem install bundler jekyll
+> ```
 
 # 运行和部署本项目
 
-**切换到本项目文件夹**
+切换到本项目文件夹
 
-```
-npm i
-```
-
-```
-bundle i
-```
+> ```
+> npm i
+> ```
+>
+> ```
+> bundle i
+> ```
 
 ## 开发模式
 
