@@ -9,6 +9,8 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
   gem 'jemoji'
+  gem 'jekyll-timeago'
+  gem 'jekyll-last-modified-at'
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
