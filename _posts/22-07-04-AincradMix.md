@@ -34,60 +34,33 @@ tags: readme skin amix
 
 # 皮肤预览
 
-<details>
-  <summary>主界面</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot01.webp" alt="主界面">
-    </div>
-</details>
+![主界面](/assets/images/22/06/11/screenshot01.webp)
 
-<details>
-  <summary>选歌界面</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot02.webp" alt="选歌界面1">
-      <img src="/assets/images/22/06/11/screenshot06.webp" alt="选歌界面2">
-      <img src="/assets/images/22/06/11/screenshot07.webp" alt="选歌界面3">
-    </div>
-</details>
+![选歌界面1](/assets/images/22/06/11/screenshot02.webp)
+![选歌界面2](/assets/images/22/06/11/screenshot06.webp)
+![选歌界面3](/assets/images/22/06/11/screenshot07.webp)
 
-<details>
-  <summary>std 模式</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot03.webp" alt="std 模式1">
-      <img src="/assets/images/22/06/11/screenshot04.webp" alt="std 模式2">
-    </div>
-</details>
+## std 模式
 
-<details>
-  <summary>mania 模式</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot09.webp" alt="mania 模式1">
-      <img src="/assets/images/22/06/11/screenshot08.webp" alt="mania 模式2">
-    </div>
-</details>
+![std 模式1](/assets/images/22/06/11/screenshot03.webp)
+![std 模式2](/assets/images/22/06/11/screenshot04.webp)
 
-<details>
-  <summary>taiko 模式</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot10.webp" alt="taiko 模式1">
-      <img src="/assets/images/22/06/11/screenshot11.webp" alt="taiko 模式2">
-    </div>
-</details>
+## mania 模式
 
-<details>
-  <summary>catch 模式</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot12.webp" alt="catch 模式1">
-      <img src="/assets/images/22/06/11/screenshot13.webp" alt="catch 模式2">
-    </div>
-</details>
+![mania 模式1](/assets/images/22/06/11/screenshot09.webp)
+![mania 模式2](/assets/images/22/06/11/screenshot08.webp)
 
-<details>
-  <summary>成绩结算</summary>
-    <div>
-      <img src="/assets/images/22/06/11/screenshot05.webp" alt="成绩结算">
-    </div>
-</details>
+## taiko 模式
+
+![taiko 模式1](/assets/images/22/06/11/screenshot10.webp)
+![taiko 模式2](/assets/images/22/06/11/screenshot11.webp)
+
+## catch 模式
+
+![catch 模式1](/assets/images/22/06/11/screenshot12.webp)
+![catch 模式2](/assets/images/22/06/11/screenshot13.webp)
+
+![成绩结算](/assets/images/22/06/11/screenshot05.webp)
 
 # 下载
 
