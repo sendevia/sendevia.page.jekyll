@@ -3,6 +3,13 @@
 @media screen and (max-width: 425px) {
   html,
   body {
+    .content-flow #content {
+      [role="doc-endnotes"]ol {
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+    }
+
     .page-index {
       .timeline {
         .mcp {
