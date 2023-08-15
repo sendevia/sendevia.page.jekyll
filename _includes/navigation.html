@@ -74,24 +74,27 @@
       {%- if page.date -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>calendar_month</button>
-        <p>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</p>
+        <p>发布于：{{ page.date | timeago }}（{{ page.date | date: "%Y年%m月%d日" }}）</p>
+      </div>
+
+      <div class="mdl-tips-item">
+        <button class="mib" spec="tonal" disabled>edit</button>
+        <p>最后修改于：{% last_modified_at %}</p>
       </div>
       {%- endif -%}
 
       <!-- 阅读时间 -->
+      {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>schedule</button>
-        <p>
-          {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%} 估计阅读时间：{%- if
-          read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟
-        </p>
+        <p>估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟</p>
       </div>
 
       <!-- 作者 -->
       {%- if page.author -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>person</button>
-        <p>{{ page.author }}</p>
+        <p>作者：{{ page.author }}</p>
       </div>
       {%- endif -%}
 
@@ -99,7 +102,7 @@
       {%- if page.categories.size > 0 -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>category</button>
-        <p>{{ page.categories }}</p>
+        <p>分类：{{ page.categories }}</p>
       </div>
       {%- endif -%}
 
@@ -107,7 +110,7 @@
       {%- if page.color and page.color != "" -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>palette</button>
-        <p>{{ page.color }}</p>
+        <p>主题颜色：{{ page.color }}</p>
       </div>
       {%- endif -%}
     </div>

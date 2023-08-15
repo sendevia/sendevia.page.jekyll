@@ -61,7 +61,17 @@ kramdown:
 
 webrick:
   headers:
-    Cache-Control: must-revalidate
+
+jekyll_timeago:
+  depth: 2
+  translations_path: "/_data/timeago.yml"
+  default_locale: "zh_CN"
+  available_locales:
+    - "en"
+    - "zh_CN"
+
+last-modified-at:
+  date-format: "%Y 年 %m 月 %d 日"
 
 exclude:
   - .gitignore

@@ -55,6 +55,13 @@ dialog[open],
       gap: 12px;
 
       width: 100%;
+
+      .mdl-tips-item {
+        display: grid;
+        align-items: center;
+        gap: 12px;
+        grid-template-columns: auto auto;
+      }
     }
   }
 

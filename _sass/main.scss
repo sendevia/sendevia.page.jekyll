@@ -1011,11 +1011,10 @@ ol {
       width: 120px;
 
       border-radius: 12px;
+      outline: 2px solid var(--md-sys-color-outline);
 
       background-image: var(--via-svg-qrcode-rickroll);
       background-repeat: no-repeat;
-
-      box-shadow: var(--md-sys-elevation-level4);
     }
   }
 }
@@ -1034,13 +1033,6 @@ ol {
 组件的特定配置
 
 */
-
-.mdl-tips-item {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 12px;
-}
 
 .right-corner-fabs {
   position: fixed;
