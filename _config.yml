@@ -1,56 +1,46 @@
 version: "23.811.1"
 
-title: sendevia 的博客
-baseurl:
-permalink: /:title
-locale: zh_CN
-timezone: Asia/Shanghai
+title: "sendevia 的博客"
+baseurl: ""
+permalink: "/:title"
+locale: "zh_CN"
+timezone: "Asia/Shanghai"
 
-author: sendevia
-mugshot: /assets/images/avatar.webp
-email: me@sendevia.top
-github: https://github.com/Sendevia
+author: "sendevia"
+mugshot: "/assets/images/avatar.webp"
+email: "me@sendevia.top"
+github: "https://github.com/Sendevia"
 
-impression: /assets/images/100628112_p0.webp
+impression: "/assets/images/100628112_p0.webp"
 
 twitter:
-  username: sendevia
-  card: summary
-
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-toc
-  - jemoji
+  username: "sendevia"
+  card: "summary"
 
 defaults:
   - scope:
       path: ""
     values:
-      layout: Material3
+      layout: "Material3"
       published: true
   - scope:
-      path: _posts
+      path: "_posts"
     values:
-      permalink: /:short_year/:month/:day/:title
+      permalink: "/:short_year/:month/:day/:title"
       toc: true
 
 toc:
-  item_class: mnd-entry
-  item_prefix: mnd-
-  list_class: mnd-section
+  item_class: "mnd-entry"
+  item_prefix: "mnd-"
+  list_class: "mnd-section"
   list_id: null
   max_level: 2
   ordered_list: false
 
-highlighter: rouge
-
-markdown: kramdown
+markdown: "kramdown"
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  input: "GFM"
+  syntax_highlighter: "rouge"
   syntax_highlighter_opts:
     css_class: "highlight"
     span:
@@ -61,6 +51,7 @@ kramdown:
 
 webrick:
   headers:
+    Cache-Control: "must-revalidate"
 
 jekyll_timeago:
   depth: 2
