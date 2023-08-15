@@ -217,18 +217,6 @@ window.onload = function () {
   mediaQueryPerferScheme.addEventListener("change", () => {
     location.reload();
   });
-
-  // sjs插件配置
-  if (window.location.pathname == "/posts") {
-    window.sjs = new SimpleJekyllSearch({
-      fuzzy: false,
-      json: "/search.json",
-      noResultsText: "＞︿＜ 无结果",
-      resultsContainer: document.getElementById("results-container"),
-      searchInput: document.getElementById("search-input"),
-      searchResultTemplate: '<a href="{url}"><button spec="text">{title}</button></a>',
-    });
-  }
 };
 
 // 监听大标题的大小更改

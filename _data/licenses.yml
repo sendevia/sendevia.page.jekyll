@@ -8,11 +8,6 @@
   repository: https://github.com/material-foundation/material-color-utilities
   version: 0.2.7
 
-- name: Simple-Jekyll-Search
-  license: MIT
-  repository: https://github.com/christian-fei/Simple-Jekyll-Search
-  version: 1.10.0
-
 - name: webpack
   license: MIT
   repository: https://github.com/webpack/webpack
