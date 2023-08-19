@@ -7,8 +7,7 @@ var mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
 var cutsomThemeColor = document.body.getAttribute("color");
 var themeRoot = document.querySelector(".material-theme");
 var contentContainer = document.querySelector(".content-container");
-var contentHeader = document.querySelector("#content-header");
-var contentPhotograph = document.querySelector("#impression");
+var contentPhotograph = document.querySelector(".impression img");
 var contentNavigation = document.querySelector(".mng");
 var contentNavigationDrawer = document.querySelector(".mnd");
 if (contentNavigationDrawer) {
@@ -88,7 +87,6 @@ window.onpageshow = function () {
 
     topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
     themeRoot.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
-    contentHeader.style.opacity = scrollY >= 400 ? "0" : "1";
     scrollTopElements.forEach((i) => {
       i.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
@@ -106,8 +104,6 @@ window.onpageshow = function () {
 
   // 缩放事件
   window.onresize = function () {
-    changeHeaderTransform();
-
     contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
   };
 
@@ -199,7 +195,6 @@ window.onpageshow = function () {
 
 window.onload = function () {
   removeLoadScreen();
-  changeHeaderTransform();
 
   themeImageProvider.src = contentPhotograph.src;
 
@@ -236,7 +231,6 @@ function changeHeaderTransform() {
 // 移除加载屏幕
 function removeLoadScreen() {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
-  contentPhotograph.style.animation = "PhotographTransform 120s cubic-bezier(0.5, 0.05, 0.5, 0.95) infinite";
 
   contentSplashScreen.addEventListener("animationend", () => {
     themeRoot.setAttribute("loaded", true);
