@@ -139,7 +139,7 @@
     overflow-y: hidden;
     visibility: hidden;
 
-    .menu-and-fab {
+    #mng-rail-fab {
       display: none;
     }
 
@@ -174,46 +174,28 @@
   &[spec="rail"] {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 12px;
     justify-content: space-between;
-
-    position: fixed;
-    left: 0;
-
-    padding: 44px 0px 56px;
 
     height: 100%;
     width: 80px;
 
+    position: fixed;
+    left: 0;
+
     overflow: overlay;
 
-    .menu-and-fab {
+    #mng-rail-fab {
       display: flex;
       align-items: center;
-      flex-direction: column;
-      gap: 4px;
+      justify-content: center;
 
-      span {
-        @include material-icon($size: 24px);
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-
-        height: 48px;
-        width: 48px;
-
-        cursor: pointer;
-        overflow: hidden;
-      }
+      height: 80px;
     }
 
     .destinations {
       align-items: flex-start;
       flex-direction: column;
-      justify-content: flex-end;
 
       #segment-active {
         margin: 4px 5px;
@@ -257,6 +239,25 @@
             visibility: visible;
           }
         }
+      }
+    }
+
+    &[dest="top"] {
+      .destinations {
+        justify-content: flex-start;
+      }
+    }
+
+    &[dest="center"] {
+      .destinations {
+        justify-content: center;
+      }
+    }
+
+    &,
+    &[dest="bottom"] {
+      .destinations {
+        justify-content: flex-end;
       }
     }
   }

@@ -1,11 +1,10 @@
 <!-- 导航 - 导航栏 -->
-<div class="mng" spec="rail" dest="bottom">
-  <div class="menu-and-fab">
-    <button class="mib" id="maf-mib-modaltips">info</button>
-    {%- if page.toc -%}
+<div class="mng" spec="rail" dest="center">
+  {%- if page.toc -%}
+  <div id="mng-rail-fab">
     <button class="mfb" spec="tertiary" size="normal" id="maf-mfb-menu">menu</button>
-    {%- endif -%}
   </div>
+  {%- endif -%}
 
   <div class="destinations">
     <a href="/">

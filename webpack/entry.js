@@ -174,7 +174,7 @@ window.onpageshow = function () {
     document.addEventListener("click", (i) => {
       let isMnd = i.target.closest(".mnd");
       let isMtb = i.target.closest(".mtb");
-      let isMAB = i.target.closest(".menu-and-fab");
+      let isMAB = i.target.closest("#mng-rail-fab");
 
       if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
         toggleMndSection(false);
