@@ -1,40 +1,85 @@
-import "simple-jekyll-search";
-import { applyTheme, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
+import { hexFromArgb, argbFromHex, themeFromImage, themeFromSourceColor } from "@material/material-color-utilities";
 
-// 常用常量设置
+/**
+ * 需要被取色的图片
+ */
 var themeImageProvider = new Image();
-var mediaQueryPerferScheme = window.matchMedia("(prefers-color-scheme: dark)");
+/**
+ * 需要以此生成调色盘的hex颜色
+ */
 var cutsomThemeColor = document.body.getAttribute("color");
+/**
+ * 主题根节点
+ */
 var themeRoot = document.querySelector(".material-theme");
+/**
+ * 文章内容主容器
+ */
 var contentContainer = document.querySelector(".content-container");
+/**
+ * 文章头部印象图
+ */
 var contentPhotograph = document.querySelector(".impression img");
+/**
+ * 页面导航
+ */
 var contentNavigation = document.querySelector(".mng");
+/**
+ * 展开的页面导航
+ */
 var contentNavigationDrawer = document.querySelector(".mnd");
 if (contentNavigationDrawer) {
+  /**
+   * Drawer目录元素
+   */
   var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".mnd-entry");
+  /**
+   * 控制Drawer开关的元素
+   */
   var contentDrawerMenuBtn = document.querySelectorAll("#maf-mfb-menu, #mtb-mib-menu");
 }
+/**
+ * 页面加载中的闪屏
+ */
 var contentSplashScreen = document.querySelector(".content-loading");
+/**
+ * 定位当前所在的页面
+ */
 var currentPage = window.location.pathname;
+/**
+ * 选择移动端的标题栏
+ */
 var topAppBar = document.querySelector(".mtb");
+/**
+ * 选择全部的开启模态提示框的元素
+ */
 var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, #maf-mib-modaltips");
+/**
+ * 选择模态提示框
+ */
 var modalTips = document.querySelector("#mdl-tips");
+/**
+ * 选择关闭模态提示框的元素
+ */
 var dialogBtnClose = document.querySelector("#dialog-close");
+/**
+ * 选择点击后跳转到页面顶端的元素
+ */
 var scrollTopElements = document.querySelectorAll(`#rcf-mfb-topbutton`);
+/**
+ * 选择全部需要涟漪效果的元素
+ */
 var rippleElements = document.querySelectorAll(
-  `.mbt,
+  `button,
   .mcd a,
-  .mcd-header > span,
   .mcd[spec='clear'],
   .mcd[spec='focus'],
-  .mcp,
-  .menu-and-fab span,
-  .mfb,
-  .mib,
   .mnd a,
-  #accent,
-  button`
+  #accent`
 );
+/**
+ * 选择全部需要控制状态的面包屑元素
+ */
 var mcpInputElements = document.querySelectorAll("label.mcp > input[type='checkbox']");
 
 window.onpageshow = function () {
@@ -199,40 +244,37 @@ window.onload = function () {
   themeImageProvider.src = contentPhotograph.src;
 
   if (cutsomThemeColor) {
-    let theme = themeFromSourceColor(argbFromHex(cutsomThemeColor));
-    applyTheme(theme, { target: document.body, dark: mediaQueryPerferScheme.matches });
+    generateM3Palette(themeFromSourceColor(argbFromHex(cutsomThemeColor)));
   } else {
-    let theme = themeFromImage(themeImageProvider);
-    theme.then(function (result) {
-      applyTheme(result, { target: document.body, dark: mediaQueryPerferScheme.matches });
+    themeFromImage(themeImageProvider).then(function (result) {
+      generateM3Palette(result);
     });
   }
-
-  // 监听颜色主题更改
-  mediaQueryPerferScheme.addEventListener("change", () => {
-    location.reload();
-  });
 };
 
-// 监听大标题的大小更改
-const headerResizeObserver = new ResizeObserver(() => {
-  changeHeaderTransform();
-});
-headerResizeObserver.observe(contentHeader);
-
-// 更新标题背景图片的位移
-function changeHeaderTransform() {
-  const isContainerOffset = contentHeader.offsetHeight + 10;
-  const isImageOffset = contentPhotograph.offsetHeight;
-
-  contentPhotograph.style.setProperty("--via-transform-header-image", Math.abs(isImageOffset - isContainerOffset));
-}
-
-// 移除加载屏幕
+/**
+ * 移除加载屏幕
+ */
 function removeLoadScreen() {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
 
   contentSplashScreen.addEventListener("animationend", () => {
     themeRoot.setAttribute("loaded", true);
   });
+}
+
+/**
+ * @param theme 一个 theme 对象
+ */
+function generateM3Palette(theme) {
+  const tones = [0, 4, 6, 10, 12, 17, 20, 22, 24, 30, 40, 50, 60, 80, 87, 90, 92, 94, 95, 96, 98, 99, 100];
+
+  for (const [key, palette] of Object.entries(theme.palettes)) {
+    const paletteKey = key.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    for (const tone of tones) {
+      const token = `--md-ref-palette-${paletteKey}${tone}`;
+      const color = hexFromArgb(palette.tone(tone));
+      themeRoot.style.setProperty(token, color);
+    }
+  }
 }
