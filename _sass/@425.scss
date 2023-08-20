@@ -3,10 +3,20 @@
 @media screen and (max-width: 425px) {
   html,
   body {
-    .content-flow #content {
-      [role="doc-endnotes"]ol {
-        margin-inline: 0;
-        padding-inline: 0;
+    .content-flow {
+      #content {
+        [role="doc-endnotes"]ol {
+          margin-inline: 0;
+          padding-inline: 0;
+        }
+      }
+
+      #nothing {
+        flex-direction: column-reverse;
+
+        h1 {
+          text-align: center;
+        }
       }
     }
 
