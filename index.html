@@ -10,45 +10,34 @@ toc: false
 <div class="page-index">
   <div class="timeline">
     {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
-    <button class="mcp" spec="assist" icon>
-      <span>calendar_today</span>
-      {{ year.name }} 年
-    </button>
     <div class="index-level1">
-      <!--  -->
       {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%m'" -%} {%- for month in posts_by_month -%}
-      <span class="posts-date-month">{{ month.name }} 月</span>
+      <span class="posts-date-year-month"> <p>{{ year.name }} 年 {{ month.name }} 月</p> </span>
       <div class="index-level2">
-        <!--  -->
-        {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%d'" -%} {%- for day in posts_by_day -%}
-        <span class="posts-date-day">{{ day.name }}</span>
-        <div class="index-level3 posts-card">
-          <!--  -->
-          {%- for post in day.items -%}
+        {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%d'" -%} {%- for day in posts_by_day -%} {%- for post in day.items -%}
+        <div class="posts-card">
           <a href="{{ post.url }}">
             <div class="mcd" spec="clear">
-              {%- if post.impression and post.impression != "" -%}
-              <!-- 头图 - 设置由文章提供 -->
-              {%- assign photograph = post.impression -%}
-              <!--  -->
-              {%- elsif site.impression -%}
-              <!-- 头图 - 设置由全局设定提供 -->
-              {%- assign photograph = site.impression -%}
-              <!--  -->
-              {%- else -%}
-              <!-- 头图 - 不设置头图 -->
-              {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
-              <img src="{{ photograph }}" alt="{{ post.title }}封面" loading="lazy" />
-              {%- endif -%}
+              <div class="mcd-impression">
+                <span class="posts-date-day">{{ day.name }}</span>
+                {%- if post.impression and post.impression != "" -%}
+                <!-- 头图 - 设置由文章提供 -->
+                {%- assign photograph = post.impression -%} {%- elsif site.impression -%}
+                <!-- 头图 - 设置由全局设定提供 -->
+                {%- assign photograph = site.impression -%} {%- else -%}
+                <!-- 头图 - 不设置头图 -->
+                {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
+                <img src="{{ photograph }}" alt="{{ post.title }}的封面" loading="lazy" />
+                {%- endif -%}
+              </div>
               <div class="mcd-supporting">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
               </div>
             </div>
           </a>
-          {%- endfor -%}
         </div>
-        {%- endfor -%}
+        {%- endfor -%} {%- endfor -%}
       </div>
       {%- endfor -%}
     </div>

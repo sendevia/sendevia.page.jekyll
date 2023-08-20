@@ -786,7 +786,7 @@ ol {
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 18px;
 
     margin-block-start: 18px;
 
@@ -797,20 +797,22 @@ ol {
     .index-level1 {
       display: inline-flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 18px;
 
       margin-inline-start: 10px;
 
-      .posts-date-month {
+      .posts-date-year-month {
         @include body-large();
 
         display: block;
 
+        height: 24px;
+        width: max-content;
+
+        padding-inline: 6px;
+
         position: sticky;
         top: 5px;
-
-        height: 24px;
-        width: 54px;
 
         color: var(--md-sys-color-inverse-on-surface);
         text-align: center;
@@ -825,50 +827,46 @@ ol {
     }
 
     .index-level2 {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 6px;
-
-      .posts-date-day {
-        @include display-small();
-
-        display: block;
-
-        position: sticky;
-        top: 35px;
-
-        padding-block: 10px;
-
-        height: 66px;
-        width: 66px;
-
-        color: var(--md-sys-color-on-surface-variant);
-        text-align: center;
-
-        border-radius: 6px 6px 12px;
-
-        background-color: var(--md-sys-color-surface-variant);
-
-        z-index: 11;
-        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-      }
-    }
-
-    .posts-card {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 12px;
-      justify-content: flex-start;
+    }
 
+    .posts-card {
       a {
         display: block;
 
         width: 360px;
-      }
 
-      .mcd {
-        cursor: pointer;
+        position: relative;
+
+        .posts-date-day {
+          @include display-small();
+
+          display: block;
+
+          height: 66px;
+          width: 66px;
+
+          margin: 6px;
+
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          color: var(--md-sys-color-on-surface-variant);
+          line-height: 66px;
+          text-align: center;
+
+          border-radius: 12px 12px 20px;
+
+          background-color: var(--md-sys-color-surface-variant);
+
+          pointer-events: none;
+          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+          z-index: 11;
+        }
       }
     }
   }

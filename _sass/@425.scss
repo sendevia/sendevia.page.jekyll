@@ -12,16 +12,16 @@
 
     .page-index {
       .timeline {
-        .mcp {
-          transform: translateX(-10px);
-        }
-
         .index-level1 {
           margin: 0;
         }
 
         .posts-card {
           width: 100%;
+
+          a {
+            width: 100%;
+          }
         }
       }
     }

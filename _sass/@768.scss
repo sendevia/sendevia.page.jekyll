@@ -62,15 +62,10 @@
 
       #content {
         padding: 0 0 36px 0;
+      }
 
-        .page-index {
-          margin-inline: 0;
-          padding-block: 0;
-
-          .index-level2 {
-            flex-wrap: wrap;
-          }
-        }
+      #nothing {
+        width: 100%;
       }
 
       #posts-navigation {
@@ -113,18 +108,21 @@
       width: 100%;
 
       margin-block-start: 30px;
+      margin-inline: 0;
+      padding-block: 0;
 
       .timeline {
         .index-level1 {
-          .posts-date-month {
+          align-items: center;
+
+          .posts-date-year-month {
             top: 68px;
           }
         }
-
         .index-level2 {
-          .posts-date-day {
-            top: 98px;
-          }
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       }
 
