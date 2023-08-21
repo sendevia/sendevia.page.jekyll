@@ -45,10 +45,10 @@
         overflow: hidden;
 
         #segment-primary-icon {
-          position: absolute;
-
           height: 24px;
           width: 24px;
+
+          position: absolute;
 
           color: var(--md-sys-color-on-secondary-container);
 
@@ -129,11 +129,11 @@
     flex-direction: row;
     justify-content: space-between;
 
-    position: fixed;
-    bottom: 0;
-
     height: 80px;
     width: 100%;
+
+    position: fixed;
+    bottom: 0;
 
     box-shadow: var(--md-sys-elevation-level1);
     overflow-y: hidden;
@@ -177,13 +177,13 @@
     gap: 12px;
     justify-content: space-between;
 
-    height: 100%;
+    height: calc(100% - 112px);
     width: 80px;
 
-    position: fixed;
-    left: 0;
+    margin-block: 88px 24px;
 
-    overflow: overlay;
+    position: absolute;
+    left: 0;
 
     #mng-rail-fab {
       display: flex;
@@ -198,15 +198,15 @@
       flex-direction: column;
 
       #segment-active {
-        margin: 4px 5px;
-
         height: 56px;
 
-        #accent {
-          margin: 4px 0;
+        margin: 4px 5px;
 
+        #accent {
           height: 32px;
           width: 56px;
+
+          margin: 4px 0;
         }
 
         #label {

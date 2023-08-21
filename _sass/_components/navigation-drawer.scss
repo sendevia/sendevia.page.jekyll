@@ -5,13 +5,12 @@
   align-items: flex-start;
   flex-direction: column;
 
-  margin: 20px;
+  height: calc(100% - 90px);
+  width: 10px;
 
   position: fixed;
-  left: 70px;
-
-  height: calc(100% - 40px);
-  width: 10px;
+  bottom: 10px;
+  left: 80px;
 
   letter-spacing: 0;
   white-space: nowrap;

@@ -299,8 +299,34 @@ ol {
     text-align: center;
   }
 
-  hr {
-    width: 69px;
+.website-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+
+  #website-information-logo {
+    height: 36px;
+    width: 36px;
+
+    margin: 22px;
+  }
+
+  #website-information-mib {
+    display: inline-block;
+  }
+
+  #website-information-h1 {
+    display: inline-block;
+
+    margin-inline-end: 22px;
+    line-height: 80px;
+    text-transform: uppercase;
   }
 }
 
@@ -318,6 +344,19 @@ ol {
   scroll-padding-top: 25%;
   transition: var(--md-sys-motion-duration-medium1);
   z-index: 10;
+
+  #right-corner-fab {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    margin-block-end: 20px;
+    margin-inline-end: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 21;
+  }
 }
 
 .content-flow {
@@ -1028,26 +1067,7 @@ ol {
   justify-content: flex-start;
 }
 
-/*
 
-组件的特定配置
-
-*/
-
-.right-corner-fabs {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-
-  padding: 16px;
-
-  z-index: 21;
-
-  #rcf-mfb-topbutton {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 
 @import "@1024";
 @import "@768";

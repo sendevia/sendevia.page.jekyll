@@ -22,6 +22,13 @@
     {%- endif -%}
 
     <!-- 内容 -->
+    <div class="website-information">
+      <img src="/favicon.ico" alt="logo" id="website-information-logo" />
+      <div>
+        <button class="mib" id="website-information-mib">info</button>
+        <h1 id="website-information-h1">{{ site.title }}</h1>
+      </div>
+    </div>
     <div class="content-container">
       <!-- 加载界面 -->
       <div class="content-loading">
@@ -30,11 +37,8 @@
       </div>
       <!-- 文章布局 -->
       <div class="content-flow">{%- include content.html -%}</div>
-    </div>
-
-    <!-- 底部 Fab -->
-    <div class="right-corner-fabs">
-      <button class="mfb" spec="primary" id="rcf-mfb-topbutton">vertical_align_top</button>
+      <!-- 底部 Fab -->
+      <button class="mfb" spec="primary" id="right-corner-fab">vertical_align_top</button>
     </div>
     {%- endif -%}
   </body>

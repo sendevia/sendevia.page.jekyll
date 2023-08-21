@@ -12,11 +12,16 @@
     }
 
     .content-container {
-      margin-left: 0;
-
       top: 0;
 
+      margin-left: 0;
+
       border-radius: 0;
+
+      #right-corner-fab {
+        bottom: 80px;
+        right: 10px;
+      }
     }
 
     .content-flow {

@@ -53,7 +53,7 @@ var topAppBar = document.querySelector(".mtb");
 /**
  * 选择全部的开启模态提示框的元素
  */
-var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, #maf-mib-modaltips");
+var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, #website-information-mib");
 /**
  * 选择模态提示框
  */
@@ -65,7 +65,7 @@ var dialogBtnClose = document.querySelector("#dialog-close");
 /**
  * 选择点击后跳转到页面顶端的元素
  */
-var scrollTopElements = document.querySelectorAll(`#rcf-mfb-topbutton`);
+var scrollTopElements = document.querySelectorAll("#right-corner-fab");
 /**
  * 选择全部需要涟漪效果的元素
  */

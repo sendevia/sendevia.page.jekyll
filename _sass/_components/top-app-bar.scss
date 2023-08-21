@@ -4,14 +4,14 @@
 .mtb {
   @extend .disable-select;
 
-  position: fixed;
-
   width: 100%;
+
+  position: fixed;
 
   letter-spacing: 0;
 
   overflow: hidden;
-  transition: 0.5s;
+  transition: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
   visibility: hidden;
   z-index: 15;
 
@@ -20,15 +20,16 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
+    gap: 6px;
     justify-content: space-between;
-
-    top: -64px;
-
-    padding: 8px 4px;
 
     height: 64px;
 
-    background-color: var(--via-color-background);
+    padding: 8px 4px;
+
+    top: -64px;
+
+    background-color: var(--md-sys-color-surface-bright);
 
     h4 {
       display: flex;
@@ -37,31 +38,31 @@
       flex-grow: 1;
       justify-content: center;
 
-      margin: auto;
-
       height: 100%;
 
-      text-align: center;
+      margin: auto;
+
+      text-align: start;
 
       span {
-        position: absolute;
+        width: calc(100% - 100px);
 
-        width: calc(100% - 88px);
+        position: absolute;
 
         line-height: 1;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         overflow: hidden;
-        transition: transform 0.4s, opacity 1s;
+        transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
 
         &:nth-child(1) {
-          transform: translateY(0px) scale(1);
+          transform: translateY(0px);
           opacity: 1;
         }
 
         &:nth-child(2) {
-          transform: translateY(45px) scale(0.9);
+          transform: translateY(45px);
           opacity: 0;
         }
       }
@@ -70,17 +71,15 @@
     &[scroll="true"] {
       background-color: var(--md-sys-color-surface);
 
-      box-shadow: var(--md-sys-elevation-level2);
-
       h4 {
         span {
           &:nth-child(1) {
-            transform: translateY(-45px) scale(0.9);
+            transform: translateY(-45px);
             opacity: 0;
           }
 
           &:nth-child(2) {
-            transform: translateY(0px) scale(1);
+            transform: translateY(0px);
             opacity: 1;
           }
         }
