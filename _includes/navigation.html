@@ -73,13 +73,14 @@
       {%- if page.date -%}
       <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>calendar_month</button>
-        <p>发布于：{{ page.date | timeago }}（{{ page.date | date: "%Y年%m月%d日" }}）</p>
+        <p>发布于：{{ page.date | date: "%Y年%m月%d日" }}</p>
+        <!-- <p>发布于：{{ page.date | timeago }}（{{ page.date | date: "%Y年%m月%d日" }}）</p> -->
       </div>
 
-      <div class="mdl-tips-item">
+      <!-- <div class="mdl-tips-item">
         <button class="mib" spec="tonal" disabled>edit</button>
         <p>最后修改于：{% last_modified_at %}</p>
-      </div>
+      </div> -->
       {%- endif -%}
 
       <!-- 阅读时间 -->
