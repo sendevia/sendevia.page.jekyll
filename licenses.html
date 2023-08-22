@@ -11,35 +11,37 @@ segment_title: "许可"
 published: true
 ---
 
-<table>
-  <thead>
-    <tr>
-      <th>名称</th>
-      <th>版本</th>
-      <th>链接</th>
-      <th>许可证</th>
-    </tr>
-  </thead>
-  <tbody>
-    {%- for item in site.data.licenses -%}
-    <tr>
-      <td>{{ item.name }}</td>
-      <td>{{ item.version }}</td>
-      <td>
-        <a href="{{ item.repository }}" target="_blank">
-          <button class="mcp" spec="assist" icon>
-            <span>open_in_new</span>
-            Github
+<div class="page-licenses">
+  <table>
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>版本</th>
+        <th>链接</th>
+        <th>许可证</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for item in site.data.licenses -%}
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.version }}</td>
+        <td>
+          <a href="{{ item.repository }}" target="_blank">
+            <button class="mcp" spec="assist" icon>
+              <span>open_in_new</span>
+              Github
+            </button>
+          </a>
+        </td>
+        <td>
+          <button class="mcp" spec="assist" icon disabled>
+            <span>balance</span>
+            {{ item.license }}
           </button>
-        </a>
-      </td>
-      <td>
-        <button class="mcp" spec="assist" icon disabled>
-          <span>balance</span>
-          {{ item.license }}
-        </button>
-      </td>
-    </tr>
-    {%- endfor-%}
-  </tbody>
-</table>
+        </td>
+      </tr>
+      {%- endfor-%}
+    </tbody>
+  </table>
+</div>

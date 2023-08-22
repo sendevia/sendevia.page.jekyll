@@ -4,9 +4,8 @@
   html,
   body {
     .content-flow {
-      .content-header,
-      .content-header[spec="large"] {
-        .header-container {
+      .content-header {
+        .wrapper {
           #title {
             word-break: break-word;
           }

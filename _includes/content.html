@@ -1,10 +1,13 @@
 <!-- 大标题 -->
-<div id="content-header" {%- if photograph !="false" -%} spec="large" {%- endif -%}>
-  <div class="header-container">
+<div id="content-header">
+  <div class="wrapper">
     <span id="title">{{ page.title }}</span>
     {%- if page.description and page.description != "" -%}
     <span id="subtitle">{{ page.description }}</span>
-    {%- endif -%} {%- if page.impression and page.impression != "" -%}
+    {%- endif -%}
+  </div>
+  <div class="impression">
+    {%- if page.impression and page.impression != "" -%}
     <!-- 头图 - 设置由文章提供 -->
     {%- assign photograph = page.impression -%}
     <!--  -->
@@ -15,7 +18,7 @@
     {%- else -%}
     <!-- 头图 - 不设置头图 -->
     {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
-    <img src="{{ photograph }}" id="impression" alt="{{ page.title }}" />
+    <img src="{{ photograph }}" alt="{{ page.title }}" />
     {%- endif -%}
   </div>
 </div>

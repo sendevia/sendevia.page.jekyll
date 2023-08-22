@@ -11,10 +11,14 @@
       width: auto;
     }
 
-    .content-container {
-      top: 0;
+    .website-information {
+      display: none;
+    }
 
+    .content-container {
       margin-left: 0;
+
+      top: 0;
 
       border-radius: 0;
 
@@ -26,41 +30,24 @@
 
     .content-flow {
       margin: 0;
-      padding: 0 3vw 120px;
+      padding: 65px 10px 120px;
 
-      #content-header,
-      #content-header[spec="large"] {
-        margin-block-start: 80px;
-        padding: 0;
+      #content-header {
+        flex-direction: column;
 
-        min-height: 0;
+        padding-inline: 0;
 
-        border-radius: 0;
-
-        background-color: var(--md-sys-color-surface);
-
-        clip-path: inset(0 round 15px 15px);
-
-        .header-container {
-          padding-block-end: 10px;
-          padding-block-start: 240px;
-
+        .wrapper {
           #title {
             @include display-medium();
 
-            padding-inline-start: 18px;
+            padding-inline: 30px;
 
             line-height: 45rem;
           }
 
           #subtitle {
-            padding-inline-start: 18px;
-          }
-
-          #impression {
-            animation: none !important;
-            -webkit-mask: linear-gradient(to top right, transparent 30%, #000 70%);
-            mask: linear-gradient(to top right, transparent 30%, #000 70%);
+            padding-inline: 30px;
           }
         }
       }
@@ -103,10 +90,6 @@
       }
     }
 
-    .right-corner-fabs {
-      bottom: 100px;
-    }
-
     .page-index {
       flex-direction: column-reverse;
 
@@ -132,25 +115,17 @@
       }
 
       .person-intro {
-        position: relative;
-        top: 0;
-
-        margin: auto;
-
         max-width: 360px;
         min-width: unset;
         width: 80vw;
 
+        margin: auto;
+
+        position: relative;
+        top: 0;
+
         .section1 {
           width: 100%;
-        }
-
-        .section2 {
-          width: 100%;
-
-          #socialmedia {
-            flex-direction: column;
-          }
         }
       }
     }
@@ -181,12 +156,12 @@
     }
 
     .mnd {
+      height: calc(100% - 164px);
+
       margin: 10px;
 
       left: 0;
       top: 64px;
-
-      height: calc(100% - 164px);
     }
 
     .mtb {

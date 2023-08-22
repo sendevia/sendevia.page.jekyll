@@ -20,6 +20,11 @@ code {
     -moz-user-select: all;
     -webkit-user-select: all;
     user-select: all;
+
+    &::selection {
+      color: var(--md-sys-color-tertiary);
+      background-color: var(--md-sys-color-on-tertiary);
+    }
   }
 }
 
@@ -28,11 +33,11 @@ div.highlighter-rouge {
 
   display: inline-block;
 
-  position: relative;
-
   width: 100%;
 
   margin-block-start: 18px;
+
+  position: relative;
 
   color: var(--md-sys-color-on-surface);
   word-break: break-word;
@@ -40,7 +45,6 @@ div.highlighter-rouge {
   border-radius: 12px;
 
   box-shadow: var(--md-sys-elevation-level5);
-
   z-index: 9;
 
   code {
@@ -56,9 +60,9 @@ div.highlighter-rouge {
   }
 
   .rouge-table {
-    margin-inline: 0;
-
     width: 100%;
+
+    margin-inline: 0;
 
     border-radius: 12px;
     border: none;

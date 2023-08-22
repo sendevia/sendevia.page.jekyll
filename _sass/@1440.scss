@@ -1,0 +1,22 @@
+// 1440px 适配
+
+@media screen and (max-width: 1440px) {
+  .content-flow {
+    #content-header .wrapper {
+      #title {
+        padding-inline: 40px;
+
+        font-size: 8vw;
+        line-height: 8vw;
+      }
+
+      #subtitle {
+        padding-inline: 46px;
+      }
+    }
+
+    #content {
+        padding-inline: calc(100% / 2 - 420px);
+    }
+  }
+}

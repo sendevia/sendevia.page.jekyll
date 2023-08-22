@@ -29,7 +29,13 @@
 
     top: -64px;
 
-    background-color: var(--md-sys-color-surface-bright);
+    @media (prefers-color-scheme: light) {
+      background-color: var(--md-sys-color-surface-bright);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--md-sys-color-surface-dim);
+    }
 
     h4 {
       display: flex;
@@ -69,8 +75,6 @@
     }
 
     &[scroll="true"] {
-      background-color: var(--md-sys-color-surface);
-
       h4 {
         span {
           &:nth-child(1) {
