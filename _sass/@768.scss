@@ -65,29 +65,6 @@
           flex-grow: 1;
         }
       }
-
-      #footer-container {
-        hr {
-          width: 100%;
-        }
-
-        footer {
-          margin: 0;
-
-          section:nth-child(1) {
-            .site-logo {
-              margin: 0 0 10px 0;
-            }
-
-            .descriptions {
-              h3,
-              p {
-                margin: 0 0 0 6px;
-              }
-            }
-          }
-        }
-      }
     }
 
     .page-index {

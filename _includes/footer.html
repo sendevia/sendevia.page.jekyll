@@ -1,11 +1,23 @@
-<div id="footer-container">
-  <hr spec="wave" />
-  <footer>
-    <section>
-      <div class="descriptions">
-        <h3>{{ page.title }}</h3>
-        <p>来自 {{ site.title }} &times <a href="https://github.com/Sendevia/jekyll-theme-m3" target="_blank">jekyll-theme-m3</a></p>
-      </div>
-    </section>
-  </footer>
-</div>
+<footer>
+  <div id="descriptions">
+    <h3>{{ page.title }}</h3>
+    <p>来自 {{ site.title }} &times <a href="https://github.com/Sendevia/jekyll-theme-m3" target="_blank">jekyll-theme-m3</a></p>
+    <a href="https://github.com/Sendevia/sendevia.page.jekyll/releases/tag/{{site.version}}" target="_blank" rel="noopener noreferrer">
+      <p>版本：{{site.version}}</p>
+    </a>
+  </div>
+  <div id="socialmedia">
+    <a href="{{site.github}}" target="_blank" rel="noopener noreferrer">
+      <button class="mbt" spec="text">Github</button>
+    </a>
+    <a href="https://space.bilibili.com/84041790" target="_blank" rel="noopener noreferrer">
+      <button class="mbt" spec="text">Bilibili</button>
+    </a>
+    <a href="https://osu.ppy.sh/users/9799419" target="_blank" rel="noopener noreferrer">
+      <button class="mbt" spec="text">OSU!</button>
+    </a>
+    <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer">
+      <button class="mbt" spec="text">Email</button>
+    </a>
+  </div>
+</footer>

@@ -753,53 +753,32 @@ ol {
     }
   }
 
-  #footer-container {
+  footer {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-around;
 
     width: 100%;
 
-    padding-top: 5vh;
+    margin-block-start: 18px;
+    padding-inline: 12px;
 
-    hr {
-      width: 75%;
-    }
-
-    ul > li::before {
-      display: none;
-    }
-
-    footer {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 48px;
-
-      margin: 0 12vw;
-
-      section {
-        display: flex;
-        align-items: stretch;
-        flex-direction: column;
-        gap: 10px;
-
-        width: 100%;
-
-        .descriptions {
-          h3 {
-            margin: 0 0 0 26px;
-
-            font-family: "Smiley Sans", sans-serif;
-            letter-spacing: 0.2px;
-            text-transform: uppercase;
-          }
-
-          p {
-            margin: 0 0 0 24px;
-          }
-        }
+    #descriptions {
+      h3 {
+        font-family: "Smiley Sans", sans-serif;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
       }
+    }
+
+    #socialmedia {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      justify-content: start;
     }
   }
 }
