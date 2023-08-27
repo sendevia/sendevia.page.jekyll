@@ -312,63 +312,54 @@ ol {
   align-items: center;
   justify-content: space-between;
 
-  height: 80px;
-  width: 100%;
+  height: max-content;
+  width: max-content;
 
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 30px;
+  right: 20px;
 
-  #website-information-logo {
-    height: 58px;
-    width: max-content;
+  border-radius: 100px;
 
-    margin: 12px;
+  background-color: var(--md-sys-color-tertiary-container);
 
-    img {
-      height: 50px;
-
-      margin: 4px;
-
-      -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
-      mask: var(--via-svg-mask) no-repeat 0 / 100%;
-    }
-  }
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+  z-index: 24;
 
   .website-information-title {
     display: flex;
     align-items: center;
 
-    #website-information-h1 {
+    #website-information-h4 {
       display: inline-block;
 
-      margin-inline-end: 22px;
+      margin-inline-end: 12px;
 
-      line-height: 80px;
+      line-height: 40px;
       text-transform: uppercase;
+      white-space: nowrap;
+
+      pointer-events: none;
     }
   }
 }
 
 .content-container {
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 20px);
+  width: calc(100% - 80px);
 
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 80px;
+
+  border-radius: 12px 0 0 12px;
 
   overflow: hidden;
   scroll-padding-top: 25%;
   transition: var(--md-sys-motion-duration-medium1);
   z-index: 10;
-
-  @media (prefers-color-scheme: light) {
-    background-color: var(--md-sys-color-surface-bright);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--md-sys-color-surface-dim);
-  }
 
   #right-corner-fab {
     margin-block-end: 20px;
@@ -388,11 +379,11 @@ ol {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 6px;
 
   width: 100%;
 
-  padding-block-end: 40px;
+  padding-block-end: 70px;
 
   position: relative;
 
@@ -401,13 +392,10 @@ ol {
   #content-header {
     display: flex;
     align-content: center;
-    gap: 5px;
+    gap: 6px;
 
     height: 600px;
     width: 100%;
-
-    padding-block-start: 10px;
-    padding-inline: 10px;
 
     word-break: break-word;
 
@@ -478,7 +466,17 @@ ol {
     padding-block: 16px 36px;
     padding-inline: calc(100% / 2 - 540px);
 
+    border-radius: 12px 0 0 12px;
+
     letter-spacing: 1.2px;
+
+    @media (prefers-color-scheme: light) {
+      background-color: var(--md-sys-color-surface-bright);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--md-sys-color-surface-dim);
+    }
 
     & > h1,
     & > h2,
@@ -722,7 +720,9 @@ ol {
   #posts-navigation {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 6px;
+
+    width: 100%;
 
     a {
       min-width: 300px;
@@ -771,12 +771,14 @@ ol {
         font-family: "Smiley Sans", sans-serif;
         letter-spacing: 0.2px;
         text-transform: uppercase;
+        white-space: nowrap;
       }
     }
 
     #socialmedia {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       gap: 6px;
       justify-content: start;
     }
@@ -880,10 +882,6 @@ ol {
   }
 
   .person-intro {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
     height: max-content;
     max-width: 360px;
     min-width: 240px;
@@ -896,16 +894,9 @@ ol {
     position: sticky;
     top: 3vw;
 
-    color: var(--md-sys-color-on-surface);
-    text-align: center;
-
-    border-radius: 24px;
-
-    background-color: var(--md-sys-color-surface-container-low);
-
     .section1 {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
       gap: 6px;
 
@@ -917,27 +908,17 @@ ol {
         mask: var(--via-svg-mask) no-repeat 0 / 100%;
       }
 
-      #nickname {
+      #nickname,
+      #introduction {
+        margin-inline-start: 6px;
+        padding-block: 6px;
+        padding-inline: 12px;
+
         color: var(--md-sys-color-on-surface);
-      }
-    }
 
-    .section2 {
-      width: 100%;
+        border-radius: 12px;
 
-      #socialmedia {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        justify-content: start;
-
-        a {
-          flex-grow: 1;
-
-          button {
-            width: 100%;
-          }
-        }
+        background-color: var(--md-sys-color-surface-container-low);
       }
     }
   }

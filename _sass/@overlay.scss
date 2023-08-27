@@ -4,6 +4,10 @@ html,
 body {
   .material-theme {
     &[hide-top-app-bar="true"] {
+      .website-information {
+        width: 40px !important;
+      }
+
       @media screen and (max-width: 768px) {
         .page-index {
           .timeline {
@@ -37,27 +41,7 @@ body {
       }
 
       .content-container {
-        top: 80px;
-        left: 80px;
-
-        height: calc(100% - 90px);
-        width: calc(100% - 80px);
-
-        border-radius: 12px 0 0 12px;
-
         overflow: overlay;
-      }
-
-      @media screen and (max-width: 768px) {
-        .content-container {
-          top: 0;
-          left: 0;
-
-          height: calc(100% - 80px);
-          width: 100%;
-
-          border-radius: 0;
-        }
       }
     }
 

@@ -8,6 +8,16 @@
 
   z-index: 10;
 
+  #website-information-logo {
+    height: 50px;
+    width: 50px;
+
+    margin: 15px;
+
+    -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
+    mask: var(--via-svg-mask) no-repeat 0 / 100%;
+  }
+
   .destinations {
     display: flex;
     flex-grow: 1;
@@ -139,6 +149,7 @@
     overflow-y: hidden;
     visibility: hidden;
 
+    #website-information-logo,
     #mng-rail-fab {
       display: none;
     }
@@ -177,10 +188,10 @@
     gap: 12px;
     justify-content: space-between;
 
-    height: calc(100% - 112px);
+    height: calc(100% - 24px);
     width: 80px;
 
-    margin-block: 88px 24px;
+    margin-block: 0 24px;
 
     position: absolute;
     left: 0;

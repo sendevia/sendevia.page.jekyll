@@ -53,7 +53,7 @@ var topAppBar = document.querySelector(".mtb");
 /**
  * 选择全部的开启模态提示框的元素
  */
-var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, #website-information-mib");
+var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, body > div.website-information");
 /**
  * 选择模态提示框
  */
@@ -75,12 +75,17 @@ var rippleElements = document.querySelectorAll(
   .mcd[spec='clear'],
   .mcd[spec='focus'],
   .mnd a,
-  #accent`
+  #accent,
+  body > div.website-information`
 );
 /**
  * 选择全部需要控制状态的面包屑元素
  */
 var mcpInputElements = document.querySelectorAll("label.mcp > input[type='checkbox']");
+/**
+ * 选择页面右上角的网站信息
+ */
+var websiteInfomation = document.querySelector("body > div.website-information");
 
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
@@ -236,6 +241,9 @@ window.onpageshow = function () {
     updateLabel();
     input.addEventListener("change", updateLabel);
   });
+
+  var websiteInfomationWidth = websiteInfomation.clientWidth;
+  websiteInfomation.style.width = websiteInfomationWidth + "px";
 };
 
 window.onload = function () {
