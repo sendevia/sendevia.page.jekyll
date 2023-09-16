@@ -1,9 +1,3 @@
-@font-face {
-  src: url("/assets/fonts/SmileySans-Oblique.ttf.woff2?v=1.1.1");
-  font-family: Smiley Sans;
-  font-style: italic;
-}
-
 @mixin material-icon($name: "", $size: 24px, $font-size: $size, $line-height: $size) {
   @extend .disable-select;
   content: $name;
