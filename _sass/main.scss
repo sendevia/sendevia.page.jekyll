@@ -1023,7 +1023,11 @@ ol {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+
+  a {
+    flex-grow: 1;
+  }
 }
 
 @import "@1440";
