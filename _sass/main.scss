@@ -358,8 +358,8 @@ ol {
   z-index: 10;
 
   #right-corner-fab {
-    margin-block-end: 20px;
-    margin-inline-end: 10px;
+    margin-block-end: 35px;
+    margin-inline-end: 30px;
 
     position: fixed;
     bottom: 0;
@@ -720,6 +720,8 @@ ol {
 
     width: 100%;
 
+    padding-inline: 18px;
+
     a {
       min-width: 300px;
 
@@ -763,16 +765,20 @@ ol {
     padding-inline: 12px;
 
     #descriptions {
+      flex-grow: 1;
+
+      padding-inline-start: 24px;
+
       h3 {
         letter-spacing: 0.2px;
         text-transform: uppercase;
-        white-space: nowrap;
       }
     }
 
     #socialmedia {
       display: flex;
       flex-direction: row;
+      flex-grow: 1;
       flex-wrap: wrap;
       gap: 6px;
       justify-content: start;
@@ -857,14 +863,14 @@ ol {
           margin: 6px;
 
           position: absolute;
-          bottom: 0;
-          right: 0;
+          top: 0;
+          left: 0;
 
           color: var(--md-sys-color-on-surface-variant);
           line-height: 66px;
           text-align: center;
 
-          border-radius: 12px 12px 20px;
+          border-radius: 20px 12px 12px;
 
           background-color: var(--md-sys-color-surface-variant);
 

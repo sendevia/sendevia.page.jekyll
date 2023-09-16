@@ -27,6 +27,9 @@
       border-radius: 0;
 
       #right-corner-fab {
+        margin-block-end: 20px;
+        margin-inline-end: 10px;
+
         bottom: 80px;
         right: 10px;
       }
@@ -74,6 +77,7 @@
     }
 
     .page-index {
+      align-items: center;
       flex-direction: column-reverse;
 
       width: 100%;
@@ -90,10 +94,20 @@
             top: 68px;
           }
         }
+
         .index-level2 {
           align-items: center;
           flex-wrap: wrap;
           justify-content: center;
+
+          width: 100%;
+        }
+
+        .posts-card .posts-date-day {
+          left: unset;
+          right: 0;
+
+          border-radius: 12px 20px 12px 12px;
         }
       }
 

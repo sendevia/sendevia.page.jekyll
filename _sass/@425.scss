@@ -18,6 +18,18 @@
           text-align: center;
         }
       }
+
+      #posts-navigation {
+        padding-inline: 6px;
+      }
+
+      footer {
+        padding: 0;
+
+        #descriptions {
+          padding-inline: 24px;
+        }
+      }
     }
 
     .page-index {
