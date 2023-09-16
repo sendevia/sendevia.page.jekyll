@@ -3,14 +3,12 @@ _site
 .jekyll-cache
 .jekyll-metadata
 .sass-cache
-.typescript
 .vscode
 *.code-workspace
-*.d.ts
 *.map
-*.sf
 *TEST*.md
 /assets/js/bundle*.js
 node_modules
 package-lock.json
 test.html
+_drafts/
