@@ -26,7 +26,7 @@ defaults:
   - scope:
       path: "_posts"
     values:
-      permalink: "/:short_year/:month/:day/:title"
+      permalink: "/posts/:title"
       toc: true
 
 toc:

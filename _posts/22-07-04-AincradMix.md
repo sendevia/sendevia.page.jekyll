@@ -3,7 +3,7 @@ title: "AincradMix"
 description: "一个 osu! 皮肤"
 author: "sendevia"
 color: ""
-impression: "/assets/images/22/06/11/s0_amix_vision.webp"
+impression: "/assets/images/22/s0_amix_vision.webp"
 categories: osu!皮肤
 tags: readme skin amix
 ---
@@ -34,33 +34,33 @@ tags: readme skin amix
 
 # 皮肤预览
 
-![主界面](/assets/images/22/06/11/screenshot01.webp)
+![主界面](/assets/images/22/screenshot01.webp)
 
-![选歌界面1](/assets/images/22/06/11/screenshot02.webp)
-![选歌界面2](/assets/images/22/06/11/screenshot06.webp)
-![选歌界面3](/assets/images/22/06/11/screenshot07.webp)
+![选歌界面1](/assets/images/22/screenshot02.webp)
+![选歌界面2](/assets/images/22/screenshot06.webp)
+![选歌界面3](/assets/images/22/screenshot07.webp)
 
 ## std 模式
 
-![std 模式1](/assets/images/22/06/11/screenshot03.webp)
-![std 模式2](/assets/images/22/06/11/screenshot04.webp)
+![std 模式1](/assets/images/22/screenshot03.webp)
+![std 模式2](/assets/images/22/screenshot04.webp)
 
 ## mania 模式
 
-![mania 模式1](/assets/images/22/06/11/screenshot09.webp)
-![mania 模式2](/assets/images/22/06/11/screenshot08.webp)
+![mania 模式1](/assets/images/22/screenshot09.webp)
+![mania 模式2](/assets/images/22/screenshot08.webp)
 
 ## taiko 模式
 
-![taiko 模式1](/assets/images/22/06/11/screenshot10.webp)
-![taiko 模式2](/assets/images/22/06/11/screenshot11.webp)
+![taiko 模式1](/assets/images/22/screenshot10.webp)
+![taiko 模式2](/assets/images/22/screenshot11.webp)
 
 ## catch 模式
 
-![catch 模式1](/assets/images/22/06/11/screenshot12.webp)
-![catch 模式2](/assets/images/22/06/11/screenshot13.webp)
+![catch 模式1](/assets/images/22/screenshot12.webp)
+![catch 模式2](/assets/images/22/screenshot13.webp)
 
-![成绩结算](/assets/images/22/06/11/screenshot05.webp)
+![成绩结算](/assets/images/22/screenshot05.webp)
 
 # 下载
 
