@@ -7,6 +7,37 @@ impression: "/assets/images/110468331_p0.webp"
 toc: true
 ---
 
+# Palette
+
+调色板（色卡）
+
+<div class="post-components-palette">
+  <div class="row">
+    <span id="r1-c1">Primary</span>
+    <span id="r1-c2">Secondary</span>
+    <span id="r1-c3">Tertiary</span>
+    <span id="r1-c4">Error</span>
+  </div>
+  <div class="row">
+    <span id="r2-c1">On Primary</span>
+    <span id="r2-c2">On Secondary</span>
+    <span id="r2-c3">On Tertiary</span>
+    <span id="r2-c4">On Error</span>
+  </div>
+  <div class="row">
+    <span id="r3-c1">Primary Container</span>
+    <span id="r3-c2">Secondary Container</span>
+    <span id="r3-c3">Tertiary Container</span>
+    <span id="r3-c4">Error Container</span>
+  </div>
+  <div class="row">
+    <span id="r4-c1">On Primary Container</span>
+    <span id="r4-c2">On Secondary Container</span>
+    <span id="r4-c3">On Tertiary Container</span>
+    <span id="r4-c4">On Error Container</span>
+  </div>
+</div>
+
 # Buttons
 
 用户交互控件 - 按钮
@@ -176,9 +207,9 @@ toc: true
     <tr>
       <td><code>input</code></td>
       <td><code>checkbox</code></td>
-      <td><code>mip</code></td>
+      <td><code>JTM-C-Checkbox</code></td>
       <td>
-        <input type="checkbox" class="mip" />
+        <input type="checkbox" class="JTM-C-Checkbox" />
       </td>
     </tr>
     <tr>
@@ -186,7 +217,7 @@ toc: true
       <td></td>
       <td></td>
       <td>
-        <input type="checkbox" class="mip" checked />
+        <input type="checkbox" class="JTM-C-Checkbox" checked />
       </td>
     </tr>
   </tbody>
@@ -195,8 +226,8 @@ toc: true
 > **代码示例**
 >
 > ```html
-> <input type="checkbox" class="mip" />
-> <input type="checkbox" class="mip" checked />
+> <input type="checkbox" class="JTM-C-Checkbox" />
+> <input type="checkbox" class="JTM-C-Checkbox" checked />
 > ```
 
 # Cards
@@ -214,32 +245,32 @@ toc: true
   </thead>
   <tbody>
     <tr>
-      <td><code>mcd</code></td>
+      <td><code>JTM-C-Card</code></td>
       <td><code>normal</code></td>
       <td><code>outlined</code></td>
       <td>
-        <div class="mcd" spec="normal" outlined>
-          <div class="mcd-header">
-            <div id="mcd-header-content">
-              <div id="mcd--monogram">
-                <span id="mcd--monogram-initial">A</span>
-                <span id="mcd--monogram-background" />
+        <div class="JTM-C-Card" spec="normal" outlined>
+          <div class="JTM-C-Card-header">
+            <div id="JTM-C-Card-header-content">
+              <div id="JTM-C-Card--monogram">
+                <span id="JTM-C-Card--monogram-initial">A</span>
+                <span id="JTM-C-Card--monogram-background" />
               </div>
-              <div id="mcd--text">
-                <span id="mcd--text-header">Header</span>
-                <span id="mcd--text-subhead">Subhead</span>
+              <div id="JTM-C-Card--text">
+                <span id="JTM-C-Card--text-header">Header</span>
+                <span id="JTM-C-Card--text-subhead">Subhead</span>
               </div>
             </div>
             <button class="mib">more_vert</button>
           </div>
-          <div class="mcd-headline">
-            <span id="mcd-headline-title">Title</span>
-            <span id="mcd-headline-subhead">Subhead</span>
+          <div class="JTM-C-Card-headline">
+            <span id="JTM-C-Card-headline-title">Title</span>
+            <span id="JTM-C-Card-headline-subhead">Subhead</span>
           </div>
-          <div class="mcd-supporting">
-            <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+          <div class="JTM-C-Card-supporting">
+            <span id="JTM-C-Card-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
           </div>
-          <div class="mcd-actions">
+          <div class="JTM-C-Card-actions">
             <a>action 1</a>
             <a>action 2</a>
           </div>
@@ -251,28 +282,28 @@ toc: true
       <td></td>
       <td><code>elevated</code></td>
       <td>
-        <div class="mcd" spec="normal" elevated>
-          <div class="mcd-header">
-            <div id="mcd-header-content">
-              <div id="mcd--monogram">
-                <span id="mcd--monogram-initial">A</span>
-                <span id="mcd--monogram-background" />
+        <div class="JTM-C-Card" spec="normal" elevated>
+          <div class="JTM-C-Card-header">
+            <div id="JTM-C-Card-header-content">
+              <div id="JTM-C-Card--monogram">
+                <span id="JTM-C-Card--monogram-initial">A</span>
+                <span id="JTM-C-Card--monogram-background" />
               </div>
-              <div id="mcd--text">
-                <span id="mcd--text-header">Header</span>
-                <span id="mcd--text-subhead">Subhead</span>
+              <div id="JTM-C-Card--text">
+                <span id="JTM-C-Card--text-header">Header</span>
+                <span id="JTM-C-Card--text-subhead">Subhead</span>
               </div>
             </div>
             <button class="mib">more_vert</button>
           </div>
-          <div class="mcd-headline">
-            <span id="mcd-headline-title">Title</span>
-            <span id="mcd-headline-subhead">Subhead</span>
+          <div class="JTM-C-Card-headline">
+            <span id="JTM-C-Card-headline-title">Title</span>
+            <span id="JTM-C-Card-headline-subhead">Subhead</span>
           </div>
-          <div class="mcd-supporting">
-            <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+          <div class="JTM-C-Card-supporting">
+            <span id="JTM-C-Card-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
           </div>
-          <div class="mcd-actions">
+          <div class="JTM-C-Card-actions">
             <a>action 1</a>
             <a>action 2</a>
           </div>
@@ -284,28 +315,28 @@ toc: true
       <td></td>
       <td><code>filled</code></td>
       <td>
-        <div class="mcd" spec="normal" filled>
-          <div class="mcd-header">
-            <div id="mcd-header-content">
-              <div id="mcd--monogram">
-                <span id="mcd--monogram-initial">A</span>
-                <span id="mcd--monogram-background" />
+        <div class="JTM-C-Card" spec="normal" filled>
+          <div class="JTM-C-Card-header">
+            <div id="JTM-C-Card-header-content">
+              <div id="JTM-C-Card--monogram">
+                <span id="JTM-C-Card--monogram-initial">A</span>
+                <span id="JTM-C-Card--monogram-background" />
               </div>
-              <div id="mcd--text">
-                <span id="mcd--text-header">Header</span>
-                <span id="mcd--text-subhead">Subhead</span>
+              <div id="JTM-C-Card--text">
+                <span id="JTM-C-Card--text-header">Header</span>
+                <span id="JTM-C-Card--text-subhead">Subhead</span>
               </div>
             </div>
             <button class="mib">more_vert</button>
           </div>
-          <div class="mcd-headline">
-            <span id="mcd-headline-title">Title</span>
-            <span id="mcd-headline-subhead">Subhead</span>
+          <div class="JTM-C-Card-headline">
+            <span id="JTM-C-Card-headline-title">Title</span>
+            <span id="JTM-C-Card-headline-subhead">Subhead</span>
           </div>
-          <div class="mcd-supporting">
-            <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+          <div class="JTM-C-Card-supporting">
+            <span id="JTM-C-Card-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
           </div>
-          <div class="mcd-actions">
+          <div class="JTM-C-Card-actions">
             <a>action 1</a>
             <a>action 2</a>
           </div>
@@ -317,9 +348,9 @@ toc: true
       <td><code>clear</code></td>
       <td>-</td>
       <td>
-        <div class="mcd" spec="clear">
+        <div class="JTM-C-Card" spec="clear">
           <img src="{{ site.impression }}" alt="image" />
-          <div class="mcd-supporting">
+          <div class="JTM-C-Card-supporting">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
           </div>
@@ -331,9 +362,9 @@ toc: true
       <td><code>focus</code></td>
       <td>-</td>
       <td>
-        <div class="mcd" spec="focus">
+        <div class="JTM-C-Card" spec="focus">
           <img src="{{ site.impression }}" alt="image" />
-          <div class="mcd-supporting">
+          <div class="JTM-C-Card-supporting">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
           </div>
@@ -346,28 +377,28 @@ toc: true
 > **代码示例**
 >
 > ```html
-> <div class="mcd" spec="normal" outlined>
->   <div class="mcd-header">
->     <div id="mcd-header-content">
->       <div id="mcd--monogram">
->         <span id="mcd--monogram-initial">A</span>
->         <span id="mcd--monogram-background" />
+> <div class="JTM-C-Card" spec="normal" outlined>
+>   <div class="JTM-C-Card-header">
+>     <div id="JTM-C-Card-header-content">
+>       <div id="JTM-C-Card--monogram">
+>         <span id="JTM-C-Card--monogram-initial">A</span>
+>         <span id="JTM-C-Card--monogram-background" />
 >       </div>
->       <div id="mcd--text">
->         <span id="mcd--text-header">Header</span>
->         <span id="mcd--text-subhead">Subhead</span>
+>       <div id="JTM-C-Card--text">
+>         <span id="JTM-C-Card--text-header">Header</span>
+>         <span id="JTM-C-Card--text-subhead">Subhead</span>
 >       </div>
 >     </div>
 >     <button class="mib">more_vert</button>
 >   </div>
->   <div class="mcd-headline">
->     <span id="mcd-headline-title">Title</span>
->     <span id="mcd-headline-subhead">Subhead</span>
+>   <div class="JTM-C-Card-headline">
+>     <span id="JTM-C-Card-headline-title">Title</span>
+>     <span id="JTM-C-Card-headline-subhead">Subhead</span>
 >   </div>
->   <div class="mcd-supporting">
->     <span id="mcd-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+>   <div class="JTM-C-Card-supporting">
+>     <span id="JTM-C-Card-supporting-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
 >   </div>
->   <div class="mcd-actions">
+>   <div class="JTM-C-Card-actions">
 >     <a>action 1</a>
 >     <a>action 2</a>
 >   </div>
@@ -375,9 +406,9 @@ toc: true
 > ```
 >
 > ```html
-> <div class="mcd" spec="clear">
+> <div class="JTM-C-Card" spec="clear">
 >   <img src="{{ site.impression }}" alt="image" />
->   <div class="mcd-supporting">
+>   <div class="JTM-C-Card-supporting">
 >     <h3>Lorem ipsum dolor sit amet</h3>
 >     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
 >   </div>
@@ -385,9 +416,9 @@ toc: true
 > ```
 >
 > ```html
-> <div class="mcd" spec="focus">
+> <div class="JTM-C-Card" spec="focus">
 >   <img src="{{ site.impression }}" alt="image" />
->   <div class="mcd-supporting">
+>   <div class="JTM-C-Card-supporting">
 >     <h3>Lorem ipsum dolor sit amet</h3>
 >     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
 >   </div>
