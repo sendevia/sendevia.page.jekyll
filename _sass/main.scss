@@ -39,26 +39,34 @@ body {
   scrollbar-width: auto;
 
   ::-webkit-scrollbar {
-    height: 6px;
-    width: 6px;
+    height: 18px;
+    width: 12px;
+
+    background-color: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
+    border: 3px solid transparent;
 
+    background-clip: content-box;
     background-color: var(--md-sys-color-secondary);
+
+    &:hover {
+      background-color: var(--md-sys-color-tertiary);
+    }
   }
 
   ::-webkit-scrollbar-corner,
   ::-webkit-scrollbar-track {
-    background: none;
+    background-color: transparent;
   }
 
   ::selection {
     color: var(--md-sys-color-surface-variant);
     -webkit-text-stroke: var(--md-sys-color-surface-variant);
 
-    background: var(--md-sys-color-on-surface-variant);
+    background-color: var(--md-sys-color-on-surface-variant);
   }
 }
 

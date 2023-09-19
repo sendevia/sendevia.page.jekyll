@@ -21,13 +21,13 @@ Archlinux
 1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 > ```
-> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 > ```
 
 > `重启终端`
 
 > ```
-> nvm i 12.18
+> nvm install --lts
 > ```
 
 ### 配置环境变量

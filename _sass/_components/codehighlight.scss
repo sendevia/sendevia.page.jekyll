@@ -10,8 +10,8 @@ code {
     padding-inline: 3px;
 
     color: var(--md-sys-color-on-tertiary);
-    word-break: break-word;
     line-height: 20px;
+    word-break: break-word;
 
     border-radius: 4px;
 
@@ -23,6 +23,7 @@ code {
 
     &::selection {
       color: var(--md-sys-color-tertiary);
+
       background-color: var(--md-sys-color-on-tertiary);
     }
   }
@@ -35,24 +36,21 @@ div.highlighter-rouge {
 
   width: 100%;
 
-  margin-block-start: 18px;
+  margin-block-end: 18px;
 
   position: relative;
 
   color: var(--md-sys-color-on-surface);
   word-break: break-word;
 
-  border-radius: 12px;
+  border-radius: 10px;
 
-  box-shadow: var(--md-sys-elevation-level5);
+  background-color: #212121;
+
   z-index: 9;
 
   code {
     display: grid;
-
-    border-radius: 12px;
-
-    background: #212121;
   }
 
   pre {
@@ -64,7 +62,6 @@ div.highlighter-rouge {
 
     margin-inline: 0;
 
-    border-radius: 12px;
     border: none;
 
     box-shadow: none;
@@ -75,8 +72,6 @@ div.highlighter-rouge {
       padding-inline: 12px;
 
       line-height: 19.98px;
-
-      background: #212121;
     }
 
     .rouge-gutter {
@@ -84,6 +79,8 @@ div.highlighter-rouge {
       left: 0;
 
       outline: 2px solid var(--md-sys-color-outline);
+
+      background-color: #212121;
     }
 
     .rouge-code {
