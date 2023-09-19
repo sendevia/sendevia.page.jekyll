@@ -1,10 +1,10 @@
 <!-- 导航 - 导航栏 -->
-<div class="mng" spec="rail" dest="center">
+<div class="JTM-C-Navigation" spec="rail" dest="center">
   <img src="/assets/images/avatar.webp" alt="logo" id="website-information-logo" />
 
   {%- if page.toc -%}
-  <div id="mng-rail-fab">
-    <button class="mfb" spec="surface" size="normal" id="maf-mfb-menu">menu</button>
+  <div id="JTM-C-Navigation-FAB">
+    <button class="JTM-C-FAB" spec="surface" size="normal">menu</button>
   </div>
   {%- endif -%}
 
@@ -51,67 +51,67 @@
 </div>
 
 <!-- 导航 - 移动端顶栏 -->
-<div class="mtb" spec="small-centered">
+<div class="JTM-C-AppBar" spec="small-centered">
   {%- if page.toc -%}
-  <button class="mib" id="mtb-mib-menu">menu</button>
+  <button class="JTM-C-IconButton">menu</button>
   {%- endif -%}
-  <h4 id="mtb-dc-area">
+  <h4 id="JTM-C-AppBar-dc-area">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
   </h4>
-  <button class="mib" id="mtb-mib-info">info</button>
+  <button class="JTM-C-IconButton">info</button>
 </div>
 
 <!-- 导航 - 模态的页面信息 -->
-<dialog class="mdl" id="mdl-tips" icon>
-  <div class="mdl-content-layout">
-    <span class="mdl-icon">info</span>
+<dialog class="JTM-C-Dialog" id="JTM-C-Dialog-ModalTips" icon>
+  <div class="JTM-C-Dialog-ContentLayout">
+    <span class="JTM-C-Dialog-LeaderIcon">info</span>
 
-    <h3 class="mdl-headline">页面信息</h3>
-    <p class="mdl-supporting-text">此处提供了有关这个页面的一些信息</p>
+    <h3 class="JTM-C-Dialog-Headline">页面信息</h3>
+    <p class="JTM-C-Dialog-SupportingText">此处提供了有关这个页面的一些信息</p>
 
-    <div class="mdl-supporting-list">
+    <div class="JTM-C-Dialog-SupportingList">
       <!-- 日期 -->
       {%- if page.date -%}
-      <div class="mdl-tips-item">
-        <button class="mib" spec="tonal" disabled>calendar_month</button>
+      <div class="JTM-C-Dialog-TipItems">
+        <button class="JTM-C-IconButton" spec="tonal" disabled>calendar_month</button>
         <p>发布于：{{ page.date | date: "%Y年%m月%d日" }}</p>
       </div>
       {%- endif -%}
 
       <!-- 阅读时间 -->
       {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%}
-      <div class="mdl-tips-item">
-        <button class="mib" spec="tonal" disabled>schedule</button>
+      <div class="JTM-C-Dialog-TipItems">
+        <button class="JTM-C-IconButton" spec="tonal" disabled>schedule</button>
         <p>估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟</p>
       </div>
 
       <!-- 作者 -->
       {%- if page.author -%}
-      <div class="mdl-tips-item">
-        <button class="mib" spec="tonal" disabled>person</button>
+      <div class="JTM-C-Dialog-TipItems">
+        <button class="JTM-C-IconButton" spec="tonal" disabled>person</button>
         <p>作者：{{ page.author }}</p>
       </div>
       {%- endif -%}
 
       <!-- 目录分类 -->
       {%- if page.categories.size > 0 -%}
-      <div class="mdl-tips-item">
-        <button class="mib" spec="tonal" disabled>category</button>
+      <div class="JTM-C-Dialog-TipItems">
+        <button class="JTM-C-IconButton" spec="tonal" disabled>category</button>
         <p>分类：{{ page.categories }}</p>
       </div>
       {%- endif -%}
 
       <!-- 自定义的主题颜色 -->
       {%- if page.color and page.color != "" -%}
-      <div class="mdl-tips-item">
-        <button class="mib" spec="tonal" disabled>palette</button>
+      <div class="JTM-C-Dialog-TipItems">
+        <button class="JTM-C-IconButton" spec="tonal" disabled>palette</button>
         <p>主题颜色：{{ page.color }}</p>
       </div>
       {%- endif -%}
     </div>
   </div>
-  <div class="mdl-buttons">
-    <button class="mbt" spec="text" id="dialog-close">关闭</button>
+  <div class="JTM-C-Dialog-Buttons">
+    <button class="JTM-C-CommonButton" spec="text" id="dialog-close">关闭</button>
   </div>
 </dialog>

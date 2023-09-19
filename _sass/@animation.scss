@@ -61,24 +61,24 @@
   }
 }
 
-@keyframes mpi-circular {
+@keyframes JTM-C-ProgressIndicator-Loop {
   0% {
-    --mpi-circular-deg: 30deg;
+    --JTM-C-ProgressIndicator-Deg: 30deg;
     rotate: 0deg;
   }
 
   50% {
-    --mpi-circular-deg: 300deg;
+    --JTM-C-ProgressIndicator-Deg: 300deg;
     transform: rotateZ(0deg);
   }
   100% {
-    --mpi-circular-deg: 30deg;
+    --JTM-C-ProgressIndicator-Deg: 30deg;
     rotate: 360deg;
     transform: rotateZ(360deg);
   }
 }
 
-@keyframes mdl-show {
+@keyframes JTM-C-Dialog-Show {
   0% {
     filter: blur(20px);
     transform: scale(1.15);
@@ -98,7 +98,7 @@
   }
 }
 
-@keyframes mdl-close {
+@keyframes JTM-C-Dialog-Close {
   0% {
     transform: scale(1);
     opacity: 1;

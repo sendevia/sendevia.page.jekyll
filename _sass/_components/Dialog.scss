@@ -2,11 +2,11 @@
 // 对话
 
 dialog[open],
-.mdl[open] {
-  padding: 24px;
-
-  min-width: 280px;
+.JTM-C-Dialog[open] {
   max-width: 560px;
+  min-width: 280px;
+
+  padding: 24px;
 
   background-color: var(--md-sys-color-surface);
 
@@ -21,7 +21,7 @@ dialog[open],
     background-color: transparent;
   }
 
-  .mdl-buttons {
+  .JTM-C-Dialog-Buttons {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -29,7 +29,7 @@ dialog[open],
     justify-content: flex-start;
   }
 
-  .mdl-content-layout {
+  .JTM-C-Dialog-ContentLayout {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -38,17 +38,17 @@ dialog[open],
 
     color: var(--md-sys-color-on-surface-variant);
 
-    .mdl-headline {
+    .JTM-C-Dialog-Headline {
       margin-bottom: 16px;
 
       color: var(--md-sys-color-on-surface);
     }
 
-    .mdl-supporting-text {
+    .JTM-C-Dialog-SupportingText {
       margin-bottom: 24px;
     }
 
-    .mdl-supporting-list {
+    .JTM-C-Dialog-SupportingList {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
@@ -56,7 +56,7 @@ dialog[open],
 
       width: 100%;
 
-      .mdl-tips-item {
+      .JTM-C-Dialog-TipItems {
         display: grid;
         align-items: center;
         gap: 12px;
@@ -66,10 +66,10 @@ dialog[open],
   }
 
   &[icon] {
-    .mdl-content-layout {
+    .JTM-C-Dialog-ContentLayout {
       align-items: center;
 
-      .mdl-icon {
+      .JTM-C-Dialog-LeaderIcon {
         @include material-icon($size: 24px);
 
         margin-bottom: 16px;

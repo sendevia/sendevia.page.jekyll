@@ -19,7 +19,7 @@ body {
           }
         }
 
-        .mtb {
+        .JTM-C-AppBar {
           &[spec="small-centered"] {
             top: -64px;
 
@@ -27,7 +27,7 @@ body {
           }
         }
 
-        .mnd {
+        .JTM-C-NavigationDrawer {
           top: 0;
 
           height: calc(100% - 100px);

@@ -14,7 +14,7 @@
     <!--  -->
     {%- if page.toc -%}
     <!-- 目录 -->
-    <div class="mnd">
+    <div class="JTM-C-NavigationDrawer">
       <!--  -->
       {% toc %}
       <!--  -->
@@ -24,20 +24,20 @@
     <!-- 内容 -->
     <div class="website-information">
       <div class="website-information-title">
-        <button class="mib" id="website-information-mib">info</button>
+        <button class="JTM-C-IconButton" id="website-information-JTM-C-IconButton">info</button>
         <h4 id="website-information-h4">{{ site.title }}</h4>
       </div>
     </div>
     <div class="content-container">
       <!-- 加载界面 -->
       <div class="content-loading">
-        <span class="mpi" spec="circular"></span>
+        <span class="JTM-C-ProgressIndicator" spec="circular"></span>
         <p>{{ page.title }}</p>
       </div>
       <!-- 文章布局 -->
       <div class="content-flow">{%- include content.html -%}</div>
       <!-- 底部 Fab -->
-      <button class="mfb" spec="primary" id="right-corner-fab">vertical_align_top</button>
+      <button class="JTM-C-FAB" spec="primary" id="right-corner-fab">vertical_align_top</button>
     </div>
     {%- endif -%}
   </body>

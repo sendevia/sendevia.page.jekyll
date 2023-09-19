@@ -1,7 +1,7 @@
 // https://m3.material.io/components/floating-action-button/overview
 // 浮动行为按钮
 
-button.mfb {
+button.JTM-C-FAB {
   @include material-icon($size: 24px);
 
   display: flex;
@@ -23,12 +23,12 @@ button.mfb {
   &::after {
     content: "";
 
+    height: 100%;
+    width: 100%;
+
     position: absolute;
     left: 0;
     top: 0;
-
-    height: 100%;
-    width: 100%;
 
     opacity: 0;
     transition: var(--md-sys-motion-duration-medium4);
@@ -69,28 +69,28 @@ button.mfb {
 
   &,
   &[size="normal"] {
-    padding: 16px;
-
     height: 56px;
     width: 56px;
+
+    padding: 16px;
 
     border-radius: 16px;
   }
 
   &[size="small"] {
-    padding: 8px;
-
     height: 40px;
     width: 40px;
+
+    padding: 8px;
 
     border-radius: 12px;
   }
 
   &[size="large"] {
-    padding: 32px;
-
     height: 96px;
     width: 96px;
+
+    padding: 32px;
 
     font-size: 36px;
 

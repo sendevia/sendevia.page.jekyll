@@ -66,15 +66,15 @@ tags: readme skin amix
 
 <div>
   <a href="https://github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk">
-    <button class="mbt" spec="tonal" icon>
+    <button class="JTM-C-CommonButton" spec="tonal" icon>
       <span>download</span>
       最新版 (1.0/2022.3.21) 下载
     </button>
   </a>
 </div>
 <div>
-  <a href="https://github.com/Sendevia/AincradMix" class="mbt" spec="tonal" icon>
-    <button class="mbt" spec="tonal" icon>
+  <a href="https://github.com/Sendevia/AincradMix" class="JTM-C-CommonButton" spec="tonal" icon>
+    <button class="JTM-C-CommonButton" spec="tonal" icon>
       <span>code</span>
       Github
     </button>

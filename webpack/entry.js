@@ -23,20 +23,20 @@ var contentPhotograph = document.querySelector(".impression img");
 /**
  * 页面导航
  */
-var contentNavigation = document.querySelector(".mng");
+var contentNavigation = document.querySelector(".JTM-C-Navigation");
 /**
  * 展开的页面导航
  */
-var contentNavigationDrawer = document.querySelector(".mnd");
+var contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
 if (contentNavigationDrawer) {
   /**
    * Drawer目录元素
    */
-  var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".mnd-entry");
+  var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry");
   /**
    * 控制Drawer开关的元素
    */
-  var contentDrawerMenuBtn = document.querySelectorAll("#maf-mfb-menu, #mtb-mib-menu");
+  var contentDrawerMenuBtn = document.querySelectorAll("#JTM-C-Navigation-FAB > button, body > div.JTM-C-AppBar > button:nth-child(1)");
 }
 /**
  * 页面加载中的闪屏
@@ -49,15 +49,15 @@ var currentPage = window.location.pathname;
 /**
  * 选择移动端的标题栏
  */
-var topAppBar = document.querySelector(".mtb");
+var topAppBar = document.querySelector(".JTM-C-AppBar");
 /**
  * 选择全部的开启模态提示框的元素
  */
-var modalTipsIcon = document.querySelectorAll("#mtb-mib-info, body > div.website-information");
+var modalTipsIcon = document.querySelectorAll("body > div.website-information, body > div.JTM-C-AppBar > button:nth-child(3)");
 /**
  * 选择模态提示框
  */
-var modalTips = document.querySelector("#mdl-tips");
+var modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择关闭模态提示框的元素
  */
@@ -71,10 +71,10 @@ var scrollTopElements = document.querySelectorAll("#right-corner-fab");
  */
 var rippleElements = document.querySelectorAll(
   `button,
-  .mcd a,
-  .mcd[spec='clear'],
-  .mcd[spec='focus'],
-  .mnd a,
+  .JTM-C-Card a,
+  .JTM-C-Card[spec='clear'],
+  .JTM-C-Card[spec='focus'],
+  .JTM-C-NavigationDrawer a,
   #accent,
   body > div.website-information`
 );
@@ -155,30 +155,30 @@ window.onpageshow = function () {
 
   // 侧边栏
   if (contentNavigationDrawer) {
-    const toggleMndSection = (boolean) => {
+    const toggleJTM_C_NavigationDrawerSection = (boolean) => {
       contentNavigationDrawer.toggleAttribute("show", boolean);
       themeRoot.toggleAttribute("content-unfocused", boolean);
     };
 
     contentDrawerMenuBtn.forEach((i) => {
       i.addEventListener("click", () => {
-        toggleMndSection();
+        toggleJTM_C_NavigationDrawerSection();
       });
     });
 
     contentDrawerEntries.forEach((i) => {
       i.addEventListener("click", () => {
-        toggleMndSection(false);
+        toggleJTM_C_NavigationDrawerSection(false);
       });
     });
 
     document.addEventListener("click", (i) => {
-      let isMnd = i.target.closest(".mnd");
-      let isMtb = i.target.closest(".mtb");
-      let isMAB = i.target.closest("#mng-rail-fab");
+      let isJTM_C_NavigationDrawer = i.target.closest(".JTM-C-NavigationDrawer");
+      let isJTM_C_AppBar = i.target.closest(".JTM-C-AppBar");
+      let isMAB = i.target.closest("#JTM-C-Navigation-FAB");
 
-      if (!isMnd && (window.matchMedia("(max-width: 768px)").matches ? !isMtb : !isMAB)) {
-        toggleMndSection(false);
+      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 768px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+        toggleJTM_C_NavigationDrawerSection(false);
       }
     });
   }
@@ -188,7 +188,7 @@ window.onpageshow = function () {
   modalTipsIcon.forEach((i) => {
     i.addEventListener("click", () => {
       toggleDim(true);
-      modalTips.style.animation = `mdl-show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+      modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
       modalTips.showModal();
       isModalShowing = true;
     });
@@ -197,7 +197,7 @@ window.onpageshow = function () {
   const closeModal = () => {
     toggleDim(false);
     isModalShowing = true;
-    modalTips.style.animation = `mdl-close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+    modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
     setTimeout(() => {
       if (isModalShowing) {
         modalTips.close();

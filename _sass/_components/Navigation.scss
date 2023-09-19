@@ -1,7 +1,7 @@
 // https://m3.material.io/components/navigation-bar/
 // 页面导航
 
-.mng {
+.JTM-C-Navigation {
   @extend .disable-select;
 
   letter-spacing: 0;
@@ -36,9 +36,9 @@
       align-self: stretch;
       flex-direction: column;
 
-      padding: 0;
-
       height: 56px;
+
+      padding: 0;
 
       #accent {
         display: flex;
@@ -63,7 +63,6 @@
           color: var(--md-sys-color-on-secondary-container);
 
           transition: 0.3s;
-
           pointer-events: none;
 
           span {
@@ -150,7 +149,7 @@
     visibility: hidden;
 
     #website-information-logo,
-    #mng-rail-fab {
+    #JTM-C-Navigation-FAB {
       display: none;
     }
 
@@ -163,10 +162,10 @@
         margin: 0 4px 0 4px;
 
         #accent {
-          margin: 0 0 4px 0;
-
           height: 32px;
           width: 64px;
+
+          margin: 0 0 4px 0;
         }
 
         #label {
@@ -196,7 +195,7 @@
     position: absolute;
     left: 0;
 
-    #mng-rail-fab {
+    #JTM-C-Navigation-FAB {
       display: flex;
       align-items: center;
       justify-content: center;

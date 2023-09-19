@@ -1,17 +1,17 @@
 // https://m3.material.io/components/icon-buttons/
 // 图标按钮
 
-button.mib {
+button.JTM-C-IconButton {
   @include material-icon($size: 24px);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: relative;
-
   height: 40px;
   width: 40px;
+
+  position: relative;
 
   letter-spacing: 0;
 
@@ -25,12 +25,12 @@ button.mib {
   &::after {
     content: "";
 
+    height: 100%;
+    width: 100%;
+
     position: absolute;
     left: 0;
     top: 0;
-
-    height: 100%;
-    width: 100%;
 
     opacity: 0;
     transition: var(--md-sys-motion-duration-medium4);

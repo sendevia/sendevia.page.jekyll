@@ -4,19 +4,19 @@
 @import "token";
 @import "variable";
 
-@import "_components/button";
-@import "_components/card";
-@import "_components/chip";
-@import "_components/codehighlight";
-@import "_components/dialog";
-@import "_components/fab";
-@import "_components/icon-button";
-@import "_components/input";
-@import "_components/navigation-drawer";
-@import "_components/navigation";
-@import "_components/progress-indicator";
-@import "_components/table";
-@import "_components/top-app-bar";
+@import "_components/AppBar";
+@import "_components/Card";
+@import "_components/Checkbox";
+@import "_components/Chip";
+@import "_components/Code";
+@import "_components/CommonButton";
+@import "_components/Dialog";
+@import "_components/FAB";
+@import "_components/IconButton";
+@import "_components/Navigation";
+@import "_components/NavigationDrawer";
+@import "_components/ProgressIndicator";
+@import "_components/Table";
 
 * {
   box-sizing: border-box;
@@ -535,7 +535,7 @@ ol {
         margin: 0;
 
         input {
-          @extend input, .mip;
+          @extend input, .JTM-C-Checkbox;
 
           line-height: 1;
 
@@ -809,7 +809,7 @@ ol {
 
     margin-block-start: 18px;
 
-    .mcp {
+    .JTM-C-Chip {
       margin-inline-start: 10px;
     }
 

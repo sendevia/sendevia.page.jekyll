@@ -1,6 +1,6 @@
 // 展开的侧边栏
 
-.mnd {
+.JTM-C-NavigationDrawer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -26,7 +26,7 @@
   visibility: hidden;
   z-index: 21;
 
-  .mnd-section {
+  .JTM-C-NavigationDrawer-Section {
     padding: 10px;
 
     overflow: auto;
@@ -50,10 +50,10 @@
   p {
     display: block;
 
+    width: 100%;
+
     margin: 0;
     padding: 0px 8px 0px 16px;
-
-    width: 100%;
 
     line-height: 48px;
     text-overflow: ellipsis;
@@ -68,24 +68,24 @@
     align-items: flex-start;
     flex-direction: column;
 
+    width: 100%;
+
     margin: 0;
     padding: 0;
 
-    width: 100%;
-
     list-style: none;
 
-    .mnd-entry {
+    .JTM-C-NavigationDrawer-Entry {
       width: 100%;
     }
 
-    .mnd-h1 {
+    .JTM-C-NavigationDrawer-h1 {
       a:hover {
         background-color: var(--md-sys-color-secondary-container);
       }
     }
 
-    .mnd-h2 {
+    .JTM-C-NavigationDrawer-h2 {
       padding: 0px 8px 0px 20px;
 
       a:hover {

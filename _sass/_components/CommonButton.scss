@@ -1,7 +1,7 @@
 // https://m3.material.io/components/all-buttons/
 // 按钮
 
-button.mbt {
+button.JTM-C-CommonButton {
   @include label-large();
   @extend .disable-select;
 
@@ -25,8 +25,6 @@ button.mbt {
 
   border-radius: 100px;
   border: none;
-
-  background: none;
 
   box-shadow: none;
   cursor: pointer;

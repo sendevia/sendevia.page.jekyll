@@ -30,9 +30,9 @@ defaults:
       toc: true
 
 toc:
-  item_class: "mnd-entry"
-  item_prefix: "mnd-"
-  list_class: "mnd-section"
+  item_class: "JTM-C-NavigationDrawer-Entry"
+  item_prefix: "JTM-C-NavigationDrawer-"
+  list_class: "JTM-C-NavigationDrawer-Section"
   list_id: null
   max_level: 2
   ordered_list: false

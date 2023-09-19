@@ -17,8 +17,8 @@ toc: false
         {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%d'" -%} {%- for day in posts_by_day -%} {%- for post in day.items -%}
         <div class="posts-card">
           <a href="{{ post.url }}">
-            <div class="mcd" spec="clear">
-              <div class="mcd-impression">
+            <div class="JTM-C-Card" spec="clear">
+              <div class="JTM-C-Card-Impression">
                 <span class="posts-date-day">{{ day.name }}</span>
                 {%- if post.impression and post.impression != "" -%}
                 <!-- 头图 - 设置由文章提供 -->
@@ -30,7 +30,7 @@ toc: false
                 <img src="{{ photograph }}" alt="{{ post.title }}的封面" loading="lazy" />
                 {%- endif -%}
               </div>
-              <div class="mcd-supporting">
+              <div class="JTM-C-Card-Supporting">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
               </div>

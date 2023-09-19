@@ -1,16 +1,17 @@
+// 表格
+
 table {
   display: inline-block;
 
-  margin-inline-start: 12px;
-
   max-width: max-content;
   width: calc(100% - 24px);
+
+  margin-inline-start: 12px;
 
   border-collapse: collapse;
   border-radius: 24px;
 
   box-shadow: 0 0 0 1px var(--md-sys-color-outline);
-
   overflow: auto;
 
   caption {
@@ -30,9 +31,9 @@ table {
 
     tr {
       th {
-        padding: 16px 24px;
-
         min-width: 10ch;
+
+        padding: 16px 24px;
 
         font-weight: 500;
         letter-spacing: 0.5px;

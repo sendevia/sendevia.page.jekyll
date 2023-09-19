@@ -138,7 +138,7 @@
       }
     }
 
-    .mng {
+    .JTM-C-Navigation {
       &[spec="bar"] {
         background-color: var(--via-color-background);
 
@@ -152,7 +152,7 @@
       }
     }
 
-    .mnd {
+    .JTM-C-NavigationDrawer {
       height: calc(100% - 164px);
 
       margin: 10px;
@@ -161,7 +161,7 @@
       top: 64px;
     }
 
-    .mtb {
+    .JTM-C-AppBar {
       visibility: visible;
 
       &[spec="small-centered"] {
