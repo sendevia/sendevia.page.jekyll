@@ -159,45 +159,6 @@ toc: true
 > <button class="mib" spec="standard">settings</button>
 > ```
 
-# Radio button
-
-用户交互控件 - 单选框
-
-<table>
-  <thead>
-    <tr>
-      <th>element</th>
-      <th>type</th>
-      <th>class</th>
-      <th>预览</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>input</code></td>
-      <td><code>radio</code></td>
-      <td><code>mip</code></td>
-      <td>
-        <input type="radio" class="mip" />
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <input type="radio" class="mip" checked />
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-> **代码示例**
->
-> ```html
-> <input type="radio" class="mip" /> <input type="radio" class="mip" checked />
-> ```
-
 # Checkbox
 
 用户交互控件 - 多选框
@@ -234,7 +195,8 @@ toc: true
 > **代码示例**
 >
 > ```html
-> <input type="checkbox" class="mip" /> <input type="checkbox" class="mip" checked />
+> <input type="checkbox" class="mip" />
+> <input type="checkbox" class="mip" checked />
 > ```
 
 # Cards
@@ -477,30 +439,6 @@ toc: true
         </button>
       </td>
     </tr>
-    <tr>
-      <td><code>label + input[type="checkbox"]</code></td>
-      <td></td>
-      <td><code>filter</code></td>
-      <td>-</td>
-      <td colspan="2">
-        <label class="mcp" spec="filter">
-          <input type="checkbox" name="mcp-checkbox-1" spec="filter" checked />
-          Enabled
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>elevated</td>
-      <td colspan="2">
-        <label class="mcp" spec="filter" container="elevated">
-          <input type="checkbox" name="mcp-checkbox-2" />
-          Enabled
-        </label>
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -508,10 +446,6 @@ toc: true
 >
 > ```html
 > <button class="mcp" spec="assist">Enabled</button>
-> <label class="mcp" spec="filter">
->   <input type="checkbox" name="mcp-checkbox-1" spec="filter" />
->   Enabled
-> </label>
 > ```
 
 # Fabs

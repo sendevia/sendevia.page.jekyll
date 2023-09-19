@@ -1,8 +1,7 @@
 // https://m3.material.io/components/chips/
 // 面包屑
 
-button.mcp,
-label.mcp {
+button.mcp {
   @include label-large();
   @extend .disable-select;
 
@@ -19,11 +18,13 @@ label.mcp {
 
   position: relative;
 
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-surface);
   letter-spacing: 0;
 
   border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
+
+  background: none;
 
   box-shadow: none;
   cursor: pointer;
@@ -47,23 +48,6 @@ label.mcp {
     }
   }
 
-  &:hover::after {
-    transition: var(--md-sys-motion-duration-short4);
-    opacity: var(--md-sys-state-hover-state-layer-opacity);
-  }
-
-  &:focus::after {
-    transition: var(--md-sys-motion-duration-short4);
-    opacity: var(--md-sys-state-focus-state-layer-opacity);
-  }
-
-  &:active::after {
-    transition: var(--md-sys-motion-duration-short4);
-    opacity: var(--md-sys-state-pressed-state-layer-opacity);
-  }
-}
-
-button.mcp {
   &::after {
     content: "";
 
@@ -78,49 +62,27 @@ button.mcp {
     transition: var(--md-sys-motion-duration-medium4);
   }
 
-  &[spec="assist"] {
-    color: var(--md-sys-color-on-surface);
+  &:hover::after {
+    background-color: var(--md-sys-color-on-surface);
 
-    background: none;
-
-    &:hover::after,
-    &:focus::after,
-    &:active::after {
-      background-color: var(--md-sys-color-on-surface);
-    }
-  }
-}
-
-label.mcp {
-  flex-direction: row-reverse;
-
-  input[type="checkbox"] {
-    display: none;
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-hover-state-layer-opacity);
   }
 
-  span {
-    width: 0;
-    height: 0;
+  &:focus::after {
+    background-color: var(--md-sys-color-on-surface);
+
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-focus-state-layer-opacity);
   }
 
-  &[checked] {
-    gap: 8px;
+  &:active::after {
+    background-color: var(--md-sys-color-on-surface);
 
-    padding: 6px 16px 6px 8px;
-
-    span {
-      @include material-icon($size: 18px);
-
-      height: 18px;
-      width: 18px;
-
-      color: var(--md-sys-color-primary);
-    }
+    transition: var(--md-sys-motion-duration-short4);
+    opacity: var(--md-sys-state-pressed-state-layer-opacity);
   }
-}
 
-button.mcp,
-label.mcp {
   &[container="elevated"] {
     color: var(--md-sys-color-on-surface);
 

@@ -79,10 +79,6 @@ var rippleElements = document.querySelectorAll(
   body > div.website-information`
 );
 /**
- * 选择全部需要控制状态的面包屑元素
- */
-var mcpInputElements = document.querySelectorAll("label.mcp > input[type='checkbox']");
-/**
  * 选择页面右上角的网站信息
  */
 var websiteInfomation = document.querySelector("body > div.website-information");
@@ -189,7 +185,6 @@ window.onpageshow = function () {
 
   // 模态tips
   const toggleDim = (isDim) => themeRoot.toggleAttribute("body-unfocused", isDim);
-
   modalTipsIcon.forEach((i) => {
     i.addEventListener("click", () => {
       toggleDim(true);
@@ -198,9 +193,7 @@ window.onpageshow = function () {
       isModalShowing = true;
     });
   });
-
   let isModalShowing = false;
-
   const closeModal = () => {
     toggleDim(false);
     isModalShowing = true;
@@ -213,35 +206,14 @@ window.onpageshow = function () {
       }
     }, 400);
   };
-
   dialogBtnClose.addEventListener("click", closeModal);
-
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isModalShowing) {
       closeModal();
     }
   });
 
-  // mcp input 展示状态切换
-  mcpInputElements.forEach((input) => {
-    const checkSymbol = document.createElement("span");
-    checkSymbol.innerHTML = "check";
-
-    function updateLabel() {
-      if (input.checked) {
-        input.parentElement.setAttribute("checked", "");
-        input.parentElement.appendChild(checkSymbol);
-      } else {
-        input.parentElement.removeAttribute("checked");
-        if (checkSymbol.parentNode) {
-          input.parentElement.removeChild(checkSymbol);
-        }
-      }
-    }
-    updateLabel();
-    input.addEventListener("change", updateLabel);
-  });
-
+  // 桌面端右上角页面信息按钮
   var websiteInfomationWidth = websiteInfomation.clientWidth;
   websiteInfomation.style.width = websiteInfomationWidth + "px";
 };
