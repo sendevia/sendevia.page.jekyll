@@ -68,6 +68,17 @@ body {
 
     background-color: var(--md-sys-color-on-surface-variant);
   }
+
+  @media (pointer: coarse) {
+    ::-webkit-scrollbar {
+      height: 3px;
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-clip: unset;
+    }
+  }
 }
 
 .material-theme {
@@ -1077,7 +1088,10 @@ ol {
     margin-inline-end: 6px;
   }
 
-  #r2-c4,#r2-c4,#r2-c4,#r2-c4 {
+  #r2-c4,
+  #r2-c4,
+  #r2-c4,
+  #r2-c4 {
     margin-block-end: 6px;
   }
 

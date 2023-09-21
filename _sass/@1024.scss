@@ -3,10 +3,6 @@
 @media screen and (max-width: 1024px) {
   html,
   body {
-    ::-webkit-scrollbar {
-      width: 2px;
-    }
-
     .content-flow {
       #content-header {
         flex-direction: column;
