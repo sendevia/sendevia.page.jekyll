@@ -24,6 +24,10 @@ defaults:
       layout: "Material3"
       published: true
   - scope:
+      path: "_pages"
+    values:
+      permalink: "/:basename"
+  - scope:
       path: "_posts"
     values:
       permalink: "/posts/:title"
@@ -72,3 +76,6 @@ exclude:
   - vendor/
   - webpack.config.js
   - webpack/
+
+include:
+  - _pages/
