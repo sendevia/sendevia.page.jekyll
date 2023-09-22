@@ -78,7 +78,7 @@ Archlinux
 > gem install bundler jekyll
 > ```
 
-# 部署本项目
+### 开发本项目
 
 切换到本项目文件夹
 
