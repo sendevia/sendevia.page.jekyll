@@ -2,7 +2,21 @@
 
 我自己的博客网站的源码仓库，使用自制的 `jekyll-theme-m3` 主题，目前正积极开发中。**推荐在 CloudFlare 上部署本项目。**
 
-## 配置运行环境
+**如果不需要对主题进行开发，直接按部署 jekyll 的方式部署本主题即可。**
+
+编写
+
+> ```
+> bundle exec jekyll serve --livereload --host 0.0.0.0
+> ```
+
+发布
+
+> ```
+> bundle exec jekyll build
+> ```
+
+## 配置开发环境
 
 ### 安装依赖
 
@@ -64,7 +78,7 @@ Archlinux
 > gem install bundler jekyll
 > ```
 
-# 运行和部署本项目
+# 部署本项目
 
 切换到本项目文件夹
 
@@ -76,14 +90,6 @@ Archlinux
 > bundle i
 > ```
 
-## 开发模式
-
-```
-npm run dev
-```
-
-## 发布模式
-
-```
-npm run build
-```
+> ```
+> npm run dev
+> ```
