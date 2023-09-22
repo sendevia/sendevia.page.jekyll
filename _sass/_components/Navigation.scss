@@ -73,7 +73,7 @@
             height: 24px;
             width: 24px;
 
-            font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+            font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 
             transition: 0.3s;
 
@@ -96,7 +96,7 @@
       &:hover {
         #accent {
           #segment-primary-icon span {
-            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 24;
           }
         }
       }
@@ -114,7 +114,7 @@
         transition: 0.3s cubic-bezier(0.08, 0.82, 0.17, 1);
 
         #segment-primary-icon span {
-          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
         }
       }
 
@@ -125,7 +125,15 @@
           background-color: var(--md-sys-color-surface-variant);
 
           #segment-primary-icon span {
-            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+            font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+          }
+        }
+      }
+
+      &:active {
+        #accent {
+          #segment-primary-icon span {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
           }
         }
       }
