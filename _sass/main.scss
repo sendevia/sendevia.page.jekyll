@@ -405,11 +405,12 @@ ol {
   animation: fadeIn var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard) 1 normal both;
 
   #content-header {
-    display: flex;
-    align-content: center;
-    gap: 6px;
+    display: grid;
+    gap: 8px;
+    grid-auto-flow: row;
+    grid-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
 
-    height: 600px;
     width: 100%;
 
     word-break: break-word;
@@ -421,10 +422,12 @@ ol {
       align-items: flex-start;
       flex-direction: column;
       gap: 6px;
+      grid-column: span 1;
       justify-content: center;
 
       height: 100%;
-      width: 50%;
+
+      padding: 54px;
 
       color: var(--md-sys-color-on-secondary-container);
 
@@ -437,27 +440,23 @@ ol {
       #title {
         width: 100%;
 
-        padding-inline: 60px;
-
         -webkit-text-stroke: 2px var(--md-sys-color-on-secondary-container);
         font-family: Google Sans;
-        font-size: 120rem;
-        line-height: 120rem;
+        font-size: 110rem;
+        line-height: 110rem;
       }
 
       #subtitle {
         width: 100%;
 
-        padding-inline: 66px;
-
         font-family: Google Sans;
-        font-size: 25rem;
-        line-height: 25rem;
+        font-size: 22rem;
+        line-height: 22rem;
       }
     }
 
     .impression {
-      width: 50%;
+      grid-column: span 1;
 
       border-radius: 10px;
 

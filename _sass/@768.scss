@@ -46,20 +46,18 @@
       #content-header {
         flex-direction: column;
 
-        padding-inline: 0;
-
         .wrapper {
+          grid-column: span 2;
+
           #title {
             @include display-medium();
 
-            padding-inline: 30px;
-
             line-height: 45rem;
           }
+        }
 
-          #subtitle {
-            padding-inline: 30px;
-          }
+        .impression {
+          grid-column: span 2;
         }
       }
 

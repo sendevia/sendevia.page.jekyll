@@ -4,6 +4,12 @@
   html,
   body {
     .content-flow {
+      #content-header {
+        .wrapper {
+          padding: 30px;
+        }
+      }
+
       #content {
         [role="doc-endnotes"]ol {
           margin-inline: 0;
