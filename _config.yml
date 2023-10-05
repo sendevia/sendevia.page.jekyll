@@ -1,4 +1,4 @@
-version: "23.922.0"
+version: "23.105.0"
 
 title: "sendevia 的博客"
 baseurl: ""
@@ -19,17 +19,14 @@ twitter:
 
 defaults:
   - scope:
-      path: ""
-    values:
-      layout: "Material3"
-      published: true
-  - scope:
       path: "_pages"
     values:
+      layout: "Page"
       permalink: "/:basename"
   - scope:
       path: "_posts"
     values:
+      layout: "Post"
       permalink: "/posts/:title"
       toc: true
 
