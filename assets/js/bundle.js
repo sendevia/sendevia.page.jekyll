@@ -6225,15 +6225,15 @@ var cutsomThemeColor = document.body.getAttribute("color");
 /**
  * 主题根节点
  */
-var themeRoot = document.querySelector(".material-theme");
+var themeRoot = document.querySelector(".JTM-Root");
 /**
- * 文章内容主容器
+ * 文章内容流
  */
-var contentContainer = document.querySelector(".content-container");
+var contentContainer = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
 /**
  * 文章头部印象图
  */
-var contentPhotograph = document.querySelector(".impression img");
+var contentPhotograph = document.querySelector("#JTM-S-Title-Impression img");
 /**
  * 页面导航
  */
@@ -6248,14 +6248,14 @@ if (contentNavigationDrawer) {
    */
   var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry");
   /**
-   * 控制Drawer开关的元素
+   * 选择控制Drawer开关的元素
    */
-  var contentDrawerMenuBtn = document.querySelectorAll("#JTM-C-Navigation-FAB > button, body > div.JTM-C-AppBar > button:nth-child(1)");
+  var contentDrawerMenuBtn = document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon");
 }
 /**
  * 页面加载中的闪屏
  */
-var contentSplashScreen = document.querySelector(".content-loading");
+var contentSplashScreen = document.querySelector(".JTM-S-LoadingSplash");
 /**
  * 定位当前所在的页面
  */
@@ -6265,23 +6265,23 @@ var currentPage = window.location.pathname;
  */
 var topAppBar = document.querySelector(".JTM-C-AppBar");
 /**
- * 选择全部的开启模态提示框的元素
- */
-var modalTipsIcon = document.querySelectorAll("body > div.website-information, body > div.JTM-C-AppBar > button:nth-child(3)");
-/**
  * 选择模态提示框
- */
+*/
 var modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
- * 选择关闭模态提示框的元素
+ * 选择可以开启模态提示框的元素
+ */
+var modalTipsIcon = document.querySelectorAll("body > div.JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+/**
+ * 选择可以关闭模态提示框的元素
  */
 var dialogBtnClose = document.querySelector("#dialog-close");
 /**
  * 选择点击后跳转到页面顶端的元素
  */
-var scrollTopElements = document.querySelectorAll("#right-corner-fab");
+var scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
 /**
- * 选择全部需要涟漪效果的元素
+ * 选择需要涟漪效果的元素
  */
 var rippleElements = document.querySelectorAll(
   `button,
@@ -6289,13 +6289,13 @@ var rippleElements = document.querySelectorAll(
   .JTM-C-Card[spec='clear'],
   .JTM-C-Card[spec='focus'],
   .JTM-C-NavigationDrawer a,
-  #accent,
-  body > div.website-information`
+  #JTM-C-Navigation-DestinationAccent,
+  body > div.JTM-S-WebsiteInformation`
 );
 /**
  * 选择页面右上角的网站信息
  */
-var websiteInfomation = document.querySelector("body > div.website-information");
+var websiteInfomation = document.querySelector("body > div.JTM-S-WebsiteInformation");
 
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
@@ -6304,10 +6304,10 @@ window.onpageshow = function () {
   // 页面指示
   try {
     let activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
-    let inactiveSegment = activatedSegment.querySelector("#segment-inactive");
-    inactiveSegment.id = "segment-active";
+    let inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
+    inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
   } catch (err) {
-    document.querySelector(`a[href="/posts"] #segment-inactive`).id = "segment-active";
+    document.querySelector(`a[href="/posts"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
   }
 
   // 滚动到页面顶部
@@ -6351,7 +6351,7 @@ window.onpageshow = function () {
       i.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-      animation: ${scrollY >= 400 ? "popOut 0.5s cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
+      animation: ${scrollY >= 400 ? "popOut var(--md-sys-motion-duration-long2) cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
       `;
     });
 
@@ -6428,18 +6428,19 @@ window.onpageshow = function () {
   });
 
   // 桌面端右上角页面信息按钮
-  var websiteInfomationWidth = websiteInfomation.clientWidth;
-  websiteInfomation.style.width = websiteInfomationWidth + "px";
+  if (websiteInfomation) {
+    var websiteInfomationWidth = websiteInfomation.clientWidth;
+    websiteInfomation.style.width = websiteInfomationWidth + "px";
+  }
 };
 
 window.onload = function () {
   removeLoadScreen();
 
-  themeImageProvider.src = contentPhotograph.src;
-
   if (cutsomThemeColor) {
     generateColorPalette((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(cutsomThemeColor));
   } else {
+    themeImageProvider.src = contentPhotograph.src;
     generateImagePalette(themeImageProvider);
   }
 };

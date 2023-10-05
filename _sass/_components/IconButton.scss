@@ -2,7 +2,7 @@
 // 图标按钮
 
 button.JTM-C-IconButton {
-  @include material-icon($size: 24px);
+  @include material-symbols($size: 24px);
 
   display: flex;
   align-items: center;

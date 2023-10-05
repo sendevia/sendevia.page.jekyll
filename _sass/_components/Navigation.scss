@@ -6,9 +6,11 @@
 
   letter-spacing: 0;
 
+  background-color: var(--md-sys-color-surface-container-low);
+
   z-index: 10;
 
-  #website-information-logo {
+  #JTM-C-Navigation-Hero {
     height: 50px;
     width: 50px;
 
@@ -18,7 +20,7 @@
     mask: var(--via-svg-mask) no-repeat 0 / 100%;
   }
 
-  .destinations {
+  #JTM-C-Navigation-Destinations {
     display: flex;
     flex-grow: 1;
 
@@ -30,7 +32,7 @@
       width: 100%;
     }
 
-    #segment-active {
+    #JTM-C-Navigation-SegmentActive {
       display: flex;
       align-items: center;
       align-self: stretch;
@@ -40,7 +42,7 @@
 
       padding: 0;
 
-      #accent {
+      #JTM-C-Navigation-DestinationAccent {
         display: flex;
         align-items: center;
         flex: none;
@@ -54,7 +56,7 @@
 
         overflow: hidden;
 
-        #segment-primary-icon {
+        #JTM-C-Navigation-SegmentIcon {
           height: 24px;
           width: 24px;
 
@@ -62,29 +64,27 @@
 
           color: var(--md-sys-color-on-secondary-container);
 
-          transition: 0.3s;
+          transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
           pointer-events: none;
 
           span {
-            @include material-icon($size: 24px);
-
-            display: block;
+            @include material-symbols($size: 24px);
 
             height: 24px;
             width: 24px;
 
-            font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+            font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
 
-            transition: 0.3s;
+            transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard-decelerate);
 
             &:hover {
-              transition: 0.5s;
+              transition: var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-standard-accelerate);
             }
           }
         }
       }
 
-      #label {
+      #JTM-C-Navigation-DestinationLabel {
         color: var(--md-sys-color-on-surface);
         font-size: 12px;
         font-weight: 500;
@@ -94,46 +94,46 @@
       }
 
       &:hover {
-        #accent {
-          #segment-primary-icon span {
-            font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 24;
+        #JTM-C-Navigation-DestinationAccent {
+          #JTM-C-Navigation-SegmentIcon span {
+            font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24;
           }
         }
       }
     }
 
-    #segment-inactive {
-      @extend #segment-active;
+    #JTM-C-Navigation-SegmentInactive {
+      @extend #JTM-C-Navigation-SegmentActive;
 
-      #accent {
+      #JTM-C-Navigation-DestinationAccent {
         height: 32px;
         width: 32px;
 
         background: none;
 
-        transition: 0.3s cubic-bezier(0.08, 0.82, 0.17, 1);
+        transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 
-        #segment-primary-icon span {
-          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        #JTM-C-Navigation-SegmentIcon span {
+          font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
         }
       }
 
       &:hover {
-        #accent {
+        #JTM-C-Navigation-DestinationAccent {
           height: 32px;
 
           background-color: var(--md-sys-color-surface-variant);
 
-          #segment-primary-icon span {
+          #JTM-C-Navigation-SegmentIcon span {
             font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
           }
         }
       }
 
       &:active {
-        #accent {
-          #segment-primary-icon span {
-            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        #JTM-C-Navigation-DestinationAccent {
+          #JTM-C-Navigation-SegmentIcon span {
+            font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
           }
         }
       }
@@ -149,40 +149,39 @@
     height: 80px;
     width: 100%;
 
-    position: fixed;
-    bottom: 0;
-
     box-shadow: var(--md-sys-elevation-level1);
     overflow-y: hidden;
+    transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
     visibility: hidden;
 
-    #website-information-logo,
+
+    #JTM-C-Navigation-Hero,
     #JTM-C-Navigation-FAB {
       display: none;
     }
 
-    .destinations {
+    #JTM-C-Navigation-Destinations {
       align-items: center;
       flex-direction: row;
       justify-content: space-around;
 
-      #segment-active {
+      #JTM-C-Navigation-SegmentActive {
         margin: 0 4px 0 4px;
 
-        #accent {
+        #JTM-C-Navigation-DestinationAccent {
           height: 32px;
           width: 64px;
 
           margin: 0 0 4px 0;
         }
 
-        #label {
+        #JTM-C-Navigation-DestinationLabel {
           margin: 0;
         }
       }
 
-      #segment-inactive:hover {
-        #accent {
+      #JTM-C-Navigation-SegmentInactive:hover {
+        #JTM-C-Navigation-DestinationAccent {
           width: 64px;
         }
       }
@@ -200,9 +199,6 @@
 
     margin-block: 0 24px;
 
-    position: absolute;
-    left: 0;
-
     #JTM-C-Navigation-FAB {
       display: flex;
       align-items: center;
@@ -211,45 +207,45 @@
       height: 80px;
     }
 
-    .destinations {
+    #JTM-C-Navigation-Destinations {
       align-items: flex-start;
       flex-direction: column;
 
-      #segment-active {
+      #JTM-C-Navigation-SegmentActive {
         height: 56px;
 
         margin: 4px 5px;
 
-        #accent {
+        #JTM-C-Navigation-DestinationAccent {
           height: 32px;
           width: 56px;
 
           margin: 4px 0;
         }
 
-        #label {
+        #JTM-C-Navigation-DestinationLabel {
           margin: 4px 0;
         }
       }
 
-      #segment-inactive {
-        #label {
-          @extend #label;
+      #JTM-C-Navigation-SegmentInactive {
+        #JTM-C-Navigation-DestinationLabel {
+          @extend #JTM-C-Navigation-DestinationLabel;
 
           color: #0000;
           line-height: 0px;
           text-decoration: none;
 
-          transition: 0.3s ease-out;
+          transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
           visibility: hidden;
         }
 
         &:hover {
-          #accent {
+          #JTM-C-Navigation-DestinationAccent {
             width: 56px;
           }
 
-          #label {
+          #JTM-C-Navigation-DestinationLabel {
             color: var(--md-sys-color-on-secondary-container);
             line-height: 16px;
             text-decoration: none;
@@ -261,20 +257,20 @@
     }
 
     &[dest="top"] {
-      .destinations {
+      #JTM-C-Navigation-Destinations {
         justify-content: flex-start;
       }
     }
 
     &[dest="center"] {
-      .destinations {
+      #JTM-C-Navigation-Destinations {
         justify-content: center;
       }
     }
 
     &,
     &[dest="bottom"] {
-      .destinations {
+      #JTM-C-Navigation-Destinations {
         justify-content: flex-end;
       }
     }

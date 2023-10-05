@@ -6,6 +6,7 @@ color: ""
 impression: "/assets/images/22/s0_amix_vision.webp"
 categories: osu!皮肤
 tags: readme skin amix
+featured: true
 ---
 
 # 介绍

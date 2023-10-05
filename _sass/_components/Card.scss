@@ -107,7 +107,7 @@
       img {
         opacity: 0.5;
 
-        transition: opacity 0.3s;
+        transition: opacity var(--md-sys-motion-duration-medium2);
       }
 
       .JTM-C-Card-Supporting {

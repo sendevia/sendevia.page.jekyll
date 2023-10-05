@@ -7,37 +7,6 @@ impression: "/assets/images/110468331_p0.webp"
 toc: true
 ---
 
-# Palette
-
-调色板（色卡）
-
-<div class="post-components-palette">
-  <div class="row">
-    <span id="r1-c1">Primary</span>
-    <span id="r1-c2">Secondary</span>
-    <span id="r1-c3">Tertiary</span>
-    <span id="r1-c4">Error</span>
-  </div>
-  <div class="row">
-    <span id="r2-c1">On Primary</span>
-    <span id="r2-c2">On Secondary</span>
-    <span id="r2-c3">On Tertiary</span>
-    <span id="r2-c4">On Error</span>
-  </div>
-  <div class="row">
-    <span id="r3-c1">Primary Container</span>
-    <span id="r3-c2">Secondary Container</span>
-    <span id="r3-c3">Tertiary Container</span>
-    <span id="r3-c4">Error Container</span>
-  </div>
-  <div class="row">
-    <span id="r4-c1">On Primary Container</span>
-    <span id="r4-c2">On Secondary Container</span>
-    <span id="r4-c3">On Tertiary Container</span>
-    <span id="r4-c4">On Error Container</span>
-  </div>
-</div>
-
 # Buttons
 
 用户交互控件 - 按钮

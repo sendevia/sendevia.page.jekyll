@@ -38,7 +38,7 @@ button.JTM-C-Chip {
     padding-inline-end: 16px;
 
     span {
-      @include material-icon($size: 18px);
+      @include material-symbols($size: 18px);
 
       height: 18px;
       width: 18px;

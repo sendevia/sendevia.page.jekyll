@@ -2,14 +2,14 @@
 
 html,
 body {
-  .material-theme {
+  .JTM-Root {
     &[hide-top-app-bar="true"] {
-      .website-information {
+      .JTM-S-WebsiteInformation {
         width: 40px !important;
       }
 
       @media screen and (max-width: 768px) {
-        .page-index {
+        .JTM-P-Index {
           .timeline {
             .index-level1 {
               .posts-date-year-month {
@@ -20,35 +20,36 @@ body {
         }
 
         .JTM-C-AppBar {
-          &[spec="small-centered"] {
-            top: -64px;
+          top: -64px;
 
-            transition: 0.3s;
-          }
-        }
-
-        .JTM-C-NavigationDrawer {
-          top: 0;
-
-          height: calc(100% - 100px);
+          transition: var(--md-sys-motion-duration-medium2);
         }
       }
     }
 
     &[loaded] {
-      .content-loading {
+      .JTM-S-LoadingSplash {
         display: none;
       }
 
-      .content-container {
+      #JTM-S-UniversalLayout-ContentFlow {
         overflow: overlay;
       }
     }
 
     &[content-unfocused] {
-      .content-container {
-        opacity: 0.3;
-        pointer-events: none;
+      pointer-events: none;
+
+      .JTM-S-CornerFAB,
+      #JTM-S-UniversalLayout-ContentFlow {
+        filter: contrast(0.8);
+      }
+
+      @media screen and (max-width: 768px) {
+        .JTM-C-Navigation,
+        .JTM-C-AppBar {
+          filter: contrast(0.8);
+        }
       }
     }
 

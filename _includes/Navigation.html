@@ -1,6 +1,6 @@
 <!-- 导航 - 导航栏 -->
 <div class="JTM-C-Navigation" spec="rail" dest="center">
-  <img src="/assets/images/avatar.webp" alt="logo" id="website-information-logo" />
+  <img src="/assets/images/avatar.webp" alt="logo" id="JTM-C-Navigation-Hero" />
 
   {%- if page.toc -%}
   <div id="JTM-C-Navigation-FAB">
@@ -8,40 +8,40 @@
   </div>
   {%- endif -%}
 
-  <div class="destinations">
+  <div id="JTM-C-Navigation-Destinations">
     <a href="/">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
+      <div id="JTM-C-Navigation-SegmentInactive">
+        <div id="JTM-C-Navigation-DestinationAccent">
+          <div id="JTM-C-Navigation-SegmentIcon">
             <!-- https://fonts.google.com/icons?selected=Material+Icons&icon.set=Material+Symbols -->
             <span>home</span>
           </div>
         </div>
-        <p id="label">首页</p>
+        <p id="JTM-C-Navigation-DestinationLabel">首页</p>
       </div>
     </a>
 
     <a href="/posts">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
+      <div id="JTM-C-Navigation-SegmentInactive">
+        <div id="JTM-C-Navigation-DestinationAccent">
+          <div id="JTM-C-Navigation-SegmentIcon">
             <span>article</span>
           </div>
         </div>
-        <p id="label">文章</p>
+        <p id="JTM-C-Navigation-DestinationLabel">文章</p>
       </div>
     </a>
 
     <!-- 列出有导航需求的页面 -->
     {%- for s in site.pages -%} {%- if s.navigation and s.published == true -%}
     <a href="{{ s.url }}">
-      <div id="segment-inactive">
-        <div id="accent">
-          <div id="segment-primary-icon">
+      <div id="JTM-C-Navigation-SegmentInactive">
+        <div id="JTM-C-Navigation-DestinationAccent">
+          <div id="JTM-C-Navigation-SegmentIcon">
             <span>{{ s.segment_icon }}</span>
           </div>
         </div>
-        <p id="label">{{ s.segment_title }}</p>
+        <p id="JTM-C-Navigation-DestinationLabel">{{ s.segment_title }}</p>
       </div>
     </a>
     {%- endif -%}
@@ -51,17 +51,17 @@
 </div>
 
 <!-- 导航 - 移动端顶栏 -->
-<div class="JTM-C-AppBar" spec="small-centered">
+<div class="JTM-C-AppBar">
   {%- if page.toc -%}
-  <button class="JTM-C-IconButton">menu</button>
+  <button class="JTM-C-IconButton" id="JTM-C-AppBar-MenuIcon">menu</button>
   {%- else -%}
   <span></span>
   {%- endif -%}
-  <h4 id="JTM-C-AppBar-dc-area">
+  <div id="JTM-C-AppBar-DynamicTitle">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
-  </h4>
-  <button class="JTM-C-IconButton">info</button>
+  </div>
+  <button class="JTM-C-IconButton" id="JTM-C-AppBar-InfoIcon">info</button>
 </div>
 
 <!-- 导航 - 模态的页面信息 -->

@@ -1,7 +1,6 @@
 // https://m3.material.io/components/dialogs/
 // 对话
 
-dialog[open],
 .JTM-C-Dialog[open] {
   max-width: 560px;
   min-width: 280px;
@@ -70,7 +69,7 @@ dialog[open],
       align-items: center;
 
       .JTM-C-Dialog-LeaderIcon {
-        @include material-icon($size: 24px);
+        @include material-symbols($size: 24px);
 
         margin-bottom: 16px;
       }

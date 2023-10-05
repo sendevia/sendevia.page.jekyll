@@ -2,12 +2,12 @@
 title: "Sendevia 的博客小站"
 description: ""
 author: "sendevia"
-color: ""
+color: "#66ccff"
 impression: ""
-toc: false
+layout: "PageIndex"
 ---
 
-<div class="page-index">
+<div class="JTM-P-Index">
   <div class="timeline">
     {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
     <div class="index-level1">

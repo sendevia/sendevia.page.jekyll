@@ -10,164 +10,162 @@
     ::-webkit-scrollbar-thumb {
       background-clip: unset;
     }
+  }
 
+  a {
+    width: auto;
+  }
+
+  .JTM-S-404NotFound #JTM-S-404NotFound-Information {
+    h1 {
+      font-size: 75rem;
+    }
+    h3 {
+      font-size: 20rem;
+    }
+  }
+
+  .JTM-S-CornerFAB {
+    margin-block-end: 25px;
+    margin-inline-end: 20px;
+
+    bottom: 80px;
+  }
+
+  .JTM-C-Navigation {
+    &[spec="bar"] {
+      grid-row: 2/2;
+
+      visibility: visible;
+      z-index: 11;
+    }
+
+    &[spec="rail"] {
+      visibility: hidden;
+    }
+  }
+
+  .JTM-C-NavigationDrawer {
+    left: 0;
+
+    #JTM-C-NavigationDrawer-MenuCloseIcon {
+      display: block;
+
+      margin-block-start: 12px;
+      margin-inline-start: 3px;
+    }
+  }
+
+  .JTM-C-AppBar {
+    top: 0;
+
+    visibility: visible;
+  }
+
+  .JTM-S-WebsiteInformation {
+    display: none;
+  }
+
+  .JTM-S-QuickJump {
     a {
-      width: auto;
-    }
-
-    .website-information {
-      display: none;
-    }
-
-    .content-container {
-      height: calc(100% - 80px);
       width: 100%;
 
-      margin-left: 0;
+      #JTM-S-QuickJump-Previous {
+        margin-inline-end: 0;
+        margin-block-end: 3px;
+      }
 
-      top: 0;
-      left: 0;
-
-      border-radius: 0;
-
-      #right-corner-fab {
-        margin-block-end: 20px;
-        margin-inline-end: 10px;
-
-        bottom: 80px;
-        right: 10px;
+      #JTM-S-QuickJump-Next {
+        margin-inline-start: 0;
+        margin-block-start: 3px;
       }
     }
+  }
 
-    .content-flow {
+  .JTM-S-UniversalLayout {
+    grid-template-columns: none;
+    grid-template-rows: auto 80px;
+
+    #JTM-S-UniversalLayout-ContentFlow {
+      grid-column: auto;
+      grid-row: 1/2;
+
       margin: 0;
       padding: 75px 10px 120px;
 
-      #content-header {
+      .JTM-S-Title {
         flex-direction: column;
 
-        .wrapper {
+        #JTM-S-Title-HeroContainer {
           grid-column: span 2;
 
-          #title {
+          #JTM-S-Title-HeroHeadline {
             @include display-medium();
 
             line-height: 45rem;
           }
         }
 
-        .impression {
+        #JTM-S-Title-Impression {
           grid-column: span 2;
         }
       }
 
-      #content {
+      #JTM-S-UniversalLayout-ContentFiller {
         padding: 0 0 36px 0;
 
         background-color: transparent;
       }
+    }
+  }
 
-      #nothing {
+  .JTM-P-Index {
+    align-items: center;
+    flex-direction: column-reverse;
+
+    width: 100%;
+
+    margin-block-start: 30px;
+    margin-inline: 0;
+    padding-block: 0;
+
+    .timeline {
+      .index-level1 {
+        align-items: center;
+
+        .posts-date-year-month {
+          top: 68px;
+        }
+      }
+
+      .index-level2 {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
         width: 100%;
       }
 
-      #JTM-S-QuickJump {
-        a {
-          flex-grow: 1;
-        }
+      .posts-card .posts-date-day {
+        left: unset;
+        right: 0;
+
+        border-radius: 12px 20px 12px 12px;
       }
     }
 
-    .page-index {
-      align-items: center;
-      flex-direction: column-reverse;
+    .person-intro {
+      max-width: 360px;
+      min-width: unset;
+      width: 80vw;
 
-      width: 100%;
+      margin: auto;
 
-      margin-block-start: 30px;
-      margin-inline: 0;
-      padding-block: 0;
+      position: relative;
+      top: 0;
 
-      .timeline {
-        .index-level1 {
-          align-items: center;
-
-          .posts-date-year-month {
-            top: 68px;
-          }
-        }
-
-        .index-level2 {
-          align-items: center;
-          flex-wrap: wrap;
-          justify-content: center;
-
-          width: 100%;
-        }
-
-        .posts-card .posts-date-day {
-          left: unset;
-          right: 0;
-
-          border-radius: 12px 20px 12px 12px;
-        }
-      }
-
-      .person-intro {
-        max-width: 360px;
-        min-width: unset;
-        width: 80vw;
-
-        margin: auto;
-
-        position: relative;
-        top: 0;
-
-        .section1 {
-          width: 100%;
-        }
-      }
-    }
-
-    .page-404 {
-      #page-404-information {
-        h1 {
-          font-size: 75rem;
-        }
-        h3 {
-          font-size: 20rem;
-        }
-      }
-    }
-
-    .JTM-C-Navigation {
-      &[spec="bar"] {
-        background-color: var(--via-color-background);
-
-        transform: translateY(0%);
-        visibility: visible;
-        z-index: 11;
-      }
-
-      &[spec="rail"] {
-        visibility: hidden;
-      }
-    }
-
-    .JTM-C-NavigationDrawer {
-      height: calc(100% - 164px);
-
-      margin: 10px;
-
-      left: 0;
-      top: 64px;
-    }
-
-    .JTM-C-AppBar {
-      visibility: visible;
-
-      &[spec="small-centered"] {
-        top: 0;
+      .section1 {
+        width: 100%;
       }
     }
   }
