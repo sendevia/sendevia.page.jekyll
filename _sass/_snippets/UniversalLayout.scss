@@ -28,6 +28,7 @@
     }
 
     animation: fadeIn var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard) 1 normal both;
+    overflow: hidden;
     transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-ContentFiller {

@@ -51,8 +51,19 @@
     #JTM-C-NavigationDrawer-MenuCloseIcon {
       display: block;
 
-      margin-block-start: 12px;
-      margin-inline-start: 3px;
+      position: absolute;
+      left: 3px;
+      top: 12px;
+    }
+
+    #JTM-C-NavigationDrawer-Section {
+      position: relative;
+      top: 60px;
+
+      height: calc(100% - 50px);
+
+      padding-block-end: 20px;
+      padding-inline: 10px;
     }
   }
 
@@ -80,6 +91,10 @@
         margin-block-start: 3px;
       }
     }
+  }
+
+  .JTM-S-Title {
+    margin: 0;
   }
 
   .JTM-S-UniversalLayout {

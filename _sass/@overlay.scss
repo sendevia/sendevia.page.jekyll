@@ -38,17 +38,18 @@ body {
     }
 
     &[content-unfocused] {
-      pointer-events: none;
-
       .JTM-S-CornerFAB,
       #JTM-S-UniversalLayout-ContentFlow {
         filter: contrast(0.8);
+        pointer-events: none;
       }
 
       @media screen and (max-width: 768px) {
         .JTM-C-Navigation,
         .JTM-C-AppBar {
           filter: contrast(0.8);
+          pointer-events: none;
+          transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
         }
       }
     }

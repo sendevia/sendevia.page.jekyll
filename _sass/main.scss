@@ -437,44 +437,11 @@ ol {
   }
 }
 
-.page-posts {
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .search-container {
-    margin-block-start: 45px;
-
-    .input-container {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
-
-      width: 100%;
-    }
-
-    #results-container {
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-
-      padding: 20px;
-
-      font-size: 15em;
-    }
-  }
-}
-
-.page-licenses {
+.JTM-P-Licenses {
   text-align: center;
 }
 
-#about-pt4-pixiv-gallery {
+.JTM-P-PixivGallery {
   display: flex;
   align-items: center;
   flex-direction: row;

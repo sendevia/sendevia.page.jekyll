@@ -149,11 +149,8 @@
     height: 80px;
     width: 100%;
 
-    box-shadow: var(--md-sys-elevation-level1);
     overflow-y: hidden;
-    transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
     visibility: hidden;
-
 
     #JTM-C-Navigation-Hero,
     #JTM-C-Navigation-FAB {
@@ -210,6 +207,7 @@
     #JTM-C-Navigation-Destinations {
       align-items: flex-start;
       flex-direction: column;
+      justify-content: center;
 
       #JTM-C-Navigation-SegmentActive {
         height: 56px;
@@ -253,25 +251,6 @@
             visibility: visible;
           }
         }
-      }
-    }
-
-    &[dest="top"] {
-      #JTM-C-Navigation-Destinations {
-        justify-content: flex-start;
-      }
-    }
-
-    &[dest="center"] {
-      #JTM-C-Navigation-Destinations {
-        justify-content: center;
-      }
-    }
-
-    &,
-    &[dest="bottom"] {
-      #JTM-C-Navigation-Destinations {
-        justify-content: flex-end;
       }
     }
   }

@@ -5,6 +5,7 @@
   grid-template-columns: repeat(2, 1fr);
 
   margin: 12px;
+  min-height: 480px;
 
   word-break: break-word;
 
@@ -50,6 +51,9 @@
 
   #JTM-S-Title-Impression {
     grid-column: span 1;
+
+    height: 100%;
+    width: 100%;
 
     border-radius: 10px;
 
