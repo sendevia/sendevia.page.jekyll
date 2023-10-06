@@ -1,4 +1,4 @@
-version: "23.105.0"
+version: "23.106.0"
 
 title: "sendevia 的博客"
 baseurl: ""
@@ -33,8 +33,7 @@ defaults:
 toc:
   item_class: "JTM-C-NavigationDrawer-Entry"
   item_prefix: "JTM-C-NavigationDrawer-"
-  list_class: "JTM-C-NavigationDrawer-Section"
-  list_id: null
+  list_id: "JTM-C-NavigationDrawer-Section"
   max_level: 2
   ordered_list: false
 
