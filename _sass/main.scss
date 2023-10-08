@@ -87,8 +87,7 @@ body {
   background-color: var(--md-sys-color-surface-container-low);
 
   opacity: 1;
-
-  transition: var(--md-sys-motion-duration-medium1);
+  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
   .disable-select {
     -moz-user-select: none;
@@ -439,6 +438,10 @@ ol {
 
 .JTM-P-Licenses {
   text-align: center;
+
+  table td {
+    text-align: start;
+  }
 }
 
 .JTM-P-PixivGallery {

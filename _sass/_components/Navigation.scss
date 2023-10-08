@@ -8,6 +8,7 @@
 
   background-color: var(--md-sys-color-surface-container-low);
 
+  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 10;
 
   #JTM-C-Navigation-Hero {
@@ -187,6 +188,7 @@
 
   &[spec="rail"] {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 12px;
     justify-content: space-between;
@@ -195,6 +197,9 @@
     width: 80px;
 
     margin-block: 0 24px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 
     #JTM-C-Navigation-FAB {
       display: flex;

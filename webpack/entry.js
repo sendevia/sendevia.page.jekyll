@@ -81,7 +81,10 @@ var rippleElements = document.querySelectorAll(
 /**
  * 选择页面右上角的网站信息
  */
-var websiteInfomation = document.querySelector("body > div.JTM-S-WebsiteInformation");
+/**
+ * 选择切换颜色方案的元素
+ */
+var themeToggle = document.querySelector("#JTM-C-Navigation-ColorScheme");
 
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
@@ -218,6 +221,27 @@ window.onpageshow = function () {
     var websiteInfomationWidth = websiteInfomation.clientWidth;
     websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
+
+  // 颜色模式切换
+  function getThemeMode() {
+    const savedTheme = document.cookie.split("; ").find((row) => row.startsWith("theme-mode="));
+    return savedTheme ? savedTheme.split("=")[1] : "light_mode";
+  }
+  function updateThemeModeDisplay(mode) {
+    themeToggle.textContent = mode;
+  }
+  const savedTheme = getThemeMode();
+  updateThemeModeDisplay(savedTheme);
+  if (savedTheme === "dark_mode") {
+    themeRoot.classList.add("dark-theme");
+  }
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = getThemeMode();
+    const nextTheme = currentTheme === "light_mode" ? "dark_mode" : "light_mode";
+    document.cookie = `theme-mode=${nextTheme}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+    updateThemeModeDisplay(nextTheme);
+    themeRoot.classList.toggle("dark-theme");
+  });
 };
 
 window.onload = function () {

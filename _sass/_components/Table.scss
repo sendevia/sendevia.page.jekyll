@@ -21,7 +21,9 @@ table {
 
     text-transform: uppercase;
 
-    background: var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-surface-variant);
+
+    transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   }
 
   thead {
@@ -42,7 +44,9 @@ table {
         border-left: 1px solid var(--md-sys-color-outline);
         border-top: 1px solid var(--md-sys-color-outline);
 
-        background: var(--md-sys-color-surface-variant);
+        background-color: var(--md-sys-color-surface-variant);
+
+        transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
         &:first-child {
           border-left: none;

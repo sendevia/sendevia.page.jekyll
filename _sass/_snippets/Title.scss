@@ -30,6 +30,7 @@
     background-color: var(--md-sys-color-secondary-container);
 
     overflow: hidden;
+    transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
     #JTM-S-Title-HeroHeadline {
       width: 100%;
