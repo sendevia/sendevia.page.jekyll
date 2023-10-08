@@ -1,6 +1,6 @@
 {
   "name": "sendevia.page.jekyll",
-  "version": "23.106.0",
+  "version": "23.108.0",
   "description": "一个博客",
   "scripts": {
     "dev": "npx webpack -w & bundle exec jekyll serve --livereload --host 0.0.0.0",
@@ -17,8 +17,7 @@
   },
   "homepage": "https://sendevia.top",
   "dependencies": {
-    "@material/material-color-utilities": "^0.2.7",
-    "simple-jekyll-search": "^1.10.0"
+    "@material/material-color-utilities": "^0.2.7"
   },
   "devDependencies": {
     "webpack": "^5.88.1",
