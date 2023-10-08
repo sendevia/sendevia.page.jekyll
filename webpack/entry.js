@@ -52,7 +52,7 @@ var currentPage = window.location.pathname;
 var topAppBar = document.querySelector(".JTM-C-AppBar");
 /**
  * 选择模态提示框
-*/
+ */
 var modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择可以开启模态提示框的元素
@@ -71,16 +71,16 @@ var scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
  */
 var rippleElements = document.querySelectorAll(
   `button,
-  .JTM-C-Card a,
   .JTM-C-Card[spec='clear'],
   .JTM-C-Card[spec='focus'],
   .JTM-C-NavigationDrawer a,
   #JTM-C-Navigation-DestinationAccent,
-  body > div.JTM-S-WebsiteInformation`
+  .JTM-S-WebsiteInformation`
 );
 /**
  * 选择页面右上角的网站信息
  */
+var websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
 /**
  * 选择切换颜色方案的元素
  */
@@ -188,33 +188,39 @@ window.onpageshow = function () {
 
   // 模态tips
   const toggleDim = (isDim) => themeRoot.toggleAttribute("body-unfocused", isDim);
-  modalTipsIcon.forEach((i) => {
-    i.addEventListener("click", () => {
-      toggleDim(true);
-      modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
-      modalTips.showModal();
-      isModalShowing = true;
-    });
-  });
-  let isModalShowing = false;
-  const closeModal = () => {
+  function openModal() {
+    toggleDim(true);
+    modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+    modalTips.showModal();
+  }
+  function closeModal() {
     toggleDim(false);
-    isModalShowing = true;
     modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
     setTimeout(() => {
-      if (isModalShowing) {
-        modalTips.close();
-        modalTips.style.animation = "";
-        isModalShowing = false;
-      }
+      modalTips.close();
+      modalTips.style.animation = "";
     }, 400);
-  };
-  dialogBtnClose.addEventListener("click", closeModal);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && isModalShowing) {
+  }
+  function handleKeyboardEvent(event) {
+    if (event.key === "Escape") {
+      event.preventDefault();
       closeModal();
     }
-  });
+  }
+  function handleClickOutside(event) {
+    if (event.target === modalTips) {
+      closeModal();
+    }
+  }
+  function initModal() {
+    modalTipsIcon.forEach((i) => {
+      i.addEventListener("click", openModal);
+    });
+    dialogBtnClose.addEventListener("click", closeModal);
+    modalTips.addEventListener("keydown", handleKeyboardEvent);
+    modalTips.addEventListener("click", handleClickOutside);
+  }
+  initModal();
 
   // 桌面端右上角页面信息按钮
   if (websiteInfomation) {
