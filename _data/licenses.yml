@@ -33,11 +33,6 @@
   repository: https://github.com/jekyll/jekyll-feed
   version: 0.17.0
 
-- name: jekyll-last-modified-at
-  license: MIT
-  repository: https://github.com/gjtorikian/jekyll-last-modified-at
-  version: 1.3.0
-
 - name: jekyll-paginate
   license: MIT
   repository: https://github.com/jekyll/jekyll-paginate
@@ -53,11 +48,6 @@
   repository: https://github.com/jekyll/jekyll-sitemap
   version: 1.4.0
 
-- name: jekyll-timeago
-  license: MIT
-  repository: https://github.com/markets/jekyll-timeago
-  version: 0.15.0
-
 - name: jekyll-toc
   license: MIT
   repository: https://github.com/toshimaru/jekyll-toc
@@ -67,3 +57,23 @@
   license: MIT
   repository: https://github.com/jekyll/jemoji
   version: 0.13.0
+
+- name: Google Sans, Google Sans Text
+  license: Unknown
+  repository: https://fonts.google.com/license/googlerestricted
+  version: latest
+
+- name: Source Code Pro
+  license: Open Font License
+  repository: https://github.com/adobe-fonts/source-code-pro
+  version: latest
+
+- name: Noto Sans SC
+  license: Open Font License
+  repository: https://fonts.google.com/noto/specimen/Noto+Sans+SC?query=Noto+Sans+SC
+  version: latest
+
+- name: Material Symbols
+  license: Apache-2.0
+  repository: https://github.com/google/material-design-icons
+  version: latest
