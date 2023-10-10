@@ -82,9 +82,9 @@ var rippleElements = document.querySelectorAll(
  */
 var websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
 /**
- * 选择切换颜色方案的元素
+ * 选择所有a元素
  */
-var themeToggle = document.querySelector("#JTM-C-Navigation-ColorScheme");
+var elementA = document.querySelectorAll("a");
 
 window.onpageshow = function () {
   // 进入后执行窗口宽度判断
@@ -227,6 +227,22 @@ window.onpageshow = function () {
     var websiteInfomationWidth = websiteInfomation.clientWidth;
     websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
+
+  // 链接延时跳转
+  function linkDelayRedirection() {
+    elementA.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const delay = 240;
+
+        setTimeout(() => {
+          window.location.href = link.getAttribute("href");
+        }, delay);
+      });
+    });
+  }
+  linkDelayRedirection();
 };
 
 window.onload = function () {
