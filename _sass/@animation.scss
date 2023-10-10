@@ -127,13 +127,3 @@
     transform: none;
   }
 }
-
-@keyframes doc-noteref-target {
-  from {
-    box-shadow: 0 0 0 15px var(--md-sys-color-outline);
-  }
-
-  to {
-    box-shadow: 0 0 0 0 transparent;
-  }
-}

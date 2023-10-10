@@ -26,6 +26,7 @@
     }
 
     overflow: overlay;
+    scroll-behavior: smooth;
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-ContentFiller {
@@ -184,15 +185,34 @@
       }
 
       [role="doc-noteref"] {
-        display: inline;
+        display: inline-block;
+
+        height: 24px;
+
+        vertical-align: bottom;
+
+        border-left: 2px solid var(--md-sys-color-tertiary-container);
+
+        border-radius: 3px 0 0 0;
+
+        .footnote {
+          padding-inline: 3px 5px;
+
+          color: var(--md-sys-color-on-tertiary-container);
+
+          border-radius: 0 3px 3px 0;
+
+          background-color: var(--md-sys-color-tertiary-container);
+        }
 
         &:target {
-          padding: 3px 6px 0 5px;
+          border-left: 2px solid var(--md-sys-color-primary);
 
-          border-radius: 12px 12px 12px 0;
-          border: 2px solid var(--md-sys-color-outline);
+          .footnote {
+            color: var(--md-sys-color-on-primary);
 
-          animation: doc-noteref-target var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized) backwards;
+            background-color: var(--md-sys-color-primary);
+          }
         }
       }
 
@@ -208,7 +228,9 @@
           counter-reset: listCounter;
 
           p {
-            display: inline;
+            display: inline-block;
+
+            vertical-align: middle;
           }
 
           :target p {
@@ -223,15 +245,16 @@
         list-style: none;
 
         &::before {
+          @include body-large();
           content: counter(listCounter);
 
           display: inline-block;
 
-          margin-inline-end: 6px;
-          padding: 7px 7px 7px 8px;
+          min-height: 36px;
+          min-width: 24px;
 
           color: var(--md-sys-color-on-tertiary-container);
-          font-family: monospace;
+          line-height: 36px;
           text-align: center;
           vertical-align: middle;
 
