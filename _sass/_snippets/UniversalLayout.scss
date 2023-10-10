@@ -32,7 +32,7 @@
       width: 100%;
 
       padding-block: 16px 36px;
-      padding-inline: calc(100% / 2 - 540px);
+      padding-inline: calc(50% - 540px);
 
       letter-spacing: 1.2px;
 
@@ -87,14 +87,6 @@
 
         .task-list-item {
           margin: 0;
-
-          input {
-            @extend input, .JTM-C-Checkbox;
-
-            line-height: 1;
-
-            border-radius: 0 !important;
-          }
 
           &::before {
             display: none;
@@ -174,7 +166,7 @@
       }
 
       & > ul {
-        margin-inline-start: 12px;
+        margin-inline-start: 13.5px;
         padding-block: 12px;
       }
 

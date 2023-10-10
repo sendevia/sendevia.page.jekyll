@@ -6,7 +6,6 @@
 
 @import "_components/AppBar";
 @import "_components/Card";
-@import "_components/Checkbox";
 @import "_components/Chip";
 @import "_components/Code";
 @import "_components/CommonButton";
@@ -227,9 +226,15 @@ pre {
 }
 
 ul {
+  padding-inline-start: 0;
+
   list-style-type: none;
 
   li {
+    @include body-large();
+
+    margin-block-end: 5px;
+
     position: relative;
 
     &::before {
@@ -237,11 +242,12 @@ ul {
 
       display: inline-block;
 
-      height: 100%;
+      height: 16px;
       width: 16px;
 
-      position: absolute;
-      left: -20px;
+      margin-inline-end: 9px;
+
+      position: relative;
 
       background-color: var(--md-sys-color-on-surface);
 
@@ -251,7 +257,6 @@ ul {
   }
 }
 
-ul,
 ol {
   padding-inline-start: 20px;
 
@@ -268,29 +273,48 @@ ol {
       }
     }
   }
+}
 
-  &.task-list {
-    padding-inline-start: 1em;
+.task-list {
+  padding-inline-start: 1em;
 
-    list-style-type: none;
+  list-style-type: none;
 
-    .task-list-item {
-      margin: 5px 0;
+  .task-list-item {
+    margin: 5px 0;
 
-      input {
-        line-height: 0;
+    vertical-align: middle;
 
-        &.task-list-item-checkbox {
+    input {
+      line-height: 0;
+
+      &.task-list-item-checkbox {
+        @include material-symbols($size: 24px);
+
+        display: inline-block;
+
+        margin-inline-end: 2px;
+
+        letter-spacing: 0;
+        vertical-align: inherit;
+
+        appearance: none;
+
+        &::after {
+          content: "check_box_outline_blank";
+
           display: inline-block;
 
-          height: inherit;
-          width: inherit;
+          height: 26.4px;
 
-          padding-right: 5px;
+          color: var(--md-sys-color-on-surface-variant);
+        }
 
-          top: -2px;
+        &:checked::after {
+          content: "check_box";
 
-          vertical-align: text-top;
+          color: var(--md-sys-color-primary);
+          font-variation-settings: "FILL" 1;
         }
       }
     }
