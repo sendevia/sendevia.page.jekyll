@@ -387,6 +387,21 @@ ol {
 
         position: relative;
 
+        .JTM-C-Card:active {
+          .posts-date-day {
+            height: 76px;
+            width: 76px;
+
+            margin: 0;
+            padding-block-start: 4px;
+            padding-inline-start: 6px;
+
+            line-height: 76px;
+
+            border-radius: 0 0 12px 0;
+          }
+        }
+
         .posts-date-day {
           @include display-small();
 
