@@ -2,8 +2,8 @@
 title: "Material3 Components"
 description: "Material3 组件示例"
 author: "sendevia"
-color: "#00eda2"
-impression: "/assets/images/110468331_p0.webp"
+color: ""
+impression: "/assets/images/108723573_p0.webp"
 toc: true
 ---
 
@@ -157,46 +157,6 @@ toc: true
 >
 > ```html
 > <button class="JTM-C-IconButton" spec="standard">settings</button>
-> ```
-
-# Checkbox
-
-用户交互控件 - 多选框
-
-<table>
-  <thead>
-    <tr>
-      <th>element</th>
-      <th>type</th>
-      <th>class</th>
-      <th>预览</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>input</code></td>
-      <td><code>checkbox</code></td>
-      <td><code>JTM-C-Checkbox</code></td>
-      <td>
-        <input type="checkbox" class="JTM-C-Checkbox" />
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <input type="checkbox" class="JTM-C-Checkbox" checked />
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-> **代码示例**
->
-> ```html
-> <input type="checkbox" class="JTM-C-Checkbox" />
-> <input type="checkbox" class="JTM-C-Checkbox" checked />
 > ```
 
 # Cards
