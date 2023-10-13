@@ -34,6 +34,7 @@ div.highlighter-rouge {
 
   display: inline-block;
 
+  min-height: 46px;
   width: 100%;
 
   margin-block-end: 3px;
@@ -57,6 +58,8 @@ div.highlighter-rouge {
       code {
         display: block;
 
+        min-height: 46px;
+
         line-height: 0;
 
         .rouge-table {
@@ -70,7 +73,7 @@ div.highlighter-rouge {
           box-shadow: none;
 
           .rouge-gutter {
-            padding-block: 6px;
+            padding-block: 11px;
             padding-inline: 12px;
 
             position: sticky;
@@ -93,8 +96,8 @@ div.highlighter-rouge {
           }
 
           .rouge-code {
-            padding-block: 6px;
-            padding-inline: 12px;
+            padding-block: 11px;
+            padding-inline: 12px 46px;
 
             border-left: none;
 
