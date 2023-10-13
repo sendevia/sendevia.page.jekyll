@@ -1,271 +1,125 @@
 import { hexFromArgb, argbFromHex, sourceColorFromImage, CorePalette } from "@material/material-color-utilities";
 
-/**
- * 需要被取色的图片
- */
-var themeImageProvider = new Image();
-/**
- * 需要以此生成调色盘的hex颜色
- */
-var cutsomThemeColor = document.body.getAttribute("color");
-/**
- * 主题根节点
- */
-var themeRoot = document.querySelector(".JTM-Root");
-/**
- * 文章内容流
- */
-var contentContainer = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
-/**
- * 文章头部印象图
- */
-var contentPhotograph = document.querySelector("#JTM-S-Title-Impression img");
-/**
- * 页面导航
- */
-var contentNavigation = document.querySelector(".JTM-C-Navigation");
-/**
- * 展开的页面导航
- */
-var contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
-if (contentNavigationDrawer) {
-  /**
-   * Drawer目录元素
-   */
-  var contentDrawerEntries = contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry");
-  /**
-   * 选择控制Drawer开关的元素
-   */
-  var contentDrawerMenuBtn = document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon");
-}
-/**
- * 页面加载中的闪屏
- */
-var contentSplashScreen = document.querySelector(".JTM-S-LoadingSplash");
-/**
- * 定位当前所在的页面
- */
-var currentPage = window.location.pathname;
-/**
- * 选择移动端的标题栏
- */
-var topAppBar = document.querySelector(".JTM-C-AppBar");
-/**
- * 选择模态提示框
- */
-var modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
-/**
- * 选择可以开启模态提示框的元素
- */
-var modalTipsIcon = document.querySelectorAll("body > div.JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
-/**
- * 选择可以关闭模态提示框的元素
- */
-var dialogBtnClose = document.querySelector("#dialog-close");
-/**
- * 选择点击后跳转到页面顶端的元素
- */
-var scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
-/**
- * 选择需要涟漪效果的元素
- */
-var rippleElements = document.querySelectorAll(
-  `button,
-  .JTM-C-Card[spec='clear'],
-  .JTM-C-Card[spec='focus'],
-  .JTM-C-NavigationDrawer a,
-  #JTM-C-Navigation-DestinationAccent,
-  .JTM-S-WebsiteInformation`
+const themeImageProvider = new Image();
+const cutsomThemeColor = document.body.getAttribute("color");
+const themeRoot = document.querySelector(".JTM-Root");
+const contentContainer = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
+const contentPhotograph = document.querySelector("#JTM-S-Title-Impression img");
+const contentNavigation = document.querySelector(".JTM-C-Navigation");
+const contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
+const contentDrawerEntries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry") : [];
+const contentDrawerMenuBtn = contentNavigationDrawer
+  ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon")
+  : [];
+const contentSplashScreen = document.querySelector(".JTM-S-LoadingSplash");
+const currentPage = window.location.pathname;
+const topAppBar = document.querySelector(".JTM-C-AppBar");
+const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
+const modalTipsIcon = document.querySelectorAll("body > div.JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const dialogBtnClose = document.querySelector("#dialog-close");
+const scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
+const rippleElements = document.querySelectorAll(
+  `button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation`
 );
-/**
- * 选择页面右上角的网站信息
- */
-var websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
-/**
- * 选择所有a元素
- */
-var elementA = document.querySelectorAll("a");
+const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
+const elementA = document.querySelectorAll("a");
 
-window.onpageshow = function () {
-  // 进入后执行窗口宽度判断
-  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+const toggleJTM_C_NavigationDrawerSection = (show) => {
+  contentNavigationDrawer.toggleAttribute("show", show);
+  themeRoot.toggleAttribute("content-unfocused", show);
+};
 
-  // 页面指示
-  try {
-    let activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
-    let inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
-    inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
-  } catch (err) {
-    document.querySelector(`a[href="/posts"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
-  }
+const addRippleEffect = (element) => {
+  element.addEventListener("mousedown", (e) => {
+    const x = e.offsetX;
+    const y = e.offsetY;
+    const d = Math.max(element.clientWidth, element.clientHeight);
 
-  // 滚动到页面顶部
-  scrollTopElements.forEach((i) => {
-    i.addEventListener("click", () => {
-      contentContainer.scrollTo({
-        top: 0,
-      });
-    });
+    const rippleC = document.createElement("ripple-effect");
+    element.appendChild(rippleC);
+
+    rippleC.style.setProperty("--ripple-effect-x", x);
+    rippleC.style.setProperty("--ripple-effect-y", y);
+    rippleC.style.setProperty("--ripple-effect-d", d);
+
+    setTimeout(() => {
+      const rippleR = element.querySelector("ripple-effect");
+      element.removeChild(rippleR);
+    }, 400);
   });
+};
 
-  // 涟漪效果
-  rippleElements.forEach((i) => {
-    i.addEventListener("mousedown", (e) => {
-      const x = e.offsetX;
-      const y = e.offsetY;
-      const d = Math.max(i.clientWidth, i.clientHeight);
-
-      var rippleC = document.createElement("ripple-effect");
-      i.appendChild(rippleC);
-
-      rippleC.style.setProperty("--ripple-effect-x", x);
-      rippleC.style.setProperty("--ripple-effect-y", y);
-      rippleC.style.setProperty("--ripple-effect-d", d);
-
-      setTimeout(() => {
-        var rippleR = i.querySelector("ripple-effect");
-        i.removeChild(rippleR);
-      }, 400);
-    });
-  });
-
-  // 滚动事件
-  let lastScrollY = 0;
-  contentContainer.onscroll = function () {
-    let scrollY = this.scrollTop;
-
-    topAppBar.setAttribute("scroll", scrollY >= 64 ? "true" : "false");
-    themeRoot.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
-    scrollTopElements.forEach((i) => {
-      i.style.cssText = `
+const handleScroll = () => {
+  const scrollY = contentContainer.scrollTop;
+  const scrollThreshold = 64;
+  topAppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
+  themeRoot.setAttribute("hide-top-app-bar", scrollY >= 500 ? "true" : "false");
+  scrollTopElements.forEach((element) => {
+    element.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
       animation: ${scrollY >= 400 ? "popOut var(--md-sys-motion-duration-long2) cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
-      `;
-    });
+    `;
+  });
+};
 
-    if (scrollY < lastScrollY) {
-      themeRoot.setAttribute("hide-top-app-bar", "false");
-    }
+const handleResize = () => {
+  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+};
 
-    lastScrollY = scrollY <= 0 ? 0 : scrollY;
-  };
-
-  // 缩放事件
-  window.onresize = function () {
-    contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
-  };
-
-  // 侧边栏
-  if (contentNavigationDrawer) {
-    const toggleJTM_C_NavigationDrawerSection = (boolean) => {
-      contentNavigationDrawer.toggleAttribute("show", boolean);
-      themeRoot.toggleAttribute("content-unfocused", boolean);
-    };
-
-    contentDrawerMenuBtn.forEach((i) => {
-      i.addEventListener("click", () => {
-        toggleJTM_C_NavigationDrawerSection();
-      });
-    });
-
-    contentDrawerEntries.forEach((i) => {
-      i.addEventListener("click", () => {
-        toggleJTM_C_NavigationDrawerSection(false);
-      });
-    });
-
-    document.addEventListener("click", (i) => {
-      let isJTM_C_NavigationDrawer = i.target.closest(".JTM-C-NavigationDrawer");
-      let isJTM_C_AppBar = i.target.closest(".JTM-C-AppBar");
-      let isMAB = i.target.closest("#JTM-C-Navigation-FAB");
-
-      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 768px)").matches ? !isJTM_C_AppBar : !isMAB)) {
-        toggleJTM_C_NavigationDrawerSection(false);
-      }
-    });
-  }
-
-  // 模态tips
-  const toggleDim = (isDim) => themeRoot.toggleAttribute("body-unfocused", isDim);
-  function openModal() {
-    toggleDim(true);
-    modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
-    modalTips.showModal();
-  }
-  function closeModal() {
-    toggleDim(false);
-    modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+const handleLinkDelayRedirection = (link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const delay = 240;
     setTimeout(() => {
-      modalTips.close();
-      modalTips.style.animation = "";
-    }, 400);
-  }
-  function handleKeyboardEvent(event) {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeModal();
-    }
-  }
-  function handleClickOutside(event) {
-    if (event.target === modalTips) {
-      closeModal();
-    }
-  }
-  function initModal() {
-    modalTipsIcon.forEach((i) => {
-      i.addEventListener("click", openModal);
-    });
-    dialogBtnClose.addEventListener("click", closeModal);
-    modalTips.addEventListener("keydown", handleKeyboardEvent);
-    modalTips.addEventListener("click", handleClickOutside);
-  }
-  initModal();
-
-  // 桌面端右上角页面信息按钮
-  if (websiteInfomation) {
-    var websiteInfomationWidth = websiteInfomation.clientWidth;
-    websiteInfomation.style.width = websiteInfomationWidth + "px";
-  }
-
-  // 链接延时跳转
-  function linkDelayRedirection() {
-    elementA.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const delay = 240;
-
-        setTimeout(() => {
-          window.location.href = link.getAttribute("href");
-        }, delay);
-      });
-    });
-  }
-  linkDelayRedirection();
+      window.location.href = link.getAttribute("href");
+    }, delay);
+  });
 };
 
-window.onload = function () {
-  removeLoadScreen();
+const toggleDim = (isDim) => themeRoot.toggleAttribute("body-unfocused", isDim);
 
-  if (cutsomThemeColor) {
-    generateColorPalette(argbFromHex(cutsomThemeColor));
-  } else {
-    themeImageProvider.src = contentPhotograph.src;
-    generateImagePalette(themeImageProvider);
+const openModal = () => {
+  toggleDim(true);
+  modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+  modalTips.showModal();
+};
+
+const closeModal = () => {
+  toggleDim(false);
+  modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+  setTimeout(() => {
+    modalTips.close();
+    modalTips.style.animation = "";
+  }, 400);
+};
+
+const handleKeyboardEvent = (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeModal();
   }
 };
 
-/**
- * 移除加载屏幕
- */
-function removeLoadScreen() {
+const handleClickOutside = (event) => {
+  if (event.target === modalTips) {
+    closeModal();
+  }
+};
+
+const initModal = () => {
+  modalTipsIcon.forEach((element) => element.addEventListener("click", openModal));
+  dialogBtnClose.addEventListener("click", closeModal);
+  modalTips.addEventListener("keydown", handleKeyboardEvent);
+  modalTips.addEventListener("click", handleClickOutside);
+};
+
+const removeLoadScreen = () => {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
-
   contentSplashScreen.addEventListener("animationend", () => {
     themeRoot.setAttribute("loaded", true);
   });
-}
+};
 
 /**
  * 调色板提供器
@@ -400,3 +254,52 @@ async function generateColorPalette(argbColor) {
   const errorTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(errorTones, errorPalette(argbColor));
 }
+
+window.onpageshow = () => {
+  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+
+  try {
+    const activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
+    const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
+    inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
+  } catch (err) {
+    document.querySelector(`a[href="/posts"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
+  }
+
+  scrollTopElements.forEach((element) => element.addEventListener("click", () => contentContainer.scrollTo({ top: 0 })));
+  rippleElements.forEach(addRippleEffect);
+  contentContainer.onscroll = handleScroll;
+  window.onresize = handleResize;
+
+  if (contentNavigationDrawer) {
+    contentDrawerMenuBtn.forEach((element) => element.addEventListener("click", () => toggleJTM_C_NavigationDrawerSection()));
+    contentDrawerEntries.forEach((element) => element.addEventListener("click", () => toggleJTM_C_NavigationDrawerSection(false)));
+    document.addEventListener("click", (event) => {
+      const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
+      const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
+      const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
+      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 768px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+        toggleJTM_C_NavigationDrawerSection(false);
+      }
+    });
+  }
+
+  initModal();
+
+  if (websiteInfomation) {
+    const websiteInfomationWidth = websiteInfomation.clientWidth;
+    websiteInfomation.style.width = websiteInfomationWidth + "px";
+  }
+
+  elementA.forEach(handleLinkDelayRedirection);
+};
+
+window.onload = () => {
+  removeLoadScreen();
+  if (cutsomThemeColor) {
+    generateColorPalette(argbFromHex(cutsomThemeColor));
+  } else {
+    themeImageProvider.src = contentPhotograph.src;
+    generateImagePalette(themeImageProvider);
+  }
+};
