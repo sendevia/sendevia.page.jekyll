@@ -94,15 +94,15 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <button class="JTM-C-CommonButton" spec="elevated">Enabled</button>
-> <button class="JTM-C-CommonButton" spec="elevated" icon>
->   <span>add</span>
->   Enabled
-> </button>
-> ```
+#### 代码示例
+
+```html
+<button class="JTM-C-CommonButton" spec="elevated">Enabled</button>
+<button class="JTM-C-CommonButton" spec="elevated" icon>
+  <span>add</span>
+  Enabled
+</button>
+```
 
 # Icon buttons
 
@@ -153,11 +153,11 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <button class="JTM-C-IconButton" spec="standard">settings</button>
-> ```
+#### 代码示例
+
+```html
+<button class="JTM-C-IconButton" spec="standard">settings</button>
+```
 
 # Cards
 
@@ -179,7 +179,9 @@ toc: true
       <td>-</td>
       <td>
         <div class="JTM-C-Card" spec="clear">
-          <img src="{{ site.impression }}" alt="image" />
+          <div class="JTM-C-Card-Impression">
+            <img src="{{ site.impression }}" alt="image" />
+          </div>
           <div class="JTM-C-Card-Supporting">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
@@ -204,27 +206,33 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <div class="JTM-C-Card" spec="clear">
->   <img src="{{ site.impression }}" alt="image" />
->   <div class="JTM-C-Card-Supporting">
->     <h3>Lorem ipsum dolor sit amet</h3>
->     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
->   </div>
-> </div>
-> ```
->
-> ```html
-> <div class="JTM-C-Card" spec="focus">
->   <img src="{{ site.impression }}" alt="image" />
->   <div class="JTM-C-Card-Supporting">
->     <h3>Lorem ipsum dolor sit amet</h3>
->     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
->   </div>
-> </div>
-> ```
+#### 代码示例
+
+变种：<code>clear</code>
+
+```html
+<div class="JTM-C-Card" spec="clear">
+  <div class="JTM-C-Card-Impression">
+    <img src="{{ site.impression }}" alt="image" />
+  </div>
+  <div class="JTM-C-Card-Supporting">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+  </div>
+</div>
+```
+
+变种：<code>focus</code>
+
+```html
+<div class="JTM-C-Card" spec="focus">
+  <img src="{{ site.impression }}" alt="image" />
+  <div class="JTM-C-Card-Supporting">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+  </div>
+</div>
+```
 
 # Chips
 
@@ -274,11 +282,11 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <button class="JTM-C-Chip" spec="assist">Enabled</button>
-> ```
+#### 代码示例
+
+```html
+<button class="JTM-C-Chip" spec="assist">Enabled</button>
+```
 
 # Fabs
 
@@ -357,11 +365,11 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <button class="JTM-C-FAB" spec="primary" size="normal">edit</button>
-> ```
+#### 代码示例
+
+```html
+<button class="JTM-C-FAB" spec="primary" size="normal">edit</button>
+```
 
 # Progress Indicators
 
@@ -388,8 +396,8 @@ toc: true
   </tbody>
 </table>
 
-> **代码示例**
->
-> ```html
-> <span class="JTM-C-ProgressIndicator" spec="circular"></span>
-> ```
+#### 代码示例
+
+```html
+<span class="JTM-C-ProgressIndicator" spec="circular"></span>
+```
