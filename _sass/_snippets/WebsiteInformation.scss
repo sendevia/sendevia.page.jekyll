@@ -1,4 +1,6 @@
 .JTM-S-WebsiteInformation {
+  @extend .disable-select;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
