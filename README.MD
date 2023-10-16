@@ -4,14 +4,6 @@
 
 **如果不需要对主题进行开发，直接按部署 jekyll 的方式部署本主题即可。**
 
-编写
-
-> ```
-> bundle exec jekyll serve --livereload --host 0.0.0.0
-> ```
-
-发布
-
 > ```
 > bundle exec jekyll build
 > ```
