@@ -1,4 +1,4 @@
-version: "23.1013.0"
+version: "23.1016.0"
 
 title: "sendevia 的博客"
 baseurl: ""
@@ -71,6 +71,7 @@ exclude:
   - tsconfig.json
   - vendor/
   - webpack.config.js
+  - babel.config.js
   - webpack/
 
 include:
