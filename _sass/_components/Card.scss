@@ -10,7 +10,7 @@
   letter-spacing: 0;
 
   overflow: hidden;
-  transition: 0.4s;
+  transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
   img {
     display: block;
@@ -36,13 +36,19 @@
       height: 240px;
       width: 100%;
 
-      border-radius: 0 0 24px 24px;
-
       object-fit: cover;
+      opacity: 0.8;
+      transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
     }
 
     .JTM-C-Card-Impression {
       position: relative;
+
+      border-radius: 0 0 24px 24px;
+
+      background-color: var(--md-sys-color-inverse-primary);
+
+      overflow: hidden;
     }
 
     .JTM-C-Card-Supporting {
@@ -61,6 +67,10 @@
       color: var(--md-sys-color-on-primary);
 
       background-color: var(--md-sys-color-primary);
+
+      img {
+        opacity: 1;
+      }
     }
 
     &:active {
