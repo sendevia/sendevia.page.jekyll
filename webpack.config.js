@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./webpack/entry.js",
+  entry: "./webpack/app.js",
   output: {
     path: path.resolve(__dirname, "assets/js"),
     filename: "bundle.js",
