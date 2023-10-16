@@ -21,6 +21,12 @@
     mask: var(--via-svg-mask) no-repeat 0 / 100%;
   }
 
+  #JTM-C-Navigation-FAB {
+    button {
+      box-shadow: none;
+    }
+  }
+
   #JTM-C-Navigation-Destinations {
     display: flex;
     flex-grow: 1;
