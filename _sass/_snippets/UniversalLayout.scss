@@ -48,10 +48,6 @@
         padding: 6px 12px;
 
         letter-spacing: 0;
-
-        &:target {
-          animation: doc-headline-target var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
-        }
       }
 
       h1 {

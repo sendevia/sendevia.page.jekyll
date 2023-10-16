@@ -41,8 +41,7 @@ body {
     }
 
     &[body-unfocused] {
-      filter: blur(10px);
-      opacity: 0.5;
-    }
+      filter: contrast(0.8);
+  }
   }
 }

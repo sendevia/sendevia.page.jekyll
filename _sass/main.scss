@@ -86,7 +86,8 @@ body {
   background-color: var(--md-sys-color-surface-container-low);
 
   opacity: 1;
-  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
+    filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
   .disable-select {
     -moz-user-select: none;
@@ -114,7 +115,7 @@ body {
 
     background-color: var(--md-sys-color-primary);
 
-    animation: ripple var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) both;
+    animation: ripple var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
     pointer-events: none;
     transform: translate(-50%, -50%);
   }
