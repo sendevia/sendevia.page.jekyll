@@ -144,9 +144,15 @@ export const handleLinkDelayRedirection = (link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const delay = 240;
-    setTimeout(() => {
-      window.location.href = link.getAttribute("href");
-    }, delay);
+    const target = link.getAttribute("target");
+
+    if (target === "_blank") {
+      window.open(link.getAttribute("href"));
+    } else {
+      setTimeout(() => {
+        window.location.href = link.getAttribute("href");
+      }, delay);
+    }
   });
 };
 
