@@ -8,14 +8,14 @@ timezone: "Asia/Shanghai"
 
 author: "sendevia"
 mugshot: "/assets/images/avatar.webp"
-email: "me@sendevia.top"
-github: "https://github.com/Sendevia"
 
 impression: "/assets/images/100628112_p0.webp"
 
-twitter:
-  username: "sendevia"
-  card: "summary"
+socialmedia:
+  bilibili: "https://space.bilibili.com/84041790"
+  email: "mailto:me@sendevia.top"
+  github: "https://github.com/Sendevia"
+  osu: "https://osu.ppy.sh/users/9799419"
 
 defaults:
   - scope:

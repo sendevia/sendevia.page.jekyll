@@ -28,6 +28,10 @@
     flex-grow: 1;
     flex-wrap: wrap;
     gap: 6px;
-    justify-content: start;
+    justify-content: center;
+
+    .JTM-C-CommonButton {
+      text-transform: capitalize;
+    }
   }
 }
