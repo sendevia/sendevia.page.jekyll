@@ -117,7 +117,7 @@ export async function generateColorPalette(argbColor) {
   const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(tertiaryTones, tertiaryPalette(argbColor));
 
-  const neutralTones = [0, 6, 10, 12, 17, 20, 22, 90, 92, 94, 95, 96, 98];
+  const neutralTones = [0, 6, 10, 12, 17, 20, 22, 87, 90, 92, 94, 95, 96, 98, 100];
   setPaletteProperty(neutralTones, neutralPalette(argbColor));
 
   const neutralVariantTones = [30, 50, 60, 80, 90];
