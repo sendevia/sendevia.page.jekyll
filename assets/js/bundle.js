@@ -15,11 +15,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app */ "./webpack/app.js");
 
+
 const openModal = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleDim)(true);
   _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
   _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.showModal();
 };
+
 const closeModal = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleDim)(false);
   _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
@@ -28,6 +30,7 @@ const closeModal = () => {
     _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = "";
   }, 400);
 };
+
 
 /***/ }),
 
@@ -78,8 +81,8 @@ function primaryPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      primary: palette.a1
-    }
+      primary: palette.a1,
+    },
   };
 }
 /**
@@ -91,8 +94,8 @@ function secondaryPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      secondary: palette.a2
-    }
+      secondary: palette.a2,
+    },
   };
 }
 /**
@@ -104,8 +107,8 @@ function tertiaryPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      tertiary: palette.a3
-    }
+      tertiary: palette.a3,
+    },
   };
 }
 /**
@@ -117,8 +120,8 @@ function neutralPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      neutral: palette.n1
-    }
+      neutral: palette.n1,
+    },
   };
 }
 /**
@@ -130,8 +133,8 @@ function neutralVariantPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      neutralVariant: palette.n2
-    }
+      neutralVariant: palette.n2,
+    },
   };
 }
 /**
@@ -143,8 +146,8 @@ function errorPalette(source) {
   const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
   return {
     rawPalette: {
-      error: palette.error
-    }
+      error: palette.error,
+    },
   };
 }
 /**
@@ -163,17 +166,23 @@ async function generateImagePalette(image) {
 async function generateColorPalette(argbColor) {
   const primaryTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(primaryTones, primaryPalette(argbColor));
+
   const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(secondaryTones, secondaryPalette(argbColor));
+
   const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(tertiaryTones, tertiaryPalette(argbColor));
-  const neutralTones = [0, 6, 10, 12, 17, 20, 22, 90, 92, 94, 95, 96, 98];
+
+  const neutralTones = [0, 6, 10, 12, 17, 20, 22, 87, 90, 92, 94, 95, 96, 98, 100];
   setPaletteProperty(neutralTones, neutralPalette(argbColor));
+
   const neutralVariantTones = [30, 50, 60, 80, 90];
   setPaletteProperty(neutralVariantTones, neutralVariantPalette(argbColor));
+
   const errorTones = [10, 20, 30, 40, 80, 90, 100];
   setPaletteProperty(errorTones, errorPalette(argbColor));
 }
+
 
 /***/ }),
 
@@ -191,13 +200,15 @@ __webpack_require__.r(__webpack_exports__);
  * 添加涟漪效果
  * @param {selector} element
  */
-const ripple = element => {
-  element.addEventListener("mousedown", e => {
+const ripple = (element) => {
+  element.addEventListener("mousedown", (e) => {
     const x = e.offsetX;
     const y = e.offsetY;
     const d = Math.max(element.clientWidth, element.clientHeight);
+
     const rippleC = document.createElement("ripple-effect");
     element.appendChild(rippleC);
+
     rippleC.style.setProperty("--ripple-effect-x", x);
     rippleC.style.setProperty("--ripple-effect-y", y);
     rippleC.style.setProperty("--ripple-effect-d", d);
@@ -207,6 +218,7 @@ const ripple = element => {
     element.removeChild(rippleR);
   });
 };
+
 
 /***/ }),
 
@@ -218,6 +230,9 @@ const ripple = element => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   carouselControlNext: () => (/* binding */ carouselControlNext),
+/* harmony export */   carouselControlPrev: () => (/* binding */ carouselControlPrev),
+/* harmony export */   carouselPostList: () => (/* binding */ carouselPostList),
 /* harmony export */   contentContainer: () => (/* binding */ contentContainer),
 /* harmony export */   contentDrawerEntries: () => (/* binding */ contentDrawerEntries),
 /* harmony export */   contentDrawerMenuBtn: () => (/* binding */ contentDrawerMenuBtn),
@@ -286,7 +301,9 @@ const contentDrawerEntries = contentNavigationDrawer ? contentNavigationDrawer.q
 /**
  * 选择控制页面导航开关的元素
  */
-const contentDrawerMenuBtn = contentNavigationDrawer ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon") : [];
+const contentDrawerMenuBtn = contentNavigationDrawer
+  ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon")
+  : [];
 /**
  * 页面加载中的闪屏
  */
@@ -318,7 +335,9 @@ const scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
 /**
  * 选择需要涟漪效果的元素
  */
-const rippleElements = document.querySelectorAll(`button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`);
+const rippleElements = document.querySelectorAll(
+  `button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
+);
 /**
  * 选择页面右上角的网站信息
  */
@@ -327,6 +346,13 @@ const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
  * 选择所有a元素
  */
 const linkElements = document.querySelectorAll("a");
+/**
+ * Carousel的控制按钮
+ */
+const carouselControlPrev = document.querySelector("#JTM-S-Carousel-Prev");
+const carouselControlNext = document.querySelector("#JTM-S-Carousel-Next");
+
+const carouselPostList = document.querySelector("#JTM-S-Carousel-PostsList");
 ////////////////////
 //常用常量配置结束
 ///////////////////
@@ -337,7 +363,7 @@ const linkElements = document.querySelectorAll("a");
  * @themeRoot content-unfocused
  * @param {boolean} state
  */
-const toggleNavigationDrawer = state => {
+const toggleNavigationDrawer = (state) => {
   contentNavigationDrawer.toggleAttribute("show", state);
   themeRoot.toggleAttribute("content-unfocused", state);
 };
@@ -345,7 +371,8 @@ const toggleNavigationDrawer = state => {
  * 控制根元素的状态
  * @param {boolean} state
  */
-const toggleDim = state => themeRoot.toggleAttribute("body-unfocused", state);
+const toggleDim = (state) => themeRoot.toggleAttribute("body-unfocused", state);
+
 let lastScrollY = 0;
 /**
  * 滚动事件
@@ -360,7 +387,7 @@ const handleScroll = () => {
   } else if (scrollDirection === "down" && scrollY >= 500) {
     themeRoot.setAttribute("hide-top-app-bar", "true");
   }
-  scrollTopElements.forEach(element => {
+  scrollTopElements.forEach((element) => {
     element.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
@@ -381,38 +408,49 @@ const handleResize = () => {
  * 链接跳转事件
  * @param {selector} link
  */
-const handleLinkDelayRedirection = link => {
-  link.addEventListener("click", e => {
+const handleLinkDelayRedirection = (link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
     const delay = 240;
-    setTimeout(() => {
-      window.location.href = link.getAttribute("href");
-    }, delay);
+    const target = link.getAttribute("target");
+
+    if (target === "_blank") {
+      window.open(link.getAttribute("href"));
+    } else {
+      setTimeout(() => {
+        window.location.href = link.getAttribute("href");
+      }, delay);
+    }
   });
 };
-const handleKeyboardEvent = event => {
+
+const handleKeyboardEvent = (event) => {
   if (event.key === "Escape") {
     event.preventDefault();
     (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
   }
 };
-const handleClickOutside = event => {
+
+const handleClickOutside = (event) => {
   if (event.target === modalTips) {
     (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
   }
 };
+
 const initModal = () => {
-  modalTipsIcon.forEach(element => element.addEventListener("click", _components_modal__WEBPACK_IMPORTED_MODULE_2__.openModal));
+  modalTipsIcon.forEach((element) => element.addEventListener("click", _components_modal__WEBPACK_IMPORTED_MODULE_2__.openModal));
   dialogBtnClose.addEventListener("click", _components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal);
   modalTips.addEventListener("keydown", handleKeyboardEvent);
   modalTips.addEventListener("click", handleClickOutside);
 };
+
 const removeLoadScreen = () => {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
   contentSplashScreen.addEventListener("animationend", () => {
     themeRoot.setAttribute("loaded", true);
   });
 };
+
 
 /***/ }),
 
@@ -429,6 +467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 window.onload = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_1__.removeLoadScreen)();
   if (_app__WEBPACK_IMPORTED_MODULE_1__.cutsomThemeColor) {
@@ -438,6 +477,7 @@ window.onload = () => {
     (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateImagePalette)(_app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider);
   }
 };
+
 
 /***/ }),
 
@@ -452,8 +492,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ripple__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_components/ripple */ "./webpack/_components/ripple.js");
 
 
+
 window.onpageshow = () => {
   _app__WEBPACK_IMPORTED_MODULE_0__.contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+
   try {
     const activatedSegment = document.querySelector(`a[href="${_app__WEBPACK_IMPORTED_MODULE_0__.currentPage}"]`);
     const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
@@ -461,16 +503,16 @@ window.onpageshow = () => {
   } catch (err) {
     document.querySelector(`a[href="/posts"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
   }
-  _app__WEBPACK_IMPORTED_MODULE_0__.scrollTopElements.forEach(element => element.addEventListener("click", () => _app__WEBPACK_IMPORTED_MODULE_0__.contentContainer.scrollTo({
-    top: 0
-  })));
+
+  _app__WEBPACK_IMPORTED_MODULE_0__.scrollTopElements.forEach((element) => element.addEventListener("click", () => _app__WEBPACK_IMPORTED_MODULE_0__.contentContainer.scrollTo({ top: 0 })));
   _app__WEBPACK_IMPORTED_MODULE_0__.rippleElements.forEach(_components_ripple__WEBPACK_IMPORTED_MODULE_1__.ripple);
   _app__WEBPACK_IMPORTED_MODULE_0__.contentContainer.onscroll = _app__WEBPACK_IMPORTED_MODULE_0__.handleScroll;
   window.onresize = _app__WEBPACK_IMPORTED_MODULE_0__.handleResize;
+
   if (_app__WEBPACK_IMPORTED_MODULE_0__.contentNavigationDrawer) {
-    _app__WEBPACK_IMPORTED_MODULE_0__.contentDrawerMenuBtn.forEach(element => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleNavigationDrawer)()));
-    _app__WEBPACK_IMPORTED_MODULE_0__.contentDrawerEntries.forEach(element => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleNavigationDrawer)(false)));
-    document.addEventListener("click", event => {
+    _app__WEBPACK_IMPORTED_MODULE_0__.contentDrawerMenuBtn.forEach((element) => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleNavigationDrawer)()));
+    _app__WEBPACK_IMPORTED_MODULE_0__.contentDrawerEntries.forEach((element) => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleNavigationDrawer)(false)));
+    document.addEventListener("click", (event) => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
       const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
@@ -479,13 +521,48 @@ window.onpageshow = () => {
       }
     });
   }
+
   (0,_app__WEBPACK_IMPORTED_MODULE_0__.initModal)();
+
   if (_app__WEBPACK_IMPORTED_MODULE_0__.websiteInfomation) {
     const websiteInfomationWidth = _app__WEBPACK_IMPORTED_MODULE_0__.websiteInfomation.clientWidth;
     _app__WEBPACK_IMPORTED_MODULE_0__.websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
+
   _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection);
+
+  var currentValue = 0;
+  var touchStartX = 0;
+
+  function updateValue(newValue) {
+    currentValue = (newValue + 3) % 3;
+    _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.setAttribute("data-scroll", currentValue);
+  }
+
+  _app__WEBPACK_IMPORTED_MODULE_0__.carouselControlPrev.addEventListener("click", function () {
+    updateValue(currentValue - 1);
+  });
+
+  _app__WEBPACK_IMPORTED_MODULE_0__.carouselControlNext.addEventListener("click", function () {
+    updateValue(currentValue + 1);
+  });
+
+  _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.addEventListener("wheel", function (event) {
+    event.preventDefault();
+    updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
+  });
+
+  window.addEventListener(
+    "wheel",
+    function (event) {
+      if (event.target === _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
 };
+
 
 /***/ }),
 
