@@ -25,6 +25,148 @@
     }
   }
 
+  .JTM-S-Carousel #JTM-S-Carousel-PostsList {
+    height: 300px;
+
+    margin: 0;
+
+    .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+      padding-block: 20px;
+      padding-inline: 30px;
+
+      font-size: 24px;
+    }
+
+    &[data-scroll="0"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          width: calc(100% - 78px);
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 30px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 72px;
+
+          margin-inline-end: 0;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3) {
+          height: 50%;
+          width: 0;
+
+          margin-inline-end: 0;
+
+          opacity: 0;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    &[data-scroll="1"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          height: 50%;
+          width: 0;
+
+          margin-inline-end: 0;
+
+          opacity: 0;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: calc(100% - 78px);
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 30px;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: 72px;
+
+          margin-inline-end: 0;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    &[data-scroll="2"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          height: 50%;
+          width: 0;
+
+          margin-inline-end: 0;
+
+          opacity: 0;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 72px;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: calc(100% - 78px);
+
+          margin-inline-end: 0;
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
   .JTM-S-CornerFAB {
     margin-block-end: 25px;
     margin-inline-end: 20px;

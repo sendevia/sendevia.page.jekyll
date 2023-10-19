@@ -4,7 +4,9 @@
   grid-auto-flow: row;
   grid-template-columns: repeat(2, 1fr);
 
-  margin: 12px;
+  margin-block-start: 12px;
+  margin-inline: 12px;
+
   min-height: 480px;
 
   word-break: break-word;

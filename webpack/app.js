@@ -85,6 +85,13 @@ export const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformati
  * 选择所有a元素
  */
 export const linkElements = document.querySelectorAll("a");
+/**
+ * Carousel的控制按钮
+ */
+export const carouselControlPrev = document.querySelector("#JTM-S-Carousel-Prev");
+export const carouselControlNext = document.querySelector("#JTM-S-Carousel-Next");
+
+export const carouselPostList = document.querySelector("#JTM-S-Carousel-PostsList");
 ////////////////////
 //常用常量配置结束
 ///////////////////

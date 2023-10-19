@@ -14,6 +14,9 @@ import {
   websiteInfomation,
   linkElements,
   handleLinkDelayRedirection,
+  carouselPostList,
+  carouselControlPrev,
+  carouselControlNext,
 } from "./app";
 import { ripple } from "./_components/ripple";
 
@@ -54,4 +57,35 @@ window.onpageshow = () => {
   }
 
   linkElements.forEach(handleLinkDelayRedirection);
+
+  var currentValue = 0;
+  var touchStartX = 0;
+
+  function updateValue(newValue) {
+    currentValue = (newValue + 3) % 3;
+    carouselPostList.setAttribute("data-scroll", currentValue);
+  }
+
+  carouselControlPrev.addEventListener("click", function () {
+    updateValue(currentValue - 1);
+  });
+
+  carouselControlNext.addEventListener("click", function () {
+    updateValue(currentValue + 1);
+  });
+
+  carouselPostList.addEventListener("wheel", function (event) {
+    event.preventDefault();
+    updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
+  });
+
+  window.addEventListener(
+    "wheel",
+    function (event) {
+      if (event.target === carouselPostList) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
 };

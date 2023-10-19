@@ -3,23 +3,31 @@
 
   overflow: hidden;
 
-  .JTM-S-Carousel-PostsList {
+  #JTM-S-Carousel-PostsList {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
-    height: 480px;
+    height: 540px;
 
     margin-block-start: 12px;
-    margin-inline: 6px;
+    margin-inline: 12px;
+
+    position: relative;
 
     overflow: hidden;
 
     .JTM-S-Carousel-Control {
       @include material-symbols($size: 18px);
 
-      width: 5%;
+      height: calc(100% - 12px);
+      width: 60px;
 
-      position: relative;
+      margin-block: 6px;
+      margin-inline: 6px;
+      padding: 0;
+
+      position: absolute;
 
       color: var(--md-sys-color-on-surface-variant);
 
@@ -28,104 +36,225 @@
 
       background-color: var(--md-sys-color-surface-variant);
 
+      cursor: pointer;
+      opacity: 0;
       overflow: hidden;
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+      z-index: 12;
+
+      &:nth-of-type(1) {
+        left: 0;
+      }
+
+      &:nth-of-type(2) {
+        right: 0;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
     }
 
     .JTM-S-Carousel-PostItem {
-      height: 480px;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
+
+      height: 100%;
       width: 100%;
 
-      margin-inline: 6px;
+      margin-inline-end: 6px;
 
       position: relative;
 
-      border-radius: 50px;
+      border-radius: 36px;
 
       background-color: var(--md-sys-color-surface-variant);
 
       overflow: hidden;
+      transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
+
+      &:nth-of-type(3) {
+        margin-inline-end: 0;
+      }
 
       #JTM-S-Carousel-PostImpression {
         height: 100%;
         width: 100%;
 
         object-fit: cover;
-        transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+        pointer-events: none;
+        transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
       }
 
       #JTM-S-Carousel-PostInfo {
-        padding-block: 20px;
-        padding-inline: 30px;
-
-        width: 100%;
+        padding-block: 30px;
+        padding-inline: 70px;
 
         position: absolute;
-        bottom: 0;
 
-        transform: translateY(100%);
-        transition: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized);
-      }
+        color: var(--md-ref-palette-secondary10);
+        font-family: Google Sans, Noto Sans SC;
+        font-size: 60px;
+        font-weight: 500;
+        text-align: center;
+        text-wrap: nowrap;
 
-      &:hover {
-        #JTM-S-Carousel-PostImpression {
-          opacity: 0.5;
-        }
+        border-radius: 60px;
+        border: 1px solid var(--md-ref-palette-neutral90);
 
-        #JTM-S-Carousel-PostInfo {
-          transform: translateY(0%);
-        }
-      }
+        background-color: #ffffff8a;
 
-      &:nth-of-type(1) {
-        width: 50%;
-      }
-
-      &:nth-of-type(2) {
-        width: 50%;
-      }
-
-      &:nth-of-type(3) {
-        width: 35%;
-      }
-
-      &:nth-of-type(4) {
-        width: 15%;
-
-        border-radius: 100px;
-
-        #JTM-S-Carousel-PostInfo {
-          display: none;
-        }
-      }
-
-      &:nth-of-type(n + 5) {
-        width: 0;
-
-        margin: 0;
+        backdrop-filter: blur(40px);
+        overflow: hidden;
+        pointer-events: none;
+        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
       }
     }
 
-    .JTM-S-Carousel-PostItem-Large {
-      #JTM-S-Carousel-PostImpression {
-        width: 50%;
+    &[data-scroll="0"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          width: calc(100% - 78px * 2);
+
+          background-color: var(--md-sys-color-surface);
+
+          #JTM-S-Carousel-PostImpression {
+            opacity: 1;
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 80px;
+
+            transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 72px;
+
+          pointer-events: none;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: 72px;
+
+          pointer-events: none;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
       }
     }
 
-    .JTM-S-Carousel-PostItem-Medium {
-      #JTM-S-Carousel-PostImpression {
-        width: 35%;
+    &[data-scroll="1"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          width: 72px;
+
+          pointer-events: none;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: calc(100% - 78px * 2);
+
+          background-color: var(--md-sys-color-surface);
+
+          #JTM-S-Carousel-PostImpression {
+            opacity: 1;
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 80px;
+
+            transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: 72px;
+
+          pointer-events: none;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
       }
     }
 
-    .JTM-S-Carousel-PostItem-Small {
-      #JTM-S-Carousel-PostImpression {
-        width: 15%;
+    &[data-scroll="2"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1) {
+          width: 72px;
 
-        border-radius: 100px;
-      }
+          pointer-events: none;
 
-      #JTM-S-Carousel-PostInfo {
-        display: none;
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 72px;
+
+          pointer-events: none;
+
+          #JTM-S-Carousel-PostImpression {
+            filter: blur(60px);
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: calc(100% - 78px * 2);
+
+          background-color: var(--md-sys-color-surface);
+
+          #JTM-S-Carousel-PostImpression {
+            opacity: 1;
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            font-size: 80px;
+
+            transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
       }
     }
   }
