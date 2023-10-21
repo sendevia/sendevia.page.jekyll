@@ -30,6 +30,15 @@
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
       filter var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
 
+    #JTM-S-UniversalLayout-SiteTitle {
+      margin-inline: 15px;
+
+      height: 80px;
+
+      line-height: 80px;
+      text-transform: uppercase;
+    }
+
     #JTM-S-UniversalLayout-ContentFiller {
       width: 100%;
 
