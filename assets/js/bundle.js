@@ -230,8 +230,8 @@ const ripple = (element) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   carouselControlNext: () => (/* binding */ carouselControlNext),
-/* harmony export */   carouselControlPrev: () => (/* binding */ carouselControlPrev),
+/* harmony export */   carouselControl: () => (/* binding */ carouselControl),
+/* harmony export */   carouselElement: () => (/* binding */ carouselElement),
 /* harmony export */   carouselPostList: () => (/* binding */ carouselPostList),
 /* harmony export */   contentContainer: () => (/* binding */ contentContainer),
 /* harmony export */   contentDrawerEntries: () => (/* binding */ contentDrawerEntries),
@@ -347,12 +347,17 @@ const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
  */
 const linkElements = document.querySelectorAll("a");
 /**
+ * Carousel元素
+ */
+const carouselElement = document.querySelector(".JTM-S-Carousel");
+/**
  * Carousel的控制按钮
  */
-const carouselControlPrev = document.querySelector("#JTM-S-Carousel-Prev");
-const carouselControlNext = document.querySelector("#JTM-S-Carousel-Next");
-
-const carouselPostList = document.querySelector("#JTM-S-Carousel-PostsList");
+const carouselControl = carouselElement ? carouselElement.querySelectorAll(".JTM-S-Carousel-Control") : [];
+/**
+ * Carousel的文章列表
+ */
+const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S-Carousel-PostsList") : [];
 ////////////////////
 //常用常量配置结束
 ///////////////////
@@ -473,7 +478,12 @@ window.onload = () => {
   if (_app__WEBPACK_IMPORTED_MODULE_1__.cutsomThemeColor) {
     (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_1__.cutsomThemeColor));
   } else {
-    _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = _app__WEBPACK_IMPORTED_MODULE_1__.contentPhotograph.src;
+    if (_app__WEBPACK_IMPORTED_MODULE_1__.currentPage === "/") {
+      const firstCarouselItem = document.querySelector("#JTM-S-Carousel-PostsList > a:nth-of-type(1) > img");
+      _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = firstCarouselItem.src;
+    } else {
+      _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = _app__WEBPACK_IMPORTED_MODULE_1__.contentPhotograph.src;
+    }
     (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateImagePalette)(_app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider);
   }
 };
@@ -531,36 +541,37 @@ window.onpageshow = () => {
 
   _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection);
 
-  var currentValue = 0;
-  var touchStartX = 0;
+  if (_app__WEBPACK_IMPORTED_MODULE_0__.carouselElement) {
+    var currentValue = 0;
 
-  function updateValue(newValue) {
-    currentValue = (newValue + 3) % 3;
-    _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.setAttribute("data-scroll", currentValue);
+    function updateValue(newValue) {
+      currentValue = (newValue + 3) % 3;
+      _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.setAttribute("data-scroll", currentValue);
+    }
+
+    _app__WEBPACK_IMPORTED_MODULE_0__.carouselControl[0].addEventListener("click", function () {
+      updateValue(currentValue - 1);
+    });
+
+    _app__WEBPACK_IMPORTED_MODULE_0__.carouselControl[1].addEventListener("click", function () {
+      updateValue(currentValue + 1);
+    });
+
+    _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
+    });
+
+    window.addEventListener(
+      "wheel",
+      function (event) {
+        if (event.target === _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList) {
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
   }
-
-  _app__WEBPACK_IMPORTED_MODULE_0__.carouselControlPrev.addEventListener("click", function () {
-    updateValue(currentValue - 1);
-  });
-
-  _app__WEBPACK_IMPORTED_MODULE_0__.carouselControlNext.addEventListener("click", function () {
-    updateValue(currentValue + 1);
-  });
-
-  _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList.addEventListener("wheel", function (event) {
-    event.preventDefault();
-    updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
-  });
-
-  window.addEventListener(
-    "wheel",
-    function (event) {
-      if (event.target === _app__WEBPACK_IMPORTED_MODULE_0__.carouselPostList) {
-        event.preventDefault();
-      }
-    },
-    { passive: false }
-  );
 };
 
 
