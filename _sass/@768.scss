@@ -300,28 +300,28 @@
     margin-inline: 0;
     padding-block: 0;
 
-    .timeline {
-      .index-level1 {
+    #JTM-P-Index-Timeline {
+      .JTM-P-Index-Timeline-L1 {
         align-items: center;
       }
 
-      .index-level2 {
+      .JTM-P-Index-Timeline-L2 {
         align-items: center;
         flex-wrap: wrap;
         justify-content: center;
 
         width: 100%;
-      }
 
-      .posts-card .posts-date-day {
-        left: unset;
-        right: 0;
+        #JTM-P-Index-Timeline-PostCard .JTM-P-Index-Timeline-DateDetail {
+          left: unset;
+          right: 0;
 
-        border-radius: 12px 20px 12px 12px;
+          border-radius: 12px 20px 12px 12px;
+        }
       }
     }
 
-    .JTM-P-Index-PersonIntro {
+    #JTM-P-Index-PersonIntro {
       max-width: 360px;
       min-width: unset;
       width: 80vw;

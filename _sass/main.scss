@@ -328,7 +328,7 @@ ol {
   gap: 12px;
   justify-content: space-between;
 
-  .timeline {
+  #JTM-P-Index-Timeline {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -337,18 +337,14 @@ ol {
 
     margin-block-start: 18px;
 
-    .JTM-C-Chip {
-      margin-inline-start: 10px;
-    }
-
-    .index-level1 {
+    .JTM-P-Index-Timeline-L1 {
       display: inline-flex;
       flex-direction: column;
       gap: 18px;
 
       margin-inline-start: 10px;
 
-      .posts-date-year-month {
+      #JTM-P-Index-Timeline-By-YearAndMonth {
         @include body-large();
 
         display: block;
@@ -373,61 +369,158 @@ ol {
       }
     }
 
-    .index-level2 {
+    .JTM-P-Index-Timeline-L2 {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 12px;
-    }
 
-    .posts-card {
-      a {
-        display: block;
-
-        width: 360px;
-
-        position: relative;
-
-        .JTM-C-Card:active {
-          .posts-date-day {
-            height: 76px;
-            width: 76px;
-
-            margin: 0;
-            padding-block-start: 4px;
-            padding-inline-start: 6px;
-
-            line-height: 76px;
-
-            border-radius: 0 0 12px 0;
-          }
-        }
-
-        .posts-date-day {
-          @include display-small();
-
+      #JTM-P-Index-Timeline-PostCard {
+        a {
           display: block;
 
-          height: 66px;
-          width: 66px;
+          width: 360px;
 
-          margin: 6px;
+          position: relative;
 
-          position: absolute;
-          top: 0;
-          left: 0;
+          .JTM-P-Index-Timeline-DateDetail {
+            @include display-small();
+            display: block;
 
-          color: var(--md-sys-color-on-surface-variant);
-          line-height: 66px;
-          text-align: center;
+            height: 66px;
+            width: 66px;
 
-          border-radius: 20px 12px 12px;
+            margin: 6px;
 
-          background-color: var(--md-sys-color-surface-variant);
+            position: absolute;
+            left: 0;
+            top: 0;
 
-          pointer-events: none;
-          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-          z-index: 11;
+            color: var(--md-sys-color-on-surface-variant);
+            text-align: center;
+
+            border-radius: 20px 12px 12px;
+
+            background-color: var(--md-sys-color-surface-variant);
+
+            overflow: hidden;
+            pointer-events: none;
+            transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+            z-index: 11;
+
+            #JTM-P-Index-Timeline-DateDetail-Year {
+              position: absolute;
+              left: calc(100% / 2 + 20px);
+
+              opacity: 0;
+              transition: var(--md-sys-motion-duration-shot4);
+            }
+
+            #JTM-P-Index-Timeline-DateDetail-Month {
+              position: absolute;
+              top: calc(100% / 2 + 20px);
+
+              opacity: 0;
+              transition: var(--md-sys-motion-duration-shot4);
+            }
+
+            #JTM-P-Index-Timeline-DateDetail-Slash {
+              position: absolute;
+
+              left: calc(50% - 20px);
+              top: calc(50% + 32px);
+
+              opacity: 0;
+              transition: var(--md-sys-motion-duration-shot4);
+            }
+
+            #JTM-P-Index-Timeline-DateDetail-Day {
+              position: absolute;
+              left: 0;
+              top: 0;
+
+              width: 100%;
+
+              line-height: 66px;
+            }
+          }
+
+          img {
+            opacity: 1;
+            transition: var(--md-sys-motion-duration-medium4);
+          }
+
+          &:hover {
+            .JTM-P-Index-Timeline-DateDetail {
+              height: 100%;
+              width: 100%;
+
+              margin: 0;
+              padding: 0;
+
+              #JTM-P-Index-Timeline-DateDetail-Year {
+                display: block;
+
+                height: 40px;
+                width: 100px;
+
+                left: calc(100% / 2 - 50px);
+                top: calc(100% / 2 - 50px);
+
+                font-size: 40px;
+                line-height: 40px;
+
+                opacity: 1;
+                transition: var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized);
+              }
+
+              #JTM-P-Index-Timeline-DateDetail-Month {
+                display: block;
+
+                height: 60px;
+                width: 80px;
+
+                left: calc(100% / 2 - 90px);
+                top: calc(100% / 2);
+
+                font-size: 60px;
+                line-height: 60px;
+
+                opacity: 1;
+                transition: top var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized),
+                  opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+              }
+
+              #JTM-P-Index-Timeline-DateDetail-Slash {
+                display: block;
+
+                width: 20px;
+
+                left: calc(100% / 2 - 10px);
+                top: calc(100% / 2 + 12px);
+
+                line-height: 40px;
+
+                opacity: 1;
+                transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+              }
+
+              #JTM-P-Index-Timeline-DateDetail-Day {
+                height: 60px;
+                width: 80px;
+
+                left: calc(100% / 2 + 10px);
+                top: calc(100% / 2);
+
+                font-size: 60px;
+                line-height: 60px;
+              }
+            }
+
+            img {
+              opacity: 0;
+            }
+          }
         }
       }
     }
@@ -494,154 +587,6 @@ ol {
 
   a {
     flex-grow: 1;
-  }
-}
-
-.post-components-palette {
-  width: 100%;
-
-  .row {
-    @include title-medium($font-weight: bold);
-
-    display: flex;
-    justify-content: space-between;
-    gap: 3px;
-  }
-
-  span {
-    display: inline-flex;
-    align-items: flex-end;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    width: 100%;
-
-    padding: 12px;
-
-    text-align: end;
-  }
-
-  #r1-c1,
-  #r1-c2,
-  #r1-c3,
-  #r1-c4 {
-    height: 126px;
-  }
-
-  #r1-c3,
-  #r2-c3,
-  #r3-c3,
-  #r4-c3 {
-    margin-inline-end: 6px;
-  }
-
-  #r2-c4,
-  #r2-c4,
-  #r2-c4,
-  #r2-c4 {
-    margin-block-end: 6px;
-  }
-
-  #r1-c1 {
-    color: var(--md-sys-color-on-primary);
-    background-color: var(--md-sys-color-primary);
-  }
-
-  #r1-c2 {
-    color: var(--md-sys-color-on-secondary);
-    background-color: var(--md-sys-color-secondary);
-  }
-
-  #r1-c3 {
-    color: var(--md-sys-color-on-tertiary);
-    background-color: var(--md-sys-color-tertiary);
-  }
-
-  #r1-c4 {
-    color: var(--md-sys-color-on-error);
-    background-color: var(--md-sys-color-error);
-  }
-
-  #r2-c1,
-  #r2-c2,
-  #r2-c3,
-  #r2-c4 {
-    height: 60px;
-  }
-
-  #r2-c1 {
-    color: var(--md-sys-color-primary);
-    background-color: var(--md-sys-color-on-primary);
-  }
-
-  #r2-c2 {
-    color: var(--md-sys-color-secondary);
-    background-color: var(--md-sys-color-on-secondary);
-  }
-
-  #r2-c3 {
-    color: var(--md-sys-color-tertiary);
-    background-color: var(--md-sys-color-on-tertiary);
-  }
-
-  #r2-c4 {
-    color: var(--md-sys-color-error);
-    background-color: var(--md-sys-color-on-error);
-  }
-
-  #r3-c1,
-  #r3-c2,
-  #r3-c3,
-  #r3-c4 {
-    height: 126px;
-  }
-
-  #r3-c1 {
-    color: var(--md-sys-color-on-primary-container);
-    background-color: var(--md-sys-color-primary-container);
-  }
-
-  #r3-c2 {
-    color: var(--md-sys-color-on-secondary-container);
-    background-color: var(--md-sys-color-secondary-container);
-  }
-
-  #r3-c3 {
-    color: var(--md-sys-color-on-tertiary-container);
-    background-color: var(--md-sys-color-tertiary-container);
-  }
-
-  #r3-c4 {
-    color: var(--md-sys-color-on-error-container);
-    background-color: var(--md-sys-color-error-container);
-  }
-
-  #r4-c1,
-  #r4-c2,
-  #r4-c3,
-  #r4-c4 {
-    height: 60px;
-  }
-
-  #r4-c1 {
-    color: var(--md-sys-color-primary-container);
-    background-color: var(--md-sys-color-on-primary-container);
-  }
-
-  #r4-c2 {
-    color: var(--md-sys-color-secondary-container);
-    background-color: var(--md-sys-color-on-secondary-container);
-  }
-
-  #r4-c3 {
-    color: var(--md-sys-color-tertiary-container);
-    background-color: var(--md-sys-color-on-tertiary-container);
-  }
-
-  #r4-c4 {
-    color: var(--md-sys-color-error-container);
-    background-color: var(--md-sys-color-on-error-container);
   }
 }
 

@@ -49,12 +49,12 @@
   }
 
   .JTM-P-Index {
-    .timeline {
-      .index-level1 {
+    #JTM-P-Index-Timeline {
+      .JTM-P-Index-Timeline-L1 {
         margin: 0;
       }
 
-      .posts-card {
+      .JTM-P-Index-Timeline-L2 #JTM-P-Index-Timeline-PostCard {
         width: 100%;
 
         a {
