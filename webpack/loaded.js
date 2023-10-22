@@ -1,5 +1,5 @@
 import { argbFromHex } from "@material/material-color-utilities";
-import { removeLoadScreen, cutsomThemeColor, themeImageProvider, contentPhotograph } from "./app";
+import { removeLoadScreen, cutsomThemeColor, themeImageProvider, contentPhotograph, currentPage } from "./app";
 import { generateColorPalette, generateImagePalette } from "./_components/monet";
 
 window.onload = () => {
@@ -7,7 +7,12 @@ window.onload = () => {
   if (cutsomThemeColor) {
     generateColorPalette(argbFromHex(cutsomThemeColor));
   } else {
-    themeImageProvider.src = contentPhotograph.src;
+    if (currentPage === "/") {
+      const firstCarouselItem = document.querySelector("#JTM-S-Carousel-PostsList > a:nth-of-type(1) > img");
+      themeImageProvider.src = firstCarouselItem.src;
+    } else {
+      themeImageProvider.src = contentPhotograph.src;
+    }
     generateImagePalette(themeImageProvider);
   }
 };

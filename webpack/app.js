@@ -86,12 +86,17 @@ export const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformati
  */
 export const linkElements = document.querySelectorAll("a");
 /**
+ * Carousel元素
+ */
+export const carouselElement = document.querySelector(".JTM-S-Carousel");
+/**
  * Carousel的控制按钮
  */
-export const carouselControlPrev = document.querySelector("#JTM-S-Carousel-Prev");
-export const carouselControlNext = document.querySelector("#JTM-S-Carousel-Next");
-
-export const carouselPostList = document.querySelector("#JTM-S-Carousel-PostsList");
+export const carouselControl = carouselElement ? carouselElement.querySelectorAll(".JTM-S-Carousel-Control") : [];
+/**
+ * Carousel的文章列表
+ */
+export const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S-Carousel-PostsList") : [];
 ////////////////////
 //常用常量配置结束
 ///////////////////
