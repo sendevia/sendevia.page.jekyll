@@ -206,15 +206,15 @@ const ripple = (element) => {
     const y = e.offsetY;
     const d = Math.max(element.clientWidth, element.clientHeight);
 
-    const rippleC = document.createElement("ripple-effect");
+    const rippleC = document.createElement("JTM-E-Ripple");
     element.appendChild(rippleC);
 
-    rippleC.style.setProperty("--ripple-effect-x", x);
-    rippleC.style.setProperty("--ripple-effect-y", y);
-    rippleC.style.setProperty("--ripple-effect-d", d);
+    rippleC.style.setProperty("--JTM-E-Ripple-PosX", x);
+    rippleC.style.setProperty("--JTM-E-Ripple-PosY", y);
+    rippleC.style.setProperty("--JTM-E-Ripple-Diameter", d);
   });
   element.addEventListener("animationend", () => {
-    const rippleR = element.querySelector("ripple-effect");
+    const rippleR = element.querySelector("JTM-E-Ripple");
     element.removeChild(rippleR);
   });
 };
@@ -230,6 +230,7 @@ const ripple = (element) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addLoadScreen: () => (/* binding */ addLoadScreen),
 /* harmony export */   carouselControl: () => (/* binding */ carouselControl),
 /* harmony export */   carouselElement: () => (/* binding */ carouselElement),
 /* harmony export */   carouselPostList: () => (/* binding */ carouselPostList),
@@ -456,6 +457,11 @@ const removeLoadScreen = () => {
   });
 };
 
+const addLoadScreen = () => {
+  themeRoot.removeAttribute("loaded");
+  contentSplashScreen.style.animation = "popOut 0.4s forwards";
+};
+
 
 /***/ }),
 
@@ -539,7 +545,10 @@ window.onpageshow = () => {
     _app__WEBPACK_IMPORTED_MODULE_0__.websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
 
-  _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection);
+  _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(function () {
+    _app__WEBPACK_IMPORTED_MODULE_0__.addLoadScreen;
+    _app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection;
+  });
 
   if (_app__WEBPACK_IMPORTED_MODULE_0__.carouselElement) {
     var currentValue = 0;
