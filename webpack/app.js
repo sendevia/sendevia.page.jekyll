@@ -194,3 +194,8 @@ export const removeLoadScreen = () => {
     themeRoot.setAttribute("loaded", true);
   });
 };
+
+export const addLoadScreen = () => {
+  themeRoot.removeAttribute("loaded");
+  contentSplashScreen.style.animation = "popOut 0.4s forwards";
+};
