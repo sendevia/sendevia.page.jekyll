@@ -89,7 +89,7 @@ body {
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
     filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
-  .disable-select {
+  JTM-E-DisableSelect {
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
@@ -98,7 +98,7 @@ body {
 
   :disabled,
   [disabled] {
-    @extend .disable-select;
+    @extend JTM-E-DisableSelect;
 
     box-shadow: none;
     filter: grayscale(1);
@@ -106,10 +106,10 @@ body {
     pointer-events: none;
   }
 
-  ripple-effect {
+  JTM-E-Ripple {
     position: absolute;
-    left: calc(var(--ripple-effect-x) * 1px);
-    top: calc(var(--ripple-effect-y) * 1px);
+    left: calc(var(--JTM-E-Ripple-PosX) * 1px);
+    top: calc(var(--JTM-E-Ripple-PosY) * 1px);
 
     border-radius: 50%;
 
@@ -120,17 +120,17 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  [spec="filled"]ripple-effect {
+  [spec="filled"]JTM-E-Ripple {
     background-color: var(--md-sys-color-on-primary);
   }
 
-  [spec="outlined"]ripple-effect,
-  [spec="text"]ripple-effect,
-  [spec="elevated"]ripple-effect {
+  [spec="outlined"]JTM-E-Ripple,
+  [spec="text"]JTM-E-Ripple,
+  [spec="elevated"]JTM-E-Ripple {
     background-color: var(--md-sys-color-primary);
   }
 
-  [spec="tonal"]ripple-effect {
+  [spec="tonal"]JTM-E-Ripple {
     background-color: var(--md-sys-color-on-secondary-container);
   }
 }
@@ -433,7 +433,7 @@ ol {
     }
   }
 
-  .person-intro {
+  #JTM-P-Index-PersonIntro {
     height: max-content;
     max-width: 360px;
     min-width: 240px;
@@ -446,13 +446,13 @@ ol {
     position: sticky;
     top: 3vw;
 
-    .section1 {
+    .JTM-P-Index-PersonIntro-Section1 {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
       gap: 6px;
 
-      #mugshot {
+      #JTM-P-Index-PersonIntro-Mugshot {
         max-width: 240px;
         width: 80%;
 
@@ -460,8 +460,8 @@ ol {
         mask: var(--via-svg-mask) no-repeat 0 / 100%;
       }
 
-      #nickname,
-      #introduction {
+      #JTM-P-Index-PersonIntro-Nickname,
+      #JTM-P-Index-PersonIntro-Introduction {
         margin-inline-start: 6px;
         padding-block: 6px;
         padding-inline: 12px;

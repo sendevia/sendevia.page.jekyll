@@ -13,6 +13,8 @@
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
   img {
+    @extend JTM-E-DisableSelect;
+
     display: block;
   }
 
@@ -59,7 +61,7 @@
       margin: 20px;
     }
 
-    ripple-effect {
+    JTM-E-Ripple {
       background-color: var(--md-sys-color-on-primary);
     }
 
@@ -109,7 +111,7 @@
       transition: 0.4s;
     }
 
-    ripple-effect {
+    JTM-E-Ripple {
       background-color: var(--md-sys-color-on-primary);
     }
 

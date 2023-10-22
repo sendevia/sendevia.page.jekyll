@@ -63,7 +63,7 @@
     overflow: hidden;
 
     img {
-      @extend .disable-select;
+      @extend JTM-E-DisableSelect;
 
       height: 100%;
       width: 100%;

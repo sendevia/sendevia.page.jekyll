@@ -2,7 +2,7 @@
 // 页面导航
 
 .JTM-C-Navigation {
-  @extend .disable-select;
+  @extend JTM-E-DisableSelect;
 
   letter-spacing: 0;
 

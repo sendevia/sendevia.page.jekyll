@@ -7,7 +7,7 @@
 }
 
 @mixin material-symbols($name: "", $size: 24px, $font-size: $size, $line-height: 1) {
-  @extend .disable-select;
+  @extend JTM-E-DisableSelect;
   content: $name;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

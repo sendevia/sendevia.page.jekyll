@@ -110,7 +110,7 @@
         transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
         img {
-          @extend .disable-select;
+          @extend JTM-E-DisableSelect;
 
           display: block;
         }
