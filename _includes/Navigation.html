@@ -88,7 +88,7 @@
       {%- if page.date -%}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="tonal" disabled>calendar_month</button>
-        <p>发布于：{{ page.date | date: "%Y年%m月%d日" }}</p>
+        <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
       </div>
       {%- endif -%}
 

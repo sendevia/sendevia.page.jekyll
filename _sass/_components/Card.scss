@@ -39,7 +39,6 @@
       width: 100%;
 
       object-fit: cover;
-      opacity: 0.8;
       transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
     }
 
@@ -69,10 +68,6 @@
       color: var(--md-sys-color-on-primary);
 
       background-color: var(--md-sys-color-primary);
-
-      img {
-        opacity: 1;
-      }
     }
 
     &:active {
