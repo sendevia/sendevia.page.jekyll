@@ -10,6 +10,7 @@ layout: "PageIndex"
 <div class="JTM-P-Index">
   <div id="JTM-P-Index-Timeline">
     {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
+    <!-- {{ year.name }} 年 -->
     <div class="JTM-P-Index-Timeline-L1">
       {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%-m'" -%} {%- for month in posts_by_month -%}
       <div id="JTM-P-Index-Timeline-By-YearAndMonth">

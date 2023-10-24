@@ -62,7 +62,7 @@ export const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择可以开启模态提示框的元素
  */
-const modalTipsIcon = document.querySelectorAll("body > div.JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const modalTipsIcon = document.querySelectorAll(".JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
 /**
  * 选择可以关闭模态提示框的元素
  */
@@ -84,7 +84,7 @@ export const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformati
 /**
  * 选择所有a元素
  */
-export const linkElements = document.querySelectorAll("a");
+export const linkElements = document.querySelectorAll("#JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a");
 /**
  * Carousel元素
  */
@@ -104,18 +104,18 @@ export const carouselPostList = carouselElement ? carouselElement.querySelector(
 /**
  * 控制元素的状态
  * @contentNavigationDrawer show
- * @themeRoot content-unfocused
+ * @themeRoot JTM-O-ContentBlur
  * @param {boolean} state
  */
 export const toggleNavigationDrawer = (state) => {
   contentNavigationDrawer.toggleAttribute("show", state);
-  themeRoot.toggleAttribute("content-unfocused", state);
+  themeRoot.toggleAttribute("JTM-O-ContentBlur", state);
 };
 /**
  * 控制根元素的状态
  * @param {boolean} state
  */
-export const toggleDim = (state) => themeRoot.toggleAttribute("body-unfocused", state);
+export const toggleDim = (state) => themeRoot.toggleAttribute("JTM-O-BodyBlur", state);
 
 let lastScrollY = 0;
 /**
@@ -127,9 +127,9 @@ export const handleScroll = () => {
   const scrollDirection = scrollY > lastScrollY ? "down" : "up";
   topAppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
   if (scrollDirection === "up") {
-    themeRoot.setAttribute("hide-top-app-bar", "false");
+    themeRoot.setAttribute("JTM-O-OnScrollEvent", "false");
   } else if (scrollDirection === "down" && scrollY >= 500) {
-    themeRoot.setAttribute("hide-top-app-bar", "true");
+    themeRoot.setAttribute("JTM-O-OnScrollEvent", "true");
   }
   scrollTopElements.forEach((element) => {
     element.style.cssText = `
@@ -161,6 +161,7 @@ export const handleLinkDelayRedirection = (link) => {
     if (target === "_blank") {
       window.open(link.getAttribute("href"));
     } else {
+      addLoadScreen();
       setTimeout(() => {
         window.location.href = link.getAttribute("href");
       }, delay);
@@ -191,11 +192,11 @@ export const initModal = () => {
 export const removeLoadScreen = () => {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
   contentSplashScreen.addEventListener("animationend", () => {
-    themeRoot.setAttribute("loaded", true);
+    themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
   });
 };
 
 export const addLoadScreen = () => {
-  themeRoot.removeAttribute("loaded");
+  themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
   contentSplashScreen.style.animation = "popOut 0.4s forwards";
 };

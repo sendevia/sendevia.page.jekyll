@@ -17,7 +17,6 @@ import {
   carouselPostList,
   carouselControl,
   carouselElement,
-  addLoadScreen,
 } from "./app";
 import { ripple } from "./_components/ripple";
 
@@ -57,10 +56,7 @@ window.onpageshow = () => {
     websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
 
-  linkElements.forEach(function () {
-    addLoadScreen;
-    handleLinkDelayRedirection;
-  });
+  linkElements.forEach(handleLinkDelayRedirection);
 
   if (carouselElement) {
     var currentValue = 0;
