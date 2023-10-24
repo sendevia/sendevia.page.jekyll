@@ -324,7 +324,7 @@ const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择可以开启模态提示框的元素
  */
-const modalTipsIcon = document.querySelectorAll("body > div.JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const modalTipsIcon = document.querySelectorAll(".JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
 /**
  * 选择可以关闭模态提示框的元素
  */
@@ -346,7 +346,7 @@ const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
 /**
  * 选择所有a元素
  */
-const linkElements = document.querySelectorAll("a");
+const linkElements = document.querySelectorAll("#JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a");
 /**
  * Carousel元素
  */
@@ -366,18 +366,18 @@ const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S
 /**
  * 控制元素的状态
  * @contentNavigationDrawer show
- * @themeRoot content-unfocused
+ * @themeRoot JTM-O-ContentBlur
  * @param {boolean} state
  */
 const toggleNavigationDrawer = (state) => {
   contentNavigationDrawer.toggleAttribute("show", state);
-  themeRoot.toggleAttribute("content-unfocused", state);
+  themeRoot.toggleAttribute("JTM-O-ContentBlur", state);
 };
 /**
  * 控制根元素的状态
  * @param {boolean} state
  */
-const toggleDim = (state) => themeRoot.toggleAttribute("body-unfocused", state);
+const toggleDim = (state) => themeRoot.toggleAttribute("JTM-O-BodyBlur", state);
 
 let lastScrollY = 0;
 /**
@@ -389,9 +389,9 @@ const handleScroll = () => {
   const scrollDirection = scrollY > lastScrollY ? "down" : "up";
   topAppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
   if (scrollDirection === "up") {
-    themeRoot.setAttribute("hide-top-app-bar", "false");
+    themeRoot.setAttribute("JTM-O-OnScrollEvent", "false");
   } else if (scrollDirection === "down" && scrollY >= 500) {
-    themeRoot.setAttribute("hide-top-app-bar", "true");
+    themeRoot.setAttribute("JTM-O-OnScrollEvent", "true");
   }
   scrollTopElements.forEach((element) => {
     element.style.cssText = `
@@ -423,6 +423,7 @@ const handleLinkDelayRedirection = (link) => {
     if (target === "_blank") {
       window.open(link.getAttribute("href"));
     } else {
+      addLoadScreen();
       setTimeout(() => {
         window.location.href = link.getAttribute("href");
       }, delay);
@@ -453,12 +454,12 @@ const initModal = () => {
 const removeLoadScreen = () => {
   contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
   contentSplashScreen.addEventListener("animationend", () => {
-    themeRoot.setAttribute("loaded", true);
+    themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
   });
 };
 
 const addLoadScreen = () => {
-  themeRoot.removeAttribute("loaded");
+  themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
   contentSplashScreen.style.animation = "popOut 0.4s forwards";
 };
 
@@ -545,10 +546,7 @@ window.onpageshow = () => {
     _app__WEBPACK_IMPORTED_MODULE_0__.websiteInfomation.style.width = websiteInfomationWidth + "px";
   }
 
-  _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(function () {
-    _app__WEBPACK_IMPORTED_MODULE_0__.addLoadScreen;
-    _app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection;
-  });
+  _app__WEBPACK_IMPORTED_MODULE_0__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_0__.handleLinkDelayRedirection);
 
   if (_app__WEBPACK_IMPORTED_MODULE_0__.carouselElement) {
     var currentValue = 0;
