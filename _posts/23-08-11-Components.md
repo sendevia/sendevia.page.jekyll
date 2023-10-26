@@ -1,9 +1,9 @@
 ---
-title: "Material3 Components"
-description: "Material3 组件示例"
-author: "sendevia"
+title: Material3 Components
+description: Material3 组件示例
+author: sendevia
 color: ""
-impression: "/assets/images/108723573_p0.webp"
+impression: /assets/images/108723573_p0.webp
 toc: true
 ---
 
