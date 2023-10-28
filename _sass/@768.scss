@@ -184,6 +184,14 @@
     bottom: 80px;
   }
 
+  .JTM-S-LoadingSplash {
+    height: calc(100% - 164px);
+    width: calc(100% - 20px);
+
+    left: 10px;
+    top: 74px;
+  }
+
   .JTM-C-Navigation {
     &[spec="bar"] {
       grid-row: 2/2;
@@ -245,10 +253,6 @@
     }
   }
 
-  .JTM-S-Title {
-    margin: 0;
-  }
-
   .JTM-S-UniversalLayout {
     grid-template-columns: none;
     grid-template-rows: auto 80px;
@@ -258,7 +262,11 @@
       grid-row: 1/2;
 
       margin: 0;
-      padding: 75px 10px 120px;
+      padding-block-end: 120px;
+      padding-block-start: 115px;
+      padding-inline: 10px;
+
+      scroll-padding-top: 180px;
 
       #JTM-S-UniversalLayout-SiteTitle {
         display: none;
@@ -267,13 +275,13 @@
       .JTM-S-Title {
         flex-direction: column;
 
+        margin: 0;
+
         #JTM-S-Title-HeroContainer {
           grid-column: span 2;
 
           #JTM-S-Title-HeroHeadline {
-            @include display-medium();
-
-            line-height: 45rem;
+            @include display-large($font-size: 45rem, $line-height: 45rem);
           }
         }
 

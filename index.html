@@ -13,11 +13,13 @@ layout: "PageIndex"
     <!-- {{ year.name }} 年 -->
     <div class="JTM-P-Index-Timeline-L1">
       {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%-m'" -%} {%- for month in posts_by_month -%}
+      <!-- {{ year.name }} 年 {{ month.name }} 月 -->
       <div id="JTM-P-Index-Timeline-By-YearAndMonth">
         <p>{{ year.name }} 年 {{ month.name }} 月</p>
       </div>
       <div class="JTM-P-Index-Timeline-L2">
         {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%-d'" -%} {%- for day in posts_by_day -%} {%- for post in day.items -%}
+        <!-- {{ year.name }} 年 {{ month.name }} 月 {{ day.name }} 日 -->
         <div id="JTM-P-Index-Timeline-PostCard">
           <a href="{{ post.url }}">
             <div class="JTM-C-Card" spec="clear">

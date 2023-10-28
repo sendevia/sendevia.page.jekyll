@@ -47,15 +47,11 @@
         width: 100%;
 
         #JTM-S-Title-HeroHeadline {
-          @include display-medium();
-
-          font-size: 8vw;
-          line-height: 8vw;
+          @include display-large($font-size: 8vw, $line-height: 8vw);
         }
 
         #JTM-S-Title-HeroSubtitle {
-          font-size: 23rem;
-          line-height: 23rem;
+          @include headline-large($font-size: 23rem, $line-height: 23rem);
         }
       }
 

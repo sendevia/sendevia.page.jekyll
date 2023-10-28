@@ -3,10 +3,8 @@
   {%- include Navigation.html -%}
 
   <div id="JTM-S-UniversalLayout-ContentFlow">
-    {%- if include.has_carousel == "true" -%}
+    {%- if include.has_carousel == "true" -%} {%- include Carousel.html -%}
     <h1 id="JTM-S-UniversalLayout-SiteTitle">{{ site.title }}</h1>
-    {%- include Carousel.html -%}
-    <!--  -->
     {%- else -%} {%- include Title.html -%} {%- endif -%}
 
     <div id="JTM-S-UniversalLayout-ContentFiller">{%- include Content.html -%}</div>

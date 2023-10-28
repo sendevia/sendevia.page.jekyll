@@ -4,13 +4,12 @@
   #JTM-S-UniversalLayout-ContentFlow {
     .JTM-S-Title #JTM-S-Title-HeroContainer {
       #JTM-S-Title-HeroHeadline {
-        font-size: 7vw;
-        line-height: 7vw;
+        @include display-large($font-size: 7vw, $line-height: 7vw);
       }
     }
 
     #JTM-S-UniversalLayout-ContentFiller {
-        padding-inline: calc(100% / 2 - 420px);
+      padding-inline: calc(100% / 2 - 420px);
     }
   }
 }

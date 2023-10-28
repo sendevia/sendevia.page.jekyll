@@ -80,8 +80,10 @@
   <div class="JTM-C-Dialog-ContentLayout">
     <span class="JTM-C-Dialog-LeaderIcon">info</span>
 
-    <h3 class="JTM-C-Dialog-Headline">页面信息</h3>
-    <p class="JTM-C-Dialog-SupportingText">此处提供了有关这个页面的一些信息</p>
+    <h3 class="JTM-C-Dialog-Headline">{{ page.title }}</h3>
+    {%- if page.description and page.description != "" -%}
+    <p class="JTM-C-Dialog-SupportingText">{{ page.description }}</p>
+    {%- endif -%}
 
     <div class="JTM-C-Dialog-SupportingList">
       <!-- 日期 -->

@@ -1,25 +1,24 @@
 .JTM-S-LoadingSplash {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   justify-content: center;
 
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 20px);
+  width: calc(100% - 100px);
 
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 90px;
+  top: 10px;
 
   color: var(--md-sys-color-on-surface);
 
-  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: 12px;
 
+  background-color: var(--md-sys-color-surface-container-high);
+
+  opacity: 1;
   transition: var(--md-sys-motion-duration-long1);
-  z-index: 20;
-
-  h1 {
-    text-align: center;
-  }
+  z-index: 100;
 }

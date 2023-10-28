@@ -380,7 +380,6 @@ toc: true
     <tr>
       <th>element</th>
       <th>class</th>
-      <th>spec</th>
       <th>示例</th>
     </tr>
   </thead>
@@ -388,9 +387,8 @@ toc: true
     <tr>
       <td><code>span</code></td>
       <td><code>JTM-C-ProgressIndicator</code></td>
-      <td><code>circular</code></td>
       <td>
-        <span class="JTM-C-ProgressIndicator" spec="circular"></span>
+        <span class="JTM-C-ProgressIndicator"></span>
       </td>
     </tr>
   </tbody>
@@ -399,5 +397,5 @@ toc: true
 #### 代码示例
 
 ```html
-<span class="JTM-C-ProgressIndicator" spec="circular"></span>
+<span class="JTM-C-ProgressIndicator"></span>
 ```

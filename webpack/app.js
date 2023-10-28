@@ -84,7 +84,9 @@ export const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformati
 /**
  * 选择所有a元素
  */
-export const linkElements = document.querySelectorAll("#JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a");
+export const linkElements = document.querySelectorAll(
+  "#JTM-S-Carousel-PostsList a, #JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a"
+);
 /**
  * Carousel元素
  */
@@ -190,13 +192,14 @@ export const initModal = () => {
 };
 
 export const removeLoadScreen = () => {
-  contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
-  contentSplashScreen.addEventListener("animationend", () => {
+  const delay = 450;
     themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
-  });
+  setTimeout(() => {
+    contentSplashScreen.style.display = "none";
+  }, delay);
 };
 
 export const addLoadScreen = () => {
   themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
-  contentSplashScreen.style.animation = "popOut 0.4s forwards";
+};
 };

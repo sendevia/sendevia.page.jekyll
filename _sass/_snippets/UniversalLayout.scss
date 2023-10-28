@@ -14,8 +14,11 @@
     width: 100%;
 
     padding-block-end: 70px;
+    padding-block-start: 40px;
 
     position: relative;
+
+    opacity: 0;
 
     @media (prefers-color-scheme: light) {
       background-color: var(--md-sys-color-surface-bright);
@@ -27,8 +30,11 @@
 
     overflow: overlay;
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
-      filter var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
+      filter var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard),
+      padding var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized),
+      opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-SiteTitle {
       margin-inline: 15px;

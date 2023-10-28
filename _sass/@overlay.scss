@@ -14,7 +14,17 @@
 
 [JTM-O-OnSiteLoaded="true"] {
   .JTM-S-LoadingSplash {
-    display: none;
+    opacity: 0;
+  }
+
+  .JTM-S-UniversalLayout #JTM-S-UniversalLayout-ContentFlow {
+    padding-block-start: 0;
+
+    opacity: 1;
+
+    @media screen and (max-width: 768px) {
+      padding-block-start: 75px;
+    }
   }
 }
 
