@@ -193,7 +193,7 @@ export const initModal = () => {
 
 export const removeLoadScreen = () => {
   const delay = 450;
-    themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
+  themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
   setTimeout(() => {
     contentSplashScreen.style.display = "none";
   }, delay);
@@ -201,5 +201,4 @@ export const removeLoadScreen = () => {
 
 export const addLoadScreen = () => {
   themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
-};
 };
