@@ -383,8 +383,22 @@ ol {
 
           position: relative;
 
+          &:focus,
+          &:focus-visible {
+            outline: none;
+          }
+
+          &:focus-within {
+            .JTM-C-Card {
+              outline: 3px solid var(--md-sys-color-outline);
+              border: 3px solid transparent;
+            }
+          }
+
           .JTM-P-Index-Timeline-DateDetail {
             @include display-small();
+            @extend JTM-E-DisableSelect;
+
             display: block;
 
             height: 66px;
