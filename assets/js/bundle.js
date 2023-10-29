@@ -42,15 +42,10 @@ const closeModal = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   errorPalette: () => (/* binding */ errorPalette),
 /* harmony export */   generateColorPalette: () => (/* binding */ generateColorPalette),
 /* harmony export */   generateImagePalette: () => (/* binding */ generateImagePalette),
-/* harmony export */   neutralPalette: () => (/* binding */ neutralPalette),
-/* harmony export */   neutralVariantPalette: () => (/* binding */ neutralVariantPalette),
-/* harmony export */   primaryPalette: () => (/* binding */ primaryPalette),
-/* harmony export */   secondaryPalette: () => (/* binding */ secondaryPalette),
-/* harmony export */   setPaletteProperty: () => (/* binding */ setPaletteProperty),
-/* harmony export */   tertiaryPalette: () => (/* binding */ tertiaryPalette)
+/* harmony export */   paletteProperty: () => (/* binding */ paletteProperty),
+/* harmony export */   setPaletteProperty: () => (/* binding */ setPaletteProperty)
 /* harmony export */ });
 /* harmony import */ var _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/material-color-utilities */ "./node_modules/@material/material-color-utilities/index.js");
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app */ "./webpack/app.js");
@@ -58,98 +53,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
+ * 调色板提供器
+ * @param {*} 生成调色板
+ * @returns
+ */
+function paletteProperty(source, key, append, tones) {
+  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
+  return {
+    rawPalette: {
+      [key]: palette[append],
+    },
+    tones: tones,
+  };
+}
+
+/**
  * 在DOM中设置调色板
- * @param {*} toneName 一个色调值列表
  * @param {*} paletteProvider 调色板提供器
  */
-function setPaletteProperty(toneName, paletteProvider) {
+function setPaletteProperty(paletteProvider) {
   for (const [key, palette] of Object.entries(paletteProvider.rawPalette)) {
     const paletteKey = key.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-    for (const tone of toneName) {
+    for (const tone of paletteProvider.tones) {
       const token = `--md-ref-palette-${paletteKey}${tone}`;
       const color = (0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.hexFromArgb)(palette.tone(tone));
       _app__WEBPACK_IMPORTED_MODULE_1__.themeRoot.style.setProperty(token, color);
     }
   }
 }
-/**
- * 调色板提供器
- * @param {*} 生成primary调色板
- * @returns
- */
-function primaryPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      primary: palette.a1,
-    },
-  };
-}
-/**
- * 调色板提供器
- * @param {*} 生成secondary调色板
- * @returns
- */
-function secondaryPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      secondary: palette.a2,
-    },
-  };
-}
-/**
- * 调色板提供器
- * @param {*} 生成tertiary调色板
- * @returns
- */
-function tertiaryPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      tertiary: palette.a3,
-    },
-  };
-}
-/**
- * 调色板提供器
- * @param {*} 生成neutral调色板
- * @returns
- */
-function neutralPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      neutral: palette.n1,
-    },
-  };
-}
-/**
- * 调色板提供器
- * @param {*} 生成neutralVariant调色板
- * @returns
- */
-function neutralVariantPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      neutralVariant: palette.n2,
-    },
-  };
-}
-/**
- * 调色板提供器
- * @param {*} 生成error调色板
- * @returns
- */
-function errorPalette(source) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
-  return {
-    rawPalette: {
-      error: palette.error,
-    },
-  };
-}
+
 /**
  * 根据图片生成调色板
  * @param image 输入一张图片
@@ -159,28 +91,29 @@ async function generateImagePalette(image) {
   const source = await (0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.sourceColorFromImage)(image);
   return generateColorPalette(source);
 }
+
 /**
  * 根据颜色生成调色板
  * @param argbColor 输入一个 argb 颜色
  */
 async function generateColorPalette(argbColor) {
   const primaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(primaryTones, primaryPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "primary", "a1", primaryTones));
 
   const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(secondaryTones, secondaryPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "secondary", "a2", secondaryTones));
 
   const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(tertiaryTones, tertiaryPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "tertiary", "a3", tertiaryTones));
 
   const neutralTones = [0, 6, 10, 12, 17, 20, 22, 87, 90, 92, 94, 95, 96, 98, 100];
-  setPaletteProperty(neutralTones, neutralPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "neutral", "n1", neutralTones));
 
   const neutralVariantTones = [30, 50, 60, 80, 90];
-  setPaletteProperty(neutralVariantTones, neutralVariantPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "neutralVariant", "n2", neutralVariantTones));
 
   const errorTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(errorTones, errorPalette(argbColor));
+  setPaletteProperty(paletteProperty(argbColor, "error", "error", errorTones));
 }
 
 
@@ -241,7 +174,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentNavigationDrawer: () => (/* binding */ contentNavigationDrawer),
 /* harmony export */   contentPhotograph: () => (/* binding */ contentPhotograph),
 /* harmony export */   currentPage: () => (/* binding */ currentPage),
-/* harmony export */   cutsomThemeColor: () => (/* binding */ cutsomThemeColor),
+/* harmony export */   customThemeColor: () => (/* binding */ customThemeColor),
 /* harmony export */   handleLinkDelayRedirection: () => (/* binding */ handleLinkDelayRedirection),
 /* harmony export */   handleResize: () => (/* binding */ handleResize),
 /* harmony export */   handleScroll: () => (/* binding */ handleScroll),
@@ -274,7 +207,7 @@ const themeImageProvider = new Image();
 /**
  * 需要以此生成调色盘的hex颜色
  */
-const cutsomThemeColor = document.body.getAttribute("color");
+const customThemeColor = document.body.getAttribute("color");
 /**
  * 主题根节点
  */
@@ -346,7 +279,9 @@ const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
 /**
  * 选择所有a元素
  */
-const linkElements = document.querySelectorAll("#JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a");
+const linkElements = document.querySelectorAll(
+  "#JTM-S-Carousel-PostsList a, #JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a"
+);
 /**
  * Carousel元素
  */
@@ -452,15 +387,15 @@ const initModal = () => {
 };
 
 const removeLoadScreen = () => {
-  contentSplashScreen.style.animation = "fadeOut 0.4s forwards";
-  contentSplashScreen.addEventListener("animationend", () => {
-    themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
-  });
+  const delay = 450;
+  themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
+  setTimeout(() => {
+    contentSplashScreen.style.display = "none";
+  }, delay);
 };
 
 const addLoadScreen = () => {
   themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
-  contentSplashScreen.style.animation = "popOut 0.4s forwards";
 };
 
 
@@ -481,18 +416,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onload = () => {
-  (0,_app__WEBPACK_IMPORTED_MODULE_1__.removeLoadScreen)();
-  if (_app__WEBPACK_IMPORTED_MODULE_1__.cutsomThemeColor) {
-    (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_1__.cutsomThemeColor));
-  } else {
-    if (_app__WEBPACK_IMPORTED_MODULE_1__.currentPage === "/") {
-      const firstCarouselItem = document.querySelector("#JTM-S-Carousel-PostsList > a:nth-of-type(1) > img");
-      _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = firstCarouselItem.src;
-    } else {
-      _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = _app__WEBPACK_IMPORTED_MODULE_1__.contentPhotograph.src;
-    }
-    (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateImagePalette)(_app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider);
-  }
+  setTimeout(() => {
+    (0,_app__WEBPACK_IMPORTED_MODULE_1__.removeLoadScreen)();
+    setTimeout(() => {
+      if (_app__WEBPACK_IMPORTED_MODULE_1__.customThemeColor) {
+        (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_1__.customThemeColor));
+      } else {
+        if (_app__WEBPACK_IMPORTED_MODULE_1__.currentPage === "/") {
+          const firstCarouselItem = document.querySelector("#JTM-S-Carousel-PostsList > a:nth-of-type(1) > img");
+          _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = firstCarouselItem.src;
+        } else {
+          _app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider.src = _app__WEBPACK_IMPORTED_MODULE_1__.contentPhotograph.src;
+        }
+        (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateImagePalette)(_app__WEBPACK_IMPORTED_MODULE_1__.themeImageProvider);
+      }
+    }, 1000);
+  }, 500);
 };
 
 
