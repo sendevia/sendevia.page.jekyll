@@ -12,7 +12,7 @@ export const themeImageProvider = new Image();
 /**
  * 需要以此生成调色盘的hex颜色
  */
-export const cutsomThemeColor = document.body.getAttribute("color");
+export const customThemeColor = document.body.getAttribute("color");
 /**
  * 主题根节点
  */
