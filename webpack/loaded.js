@@ -1,10 +1,13 @@
 import { argbFromHex } from "@material/material-color-utilities";
-import { removeLoadScreen, customThemeColor, themeImageProvider, contentPhotograph, currentPage } from "./app";
+import { removeLoadScreen, customThemeColor, themeImageProvider, contentPhotograph, currentPage, randomRotationBullet } from "./app";
 import { generateColorPalette, generateImagePalette } from "./_components/monet";
 
 window.onload = () => {
+  randomRotationBullet();
+
   setTimeout(() => {
     removeLoadScreen();
+
     setTimeout(() => {
       if (customThemeColor) {
         generateColorPalette(argbFromHex(customThemeColor));

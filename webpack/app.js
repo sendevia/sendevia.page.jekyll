@@ -99,6 +99,10 @@ export const carouselControl = carouselElement ? carouselElement.querySelectorAl
  * Carousel的文章列表
  */
 export const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S-Carousel-PostsList") : [];
+/**
+ * 需要随机旋转的列表Bullet
+ */
+export const rotationListItemsBullet = document.querySelectorAll("ul li");
 ////////////////////
 //常用常量配置结束
 ///////////////////
@@ -171,26 +175,32 @@ export const handleLinkDelayRedirection = (link) => {
   });
 };
 
-const handleKeyboardEvent = (event) => {
-  if (event.key === "Escape") {
-    event.preventDefault();
-    closeModal();
-  }
-};
-
-const handleClickOutside = (event) => {
-  if (event.target === modalTips) {
-    closeModal();
-  }
-};
-
+/**
+ * 初始化模态提示框
+ */
 export const initModal = () => {
+  const handleKeyboardEvent = (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeModal();
+    }
+  };
+
+  const handleClickOutside = (event) => {
+    if (event.target === modalTips) {
+      closeModal();
+    }
+  };
+
   modalTipsIcon.forEach((element) => element.addEventListener("click", openModal));
   dialogBtnClose.addEventListener("click", closeModal);
   modalTips.addEventListener("keydown", handleKeyboardEvent);
   modalTips.addEventListener("click", handleClickOutside);
 };
 
+/**
+ * 移除加载屏幕
+ */
 export const removeLoadScreen = () => {
   const delay = 450;
   themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
@@ -199,6 +209,22 @@ export const removeLoadScreen = () => {
   }, delay);
 };
 
+/**
+ * 增加加载屏幕
+ */
 export const addLoadScreen = () => {
   themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
+};
+
+/**
+ * 随机旋转列表的Bullet
+ */
+export const randomRotationBullet = () => {
+  const style = document.createElement("style");
+  document.head.appendChild(style);
+
+  rotationListItemsBullet.forEach((li, index) => {
+    const randomRotation = Math.floor(Math.random() * 360);
+    style.sheet.insertRule(`ul li:nth-child(${index + 1})::before { transform: rotate(${randomRotation}deg); }`, style.sheet.cssRules.length);
+  });
 };

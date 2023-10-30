@@ -235,6 +235,7 @@ ul {
     @include body-large();
 
     margin-block-end: 5px;
+    margin-inline-start: 24px;
 
     position: relative;
 
@@ -243,17 +244,19 @@ ul {
 
       display: inline-block;
 
-      height: 16px;
-      width: 16px;
+      height: 18px;
+      width: 18px;
 
-      margin-inline-end: 9px;
+      position: absolute;
+      left: -24px;
+      top: 5px;
 
-      position: relative;
+      margin-inline-end: 6px;
 
       background-color: var(--md-sys-color-on-surface);
 
-      -webkit-mask: var(--via-svg-list-bullet) 0 2.5px/100% no-repeat;
-      mask: var(--via-svg-list-bullet) 0 2.5px/100% no-repeat;
+      -webkit-mask: var(--via-svg-list-bullet) 0 0/100% no-repeat;
+      mask: var(--via-svg-list-bullet) 0 0/100% no-repeat;
     }
   }
 }

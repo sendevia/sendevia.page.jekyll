@@ -111,7 +111,11 @@
     }
   }
 
-  li::before {
-    display: none;
+  li {
+    margin-inline-start: 0;
+
+    &::before {
+      display: none;
+    }
   }
 }
