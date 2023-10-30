@@ -1,4 +1,4 @@
-version: "23.1029.0"
+version: "23.1030.0"
 
 title: "sendevia 的博客"
 baseurl: ""
@@ -16,6 +16,7 @@ socialmedia:
   email: "mailto:me@sendevia.top"
   github: "https://github.com/Sendevia"
   osu: "https://osu.ppy.sh/users/9799419"
+  x: "https://x.com/sendevia"
 
 defaults:
   - scope:

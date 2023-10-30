@@ -181,8 +181,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   initModal: () => (/* binding */ initModal),
 /* harmony export */   linkElements: () => (/* binding */ linkElements),
 /* harmony export */   modalTips: () => (/* binding */ modalTips),
+/* harmony export */   randomRotationBullet: () => (/* binding */ randomRotationBullet),
 /* harmony export */   removeLoadScreen: () => (/* binding */ removeLoadScreen),
 /* harmony export */   rippleElements: () => (/* binding */ rippleElements),
+/* harmony export */   rotationListItemsBullet: () => (/* binding */ rotationListItemsBullet),
 /* harmony export */   scrollTopElements: () => (/* binding */ scrollTopElements),
 /* harmony export */   themeImageProvider: () => (/* binding */ themeImageProvider),
 /* harmony export */   themeRoot: () => (/* binding */ themeRoot),
@@ -294,6 +296,10 @@ const carouselControl = carouselElement ? carouselElement.querySelectorAll(".JTM
  * Carousel的文章列表
  */
 const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S-Carousel-PostsList") : [];
+/**
+ * 需要随机旋转的列表Bullet
+ */
+const rotationListItemsBullet = document.querySelectorAll("ul li");
 ////////////////////
 //常用常量配置结束
 ///////////////////
@@ -366,26 +372,32 @@ const handleLinkDelayRedirection = (link) => {
   });
 };
 
-const handleKeyboardEvent = (event) => {
-  if (event.key === "Escape") {
-    event.preventDefault();
-    (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
-  }
-};
-
-const handleClickOutside = (event) => {
-  if (event.target === modalTips) {
-    (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
-  }
-};
-
+/**
+ * 初始化模态提示框
+ */
 const initModal = () => {
+  const handleKeyboardEvent = (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
+    }
+  };
+
+  const handleClickOutside = (event) => {
+    if (event.target === modalTips) {
+      (0,_components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal)();
+    }
+  };
+
   modalTipsIcon.forEach((element) => element.addEventListener("click", _components_modal__WEBPACK_IMPORTED_MODULE_2__.openModal));
   dialogBtnClose.addEventListener("click", _components_modal__WEBPACK_IMPORTED_MODULE_2__.closeModal);
   modalTips.addEventListener("keydown", handleKeyboardEvent);
   modalTips.addEventListener("click", handleClickOutside);
 };
 
+/**
+ * 移除加载屏幕
+ */
 const removeLoadScreen = () => {
   const delay = 450;
   themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
@@ -394,8 +406,24 @@ const removeLoadScreen = () => {
   }, delay);
 };
 
+/**
+ * 增加加载屏幕
+ */
 const addLoadScreen = () => {
   themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
+};
+
+/**
+ * 随机旋转列表的Bullet
+ */
+const randomRotationBullet = () => {
+  const style = document.createElement("style");
+  document.head.appendChild(style);
+
+  rotationListItemsBullet.forEach((li, index) => {
+    const randomRotation = Math.floor(Math.random() * 360);
+    style.sheet.insertRule(`ul li:nth-child(${index + 1})::before { transform: rotate(${randomRotation}deg); }`, style.sheet.cssRules.length);
+  });
 };
 
 
@@ -416,8 +444,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onload = () => {
+  (0,_app__WEBPACK_IMPORTED_MODULE_1__.randomRotationBullet)();
+
   setTimeout(() => {
     (0,_app__WEBPACK_IMPORTED_MODULE_1__.removeLoadScreen)();
+
     setTimeout(() => {
       if (_app__WEBPACK_IMPORTED_MODULE_1__.customThemeColor) {
         (0,_components_monet__WEBPACK_IMPORTED_MODULE_2__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_1__.customThemeColor));
