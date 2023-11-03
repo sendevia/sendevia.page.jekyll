@@ -1,4 +1,4 @@
-version: "23.1030.0"
+version: "23.1103.0"
 
 title: "sendevia 的博客"
 baseurl: ""
@@ -16,7 +16,7 @@ socialmedia:
   email: "mailto:me@sendevia.top"
   github: "https://github.com/Sendevia"
   osu: "https://osu.ppy.sh/users/9799419"
-  x: "https://x.com/sendevia"
+  x (Twitter): "https://x.com/sendevia"
 
 defaults:
   - scope:
@@ -35,7 +35,7 @@ toc:
   item_class: "JTM-C-NavigationDrawer-Entry"
   item_prefix: "JTM-C-NavigationDrawer-"
   list_id: "JTM-C-NavigationDrawer-Section"
-  max_level: 2
+  max_level: 1
   ordered_list: false
 
 markdown: "kramdown"
