@@ -2,13 +2,16 @@
 <div class="JTM-S-UniversalLayout">
   {%- include Navigation.html -%}
 
+  <!-- 文章布局 - 文章流 -->
   <div id="JTM-S-UniversalLayout-ContentFlow">
     {%- if include.has_carousel == "true" -%} {%- include Carousel.html -%}
     <h1 id="JTM-S-UniversalLayout-SiteTitle">{{ site.title }}</h1>
     {%- else -%} {%- include Title.html -%} {%- endif -%}
 
+    <!-- 文章布局 - 文章内容 -->
     <div id="JTM-S-UniversalLayout-ContentFiller">{%- include Content.html -%}</div>
 
+    <!-- 文章布局 - 文章目录 -->
     {%- include QuickJump.html -%} {%- include Footer.html -%}
   </div>
 </div>
