@@ -1,5 +1,5 @@
 .JTM-S-WebsiteInformation {
-  @extend JTM-E-DisableSelect;
+  @include JTM-E-UserSelect();
 
   display: flex;
   align-items: center;

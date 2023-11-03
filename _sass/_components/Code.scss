@@ -85,7 +85,7 @@ div.highlighter-rouge {
             background-color: var(--md-ref-palette-tertiary10);
 
             .lineno {
-              @extend JTM-E-DisableSelect;
+              @include JTM-E-UserSelect();
 
               margin: 0;
 

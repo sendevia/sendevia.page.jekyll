@@ -1,3 +1,10 @@
+@mixin JTM-E-UserSelect($value: none) {
+  -moz-user-select: $value;
+  -webkit-user-drag: $value;
+  -webkit-user-select: $value;
+  user-select: $value;
+}
+
 @import "@font-face";
 @import "@animation";
 @import "@overlay";
@@ -89,16 +96,9 @@ body {
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
     filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
-  JTM-E-DisableSelect {
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
   :disabled,
   [disabled] {
-    @extend JTM-E-DisableSelect;
+    @include JTM-E-UserSelect();
 
     box-shadow: none;
     filter: grayscale(1);
@@ -400,7 +400,7 @@ ol {
 
           .JTM-P-Index-Timeline-DateDetail {
             @include display-small();
-            @extend JTM-E-DisableSelect;
+            @include JTM-E-UserSelect();
 
             display: block;
 

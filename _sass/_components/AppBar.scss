@@ -2,7 +2,7 @@
 // 移动端标题栏
 
 .JTM-C-AppBar {
-  @extend JTM-E-DisableSelect;
+  @include JTM-E-UserSelect();
 
   display: flex;
   align-items: center;

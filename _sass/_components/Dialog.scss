@@ -3,7 +3,7 @@
 
 .JTM-C-Dialog {
   &[open] {
-    @extend JTM-E-DisableSelect;
+    @include JTM-E-UserSelect();
 
     max-width: 560px;
     min-width: 280px;

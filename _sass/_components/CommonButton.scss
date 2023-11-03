@@ -3,7 +3,7 @@
 
 button.JTM-C-CommonButton {
   @include label-large();
-  @extend JTM-E-DisableSelect;
+  @include JTM-E-UserSelect();
 
   display: flex;
   align-items: center;
