@@ -12,8 +12,6 @@
 
     background-color: var(--md-sys-color-surface);
 
-    letter-spacing: 0;
-
     border-radius: 28px;
     border: none;
 
@@ -72,7 +70,7 @@
         align-items: center;
 
         .JTM-C-Dialog-LeaderIcon {
-          @include material-symbols($size: 24px);
+          @include material-symbols($size: 24);
 
           margin-bottom: 16px;
         }

@@ -3,7 +3,7 @@
 
 .JTM-C-IconButton,
 button.JTM-C-IconButton {
-  @include material-symbols($size: 24px);
+  @include material-symbols($size: 24);
 
   display: flex;
   align-items: center;
@@ -13,8 +13,6 @@ button.JTM-C-IconButton {
   width: 40px;
 
   position: relative;
-
-  letter-spacing: 0;
 
   border-radius: 100%;
   border: none;

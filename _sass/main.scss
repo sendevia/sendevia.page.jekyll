@@ -136,43 +136,43 @@ body {
 }
 
 h1 {
-  @include headline-large();
+  @include typescale-style("headline-large");
 
   margin: 0;
 }
 
 h2 {
-  @include headline-medium();
+  @include typescale-style("headline-medium");
 
   margin: 0;
 }
 
 h3 {
-  @include headline-small();
+  @include typescale-style("headline-small");
 
   margin: 0;
 }
 
 h4 {
-  @include title-large();
+  @include typescale-style("title-large");
 
   margin: 0;
 }
 
 h5 {
-  @include title-medium();
+  @include typescale-style("title-medium");
 
   margin: 0;
 }
 
 h6 {
-  @include title-small();
+  @include typescale-style("title-small");
 
   margin: 0;
 }
 
 p {
-  @include body-large();
+  @include typescale-style("body-large");
 
   margin: 0;
 }
@@ -232,7 +232,7 @@ ul {
   list-style-type: none;
 
   li {
-    @include body-large();
+    @include typescale-style("body-large");
 
     margin-block-end: 5px;
     margin-inline-start: 24px;
@@ -265,7 +265,7 @@ ol {
   padding-inline-start: 20px;
 
   li {
-    @include body-large();
+    @include typescale-style("body-large");
 
     margin-block-end: 5px;
 
@@ -348,7 +348,7 @@ ol {
       margin-inline-start: 10px;
 
       #JTM-P-Index-Timeline-By-YearAndMonth {
-        @include body-large();
+        @include typescale-style("body-large");
 
         display: block;
 
@@ -399,8 +399,8 @@ ol {
           }
 
           .JTM-P-Index-Timeline-DateDetail {
-            @include display-small();
             @include JTM-E-UserSelect();
+            @include typescale-style("display-small");
 
             display: block;
 

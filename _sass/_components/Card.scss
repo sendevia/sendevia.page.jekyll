@@ -7,8 +7,6 @@
 
   position: relative;
 
-  letter-spacing: 0;
-
   overflow: hidden;
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
@@ -20,11 +18,6 @@
 
   .JTM-C-Card-Supporting {
     pointer-events: none;
-
-    h3 {
-      font-family: "Google Sans";
-      line-height: 30px;
-    }
   }
 
   &[spec="clear"] {

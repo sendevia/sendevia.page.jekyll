@@ -2,8 +2,8 @@
 // 面包屑
 
 button.JTM-C-Chip {
-  @include label-large();
   @include JTM-E-UserSelect();
+  @include typescale-style("label-large");
 
   display: flex;
   align-items: center;
@@ -19,7 +19,6 @@ button.JTM-C-Chip {
   position: relative;
 
   color: var(--md-sys-color-on-surface);
-  letter-spacing: 0;
 
   border-radius: 8px;
   border: 1px solid var(--md-sys-color-outline);
@@ -38,13 +37,12 @@ button.JTM-C-Chip {
     padding-inline-end: 16px;
 
     span {
-      @include material-symbols($size: 18px);
+      @include material-symbols($size: 18, $line-height: 18);
 
       height: 18px;
       width: 18px;
 
       color: var(--md-sys-color-primary);
-      line-height: 18px;
     }
   }
 

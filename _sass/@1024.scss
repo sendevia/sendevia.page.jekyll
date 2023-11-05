@@ -3,42 +3,15 @@
 @media screen and (max-width: 1024px) {
   .JTM-S-Carousel #JTM-S-Carousel-PostsList {
     .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+      @include typescale-style("headline-large");
+
       margin-block: 20px;
       margin-inline: 20px;
       padding-block: 20px;
       padding-inline: 40px;
     }
-
-    &[data-scroll="0"] {
-      .JTM-S-Carousel-PostItem {
-        &:nth-of-type(1) {
-          #JTM-S-Carousel-PostInfo {
-            font-size: 50px;
-          }
-        }
-      }
-    }
-
-    &[data-scroll="1"] {
-      .JTM-S-Carousel-PostItem {
-        &:nth-of-type(2) {
-          #JTM-S-Carousel-PostInfo {
-            font-size: 50px;
-          }
-        }
-      }
-    }
-
-    &[data-scroll="2"] {
-      .JTM-S-Carousel-PostItem {
-        &:nth-of-type(3) {
-          #JTM-S-Carousel-PostInfo {
-            font-size: 50px;
-          }
-        }
-      }
-    }
   }
+
   #JTM-S-UniversalLayout-ContentFlow {
     .JTM-S-Title {
       flex-direction: column;
@@ -47,11 +20,11 @@
         width: 100%;
 
         #JTM-S-Title-HeroHeadline {
-          @include display-large($font-size: 8vw, $line-height: 8vw);
+          @include typescale-style("display-large", $font-size: 8vw, $line-height: 8vw);
         }
 
         #JTM-S-Title-HeroSubtitle {
-          @include headline-large($font-size: 23rem, $line-height: 23rem);
+          @include typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
         }
       }
 

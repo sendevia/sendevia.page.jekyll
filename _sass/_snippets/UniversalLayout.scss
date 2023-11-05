@@ -51,8 +51,6 @@
       padding-block: 16px 36px;
       padding-inline: calc(50% - 560px);
 
-      letter-spacing: 1.2px;
-
       & > h1,
       & > h2,
       & > h3,
@@ -72,9 +70,6 @@
       & > p {
         margin-inline: 12px;
         padding-block: 6px 6px;
-
-        letter-spacing: 0.6px;
-        line-height: 22px;
 
         & > img {
           border-radius: 6px;
@@ -122,7 +117,7 @@
         }
 
         summary {
-          @include body-large();
+          @include typescale-style("body-large");
 
           display: flex;
           align-items: center;
@@ -257,7 +252,7 @@
         list-style: none;
 
         &::before {
-          @include body-large();
+          @include typescale-style("body-large", $line-height: 36rem);
           content: counter(listCounter);
 
           display: inline-block;
@@ -266,7 +261,6 @@
           min-width: 24px;
 
           color: var(--md-sys-color-on-tertiary-container);
-          line-height: 36px;
           text-align: center;
           vertical-align: middle;
 

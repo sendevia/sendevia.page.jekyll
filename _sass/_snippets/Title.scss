@@ -35,12 +35,12 @@
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
     #JTM-S-Title-HeroHeadline {
-      @include display-large($font-size: 110rem, $font-weight: bold, $line-height: 110rem);
+      @include typescale-style("display-large", $font-size: 110rem, $font-weight: bold, $line-height: 110rem);
       width: 100%;
     }
 
     #JTM-S-Title-HeroSubtitle {
-      @include headline-large($font-size: 22rem, $line-height: 22rem);
+      @include typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
       width: 100%;
     }
   }

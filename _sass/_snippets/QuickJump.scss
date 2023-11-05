@@ -40,7 +40,7 @@
     gap: 3px;
 
     span {
-      @include material-symbols($size: 18px);
+      @include material-symbols($size: 18);
     }
   }
 }

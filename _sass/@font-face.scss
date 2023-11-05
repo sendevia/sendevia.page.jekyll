@@ -6,7 +6,7 @@
   src: url("/assets/fonts/MaterialSymbolsOutlined.woff2") format("woff2");
 }
 
-@mixin material-symbols($name: "", $size: 24px, $font-size: $size, $line-height: 1) {
+@mixin material-symbols($name: "", $size: 24, $font-size: $size, $line-height: 24) {
   @include JTM-E-UserSelect();
   content: $name;
   -moz-osx-font-smoothing: grayscale;
@@ -15,193 +15,28 @@
   display: inline-block;
   font-family: "Material Symbols Outlined";
   font-feature-settings: "liga";
-  font-size: $size;
+  font-size: #{$size}rem;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
-  line-height: $line-height;
+  line-height: #{$line-height}rem;
   text-rendering: optimizeLegibility;
   text-transform: none;
   white-space: nowrap;
   word-wrap: normal;
 }
 
-@mixin display-large(
-  $font-family: var(--md-sys-typescale-display-large-family),
-  $font-size: var(--md-sys-typescale-display-large-size),
-  $font-weight: var(--md-sys-typescale-display-large-weight),
-  $line-height: normal
+@mixin typescale-style(
+  $type-scale,
+  $font-family: var(--md-sys-typescale-#{$type-scale}-family),
+  $font-size: var(--md-sys-typescale-#{$type-scale}-size),
+  $font-weight: var(--md-sys-typescale-#{$type-scale}-weight),
+  $line-height: var(--md-sys-typescale-#{$type-scale}-line-height),
+  $letter-spacing: var(--md-sys-typescale-#{$type-scale}-letter-spacing)
 ) {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
-}
-
-@mixin display-medium(
-  $font-family: var(--md-sys-typescale-display-medium-family),
-  $font-size: var(--md-sys-typescale-display-medium-size),
-  $font-weight: var(--md-sys-typescale-display-medium-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin display-small(
-  $font-family: var(--md-sys-typescale-display-small-family),
-  $font-size: var(--md-sys-typescale-display-small-size),
-  $font-weight: var(--md-sys-typescale-display-small-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin headline-large(
-  $font-family: var(--md-sys-typescale-headline-large-family),
-  $font-size: var(--md-sys-typescale-headline-large-size),
-  $font-weight: var(--md-sys-typescale-headline-large-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin headline-medium(
-  $font-family: var(--md-sys-typescale-headline-medium-family),
-  $font-size: var(--md-sys-typescale-headline-medium-size),
-  $font-weight: var(--md-sys-typescale-headline-medium-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin headline-small(
-  $font-family: var(--md-sys-typescale-headline-small-family),
-  $font-size: var(--md-sys-typescale-headline-small-size),
-  $font-weight: var(--md-sys-typescale-headline-small-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin title-large(
-  $font-family: var(--md-sys-typescale-title-large-family),
-  $font-size: var(--md-sys-typescale-title-large-size),
-  $font-weight: var(--md-sys-typescale-title-large-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin title-medium(
-  $font-family: var(--md-sys-typescale-title-medium-family),
-  $font-size: var(--md-sys-typescale-title-medium-size),
-  $font-weight: var(--md-sys-typescale-title-medium-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin title-small(
-  $font-family: var(--md-sys-typescale-title-small-family),
-  $font-size: var(--md-sys-typescale-title-small-size),
-  $font-weight: var(--md-sys-typescale-title-small-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin body-large(
-  $font-family: var(--md-sys-typescale-body-large-family),
-  $font-size: var(--md-sys-typescale-body-large-size),
-  $font-weight: var(--md-sys-typescale-body-large-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin body-medium(
-  $font-family: var(--md-sys-typescale-body-medium-family),
-  $font-size: var(--md-sys-typescale-body-medium-size),
-  $font-weight: var(--md-sys-typescale-body-medium-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin body-small(
-  $font-family: var(--md-sys-typescale-body-small-family),
-  $font-size: var(--md-sys-typescale-body-small-size),
-  $font-weight: var(--md-sys-typescale-body-small-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin label-large(
-  $font-family: var(--md-sys-typescale-label-large-family),
-  $font-size: var(--md-sys-typescale-label-large-size),
-  $font-weight: var(--md-sys-typescale-label-large-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin label-medium(
-  $font-family: var(--md-sys-typescale-label-medium-family),
-  $font-size: var(--md-sys-typescale-label-medium-size),
-  $font-weight: var(--md-sys-typescale-label-medium-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-@mixin label-small(
-  $font-family: var(--md-sys-typescale-label-small-family),
-  $font-size: var(--md-sys-typescale-label-small-size),
-  $font-weight: var(--md-sys-typescale-label-small-weight),
-  $line-height: normal
-) {
-  font-family: $font-family;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
+  letter-spacing: $letter-spacing;
 }

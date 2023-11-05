@@ -4,8 +4,6 @@
 .JTM-C-Navigation {
   @include JTM-E-UserSelect();
 
-  letter-spacing: 0;
-
   background-color: var(--md-sys-color-surface-container-low);
 
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
@@ -75,7 +73,7 @@
           pointer-events: none;
 
           span {
-            @include material-symbols($size: 24px);
+            @include material-symbols($size: 24);
 
             height: 24px;
             width: 24px;

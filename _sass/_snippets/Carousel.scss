@@ -14,7 +14,7 @@
     position: relative;
 
     .JTM-S-Carousel-Control {
-      @include material-symbols($size: 18px);
+      @include material-symbols($size: 18);
 
       height: calc(100% - 12px);
       width: 60px;
@@ -100,6 +100,8 @@
       }
 
       #JTM-S-Carousel-PostInfo {
+        @include typescale-style("display-large");
+
         margin-block: 30px;
         margin-inline: 30px;
         padding-block: 30px;
@@ -110,9 +112,6 @@
         right: 0;
 
         color: var(--md-ref-palette-secondary10);
-        font-family: Google Sans, Noto Sans SC;
-        font-size: 60px;
-        font-weight: 500;
         text-align: center;
         text-wrap: nowrap;
 
@@ -140,8 +139,6 @@
           }
 
           #JTM-S-Carousel-PostInfo {
-            font-size: 80px;
-
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }
@@ -190,8 +187,6 @@
           }
 
           #JTM-S-Carousel-PostInfo {
-            font-size: 80px;
-
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }
@@ -225,8 +220,6 @@
           }
 
           #JTM-S-Carousel-PostInfo {
-            font-size: 80px;
-
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }

@@ -2,16 +2,13 @@
 // 浮动行为按钮
 
 button.JTM-C-FAB {
-  @include material-symbols($size: 24px);
+  @include material-symbols($size: 24);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   position: relative;
-
-  letter-spacing: 0;
-  line-height: 0;
 
   border: none;
 

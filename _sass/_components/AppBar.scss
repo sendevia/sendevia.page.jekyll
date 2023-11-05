@@ -19,8 +19,6 @@
   position: fixed;
   top: -64px;
 
-  letter-spacing: 0;
-
   overflow: hidden;
   transition: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
   visibility: hidden;
@@ -35,7 +33,7 @@
   }
 
   #JTM-C-AppBar-DynamicTitle {
-    @include title-large();
+    @include typescale-style("title-large");
 
     display: flex;
     align-items: center;

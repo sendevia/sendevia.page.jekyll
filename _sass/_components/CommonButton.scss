@@ -2,8 +2,8 @@
 // 按钮
 
 button.JTM-C-CommonButton {
-  @include label-large();
   @include JTM-E-UserSelect();
+  @include typescale-style("label-large");
 
   display: flex;
   align-items: center;
@@ -20,8 +20,6 @@ button.JTM-C-CommonButton {
   position: relative;
 
   color: var(--md-sys-color-primary);
-  letter-spacing: 0;
-  line-height: 20px;
 
   border-radius: 100px;
   border: none;
@@ -38,12 +36,10 @@ button.JTM-C-CommonButton {
     padding-inline-start: 16px;
 
     span {
-      @include material-symbols($size: 18px);
+      @include material-symbols($size: 18, $line-height: 20);
 
       height: 20px;
       width: 20px;
-
-      line-height: 20px;
     }
   }
 
