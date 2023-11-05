@@ -5,10 +5,10 @@
   user-select: $value;
 }
 
+@import "token";
 @import "@font-face";
 @import "@animation";
 @import "@overlay";
-@import "token";
 @import "variable";
 
 @import "_components/AppBar";

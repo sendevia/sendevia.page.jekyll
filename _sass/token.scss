@@ -1,5 +1,5 @@
-html,
-body {
+:root {
+  // Color
   --md-ref-palette-primary10: #00201e;
   --md-ref-palette-primary20: #003734;
   --md-ref-palette-primary30: #00504b;
@@ -49,56 +49,19 @@ body {
   --md-ref-palette-error90: #ffdad6;
   --md-ref-palette-error100: #ffffff;
 
-  --md-sys-typescale-body-large-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-body-large-size: 16rem;
-  --md-sys-typescale-body-large-weight: Regular;
-  --md-sys-typescale-body-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-body-medium-size: 14rem;
-  --md-sys-typescale-body-medium-weight: Regular;
-  --md-sys-typescale-body-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-body-small-size: 12rem;
-  --md-sys-typescale-body-small-weight: Regular;
-  --md-sys-typescale-display-large-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-display-large-size: 57rem;
-  --md-sys-typescale-display-large-weight: Medium;
-  --md-sys-typescale-display-medium-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-display-medium-size: 45rem;
-  --md-sys-typescale-display-medium-weight: Medium;
-  --md-sys-typescale-display-small-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-display-small-size: 36rem;
-  --md-sys-typescale-display-small-weight: Medium;
-  --md-sys-typescale-headline-large-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-headline-large-size: 32rem;
-  --md-sys-typescale-headline-large-weight: Medium;
-  --md-sys-typescale-headline-medium-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-headline-medium-size: 28rem;
-  --md-sys-typescale-headline-medium-weight: Medium;
-  --md-sys-typescale-headline-small-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-headline-small-size: 24rem;
-  --md-sys-typescale-headline-small-weight: Medium;
-  --md-sys-typescale-label-large-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-label-large-size: 14rem;
-  --md-sys-typescale-label-large-weight: Medium;
-  --md-sys-typescale-label-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-label-medium-size: 12rem;
-  --md-sys-typescale-label-medium-weight: Medium;
-  --md-sys-typescale-label-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-label-small-size: 11rem;
-  --md-sys-typescale-label-small-weight: Medium;
-  --md-sys-typescale-title-large-family: "Google Sans", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-title-large-size: 22rem;
-  --md-sys-typescale-title-large-weight: Regular;
-  --md-sys-typescale-title-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-title-medium-size: 16rem;
-  --md-sys-typescale-title-medium-weight: Medium;
-  --md-sys-typescale-title-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
-  --md-sys-typescale-title-small-size: 14rem;
-  --md-sys-typescale-title-small-weight: Medium;
-  --md-sys-state-dragged-state-layer-opacity: 0.16;
-  --md-sys-state-focus-state-layer-opacity: 0.12;
-  --md-sys-state-hover-state-layer-opacity: 0.08;
-  --md-sys-state-pressed-state-layer-opacity: 0.12;
+  // Elevation
+  --md-sys-elevation-level1-dark: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level2-dark: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level3-dark: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level4-dark: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level5-dark: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level1-light: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level2-light: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level3-light: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level4-light: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level5-light: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
 
+  // Motion
   --md-sys-motion-duration-short1: 50ms;
   --md-sys-motion-duration-short2: 100ms;
   --md-sys-motion-duration-short3: 150ms;
@@ -115,7 +78,6 @@ body {
   --md-sys-motion-duration-extra-long2: 800ms;
   --md-sys-motion-duration-extra-long3: 900ms;
   --md-sys-motion-duration-extra-long4: 1000ms;
-
   --md-sys-motion-easing-liner: cubic-bezier(0, 0, 1, 1);
   --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
@@ -126,15 +88,72 @@ body {
   --md-sys-motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
   --md-sys-motion-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
   --md-sys-motion-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --md-sys-motion-path: var(--md-sys-motion-easing-liner);
 
-  --md-sys-elevation-level1-dark: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level2-dark: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level3-dark: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level4-dark: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level5-dark: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level1-light: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level2-light: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level3-light: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level4-light: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level5-light: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  // Shape
+  --md-sys-shape-corner-full: 100%;
+  --md-sys-shape-corner-extra-large-top: 28px 28px 0 0;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-large-top: 16px 16px 0 0;
+  --md-sys-shape-corner-large-end: 0 16px 16px 0;
+  --md-sys-shape-corner-large-start: 16px 0 0 16px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-extra-small-top: 4px 4px 0 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-none: 0;
+
+  // Typography
+  --md-sys-typescale-display-large-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-display-large-size: 57rem;
+  --md-sys-typescale-display-large-weight: Medium;
+  --md-sys-typescale-display-large-tracking: calc(-0.25 / var(--md-sys-typescale-display-large-size));
+  --md-sys-typescale-display-medium-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-display-medium-size: 45rem;
+  --md-sys-typescale-display-medium-weight: Medium;
+  --md-sys-typescale-display-small-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-display-small-size: 36rem;
+  --md-sys-typescale-display-small-weight: Medium;
+  --md-sys-typescale-title-large-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-title-large-size: 22rem;
+  --md-sys-typescale-title-large-weight: Regular;
+  --md-sys-typescale-title-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-title-medium-size: 16rem;
+  --md-sys-typescale-title-medium-weight: Medium;
+  --md-sys-typescale-title-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-title-small-size: 14rem;
+  --md-sys-typescale-title-small-weight: Medium;
+  --md-sys-typescale-headline-large-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-headline-large-size: 32rem;
+  --md-sys-typescale-headline-large-weight: Medium;
+  --md-sys-typescale-headline-medium-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-headline-medium-size: 28rem;
+  --md-sys-typescale-headline-medium-weight: Medium;
+  --md-sys-typescale-headline-small-family: "Google Sans", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-headline-small-size: 24rem;
+  --md-sys-typescale-headline-small-weight: Medium;
+  --md-sys-typescale-body-large-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-body-large-size: 16rem;
+  --md-sys-typescale-body-large-weight: Regular;
+  --md-sys-typescale-body-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-body-medium-size: 14rem;
+  --md-sys-typescale-body-medium-weight: Regular;
+  --md-sys-typescale-body-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-body-small-size: 12rem;
+  --md-sys-typescale-body-small-weight: Regular;
+  --md-sys-typescale-label-large-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-label-large-size: 14rem;
+  --md-sys-typescale-label-large-weight: Medium;
+  --md-sys-typescale-label-medium-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-label-medium-size: 12rem;
+  --md-sys-typescale-label-medium-weight: Medium;
+  --md-sys-typescale-label-small-family: "Google Sans Text", "Noto Sans SC", sans-serif;
+  --md-sys-typescale-label-small-size: 11rem;
+  --md-sys-typescale-label-small-weight: Medium;
+
+  --md-sys-state-dragged-state-layer-opacity: 0.16;
+  --md-sys-state-focus-state-layer-opacity: 0.12;
+  --md-sys-state-hover-state-layer-opacity: 0.08;
+  --md-sys-state-pressed-state-layer-opacity: 0.12;
 }
