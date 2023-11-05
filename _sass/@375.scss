@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 375px) {
   .JTM-S-Carousel #JTM-S-Carousel-PostsList .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
-    @include typescale-style("label-large");
+    @include typescale-style("title-large");
   }
 
   #JTM-S-UniversalLayout-ContentFlow {

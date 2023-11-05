@@ -4,14 +4,12 @@
   .JTM-S-Carousel #JTM-S-Carousel-PostsList .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
     @include typescale-style("title-large");
 
-    padding-block: 0;
+    padding-block: 4px;
     padding-inline: 12px;
 
     text-wrap: wrap;
 
-    background-color: #fff;
-
-    backdrop-filter: none;
+    border-radius: 10px;
   }
 
   #JTM-S-UniversalLayout-ContentFlow {

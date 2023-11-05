@@ -3,7 +3,7 @@
 
 button.JTM-C-CommonButton {
   @include JTM-E-UserSelect();
-  @include typescale-style("label-large");
+  @include typescale-style("label-large", $line-height: 16rem);
 
   display: flex;
   align-items: center;
@@ -32,8 +32,7 @@ button.JTM-C-CommonButton {
   &[icon] {
     gap: 8px;
 
-    padding-inline-end: 24px;
-    padding-inline-start: 16px;
+    padding-inline: 16px 24px;
 
     span {
       @include material-symbols($size: 18, $line-height: 20);

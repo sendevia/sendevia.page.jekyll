@@ -33,8 +33,7 @@ button.JTM-C-Chip {
   &[icon] {
     gap: 8px;
 
-    padding-inline-start: 8px;
-    padding-inline-end: 16px;
+    padding-inline: 8px 16px;
 
     span {
       @include material-symbols($size: 18, $line-height: 18);
