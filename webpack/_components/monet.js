@@ -1,5 +1,4 @@
 import { CorePalette, hexFromArgb, sourceColorFromImage } from "@material/material-color-utilities";
-import { themeRoot } from "../app";
 
 /**
  * 调色板提供器

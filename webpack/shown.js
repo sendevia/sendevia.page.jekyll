@@ -1,3 +1,4 @@
+import { ripple } from "./_components/ripple";
 import {
   carouselControl,
   carouselElement,
@@ -18,7 +19,6 @@ import {
   toggleNavigationDrawer,
   websiteInfomation,
 } from "./app";
-import { ripple } from "./_components/ripple";
 
 window.onpageshow = () => {
   contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");

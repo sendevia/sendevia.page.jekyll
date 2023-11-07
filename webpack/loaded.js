@@ -1,6 +1,6 @@
 import { argbFromHex } from "@material/material-color-utilities";
-import { removeLoadScreen, customThemeColor, themeImageProvider, contentPhotograph, currentPage, randomRotationBullet } from "./app";
 import { generateColorPalette, generateImagePalette } from "./_components/monet";
+import { contentPhotograph, currentPage, customThemeColor, randomRotationBullet, removeLoadScreen, themeImageProvider } from "./app";
 
 window.onload = () => {
   randomRotationBullet();
