@@ -289,7 +289,7 @@ export function createSnackbar(content) {
  * 更新提示条位置
  */
 export function updateSnackbarPositions() {
-  var bottomValue = 10;
+  var bottomValue = window.innerWidth >= 768 ? 10 : 90;
 
   for (var i = snackbars.length - 1; i >= 0; i--) {
     var snackbar = snackbars[i];
