@@ -184,6 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentNavigation: () => (/* binding */ contentNavigation),
 /* harmony export */   contentNavigationDrawer: () => (/* binding */ contentNavigationDrawer),
 /* harmony export */   contentPhotograph: () => (/* binding */ contentPhotograph),
+/* harmony export */   createSnackbar: () => (/* binding */ createSnackbar),
 /* harmony export */   currentPage: () => (/* binding */ currentPage),
 /* harmony export */   customThemeColor: () => (/* binding */ customThemeColor),
 /* harmony export */   handleLinkDelayRedirection: () => (/* binding */ handleLinkDelayRedirection),
@@ -201,6 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   themeRoot: () => (/* binding */ themeRoot),
 /* harmony export */   toggleDim: () => (/* binding */ toggleDim),
 /* harmony export */   toggleNavigationDrawer: () => (/* binding */ toggleNavigationDrawer),
+/* harmony export */   updateSnackbarPositions: () => (/* binding */ updateSnackbarPositions),
 /* harmony export */   websiteInfomation: () => (/* binding */ websiteInfomation)
 /* harmony export */ });
 /* harmony import */ var _shown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shown */ "./webpack/shown.js");
@@ -437,6 +439,76 @@ const randomRotationBullet = () => {
   });
 };
 
+var snackbars = [];
+/**
+ * 创建一个底部提示条
+ * @param {*} content
+ */
+function createSnackbar(content) {
+  var snackbar = document.createElement("div");
+  snackbar.className = "JTM-C-Snackbar";
+  snackbar.setAttribute("visible", "false");
+
+  var p = document.createElement("p");
+  p.id = "JTM-C-Snackbar-Supporting";
+  p.textContent = content;
+
+  var closeButton = document.createElement("button");
+  closeButton.textContent = "close";
+  closeButton.id = "JTM-C-Snackbar-Icon";
+  closeButton.className = "JTM-C-IconButton";
+  closeButton.onclick = function () {
+    snackbar.setAttribute("visible", "false");
+    setTimeout(function () {
+      snackbar.remove();
+      var index = snackbars.indexOf(snackbar);
+      if (index !== -1) {
+        snackbars.splice(index, 1);
+        updateSnackbarPositions();
+      }
+    }, 600);
+  };
+
+  snackbar.appendChild(p);
+  snackbar.appendChild(closeButton);
+  document.body.appendChild(snackbar);
+
+  setTimeout(() => {
+    snackbar.setAttribute("visible", "true");
+  }, 0);
+
+  snackbars.push(snackbar);
+  updateSnackbarPositions();
+
+  setTimeout(() => {
+    snackbar.setAttribute("visible", "false");
+    snackbar.addEventListener("transitionend", () => {
+      if (snackbar.getAttribute("visible") === "false") {
+        snackbar.remove();
+        var index = snackbars.indexOf(snackbar);
+        if (index !== -1) {
+          snackbars.splice(index, 1);
+          updateSnackbarPositions();
+        }
+      }
+    });
+  }, 5000);
+}
+
+/**
+ * 更新提示条位置
+ */
+function updateSnackbarPositions() {
+  var bottomValue = 10;
+
+  for (var i = snackbars.length - 1; i >= 0; i--) {
+    var snackbar = snackbars[i];
+    snackbar.style.bottom = bottomValue + "px";
+
+    bottomValue += snackbar.offsetHeight + 10;
+  }
+}
+
 
 /***/ }),
 
@@ -456,6 +528,23 @@ __webpack_require__.r(__webpack_exports__);
 
 window.onload = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_2__.randomRotationBullet)();
+
+  document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller h1").forEach((h1) => {
+    h1.addEventListener("click", function () {
+      const anchorLink = this.id ? `#${this.id}` : "";
+
+      if (anchorLink) {
+        navigator.clipboard.writeText(window.location.href.split("#")[0] + anchorLink).then(() => (0,_app__WEBPACK_IMPORTED_MODULE_2__.createSnackbar)(`已将内容复制到剪贴板：${anchorLink}`));
+      }
+    });
+  });
+
+  var testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
+  if (testButton) {
+    testButton.addEventListener("click", function () {
+      (0,_app__WEBPACK_IMPORTED_MODULE_2__.createSnackbar)(testButton.innerText);
+    });
+  }
 
   setTimeout(() => {
     (0,_app__WEBPACK_IMPORTED_MODULE_2__.removeLoadScreen)();
