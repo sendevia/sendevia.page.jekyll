@@ -7,6 +7,34 @@ impression: /assets/images/108723573_p0.webp
 toc: true
 ---
 
+# Snackbar
+
+底部提示框
+
+<table>
+  <thead>
+    <tr>
+      <th>element</th>
+      <th>class</th>
+      <th>示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>div</code></td>
+      <td><code>JTM-C-Snackbar</code></td>
+      <td><button id="JTM-P-Components-Snackbar-Test" class="JTM-C-CommonButton" spec="elevated">点击测试</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### 代码示例
+
+```html
+<span class="JTM-C-Snackbar"></span>
+```
+
 # Buttons
 
 用户交互控件 - 按钮

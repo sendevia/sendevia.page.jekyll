@@ -228,3 +228,73 @@ export const randomRotationBullet = () => {
     style.sheet.insertRule(`ul li:nth-child(${index + 1})::before { transform: rotate(${randomRotation}deg); }`, style.sheet.cssRules.length);
   });
 };
+
+var snackbars = [];
+/**
+ * 创建一个底部提示条
+ * @param {*} content
+ */
+export function createSnackbar(content) {
+  var snackbar = document.createElement("div");
+  snackbar.className = "JTM-C-Snackbar";
+  snackbar.setAttribute("visible", "false");
+
+  var p = document.createElement("p");
+  p.id = "JTM-C-Snackbar-Supporting";
+  p.textContent = content;
+
+  var closeButton = document.createElement("button");
+  closeButton.textContent = "close";
+  closeButton.id = "JTM-C-Snackbar-Icon";
+  closeButton.className = "JTM-C-IconButton";
+  closeButton.onclick = function () {
+    snackbar.setAttribute("visible", "false");
+    setTimeout(function () {
+      snackbar.remove();
+      var index = snackbars.indexOf(snackbar);
+      if (index !== -1) {
+        snackbars.splice(index, 1);
+        updateSnackbarPositions();
+      }
+    }, 600);
+  };
+
+  snackbar.appendChild(p);
+  snackbar.appendChild(closeButton);
+  document.body.appendChild(snackbar);
+
+  setTimeout(() => {
+    snackbar.setAttribute("visible", "true");
+  }, 0);
+
+  snackbars.push(snackbar);
+  updateSnackbarPositions();
+
+  setTimeout(() => {
+    snackbar.setAttribute("visible", "false");
+    snackbar.addEventListener("transitionend", () => {
+      if (snackbar.getAttribute("visible") === "false") {
+        snackbar.remove();
+        var index = snackbars.indexOf(snackbar);
+        if (index !== -1) {
+          snackbars.splice(index, 1);
+          updateSnackbarPositions();
+        }
+      }
+    });
+  }, 5000);
+}
+
+/**
+ * 更新提示条位置
+ */
+export function updateSnackbarPositions() {
+  var bottomValue = 10;
+
+  for (var i = snackbars.length - 1; i >= 0; i--) {
+    var snackbar = snackbars[i];
+    snackbar.style.bottom = bottomValue + "px";
+
+    bottomValue += snackbar.offsetHeight + 10;
+  }
+}

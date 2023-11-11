@@ -5,6 +5,13 @@ import { contentPhotograph, currentPage, customThemeColor, randomRotationBullet,
 window.onload = () => {
   randomRotationBullet();
 
+  var testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
+  if (testButton) {
+    testButton.addEventListener("click", function () {
+      createSnackbar(testButton.innerText);
+    });
+  }
+
   setTimeout(() => {
     removeLoadScreen();
 
