@@ -3,12 +3,16 @@
 @media screen and (max-width: 1024px) {
   .JTM-S-Carousel #JTM-S-Carousel-PostsList {
     .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
-      @include typescale-style("headline-large");
-
-      margin-block: 20px;
-      margin-inline: 20px;
       padding-block: 20px;
       padding-inline: 40px;
+
+      h1 {
+        @include typescale-style("display-medium");
+      }
+
+      h4 {
+        @include typescale-style("title-medium");
+      }
     }
   }
 

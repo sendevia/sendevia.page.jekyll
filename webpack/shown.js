@@ -58,25 +58,31 @@ window.onpageshow = () => {
 
   linkElements.forEach(handleLinkDelayRedirection);
 
-  if (carouselElement) {
-    var currentValue = 0;
+  if (carouselElement && carouselPostList && carouselControl.length === 2) {
+    var currentValue = 1;
+    carouselPostList.setAttribute("data-scroll", currentValue);
 
-    function updateValue(newValue) {
-      currentValue = (newValue + 3) % 3;
+    function updateValue(direction) {
+      currentValue += direction;
+      if (currentValue > 3) {
+        currentValue = 1;
+      } else if (currentValue < 1) {
+        currentValue = 3;
+      }
       carouselPostList.setAttribute("data-scroll", currentValue);
     }
 
     carouselControl[0].addEventListener("click", function () {
-      updateValue(currentValue - 1);
+      updateValue(-1);
     });
 
     carouselControl[1].addEventListener("click", function () {
-      updateValue(currentValue + 1);
+      updateValue(1);
     });
 
     carouselPostList.addEventListener("wheel", function (event) {
       event.preventDefault();
-      updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
+      updateValue(event.deltaY > 0 ? 1 : -1);
     });
 
     window.addEventListener(

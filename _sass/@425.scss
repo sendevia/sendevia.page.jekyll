@@ -2,10 +2,8 @@
 
 @media screen and (max-width: 425px) {
   .JTM-S-Carousel #JTM-S-Carousel-PostsList .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
-    @include typescale-style("title-large");
-
-    padding-block: 4px;
-    padding-inline: 12px;
+    padding-block: 80px 20px;
+    padding-inline: 20px;
 
     text-wrap: wrap;
 

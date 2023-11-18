@@ -16,11 +16,9 @@
     .JTM-S-Carousel-Control {
       @include material-symbols($size: 18);
 
-      height: calc(100% - 12px);
-      width: 60px;
+      height: 100%;
+      width: 72px;
 
-      margin-block: 6px;
-      margin-inline: 6px;
       padding: 0;
 
       position: absolute;
@@ -69,21 +67,15 @@
       position: relative;
 
       border-radius: 36px;
-      border: 3px solid transparent;
 
       background-color: var(--md-sys-color-surface-variant);
 
       overflow: hidden;
       transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
 
-      &:nth-of-type(3) {
-        margin-inline-end: 0;
-      }
-
       &:focus,
       &:focus-visible {
         outline: 3px solid var(--md-sys-color-outline);
-        border: 3px solid transparent;
       }
 
       JTM-E-Ripple {
@@ -102,83 +94,33 @@
       #JTM-S-Carousel-PostInfo {
         @include typescale-style("display-large");
 
-        margin-block: 30px;
-        margin-inline: 30px;
-        padding-block: 30px;
-        padding-inline: 70px;
+        padding-block: 40px;
+        padding-inline: 50px;
 
         position: absolute;
         bottom: 0;
         right: 0;
 
-        color: var(--md-ref-palette-secondary10);
-        text-align: center;
-        text-wrap: nowrap;
+        width: 100%;
 
-        border-radius: 30px;
-        border: 1px solid var(--md-ref-palette-neutral90);
+        color: var(--md-sys-color-on-surface);
 
-        background-color: #ffffff8a;
+        background: linear-gradient(transparent, #000000a6);
 
-        backdrop-filter: blur(40px);
         overflow: hidden;
         pointer-events: none;
         transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-      }
-    }
 
-    &[data-scroll="0"] {
-      .JTM-S-Carousel-PostItem {
-        &:nth-of-type(1) {
-          width: calc(100% - 78px * 2);
-
-          background-color: var(--md-sys-color-surface);
-
-          #JTM-S-Carousel-PostImpression {
-            opacity: 1;
-          }
-
-          #JTM-S-Carousel-PostInfo {
-            transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
-          }
-        }
-
-        &:nth-of-type(2),
-        &:nth-of-type(3) {
-          width: 72px;
-
-          pointer-events: none;
-
-          #JTM-S-Carousel-PostImpression {
-            filter: blur(60px);
-          }
-
-          #JTM-S-Carousel-PostInfo {
-            opacity: 0;
-          }
+        h1 {
+          @include typescale-style("display-large");
         }
       }
     }
 
     &[data-scroll="1"] {
       .JTM-S-Carousel-PostItem {
-        &:nth-of-type(1),
-        &:nth-of-type(3) {
-          width: 72px;
-
-          pointer-events: none;
-
-          #JTM-S-Carousel-PostImpression {
-            filter: blur(60px);
-          }
-
-          #JTM-S-Carousel-PostInfo {
-            opacity: 0;
-          }
-        }
-
-        &:nth-of-type(2) {
-          width: calc(100% - 78px * 2);
+        &:nth-of-type(1) {
+          width: calc(100% - 78px);
 
           background-color: var(--md-sys-color-surface);
 
@@ -188,6 +130,33 @@
 
           #JTM-S-Carousel-PostInfo {
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 72px;
+
+          margin-inline-end: 0;
+
+          border: 0 solid transparent;
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
+          width: 0;
+
+          margin-inline-end: 0;
+
+          border: 0 solid transparent;
+
+          opacity: 0;
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
           }
         }
       }
@@ -196,22 +165,22 @@
     &[data-scroll="2"] {
       .JTM-S-Carousel-PostItem {
         &:nth-of-type(1),
-        &:nth-of-type(2) {
-          width: 72px;
+        &:nth-of-type(4) {
+          width: 0;
 
-          pointer-events: none;
+          margin-inline-end: 0;
 
-          #JTM-S-Carousel-PostImpression {
-            filter: blur(60px);
-          }
+          border: 0 solid transparent;
+
+          opacity: 0;
 
           #JTM-S-Carousel-PostInfo {
             opacity: 0;
           }
         }
 
-        &:nth-of-type(3) {
-          width: calc(100% - 78px * 2);
+        &:nth-of-type(2) {
+          width: calc(100% - 78px);
 
           background-color: var(--md-sys-color-surface);
 
@@ -221,6 +190,59 @@
 
           #JTM-S-Carousel-PostInfo {
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: 72px;
+
+          margin-inline-end: 0;
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    &[data-scroll="3"] {
+      .JTM-S-Carousel-PostItem {
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          width: 0;
+
+          margin-inline-end: 0;
+
+          border: 0 solid transparent;
+
+          opacity: 0;
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: calc(100% - 78px);
+
+          background-color: var(--md-sys-color-surface);
+
+          #JTM-S-Carousel-PostImpression {
+            opacity: 1;
+          }
+
+          #JTM-S-Carousel-PostInfo {
+            transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
+          }
+        }
+
+        &:nth-of-type(4) {
+          width: 72px;
+
+          margin-inline-end: 0;
+
+          #JTM-S-Carousel-PostInfo {
+            opacity: 0;
           }
         }
       }
