@@ -618,25 +618,31 @@ window.onpageshow = () => {
 
   _app__WEBPACK_IMPORTED_MODULE_1__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_1__.handleLinkDelayRedirection);
 
-  if (_app__WEBPACK_IMPORTED_MODULE_1__.carouselElement) {
-    var currentValue = 0;
+  if (_app__WEBPACK_IMPORTED_MODULE_1__.carouselElement && _app__WEBPACK_IMPORTED_MODULE_1__.carouselPostList && _app__WEBPACK_IMPORTED_MODULE_1__.carouselControl.length === 2) {
+    var currentValue = 1;
+    _app__WEBPACK_IMPORTED_MODULE_1__.carouselPostList.setAttribute("data-scroll", currentValue);
 
-    function updateValue(newValue) {
-      currentValue = (newValue + 3) % 3;
+    function updateValue(direction) {
+      currentValue += direction;
+      if (currentValue > 3) {
+        currentValue = 1;
+      } else if (currentValue < 1) {
+        currentValue = 3;
+      }
       _app__WEBPACK_IMPORTED_MODULE_1__.carouselPostList.setAttribute("data-scroll", currentValue);
     }
 
     _app__WEBPACK_IMPORTED_MODULE_1__.carouselControl[0].addEventListener("click", function () {
-      updateValue(currentValue - 1);
+      updateValue(-1);
     });
 
     _app__WEBPACK_IMPORTED_MODULE_1__.carouselControl[1].addEventListener("click", function () {
-      updateValue(currentValue + 1);
+      updateValue(1);
     });
 
     _app__WEBPACK_IMPORTED_MODULE_1__.carouselPostList.addEventListener("wheel", function (event) {
       event.preventDefault();
-      updateValue(currentValue + (event.deltaY > 0 ? 1 : -1));
+      updateValue(event.deltaY > 0 ? 1 : -1);
     });
 
     window.addEventListener(
