@@ -107,6 +107,10 @@
 
         background: linear-gradient(transparent, #000000a6);
 
+        @media (prefers-color-scheme: light) {
+          background: linear-gradient(transparent, #ffffffa6);
+        }
+
         overflow: hidden;
         pointer-events: none;
         transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
