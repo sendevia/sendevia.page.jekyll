@@ -11,13 +11,6 @@ mugshot: "/assets/images/avatar.webp"
 
 impression: "/assets/images/100628112_p0.webp"
 
-socialmedia:
-  bilibili: "https://space.bilibili.com/84041790"
-  email: "mailto:me@sendevia.top"
-  github: "https://github.com/Sendevia"
-  osu: "https://osu.ppy.sh/users/9799419"
-  x (Twitter): "https://x.com/sendevia"
-
 defaults:
   - scope:
       path: "_pages"
