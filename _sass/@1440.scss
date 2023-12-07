@@ -2,8 +2,8 @@
 
 @media screen and (max-width: 1440px) {
   #JTM-S-UniversalLayout-ContentFlow {
-    .JTM-S-Title #JTM-S-Title-HeroContainer {
-      #JTM-S-Title-HeroHeadline {
+    .JTM-S-Header #JTM-S-Header-HeroContainer {
+      #JTM-S-Header-HeroHeadline {
         @include typescale-style("display-large", $font-size: 7vw, $line-height: 7vw);
       }
     }

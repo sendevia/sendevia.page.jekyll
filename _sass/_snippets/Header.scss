@@ -1,4 +1,4 @@
-.JTM-S-Title {
+.JTM-S-Header {
   display: grid;
   gap: 8px;
   grid-auto-flow: row;
@@ -13,7 +13,7 @@
 
   transition: 1s;
 
-  #JTM-S-Title-HeroContainer {
+  #JTM-S-Header-HeroContainer {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -34,18 +34,18 @@
     overflow: hidden;
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
 
-    #JTM-S-Title-HeroHeadline {
+    #JTM-S-Header-HeroHeadline {
       @include typescale-style("display-large", $font-size: 110rem, $font-weight: bold, $line-height: 110rem);
       width: 100%;
     }
 
-    #JTM-S-Title-HeroSubtitle {
+    #JTM-S-Header-HeroSubtitle {
       @include typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
       width: 100%;
     }
   }
 
-  #JTM-S-Title-Impression {
+  #JTM-S-Header-Impression {
     grid-column: span 1;
 
     height: 100%;

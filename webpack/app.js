@@ -24,7 +24,7 @@ export const contentContainer = document.querySelector("#JTM-S-UniversalLayout-C
 /**
  * 文章头部印象图
  */
-export const contentPhotograph = document.querySelector("#JTM-S-Title-Impression img");
+export const contentPhotograph = document.querySelector("#JTM-S-Header-Impression img");
 /**
  * 页面导航
  */

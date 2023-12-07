@@ -137,20 +137,20 @@
         display: none;
       }
 
-      .JTM-S-Title {
+      .JTM-S-Header {
         flex-direction: column;
 
         margin: 0;
 
-        #JTM-S-Title-HeroContainer {
+        #JTM-S-Header-HeroContainer {
           grid-column: span 2;
 
-          #JTM-S-Title-HeroHeadline {
+          #JTM-S-Header-HeroHeadline {
             @include typescale-style("display-large", $font-size: 45rem, $line-height: 45rem);
           }
         }
 
-        #JTM-S-Title-Impression {
+        #JTM-S-Header-Impression {
           grid-column: span 2;
         }
       }

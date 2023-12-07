@@ -1,12 +1,12 @@
 <!-- 文章布局 - 文章标题 -->
-<div class="JTM-S-Title">
-  <div id="JTM-S-Title-HeroContainer">
-    <span id="JTM-S-Title-HeroHeadline">{{ page.title }}</span>
+<div class="JTM-S-Header">
+  <div id="JTM-S-Header-HeroContainer">
+    <span id="JTM-S-Header-HeroHeadline">{{ page.title }}</span>
     {%- if page.description and page.description != "" -%}
-    <span id="JTM-S-Title-HeroSubtitle">{{ page.description }}</span>
+    <span id="JTM-S-Header-HeroSubtitle">{{ page.description }}</span>
     {%- endif -%}
   </div>
-  <div id="JTM-S-Title-Impression">
+  <div id="JTM-S-Header-Impression">
     {%- if page.impression and page.impression != "" -%}
     <!-- 头图 - 设置由文章提供 -->
     {%- assign photograph = page.impression -%}
