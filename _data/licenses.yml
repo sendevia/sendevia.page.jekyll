@@ -58,19 +58,19 @@
   repository: https://github.com/jekyll/jemoji
   version: 0.13.0
 
-- name: Google Sans, Google Sans Text
-  license: Unknown
-  repository: https://fonts.google.com/license/googlerestricted
+- name: Plus Jakarta Sans
+  license: Open Font License
+  repository: https://fonts.google.com/specimen/Plus+Jakarta+Sans
   version: latest
 
 - name: Source Code Pro
   license: Open Font License
-  repository: https://github.com/adobe-fonts/source-code-pro
+  repository: https://fonts.google.com/specimen/Source+Code+Pro
   version: latest
 
 - name: Noto Sans SC
   license: Open Font License
-  repository: https://fonts.google.com/noto/specimen/Noto+Sans+SC?query=Noto+Sans+SC
+  repository: https://fonts.google.com/noto/specimen/Noto+Sans+SC
   version: latest
 
 - name: Material Symbols

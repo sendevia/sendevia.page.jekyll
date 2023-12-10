@@ -105,8 +105,8 @@
   --md-sys-shape-corner-none: 0;
 
   // Typography
-  $font-family-google-sans: "Google Sans", "Noto Sans SC", sans-serif;
-  $font-family-google-sans-text: "Google Sans Text", "Noto Sans SC", sans-serif;
+  $level1-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
+  $level2-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
 
   @mixin typescale($name, $family, $weight, $size, $tracking, $line-height) {
     --md-sys-typescale-#{$name}-family: #{$family};
@@ -116,25 +116,25 @@
     --md-sys-typescale-#{$name}-line-height: #{$line-height}rem;
   }
 
-  @include typescale("display-large", $font-family-google-sans, 400, 57, -0.25, 64);
-  @include typescale("display-medium", $font-family-google-sans, 400, 45, 0, 52);
-  @include typescale("display-small", $font-family-google-sans, 400, 36, 0, 44);
+  @include typescale("display-large", $level1-font-family, 400, 57, -0.25, 64);
+  @include typescale("display-medium", $level1-font-family, 400, 45, 0, 52);
+  @include typescale("display-small", $level1-font-family, 400, 36, 0, 44);
 
-  @include typescale("headline-large", $font-family-google-sans, 400, 32, 0, 40);
-  @include typescale("headline-medium", $font-family-google-sans, 400, 28, 0, 36);
-  @include typescale("headline-small", $font-family-google-sans, 400, 24, 0, 32);
+  @include typescale("headline-large", $level1-font-family, 400, 32, 0, 40);
+  @include typescale("headline-medium", $level1-font-family, 400, 28, 0, 36);
+  @include typescale("headline-small", $level1-font-family, 400, 24, 0, 32);
 
-  @include typescale("title-large", $font-family-google-sans, 400, 22, 0, 28);
-  @include typescale("title-medium", $font-family-google-sans-text, 500, 16, 0.15, 24);
-  @include typescale("title-small", $font-family-google-sans-text, 500, 14, 0.1, 20);
+  @include typescale("title-large", $level1-font-family, 400, 22, 0, 28);
+  @include typescale("title-medium", $level2-font-family, 500, 16, 0.15, 24);
+  @include typescale("title-small", $level2-font-family, 500, 14, 0.1, 20);
 
-  @include typescale("body-large", $font-family-google-sans-text, 400, 16, 0.5, 24);
-  @include typescale("body-medium", $font-family-google-sans-text, 400, 14, 0.25, 20);
-  @include typescale("body-small", $font-family-google-sans-text, 400, 12, 0.4, 16);
+  @include typescale("body-large", $level2-font-family, 400, 16, 0.5, 24);
+  @include typescale("body-medium", $level2-font-family, 400, 14, 0.25, 20);
+  @include typescale("body-small", $level2-font-family, 400, 12, 0.4, 16);
 
-  @include typescale("label-large", $font-family-google-sans-text, 500, 14, 0.1, 20);
-  @include typescale("label-medium", $font-family-google-sans-text, 500, 12, 0.5, 16);
-  @include typescale("label-small", $font-family-google-sans-text, 500, 11, 0.5, 16);
+  @include typescale("label-large", $level2-font-family, 500, 14, 0.1, 20);
+  @include typescale("label-medium", $level2-font-family, 500, 12, 0.5, 16);
+  @include typescale("label-small", $level2-font-family, 500, 11, 0.5, 16);
 
   --md-sys-state-dragged-state-layer-opacity: 0.16;
   --md-sys-state-focus-state-layer-opacity: 0.12;
