@@ -140,13 +140,21 @@
       .JTM-S-Header {
         flex-direction: column;
 
+        height: calc(55vh - 64px - 80px);
+
         margin: 0;
 
         #JTM-S-Header-HeroContainer {
           grid-column: span 2;
 
+          padding: 5vw;
+
           #JTM-S-Header-HeroHeadline {
-            @include typescale-style("display-large", $font-size: 45rem, $line-height: 45rem);
+            @include typescale-style("display-large", $font-size: 10vw, $font-weight: 500, $line-height: 10vw);
+          }
+
+          #JTM-S-Header-HeroSubtitle {
+            @include typescale-style("display-small", $font-size: 20rem, $font-weight: 500, $line-height: 20rem);
           }
         }
 

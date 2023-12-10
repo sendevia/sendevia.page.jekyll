@@ -16,30 +16,34 @@
     }
   }
 
-  #JTM-S-UniversalLayout-ContentFlow {
-    .JTM-S-Header {
-      flex-direction: column;
+  .JTM-S-UniversalLayout {
+    #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Header {
+        flex-direction: column;
 
-      #JTM-S-Header-HeroContainer {
-        width: 100%;
+        margin-inline: 12px;
 
-        #JTM-S-Header-HeroHeadline {
-          @include typescale-style("display-large", $font-size: 8vw, $line-height: 8vw);
+        #JTM-S-Header-HeroContainer {
+          width: 100%;
+
+          #JTM-S-Header-HeroHeadline {
+            @include typescale-style("display-large", $font-size: 8vw, $font-weight: 600, $line-height: 8vw);
+          }
+
+          #JTM-S-Header-HeroSubtitle {
+            @include typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
+          }
         }
 
-        #JTM-S-Header-HeroSubtitle {
-          @include typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
+        #JTM-S-Header-Impression {
+          height: 100%;
+          width: 100%;
         }
       }
 
-      #JTM-S-Header-Impression {
-        height: 100%;
-        width: 100%;
+      #JTM-S-UniversalLayout-ContentFiller {
+        padding-inline: 6vw;
       }
-    }
-
-    #JTM-S-UniversalLayout-ContentFiller {
-      padding-inline: 6vw;
     }
   }
 }

@@ -10,37 +10,47 @@
     border-radius: 10px;
   }
 
-  #JTM-S-UniversalLayout-ContentFlow {
-    .JTM-S-Header {
-      #JTM-S-Header-HeroContainer {
-        padding: 30px;
-      }
-    }
+  .JTM-S-UniversalLayout {
+    #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Header {
+        #JTM-S-Header-HeroContainer {
+          padding: 30px;
 
-    #JTM-S-UniversalLayout-ContentFiller {
-      [role="doc-endnotes"]ol {
-        margin-inline: 0;
+          #JTM-S-Header-HeroHeadline {
+            @include typescale-style("display-large", $font-size: 40rem, $font-weight: 700, $line-height: 40rem);
+          }
+
+          #JTM-S-Header-HeroSubtitle {
+            @include typescale-style("display-small", $font-size: 20rem, $font-weight: 400, $line-height: 20rem);
+          }
+        }
+      }
+
+      #JTM-S-UniversalLayout-ContentFiller {
+        [role="doc-endnotes"]ol {
+          margin-inline: 0;
+          padding-inline: 0;
+        }
+      }
+
+      .JTM-S-NoContent {
+        flex-direction: column-reverse;
+
+        h1 {
+          text-align: center;
+        }
+      }
+
+      .JTM-S-QuickJump {
         padding-inline: 0;
       }
-    }
 
-    .JTM-S-NoContent {
-      flex-direction: column-reverse;
+      footer {
+        padding: 0;
 
-      h1 {
-        text-align: center;
-      }
-    }
-
-    .JTM-S-QuickJump {
-      padding-inline: 0;
-    }
-
-    footer {
-      padding: 0;
-
-      #JTM-S-Footer-Descriptions {
-        padding-inline: 24px;
+        #JTM-S-Footer-Descriptions {
+          padding-inline: 24px;
+        }
       }
     }
   }

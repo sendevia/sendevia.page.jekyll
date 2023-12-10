@@ -1,4 +1,7 @@
 .JTM-S-Carousel {
+  margin-block: 12px;
+  margin-inline: 10vw;
+
   user-select: none;
 
   #JTM-S-Carousel-PostsList {
@@ -7,9 +10,6 @@
     align-items: center;
 
     height: 540px;
-
-    margin-block: 12px;
-    margin-inline: 12px;
 
     position: relative;
 
@@ -62,7 +62,7 @@
       height: 100%;
       width: 100%;
 
-      margin-inline-end: 6px;
+      margin-inline-end: 8px;
 
       position: relative;
 
@@ -76,6 +76,12 @@
       &:focus,
       &:focus-visible {
         outline: 3px solid var(--md-sys-color-outline);
+      }
+
+      &:hover {
+        #JTM-S-Carousel-PostInfo {
+          padding-block: 780px 40px;
+        }
       }
 
       JTM-E-Ripple {

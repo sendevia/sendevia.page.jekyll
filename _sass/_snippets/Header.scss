@@ -7,7 +7,7 @@
   height: 540px;
 
   margin-block: 12px;
-  margin-inline: 12px;
+  margin-inline: calc(25% - 152px);
 
   word-break: break-word;
 
@@ -32,16 +32,20 @@
     background-color: var(--md-sys-color-secondary-container);
 
     overflow: hidden;
-    transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+    transition: var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard);
 
     #JTM-S-Header-HeroHeadline {
-      @include typescale-style("display-large", $font-size: 110rem, $font-weight: bold, $line-height: 110rem);
+      @include typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
       width: 100%;
+
+      transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-emphasized);
     }
 
     #JTM-S-Header-HeroSubtitle {
       @include typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
       width: 100%;
+
+      transition: var(--md-sys-motion-duration-extra-medium4) var(--md-sys-motion-easing-emphasized);
     }
   }
 
@@ -63,6 +67,17 @@
 
       object-fit: cover;
       pointer-events: none;
+    }
+  }
+
+  &[spec="page-index"] {
+    #JTM-S-Header-HeroContainer {
+      grid-column: span 2;
+
+      background-blend-mode: soft-light;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }

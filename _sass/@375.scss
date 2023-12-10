@@ -15,11 +15,13 @@
     }
   }
 
-  #JTM-S-UniversalLayout-ContentFlow {
-    .JTM-S-Header {
-      #JTM-S-Header-HeroContainer {
-        #JTM-S-Header-HeroHeadline {
-          word-break: break-word;
+  .JTM-S-UniversalLayout {
+    #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Header {
+        #JTM-S-Header-HeroContainer {
+          #JTM-S-Header-HeroHeadline {
+            word-break: break-word;
+          }
         }
       }
     }

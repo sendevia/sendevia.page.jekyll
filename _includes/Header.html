@@ -1,4 +1,16 @@
 <!-- 文章布局 - 文章标题 -->
+{%- if include.is_index == "true" -%}
+<div class="JTM-S-Header" spec="page-index">
+  {%- if site.impression and site.impression != "" -%} {%- assign photograph = site.impression -%} {%- endif -%}
+  <div id="JTM-S-Header-HeroContainer" style="background-image: url('{{ photograph }}');">
+    <span id="JTM-S-Header-HeroHeadline">欢迎来到 {{ site.title }}</span>
+    {%- if site.description and site.description != "" -%}
+    <span id="JTM-S-Header-HeroSubtitle">{{ site.description }}</span>
+    {%- endif -%}
+  </div>
+</div>
+{%- else -%}
+
 <div class="JTM-S-Header">
   <div id="JTM-S-Header-HeroContainer">
     <span id="JTM-S-Header-HeroHeadline">{{ page.title }}</span>
@@ -22,3 +34,4 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
