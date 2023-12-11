@@ -1,22 +1,24 @@
 // 375px 适配
 
 @media screen and (max-width: 375px) {
-  .JTM-S-Carousel #JTM-S-Carousel-PostsList {
-    height: 260px;
-
-    .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
-      h1 {
-        @include typescale-style("headline-small");
-      }
-
-      h4 {
-        @include typescale-style("body-medium");
-      }
-    }
-  }
-
   .JTM-S-UniversalLayout {
     #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Carousel {
+        #JTM-S-Carousel-PostsList {
+          height: 260px;
+
+          .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+            h1 {
+              @include typescale-style("headline-small");
+            }
+
+            h4 {
+              @include typescale-style("body-medium");
+            }
+          }
+        }
+      }
+
       .JTM-S-Header {
         #JTM-S-Header-HeroContainer {
           #JTM-S-Header-HeroHeadline {

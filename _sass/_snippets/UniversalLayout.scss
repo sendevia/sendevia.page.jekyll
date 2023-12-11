@@ -37,10 +37,8 @@
       opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-ContentFiller {
-      width: 100%;
-
-      padding-block: 16px 36px;
-      padding-inline: calc(50% - 560px);
+      margin-block: 12px;
+      margin-inline: calc(25% - 152px);
 
       & > h1,
       & > h2,
@@ -148,17 +146,6 @@
           }
 
           border-radius: 24px 24px 12px 12px;
-        }
-      }
-
-      & > div:not(.JTM-P-Index) {
-        margin-inline: 12px;
-        padding-block: 12px 6px;
-
-        &.highlighter-rouge {
-          padding-block: 0;
-
-          width: calc(100% - 24px);
         }
       }
 

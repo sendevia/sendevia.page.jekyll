@@ -25,25 +25,6 @@
     }
   }
 
-  .JTM-S-Carousel #JTM-S-Carousel-PostsList {
-    height: 300px;
-
-    margin: 0;
-
-    .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
-      padding-block: 40px 20px;
-      padding-inline: 30px;
-
-      h1 {
-        @include typescale-style("headline-large");
-      }
-
-      h4 {
-        @include typescale-style("body-large");
-      }
-    }
-  }
-
   .JTM-S-CornerFAB {
     margin-block-end: 25px;
     margin-inline-end: 20px;
@@ -128,13 +109,30 @@
       grid-column: auto;
       grid-row: 1/2;
 
-      margin: 0;
-      padding-block-end: 120px;
-      padding-block-start: 115px;
-      padding-inline: 10px;
+      padding-block: 115px 120px;
+      padding-inline: 12px;
 
-      #JTM-S-UniversalLayout-SiteTitle {
-        display: none;
+      .JTM-S-Carousel {
+        margin-inline: 0;
+
+        #JTM-S-Carousel-PostsList {
+          height: 300px;
+
+          margin: 0;
+
+          .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+            padding-block: 40px 20px;
+            padding-inline: 30px;
+
+            h1 {
+              @include typescale-style("headline-large");
+            }
+
+            h4 {
+              @include typescale-style("body-large");
+            }
+          }
+        }
       }
 
       .JTM-S-Header {
@@ -165,8 +163,21 @@
 
       #JTM-S-UniversalLayout-ContentFiller {
         padding: 0 0 36px 0;
+        margin-inline: 0;
 
         background-color: transparent;
+      }
+
+      .JTM-S-QuickJump {
+        margin-inline: 0;
+      }
+
+      .JTM-S-Footer {
+        margin-inline: 0;
+
+        #JTM-S-Footer-Socialmedia {
+          justify-content: space-evenly;
+        }
       }
     }
   }

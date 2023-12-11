@@ -18,6 +18,10 @@
 
   .JTM-S-UniversalLayout {
     #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Carousel {
+        margin-inline: 12px;
+      }
+
       .JTM-S-Header {
         flex-direction: column;
 
@@ -42,7 +46,15 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        padding-inline: 6vw;
+        margin-inline: 12px;
+      }
+
+      .JTM-S-QuickJump {
+        margin-inline: 12px;
+      }
+
+      .JTM-S-Footer {
+        margin-inline: 12px;
       }
     }
   }

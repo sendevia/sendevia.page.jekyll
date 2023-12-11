@@ -1,17 +1,21 @@
 // 425px 适配
 
 @media screen and (max-width: 425px) {
-  .JTM-S-Carousel #JTM-S-Carousel-PostsList .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+  .JTM-S-UniversalLayout {
+    #JTM-S-UniversalLayout-ContentFlow {
+      .JTM-S-Carousel {
+        #JTM-S-Carousel-PostsList {
+          .JTM-S-Carousel-PostItem {
+            #JTM-S-Carousel-PostInfo {
     padding-block: 80px 20px;
     padding-inline: 20px;
 
     text-wrap: wrap;
-
-    border-radius: 10px;
+            }
+          }
+        }
   }
 
-  .JTM-S-UniversalLayout {
-    #JTM-S-UniversalLayout-ContentFlow {
       .JTM-S-Header {
         #JTM-S-Header-HeroContainer {
           padding: 30px;
