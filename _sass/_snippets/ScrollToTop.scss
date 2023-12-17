@@ -1,0 +1,41 @@
+.JTM-S-ScrollToTop {
+  opacity: 0;
+  transition: var(--md-sys-motion-duration-medium4);
+  visibility: hidden;
+  z-index: 21;
+
+  #JTM-S-ScrollToTop-Desktop {
+    @include material-symbols($size: 24);
+
+    height: 66px;
+    width: 66px;
+
+    margin-block-end: calc(183px + 2vh);
+    margin-inline-end: calc(25% - 240px);
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    color: var(--md-sys-color-outline);
+
+    background-color: transparent;
+
+    border-radius: 100px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  #JTM-S-ScrollToTop-Mobile {
+    display: none;
+
+    margin-block-end: 35px;
+    margin-inline-end: 30px;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}

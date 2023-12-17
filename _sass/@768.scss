@@ -25,11 +25,19 @@
     }
   }
 
-  .JTM-S-CornerFAB {
-    margin-block-end: 25px;
-    margin-inline-end: 20px;
+  .JTM-S-ScrollToTop {
+    #JTM-S-ScrollToTop-Desktop {
+      display: none;
+    }
 
-    bottom: 80px;
+    #JTM-S-ScrollToTop-Mobile {
+      display: block;
+
+      margin-block-end: 25px;
+      margin-inline-end: 20px;
+
+      bottom: 80px;
+    }
   }
 
   .JTM-S-LoadingSplash {

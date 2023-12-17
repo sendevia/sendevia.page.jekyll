@@ -70,7 +70,7 @@ const dialogBtnClose = document.querySelector("#dialog-close");
 /**
  * 选择点击后跳转到页面顶端的元素
  */
-export const scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
+export const scrollTopElements = document.querySelectorAll(".JTM-S-ScrollToTop");
 /**
  * 选择需要涟漪效果的元素
  */
@@ -137,7 +137,6 @@ export const handleScroll = () => {
     element.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-      animation: ${scrollY >= 400 ? "popOut var(--md-sys-motion-duration-long2) cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
   });
   lastScrollY = scrollY;

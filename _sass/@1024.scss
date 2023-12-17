@@ -1,6 +1,12 @@
 // 1024px 适配
 
 @media screen and (max-width: 1024px) {
+  .JTM-S-ScrollToTop {
+    #JTM-S-ScrollToTop-Desktop {
+      margin-inline-end: 18px;
+    }
+  }
+
   #JTM-S-WebsiteInformation {
     margin-inline-end: 36px;
   }
@@ -50,11 +56,11 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        margin-inline: 12px 64px;
+        margin-inline: 12px 78px;
       }
 
       .JTM-S-QuickJump {
-        margin-inline: 12px;
+        margin-inline: 12px 78px;
       }
 
       .JTM-S-Footer {
