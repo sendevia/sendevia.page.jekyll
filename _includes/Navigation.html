@@ -67,7 +67,7 @@
 <!-- 导航 - 页面信息 -->
 <dialog class="JTM-C-Dialog" id="JTM-C-Dialog-ModalTips" icon>
   <div class="JTM-C-Dialog-ContentLayout">
-    <span class="JTM-C-Dialog-LeaderIcon">info</span>
+    <span class="JTM-C-Dialog-LeaderIcon">help</span>
 
     <h3 class="JTM-C-Dialog-Headline">{{ page.title }}</h3>
     {%- if page.description and page.description != "" -%}
@@ -78,7 +78,7 @@
       <!-- 日期 -->
       {%- if page.date -%}
       <div class="JTM-C-Dialog-TipItems">
-        <button class="JTM-C-IconButton" spec="tonal" disabled>calendar_month</button>
+        <button class="JTM-C-IconButton" spec="standard" disabled>calendar_month</button>
         <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
       </div>
       {%- endif -%}
@@ -86,14 +86,14 @@
       <!-- 阅读时间 -->
       {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%}
       <div class="JTM-C-Dialog-TipItems">
-        <button class="JTM-C-IconButton" spec="tonal" disabled>schedule</button>
+        <button class="JTM-C-IconButton" spec="standard" disabled>schedule</button>
         <p>估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟</p>
       </div>
 
       <!-- 作者 -->
       {%- if page.author -%}
       <div class="JTM-C-Dialog-TipItems">
-        <button class="JTM-C-IconButton" spec="tonal" disabled>person</button>
+        <button class="JTM-C-IconButton" spec="standard" disabled>person</button>
         <p>作者：{{ page.author }}</p>
       </div>
       {%- endif -%}
@@ -101,7 +101,7 @@
       <!-- 目录分类 -->
       {%- if page.categories.size > 0 -%}
       <div class="JTM-C-Dialog-TipItems">
-        <button class="JTM-C-IconButton" spec="tonal" disabled>category</button>
+        <button class="JTM-C-IconButton" spec="standard" disabled>category</button>
         <p>分类：{{ page.categories }}</p>
       </div>
       {%- endif -%}
@@ -109,7 +109,7 @@
       <!-- 自定义的主题颜色 -->
       {%- if page.color and page.color != "" -%}
       <div class="JTM-C-Dialog-TipItems">
-        <button class="JTM-C-IconButton" spec="tonal" disabled>palette</button>
+        <button class="JTM-C-IconButton" spec="standard" disabled>palette</button>
         <p>主题颜色：{{ page.color }}</p>
       </div>
       {%- endif -%}

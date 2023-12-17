@@ -54,7 +54,7 @@ button.JTM-C-IconButton {
   &[spec="standard"] {
     color: var(--md-sys-color-on-surface-variant);
 
-    background: none;
+    background-color: transparent;
 
     &:hover::after,
     &:focus::after,
