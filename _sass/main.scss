@@ -293,7 +293,7 @@ ol {
       line-height: 0;
 
       &.task-list-item-checkbox {
-        @include material-symbols($size: 24px);
+        @include material-symbols($size: 24);
 
         display: inline-block;
 
