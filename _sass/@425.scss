@@ -7,14 +7,14 @@
         #JTM-S-Carousel-PostsList {
           .JTM-S-Carousel-PostItem {
             #JTM-S-Carousel-PostInfo {
-    padding-block: 80px 20px;
-    padding-inline: 20px;
+              padding-block: 80px 20px;
+              padding-inline: 20px;
 
-    text-wrap: wrap;
+              text-wrap: wrap;
             }
           }
         }
-  }
+      }
 
       .JTM-S-Header {
         #JTM-S-Header-HeroContainer {
@@ -59,17 +59,21 @@
     }
   }
 
-  .JTM-P-Index {
-    #JTM-P-Index-Timeline {
-      .JTM-P-Index-Timeline-L1 {
+  .JTM-P-Posts {
+    #JTM-P-Posts-Timeline {
+      .JTM-P-Posts-Timeline-L1 {
         margin: 0;
       }
 
-      .JTM-P-Index-Timeline-L2 #JTM-P-Index-Timeline-PostCard {
-        width: 100%;
+      .JTM-P-Posts-Timeline-L2 {
+        grid-template-columns: repeat(1, 1fr);
 
-        a {
+        #JTM-P-Posts-Timeline-PostCard {
           width: 100%;
+
+          a {
+            width: 100%;
+          }
         }
       }
     }

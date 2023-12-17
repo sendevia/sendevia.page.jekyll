@@ -182,7 +182,7 @@
     }
   }
 
-  .JTM-P-Index {
+  .JTM-P-Posts {
     align-items: center;
     flex-direction: column-reverse;
 
@@ -192,39 +192,18 @@
     margin-inline: 0;
     padding-block: 0;
 
-    #JTM-P-Index-Timeline {
-      .JTM-P-Index-Timeline-L1 {
-        align-items: center;
-      }
-
-      .JTM-P-Index-Timeline-L2 {
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
+    #JTM-P-Posts-Timeline {
+      .JTM-P-Posts-Timeline-L2 {
+        grid-template-columns: repeat(2, 1fr);
 
         width: 100%;
 
-        #JTM-P-Index-Timeline-PostCard .JTM-P-Index-Timeline-DateDetail {
+        #JTM-P-Posts-Timeline-PostCard .JTM-P-Posts-Timeline-DateDetail {
           left: unset;
           right: 0;
 
           border-radius: 12px 20px 12px 12px;
         }
-      }
-    }
-
-    #JTM-P-Index-PersonIntro {
-      max-width: 360px;
-      min-width: unset;
-      width: 80vw;
-
-      margin: auto;
-
-      position: relative;
-      top: 0;
-
-      .JTM-P-Index-PersonIntro-Section1 {
-        width: 100%;
       }
     }
   }

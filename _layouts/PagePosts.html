@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  {%- include Head.html -%}
+  <body class="JTM-Root" {%- if page.color -%} color="{{ page.color }}" {%- endif -%}>
+    {%- include LoadingSplash.html -%}
+    <!--  -->
+    {%- include UniversalLayout.html has_carousel = "true" -%}
+    <!-- 底部 Fab -->
+    {%- include CornerFAB.html -%}
+  </body>
+</html>

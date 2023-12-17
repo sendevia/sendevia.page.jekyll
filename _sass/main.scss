@@ -326,262 +326,54 @@ ol {
   }
 }
 
-.JTM-P-Index {
+.JTM-P-Posts {
   display: flex;
   flex-direction: row;
   gap: 12px;
   justify-content: space-between;
 
-  #JTM-P-Index-Timeline {
+  #JTM-P-Posts-Timeline {
     display: flex;
     flex-direction: column;
     gap: 18px;
 
-    width: fit-content;
+    width: 100%;
 
     margin-block-start: 18px;
 
-    .JTM-P-Index-Timeline-L1 {
+    .JTM-P-Posts-Timeline-L1 {
       display: inline-flex;
       flex-direction: column;
       gap: 18px;
 
-      margin-inline-start: 10px;
+      #JTM-P-Posts-Timeline-By-Year,
+      #JTM-P-Posts-Timeline-By-Month {
+        padding-inline: 12px;
 
-      #JTM-P-Index-Timeline-By-YearAndMonth {
-        @include typescale-style("body-large");
-
-        display: block;
-
-        height: 24px;
-        width: max-content;
-
-        padding-inline: 6px;
-
-        position: sticky;
-        top: 5px;
-
-        color: var(--md-sys-color-inverse-on-surface);
-        text-align: center;
-
-        border-radius: 6px;
-
-        background-color: var(--md-sys-color-inverse-surface);
-
-        z-index: 12;
-        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+        color: var(--md-sys-color-on-surface);
       }
     }
 
-    .JTM-P-Index-Timeline-L2 {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+    .JTM-P-Posts-Timeline-L2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
 
-      #JTM-P-Index-Timeline-PostCard {
+      #JTM-P-Posts-Timeline-PostCard {
+        height: 100%;
+
         a {
           display: block;
 
-          width: 360px;
+          width: 100%;
 
           position: relative;
-
-          &:focus,
-          &:focus-visible {
-            outline: none;
-          }
-
-          &:focus-within {
-            .JTM-C-Card {
-              outline: 3px solid var(--md-sys-color-outline);
-              border: 3px solid transparent;
-            }
-          }
-
-          .JTM-P-Index-Timeline-DateDetail {
-            @include JTM-E-UserSelect();
-            @include typescale-style("display-small");
-
-            display: block;
-
-            height: 66px;
-            width: 66px;
-
-            margin: 6px;
-
-            position: absolute;
-            left: 0;
-            top: 0;
-
-            color: var(--md-sys-color-on-surface-variant);
-            text-align: center;
-
-            border-radius: 20px 12px 12px;
-
-            background-color: var(--md-sys-color-surface-variant);
-
-            overflow: hidden;
-            pointer-events: none;
-            transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-            z-index: 11;
-
-            #JTM-P-Index-Timeline-DateDetail-Year {
-              position: absolute;
-              left: calc(100% / 2 + 20px);
-
-              opacity: 0;
-              transition: var(--md-sys-motion-duration-shot4);
-            }
-
-            #JTM-P-Index-Timeline-DateDetail-Month {
-              position: absolute;
-              top: calc(100% / 2 + 20px);
-
-              opacity: 0;
-              transition: var(--md-sys-motion-duration-shot4);
-            }
-
-            #JTM-P-Index-Timeline-DateDetail-Slash {
-              position: absolute;
-
-              left: calc(50% - 20px);
-              top: calc(50% + 32px);
-
-              opacity: 0;
-              transition: var(--md-sys-motion-duration-shot4);
-            }
-
-            #JTM-P-Index-Timeline-DateDetail-Day {
-              position: absolute;
-              left: 0;
-              top: 0;
-
-              width: 100%;
-
-              line-height: 66px;
-            }
-          }
 
           img {
             opacity: 1;
             transition: var(--md-sys-motion-duration-medium4);
           }
-
-          &:hover {
-            .JTM-P-Index-Timeline-DateDetail {
-              height: 100%;
-              width: 100%;
-
-              margin: 0;
-              padding: 0;
-
-              #JTM-P-Index-Timeline-DateDetail-Year {
-                display: block;
-
-                height: 40px;
-                width: 100px;
-
-                left: calc(100% / 2 - 50px);
-                top: calc(100% / 2 - 50px);
-
-                font-size: 40px;
-                line-height: 40px;
-
-                opacity: 1;
-                transition: var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized);
-              }
-
-              #JTM-P-Index-Timeline-DateDetail-Month {
-                display: block;
-
-                height: 60px;
-                width: 80px;
-
-                left: calc(100% / 2 - 90px);
-                top: calc(100% / 2);
-
-                font-size: 60px;
-                line-height: 60px;
-
-                opacity: 1;
-                transition: top var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized),
-                  opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
-              }
-
-              #JTM-P-Index-Timeline-DateDetail-Slash {
-                display: block;
-
-                width: 20px;
-
-                left: calc(100% / 2 - 10px);
-                top: calc(100% / 2 + 12px);
-
-                line-height: 40px;
-
-                opacity: 1;
-                transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
-              }
-
-              #JTM-P-Index-Timeline-DateDetail-Day {
-                height: 60px;
-                width: 80px;
-
-                left: calc(100% / 2 + 10px);
-                top: calc(100% / 2);
-
-                font-size: 60px;
-                line-height: 60px;
-              }
-            }
-
-            img {
-              opacity: 0;
-            }
-          }
         }
-      }
-    }
-  }
-
-  #JTM-P-Index-PersonIntro {
-    height: max-content;
-    max-width: 360px;
-    min-width: 240px;
-
-    margin-block-start: 3vw;
-    padding-block-end: 12px;
-    padding-block-start: 24px;
-    padding-inline: 6px;
-
-    position: sticky;
-    top: 3vw;
-
-    .JTM-P-Index-PersonIntro-Section1 {
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 6px;
-
-      #JTM-P-Index-PersonIntro-Mugshot {
-        max-width: 240px;
-        width: 80%;
-
-        -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
-        mask: var(--via-svg-mask) no-repeat 0 / 100%;
-      }
-
-      #JTM-P-Index-PersonIntro-Nickname,
-      #JTM-P-Index-PersonIntro-Introduction {
-        margin-inline-start: 6px;
-        padding-block: 6px;
-        padding-inline: 12px;
-
-        color: var(--md-sys-color-on-surface);
-
-        border-radius: 12px;
-
-        background-color: var(--md-sys-color-surface-container-low);
       }
     }
   }
