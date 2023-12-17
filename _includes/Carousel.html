@@ -9,6 +9,10 @@
     <a class="JTM-S-Carousel-PostItem" href="{{ post.url | prepend: site.baseurl }}">
       <img id="JTM-S-Carousel-PostImpression" src="{{ post.impression }}" alt="{{ post.title }}" />
       <div id="JTM-S-Carousel-PostInfo">
+        <div class="JTM-S-Carousel-PostInfo-FeaturedTip">
+          <span id="JTM-S-Carousel-PostInfo-FeaturedTip-Icon">editor_choice</span>
+          <p id="JTM-S-Carousel-PostInfo-FeaturedTip-Description">精选文章</p>
+        </div>
         <h1>{{ post.title }}</h1>
         <h4>{{ post.description }}</h4>
       </div>

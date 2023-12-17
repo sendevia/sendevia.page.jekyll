@@ -124,6 +124,27 @@
         h1 {
           @include typescale-style("display-large");
         }
+
+        .JTM-S-Carousel-PostInfo-FeaturedTip {
+          display: flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 4px;
+
+          padding: 4px 8px 4px 6px;
+
+          width: max-content;
+
+          color: var(--md-sys-color-inverse-on-surface);
+
+          border-radius: 6px;
+
+          background-color: var(--md-sys-color-inverse-surface);
+
+          #JTM-S-Carousel-PostInfo-FeaturedTip-Icon {
+            @include material-symbols($size: 18);
+          }
+        }
       }
     }
 
