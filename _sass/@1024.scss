@@ -1,6 +1,10 @@
 // 1024px 适配
 
 @media screen and (max-width: 1024px) {
+  #JTM-S-WebsiteInformation {
+    margin-inline-end: 36px;
+  }
+
   .JTM-S-Carousel #JTM-S-Carousel-PostsList {
     .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
       padding-block: 40px 20px;
@@ -46,7 +50,7 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        margin-inline: 12px;
+        margin-inline: 12px 64px;
       }
 
       .JTM-S-QuickJump {

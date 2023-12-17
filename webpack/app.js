@@ -62,7 +62,7 @@ export const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择可以开启模态提示框的元素
  */
-const modalTipsIcon = document.querySelectorAll(".JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const modalTipsIcon = document.querySelectorAll("#JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
 /**
  * 选择可以关闭模态提示框的元素
  */
@@ -77,10 +77,6 @@ export const scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
 export const rippleElements = document.querySelectorAll(
   `button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
 );
-/**
- * 选择页面右上角的网站信息
- */
-export const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
 /**
  * 选择所有a元素
  */

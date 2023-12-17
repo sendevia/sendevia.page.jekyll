@@ -17,7 +17,6 @@ import {
   rippleElements,
   scrollTopElements,
   toggleNavigationDrawer,
-  websiteInfomation,
 } from "./app";
 
 window.onpageshow = () => {
@@ -50,11 +49,6 @@ window.onpageshow = () => {
   }
 
   initModal();
-
-  if (websiteInfomation) {
-    const websiteInfomationWidth = websiteInfomation.clientWidth;
-    websiteInfomation.style.width = websiteInfomationWidth + "px";
-  }
 
   linkElements.forEach(handleLinkDelayRedirection);
 
