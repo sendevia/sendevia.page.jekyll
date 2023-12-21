@@ -1,4 +1,6 @@
 .JTM-S-ScrollToTop {
+  position: relative;
+
   opacity: 0;
   transition: var(--md-sys-motion-duration-medium4);
   visibility: hidden;
