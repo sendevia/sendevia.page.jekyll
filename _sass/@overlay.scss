@@ -9,6 +9,15 @@
 }
 
 [JTM-O-OnSiteLoaded="true"] {
+  .JTM-C-Navigation {
+    #JTM-C-Navigation-FAB {
+      opacity: 1;
+    }
+
+    #JTM-C-Navigation-Destinations {
+      opacity: 1;
+    }
+  }
   .JTM-S-LoadingSplash {
     opacity: 0;
   }
