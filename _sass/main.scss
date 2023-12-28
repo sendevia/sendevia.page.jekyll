@@ -325,6 +325,102 @@ ol {
   }
 }
 
+.JTM-P-Index {
+  margin-block-start: 24px;
+
+  #JTM-P-Index-CardSet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    #JTM-P-Index-SummaryCard {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 12px;
+      grid-column: span 3;
+
+      padding-block: 24px;
+      padding-inline: 30px;
+
+      border-radius: var(--md-sys-shape-corner-extra-large);
+      border: 1px solid var(--md-sys-color-outline-variant);
+
+      background-color: var(--md-sys-color-surface-container-low);
+
+      .JTM-P-Index-SummaryTitle {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        #JTM-P-Index-SummaryTitle-Leader {
+          @include material-symbols($size: 30);
+        }
+
+        #JTM-P-Index-SummaryTitle-TitleContainer {
+          .JTM-P-Index-SummaryTitle-Date {
+            color: var(--md-sys-color-on-surface-variant);
+          }
+
+          .JTM-P-Index-SummaryTitle-Content {
+            letter-spacing: 1.3px;
+          }
+        }
+      }
+
+      .JTM-P-Index-Summary {
+        letter-spacing: 1.3px;
+
+        #JTM-P-Index-ReadMore {
+          display: inline-flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 3px;
+
+          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+
+          &::after {
+            @include material-symbols("east", $size: 18);
+          }
+
+          &:hover {
+            gap: 12px;
+          }
+        }
+      }
+    }
+
+    .JTM-P-Index-Card {
+      width: 100%;
+      height: 100%;
+
+      &:nth-of-type(1) .JTM-C-Card-Impression {
+        background-color: #5574a9;
+      }
+
+      &:nth-of-type(2) .JTM-C-Card-Impression {
+        background-color: #a95586;
+      }
+
+      &:nth-of-type(3) .JTM-C-Card-Impression {
+        background-color: #a97155;
+      }
+
+      &:nth-of-type(4) .JTM-C-Card-Impression {
+        background-color: #7255a9;
+      }
+
+      &:nth-of-type(5) .JTM-C-Card-Impression {
+        background-color: #82a955;
+      }
+
+      &:nth-of-type(6) .JTM-C-Card-Impression {
+        background-color: #a95555;
+      }
+    }
+  }
+}
+
 .JTM-P-Posts {
   display: flex;
   flex-direction: row;

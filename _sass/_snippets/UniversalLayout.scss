@@ -38,28 +38,10 @@
     #JTM-S-UniversalLayout-ContentFiller {
       margin-block-end: 8vh;
       margin-inline: calc(25% - 152px);
-
-      & > h1,
-      & > h2,
-      & > h3,
-      & > h4,
-      & > h5,
-      & > h6 {
-        margin-block-end: 6px;
-        padding: 6px 12px;
-
-        letter-spacing: 0;
-      }
-
-      h1 {
-        padding: 12px;
-
-        cursor: pointer;
-      }
+      padding-inline: 6px;
 
       & > p {
-        margin-inline: 12px;
-        padding-block: 6px 6px;
+        padding-block: 6px;
 
         & > img {
           border-radius: 6px;
@@ -68,7 +50,7 @@
 
       & > blockquote {
         margin-block: 12px;
-        margin-inline: 12px;
+        margin-inline: 0;
         padding: 24px;
 
         color: var(--md-sys-color-on-tertiary-container);

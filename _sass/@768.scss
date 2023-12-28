@@ -190,6 +190,16 @@
     }
   }
 
+  .JTM-P-Index {
+    #JTM-P-Index-CardSet {
+      grid-template-columns: repeat(2, 1fr);
+
+      #JTM-P-Index-SummaryCard {
+        grid-column: span 2;
+      }
+    }
+  }
+
   .JTM-P-Posts {
     align-items: center;
     flex-direction: column-reverse;

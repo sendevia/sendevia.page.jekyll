@@ -8,57 +8,74 @@ layout: PageIndex
 ---
 
 <div class="JTM-P-Index">
-  <div id="JTM-P-Index-Timeline">
-    {%- assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" -%} {%- for year in posts_by_year -%}
-    <!-- {{ year.name }} 年 -->
-    <div class="JTM-P-Index-Timeline-L1">
-      {%- assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%-m'" -%} {%- for month in posts_by_month -%}
-      <!-- {{ year.name }} 年 {{ month.name }} 月 -->
-      <div id="JTM-P-Index-Timeline-By-YearAndMonth">
-        <p>{{ year.name }} 年 {{ month.name }} 月</p>
-      </div>
-      <div class="JTM-P-Index-Timeline-L2">
-        {%- assign posts_by_day = month.items | group_by_exp:"post", "post.date | date: '%-d'" -%} {%- for day in posts_by_day -%} {%- for post in day.items -%}
-        <!-- {{ year.name }} 年 {{ month.name }} 月 {{ day.name }} 日 -->
-        <div id="JTM-P-Index-Timeline-PostCard">
-          <a href="{{ post.url }}">
-            <div class="JTM-C-Card" spec="clear">
-              <div class="JTM-C-Card-Impression">
-                <div class="JTM-P-Index-Timeline-DateDetail">
-                  <span id="JTM-P-Index-Timeline-DateDetail-Year">{{ year.name }}</span>
-                  <span id="JTM-P-Index-Timeline-DateDetail-Month">{{ month.name }}</span>
-                  <span id="JTM-P-Index-Timeline-DateDetail-Slash">/</span>
-                  <span id="JTM-P-Index-Timeline-DateDetail-Day">{{ day.name }}</span>
-                </div>
-                {%- if post.impression and post.impression != "" -%}
-                <!-- 头图 - 设置由文章提供 -->
-                {%- assign photograph = post.impression -%} {%- elsif site.impression -%}
-                <!-- 头图 - 设置由全局设定提供 -->
-                {%- assign photograph = site.impression -%} {%- else -%}
-                <!-- 头图 - 不设置头图 -->
-                {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
-                <img src="{{ photograph }}" alt="{{ post.title }}的封面" loading="lazy" />
-                {%- endif -%}
-              </div>
-              <div class="JTM-C-Card-Supporting">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.description }}</p>
-              </div>
-            </div>
-          </a>
+  <div id="JTM-P-Index-CardSet">
+    {% assign latest_post = site.posts | first %}
+    <div id="JTM-P-Index-SummaryCard">
+      <div class="JTM-P-Index-SummaryTitle">
+        <span id="JTM-P-Index-SummaryTitle-Leader">fiber_new</span>
+        <div id="JTM-P-Index-SummaryTitle-TitleContainer">
+          <p class="JTM-P-Index-SummaryTitle-Date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
+          <h2 class="JTM-P-Index-SummaryTitle-Content">{{ latest_post.title }}</h2>
         </div>
-        {%- endfor -%} {%- endfor -%}
       </div>
-      {%- endfor -%}
+      <p class="JTM-P-Index-Summary">
+        {{ latest_post.content | strip_html | truncatewords:42, "..." }} <a id="JTM-P-Index-ReadMore" href="{{ latest_post.url }}">详细阅读</a>
+      </p>
     </div>
-    {%- endfor -%}
-  </div>
 
-  <div id="JTM-P-Index-PersonIntro">
-    <div class="JTM-P-Index-PersonIntro-Section1">
-      <img src="{{ site.mugshot }}" alt="page.author" id="JTM-P-Index-PersonIntro-Mugshot" />
-      <h3 id="JTM-P-Index-PersonIntro-Nickname">{{ site.author }}</h3>
-      <p id="JTM-P-Index-PersonIntro-Introduction">哈喽！欢迎访问我的博客小站！</p>
-    </div>
+    <a href="/" class="JTM-P-Index-Card">
+      <div class="JTM-C-Card" spec="clear">
+        <div class="JTM-C-Card-Impression">
+          <span>sdk</span>
+        </div>
+        <div class="JTM-C-Card-Supporting">
+          <h3>开发的项目</h3>
+        </div>
+      </div>
+    </a>
+
+    <a href="/" class="JTM-P-Index-Card">
+      <div class="JTM-C-Card" spec="clear">
+        <div class="JTM-C-Card-Impression">
+          <span>tactic</span>
+        </div>
+        <div class="JTM-C-Card-Supporting">
+          <h3>踩过的坑</h3>
+        </div>
+      </div>
+    </a>
+
+    <a href="/" class="JTM-P-Index-Card">
+      <div class="JTM-C-Card" spec="clear">
+        <div class="JTM-C-Card-Impression">
+          <span>emoji_nature</span>
+        </div>
+        <div class="JTM-C-Card-Supporting">
+          <h3>摄影作品</h3>
+        </div>
+      </div>
+    </a>
+
+    <a href="/" class="JTM-P-Index-Card">
+      <div class="JTM-C-Card" spec="clear">
+        <div class="JTM-C-Card-Impression">
+          <span>egg</span>
+        </div>
+        <div class="JTM-C-Card-Supporting">
+          <h3>隐藏起来的秘密</h3>
+        </div>
+      </div>
+    </a>
+
+    <a href="/posts" class="JTM-P-Index-Card">
+      <div class="JTM-C-Card" spec="clear">
+        <div class="JTM-C-Card-Impression">
+          <span>note_stack</span>
+        </div>
+        <div class="JTM-C-Card-Supporting">
+          <h3>还有更多...</h3>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
