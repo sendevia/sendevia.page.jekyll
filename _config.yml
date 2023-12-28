@@ -1,6 +1,7 @@
-version: "23.1127.0"
+version: "23.1229.0"
 
 title: "sendevia 的博客"
+description: "Contrary to common opinion, less is more. Only by concentrating on the few important and vital things, and refusing to worry over the mass of trivial ones, can we find happiness."
 baseurl: ""
 permalink: "/:title"
 locale: "zh_CN"

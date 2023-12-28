@@ -43,7 +43,6 @@ const closeModal = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   generateColorPalette: () => (/* binding */ generateColorPalette),
-/* harmony export */   generateImagePalette: () => (/* binding */ generateImagePalette),
 /* harmony export */   paletteProperty: () => (/* binding */ paletteProperty),
 /* harmony export */   setPaletteProperty: () => (/* binding */ setPaletteProperty)
 /* harmony export */ });
@@ -91,16 +90,6 @@ function setPaletteProperty(paletteProvider) {
     }
     updateVariables(cssTokens);
   }
-}
-
-/**
- * 根据图片生成调色板
- * @param image 输入一张图片
- * @returns 返回一个完整的调色板
- */
-async function generateImagePalette(image) {
-  const source = await (0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.sourceColorFromImage)(image);
-  return generateColorPalette(source);
 }
 
 /**
@@ -198,12 +187,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   rippleElements: () => (/* binding */ rippleElements),
 /* harmony export */   rotationListItemsBullet: () => (/* binding */ rotationListItemsBullet),
 /* harmony export */   scrollTopElements: () => (/* binding */ scrollTopElements),
-/* harmony export */   themeImageProvider: () => (/* binding */ themeImageProvider),
 /* harmony export */   themeRoot: () => (/* binding */ themeRoot),
 /* harmony export */   toggleDim: () => (/* binding */ toggleDim),
 /* harmony export */   toggleNavigationDrawer: () => (/* binding */ toggleNavigationDrawer),
-/* harmony export */   updateSnackbarPositions: () => (/* binding */ updateSnackbarPositions),
-/* harmony export */   websiteInfomation: () => (/* binding */ websiteInfomation)
+/* harmony export */   updateSnackbarPositions: () => (/* binding */ updateSnackbarPositions)
 /* harmony export */ });
 /* harmony import */ var _shown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shown */ "./webpack/shown.js");
 /* harmony import */ var _loaded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loaded */ "./webpack/loaded.js");
@@ -215,10 +202,6 @@ __webpack_require__.r(__webpack_exports__);
 ////////////////////
 //常用常量配置
 ///////////////////
-/**
- * 需要被取色的图片
- */
-const themeImageProvider = new Image();
 /**
  * 需要以此生成调色盘的hex颜色
  */
@@ -234,7 +217,7 @@ const contentContainer = document.querySelector("#JTM-S-UniversalLayout-ContentF
 /**
  * 文章头部印象图
  */
-const contentPhotograph = document.querySelector("#JTM-S-Title-Impression img");
+const contentPhotograph = document.querySelector("#JTM-S-Header-Impression img");
 /**
  * 页面导航
  */
@@ -272,7 +255,7 @@ const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
 /**
  * 选择可以开启模态提示框的元素
  */
-const modalTipsIcon = document.querySelectorAll(".JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const modalTipsIcon = document.querySelectorAll("#JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
 /**
  * 选择可以关闭模态提示框的元素
  */
@@ -280,7 +263,7 @@ const dialogBtnClose = document.querySelector("#dialog-close");
 /**
  * 选择点击后跳转到页面顶端的元素
  */
-const scrollTopElements = document.querySelectorAll(".JTM-S-CornerFAB");
+const scrollTopElements = document.querySelectorAll(".JTM-S-ScrollToTop");
 /**
  * 选择需要涟漪效果的元素
  */
@@ -288,14 +271,10 @@ const rippleElements = document.querySelectorAll(
   `button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
 );
 /**
- * 选择页面右上角的网站信息
- */
-const websiteInfomation = document.querySelector(".JTM-S-WebsiteInformation");
-/**
- * 选择所有a元素
+ * 选择需要延迟跳转的a元素
  */
 const linkElements = document.querySelectorAll(
-  "#JTM-S-Carousel-PostsList a, #JTM-C-Navigation-Destinations a, #JTM-P-Index-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a"
+  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
 );
 /**
  * Carousel元素
@@ -351,7 +330,6 @@ const handleScroll = () => {
     element.style.cssText = `
       opacity: ${scrollY >= 400 ? "1" : "0"};
       visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-      animation: ${scrollY >= 400 ? "popOut var(--md-sys-motion-duration-long2) cubic-bezier(0.4, 1, 0.6, 0.6)" : ""}
     `;
   });
   lastScrollY = scrollY;
@@ -549,19 +527,9 @@ window.onload = () => {
   setTimeout(() => {
     (0,_app__WEBPACK_IMPORTED_MODULE_2__.removeLoadScreen)();
 
-    setTimeout(() => {
-      if (_app__WEBPACK_IMPORTED_MODULE_2__.customThemeColor) {
-        (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_2__.customThemeColor));
-      } else {
-        if (_app__WEBPACK_IMPORTED_MODULE_2__.currentPage === "/") {
-          const firstCarouselItem = document.querySelector("#JTM-S-Carousel-PostsList > a:nth-of-type(1) > img");
-          _app__WEBPACK_IMPORTED_MODULE_2__.themeImageProvider.src = firstCarouselItem.src;
-        } else {
-          _app__WEBPACK_IMPORTED_MODULE_2__.themeImageProvider.src = _app__WEBPACK_IMPORTED_MODULE_2__.contentPhotograph.src;
-        }
-        (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateImagePalette)(_app__WEBPACK_IMPORTED_MODULE_2__.themeImageProvider);
-      }
-    }, 1000);
+    if (_app__WEBPACK_IMPORTED_MODULE_2__.customThemeColor) {
+      (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(_app__WEBPACK_IMPORTED_MODULE_2__.customThemeColor));
+    }
   }, 500);
 };
 
@@ -610,11 +578,6 @@ window.onpageshow = () => {
   }
 
   (0,_app__WEBPACK_IMPORTED_MODULE_1__.initModal)();
-
-  if (_app__WEBPACK_IMPORTED_MODULE_1__.websiteInfomation) {
-    const websiteInfomationWidth = _app__WEBPACK_IMPORTED_MODULE_1__.websiteInfomation.clientWidth;
-    _app__WEBPACK_IMPORTED_MODULE_1__.websiteInfomation.style.width = websiteInfomationWidth + "px";
-  }
 
   _app__WEBPACK_IMPORTED_MODULE_1__.linkElements.forEach(_app__WEBPACK_IMPORTED_MODULE_1__.handleLinkDelayRedirection);
 
