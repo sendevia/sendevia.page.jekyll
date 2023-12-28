@@ -9,7 +9,8 @@ timezone: "Asia/Shanghai"
 author: "sendevia"
 mugshot: "/assets/images/avatar.webp"
 
-impression: "/assets/images/113883534_p0.webp"
+color: "#6b76d9"
+impression: "/assets/images/109009578_p0.webp"
 
 defaults:
   - scope:
