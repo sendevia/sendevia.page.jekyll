@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
   {%- include Head.html no_javascript = "true" -%}
-  <body class="JTM-Root" {%- if page.color -%} color="{{ page.color }}" {%- endif -%}>
+  <body class="JTM-Root" color="{{ page.color | default: site.color }}">
     {%- include 404NotFound.html -%}
   </body>
 </html>

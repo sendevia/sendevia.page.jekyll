@@ -1,4 +1,4 @@
-import { CorePalette, hexFromArgb, sourceColorFromImage } from "@material/material-color-utilities";
+import { CorePalette, hexFromArgb } from "@material/material-color-utilities";
 
 /**
  * 调色板提供器
@@ -41,16 +41,6 @@ export function setPaletteProperty(paletteProvider) {
     }
     updateVariables(cssTokens);
   }
-}
-
-/**
- * 根据图片生成调色板
- * @param image 输入一张图片
- * @returns 返回一个完整的调色板
- */
-export async function generateImagePalette(image) {
-  const source = await sourceColorFromImage(image);
-  return generateColorPalette(source);
 }
 
 /**

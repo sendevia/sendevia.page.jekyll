@@ -6,10 +6,6 @@ import { openModal, closeModal } from "./_components/modal";
 //常用常量配置
 ///////////////////
 /**
- * 需要被取色的图片
- */
-export const themeImageProvider = new Image();
-/**
  * 需要以此生成调色盘的hex颜色
  */
 export const customThemeColor = document.body.getAttribute("color");
@@ -81,7 +77,7 @@ export const rippleElements = document.querySelectorAll(
  * 选择需要延迟跳转的a元素
  */
 export const linkElements = document.querySelectorAll(
-  ".JTM-P-Index-T2-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
+  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
 );
 /**
  * Carousel元素
