@@ -33,7 +33,10 @@
   }
 
   .JTM-C-Card-Supporting {
+    color: var(--md-sys-color-on-surface);
+
     pointer-events: none;
+    transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
   }
 
   &[spec="clear"] {
@@ -133,6 +136,12 @@
       .JTM-C-Card-Supporting {
         transform: translateY(0%);
       }
+    }
+  }
+
+  &:hover {
+    .JTM-C-Card-Supporting {
+      color: var(--md-sys-color-surface);
     }
   }
 }
