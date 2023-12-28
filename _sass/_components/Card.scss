@@ -10,10 +10,26 @@
   overflow: hidden;
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
-  img {
-    @include JTM-E-UserSelect();
+  .JTM-C-Card-Impression {
+    img {
+      @include JTM-E-UserSelect();
 
-    display: block;
+      display: block;
+    }
+
+    span {
+      @include material-symbols($size: 72);
+
+      width: 100%;
+
+      padding-block: 60px;
+
+      color: var(--md-sys-color-on-tertiary);
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 25, "opsz" 24;
+      text-align: center;
+
+      mix-blend-mode: luminosity;
+    }
   }
 
   .JTM-C-Card-Supporting {
