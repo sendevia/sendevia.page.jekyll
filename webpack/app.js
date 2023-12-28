@@ -78,10 +78,10 @@ export const rippleElements = document.querySelectorAll(
   `button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
 );
 /**
- * 选择所有a元素
+ * 选择需要延迟跳转的a元素
  */
 export const linkElements = document.querySelectorAll(
-  "#JTM-S-Carousel-PostsList a, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, #JTM-S-UniversalLayout-ContentFlow > div.JTM-S-QuickJump a"
+  ".JTM-P-Index-T2-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
 );
 /**
  * Carousel元素
