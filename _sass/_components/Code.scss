@@ -14,7 +14,7 @@ code.language-plaintext {
   color: var(--md-sys-color-on-tertiary);
   word-break: break-word;
 
-  border-radius: 4px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
 
   background-color: var(--md-sys-color-tertiary);
 
@@ -34,17 +34,17 @@ div.language-plaintext.highlighter-rouge {
 div.highlighter-rouge {
   display: inline-block;
 
+  position: relative;
+
   min-height: 46px;
   width: 100%;
 
   margin-block: 6px 3px;
 
-  position: relative;
-
   color: var(--md-ref-palette-neutral98);
   word-break: break-word;
 
-  border-radius: 10px;
+  border-radius: var(--md-sys-shape-corner-medium);
 
   overflow: hidden;
 
@@ -64,19 +64,19 @@ div.highlighter-rouge {
 
         margin-inline: 0;
 
-        border-radius: 0;
+        border-radius: var(--md-sys-shape-corner-none);
         border: none;
 
         box-shadow: none;
 
         .rouge-gutter {
+          position: absolute;
+          left: 0;
+
           width: 35px;
 
           padding-block: 11px;
           padding-inline: 12px;
-
-          position: absolute;
-          left: 0;
 
           background-color: #272822;
 
@@ -102,12 +102,12 @@ div.highlighter-rouge {
         }
 
         .rouge-code {
+          position: relative;
+
           padding-block: 11px;
           padding-inline: 46px 12px;
 
-          position: relative;
-
-          border-radius: 0 10px 10px 0;
+          border-radius: var(--md-sys-shape-corner-large-end);
           border: none;
 
           background-color: #272822;

@@ -18,7 +18,7 @@
 
   margin: 4px;
 
-  border-radius: 100%;
+  border-radius: var(--md-sys-shape-corner-full);
   border: 4px solid var(--md-sys-color-primary);
 
   -webkit-mask: conic-gradient(#000 var(--JTM-C-ProgressIndicator-Deg), transparent 0deg);

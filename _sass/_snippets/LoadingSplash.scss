@@ -5,20 +5,20 @@
   gap: 10px;
   justify-content: center;
 
-  height: calc(100% - 20px);
-  width: calc(100% - 100px);
-
   position: fixed;
   left: 90px;
   top: 10px;
 
+  height: calc(100% - 20px);
+  width: calc(100% - 100px);
+
   color: var(--md-sys-color-on-surface);
 
-  border-radius: 12px;
+  border-radius: var(--md-sys-shape-corner-medium);
 
   background-color: var(--md-sys-color-surface-container-high);
 
   opacity: 1;
-  transition: var(--md-sys-motion-duration-long1);
+  transition: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
   z-index: 100;
 }

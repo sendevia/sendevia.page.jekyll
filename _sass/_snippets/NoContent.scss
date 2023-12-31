@@ -11,6 +11,6 @@
   }
 
   span {
-    @include material-symbols($size: 120, $line-height: 120);
+    @include material-symbols($size: 120);
   }
 }

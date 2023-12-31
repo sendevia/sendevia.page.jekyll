@@ -11,13 +11,13 @@
   gap: 6px;
   justify-content: space-between;
 
+  position: fixed;
+  top: -64px;
+
   height: 64px;
   width: 100%;
 
   padding: 8px 4px;
-
-  position: fixed;
-  top: -64px;
 
   overflow: hidden;
   transition: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard);
@@ -49,9 +49,9 @@
     text-transform: uppercase;
 
     span {
-      width: calc(100% - 100px);
-
       position: absolute;
+
+      width: calc(100% - 100px);
 
       line-height: 1;
       text-overflow: ellipsis;

@@ -53,7 +53,7 @@ body {
   }
 
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: var(--md-sys-shape-corner-small);
     border: 3px solid transparent;
 
     background-clip: content-box;
@@ -71,7 +71,6 @@ body {
 
   ::selection {
     color: var(--md-sys-color-surface-variant);
-    -webkit-text-stroke: var(--md-sys-color-surface-variant);
 
     background-color: var(--md-sys-color-on-surface-variant);
   }
@@ -99,7 +98,7 @@ body {
 
   :disabled,
   [disabled] {
-    @include JTM-E-UserSelect();
+    @include JTM-E-UserSelect(none);
 
     box-shadow: none;
     filter: grayscale(1);
@@ -112,7 +111,7 @@ body {
     left: calc(var(--JTM-E-Ripple-PosX) * 1px);
     top: calc(var(--JTM-E-Ripple-PosY) * 1px);
 
-    border-radius: 50%;
+    border-radius: var(--md-sys-shape-corner-full);
 
     background-color: var(--md-sys-color-primary);
 
@@ -212,7 +211,7 @@ hr {
   &[spec="wave"] {
     height: 15px;
 
-    border-radius: 10px;
+    border-radius: var(--md-sys-shape-corner-small);
     border: none;
 
     background: var(--md-sys-color-outline-variant);
@@ -234,22 +233,22 @@ ul {
   li {
     @include typescale-style("body-large");
 
+    position: relative;
+
     margin-block-end: 5px;
     margin-inline-start: 24px;
-
-    position: relative;
 
     &::before {
       content: "";
 
       display: inline-block;
 
-      height: 18px;
-      width: 18px;
-
       position: absolute;
       left: -24px;
       top: 5px;
+
+      height: 18px;
+      width: 18px;
 
       margin-inline-end: 6px;
 
@@ -267,9 +266,9 @@ ol {
   li {
     @include typescale-style("body-large");
 
-    margin-block-end: 5px;
-
     position: relative;
+
+    margin-block-end: 5px;
 
     .rouge-code {
       pre {
@@ -341,7 +340,7 @@ ol {
       grid-column: span 3;
 
       padding-block: 24px;
-      padding-inline: 30px;
+      padding-inline: 28px;
 
       border-radius: var(--md-sys-shape-corner-extra-large);
       border: 1px solid var(--md-sys-color-outline-variant);
@@ -369,13 +368,16 @@ ol {
       }
 
       .JTM-P-Index-Summary {
-        letter-spacing: 1.3px;
+        letter-spacing: 1.1px;
+        text-indent: 1.1em;
 
         #JTM-P-Index-ReadMore {
           display: inline-flex;
           align-items: center;
           flex-wrap: nowrap;
           gap: 3px;
+
+          text-indent: initial;
 
           transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
 

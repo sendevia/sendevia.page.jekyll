@@ -40,7 +40,7 @@
   }
 
   &[spec="clear"] {
-    border-radius: 24px;
+    border-radius: var(--md-sys-shape-corner-extra-large);
 
     background-color: var(--md-sys-color-surface-container-low);
 
@@ -57,7 +57,7 @@
     .JTM-C-Card-Impression {
       position: relative;
 
-      border-radius: 0 0 24px 24px;
+      border-radius: var(--md-sys-shape-corner-extra-large-bottom);
 
       background-color: var(--md-sys-color-inverse-primary);
 
@@ -88,16 +88,16 @@
     }
 
     &:active {
-      border-radius: 44px;
+      border-radius: calc(2 * var(--md-sys-shape-corner-extra-large));
 
-      transition: 0.2s;
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
     }
   }
 
   &[spec="focus"] {
     height: 240px;
 
-    border-radius: 24px;
+    border-radius: var(--md-sys-shape-corner-extra-large);
 
     background-color: var(--md-sys-color-primary);
 
@@ -107,7 +107,7 @@
       height: 100%;
 
       object-fit: cover;
-      transition: 0.2s;
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
     }
 
     .JTM-C-Card-Supporting {
@@ -119,7 +119,7 @@
       color: var(--md-sys-color-on-primary);
 
       transform: translateY(calc(100% + 20px));
-      transition: 0.4s;
+      transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
     }
 
     JTM-E-Ripple {

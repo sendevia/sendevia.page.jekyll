@@ -33,19 +33,19 @@
     #JTM-S-ScrollToTop-Mobile {
       display: block;
 
+      bottom: 80px;
+
       margin-block-end: 25px;
       margin-inline-end: 20px;
-
-      bottom: 80px;
     }
   }
 
   .JTM-S-LoadingSplash {
-    height: calc(100% - 164px);
-    width: calc(100% - 20px);
-
     left: 10px;
     top: 74px;
+
+    height: calc(100% - 164px);
+    width: calc(100% - 20px);
   }
 
   .JTM-C-Navigation {
@@ -98,13 +98,13 @@
       width: 100%;
 
       #JTM-S-QuickJump-Previous {
-        margin-inline-end: 0;
         margin-block-end: 3px;
+        margin-inline-end: 0;
       }
 
       #JTM-S-QuickJump-Next {
-        margin-inline-start: 0;
         margin-block-start: 3px;
+        margin-inline-start: 0;
       }
     }
   }
@@ -170,8 +170,8 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        padding: 0 0 36px 0;
         margin-inline: 0;
+        padding: 0 0 36px 0;
 
         background-color: transparent;
       }

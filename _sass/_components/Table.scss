@@ -7,7 +7,7 @@ table {
   width: 100%;
 
   border-collapse: collapse;
-  border-radius: 24px;
+  border-radius: var(--md-sys-shape-corner-extra-large);
 
   box-shadow: 0 0 0 1px var(--md-sys-color-outline);
   overflow: auto;

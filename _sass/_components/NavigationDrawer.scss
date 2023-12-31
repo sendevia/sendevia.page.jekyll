@@ -5,12 +5,12 @@
   align-items: flex-start;
   flex-direction: column;
 
-  height: 100%;
-  width: 10px;
-
   position: fixed;
   top: 0;
   left: 80px;
+
+  height: 100%;
+  width: 10px;
 
   white-space: nowrap;
 
@@ -20,7 +20,7 @@
   background-color: var(--md-sys-color-surface-container-low);
 
   opacity: 0;
-  transition: visibility var(--md-sys-motion-duration-medium2), opacity 0.29s,
+  transition: visibility var(--md-sys-motion-duration-medium2), opacity var(--md-sys-motion-duration-medium3),
     width var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
     height var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
     top var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
@@ -45,7 +45,8 @@
     width: 240px;
 
     opacity: 1;
-    transition: visibility 0.01s, opacity 0.29s, width var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
+    transition: visibility var(--md-sys-motion-duration-short1), opacity var(--md-sys-motion-duration-medium2),
+      width var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
       height var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
       top var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
     visibility: visible;
@@ -103,10 +104,10 @@
     & > li > a {
       position: relative;
 
-      border-radius: 100px;
+      border-radius: var(--md-sys-shape-corner-extra-large);
 
       overflow: hidden;
-      transition: 0.2s;
+      transition: var(--md-sys-motion-duration-short4);
     }
   }
 

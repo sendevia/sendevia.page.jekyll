@@ -60,7 +60,7 @@
 
         position: relative;
 
-        border-radius: 100px;
+        border-radius: var(--md-sys-shape-corner-extra-large);
 
         background-color: var(--md-sys-color-secondary-container);
 
@@ -74,8 +74,8 @@
 
           color: var(--md-sys-color-on-secondary-container);
 
-          transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
           pointer-events: none;
+          transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 
           span {
             @include material-symbols($size: 24);
@@ -85,10 +85,10 @@
 
             font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
 
-            transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard-decelerate);
+            transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
 
             &:hover {
-              transition: var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-standard-accelerate);
+              transition: var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-standard);
             }
           }
         }
@@ -240,7 +240,7 @@
         #JTM-C-Navigation-DestinationLabel {
           @extend #JTM-C-Navigation-DestinationLabel;
 
-          color: #0000;
+          color: transparent;
           line-height: 0px;
           text-decoration: none;
 

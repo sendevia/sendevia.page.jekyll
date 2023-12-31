@@ -5,14 +5,14 @@
   gap: 12px;
   justify-content: space-between;
 
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+
   max-width: 480px;
   min-width: 240px;
 
   padding-inline: 16px 8px;
-
-  position: fixed;
-  bottom: 0;
-  right: 50%;
 
   background-color: var(--md-sys-color-inverse-surface);
 
