@@ -36,7 +36,6 @@
     color: var(--md-sys-color-on-surface);
 
     pointer-events: none;
-    transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
   }
 
   &[spec="clear"] {
@@ -69,11 +68,17 @@
       flex-direction: column;
       gap: 10px;
 
-      margin: 20px;
+      padding-block: 20px 18px;
+      padding-inline: 20px;
+
+      h3 {
+        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+      }
 
       #JTM-C-Card-Supporting-Weaken {
-        color: var(--md-sys-color-outline-variant);
         text-align: end;
+
+        opacity: 0.5;
       }
     }
 
@@ -82,12 +87,20 @@
     }
 
     &:hover {
-      color: var(--md-sys-color-on-primary);
+      .JTM-C-Card-Supporting h3 {
+        font-weight: 700;
+      }
 
-      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-secondary-container);
+
+      background-color: var(--md-sys-color-secondary-container);
     }
 
     &:active {
+      .JTM-C-Card-Supporting h3 {
+        font-weight: 200;
+      }
+
       border-radius: calc(2 * var(--md-sys-shape-corner-extra-large));
 
       transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
@@ -136,12 +149,6 @@
       .JTM-C-Card-Supporting {
         transform: translateY(0%);
       }
-    }
-  }
-
-  &:hover {
-    .JTM-C-Card-Supporting {
-      color: var(--md-sys-color-surface);
     }
   }
 }
