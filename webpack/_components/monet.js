@@ -48,21 +48,21 @@ export function setPaletteProperty(paletteProvider) {
  * @param argbColor 输入一个 argb 颜色
  */
 export async function generateColorPalette(argbColor) {
-  const primaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "primary", "a1", primaryTones));
-
-  const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "secondary", "a2", secondaryTones));
-
-  const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "tertiary", "a3", tertiaryTones));
-
-  const neutralTones = [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100];
-  setPaletteProperty(paletteProperty(argbColor, "neutral", "n1", neutralTones));
+  const errorTones = [10, 20, 30, 40, 80, 90, 100];
+  setPaletteProperty(paletteProperty(argbColor, "error", "error", errorTones));
 
   const neutralVariantTones = [30, 50, 60, 80, 90];
   setPaletteProperty(paletteProperty(argbColor, "neutralVariant", "n2", neutralVariantTones));
 
-  const errorTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "error", "error", errorTones));
+  const neutralTones = [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100];
+  setPaletteProperty(paletteProperty(argbColor, "neutral", "n1", neutralTones));
+
+  const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
+  setPaletteProperty(paletteProperty(argbColor, "tertiary", "a3", tertiaryTones));
+
+  const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
+  setPaletteProperty(paletteProperty(argbColor, "secondary", "a2", secondaryTones));
+
+  const primaryTones = [10, 20, 30, 40, 80, 90, 100];
+  setPaletteProperty(paletteProperty(argbColor, "primary", "a1", primaryTones));
 }
