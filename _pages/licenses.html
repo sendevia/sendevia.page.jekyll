@@ -22,7 +22,7 @@ published: true
       </tr>
     </thead>
     <tbody>
-      {%- for item in site.data.licenses -%}
+      {% for item in site.data.licenses %}
       <tr>
         <td>{{ item.name }}</td>
         <td>{{ item.version }}</td>
@@ -41,7 +41,7 @@ published: true
           </button>
         </td>
       </tr>
-      {%- endfor-%}
+      {% endfor %}
     </tbody>
   </table>
 </div>

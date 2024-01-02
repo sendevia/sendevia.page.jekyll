@@ -1,37 +1,37 @@
 <!-- 文章布局 - 文章标题 -->
-{%- if include.is_index == "true" -%}
+{% if include.is_index == "true" %}
 <div class="JTM-S-Header" spec="page-index">
-  {%- if site.impression and site.impression != "" -%} {%- assign photograph = site.impression -%} {%- endif -%}
+  {% if site.impression and site.impression != "" %} {% assign photograph = site.impression %} {% endif %}
   <div id="JTM-S-Header-HeroContainer" style="background-image: url('{{ photograph }}');">
     <span id="JTM-S-Header-HeroHeadline">欢迎来到 {{ site.title }}</span>
-    {%- if site.description and site.description != "" -%}
+    {% if site.description and site.description != "" %}
     <span id="JTM-S-Header-HeroSubtitle">{{ site.description }}</span>
-    {%- endif -%}
+    {% endif %}
   </div>
 </div>
-{%- else -%}
+{% else %}
 
 <div class="JTM-S-Header">
   <div id="JTM-S-Header-HeroContainer">
     <span id="JTM-S-Header-HeroHeadline">{{ page.title }}</span>
-    {%- if page.description and page.description != "" -%}
+    {% if page.description and page.description != "" %}
     <span id="JTM-S-Header-HeroSubtitle">{{ page.description }}</span>
-    {%- endif -%}
+    {% endif %}
   </div>
   <div id="JTM-S-Header-Impression">
-    {%- if page.impression and page.impression != "" -%}
+    {% if page.impression and page.impression != "" %}
     <!-- 头图 - 设置由文章提供 -->
-    {%- assign photograph = page.impression -%}
+    {% assign photograph = page.impression %}
     <!--  -->
-    {%- elsif site.impression -%}
+    {% elsif site.impression %}
     <!-- 头图 - 设置由全局设定提供 -->
-    {%- assign photograph = site.impression -%}
+    {% assign photograph = site.impression %}
     <!--  -->
-    {%- else -%}
+    {% else %}
     <!-- 头图 - 不设置头图 -->
-    {%- assign photograph = false -%} {%- endif -%} {%- if photograph != false -%}
+    {% assign photograph = false %} {% endif %} {% if photograph != false %}
     <img src="{{ photograph }}" alt="{{ page.title }}" />
-    {%- endif -%}
+    {% endif %}
   </div>
 </div>
-{%- endif -%}
+{% endif %}

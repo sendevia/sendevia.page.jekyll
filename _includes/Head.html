@@ -1,5 +1,5 @@
 <head>
-  {%- if include.no_javascript != "true" -%}
+  {% if include.no_javascript != "true" %}
   <script type="application/javascript" src="/assets/js/bundle.js?v={{ site.version }}" defer></script>
   <script>
     MathJax = {
@@ -22,7 +22,7 @@
     referrerpolicy="no-referrer"
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"
   ></script>
-  {%- endif -%}
+  {% endif %}
   <!--  -->
   <link rel="stylesheet" href="/assets/css/style.css?v={{ site.version }}" />
   <meta charset="utf-8" />
@@ -32,5 +32,5 @@
   <meta name="keywords" content="sendevia" />
   <title>{{ page.title }}</title>
   <!--  -->
-  {%- seo -%}
+  {% seo %}
 </head>

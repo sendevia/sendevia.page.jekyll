@@ -2,11 +2,11 @@
 <div class="JTM-C-Navigation" spec="rail">
   <img id="JTM-C-Navigation-Hero" src="/assets/images/avatar.webp" alt="logo" />
 
-  {%- if page.toc -%}
+  {% if page.toc %}
   <div id="JTM-C-Navigation-FAB">
     <button class="JTM-C-FAB" spec="surface" size="normal">menu</button>
   </div>
-  {%- endif -%}
+  {% endif %}
 
   <div id="JTM-C-Navigation-Destinations">
     <a href="/">
@@ -33,7 +33,7 @@
     </a>
 
     <!-- 列出有导航需求的页面 -->
-    {%- for s in site.pages -%} {%- if s.navigation and s.published == true -%}
+    {% for s in site.pages %} {% if s.navigation and s.published == true %}
     <a href="{{ s.url }}">
       <div id="JTM-C-Navigation-SegmentInactive">
         <div id="JTM-C-Navigation-DestinationAccent">
@@ -44,19 +44,19 @@
         <p id="JTM-C-Navigation-DestinationLabel">{{ s.segment_title }}</p>
       </div>
     </a>
-    {%- endif -%}
+    {% endif %}
     <!--  -->
-    {%- endfor -%}
+    {% endfor %}
   </div>
 </div>
 
 <!-- 导航 - 移动端顶栏 -->
 <div class="JTM-C-AppBar">
-  {%- if page.toc -%}
+  {% if page.toc %}
   <button class="JTM-C-IconButton" id="JTM-C-AppBar-MenuIcon">menu</button>
-  {%- else -%}
+  {% else %}
   <span></span>
-  {%- endif -%}
+  {% endif %}
   <div id="JTM-C-AppBar-DynamicTitle">
     <span>{{ site.title }}</span>
     <span>{{ page.title }}</span>
@@ -70,49 +70,49 @@
     <span class="JTM-C-Dialog-LeaderIcon">help</span>
 
     <h3 class="JTM-C-Dialog-Headline">{{ page.title }}</h3>
-    {%- if page.description and page.description != "" -%}
+    {% if page.description and page.description != "" %}
     <p class="JTM-C-Dialog-SupportingText">{{ page.description }}</p>
-    {%- endif -%}
+    {% endif %}
 
     <div class="JTM-C-Dialog-SupportingList">
       <!-- 日期 -->
-      {%- if page.date -%}
+      {% if page.date %}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="standard" disabled>calendar_month</button>
         <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
       </div>
-      {%- endif -%}
+      {% endif %}
 
       <!-- 阅读时间 -->
-      {%- assign page_words = page.content | number_of_words: "auto" -%} {%- assign read_estimate = page_words | divided_by: 120 -%}
+      {% assign page_words = page.content | number_of_words: "auto" %} {% assign read_estimate = page_words | divided_by: 120 %}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="standard" disabled>schedule</button>
-        <p>估计阅读时间：{%- if read_estimate > 0 -%} {{ read_estimate }} {% else -%} 少于 1 {% endif -%}分钟</p>
+        <p>估计阅读时间：{% if read_estimate > 0 %} {{ read_estimate }} {% else %} 少于 1 {% endif %}分钟</p>
       </div>
 
       <!-- 作者 -->
-      {%- if page.author -%}
+      {% if page.author %}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="standard" disabled>person</button>
         <p>作者：{{ page.author }}</p>
       </div>
-      {%- endif -%}
+      {% endif %}
 
       <!-- 目录分类 -->
-      {%- if page.categories.size > 0 -%}
+      {% if page.categories.size > 0 %}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="standard" disabled>category</button>
         <p>分类：{{ page.categories }}</p>
       </div>
-      {%- endif -%}
+      {% endif %}
 
       <!-- 自定义的主题颜色 -->
-      {%- if page.color and page.color != "" -%}
+      {% if page.color and page.color != "" %}
       <div class="JTM-C-Dialog-TipItems">
         <button class="JTM-C-IconButton" spec="standard" disabled>palette</button>
         <p>主题颜色：{{ page.color }}</p>
       </div>
-      {%- endif -%}
+      {% endif %}
     </div>
   </div>
   <div class="JTM-C-Dialog-Buttons">

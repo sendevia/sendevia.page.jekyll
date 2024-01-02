@@ -1,29 +1,29 @@
 <!-- 文章布局 -->
 <div class="JTM-S-UniversalLayout">
-  {%- include Navigation.html -%}
+  {% include Navigation.html %}
 
   <!-- 文章布局 - 文章流 -->
   <div id="JTM-S-UniversalLayout-ContentFlow">
-    {%- if include.has_carousel == "true" -%}
+    {% if include.has_carousel == "true" %}
     <!--  -->
-    {%- include Carousel.html -%}
+    {% include Carousel.html %}
     <!--  -->
-    {%- elsif include.is_index == "true" -%}
+    {% elsif include.is_index == "true" %}
     <!--  -->
-    {%- include Header.html is_index = "true" -%}
+    {% include Header.html is_index = "true" %}
     <!--  -->
-    {%- else -%}
+    {% else %}
     <!--  -->
-    {%- include Header.html -%}
+    {% include Header.html %}
     <!--  -->
-    {%- endif -%}
+    {% endif %}
 
     <!-- 文章布局 - 文章内容 -->
-    <div id="JTM-S-UniversalLayout-ContentFiller">{%- include Content.html -%}</div>
+    <div id="JTM-S-UniversalLayout-ContentFiller">{% include Content.html %}</div>
 
-    {%- include QuickJump.html -%}
+    {% include QuickJump.html %}
 
     <hr spec="wave" />
-    {%- include Footer.html -%}
+    {% include Footer.html %}
   </div>
 </div>

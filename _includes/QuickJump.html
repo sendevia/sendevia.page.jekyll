@@ -1,6 +1,6 @@
 <!-- 文章布局 - 快捷跳转 -->
-<div class="JTM-S-QuickJump" id="{%- if page.previous and page.next -%} JTM-S-QuickJump-Both {%- else -%} JTM-S-QuickJump-Single {%- endif -%}">
-  {%- if page.previous -%}
+<div class="JTM-S-QuickJump" id="{% if page.previous and page.next %} JTM-S-QuickJump-Both {% else %} JTM-S-QuickJump-Single {% endif %}">
+  {% if page.previous %}
   <a href="{{ page.previous.url }}">
     <div class="JTM-C-Card" spec="clear" id="JTM-S-QuickJump-Previous">
       <div class="JTM-C-Card-Supporting">
@@ -20,5 +20,5 @@
       </div>
     </div>
   </a>
-  {%- endif -%}
+  {% endif %}
 </div>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  {%- include Head.html -%}
+  {% include Head.html %}
   <body class="JTM-Root" color="{{ page.color | default: site.color }}">
-    {%- if page.permalink == "/404.html" -%} {%- include 404NotFound.html -%} {%- else -%}
+    {% if page.permalink == "/404.html" %} {% include 404NotFound.html %} {% else %}
     <!--  -->
-    {%- include LoadingSplash.html -%}
+    {% include LoadingSplash.html %}
     <!--  -->
-    {%- include UniversalLayout.html is_index = "true" -%}
+    {% include UniversalLayout.html is_index = "true" %}
     <!-- 底部 Fab -->
-    {%- include ScrollToTop.html -%} {%- endif -%}
+    {% include ScrollToTop.html %} {% endif %}
   </body>
 </html>

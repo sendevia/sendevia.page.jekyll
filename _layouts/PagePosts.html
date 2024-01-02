@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-  {%- include Head.html -%}
+  {% include Head.html %}
   <body class="JTM-Root" color="{{ page.color | default: site.color }}">
-    {%- include LoadingSplash.html -%}
+    {% include LoadingSplash.html %}
     <!--  -->
-    {%- include UniversalLayout.html has_carousel = "true" -%}
+    {% include UniversalLayout.html has_carousel = "true" %}
     <!-- 底部 Fab -->
-    {%- include ScrollToTop.html -%}
+    {% include ScrollToTop.html %}
   </body>
 </html>
