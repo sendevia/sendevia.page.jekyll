@@ -13,16 +13,6 @@
   repository: https://github.com/webpack/webpack
   version: 5.88.1
 
-- name: webpack-cli
-  license: MIT
-  repository: https://github.com/webpack/webpack-cli
-  version: 5.1.4
-
-- name: worker-loader
-  license: MIT
-  repository: https://github.com/webpack-contrib/worker-loader
-  version: 3.0.8
-
 - name: jekyll
   license: MIT
   repository: https://github.com/jekyll/jekyll
@@ -47,11 +37,6 @@
   license: MIT
   repository: https://github.com/jekyll/jekyll-sitemap
   version: 1.4.0
-
-- name: jekyll-toc
-  license: MIT
-  repository: https://github.com/toshimaru/jekyll-toc
-  version: 0.18.0
 
 - name: jemoji
   license: MIT
