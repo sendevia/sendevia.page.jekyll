@@ -63,9 +63,6 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-toc (0.18.0)
-      jekyll (>= 3.9)
-      nokogiri (~> 1.12)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.13.0)
@@ -128,7 +125,6 @@ DEPENDENCIES
   jekyll-sass-converter (~> 3.0)
   jekyll-seo-tag
   jekyll-sitemap
-  jekyll-toc
   jemoji
   tzinfo
   tzinfo-data

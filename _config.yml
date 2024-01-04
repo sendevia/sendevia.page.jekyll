@@ -26,13 +26,6 @@ defaults:
       permalink: "/posts/:title"
       toc: true
 
-toc:
-  item_class: "JTM-C-NavigationDrawer-Entry"
-  item_prefix: "JTM-C-NavigationDrawer-"
-  list_id: "JTM-C-NavigationDrawer-Section"
-  max_level: 1
-  ordered_list: false
-
 markdown: "kramdown"
 kramdown:
   input: "GFM"
