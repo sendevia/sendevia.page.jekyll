@@ -30,9 +30,13 @@ export const contentNavigation = document.querySelector(".JTM-C-Navigation");
  */
 export const contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
 /**
- * 页面导航的目录元素
+ * 页面导航的一级目录元素
  */
-export const contentDrawerEntries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry") : [];
+export const contentDrawerH1Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details summary > a") : [];
+/**
+ * 页面导航的二级目录元素
+ */
+export const contentDrawerH2Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details > a") : [];
 /**
  * 选择控制页面导航开关的元素
  */

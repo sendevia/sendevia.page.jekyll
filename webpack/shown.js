@@ -4,7 +4,8 @@ import {
   carouselElement,
   carouselPostList,
   contentContainer,
-  contentDrawerEntries,
+  contentDrawerH1Entries,
+  contentDrawerH2Entries,
   contentDrawerMenuBtn,
   contentNavigation,
   contentNavigationDrawer,
@@ -37,7 +38,15 @@ window.onpageshow = () => {
 
   if (contentNavigationDrawer) {
     contentDrawerMenuBtn.forEach((element) => element.addEventListener("click", () => toggleNavigationDrawer()));
-    contentDrawerEntries.forEach((element) => element.addEventListener("click", () => toggleNavigationDrawer(false)));
+    contentDrawerH1Entries.forEach((element) => {
+      element.addEventListener("click", () => {
+        const parentDetails = element.closest("details");
+        if (parentDetails) {
+          parentDetails.open = !parentDetails.open;
+        }
+      });
+    });
+    contentDrawerH2Entries.forEach((element) => element.addEventListener("click", () => toggleNavigationDrawer(false)));
     document.addEventListener("click", (event) => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
