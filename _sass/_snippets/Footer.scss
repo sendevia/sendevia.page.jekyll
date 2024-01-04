@@ -12,7 +12,9 @@
   color: var(--md-sys-color-on-surface-variant);
 
   #JTM-S-Footer-Descriptions {
+    display: flex;
     flex-grow: 1;
+    flex-direction: column;
 
     padding-inline-start: 12px;
 
