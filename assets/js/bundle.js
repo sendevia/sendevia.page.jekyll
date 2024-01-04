@@ -168,7 +168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   carouselElement: () => (/* binding */ carouselElement),
 /* harmony export */   carouselPostList: () => (/* binding */ carouselPostList),
 /* harmony export */   contentContainer: () => (/* binding */ contentContainer),
-/* harmony export */   contentDrawerEntries: () => (/* binding */ contentDrawerEntries),
+/* harmony export */   contentDrawerH1Entries: () => (/* binding */ contentDrawerH1Entries),
+/* harmony export */   contentDrawerH2Entries: () => (/* binding */ contentDrawerH2Entries),
 /* harmony export */   contentDrawerMenuBtn: () => (/* binding */ contentDrawerMenuBtn),
 /* harmony export */   contentNavigation: () => (/* binding */ contentNavigation),
 /* harmony export */   contentNavigationDrawer: () => (/* binding */ contentNavigationDrawer),
@@ -227,9 +228,13 @@ const contentNavigation = document.querySelector(".JTM-C-Navigation");
  */
 const contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
 /**
- * 页面导航的目录元素
+ * 页面导航的一级目录元素
  */
-const contentDrawerEntries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll(".JTM-C-NavigationDrawer-Entry") : [];
+const contentDrawerH1Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details summary > a") : [];
+/**
+ * 页面导航的二级目录元素
+ */
+const contentDrawerH2Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details > a") : [];
 /**
  * 选择控制页面导航开关的元素
  */
@@ -566,7 +571,15 @@ window.onpageshow = () => {
 
   if (_app__WEBPACK_IMPORTED_MODULE_1__.contentNavigationDrawer) {
     _app__WEBPACK_IMPORTED_MODULE_1__.contentDrawerMenuBtn.forEach((element) => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_1__.toggleNavigationDrawer)()));
-    _app__WEBPACK_IMPORTED_MODULE_1__.contentDrawerEntries.forEach((element) => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_1__.toggleNavigationDrawer)(false)));
+    _app__WEBPACK_IMPORTED_MODULE_1__.contentDrawerH1Entries.forEach((element) => {
+      element.addEventListener("click", () => {
+        const parentDetails = element.closest("details");
+        if (parentDetails) {
+          parentDetails.open = !parentDetails.open;
+        }
+      });
+    });
+    _app__WEBPACK_IMPORTED_MODULE_1__.contentDrawerH2Entries.forEach((element) => element.addEventListener("click", () => (0,_app__WEBPACK_IMPORTED_MODULE_1__.toggleNavigationDrawer)(false)));
     document.addEventListener("click", (event) => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
