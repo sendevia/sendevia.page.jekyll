@@ -6,11 +6,11 @@
   justify-content: center;
 
   position: fixed;
-  left: 90px;
-  top: 10px;
+  bottom: 0;
+  right: 0;
 
-  height: calc(100% - 20px);
-  width: calc(100% - 100px);
+  margin: 24px;
+  padding: 18px;
 
   color: var(--md-sys-color-on-surface);
 
