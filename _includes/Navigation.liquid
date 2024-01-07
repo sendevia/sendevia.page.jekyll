@@ -37,7 +37,7 @@
 
     {% for s in site.pages %}
       {% if s.navigation and s.published == true %}
-        <a href="{{ s.url }}">
+        <a href="{{ s.url | remove: '.html' }}">
           <div id="JTM-C-Navigation-SegmentInactive">
             <div id="JTM-C-Navigation-DestinationAccent">
               <div id="JTM-C-Navigation-SegmentIcon">
