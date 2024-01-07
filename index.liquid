@@ -19,7 +19,8 @@ layout: PageIndex
         </div>
       </div>
       <p class="JTM-P-Index-Summary">
-        {{ latest_post.content | strip_html | truncatewords:42, "..." }} <a id="JTM-P-Index-ReadMore" href="{{ latest_post.url }}">详细阅读</a>
+        {{ latest_post.content | strip_html | truncatewords: 42, "..." }}
+        <a id="JTM-P-Index-ReadMore" href="{{ latest_post.url }}">详细阅读</a>
       </p>
     </div>
 

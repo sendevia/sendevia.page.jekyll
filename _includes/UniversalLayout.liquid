@@ -1,0 +1,16 @@
+<div class="JTM-S-UniversalLayout">
+  {% include Navigation.liquid %}
+  <div id="JTM-S-UniversalLayout-ContentFlow">
+    {% if include.has_carousel == "true" %}
+      {% include Carousel.liquid %}
+    {% elsif include.is_index == "true" %}
+      {% include Header.liquid is_index = "true" %}
+    {% else %}
+      {% include Header.liquid %}
+    {% endif %}
+    <div id="JTM-S-UniversalLayout-ContentFiller">{% include Content.liquid %}</div>
+    {% include QuickJump.liquid %}
+    <hr spec="wave" />
+    {% include Footer.liquid %}
+  </div>
+</div>
