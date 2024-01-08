@@ -10,13 +10,15 @@
   overflow: hidden;
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
+  img {
+    @include JTM-E-UserSelect();
+
+    display: block;
+
+    max-width: unset;
+  }
+
   .JTM-C-Card-Impression {
-    img {
-      @include JTM-E-UserSelect();
-
-      display: block;
-    }
-
     span {
       @include material-symbols($size: 72);
 
@@ -36,12 +38,20 @@
     color: var(--md-sys-color-on-surface);
 
     pointer-events: none;
+
+    h3 {
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+    }
   }
 
   &[spec="clear"] {
     border-radius: var(--md-sys-shape-corner-extra-large);
 
-    background-color: var(--md-sys-color-surface-container-low);
+    background-color: var(--md-sys-color-surface-bright);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--md-sys-color-surface-dim);
+    }
 
     cursor: pointer;
 
@@ -70,10 +80,6 @@
 
       padding-block: 20px 18px;
       padding-inline: 20px;
-
-      h3 {
-        transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-      }
 
       #JTM-C-Card-Supporting-Weaken {
         text-align: end;
@@ -133,6 +139,10 @@
 
       transform: translateY(calc(100% + 20px));
       transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+
+      h3 {
+        font-weight: 100;
+      }
     }
 
     JTM-E-Ripple {
@@ -148,6 +158,10 @@
 
       .JTM-C-Card-Supporting {
         transform: translateY(0%);
+
+        h3 {
+          font-weight: 700;
+        }
       }
     }
   }

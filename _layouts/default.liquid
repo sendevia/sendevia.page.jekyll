@@ -13,11 +13,11 @@
     {% endif %}
     {% include LoadingSplash.liquid %}
     {% if page.url == "/index.html" %}
-      {% include UniversalLayout.liquid is_index = "true" %}
+      {% include UniversalLayout.liquid spec_page_index = "true" %}
     {% elsif page.url == "/posts.html" %}
-      {% include UniversalLayout.liquid has_carousel = "true" %}
+      {% include UniversalLayout.liquid spec_carousel = "true" %}
     {% else %}
-      {% include UniversalLayout.liquid layout="article" %}
+      {% include UniversalLayout.liquid spec_layout="article" %}
     {% endif %}
     {% if page.toc %}
       {% include TOC.liquid %}

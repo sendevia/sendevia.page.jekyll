@@ -3,7 +3,8 @@
 @media screen and (max-width: 1024px) {
   .JTM-S-ScrollToTop {
     #JTM-S-ScrollToTop-Desktop {
-      margin-inline-end: 18px;
+      margin-block-end: 172px;
+      margin-inline-end: 30px;
     }
   }
 
@@ -56,15 +57,33 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        margin-inline: 12px 78px;
+        margin-inline: 12px;
       }
 
       .JTM-S-QuickJump {
-        margin-inline: 12px 78px;
+        margin-inline: 12px;
       }
 
       .JTM-S-Footer {
         margin-inline: 12px;
+      }
+    }
+  }
+
+  .JTM-P-Index {
+    #JTM-P-Index-CardSet {
+      grid-template-columns: repeat(2, 1fr);
+
+      #JTM-P-Index-SummaryCard {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  .JTM-P-Posts {
+    #JTM-P-Posts-Timeline {
+      .JTM-P-Posts-Timeline-L2 {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }

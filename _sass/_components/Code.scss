@@ -5,18 +5,17 @@ code {
 }
 
 code.language-plaintext {
-  @include JTM-E-UserSelect(all);
-
   display: inline-block;
 
   padding-inline: 3px;
 
-  color: var(--md-sys-color-on-tertiary);
+  color: var(--md-sys-color-inverse-surface);
+  text-indent: initial;
   word-break: break-word;
 
   border-radius: var(--md-sys-shape-corner-extra-small);
 
-  background-color: var(--md-sys-color-tertiary);
+  background-color: var(--md-sys-color-inverse-on-surface);
 
   &::selection {
     color: var(--md-sys-color-tertiary);

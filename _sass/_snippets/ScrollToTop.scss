@@ -21,10 +21,10 @@
 
     color: var(--md-sys-color-outline);
 
-    background-color: transparent;
-
     border-radius: var(--md-sys-shape-corner-full);
     border: 1px solid var(--md-sys-color-outline-variant);
+
+    background-color: var(--md-sys-color-surface-container-low);
 
     cursor: pointer;
     overflow: hidden;

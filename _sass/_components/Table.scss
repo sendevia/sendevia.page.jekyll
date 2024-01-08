@@ -70,6 +70,10 @@ table {
   tbody {
     @include typescale-style("body-large");
 
+    img {
+      max-width: 375px;
+    }
+
     tr {
       vertical-align: top;
 

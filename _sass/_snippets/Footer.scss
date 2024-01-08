@@ -11,6 +11,10 @@
 
   color: var(--md-sys-color-on-surface-variant);
 
+  a {
+    text-decoration: none;
+  }
+
   #JTM-S-Footer-Descriptions {
     display: flex;
     flex-grow: 1;

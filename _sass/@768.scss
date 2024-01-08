@@ -182,10 +182,10 @@
 
   .JTM-P-Index {
     #JTM-P-Index-CardSet {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
 
       #JTM-P-Index-SummaryCard {
-        grid-column: span 2;
+        grid-column: span 1;
       }
     }
   }
@@ -202,7 +202,7 @@
 
     #JTM-P-Posts-Timeline {
       .JTM-P-Posts-Timeline-L2 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
 
         width: 100%;
 

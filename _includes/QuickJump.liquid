@@ -1,4 +1,4 @@
-<div class="JTM-S-QuickJump" id="{% if page.previous and page.next %} JTM-S-QuickJump-Both {% else %} JTM-S-QuickJump-Single {% endif %}">
+<div class="JTM-S-QuickJump" id="{% if page.previous and page.next -%} JTM-S-QuickJump-Pair {%- else %} JTM-S-QuickJump-Single {%- endif %}">
   {% if page.previous %}
     <a href="{{ page.previous.url }}">
       <div

@@ -1,7 +1,7 @@
 <div class="JTM-S-Header" spec="page-index">
   {% assign photograph = page.impression | default: site.impression %}
   <div id="JTM-S-Header-HeroContainer" style="background-image: url('{{ photograph }}');">
-    {% if include.is_index == "true" %}
+    {% if include.spec_page_index == "true" %}
       <span id="JTM-S-Header-HeroHeadline">欢迎来到 {{ site.title }}</span>
       {% if site.description and site.description != "" %}
         <span id="JTM-S-Header-HeroSubtitle">{{ site.description }}</span>

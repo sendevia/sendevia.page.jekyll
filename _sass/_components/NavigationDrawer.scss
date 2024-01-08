@@ -17,7 +17,7 @@
   border-left: 1px solid var(--md-sys-color-surface-container-high);
   border-radius: var(--md-sys-shape-corner-large-end);
 
-  background-color: var(--md-sys-color-surface-container-low);
+  background-color: var(--md-sys-color-surface-container);
 
   opacity: 0;
   overflow: auto;
@@ -25,6 +25,10 @@
     opacity var(--md-sys-motion-duration-short4), width var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
   visibility: hidden;
   z-index: 21;
+
+  a {
+    text-decoration: none;
+  }
 
   #JTM-C-NavigationDrawer-MenuCloseIcon {
     display: none;

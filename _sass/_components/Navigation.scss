@@ -4,10 +4,14 @@
 .JTM-C-Navigation {
   @include JTM-E-UserSelect();
 
-  background-color: var(--md-sys-color-surface-container-low);
+  background-color: var(--md-sys-color-surface-container);
 
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 10;
+
+  a {
+    text-decoration: none;
+  }
 
   #JTM-C-Navigation-Hero {
     height: 50px;
