@@ -1,9 +1,4 @@
 .JTM-S-Header {
-  display: grid;
-  gap: 8px;
-  grid-auto-flow: row;
-  grid-template-columns: repeat(2, 1fr);
-
   height: 540px;
 
   margin-block: 12px;
@@ -11,14 +6,13 @@
 
   word-break: break-word;
 
-  transition: 1s;
+  transition: var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard);
 
   #JTM-S-Header-HeroContainer {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
-    grid-column: span 1;
     justify-content: center;
 
     height: 100%;
@@ -28,11 +22,17 @@
     color: var(--md-sys-color-on-secondary-container);
 
     border-radius: var(--md-sys-shape-corner-medium);
+    border: 1px solid var(--md-sys-color-outline-variant);
 
-    background-color: var(--md-sys-color-secondary-container);
+    background-blend-mode: overlay;
+    background: center/cover no-repeat var(--md-sys-color-secondary-container);
 
     overflow: hidden;
     transition: var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard);
+
+    @media (prefers-color-scheme: dark) {
+      background-blend-mode: soft-light;
+    }
 
     #JTM-S-Header-HeroHeadline {
       @include typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
@@ -48,39 +48,6 @@
       width: 100%;
 
       transition: var(--md-sys-motion-duration-extra-medium4) var(--md-sys-motion-easing-emphasized);
-    }
-  }
-
-  #JTM-S-Header-Impression {
-    grid-column: span 1;
-
-    height: 100%;
-    width: 100%;
-
-    border-radius: var(--md-sys-shape-corner-medium);
-    border: 1px solid var(--md-sys-color-outline-variant);
-
-    overflow: hidden;
-
-    img {
-      @include JTM-E-UserSelect();
-
-      height: 100%;
-      width: 100%;
-
-      object-fit: cover;
-      pointer-events: none;
-    }
-  }
-
-  &[spec="page-index"] {
-    #JTM-S-Header-HeroContainer {
-      grid-column: span 2;
-
-      background-blend-mode: soft-light;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
     }
   }
 }
