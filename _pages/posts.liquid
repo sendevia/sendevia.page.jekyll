@@ -31,10 +31,7 @@ layout: PagePosts
                           {% assign photograph = false %}
                         {% endif %}
                         {% if photograph != false %}
-                          <img
-                            src="{{ photograph }}"
-                            alt="{{ post.title }}的封面"
-                            loading="lazy" />
+                          <img src="{{ photograph }}" alt="{{ post.title }}的封面" />
                         {% endif %}
                       </div>
                       <div class="JTM-C-Card-Supporting">
