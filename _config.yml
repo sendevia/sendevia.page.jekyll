@@ -14,14 +14,16 @@ impression: "/assets/images/114570856_p0.webp"
 
 defaults:
   - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
       path: "_pages"
     values:
-      layout: "Page"
       permalink: "/:basename.html"
   - scope:
       path: "_posts"
     values:
-      layout: "Post"
       permalink: "/posts/:title"
       toc: true
 
