@@ -512,7 +512,7 @@ __webpack_require__.r(__webpack_exports__);
 window.onload = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_2__.randomRotationBullet)();
 
-  document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller h1").forEach((h1) => {
+  document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller > h1").forEach((h1) => {
     h1.addEventListener("click", function () {
       const anchorLink = this.id ? `#${this.id}` : "";
 
