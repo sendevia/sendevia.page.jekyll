@@ -29,7 +29,7 @@
       opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-ContentFiller {
-      margin-block-end: 6px;
+      margin-block: 24px 6px;
       margin-inline: calc(25% - 152px);
 
       &[spec="article"] {
