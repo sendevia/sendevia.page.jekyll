@@ -86,7 +86,9 @@
   .JTM-S-QuickJump {
     a {
       width: 100%;
+    }
 
+    &#JTM-S-QuickJump-Pair a {
       #JTM-S-QuickJump-Previous {
         margin-block-end: 3px;
         margin-inline-end: 0;
@@ -111,11 +113,11 @@
       padding-inline: 12px;
 
       .JTM-S-Carousel {
-        margin-inline: 0;
+        height: calc(55vh - 64px - 80px);
+
+        margin: 0;
 
         #JTM-S-Carousel-PostsList {
-          height: 300px;
-
           margin: 0;
 
           .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {

@@ -6,11 +6,7 @@
       {% assign post_index = i | modulo: required_posts %} {% assign post = featured_posts[post_index] %}
       {% if post %}
         <a class="JTM-S-Carousel-PostItem" href="{{ post.url | prepend: site.baseurl }}">
-          <img
-            id="JTM-S-Carousel-PostImpression"
-            src="{{ post.impression }}"
-            alt="{{ post.title }}"
-            loading="eager" />
+          <span id="JTM-S-Carousel-PostImpression" style="background-image: url('{{ post.impression }}');" />
           <div id="JTM-S-Carousel-PostInfo">
             <div class="JTM-S-Carousel-PostInfo-FeaturedTip">
               <span id="JTM-S-Carousel-PostInfo-FeaturedTip-Icon">editor_choice</span>

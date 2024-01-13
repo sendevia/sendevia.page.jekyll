@@ -46,16 +46,4 @@
   &#JTM-S-QuickJump-Single a {
     width: 100%;
   }
-
-  &#JTM-S-QuickJump-Pair a {
-    #JTM-S-QuickJump-Previous {
-      border-bottom-right-radius: var(--md-sys-shape-corner-medium);
-      border-top-right-radius: var(--md-sys-shape-corner-medium);
-    }
-
-    #JTM-S-QuickJump-Next {
-      border-bottom-left-radius: var(--md-sys-shape-corner-medium);
-      border-top-left-radius: var(--md-sys-shape-corner-medium);
-    }
-  }
 }

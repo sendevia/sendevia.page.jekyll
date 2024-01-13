@@ -5,8 +5,6 @@
     #JTM-S-UniversalLayout-ContentFlow {
       .JTM-S-Carousel {
         #JTM-S-Carousel-PostsList {
-          height: 260px;
-
           .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
             h1 {
               @include typescale-style("headline-small");
