@@ -561,7 +561,7 @@ window.onpageshow = () => {
     const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
     inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
   } catch (err) {
-    document.querySelector(`a[href="/posts"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
+    document.querySelector(`a[href="/posts/"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
   }
 
   _app__WEBPACK_IMPORTED_MODULE_1__.scrollTopElements.forEach((element) => element.addEventListener("click", () => _app__WEBPACK_IMPORTED_MODULE_1__.contentContainer.scrollTo({ top: 0 })));
