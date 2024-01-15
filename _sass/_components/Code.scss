@@ -1,7 +1,23 @@
 // 代码
 
-code {
+code,
+figure.highlight {
   font-family: "Source Code Pro", monospace;
+}
+
+figure {
+  @include typescale-style("body-large");
+
+  margin-block: 0;
+
+  pre {
+    margin: 0;
+    padding: 12px;
+
+    border-radius: var(--md-sys-shape-corner-large);
+
+    background-color: #272822;
+  }
 }
 
 code.language-plaintext {
@@ -126,7 +142,8 @@ div.highlighter-rouge {
   }
 }
 
-.highlight {
+.highlight,
+figure code {
   .hll {
     background-color: #272822;
   }
