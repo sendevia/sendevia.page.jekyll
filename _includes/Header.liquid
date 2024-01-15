@@ -7,7 +7,7 @@
         <span id="JTM-S-Header-HeroSubtitle">{{ site.description }}</span>
       {% endif %}
     {% else %}
-      <span id="JTM-S-Header-HeroHeadline">{{ page.title }}</span>
+      <span id="JTM-S-Header-HeroHeadline">{{ page.title | default: site.title }}</span>
       {% if page.description and page.description != "" %}
         <span id="JTM-S-Header-HeroSubtitle">{{ page.description }}</span>
       {% endif %}

@@ -31,6 +31,6 @@
   <meta name="description" content="一个博客" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keywords" content="sendevia" />
-  <title>{{ page.title }}</title>
+  <title>{{ page.title | default: site.title }}</title>
   {% seo %}
 </head>
