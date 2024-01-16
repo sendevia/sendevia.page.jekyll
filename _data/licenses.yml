@@ -1,4 +1,4 @@
-- name: "jekyll-theme-m3"
+- name: jekyll-theme-m3
   license: MIT
   repository: https://github.com/Sendevia/jekyll-theme-m3
   version: latest
@@ -56,4 +56,9 @@
 - name: Material Symbols
   license: Apache-2.0
   repository: https://github.com/google/material-design-icons
+  version: latest
+
+- name: Font Awesome
+  license: CC BY 4.0
+  repository: https://fontawesome.com
   version: latest

@@ -36,8 +36,10 @@
     gap: 6px;
     justify-content: flex-end;
 
-    .JTM-C-CommonButton {
-      text-transform: capitalize;
+    .JTM-C-IconButton {
+      path {
+        fill: var(--md-sys-color-on-surface-variant);
+      }
     }
   }
 }
