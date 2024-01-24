@@ -221,60 +221,6 @@ hr {
   }
 }
 
-pre {
-  overflow: auto;
-}
-
-ul {
-  padding-inline-start: 20px;
-
-  list-style-type: none;
-
-  li {
-    @include typescale-style("body-large");
-
-    position: relative;
-
-    margin-block-end: 5px;
-
-    &::before {
-      content: "";
-
-      display: inline-block;
-
-      position: absolute;
-      left: -21px;
-      top: 4.5px;
-
-      height: 18px;
-      width: 18px;
-
-      background-color: var(--md-sys-color-on-surface);
-
-      -webkit-mask: var(--via-svg-list-bullet) 0 0/100% no-repeat;
-      mask: var(--via-svg-list-bullet) 0 0/100% no-repeat;
-    }
-  }
-}
-
-ol {
-  padding-inline-start: 20px;
-
-  li {
-    @include typescale-style("body-large");
-
-    position: relative;
-
-    margin-block-end: 5px;
-
-    .rouge-code {
-      pre {
-        white-space: break-spaces;
-      }
-    }
-  }
-}
-
 .task-list {
   padding-inline-start: 1em;
 
