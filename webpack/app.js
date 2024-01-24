@@ -58,7 +58,7 @@ const topAppBar = document.querySelector(".JTM-C-AppBar");
 /**
  * 选择模态提示框
  */
-export const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
+export const modalTips = document.querySelector(".JTM-C-Dialog");
 /**
  * 选择可以开启模态提示框的元素
  */

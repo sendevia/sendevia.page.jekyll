@@ -1,60 +1,73 @@
 // https://m3.material.io/components/dialogs/
 // 对话
 
-.JTM-C-Dialog {
-  &[open] {
-    @include JTM-E-UserSelect();
+.JTM-C-Dialog[open] {
+  @include JTM-E-UserSelect();
+
+  border: none;
+
+  background-color: transparent;
+
+  animation: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow;
+
+  .JTM-C-Dialog-Layout {
+    position: relative;
 
     max-width: 560px;
     min-width: 280px;
 
-    padding: 24px;
+    overflow: hidden;
 
     border-radius: var(--md-sys-shape-corner-extra-large);
-    border: none;
 
     background-color: var(--md-sys-color-surface);
 
-    box-shadow: var(--md-sys-elevation-level3);
+    animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+      JTM-C-Dialog-LayoutShow;
+    pointer-events: auto;
 
-    &::backdrop {
-      background-color: transparent;
-    }
-
-    .JTM-C-Dialog-Buttons {
+    #JTM-C-Dialog-Content {
       display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: nowrap;
-      gap: 8px;
-      justify-content: flex-start;
-    }
-
-    .JTM-C-Dialog-ContentLayout {
-      display: flex;
-      align-items: flex-start;
+      align-items: center;
       flex-direction: column;
 
-      margin-bottom: 24px;
+      margin-block: 24px 64px;
+      margin-inline: 12px;
 
       color: var(--md-sys-color-on-surface-variant);
 
-      .JTM-C-Dialog-Headline {
-        margin-bottom: 16px;
+      animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+        JTM-C-Dialog-ContentShow;
 
-        color: var(--md-sys-color-on-surface);
+      .JTM-C-Dialog-LeaderIcon {
+        @include material-symbols($size: 24);
       }
 
-      .JTM-C-Dialog-SupportingText {
-        margin-bottom: 24px;
+      .JTM-C-Dialog-Headline {
+        margin-inline: 10px;
+
+        h3 {
+          margin-block-end: 6px;
+
+          color: var(--md-sys-color-on-surface);
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        p {
+          text-align: center;
+        }
       }
 
       .JTM-C-Dialog-SupportingList {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 12px;
 
         width: 100%;
+
+        animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short2) 1 normal both
+          JTM-C-Dialog-SupportingListShow;
 
         .JTM-C-Dialog-TipItems {
           display: grid;
@@ -65,16 +78,18 @@
       }
     }
 
-    &[icon] {
-      .JTM-C-Dialog-ContentLayout {
-        align-items: center;
+    #JTM-C-Dialog-Button {
+      position: absolute;
+      right: 0;
 
-        .JTM-C-Dialog-LeaderIcon {
-          @include material-symbols($size: 24);
+      margin: 12px;
 
-          margin-bottom: 16px;
-        }
-      }
+      animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+        JTM-C-Dialog-ButtonShow;
     }
+  }
+
+  &::backdrop {
+    background-color: transparent;
   }
 }

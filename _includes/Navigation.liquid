@@ -63,18 +63,16 @@
   </div>
   <button class="JTM-C-IconButton" id="JTM-C-AppBar-InfoIcon">info</button>
 </div>
-<dialog
-  class="JTM-C-Dialog"
-  id="JTM-C-Dialog-ModalTips"
-  icon>
-  <div class="JTM-C-Dialog-ContentLayout">
+<dialog class="JTM-C-Dialog">
+  <div class="JTM-C-Dialog-Layout">
+    <div id="JTM-C-Dialog-Content">
     <span class="JTM-C-Dialog-LeaderIcon">help</span>
-
-    <h3 class="JTM-C-Dialog-Headline">{{ page.title }}</h3>
+      <div class="JTM-C-Dialog-Headline">
+        <h3>{{ page.title | default: site.title }}</h3>
     {% if page.description and page.description != "" %}
-      <p class="JTM-C-Dialog-SupportingText">{{ page.description }}</p>
+          <p>{{ page.description }}</p>
     {% endif %}
-
+      </div>
     <div class="JTM-C-Dialog-SupportingList">
       {% if page.date %}
         <div class="JTM-C-Dialog-TipItems">
@@ -126,10 +124,11 @@
       {% endif %}
     </div>
   </div>
-  <div class="JTM-C-Dialog-Buttons">
+    <div id="JTM-C-Dialog-Button">
     <button
       class="JTM-C-CommonButton"
       spec="text"
       id="dialog-close">关闭</button>
+    </div>
   </div>
 </dialog>
