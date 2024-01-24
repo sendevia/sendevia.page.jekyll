@@ -18,13 +18,12 @@ __webpack_require__.r(__webpack_exports__);
 
 const openModal = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleDim)(true);
-  _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = `JTM-C-Dialog-Show var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
   _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.showModal();
 };
 
 const closeModal = () => {
   (0,_app__WEBPACK_IMPORTED_MODULE_0__.toggleDim)(false);
-  _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = `JTM-C-Dialog-Close var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both`;
+  _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerClose`;
   setTimeout(() => {
     _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.close();
     _app__WEBPACK_IMPORTED_MODULE_0__.modalTips.style.animation = "";
@@ -256,7 +255,7 @@ const topAppBar = document.querySelector(".JTM-C-AppBar");
 /**
  * 选择模态提示框
  */
-const modalTips = document.querySelector("#JTM-C-Dialog-ModalTips");
+const modalTips = document.querySelector(".JTM-C-Dialog");
 /**
  * 选择可以开启模态提示框的元素
  */
