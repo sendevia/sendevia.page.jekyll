@@ -36,14 +36,16 @@
 [JTM-O-ContentBlur] {
   .JTM-S-ScrollToTop,
   #JTM-S-UniversalLayout-ContentFlow {
-    filter: contrast(0.8);
+    @include JTM-E-UserSelect(none);
+
+    filter: contrast(0.6);
     pointer-events: none;
   }
 
   @media screen and (max-width: 768px) {
     .JTM-C-Navigation,
     .JTM-C-AppBar {
-      filter: contrast(0.8);
+      filter: contrast(0.6);
       pointer-events: none;
       transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
     }
@@ -51,5 +53,8 @@
 }
 
 [JTM-O-BodyBlur] {
-  filter: contrast(0.8);
+  @include JTM-E-UserSelect(none);
+
+  filter: contrast(0.6);
+  pointer-events: none;
 }

@@ -59,76 +59,76 @@
   {% endif %}
   <div id="JTM-C-AppBar-DynamicTitle">
     <span>{{ site.title }}</span>
-    <span>{{ page.title }}</span>
+    <span>{{ page.title | default: site.title }}</span>
   </div>
   <button class="JTM-C-IconButton" id="JTM-C-AppBar-InfoIcon">info</button>
 </div>
 <dialog class="JTM-C-Dialog">
   <div class="JTM-C-Dialog-Layout">
     <div id="JTM-C-Dialog-Content">
-    <span class="JTM-C-Dialog-LeaderIcon">help</span>
+      <span class="JTM-C-Dialog-LeaderIcon">help</span>
       <div class="JTM-C-Dialog-Headline">
         <h3>{{ page.title | default: site.title }}</h3>
-    {% if page.description and page.description != "" %}
+        {% if page.description and page.description != "" %}
           <p>{{ page.description }}</p>
-    {% endif %}
+        {% endif %}
       </div>
-    <div class="JTM-C-Dialog-SupportingList">
-      {% if page.date %}
+      <div class="JTM-C-Dialog-SupportingList">
+        {% if page.date %}
+          <div class="JTM-C-Dialog-TipItems">
+            <button
+              class="JTM-C-IconButton"
+              spec="standard"
+              disabled>calendar_month</button>
+            <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
+          </div>
+        {% endif %}
+        {% assign page_words = page.content | number_of_words: "auto" %} {% assign read_estimate = page_words | divided_by: 120 %}
         <div class="JTM-C-Dialog-TipItems">
           <button
             class="JTM-C-IconButton"
             spec="standard"
-            disabled>calendar_month</button>
-          <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
+            disabled>schedule</button>
+          <p>估计阅读时间：{% if read_estimate > 0 %}
+              {{ read_estimate }}
+            {% else %}
+              少于 1
+            {% endif %}分钟</p>
         </div>
-      {% endif %}
-      {% assign page_words = page.content | number_of_words: "auto" %} {% assign read_estimate = page_words | divided_by: 120 %}
-      <div class="JTM-C-Dialog-TipItems">
-        <button
-          class="JTM-C-IconButton"
-          spec="standard"
-          disabled>schedule</button>
-        <p>估计阅读时间：{% if read_estimate > 0 %}
-            {{ read_estimate }}
-          {% else %}
-            少于 1
-          {% endif %}分钟</p>
+        {% if page.author %}
+          <div class="JTM-C-Dialog-TipItems">
+            <button
+              class="JTM-C-IconButton"
+              spec="standard"
+              disabled>person</button>
+            <p>作者：{{ page.author }}</p>
+          </div>
+        {% endif %}
+        {% if page.categories.size > 0 %}
+          <div class="JTM-C-Dialog-TipItems">
+            <button
+              class="JTM-C-IconButton"
+              spec="standard"
+              disabled>category</button>
+            <p>分类：{{ page.categories }}</p>
+          </div>
+        {% endif %}
+        {% if page.color and page.color != "" %}
+          <div class="JTM-C-Dialog-TipItems">
+            <button
+              class="JTM-C-IconButton"
+              spec="standard"
+              disabled>palette</button>
+            <p>主题颜色：{{ page.color }}</p>
+          </div>
+        {% endif %}
       </div>
-      {% if page.author %}
-        <div class="JTM-C-Dialog-TipItems">
-          <button
-            class="JTM-C-IconButton"
-            spec="standard"
-            disabled>person</button>
-          <p>作者：{{ page.author }}</p>
-        </div>
-      {% endif %}
-      {% if page.categories.size > 0 %}
-        <div class="JTM-C-Dialog-TipItems">
-          <button
-            class="JTM-C-IconButton"
-            spec="standard"
-            disabled>category</button>
-          <p>分类：{{ page.categories }}</p>
-        </div>
-      {% endif %}
-      {% if page.color and page.color != "" %}
-        <div class="JTM-C-Dialog-TipItems">
-          <button
-            class="JTM-C-IconButton"
-            spec="standard"
-            disabled>palette</button>
-          <p>主题颜色：{{ page.color }}</p>
-        </div>
-      {% endif %}
     </div>
-  </div>
     <div id="JTM-C-Dialog-Button">
-    <button
-      class="JTM-C-CommonButton"
-      spec="text"
-      id="dialog-close">关闭</button>
+      <button
+        class="JTM-C-CommonButton"
+        spec="text"
+        id="dialog-close">关闭</button>
     </div>
   </div>
 </dialog>

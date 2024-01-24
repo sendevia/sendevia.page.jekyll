@@ -46,10 +46,6 @@
         right: 0;
       }
 
-      &:hover {
-        opacity: 1;
-      }
-
       &:active,
       &:focus {
         outline: none;
@@ -255,6 +251,12 @@
             opacity: 0;
           }
         }
+      }
+    }
+
+    &:hover {
+      .JTM-S-Carousel-Control {
+        opacity: 1;
       }
     }
   }
