@@ -33,11 +33,6 @@
   repository: https://github.com/jekyll/jekyll-sitemap
   version: 1.4.0
 
-- name: jemoji
-  license: MIT
-  repository: https://github.com/jekyll/jemoji
-  version: 0.13.0
-
 - name: Plus Jakarta Sans
   license: Open Font License
   repository: https://fonts.google.com/specimen/Plus+Jakarta+Sans
