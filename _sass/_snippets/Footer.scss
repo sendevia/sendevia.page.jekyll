@@ -19,12 +19,42 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
+    gap: 6px;
 
     padding-inline-start: 12px;
 
-    h3 {
-      letter-spacing: 0.2px;
-      text-transform: uppercase;
+    .JTM-S-Footer-Descriptions-Topic {
+      h3 {
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .JTM-S-Footer-Descriptions-ThemeUsed {
+      @include typescale-style("body-large");
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .JTM-S-Footer-Descriptions-Registration {
+      @include typescale-style("body-large");
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      #JTM-S-Footer-Registration-Gongan {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
     }
   }
 

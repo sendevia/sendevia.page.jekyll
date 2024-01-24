@@ -176,6 +176,15 @@
       .JTM-S-Footer {
         margin-inline: 0;
 
+        #JTM-S-Footer-Descriptions {
+          .JTM-S-Footer-Descriptions-ThemeUsed,
+          .JTM-S-Footer-Descriptions-Registration {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+
         #JTM-S-Footer-Socialmedia {
           justify-content: space-evenly;
         }
