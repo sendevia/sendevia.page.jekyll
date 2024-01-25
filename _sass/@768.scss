@@ -1,17 +1,6 @@
 // 768px 适配
 
 @media screen and (max-width: 768px) {
-  html,
-  body {
-    ::-webkit-scrollbar {
-      width: 3px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-clip: unset;
-    }
-  }
-
   a {
     width: auto;
   }

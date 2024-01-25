@@ -43,47 +43,11 @@ body {
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
   scrollbar-color: var(--md-sys-color-secondary) #0000;
-  scrollbar-width: auto;
-
-  ::-webkit-scrollbar {
-    height: 18px;
-    width: 12px;
-
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: var(--md-sys-shape-corner-small);
-    border: 3px solid transparent;
-
-    background-clip: content-box;
-    background-color: var(--md-sys-color-secondary);
-
-    &:hover {
-      background-color: var(--md-sys-color-tertiary);
-    }
-  }
-
-  ::-webkit-scrollbar-corner,
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
 
   ::selection {
     color: var(--md-sys-color-surface-variant);
 
     background-color: var(--md-sys-color-on-surface-variant);
-  }
-
-  @media (pointer: coarse) {
-    ::-webkit-scrollbar {
-      height: 3px;
-      width: 3px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-clip: unset;
-    }
   }
 }
 
