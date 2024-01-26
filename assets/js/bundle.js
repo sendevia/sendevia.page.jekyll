@@ -308,7 +308,6 @@ const rotationListItemsBullet = document.querySelectorAll("ul li");
  */
 const toggleNavigationDrawer = (state) => {
   contentNavigationDrawer.toggleAttribute("show", state);
-  themeRoot.toggleAttribute("JTM-O-ContentBlur", state);
 };
 /**
  * 控制根元素的状态
