@@ -8,7 +8,7 @@
 
   background-color: transparent;
 
-  animation: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow;
+  animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow;
 
   .JTM-C-Dialog-Layout {
     position: relative;
@@ -30,8 +30,9 @@
       display: flex;
       align-items: center;
       flex-direction: column;
+      gap: 12px;
 
-      margin-block: 24px 64px;
+      margin-block-end: 64px;
       margin-inline: 12px;
 
       color: var(--md-sys-color-on-surface-variant);
@@ -63,6 +64,7 @@
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        gap: 12px;
 
         width: 100%;
 

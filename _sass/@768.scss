@@ -5,6 +5,10 @@
     width: auto;
   }
 
+  .JTM-C-Dialog[open] {
+    animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow-Alt;
+  }
+
   .JTM-S-404NotFound #JTM-S-404NotFound-Information {
     h1 {
       font-size: 75rem;
