@@ -23,6 +23,7 @@
     overflow: overlay;
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
+    scrollbar-width: thin;
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
       filter var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard),
       padding var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized),
