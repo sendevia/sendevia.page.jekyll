@@ -1,5 +1,7 @@
 .JTM-S-Carousel {
-  height: 540px;
+  height: 54vh;
+  min-height: 420px;
+  max-height: 540px;
 
   margin-block: 12px;
   margin-inline: calc(25% - 152px);

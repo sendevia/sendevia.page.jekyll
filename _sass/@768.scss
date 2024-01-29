@@ -106,7 +106,8 @@
       padding-inline: 12px;
 
       .JTM-S-Carousel {
-        height: calc(55vh - 64px - 80px);
+        min-height: 360px;
+        max-height: 480px;
 
         margin: 0;
 
