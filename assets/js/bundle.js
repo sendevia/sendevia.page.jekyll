@@ -278,7 +278,7 @@ const rippleElements = document.querySelectorAll(
  * 选择需要延迟跳转的a元素
  */
 const linkElements = document.querySelectorAll(
-  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
+  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump"
 );
 /**
  * Carousel元素
@@ -342,7 +342,7 @@ const handleScroll = () => {
  * 缩放事件
  */
 const handleResize = () => {
-  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+  contentNavigation.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
 };
 
 /**
@@ -552,7 +552,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onpageshow = () => {
-  _app__WEBPACK_IMPORTED_MODULE_1__.contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+  _app__WEBPACK_IMPORTED_MODULE_1__.contentNavigation.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
 
   try {
     const activatedSegment = document.querySelector(`a[href="${_app__WEBPACK_IMPORTED_MODULE_1__.currentPage}"]`);
@@ -582,7 +582,7 @@ window.onpageshow = () => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
       const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
-      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 768px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
         (0,_app__WEBPACK_IMPORTED_MODULE_1__.toggleNavigationDrawer)(false);
       }
     });
