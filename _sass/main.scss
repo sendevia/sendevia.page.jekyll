@@ -22,7 +22,7 @@
 @import "_components/Navigation";
 @import "_components/NavigationDrawer";
 @import "_components/ProgressIndicator";
-@import "_components/Snackbar.scss";
+@import "_components/Snackbar";
 @import "_components/Table";
 
 * {
@@ -42,7 +42,7 @@ body {
 
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
-  scrollbar-color: var(--md-sys-color-secondary) #0000;
+  scrollbar-color: var(--md-sys-color-secondary) transparent;
 
   ::selection {
     color: var(--md-sys-color-surface-variant);
@@ -79,7 +79,7 @@ body {
 
     background-color: var(--md-sys-color-primary);
 
-    animation: ripple var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
+    animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) ripple;
     pointer-events: none;
     transform: translate(-50%, -50%);
   }
@@ -175,6 +175,8 @@ hr {
   &[spec="wave"] {
     height: 15px;
 
+    margin: 0;
+
     border-radius: var(--md-sys-shape-corner-small);
     border: none;
 
@@ -235,7 +237,7 @@ hr {
   #JTM-P-Index-CardSet {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 12px;
 
     #JTM-P-Index-SummaryCard {
       display: flex;
@@ -252,23 +254,21 @@ hr {
 
       background-color: var(--md-sys-color-surface-container-low);
 
-      .JTM-P-Index-SummaryTitle {
+      .JTM-P-Index-SummaryTitle-TitleContainer {
         display: flex;
         align-items: flex-start;
         gap: 12px;
 
-        #JTM-P-Index-SummaryTitle-Leader {
-          @include material-symbols($size: 30);
+        #JTM-P-Index-SummaryTitle-Date {
+          color: var(--md-sys-color-on-surface-variant);
         }
 
-        #JTM-P-Index-SummaryTitle-TitleContainer {
-          .JTM-P-Index-SummaryTitle-Date {
-            color: var(--md-sys-color-on-surface-variant);
-          }
+        #JTM-P-Index-SummaryTitle-Content {
+          letter-spacing: 1.3px;
+        }
 
-          .JTM-P-Index-SummaryTitle-Content {
-            letter-spacing: 1.3px;
-          }
+        &::before {
+          @include material-symbols("fiber_new", $size: 30);
         }
       }
 
@@ -285,14 +285,14 @@ hr {
           text-decoration: none;
           text-indent: initial;
 
-          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-
           &::after {
             @include material-symbols("east", $size: 18);
+
+            transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
           }
 
-          &:hover {
-            gap: 12px;
+          &:hover::after {
+            transform: translateX(4px);
           }
         }
       }
@@ -420,7 +420,6 @@ hr {
 @import "_snippets/UniversalLayout.scss";
 @import "_snippets/WebsiteInformation.scss";
 
-@import "@1024";
-@import "@768";
+@import "@1100";
+@import "@648";
 @import "@425";
-@import "@375";

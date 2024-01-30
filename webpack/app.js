@@ -81,7 +81,7 @@ export const rippleElements = document.querySelectorAll(
  * 选择需要延迟跳转的a元素
  */
 export const linkElements = document.querySelectorAll(
-  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump a"
+  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump"
 );
 /**
  * Carousel元素
@@ -145,7 +145,7 @@ export const handleScroll = () => {
  * 缩放事件
  */
 export const handleResize = () => {
-  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+  contentNavigation.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
 };
 
 /**

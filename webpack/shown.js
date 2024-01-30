@@ -21,7 +21,7 @@ import {
 } from "./app";
 
 window.onpageshow = () => {
-  contentNavigation.setAttribute("spec", window.innerWidth <= 768 ? "bar" : "rail");
+  contentNavigation.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
 
   try {
     const activatedSegment = document.querySelector(`a[href="${currentPage}"]`);
@@ -51,7 +51,7 @@ window.onpageshow = () => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
       const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
-      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 768px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
         toggleNavigationDrawer(false);
       }
     });

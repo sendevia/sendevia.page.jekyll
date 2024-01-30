@@ -1,13 +1,14 @@
 .JTM-S-Footer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 12px;
+  grid-column: span 12;
   justify-content: space-around;
 
-  margin-block: 18px;
-  margin-inline: calc(25% - 152px);
+  margin-inline: 12px;
+  padding-block-end: 18px;
 
   color: var(--md-sys-color-on-surface-variant);
 
@@ -20,8 +21,6 @@
     flex-grow: 1;
     flex-direction: column;
     gap: 6px;
-
-    padding-inline-start: 12px;
 
     .JTM-S-Footer-Descriptions-Topic {
       h3 {

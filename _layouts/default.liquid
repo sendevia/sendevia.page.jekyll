@@ -12,7 +12,7 @@
       {% include WebsiteInformation.liquid %}
     {% endif %}
     {% include LoadingSplash.liquid %}
-    {% if page.url == "/index.html" %}
+    {% if page.url == "/index.html" or page.url == "/licenses.html" %}
       {% include UniversalLayout.liquid spec_page_index = "true" %}
     {% elsif page.url == "/posts.html" %}
       {% include UniversalLayout.liquid spec_carousel = "true" %}

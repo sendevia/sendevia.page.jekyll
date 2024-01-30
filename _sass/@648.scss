@@ -1,6 +1,6 @@
 // 768px 适配
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 648px) {
   a {
     width: auto;
   }
@@ -76,24 +76,6 @@
     display: none;
   }
 
-  .JTM-S-QuickJump {
-    a {
-      width: 100%;
-    }
-
-    &#JTM-S-QuickJump-Pair a {
-      #JTM-S-QuickJump-Previous {
-        margin-block-end: 3px;
-        margin-inline-end: 0;
-      }
-
-      #JTM-S-QuickJump-Next {
-        margin-block-start: 3px;
-        margin-inline-start: 0;
-      }
-    }
-  }
-
   .JTM-S-UniversalLayout {
     grid-template-columns: none;
     grid-template-rows: auto 80px;
@@ -101,15 +83,19 @@
     #JTM-S-UniversalLayout-ContentFlow {
       grid-column: auto;
       grid-row: 1/2;
+      grid-template-columns: repeat(4, 1fr);
 
-      padding-block: 115px 120px;
+      padding-block: 64px 120px;
       padding-inline: 12px;
 
       .JTM-S-Carousel {
-        min-height: 360px;
-        max-height: 480px;
+        grid-column: span 4;
 
-        margin: 0;
+        height: 42vh;
+        max-height: 480px;
+        min-height: 360px;
+
+        margin-inline: 0;
 
         #JTM-S-Carousel-PostsList {
           margin: 0;
@@ -130,11 +116,11 @@
       }
 
       .JTM-S-Header {
-        flex-direction: column;
+        grid-column: span 4;
 
         height: calc(55vh - 64px - 80px);
 
-        margin: 0;
+        margin-inline: 0;
 
         #JTM-S-Header-HeroContainer {
           grid-column: span 2;
@@ -156,19 +142,29 @@
       }
 
       #JTM-S-UniversalLayout-ContentFiller {
-        margin-block: 12px 6px;
+        grid-column: span 4;
+
         margin-inline: 0;
-        padding: 0 0 36px 0;
 
         background-color: transparent;
       }
 
-      .JTM-S-QuickJump {
-        margin-inline: 0;
+      a.JTM-S-QuickJump {
+        &[spec="previous"] {
+          grid-column: span 4;
+        }
+
+        &[spec="next"] {
+          grid-column: span 4;
+        }
+      }
+
+      hr {
+        grid-column: span 4;
       }
 
       .JTM-S-Footer {
-        margin-inline: 0;
+        grid-column: span 4;
 
         #JTM-S-Footer-Descriptions {
           .JTM-S-Footer-Descriptions-ThemeUsed,
@@ -187,6 +183,8 @@
   }
 
   .JTM-P-Index {
+    grid-column: span 4;
+
     #JTM-P-Index-CardSet {
       grid-template-columns: repeat(1, 1fr);
 
@@ -205,18 +203,16 @@
     margin-inline: 0;
     padding-block: 0;
 
-    #JTM-P-Posts-Timeline {
-      .JTM-P-Posts-Timeline-L2 {
-        grid-template-columns: repeat(1, 1fr);
+    #JTM-P-Posts-Timeline .JTM-P-Posts-Timeline-L2 {
+      grid-template-columns: repeat(1, 1fr);
 
-        width: 100%;
+      width: 100%;
 
-        #JTM-P-Posts-Timeline-PostCard .JTM-P-Posts-Timeline-DateDetail {
-          left: unset;
-          right: 0;
+      #JTM-P-Posts-Timeline-PostCard .JTM-P-Posts-Timeline-DateDetail {
+        left: unset;
+        right: 0;
 
-          border-radius: 12px 20px 12px 12px;
-        }
+        border-radius: 12px 20px 12px 12px;
       }
     }
   }

@@ -65,9 +65,15 @@
         }
       }
 
-      &#JTM-C-NavigationDrawer-Item-Expandable {
-        a::after {
+      &#JTM-C-NavigationDrawer-Item-Expandable a {
+        &::after {
           @include material-symbols("expand_more", $size: 18);
+
+          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+        }
+
+        &:active::after {
+          transform: translateY(4px);
         }
       }
     }
@@ -100,8 +106,14 @@
     }
 
     &[open] {
-      summary#JTM-C-NavigationDrawer-Item-Expandable a::after {
-        @include material-symbols("expand_less", $size: 18);
+      summary#JTM-C-NavigationDrawer-Item-Expandable a {
+        &::after {
+          @include material-symbols("expand_less", $size: 18);
+        }
+
+        &:active::after {
+          transform: translateY(-4px);
+        }
       }
     }
   }

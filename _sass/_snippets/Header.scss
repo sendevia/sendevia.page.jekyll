@@ -1,8 +1,9 @@
 .JTM-S-Header {
+  grid-column: span 12;
+
   height: 540px;
 
-  margin-block: 12px;
-  margin-inline: calc(25% - 152px);
+  margin-block-start: 12px;
 
   word-break: break-word;
 

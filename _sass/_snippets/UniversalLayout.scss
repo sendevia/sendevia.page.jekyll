@@ -4,18 +4,19 @@
 
   height: 100%;
 
-  .JTM-C-Navigation {
-    grid-column: 1 / 2;
-  }
-
   #JTM-S-UniversalLayout-ContentFlow {
-    grid-column: 2 / 2;
+    display: grid;
+    align-content: space-between;
+    align-items: start;
+    gap: 12px;
+    grid-template-columns: repeat(12, 72px);
+    justify-content: center;
 
     position: relative;
 
     width: 100%;
 
-    padding-block: 40px 70px;
+    padding-block-end: 68px;
 
     background-color: var(--md-sys-color-surface-container-low);
 
@@ -24,14 +25,14 @@
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
     scrollbar-width: thin;
+    transform: translateY(20px) scale(0.99);
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
       filter var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-standard),
-      padding var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized),
+      transform var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized),
       opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
     #JTM-S-UniversalLayout-ContentFiller {
-      margin-block: 24px 6px;
-      margin-inline: calc(25% - 152px);
+      grid-column: span 12;
 
       &[spec="article"] {
         padding-block: 24px 12px;
@@ -285,13 +286,13 @@
         }
 
         [role="doc-endnotes"] {
-          margin-block-start: 6px;
-          margin-inline: 6px;
-          padding-block: 0;
+          margin-inline: 24px;
+          padding-block-end: 12px;
 
           ol {
             margin-inline: 24px;
-            padding-block: 24px;
+            padding-block-start: 24px;
+            padding-inline-start: 0;
 
             counter-reset: listCounter;
 
@@ -406,6 +407,10 @@
           }
         }
       }
+    }
+
+    hr {
+      grid-column: span 12;
     }
   }
 }

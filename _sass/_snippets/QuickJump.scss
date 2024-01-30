@@ -1,49 +1,47 @@
-.JTM-S-QuickJump {
-  margin-block-end: 2vh;
-  margin-inline: calc(25% - 152px);
+a.JTM-S-QuickJump {
+  width: 100%;
+  height: 100%;
 
   text-align: center;
-
-  a {
-    width: 50%;
-    min-width: 300px;
-
-    text-decoration: none;
-    vertical-align: top;
-    white-space: break-spaces;
-
-    #JTM-S-QuickJump-Previous {
-      margin-inline-end: 3px;
-
-      .JTM-C-Card-Supporting {
-        align-items: self-start;
-
-        text-align: start;
-      }
-    }
-
-    #JTM-S-QuickJump-Next {
-      margin-inline-start: 3px;
-
-      .JTM-C-Card-Supporting {
-        align-items: flex-end;
-
-        text-align: end;
-      }
-    }
-  }
+  text-decoration: none;
+  vertical-align: top;
+  white-space: break-spaces;
 
   p {
     display: inline-flex;
     align-items: center;
     gap: 3px;
+  }
 
-    span {
-      @include material-symbols($size: 18);
+  .JTM-C-Card {
+    height: 100%;
+  }
+
+  &[spec="previous"] {
+    grid-column: 1/7;
+
+    .JTM-C-Card .JTM-C-Card-Supporting {
+      align-items: self-start;
+
+      text-align: start;
+
+      p::before {
+        @include material-symbols("west", $size: 18);
+      }
     }
   }
 
-  &#JTM-S-QuickJump-Single a {
-    width: 100%;
+  &[spec="next"] {
+    grid-column: 7/13;
+
+    .JTM-C-Card .JTM-C-Card-Supporting {
+      align-items: flex-end;
+
+      text-align: end;
+
+      p::after {
+        @include material-symbols("east", $size: 18);
+      }
+    }
   }
 }

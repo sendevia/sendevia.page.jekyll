@@ -6,11 +6,10 @@ author: sendevia
   <div id="JTM-P-Index-CardSet">
     {% assign latest_post = site.posts | first %}
     <div id="JTM-P-Index-SummaryCard">
-      <div class="JTM-P-Index-SummaryTitle">
-        <span id="JTM-P-Index-SummaryTitle-Leader">fiber_new</span>
-        <div id="JTM-P-Index-SummaryTitle-TitleContainer">
-          <p class="JTM-P-Index-SummaryTitle-Date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
-          <h2 class="JTM-P-Index-SummaryTitle-Content">{{ latest_post.title }}</h2>
+      <div class="JTM-P-Index-SummaryTitle-TitleContainer">
+        <div>
+          <p id="JTM-P-Index-SummaryTitle-Date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
+          <h2 id="JTM-P-Index-SummaryTitle-Content">{{ latest_post.title }}</h2>
         </div>
       </div>
       <p class="JTM-P-Index-Summary">

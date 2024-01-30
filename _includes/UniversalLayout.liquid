@@ -13,7 +13,9 @@
       {% if include.spec_layout == "article" %}
       spec="article"
       {% endif %}>{% include Content.liquid %}</div>
-    {% include QuickJump.liquid %}
+    {% if page.previous or page.next -%}
+      {% include QuickJump.liquid %}
+    {%- endif -%}
     <hr spec="wave" />
     {% include Footer.liquid %}
   </div>
