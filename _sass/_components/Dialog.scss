@@ -81,6 +81,9 @@
     }
 
     #JTM-C-Dialog-Button {
+      display: flex;
+      justify-content: end;
+
       position: absolute;
       right: 0;
 
