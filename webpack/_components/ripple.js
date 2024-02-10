@@ -2,7 +2,7 @@
  * 添加涟漪效果
  * @param {selector} element
  */
-export const ripple = (element) => {
+export const effect_ripple = (element) => {
   element.addEventListener("mousedown", (e) => {
     const x = e.offsetX;
     const y = e.offsetY;

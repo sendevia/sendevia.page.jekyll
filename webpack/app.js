@@ -1,158 +1,145 @@
-import "./shown";
-import "./loaded";
-import { openModal, closeModal } from "./_components/modal";
+import { argbFromHex } from "@material/material-color-utilities";
+import { generateColorPalette } from "./_components/monet";
+import { effect_ripple } from "./_components/ripple";
 
-////////////////////
-//常用常量配置
-///////////////////
 /**
- * 需要以此生成调色盘的hex颜色
+ * 主题 - 根节点
  */
-export const customThemeColor = document.body.getAttribute("color");
+const theme_Root = document.querySelector(".JTM-Root");
 /**
- * 主题根节点
+ * 主题 - 加载指示器
  */
-export const themeRoot = document.querySelector(".JTM-Root");
+const theme_LoadingIndicator = document.querySelector(".JTM-S-LoadingSplash");
 /**
- * 文章内容流
+ * 主题 - 定位当前所在页面
  */
-export const contentContainer = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
+const theme_CurrentPage = window.location.pathname;
 /**
- * 文章头部印象图
+ * 主题 - 模态对话框
  */
-export const contentPhotograph = document.querySelector("#JTM-S-Header-Impression img");
+const theme_Dialog = document.querySelector(".JTM-C-Dialog");
 /**
- * 页面导航
+ * 主题 - 模态对话框 - 状态控制器（开启）
  */
-export const contentNavigation = document.querySelector(".JTM-C-Navigation");
+const theme_Dialog_Controller_Open = document.querySelectorAll("#JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
 /**
- * 展开的页面导航
+ * 主题 - 模态对话框 - 状态控制器（关闭）
  */
-export const contentNavigationDrawer = document.querySelector(".JTM-C-NavigationDrawer");
+const theme_Dialog_Controller_Close = document.querySelector("#dialog-close");
 /**
- * 页面导航的一级目录元素
+ * 主题 - 跳转到页首
  */
-export const contentDrawerH1Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details summary > a") : [];
+const theme_ScrollToTop = document.querySelectorAll(".JTM-S-ScrollToTop");
 /**
- * 页面导航的二级目录元素
+ * 主题 - 涟漪效果元素
  */
-export const contentDrawerH2Entries = contentNavigationDrawer ? contentNavigationDrawer.querySelectorAll("details > a") : [];
-/**
- * 选择控制页面导航开关的元素
- */
-export const contentDrawerMenuBtn = contentNavigationDrawer
-  ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon")
-  : [];
-/**
- * 页面加载中的闪屏
- */
-const contentSplashScreen = document.querySelector(".JTM-S-LoadingSplash");
-/**
- * 定位当前所在的页面
- */
-export const currentPage = window.location.pathname;
-/**
- * 选择移动端的标题栏
- */
-const topAppBar = document.querySelector(".JTM-C-AppBar");
-/**
- * 选择模态提示框
- */
-export const modalTips = document.querySelector(".JTM-C-Dialog");
-/**
- * 选择可以开启模态提示框的元素
- */
-const modalTipsIcon = document.querySelectorAll("#JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
-/**
- * 选择可以关闭模态提示框的元素
- */
-const dialogBtnClose = document.querySelector("#dialog-close");
-/**
- * 选择点击后跳转到页面顶端的元素
- */
-export const scrollTopElements = document.querySelectorAll(".JTM-S-ScrollToTop");
-/**
- * 选择需要涟漪效果的元素
- */
-export const rippleElements = document.querySelectorAll(
+const theme_RippleElements = document.querySelectorAll(
   `#JTM-S-UniversalLayout-ContentFiller[spec='article'] li a, #JTM-S-UniversalLayout-ContentFiller[spec='article'] p a, button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
 );
 /**
- * 选择需要延迟跳转的a元素
+ * 主题 - 延迟跳转元素
  */
-export const linkElements = document.querySelectorAll(
-  ".JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump"
+const theme_DelayRedirect = document.querySelectorAll(
+  "#JTM-P-Index-ReadMore, .JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump"
 );
 /**
- * Carousel元素
+ * 调色盘 - HEX颜色
  */
-export const carouselElement = document.querySelector(".JTM-S-Carousel");
+const palette_HEX = document.body.getAttribute("color");
 /**
- * Carousel的控制按钮
+ * 文章 - 内容流
  */
-export const carouselControl = carouselElement ? carouselElement.querySelectorAll(".JTM-S-Carousel-Control") : [];
+const content_Flow = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
 /**
- * Carousel的文章列表
+ * 文章 - 头部印象图
  */
-export const carouselPostList = carouselElement ? carouselElement.querySelector("#JTM-S-Carousel-PostsList") : [];
+const content_Photograph = document.querySelector("#JTM-S-Header-Impression img");
 /**
- * 需要随机旋转的列表Bullet
+ * 文章 - ul随机旋转的marker
  */
-export const rotationListItemsBullet = document.querySelectorAll("ul li");
-////////////////////
-//常用常量配置结束
-///////////////////
+const content_RotationListItemsBullet = document.querySelectorAll("ul li");
+/**
+ * 全局导航栏
+ */
+const navigation_Container = document.querySelector(".JTM-C-Navigation");
+/**
+ * 全局导航栏 - 展开
+ */
+const navigation_Drawer = document.querySelector(".JTM-C-NavigationDrawer");
+/**
+ * 全局导航栏 - 展开 - 一级目录元素
+ */
+const navigation_Drawer_H1Entries = navigation_Drawer ? navigation_Drawer.querySelectorAll("details summary > a") : [];
+/**
+ * 全局导航栏 - 展开 - 二级目录元素
+ */
+const navigation_Drawer_H2Entries = navigation_Drawer ? navigation_Drawer.querySelectorAll("details > a") : [];
+/**
+ * 全局导航栏 - 状态控制器
+ */
+const navigation_Controller = navigation_Drawer
+  ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon")
+  : [];
+/**
+ * 移动端 - 标题栏
+ */
+const mobile_AppBar = document.querySelector(".JTM-C-AppBar");
+/**
+ * Carousel - 内容容器
+ */
+const carousel_Container = document.querySelector(".JTM-S-Carousel");
+/**
+ * Carousel - 状态控制器
+ */
+const carousel_Controller = carousel_Container ? carousel_Container.querySelectorAll(".JTM-S-Carousel-Control") : [];
+/**
+ * Carousel - 展示的文章
+ */
+const carousel_PostList = carousel_Container ? carousel_Container.querySelector("#JTM-S-Carousel-PostsList") : [];
 
 /**
- * 控制元素的状态
- * @contentNavigationDrawer show
- * @themeRoot JTM-O-ContentBlur
- * @param {boolean} state
+ * 控制全局导航栏的展开状态
  */
-export const toggleNavigationDrawer = (state) => {
-  contentNavigationDrawer.toggleAttribute("show", state);
-};
-/**
- * 控制根元素的状态
- * @param {boolean} state
- */
-export const toggleDim = (state) => themeRoot.toggleAttribute("JTM-O-BodyBlur", state);
+function toggle_Navigation_Drawer(boolean) {
+  navigation_Drawer.toggleAttribute("show", boolean);
+}
 
-let lastScrollY = 0;
 /**
  * 滚动事件
  */
-export const handleScroll = () => {
-  const scrollY = contentContainer.scrollTop;
+let lastScrollY = 0;
+function bodyScroll() {
+  const scrollY = content_Flow.scrollTop;
   const scrollThreshold = 64;
   const scrollDirection = scrollY > lastScrollY ? "down" : "up";
-  topAppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
+  mobile_AppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
+
   if (scrollDirection === "up") {
-    themeRoot.setAttribute("JTM-O-OnScrollEvent", "false");
+    theme_Root.setAttribute("JTM-O-OnScrollEvent", "false");
   } else if (scrollDirection === "down" && scrollY >= 500) {
-    themeRoot.setAttribute("JTM-O-OnScrollEvent", "true");
+    theme_Root.setAttribute("JTM-O-OnScrollEvent", "true");
   }
-  scrollTopElements.forEach((element) => {
+  theme_ScrollToTop.forEach((element) => {
     element.style.cssText = `
-      opacity: ${scrollY >= 400 ? "1" : "0"};
-      visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-    `;
+          opacity: ${scrollY >= 400 ? "1" : "0"};
+          visibility: ${scrollY >= 400 ? "visible" : "hidden"};
+        `;
   });
+
   lastScrollY = scrollY;
-};
+}
 
 /**
  * 缩放事件
  */
-export const handleResize = () => {
-  contentNavigation.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
-};
+function handleResize() {
+  navigation_Container.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+}
 
 /**
  * 链接跳转事件
- * @param {selector} link
  */
-export const handleLinkDelayRedirection = (link) => {
+function handleLinkDelayRedirection(link) {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const delay = 240;
@@ -167,68 +154,85 @@ export const handleLinkDelayRedirection = (link) => {
       }, delay);
     }
   });
-};
+}
 
 /**
  * 初始化模态提示框
  */
-export const initModal = () => {
-  const handleKeyboardEvent = (event) => {
-    if (event.key === "Escape") {
-      event.preventDefault();
+function initModal() {
+  const toggleDim = (boolean) => {
+    theme_Root.toggleAttribute("JTM-O-BodyBlur", boolean);
+  };
+
+  const openModal = () => {
+    toggleDim();
+    theme_Dialog.showModal();
+  };
+
+  const closeModal = () => {
+    toggleDim(false);
+    theme_Dialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerClose`;
+    setTimeout(() => {
+      theme_Dialog.close();
+      theme_Dialog.style.animation = "";
+    }, 400);
+  };
+
+  const handleKeyboardEvent = (e) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
       closeModal();
     }
   };
 
-  const handleClickOutside = (event) => {
-    if (event.target === modalTips) {
+  const handleClickOutsideEvent = (e) => {
+    if (e.target === theme_Dialog) {
       closeModal();
     }
   };
 
-  modalTipsIcon.forEach((element) => element.addEventListener("click", openModal));
-  dialogBtnClose.addEventListener("click", closeModal);
-  modalTips.addEventListener("keydown", handleKeyboardEvent);
-  modalTips.addEventListener("click", handleClickOutside);
-};
-
-/**
- * 移除加载屏幕
- */
-export const removeLoadScreen = () => {
-  const delay = 450;
-  themeRoot.setAttribute("JTM-O-OnSiteLoaded", true);
-  setTimeout(() => {
-    contentSplashScreen.style.display = "none";
-  }, delay);
-};
+  theme_Dialog_Controller_Open.forEach((element) => element.addEventListener("click", openModal));
+  theme_Dialog_Controller_Close.addEventListener("click", closeModal);
+  theme_Dialog.addEventListener("keydown", handleKeyboardEvent);
+  theme_Dialog.addEventListener("click", handleClickOutsideEvent);
+}
 
 /**
  * 增加加载屏幕
  */
-export const addLoadScreen = () => {
-  themeRoot.removeAttribute("JTM-O-OnSiteLoaded");
-};
+function addLoadScreen() {
+  theme_Root.removeAttribute("JTM-O-OnSiteLoaded");
+}
+
+/**
+ * 移除加载屏幕
+ */
+function removeLoadScreen() {
+  const delay = 450;
+  theme_Root.setAttribute("JTM-O-OnSiteLoaded", true);
+  setTimeout(() => {
+    theme_LoadingIndicator.style.display = "none";
+  }, delay);
+}
 
 /**
  * 随机旋转列表的Bullet
  */
-export const randomRotationBullet = () => {
+function randomRotationBullet() {
   const style = document.createElement("style");
   document.head.appendChild(style);
 
-  rotationListItemsBullet.forEach((li, index) => {
+  content_RotationListItemsBullet.forEach((li, index) => {
     const randomRotation = Math.floor(Math.random() * 360);
     style.sheet.insertRule(`ul li:nth-child(${index + 1})::before { transform: rotate(${randomRotation}deg); }`, style.sheet.cssRules.length);
   });
-};
+}
 
-var snackbars = [];
 /**
  * 创建一个底部提示条
- * @param {*} content
  */
-export function createSnackbar(content) {
+var snackbars = [];
+function createSnackbar(content) {
   var snackbar = document.createElement("div");
   snackbar.className = "JTM-C-Snackbar";
   snackbar.setAttribute("visible", "false");
@@ -282,7 +286,7 @@ export function createSnackbar(content) {
 /**
  * 更新提示条位置
  */
-export function updateSnackbarPositions() {
+function updateSnackbarPositions() {
   var bottomValue = window.innerWidth >= 768 ? 10 : 90;
 
   for (var i = snackbars.length - 1; i >= 0; i--) {
@@ -292,3 +296,112 @@ export function updateSnackbarPositions() {
     bottomValue += snackbar.offsetHeight + 10;
   }
 }
+
+window.onload = () => {
+  randomRotationBullet();
+
+  document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller > h1").forEach((h1) => {
+    h1.addEventListener("click", function () {
+      const anchorLink = this.id ? `#${this.id}` : "";
+
+      if (anchorLink) {
+        navigator.clipboard.writeText(window.location.href.split("#")[0] + anchorLink).then(() => createSnackbar("已将快捷链接复制到剪贴板"));
+      }
+    });
+  });
+
+  var testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
+  if (testButton) {
+    testButton.addEventListener("click", function () {
+      createSnackbar(testButton.innerText);
+    });
+  }
+
+  setTimeout(() => {
+    removeLoadScreen();
+
+    if (palette_HEX) {
+      generateColorPalette(argbFromHex(palette_HEX));
+    }
+  }, 500);
+};
+
+window.onpageshow = () => {
+  navigation_Container.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+
+  try {
+    const activatedSegment = document.querySelector(`a[href="${theme_CurrentPage}"]`);
+    const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
+    inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
+  } catch (err) {
+    document.querySelector(`a[href="/posts/"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
+  }
+
+  theme_ScrollToTop.forEach((element) => element.addEventListener("click", () => content_Flow.scrollTo({ top: 0 })));
+  theme_RippleElements.forEach(effect_ripple);
+  content_Flow.onscroll = bodyScroll;
+  window.onresize = handleResize;
+
+  initModal();
+
+  if (navigation_Drawer) {
+    navigation_Controller.forEach((element) => element.addEventListener("click", () => toggle_Navigation_Drawer()));
+    navigation_Drawer_H1Entries.forEach((element) => {
+      element.addEventListener("click", () => {
+        const parentDetails = element.closest("details");
+        if (parentDetails) {
+          parentDetails.open = !parentDetails.open;
+        }
+      });
+    });
+    navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggle_Navigation_Drawer(false)));
+    document.addEventListener("click", (event) => {
+      const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
+      const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
+      const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
+      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+        toggle_Navigation_Drawer(false);
+      }
+    });
+  }
+
+  theme_DelayRedirect.forEach(handleLinkDelayRedirection);
+
+  if (carousel_Container && carousel_PostList && carousel_Controller.length === 2) {
+    var currentValue = 1;
+    carousel_PostList.setAttribute("data-scroll", currentValue);
+
+    function updateValue(direction) {
+      currentValue += direction;
+      if (currentValue > 3) {
+        currentValue = 1;
+      } else if (currentValue < 1) {
+        currentValue = 3;
+      }
+      carousel_PostList.setAttribute("data-scroll", currentValue);
+    }
+
+    carousel_Controller[0].addEventListener("click", function () {
+      updateValue(-1);
+    });
+
+    carousel_Controller[1].addEventListener("click", function () {
+      updateValue(1);
+    });
+
+    carousel_PostList.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      updateValue(event.deltaY > 0 ? 1 : -1);
+    });
+
+    window.addEventListener(
+      "wheel",
+      function (event) {
+        if (event.target === carousel_PostList) {
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+  }
+};
