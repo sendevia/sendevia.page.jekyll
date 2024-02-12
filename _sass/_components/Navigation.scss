@@ -13,17 +13,9 @@
     text-decoration: none;
   }
 
-  #JTM-C-Navigation-Hero {
-    height: 50px;
-    width: 50px;
-
-    margin: 15px;
-
-    -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
-    mask: var(--via-svg-mask) no-repeat 0 / 100%;
-  }
-
   #JTM-C-Navigation-FAB {
+    margin: 12px;
+
     opacity: 0;
     transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
@@ -203,7 +195,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 12px;
     justify-content: space-between;
 
     height: 100%;

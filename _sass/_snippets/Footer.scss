@@ -23,6 +23,19 @@
     gap: 6px;
 
     .JTM-S-Footer-Descriptions-Topic {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 6px;
+
+      img {
+        height: 50px;
+        width: 50px;
+
+        -webkit-mask: var(--via-svg-mask) no-repeat 0 / 100%;
+        mask: var(--via-svg-mask) no-repeat 0 / 100%;
+      }
+
       h3 {
         letter-spacing: 0.2px;
         text-transform: uppercase;
