@@ -1,15 +1,8 @@
-@mixin JTM-E-UserSelect($value: none) {
-  -moz-user-select: $value;
-  -webkit-user-drag: $value;
-  -webkit-user-select: $value;
-  user-select: $value;
-}
-
-@import "tokens";
+@import "mixin";
 @import "@font-face";
+@import "tokens";
 @import "@animation";
 @import "@overlay";
-@import "variables";
 
 @import "_components/AppBar";
 @import "_components/Card";
@@ -29,6 +22,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 0.0625rem;
+  font-synthesis: none;
+  scrollbar-color: var(--md-sys-color-secondary) transparent;
+  text-rendering: optimizeLegibility;
+}
+
 html,
 body {
   height: 100%;
@@ -37,12 +40,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-size: 0.0625rem;
-  text-rendering: optimizeLegibility;
-
-  -webkit-tap-highlight-color: transparent;
   overflow: hidden;
-  scrollbar-color: var(--md-sys-color-secondary) transparent;
 
   ::selection {
     color: var(--md-sys-color-surface-variant);
@@ -62,7 +60,7 @@ body {
 
   :disabled,
   [disabled] {
-    @include JTM-E-UserSelect(none);
+    @include mixin-userselect(none);
 
     box-shadow: none;
     filter: grayscale(1);

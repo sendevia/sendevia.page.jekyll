@@ -35,7 +35,7 @@
 [JTM-O-ContentBlur] {
   .JTM-S-ScrollToTop,
   #JTM-S-UniversalLayout-ContentFlow {
-    @include JTM-E-UserSelect(none);
+    @include mixin-userselect(none);
 
     filter: contrast(0.6);
     pointer-events: none;
@@ -52,7 +52,7 @@
 }
 
 [JTM-O-BodyBlur] {
-  @include JTM-E-UserSelect(none);
+  @include mixin-userselect(none);
 
   filter: contrast(0.6);
   pointer-events: none;

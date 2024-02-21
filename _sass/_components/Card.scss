@@ -11,7 +11,7 @@
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
   img {
-    @include JTM-E-UserSelect();
+    @include mixin-userselect();
 
     display: block;
 

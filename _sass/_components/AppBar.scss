@@ -2,7 +2,7 @@
 // 移动端标题栏
 
 .JTM-C-AppBar {
-  @include JTM-E-UserSelect();
+  @include mixin-userselect();
 
   display: flex;
   align-items: center;

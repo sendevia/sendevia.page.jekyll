@@ -44,7 +44,7 @@
     padding: 0px 8px;
 
     summary {
-      @include JTM-E-UserSelect(none);
+      @include mixin-userselect(none);
 
       display: flex;
 

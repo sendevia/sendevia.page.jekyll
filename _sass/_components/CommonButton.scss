@@ -2,7 +2,7 @@
 // 按钮
 
 button.JTM-C-CommonButton {
-  @include JTM-E-UserSelect();
+  @include mixin-userselect();
   @include typescale-style("label-large", $line-height: 16rem);
 
   display: flex;

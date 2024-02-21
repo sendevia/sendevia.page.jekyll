@@ -2,7 +2,7 @@
 // 对话
 
 .JTM-C-Dialog[open] {
-  @include JTM-E-UserSelect();
+  @include mixin-userselect();
 
   border: none;
 

@@ -2,7 +2,7 @@
 // 面包屑
 
 button.JTM-C-Chip {
-  @include JTM-E-UserSelect(none);
+  @include mixin-userselect(none);
   @include typescale-style("label-large");
 
   display: flex;
