@@ -7,7 +7,7 @@
   background-color: var(--md-sys-color-surface-container);
 
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
-  z-index: 10;
+  z-index: 15;
 
   a {
     text-decoration: none;
@@ -47,6 +47,8 @@
       height: 56px;
 
       padding: 0;
+
+      cursor: pointer;
 
       #JTM-C-Navigation-DestinationAccent {
         display: flex;

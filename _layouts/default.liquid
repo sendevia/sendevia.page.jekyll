@@ -19,9 +19,7 @@
     {% else %}
       {% include UniversalLayout.liquid spec_layout="article" %}
     {% endif %}
-    {% if page.toc %}
-      {% include TOC.liquid %}
-    {% endif %}
+    {% include NavigationDrawer.liquid %}
     {% include ScrollToTop.liquid %}
   </body>
 </html>

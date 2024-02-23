@@ -2,17 +2,18 @@
 
 .JTM-C-NavigationDrawer {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
+  justify-content: space-between;
 
   position: fixed;
   top: 0;
   left: 80px;
 
   height: 100%;
-  width: 20px;
+  width: 240px;
 
-  padding-block: 16px 8px;
+  padding-block: 60px 8px;
 
   border-left: 1px solid var(--md-sys-color-surface-container-high);
   border-radius: var(--md-sys-shape-corner-large-end);
@@ -21,10 +22,11 @@
 
   opacity: 0;
   overflow: auto;
+  transform: translateX(-100px);
   transition: padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-medium2),
-    opacity var(--md-sys-motion-duration-short4), width var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+    opacity var(--md-sys-motion-duration-short4), transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
   visibility: hidden;
-  z-index: 21;
+  z-index: 14;
 
   a {
     text-decoration: none;
@@ -34,105 +36,119 @@
     display: none;
   }
 
-  details {
-    @include typescale-style("title-small");
+  #JTM-C-NavigationDrawer-ListContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 
-    display: block;
     width: 100%;
 
-    margin: 0;
-    padding: 0px 8px;
+    details {
+      @include typescale-style("title-small");
 
-    summary {
-      @include mixin-userselect(none);
-
-      display: flex;
-
-      a {
-        padding: 0 18px;
-
-        font-weight: 600;
-        line-height: 48px;
-
-        &:hover {
-          font-weight: 700;
-
-          background-color: var(--md-sys-color-secondary-container);
-        }
-
-        &:active {
-          font-weight: 500;
-        }
-      }
-
-      &#JTM-C-NavigationDrawer-Item-Expandable a {
-        &::after {
-          @include material-symbols("expand_more", $size: 18);
-
-          transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-        }
-
-        &:active::after {
-          transform: translateY(4px);
-        }
-      }
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      position: relative;
-
+      display: block;
       width: 100%;
 
-      color: var(--md-sys-color-on-surface);
-      white-space: nowrap;
+      margin: 0;
+      padding: 0px 8px;
 
-      border-radius: var(--md-sys-shape-corner-extra-large);
+      summary {
+        @include mixin-userselect(none);
 
-      opacity: 0;
-      overflow: hidden;
-      transition: var(--md-sys-motion-duration-short4);
+        display: flex;
 
-      &:hover {
-        background-color: var(--md-sys-color-surface-container-high);
-      }
-    }
+        a {
+          padding: 12px 18px;
 
-    & > a {
-      padding: 12px 24px;
-    }
+          min-height: 48px;
 
-    &[open] {
-      summary#JTM-C-NavigationDrawer-Item-Expandable a {
-        &::after {
-          @include material-symbols("expand_less", $size: 18);
+          font-weight: 600;
+          white-space: normal;
+
+          &:hover {
+            font-weight: 700;
+
+            background-color: var(--md-sys-color-secondary-container);
+          }
+
+          &:active {
+            font-weight: 500;
+          }
         }
 
-        &:active::after {
-          transform: translateY(-4px);
+        &#JTM-C-NavigationDrawer-Item-Expandable a {
+          &::after {
+            @include material-symbols("expand_more", $size: 18);
+
+            transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+          }
+
+          &:active::after {
+            transform: translateY(4px);
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: relative;
+
+        width: 100%;
+
+        color: var(--md-sys-color-on-surface);
+        white-space: nowrap;
+
+        border-radius: var(--md-sys-shape-corner-extra-large);
+
+        opacity: 0;
+        overflow: hidden;
+        transition: var(--md-sys-motion-duration-short4);
+
+        &:hover {
+          background-color: var(--md-sys-color-surface-container-high);
+        }
+      }
+
+      & > a {
+        padding: 12px 24px;
+      }
+
+      &[open] {
+        summary#JTM-C-NavigationDrawer-Item-Expandable a {
+          &::after {
+            @include material-symbols("expand_less", $size: 18);
+          }
+
+          &:active::after {
+            transform: translateY(-4px);
+          }
         }
       }
     }
   }
 
+  #JTM-C-NavigationDrawer-Backward {
+    @include typescale-style("title-small");
+    position: relative;
+    overflow: hidden;
+  }
+
   &[show] {
     padding-block: 8px;
 
-    width: 240px;
-
-    opacity: 1;
-    transition: padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-short1),
+    transform: translateX(0);
+    transition: padding-block var(--md-sys-motion-duration-medium2) var(--md-sys-motion-duration-short1), visibility var(--md-sys-motion-duration-short1),
       opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
-      width var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
+      transform var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
     visibility: visible;
 
-    a {
-      white-space: normal;
-
-      opacity: 1;
+    #JTM-C-NavigationDrawer-ListContainer {
+      details a {
+        opacity: 1;
+      }
     }
   }
 }

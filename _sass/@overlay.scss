@@ -22,6 +22,11 @@
       opacity: 1;
     }
   }
+
+  .JTM-C-NavigationDrawer[show] {
+    opacity: 1;
+  }
+
   .JTM-S-LoadingSplash {
     opacity: 0;
   }

@@ -1,0 +1,26 @@
+<div class="JTM-C-NavigationDrawer" show>
+  <button class="JTM-C-IconButton" id="JTM-C-NavigationDrawer-MenuCloseIcon">menu_open</button>
+  {% capture toc_content %}{% toc %}{% endcapture %}
+  <div id="JTM-C-NavigationDrawer-ListContainer">
+    {% if toc_content != "" and page.toc %}
+      {{ toc_content }}
+    {% else %}
+      {% for item in site.posts %}
+        <details>
+          <summary>
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          </summary>
+        </details>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <a id="JTM-C-NavigationDrawer-Backward" href="/posts">
+    <button
+      class="JTM-C-CommonButton"
+      spec="text"
+      icon>
+      <span>west</span>
+      查看全部文章
+    </button>
+  </a>
+</div>
