@@ -113,7 +113,30 @@
       }
 
       & > a {
+        display: block;
+
+        height: 42px;
+
         padding: 12px 24px;
+
+        &:last-child::after {
+          content: "";
+          display: block;
+
+          position: relative;
+          top: 9px;
+
+          height: 0;
+
+          box-shadow: var(--md-sys-color-outline-variant) 0px 0px 0px 0.5px;
+        }
+      }
+
+      &:only-child,
+      &:last-child {
+        & > a:last-child::after {
+          display: none;
+        }
       }
 
       &[open] {
