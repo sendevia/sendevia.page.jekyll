@@ -1,6 +1,7 @@
 import { argbFromHex } from "@material/material-color-utilities";
 import { generateColorPalette } from "./_components/monet";
 import { effect_ripple } from "./_components/ripple";
+import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
 
 /**
  * 主题 - 根节点
@@ -34,7 +35,7 @@ const theme_ScrollToTop = document.querySelectorAll(".JTM-S-ScrollToTop");
  * 主题 - 涟漪效果元素
  */
 const theme_RippleElements = document.querySelectorAll(
-  `#JTM-S-UniversalLayout-ContentFiller[spec='article'] li a, #JTM-S-UniversalLayout-ContentFiller[spec='article'] p a, button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
+  `#JTM-S-UniversalLayout-ContentFiller[spec='article'] li a, #JTM-S-UniversalLayout-ContentFiller[spec='article'] p a, button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer details a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
 );
 /**
  * 主题 - 延迟跳转元素
@@ -50,10 +51,6 @@ const palette_HEX = document.body.getAttribute("color");
  * 文章 - 内容流
  */
 const content_Flow = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
-/**
- * 文章 - 头部印象图
- */
-const content_Photograph = document.querySelector("#JTM-S-Header-Impression img");
 /**
  * 文章 - ul随机旋转的marker
  */
@@ -77,9 +74,10 @@ const navigation_Drawer_H2Entries = navigation_Drawer ? navigation_Drawer.queryS
 /**
  * 全局导航栏 - 状态控制器
  */
-const navigation_Controller = navigation_Drawer
-  ? document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon")
-  : [];
+const search_ContainerController = document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon");
+
+const navigation_Controller = document.querySelector("#JTM-C-Navigation-Destinations > div");
+
 /**
  * 移动端 - 标题栏
  */
@@ -98,10 +96,13 @@ const carousel_Controller = carousel_Container ? carousel_Container.querySelecto
 const carousel_PostList = carousel_Container ? carousel_Container.querySelector("#JTM-S-Carousel-PostsList") : [];
 
 /**
- * 控制全局导航栏的展开状态
+ * 切换 attribute
+ * @param {} element 需要切换状态的元素
+ * @param {string} attribute 状态内容
+ * @param {boolean} boolean
  */
-function toggle_Navigation_Drawer(boolean) {
-  navigation_Drawer.toggleAttribute("show", boolean);
+function toggleAttr(element, attribute, boolean) {
+  element.toggleAttribute(attribute, boolean);
 }
 
 /**
@@ -298,6 +299,27 @@ function updateSnackbarPositions() {
 }
 
 window.onload = () => {
+  const searchRoot = window.location.origin;
+
+  window.simpleJekyllSearch = new SimpleJekyllSearch({
+    fuzzy: false,
+    json: `${searchRoot}/postsmap.json`,
+    noResultsText: "＞︿＜ 无结果",
+    resultsContainer: document.getElementById("JTM-C-Search-ResultsContainer"),
+    searchInput: document.getElementById("JTM-C-Search-InputBox"),
+    searchResultTemplate: `
+      <a id="JTM-C-Search-ResultItem" href="{url}">
+        <div class="JTM-C-Card" spec="clear">
+          <div class="JTM-C-Card-Impression">
+            <img src="{impression}" alt="image" />
+          </div>
+          <div class="JTM-C-Card-Supporting">
+            <h3>{title}</h3>
+          </div>
+        </div>
+      </a>`,
+  });
+
   randomRotationBullet();
 
   document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller > h1").forEach((h1) => {
@@ -334,7 +356,7 @@ window.onpageshow = () => {
     const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
     inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
   } catch (err) {
-    document.querySelector(`a[href="/posts/"] #JTM-C-Navigation-SegmentInactive`).id = "JTM-C-Navigation-SegmentActive";
+    document.querySelector("#JTM-C-Navigation-Destinations > div").id = "JTM-C-Navigation-SegmentActive";
   }
 
   theme_ScrollToTop.forEach((element) => element.addEventListener("click", () => content_Flow.scrollTo({ top: 0 })));
@@ -344,8 +366,19 @@ window.onpageshow = () => {
 
   initModal();
 
+  search_ContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(theme_Root, "JTM-O-ShowSearchContainer")));
+
   if (navigation_Drawer) {
-    navigation_Controller.forEach((element) => element.addEventListener("click", () => toggle_Navigation_Drawer()));
+    let enterTimeout;
+    navigation_Controller.addEventListener("pointerenter", () => {
+      enterTimeout = setTimeout(() => {
+        toggleAttr(navigation_Drawer, "show");
+      }, 500);
+    });
+    navigation_Controller.addEventListener("pointerleave", () => {
+      clearTimeout(enterTimeout);
+    });
+
     navigation_Drawer_H1Entries.forEach((element) => {
       element.addEventListener("click", () => {
         const parentDetails = element.closest("details");
@@ -354,13 +387,13 @@ window.onpageshow = () => {
         }
       });
     });
-    navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggle_Navigation_Drawer(false)));
+    navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigation_Drawer, "show", false)));
     document.addEventListener("click", (event) => {
       const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
       const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
       const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
       if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
-        toggle_Navigation_Drawer(false);
+        toggleAttr(navigation_Drawer, "show", false);
       }
     });
   }

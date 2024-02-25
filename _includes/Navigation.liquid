@@ -1,12 +1,10 @@
 <div class="JTM-C-Navigation" spec="rail">
-  {% if page.toc %}
-    <div id="JTM-C-Navigation-FAB">
-      <button
-        class="JTM-C-FAB"
-        spec="surface"
-        size="normal">menu</button>
-    </div>
-  {% endif %}
+  <div id="JTM-C-Navigation-FAB">
+    <button
+      class="JTM-C-FAB"
+      spec="surface"
+      size="normal">search</button>
+  </div>
   <div id="JTM-C-Navigation-Destinations">
     <a href="/">
       <div id="JTM-C-Navigation-SegmentInactive">
@@ -20,14 +18,14 @@
       </div>
     </a>
 
-      <div id="JTM-C-Navigation-SegmentInactive">
-        <div id="JTM-C-Navigation-DestinationAccent">
-          <div id="JTM-C-Navigation-SegmentIcon">
-            <span>article</span>
-          </div>
+    <div id="JTM-C-Navigation-SegmentInactive">
+      <div id="JTM-C-Navigation-DestinationAccent">
+        <div id="JTM-C-Navigation-SegmentIcon">
+          <span>article</span>
         </div>
-      <p id="JTM-C-Navigation-DestinationLabel">文章目录</p>
       </div>
+      <p id="JTM-C-Navigation-DestinationLabel">文章目录</p>
+    </div>
 
     {% for s in site.pages %}
       {% if s.navigation and s.published == true %}

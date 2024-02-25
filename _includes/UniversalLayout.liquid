@@ -1,5 +1,12 @@
 <div class="JTM-S-UniversalLayout">
   {% include Navigation.liquid %}
+  <div class="JTM-C-Search">
+    <input
+      type="text"
+      id="JTM-C-Search-InputBox"
+      placeholder="输入内容以检索文章的标题、标签、分类、作者...">
+    <div id="JTM-C-Search-ResultsContainer"></div>
+  </div>
   <div id="JTM-S-UniversalLayout-ContentFlow">
     {% if include.spec_carousel == "true" %}
       {% include Carousel.liquid %}

@@ -62,3 +62,18 @@
   filter: contrast(0.6);
   pointer-events: none;
 }
+
+[JTM-O-ShowSearchContainer] {
+  #JTM-S-WebsiteInformation {
+    display: none;
+  }
+  .JTM-S-UniversalLayout {
+    #JTM-S-UniversalLayout-ContentFlow {
+      overflow: hidden;
+    }
+  }
+  .JTM-C-Search {
+    opacity: 1;
+    visibility: visible;
+  }
+}

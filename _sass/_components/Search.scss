@@ -1,0 +1,55 @@
+.JTM-C-Search {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(12, 72px);
+  grid-template-rows: 72px auto;
+  justify-content: center;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  height: 100%;
+  width: calc(100% - 80px);
+
+  background-color: var(--md-sys-color-surface-container-low);
+
+  opacity: 0;
+  overflow: auto;
+  visibility: hidden;
+  z-index: 100;
+
+  #JTM-C-Search-InputBox {
+    @include typescale-style("title-large");
+    grid-column: span 12;
+
+    margin-block-start: 12px;
+    padding-inline: 24px;
+
+    height: 60px;
+    width: 100%;
+
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+  }
+
+  #JTM-C-Search-ResultsContainer {
+    display: grid;
+    gap: 12px;
+    grid-auto-rows: minmax(auto, 0);
+    grid-column: span 12;
+    grid-template-columns: repeat(3, calc(100% / 3 - 8px));
+
+    width: 100%;
+
+    #JTM-C-Search-ResultItem {
+      grid-column: span 1;
+
+      width: 100%;
+
+      text-decoration: none;
+    }
+  }
+}
