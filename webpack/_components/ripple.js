@@ -8,15 +8,15 @@ export const effect_ripple = (element) => {
     const y = e.offsetY;
     const d = Math.max(element.clientWidth, element.clientHeight);
 
-    const rippleC = document.createElement("JTM-E-Ripple");
+    const rippleC = document.createElement("e-ripple");
     element.appendChild(rippleC);
 
-    rippleC.style.setProperty("--JTM-E-Ripple-PosX", x);
-    rippleC.style.setProperty("--JTM-E-Ripple-PosY", y);
-    rippleC.style.setProperty("--JTM-E-Ripple-Diameter", d);
+    rippleC.style.setProperty("--e-ripple-PosX", x);
+    rippleC.style.setProperty("--e-ripple-PosY", y);
+    rippleC.style.setProperty("--e-ripple-Diameter", d);
   });
   element.addEventListener("animationend", () => {
-    const rippleR = element.querySelector("JTM-E-Ripple");
+    const rippleR = element.querySelector("e-ripple");
     element.removeChild(rippleR);
   });
 };

@@ -1,5 +1,5 @@
 // https://m3.material.io/components/snackbar/overview
-.JTM-C-Snackbar {
+.c-snackbar {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -24,7 +24,7 @@
   transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
   z-index: 99;
 
-  #JTM-C-Snackbar-Supporting {
+  #c-snackbar-supporting {
     @include typescale-style("label-large");
 
     display: inline-block;
@@ -34,7 +34,7 @@
     color: var(--md-sys-color-inverse-on-surface);
   }
 
-  #JTM-C-Snackbar-Icon {
+  #c-snackbar-icon {
     min-width: 40px;
 
     color: var(--md-sys-color-inverse-on-surface);

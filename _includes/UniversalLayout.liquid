@@ -1,13 +1,13 @@
-<div class="JTM-S-UniversalLayout">
+<div class="s-unilayout">
   {% include Navigation.liquid %}
-  <div class="JTM-C-Search">
+  <div class="c-search">
     <input
       type="text"
-      id="JTM-C-Search-InputBox"
+      id="c-search-input-box"
       placeholder="输入内容以检索文章的标题、标签、分类、作者...">
-    <div id="JTM-C-Search-ResultsContainer"></div>
+    <div id="c-search-results-container"></div>
   </div>
-  <div id="JTM-S-UniversalLayout-ContentFlow">
+  <div id="s-unilayout-content-flow">
     {% if include.spec_carousel == "true" %}
       {% include Carousel.liquid %}
     {% elsif include.spec_page_index == "true" %}
@@ -16,7 +16,7 @@
       {% include Header.liquid %}
     {% endif %}
     <div
-      id="JTM-S-UniversalLayout-ContentFiller"
+      id="s-unilayout-content-filler"
       {% if include.spec_layout == "article" %}
       spec="article"
       {% endif %}>{% include Content.liquid %}</div>

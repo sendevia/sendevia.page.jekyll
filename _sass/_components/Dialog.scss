@@ -1,16 +1,16 @@
 // https://m3.material.io/components/dialogs/
 // 对话
 
-.JTM-C-Dialog[open] {
+.c-dialog[open] {
   @include mixin-userselect();
 
   border: none;
 
   background-color: transparent;
 
-  animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow;
+  animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-show;
 
-  .JTM-C-Dialog-Layout {
+  #c-dialog-layout {
     position: relative;
 
     max-width: 360px;
@@ -23,10 +23,10 @@
     background-color: var(--md-sys-color-surface);
 
     animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
-      JTM-C-Dialog-LayoutShow;
+      c-dialog-layout-show;
     pointer-events: auto;
 
-    #JTM-C-Dialog-Content {
+    #c-dialog-content {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -38,13 +38,13 @@
       color: var(--md-sys-color-on-surface-variant);
 
       animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
-        JTM-C-Dialog-ContentShow;
+        c-dialog-content-show;
 
-      .JTM-C-Dialog-LeaderIcon {
+      #c-dialog-leader-icon {
         @include material-symbols($size: 24);
       }
 
-      .JTM-C-Dialog-Headline {
+      #c-dialog-headline {
         margin-inline: 10px;
 
         h3 {
@@ -60,7 +60,7 @@
         }
       }
 
-      .JTM-C-Dialog-SupportingList {
+      #c-dialog-supporting-list {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
@@ -69,9 +69,9 @@
         width: 100%;
 
         animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short2) 1 normal both
-          JTM-C-Dialog-SupportingListShow;
+          c-dialog-supporting-list-show;
 
-        .JTM-C-Dialog-TipItems {
+        .c-dialog-tip-items {
           display: grid;
           align-items: center;
           gap: 12px;
@@ -80,7 +80,7 @@
       }
     }
 
-    #JTM-C-Dialog-Button {
+    #c-dialog-button {
       display: flex;
       justify-content: end;
 
@@ -90,7 +90,7 @@
       margin: 12px;
 
       animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
-        JTM-C-Dialog-ButtonShow;
+        c-dialog-button-show;
     }
   }
 

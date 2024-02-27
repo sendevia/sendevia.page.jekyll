@@ -5,11 +5,11 @@
     width: auto;
   }
 
-  .JTM-C-Dialog[open] {
-    animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerShow-Alt;
+  .c-dialog[open] {
+    animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-show-alt;
   }
 
-  .JTM-S-404NotFound #JTM-S-404NotFound-Information {
+  .s-notfound #s-notfound-information {
     h1 {
       font-size: 75rem;
     }
@@ -18,12 +18,12 @@
     }
   }
 
-  .JTM-S-ScrollToTop {
-    #JTM-S-ScrollToTop-Desktop {
+  .s-scrolltop {
+    #s-scrolltop-desktop {
       display: none;
     }
 
-    #JTM-S-ScrollToTop-Mobile {
+    #s-scrolltop-mobile {
       display: block;
 
       bottom: 80px;
@@ -33,7 +33,7 @@
     }
   }
 
-  .JTM-C-Navigation {
+  .c-navigation {
     &[spec="bar"] {
       grid-row: 2/2;
 
@@ -46,12 +46,12 @@
     }
   }
 
-  .JTM-C-NavigationDrawer {
+  .c-navdrawer {
     left: 0;
 
     padding-block: 60px 8px;
 
-    #JTM-C-NavigationDrawer-MenuCloseIcon {
+    #c-navdrawer-close-icon {
       display: block;
 
       position: fixed;
@@ -66,21 +66,21 @@
     }
   }
 
-  .JTM-C-AppBar {
+  .c-appbar {
     top: 0;
 
     visibility: visible;
   }
 
-  #JTM-S-WebsiteInformation {
+  #s-webinfo {
     display: none;
   }
 
-  .JTM-S-UniversalLayout {
+  .s-unilayout {
     grid-template-columns: none;
     grid-template-rows: auto 80px;
 
-    #JTM-S-UniversalLayout-ContentFlow {
+    #s-unilayout-content-flow {
       grid-column: auto;
       grid-row: 1/2;
       grid-template-columns: repeat(4, 1fr);
@@ -88,7 +88,7 @@
       padding-block: 64px 120px;
       padding-inline: 12px;
 
-      .JTM-S-Carousel {
+      .s-carousel {
         grid-column: span 4;
 
         height: 42vh;
@@ -97,10 +97,10 @@
 
         margin-inline: 0;
 
-        #JTM-S-Carousel-PostsList {
+        #s-carousel-container {
           margin: 0;
 
-          .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+          .s-carousel-article .s-carousel-article-info {
             padding-block: 40px 20px;
             padding-inline: 30px;
 
@@ -115,33 +115,33 @@
         }
       }
 
-      .JTM-S-Header {
+      .s-header {
         grid-column: span 4;
 
         height: calc(55vh - 64px - 80px);
 
         margin-inline: 0;
 
-        #JTM-S-Header-HeroContainer {
+        #s-header-hero-container {
           grid-column: span 2;
 
           padding: 5vw;
 
-          #JTM-S-Header-HeroHeadline {
+          #s-header-hero-headline {
             @include typescale-style("display-large", $font-size: 10vw, $font-weight: 500, $line-height: 10vw);
           }
 
-          #JTM-S-Header-HeroSubtitle {
+          #s-header-hero-subtitle {
             @include typescale-style("display-small", $font-size: 18rem, $font-weight: 500, $line-height: 20rem);
           }
         }
 
-        #JTM-S-Header-Impression {
+        #s-header-Impression {
           grid-column: span 2;
         }
       }
 
-      #JTM-S-UniversalLayout-ContentFiller {
+      #s-unilayout-content-filler {
         grid-column: span 4;
 
         margin-inline: 0;
@@ -149,7 +149,7 @@
         background-color: transparent;
       }
 
-      a.JTM-S-QuickJump {
+      a.s-quickjmp {
         &[spec="previous"] {
           grid-column: span 4;
         }
@@ -163,38 +163,38 @@
         grid-column: span 4;
       }
 
-      .JTM-S-Footer {
+      .s-footer {
         grid-column: span 4;
 
-        #JTM-S-Footer-Descriptions {
-          .JTM-S-Footer-Descriptions-ThemeUsed,
-          .JTM-S-Footer-Descriptions-Registration {
+        #s-footer-description {
+          #s-footer-description-theme,
+          #s-footer-description-beian {
             align-items: flex-start;
             flex-direction: column;
             gap: 0;
           }
         }
 
-        #JTM-S-Footer-Socialmedia {
+        #s-footer-social-media {
           justify-content: space-evenly;
         }
       }
     }
   }
 
-  .JTM-P-Index {
+  .p-index {
     grid-column: span 4;
 
-    #JTM-P-Index-CardSet {
+    #p-index-cardset {
       grid-template-columns: repeat(1, 1fr);
 
-      #JTM-P-Index-SummaryCard {
+      #p-index-article-summary {
         grid-column: span 1;
       }
     }
   }
 
-  .JTM-P-Posts {
+  .p-posts {
     align-items: center;
     flex-direction: column-reverse;
 
@@ -203,17 +203,10 @@
     margin-inline: 0;
     padding-block: 0;
 
-    #JTM-P-Posts-Timeline .JTM-P-Posts-Timeline-L2 {
+    #p-posts-timeline .p-posts-timeline-level2 {
       grid-template-columns: repeat(1, 1fr);
 
       width: 100%;
-
-      #JTM-P-Posts-Timeline-PostCard .JTM-P-Posts-Timeline-DateDetail {
-        left: unset;
-        right: 0;
-
-        border-radius: 12px 20px 12px 12px;
-      }
     }
   }
 }

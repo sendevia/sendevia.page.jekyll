@@ -1,4 +1,4 @@
-.JTM-S-404NotFound {
+.s-notfound {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -11,7 +11,7 @@
 
   background-color: var(--md-sys-color-error-container);
 
-  #JTM-S-404NotFound-Information {
+  #s-notfound-information {
     margin-inline-start: 5px;
 
     h1 {
@@ -31,7 +31,7 @@
     }
   }
 
-  #JTM-S-404NotFound-Qrcode {
+  #s-notfound-qrcode {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

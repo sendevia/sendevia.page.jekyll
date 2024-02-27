@@ -1,13 +1,13 @@
-<footer class="JTM-S-Footer">
-  <div id="JTM-S-Footer-Descriptions">
-    <div class="JTM-S-Footer-Descriptions-Topic">
+<footer class="s-footer">
+  <div id="s-footer-description">
+    <div id="s-footer-description-topic">
       <img src="/assets/images/avatar.webp" alt="logo" />
       <div>
         <h3>{{ page.title | default: site.title }}</h3>
         <p>来自 {{ site.title }}</p>
       </div>
     </div>
-    <div class="JTM-S-Footer-Descriptions-ThemeUsed">
+    <div id="s-footer-description-theme">
       <p>使用
         <a href="https://github.com/Sendevia/jekyll-theme-m3" target="_blank">jekyll-theme-m3</a>
         主题
@@ -15,24 +15,24 @@
       <a href="https://github.com/Sendevia/sendevia.page.jekyll/releases/tag/{{site.version}}" target="_blank">
         版本：{{ site.version }}</a>
     </div>
-    <div class="JTM-S-Footer-Descriptions-Registration">
-      <div id="JTM-S-Footer-Registration-Gongan">
+    <div id="s-footer-description-beian">
+      <div id="s-footer-beian-gongan">
         <img src="/assets/images/beian.png" loading="eager">
         <a href="https://beian.mps.gov.cn/#/query/webSearch?code=23020002230215" target="_blank">黑公网安备23020002230215</a>
       </div>
-      <div id="JTM-S-Footer-Registration-ICP">
+      <div id="s-footer-Registration-ICP">
         <a href="https://beian.miit.gov.cn/" target="_blank">黑ICP备2024016516号-1</a>
       </div>
     </div>
   </div>
-  <div id="JTM-S-Footer-Socialmedia">
+  <div id="s-footer-social-media">
     {% for item in site.data.socialmedia %}
       <a
         href="{{ item.link }}"
         target="_blank"
         rel="noopener noreferrer"
         title="{{ item.name }}">
-        <button class="JTM-C-IconButton" spec="text">
+        <button class="c-iconbtn" spec="text">
           {{ item.icon }}
         </button>
       </a>

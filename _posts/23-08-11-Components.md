@@ -22,8 +22,8 @@ toc: true
   <tbody>
     <tr>
       <td><code>div</code></td>
-      <td><code>JTM-C-Snackbar</code></td>
-      <td><button id="JTM-P-Components-Snackbar-Test" class="JTM-C-CommonButton" spec="elevated">点击测试</button>
+      <td><code>c-snackbar</code></td>
+      <td><button id="JTM-P-Components-Snackbar-Test" class="c-button" spec="elevated">点击测试</button>
       </td>
     </tr>
   </tbody>
@@ -32,7 +32,7 @@ toc: true
 #### 代码示例
 
 ```html
-<span class="JTM-C-Snackbar"></span>
+<span class="c-snackbar"></span>
 ```
 
 # Buttons
@@ -51,13 +51,13 @@ toc: true
   <tbody>
     <tr>
       <td><code>button</code></td>
-      <td><code>JTM-C-CommonButton</code></td>
+      <td><code>c-button</code></td>
       <td><code>elevated</code></td>
       <td>
-        <button class="JTM-C-CommonButton" spec="elevated">Enabled</button>
+        <button class="c-button" spec="elevated">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-CommonButton" spec="elevated" icon>
+        <button class="c-button" spec="elevated" icon>
           <span>add</span>
           Enabled
         </button>
@@ -68,10 +68,10 @@ toc: true
       <td></td>
       <td><code>filled</code></td>
       <td>
-        <button class="JTM-C-CommonButton" spec="filled">Enabled</button>
+        <button class="c-button" spec="filled">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-CommonButton" spec="filled" icon>
+        <button class="c-button" spec="filled" icon>
           <span>add</span>
           Enabled
         </button>
@@ -82,10 +82,10 @@ toc: true
       <td></td>
       <td><code>tonal</code></td>
       <td>
-        <button class="JTM-C-CommonButton" spec="tonal">Enabled</button>
+        <button class="c-button" spec="tonal">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-CommonButton" spec="tonal" icon>
+        <button class="c-button" spec="tonal" icon>
           <span>add</span>
           Enabled
         </button>
@@ -96,10 +96,10 @@ toc: true
       <td></td>
       <td><code>outlined</code></td>
       <td>
-        <button class="JTM-C-CommonButton" spec="outlined">Enabled</button>
+        <button class="c-button" spec="outlined">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-CommonButton" spec="outlined" icon>
+        <button class="c-button" spec="outlined" icon>
           <span>add</span>
           Enabled
         </button>
@@ -110,10 +110,10 @@ toc: true
       <td></td>
       <td><code>text</code></td>
       <td>
-        <button class="JTM-C-CommonButton" spec="text">Enabled</button>
+        <button class="c-button" spec="text">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-CommonButton" spec="text" icon>
+        <button class="c-button" spec="text" icon>
           <span>add</span>
           Enabled
         </button>
@@ -125,8 +125,8 @@ toc: true
 #### 代码示例
 
 ```html
-<button class="JTM-C-CommonButton" spec="elevated">Enabled</button>
-<button class="JTM-C-CommonButton" spec="elevated" icon>
+<button class="c-button" spec="elevated">Enabled</button>
+<button class="c-button" spec="elevated" icon>
   <span>add</span>
   Enabled
 </button>
@@ -148,10 +148,10 @@ toc: true
   <tbody>
     <tr>
       <td><code>button</code></td>
-      <td><code>JTM-C-IconButton</code></td>
+      <td><code>c-iconbtn</code></td>
       <td><code>standard</code></td>
       <td>
-        <button class="JTM-C-IconButton" spec="standard">settings</button>
+        <button class="c-iconbtn" spec="standard">settings</button>
       </td>
     </tr>
     <tr>
@@ -159,7 +159,7 @@ toc: true
       <td></td>
       <td><code>filled</code></td>
       <td>
-        <button class="JTM-C-IconButton" spec="filled">settings</button>
+        <button class="c-iconbtn" spec="filled">settings</button>
       </td>
     </tr>
     <tr>
@@ -167,7 +167,7 @@ toc: true
       <td></td>
       <td><code>tonal</code></td>
       <td>
-        <button class="JTM-C-IconButton" spec="tonal">settings</button>
+        <button class="c-iconbtn" spec="tonal">settings</button>
       </td>
     </tr>
     <tr>
@@ -175,7 +175,7 @@ toc: true
       <td></td>
       <td><code>outlined</code></td>
       <td>
-        <button class="JTM-C-IconButton" spec="outlined">settings</button>
+        <button class="c-iconbtn" spec="outlined">settings</button>
       </td>
     </tr>
   </tbody>
@@ -184,7 +184,7 @@ toc: true
 #### 代码示例
 
 ```html
-<button class="JTM-C-IconButton" spec="standard">settings</button>
+<button class="c-iconbtn" spec="standard">settings</button>
 ```
 
 # Cards
@@ -202,15 +202,15 @@ toc: true
   </thead>
   <tbody>
     <tr>
-      <td><code>JTM-C-Card</code></td>
+      <td><code>c-card</code></td>
       <td><code>clear</code></td>
       <td>-</td>
       <td>
-        <div class="JTM-C-Card" spec="clear">
-          <div class="JTM-C-Card-Impression">
+        <div class="c-card" spec="clear">
+          <div class="c-card-impression">
             <img src="{{ site.impression }}" alt="image" />
           </div>
-          <div class="JTM-C-Card-Supporting">
+          <div class="c-card-supporting">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
           </div>
@@ -222,9 +222,9 @@ toc: true
       <td><code>focus</code></td>
       <td>-</td>
       <td>
-        <div class="JTM-C-Card" spec="focus">
+        <div class="c-card" spec="focus">
           <img src="{{ site.impression }}" alt="image" />
-          <div class="JTM-C-Card-Supporting">
+          <div class="c-card-supporting">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
           </div>
@@ -239,11 +239,11 @@ toc: true
 变种：<code>clear</code>
 
 ```html
-<div class="JTM-C-Card" spec="clear">
-  <div class="JTM-C-Card-Impression">
+<div class="c-card" spec="clear">
+  <div class="c-card-impression">
     <img src="{{ site.impression }}" alt="image" />
   </div>
-  <div class="JTM-C-Card-Supporting">
+  <div class="c-card-supporting">
     <h3>Lorem ipsum dolor sit amet</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
   </div>
@@ -253,9 +253,9 @@ toc: true
 变种：<code>focus</code>
 
 ```html
-<div class="JTM-C-Card" spec="focus">
+<div class="c-card" spec="focus">
   <img src="{{ site.impression }}" alt="image" />
-  <div class="JTM-C-Card-Supporting">
+  <div class="c-card-supporting">
     <h3>Lorem ipsum dolor sit amet</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
   </div>
@@ -279,14 +279,14 @@ toc: true
   <tbody>
     <tr>
       <td><code>button</code></td>
-      <td><code>JTM-C-Chip</code></td>
+      <td><code>c-chip</code></td>
       <td><code>assist</code></td>
       <td>-</td>
       <td>
-        <button class="JTM-C-Chip" spec="assist">Enabled</button>
+        <button class="c-chip" spec="assist">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-Chip" spec="assist" icon>
+        <button class="c-chip" spec="assist" icon>
           <span>add_shopping_cart</span>
           Enabled
         </button>
@@ -298,10 +298,10 @@ toc: true
       <td></td>
       <td>elevated</td>
       <td>
-        <button class="JTM-C-Chip" spec="assist" container="elevated">Enabled</button>
+        <button class="c-chip" spec="assist" container="elevated">Enabled</button>
       </td>
       <td>
-        <button class="JTM-C-Chip" spec="assist" container="elevated" icon>
+        <button class="c-chip" spec="assist" container="elevated" icon>
           <span>add_shopping_cart</span>
           Enabled
         </button>
@@ -313,7 +313,7 @@ toc: true
 #### 代码示例
 
 ```html
-<button class="JTM-C-Chip" spec="assist">Enabled</button>
+<button class="c-chip" spec="assist">Enabled</button>
 ```
 
 # Fabs
@@ -341,19 +341,19 @@ toc: true
   <tbody>
     <tr>
       <td><code>button</code></td>
-      <td><code>JTM-C-FAB</code></td>
+      <td><code>c-fab</code></td>
       <td><code>small</code></td>
       <td>
-        <button class="JTM-C-FAB" spec="surface" size="small">edit</button>
+        <button class="c-fab" spec="surface" size="small">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="primary" size="small">edit</button>
+        <button class="c-fab" spec="primary" size="small">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="secondary" size="small">edit</button>
+        <button class="c-fab" spec="secondary" size="small">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="tertiary" size="small">edit</button>
+        <button class="c-fab" spec="tertiary" size="small">edit</button>
       </td>
     </tr>
     <tr>
@@ -361,16 +361,16 @@ toc: true
       <td></td>
       <td><code>normal</code>（默认）</td>
       <td>
-        <button class="JTM-C-FAB" spec="surface" size="normal">edit</button>
+        <button class="c-fab" spec="surface" size="normal">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="primary" size="normal">edit</button>
+        <button class="c-fab" spec="primary" size="normal">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="secondary" size="normal">edit</button>
+        <button class="c-fab" spec="secondary" size="normal">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="tertiary" size="normal">edit</button>
+        <button class="c-fab" spec="tertiary" size="normal">edit</button>
       </td>
     </tr>
     <tr>
@@ -378,16 +378,16 @@ toc: true
       <td></td>
       <td><code>large</code></td>
       <td>
-        <button class="JTM-C-FAB" spec="surface" size="large">edit</button>
+        <button class="c-fab" spec="surface" size="large">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="primary" size="large">edit</button>
+        <button class="c-fab" spec="primary" size="large">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="secondary" size="large">edit</button>
+        <button class="c-fab" spec="secondary" size="large">edit</button>
       </td>
       <td>
-        <button class="JTM-C-FAB" spec="tertiary" size="large">edit</button>
+        <button class="c-fab" spec="tertiary" size="large">edit</button>
       </td>
     </tr>
   </tbody>
@@ -396,7 +396,7 @@ toc: true
 #### 代码示例
 
 ```html
-<button class="JTM-C-FAB" spec="primary" size="normal">edit</button>
+<button class="c-fab" spec="primary" size="normal">edit</button>
 ```
 
 # Progress Indicators
@@ -414,9 +414,9 @@ toc: true
   <tbody>
     <tr>
       <td><code>span</code></td>
-      <td><code>JTM-C-ProgressIndicator</code></td>
+      <td><code>c-progress</code></td>
       <td>
-        <span class="JTM-C-ProgressIndicator"></span>
+        <span class="c-progress"></span>
       </td>
     </tr>
   </tbody>
@@ -425,5 +425,5 @@ toc: true
 #### 代码示例
 
 ```html
-<span class="JTM-C-ProgressIndicator"></span>
+<span class="c-progress"></span>
 ```

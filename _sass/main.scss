@@ -51,7 +51,7 @@ body {
   }
 }
 
-.JTM-Root {
+.t-root {
   color: var(--md-sys-color-on-surface);
 
   background-color: var(--md-sys-color-surface-container-low);
@@ -70,10 +70,10 @@ body {
     pointer-events: none;
   }
 
-  JTM-E-Ripple {
+  e-ripple {
     position: absolute;
-    left: calc(var(--JTM-E-Ripple-PosX) * 1px);
-    top: calc(var(--JTM-E-Ripple-PosY) * 1px);
+    left: calc(var(--e-ripple-PosX) * 1px);
+    top: calc(var(--e-ripple-PosY) * 1px);
 
     border-radius: var(--md-sys-shape-corner-full);
 
@@ -84,17 +84,17 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  [spec="filled"]JTM-E-Ripple {
+  [spec="filled"]e-ripple {
     background-color: var(--md-sys-color-on-primary);
   }
 
-  [spec="outlined"]JTM-E-Ripple,
-  [spec="text"]JTM-E-Ripple,
-  [spec="elevated"]JTM-E-Ripple {
+  [spec="outlined"]e-ripple,
+  [spec="text"]e-ripple,
+  [spec="elevated"]e-ripple {
     background-color: var(--md-sys-color-primary);
   }
 
-  [spec="tonal"]JTM-E-Ripple {
+  [spec="tonal"]e-ripple {
     background-color: var(--md-sys-color-on-secondary-container);
   }
 }
@@ -233,13 +233,13 @@ hr {
   }
 }
 
-.JTM-P-Index {
-  #JTM-P-Index-CardSet {
+.p-index {
+  #p-index-cardset {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 
-    #JTM-P-Index-SummaryCard {
+    #p-index-article-summary {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -254,16 +254,16 @@ hr {
 
       background-color: var(--md-sys-color-surface-container-low);
 
-      .JTM-P-Index-SummaryTitle-TitleContainer {
+      #p-index-article-summary--title-container {
         display: flex;
         align-items: flex-start;
         gap: 12px;
 
-        #JTM-P-Index-SummaryTitle-Date {
+        #p-index-article-summary--title-date {
           color: var(--md-sys-color-on-surface-variant);
         }
 
-        #JTM-P-Index-SummaryTitle-Content {
+        #p-index-article-summary--title-content {
           letter-spacing: 1.3px;
         }
 
@@ -272,11 +272,11 @@ hr {
         }
       }
 
-      .JTM-P-Index-Summary {
+      #p-index-article-summary--content {
         letter-spacing: 1.1px;
         text-indent: 1.1em;
 
-        #JTM-P-Index-ReadMore {
+        #p-index-article-summary--content-read-more {
           display: inline-flex;
           align-items: center;
           flex-wrap: nowrap;
@@ -298,46 +298,46 @@ hr {
       }
     }
 
-    .JTM-P-Index-Card {
+    .p-index-card {
       width: 100%;
       height: 100%;
 
       text-decoration: none;
 
-      &:nth-of-type(1) .JTM-C-Card-Impression {
+      &:nth-of-type(1) .c-card-impression {
         background-color: #5574a9;
       }
 
-      &:nth-of-type(2) .JTM-C-Card-Impression {
+      &:nth-of-type(2) .c-card-impression {
         background-color: #a95586;
       }
 
-      &:nth-of-type(3) .JTM-C-Card-Impression {
+      &:nth-of-type(3) .c-card-impression {
         background-color: #a97155;
       }
 
-      &:nth-of-type(4) .JTM-C-Card-Impression {
+      &:nth-of-type(4) .c-card-impression {
         background-color: #7255a9;
       }
 
-      &:nth-of-type(5) .JTM-C-Card-Impression {
+      &:nth-of-type(5) .c-card-impression {
         background-color: #82a955;
       }
 
-      &:nth-of-type(6) .JTM-C-Card-Impression {
+      &:nth-of-type(6) .c-card-impression {
         background-color: #a95555;
       }
     }
   }
 }
 
-.JTM-P-Posts {
+.p-posts {
   display: flex;
   flex-direction: row;
   gap: 12px;
   justify-content: space-between;
 
-  #JTM-P-Posts-Timeline {
+  #p-posts-timeline {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -346,23 +346,23 @@ hr {
 
     margin-block-start: 18px;
 
-    .JTM-P-Posts-Timeline-L1 {
+    .p-posts-timeline-level1 {
       display: inline-flex;
       flex-direction: column;
       gap: 18px;
 
-      #JTM-P-Posts-Timeline-By-Year,
-      #JTM-P-Posts-Timeline-By-Month {
+      .p-posts-timeline-by-year,
+      .p-posts-timeline-by-month {
         color: var(--md-sys-color-on-surface);
       }
     }
 
-    .JTM-P-Posts-Timeline-L2 {
+    .p-posts-timeline-level2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
 
-      #JTM-P-Posts-Timeline-PostCard {
+      .p-posts-timeline-post-card {
         height: 100%;
 
         a {
@@ -384,7 +384,7 @@ hr {
   }
 }
 
-.JTM-P-Licenses {
+.p-licenses {
   text-align: center;
 
   table td {
@@ -396,7 +396,7 @@ hr {
   }
 }
 
-.JTM-P-PixivGallery {
+.p-pixivgallery {
   display: flex;
   align-items: center;
   flex-direction: row;

@@ -7,7 +7,7 @@
   {% else %}
     {% include Head.liquid %}
   {% endif %}
-  <body class="JTM-Root" color="{{ page.color | default: site.color }}">
+  <body class="t-root" color="{{ page.color | default: site.color }}">
     {% if page.url != "/index.html" %}
       {% include WebsiteInformation.liquid %}
     {% endif %}

@@ -1,6 +1,6 @@
 // 展开的侧边栏
 
-.JTM-C-NavigationDrawer {
+.c-navdrawer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -32,11 +32,11 @@
     text-decoration: none;
   }
 
-  #JTM-C-NavigationDrawer-MenuCloseIcon {
+  #c-navdrawer-close-icon {
     display: none;
   }
 
-  #JTM-C-NavigationDrawer-ListContainer {
+  #c-navdrawer-container {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -76,7 +76,7 @@
           }
         }
 
-        &#JTM-C-NavigationDrawer-Item-Expandable a {
+        &.c-navdrawer-expandable-item a {
           &::after {
             @include material-symbols("expand_more", $size: 18);
 
@@ -140,7 +140,7 @@
       }
 
       &[open] {
-        summary#JTM-C-NavigationDrawer-Item-Expandable a {
+        summary.c-navdrawer-expandable-item a {
           &::after {
             @include material-symbols("expand_less", $size: 18);
           }
@@ -153,7 +153,7 @@
     }
   }
 
-  #JTM-C-NavigationDrawer-Backward {
+  #c-navdrawer-backward {
     @include typescale-style("title-small");
     position: relative;
     overflow: hidden;
@@ -168,7 +168,7 @@
       transform var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
     visibility: visible;
 
-    #JTM-C-NavigationDrawer-ListContainer {
+    #c-navdrawer-container {
       details a {
         opacity: 1;
       }

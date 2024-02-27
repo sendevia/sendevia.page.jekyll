@@ -1,7 +1,7 @@
-<div class="JTM-C-NavigationDrawer" show>
-  <button class="JTM-C-IconButton" id="JTM-C-NavigationDrawer-MenuCloseIcon">menu_open</button>
+<div class="c-navdrawer" show>
+  <button class="c-iconbtn" id="c-navdrawer-close-icon">menu_open</button>
   {% capture toc_content %}{% toc %}{% endcapture %}
-  <div id="JTM-C-NavigationDrawer-ListContainer">
+  <div id="c-navdrawer-container">
     {% if toc_content != "" and page.toc %}
       {{ toc_content }}
     {% else %}
@@ -14,9 +14,9 @@
       {% endfor %}
     {% endif %}
   </div>
-  <a id="JTM-C-NavigationDrawer-Backward" href="/posts">
+  <a id="c-navdrawer-backward" href="/posts">
     <button
-      class="JTM-C-CommonButton"
+      class="c-button"
       spec="text"
       icon>
       <span>west</span>

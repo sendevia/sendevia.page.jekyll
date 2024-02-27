@@ -1,4 +1,4 @@
-a.JTM-S-QuickJump {
+a.s-quickjmp {
   width: 100%;
   height: 100%;
 
@@ -13,14 +13,14 @@ a.JTM-S-QuickJump {
     gap: 3px;
   }
 
-  .JTM-C-Card {
+  .c-card {
     height: 100%;
   }
 
   &[spec="previous"] {
     grid-column: 1/7;
 
-    .JTM-C-Card .JTM-C-Card-Supporting {
+    .c-card .c-card-supporting {
       align-items: self-start;
 
       text-align: start;
@@ -34,7 +34,7 @@ a.JTM-S-QuickJump {
   &[spec="next"] {
     grid-column: 7/13;
 
-    .JTM-C-Card .JTM-C-Card-Supporting {
+    .c-card .c-card-supporting {
       align-items: flex-end;
 
       text-align: end;

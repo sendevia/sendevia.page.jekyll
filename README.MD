@@ -8,12 +8,6 @@
 > bundle exec jekyll build
 > ```
 
-前缀含义：
-
-> JTM-C - JTM Component  
-> JTM-E - JTM Element  
-> JTM-S - JTM Snippet
-
 ## 配置开发环境
 
 ### 安装依赖

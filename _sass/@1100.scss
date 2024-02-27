@@ -1,24 +1,24 @@
 // 1100px 适配
 
 @media screen and (max-width: 1100px) {
-  .JTM-S-ScrollToTop #JTM-S-ScrollToTop-Desktop {
+  .s-scrolltop #s-scrolltop-desktop {
     margin-block-end: 172px;
     margin-inline-end: 30px;
   }
 
-  #JTM-S-WebsiteInformation {
+  #s-webinfo {
     margin-inline-end: 36px;
   }
 
-  .JTM-S-UniversalLayout #JTM-S-UniversalLayout-ContentFlow {
+  .s-unilayout #s-unilayout-content-flow {
     grid-template-columns: repeat(8, 1fr);
 
     padding-inline: 12px;
 
-    .JTM-S-Carousel {
+    .s-carousel {
       grid-column: span 8;
 
-      #JTM-S-Carousel-PostsList .JTM-S-Carousel-PostItem #JTM-S-Carousel-PostInfo {
+      #s-carousel-container .s-carousel-article .s-carousel-article-info {
         padding-block: 40px 20px;
         padding-inline: 30px;
 
@@ -32,32 +32,32 @@
       }
     }
 
-    .JTM-S-Header {
+    .s-header {
       grid-column: span 8;
 
-      #JTM-S-Header-HeroContainer {
+      #s-header-hero-container {
         width: 100%;
 
-        #JTM-S-Header-HeroHeadline {
+        #s-header-hero-headline {
           @include typescale-style("display-large", $font-size: 8vw, $font-weight: 600, $line-height: 8vw);
         }
 
-        #JTM-S-Header-HeroSubtitle {
+        #s-header-hero-subtitle {
           @include typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
         }
       }
 
-      #JTM-S-Header-Impression {
+      #s-header-Impression {
         height: 100%;
         width: 100%;
       }
     }
 
-    #JTM-S-UniversalLayout-ContentFiller {
+    #s-unilayout-content-filler {
       grid-column: span 8;
     }
 
-    a.JTM-S-QuickJump {
+    a.s-quickjmp {
       &[spec="previous"] {
         grid-column: 1/5;
       }
@@ -68,24 +68,24 @@
     }
 
     hr,
-    .JTM-S-Footer {
+    .s-footer {
       grid-column: span 8;
     }
   }
 
-  .JTM-P-Index {
+  .p-index {
     grid-column: span 8;
 
-    #JTM-P-Index-CardSet {
+    #p-index-cardset {
       grid-template-columns: repeat(2, 1fr);
 
-      #JTM-P-Index-SummaryCard {
+      #p-index-article-summary {
         grid-column: span 2;
       }
     }
   }
 
-  .JTM-P-Posts #JTM-P-Posts-Timeline .JTM-P-Posts-Timeline-L2 {
+  .p-posts #p-posts-timeline .p-posts-timeline-level2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }

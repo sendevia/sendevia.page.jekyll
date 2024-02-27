@@ -1,10 +1,10 @@
-.JTM-S-UniversalLayout {
+.s-unilayout {
   display: grid;
   grid-template-columns: 80px auto;
 
   height: 100%;
 
-  #JTM-S-UniversalLayout-ContentFlow {
+  #s-unilayout-content-flow {
     display: grid;
     align-content: space-between;
     align-items: start;
@@ -31,7 +31,7 @@
       transform var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized),
       opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
-    #JTM-S-UniversalLayout-ContentFiller {
+    #s-unilayout-content-filler {
       grid-column: span 12;
 
       &[spec="article"] {

@@ -2,61 +2,61 @@
 author: sendevia
 ---
 
-<div class="JTM-P-Index">
-  <div id="JTM-P-Index-CardSet">
+<div class="p-index">
+  <div id="p-index-cardset">
     {% assign latest_post = site.posts | first %}
-    <div id="JTM-P-Index-SummaryCard">
-      <div class="JTM-P-Index-SummaryTitle-TitleContainer">
+    <div id="p-index-article-summary">
+      <div id="p-index-article-summary--title-container">
         <div>
-          <p id="JTM-P-Index-SummaryTitle-Date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
-          <h2 id="JTM-P-Index-SummaryTitle-Content">{{ latest_post.title }}</h2>
+          <p id="p-index-article-summary--title-date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
+          <h2 id="p-index-article-summary--title-content">{{ latest_post.title }}</h2>
         </div>
       </div>
-      <p class="JTM-P-Index-Summary">
+      <p id="p-index-article-summary--content">
         {{ latest_post.content | strip_html | truncatewords: 24, "..." }}
-        <a id="JTM-P-Index-ReadMore" href="{{ latest_post.url }}">详细阅读</a>
+        <a id="p-index-article-summary--content-read-more" href="{{ latest_post.url }}">详细阅读</a>
       </p>
     </div>
 
-    <a href="/" class="JTM-P-Index-Card">
-      <div class="JTM-C-Card" spec="clear">
-        <div class="JTM-C-Card-Impression">
+    <a href="/" class="p-index-card">
+      <div class="c-card" spec="clear">
+        <div class="c-card-impression">
           <span>code_blocks</span>
         </div>
-        <div class="JTM-C-Card-Supporting">
+        <div class="c-card-supporting">
           <h3>开发的项目</h3>
         </div>
       </div>
     </a>
 
-    <a href="/" class="JTM-P-Index-Card">
-      <div class="JTM-C-Card" spec="clear">
-        <div class="JTM-C-Card-Impression">
+    <a href="/" class="p-index-card">
+      <div class="c-card" spec="clear">
+        <div class="c-card-impression">
           <span>tactic</span>
         </div>
-        <div class="JTM-C-Card-Supporting">
+        <div class="c-card-supporting">
           <h3>踩过的坑</h3>
         </div>
       </div>
     </a>
 
-    <a href="/gallery" class="JTM-P-Index-Card">
-      <div class="JTM-C-Card" spec="clear">
-        <div class="JTM-C-Card-Impression">
+    <a href="/gallery" class="p-index-card">
+      <div class="c-card" spec="clear">
+        <div class="c-card-impression">
           <span>auto_awesome_mosaic</span>
         </div>
-        <div class="JTM-C-Card-Supporting">
+        <div class="c-card-supporting">
           <h3>个人作品集</h3>
         </div>
       </div>
     </a>
 
-    <a href="/posts/" class="JTM-P-Index-Card">
-      <div class="JTM-C-Card" spec="clear">
-        <div class="JTM-C-Card-Impression">
+    <a href="/posts/" class="p-index-card">
+      <div class="c-card" spec="clear">
+        <div class="c-card-impression">
           <span>note_stack</span>
         </div>
-        <div class="JTM-C-Card-Supporting">
+        <div class="c-card-supporting">
           <h3>还有更多...</h3>
         </div>
       </div>

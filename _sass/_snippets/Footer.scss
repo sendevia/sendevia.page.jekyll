@@ -1,4 +1,4 @@
-.JTM-S-Footer {
+.s-footer {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -16,13 +16,13 @@
     text-decoration: none;
   }
 
-  #JTM-S-Footer-Descriptions {
+  #s-footer-description {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     gap: 6px;
 
-    .JTM-S-Footer-Descriptions-Topic {
+    #s-footer-description-topic {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -42,7 +42,7 @@
       }
     }
 
-    .JTM-S-Footer-Descriptions-ThemeUsed {
+    #s-footer-description-theme {
       @include typescale-style("body-large");
 
       display: flex;
@@ -50,14 +50,14 @@
       gap: 12px;
     }
 
-    .JTM-S-Footer-Descriptions-Registration {
+    #s-footer-description-beian {
       @include typescale-style("body-large");
 
       display: flex;
       align-items: center;
       gap: 12px;
 
-      #JTM-S-Footer-Registration-Gongan {
+      #s-footer-beian-gongan {
         display: inline-flex;
         align-items: center;
         gap: 5px;
@@ -70,7 +70,7 @@
     }
   }
 
-  #JTM-S-Footer-Socialmedia {
+  #s-footer-social-media {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -78,7 +78,7 @@
     gap: 6px;
     justify-content: flex-end;
 
-    .JTM-C-IconButton {
+    .c-iconbtn {
       path {
         fill: var(--md-sys-color-on-surface-variant);
       }

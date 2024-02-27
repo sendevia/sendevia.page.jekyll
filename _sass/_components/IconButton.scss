@@ -1,8 +1,7 @@
 // https://m3.material.io/components/icon-buttons/
 // 图标按钮
 
-.JTM-C-IconButton,
-button.JTM-C-IconButton {
+button.c-iconbtn {
   @include material-symbols($size: 24);
 
   display: flex;

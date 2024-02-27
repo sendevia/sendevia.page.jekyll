@@ -1,7 +1,7 @@
 // https://m3.material.io/components/all-buttons/
 // 按钮
 
-button.JTM-C-CommonButton {
+button.c-button {
   @include mixin-userselect();
   @include typescale-style("label-large", $line-height: 16rem);
 

@@ -1,45 +1,45 @@
 // 操作覆盖层
 
-[JTM-O-OnScrollEvent="true"] {
-  .JTM-C-AppBar {
+[o-onscroll="true"] {
+  .c-appbar {
     top: -64px;
 
     transition: var(--md-sys-motion-duration-medium2);
   }
 }
 
-[JTM-O-OnSiteLoaded="true"] {
-  .JTM-C-AppBar {
+[o-onload="true"] {
+  .c-appbar {
     opacity: 1;
   }
 
-  .JTM-C-Navigation {
-    #JTM-C-Navigation-FAB {
+  .c-navigation {
+    #c-navigation-fab {
       opacity: 1;
     }
 
-    #JTM-C-Navigation-Destinations {
+    #c-navigation-destinations {
       opacity: 1;
     }
   }
 
-  .JTM-C-NavigationDrawer[show] {
+  .c-navdrawer[show] {
     opacity: 1;
   }
 
-  .JTM-S-LoadingSplash {
+  .s-loading {
     opacity: 0;
   }
 
-  .JTM-S-UniversalLayout #JTM-S-UniversalLayout-ContentFlow {
+  .s-unilayout #s-unilayout-content-flow {
     opacity: 1;
     transform: translateY(0px) scale(1);
   }
 }
 
-[JTM-O-ContentBlur] {
-  .JTM-S-ScrollToTop,
-  #JTM-S-UniversalLayout-ContentFlow {
+[o-contentblur] {
+  .s-scrolltop,
+  #s-unilayout-content-flow {
     @include mixin-userselect(none);
 
     filter: contrast(0.6);
@@ -47,8 +47,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    .JTM-C-Navigation,
-    .JTM-C-AppBar {
+    .c-navigation,
+    .c-appbar {
       filter: contrast(0.6);
       pointer-events: none;
       transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
@@ -56,23 +56,23 @@
   }
 }
 
-[JTM-O-BodyBlur] {
+[o-bodyblur] {
   @include mixin-userselect(none);
 
   filter: contrast(0.6);
   pointer-events: none;
 }
 
-[JTM-O-ShowSearchContainer] {
-  #JTM-S-WebsiteInformation {
+[o-showsearch] {
+  #s-webinfo {
     display: none;
   }
-  .JTM-S-UniversalLayout {
-    #JTM-S-UniversalLayout-ContentFlow {
+  .s-unilayout {
+    #s-unilayout-content-flow {
       overflow: hidden;
     }
   }
-  .JTM-C-Search {
+  .c-search {
     opacity: 1;
     visibility: visible;
   }

@@ -1,4 +1,4 @@
-.JTM-S-Carousel {
+.s-carousel {
   grid-column: span 12;
 
   height: 54vh;
@@ -9,7 +9,7 @@
 
   user-select: none;
 
-  #JTM-S-Carousel-PostsList {
+  #s-carousel-container {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -18,7 +18,7 @@
 
     position: relative;
 
-    .JTM-S-Carousel-Control {
+    .s-carousel-control {
       @include material-symbols($size: 18);
 
       height: 100%;
@@ -57,7 +57,7 @@
       }
     }
 
-    .JTM-S-Carousel-PostItem {
+    .s-carousel-article {
       flex-grow: 1;
 
       position: relative;
@@ -74,11 +74,11 @@
       overflow: hidden;
       transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
 
-      JTM-E-Ripple {
+      e-ripple {
         background-color: var(--md-sys-color-on-primary);
       }
 
-      #JTM-S-Carousel-PostImpression {
+      .s-carousel-article-impression {
         display: block;
 
         height: 100%;
@@ -88,7 +88,7 @@
         transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
       }
 
-      #JTM-S-Carousel-PostInfo {
+      .s-carousel-article-info {
         @include typescale-style("display-large");
 
         position: absolute;
@@ -112,7 +112,7 @@
           @include typescale-style("display-large");
         }
 
-        .JTM-S-Carousel-PostInfo-FeaturedTip {
+        .s-carousel-featured-tip {
           display: flex;
           align-items: center;
           flex-wrap: nowrap;
@@ -128,14 +128,14 @@
 
           background-color: var(--md-sys-color-inverse-surface);
 
-          #JTM-S-Carousel-PostInfo-FeaturedTip-Icon {
+          .s-carousel-featured-tip-icon {
             @include material-symbols($size: 18);
           }
         }
       }
 
       &:hover {
-        #JTM-S-Carousel-PostImpression {
+        .s-carousel-article-impression {
           opacity: 0.5;
         }
       }
@@ -147,11 +147,11 @@
     }
 
     &[data-scroll="1"] {
-      .JTM-S-Carousel-PostItem {
+      .s-carousel-article {
         width: calc(100% - 68px);
 
         &:nth-of-type(1) {
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }
@@ -161,7 +161,7 @@
 
           margin-inline-end: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -176,7 +176,7 @@
 
           opacity: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -184,7 +184,7 @@
     }
 
     &[data-scroll="2"] {
-      .JTM-S-Carousel-PostItem {
+      .s-carousel-article {
         &:nth-of-type(1),
         &:nth-of-type(4) {
           width: 0;
@@ -195,7 +195,7 @@
 
           opacity: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -203,7 +203,7 @@
         &:nth-of-type(2) {
           width: calc(100% - 68px);
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }
@@ -213,7 +213,7 @@
 
           margin-inline-end: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -221,7 +221,7 @@
     }
 
     &[data-scroll="3"] {
-      .JTM-S-Carousel-PostItem {
+      .s-carousel-article {
         &:nth-of-type(1),
         &:nth-of-type(2) {
           width: 0;
@@ -232,7 +232,7 @@
 
           opacity: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -240,7 +240,7 @@
         &:nth-of-type(3) {
           width: calc(100% - 68px);
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard);
           }
         }
@@ -250,7 +250,7 @@
 
           margin-inline-end: 0;
 
-          #JTM-S-Carousel-PostInfo {
+          .s-carousel-article-info {
             opacity: 0;
           }
         }
@@ -258,7 +258,7 @@
     }
 
     &:hover {
-      .JTM-S-Carousel-Control {
+      .s-carousel-control {
         opacity: 1;
       }
     }

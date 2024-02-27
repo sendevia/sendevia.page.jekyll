@@ -1,4 +1,4 @@
-.JTM-S-Header {
+.s-header {
   grid-column: span 12;
 
   height: 540px;
@@ -7,7 +7,7 @@
 
   word-break: break-word;
 
-  #JTM-S-Header-HeroContainer {
+  #s-header-hero-container {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -33,7 +33,7 @@
       background-blend-mode: soft-light;
     }
 
-    #JTM-S-Header-HeroHeadline {
+    #s-header-hero-headline {
       @include typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
 
       width: 100%;
@@ -41,7 +41,7 @@
       transition: var(--md-sys-motion-duration-short1) var(--md-sys-motion-easing-standard);
     }
 
-    #JTM-S-Header-HeroSubtitle {
+    #s-header-hero-subtitle {
       @include typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
 
       width: 100%;

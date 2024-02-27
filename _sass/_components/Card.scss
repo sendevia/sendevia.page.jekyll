@@ -1,7 +1,7 @@
 // https://m3.material.io/components/cards/
 // 卡片
 
-.JTM-C-Card {
+.c-card {
   display: flex;
   flex-direction: column;
 
@@ -18,7 +18,7 @@
     max-width: unset;
   }
 
-  .JTM-C-Card-Impression {
+  .c-card-impression {
     span {
       @include material-symbols($size: 72);
 
@@ -34,7 +34,7 @@
     }
   }
 
-  .JTM-C-Card-Supporting {
+  .c-card-supporting {
     color: var(--md-sys-color-on-surface);
 
     pointer-events: none;
@@ -63,7 +63,7 @@
       transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
     }
 
-    .JTM-C-Card-Impression {
+    .c-card-impression {
       position: relative;
 
       border-radius: var(--md-sys-shape-corner-extra-large-bottom);
@@ -73,7 +73,7 @@
       overflow: hidden;
     }
 
-    .JTM-C-Card-Supporting {
+    .c-card-supporting {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -81,19 +81,19 @@
       padding-block: 20px 18px;
       padding-inline: 20px;
 
-      #JTM-C-Card-Supporting-Weaken {
+      #c-card-supporting--weaken {
         text-align: end;
 
         opacity: 0.5;
       }
     }
 
-    JTM-E-Ripple {
+    e-ripple {
       background-color: var(--md-sys-color-on-primary);
     }
 
     &:hover {
-      .JTM-C-Card-Supporting h3 {
+      .c-card-supporting h3 {
         font-weight: 700;
       }
 
@@ -103,7 +103,7 @@
     }
 
     &:active {
-      .JTM-C-Card-Supporting h3 {
+      .c-card-supporting h3 {
         font-weight: 200;
       }
 
@@ -129,7 +129,7 @@
       transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
     }
 
-    .JTM-C-Card-Supporting {
+    .c-card-supporting {
       position: absolute;
       bottom: 0;
 
@@ -145,7 +145,7 @@
       }
     }
 
-    JTM-E-Ripple {
+    e-ripple {
       background-color: var(--md-sys-color-on-primary);
     }
 
@@ -156,7 +156,7 @@
         transition: opacity var(--md-sys-motion-duration-medium2);
       }
 
-      .JTM-C-Card-Supporting {
+      .c-card-supporting {
         transform: translateY(0%);
 
         h3 {

@@ -1,7 +1,7 @@
 // https://m3.material.io/components/chips/
 // 面包屑
 
-button.JTM-C-Chip {
+button.c-chip {
   @include mixin-userselect(none);
   @include typescale-style("label-large");
 

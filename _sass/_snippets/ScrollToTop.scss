@@ -1,4 +1,4 @@
-.JTM-S-ScrollToTop {
+.s-scrolltop {
   position: relative;
 
   opacity: 0;
@@ -6,7 +6,7 @@
   visibility: hidden;
   z-index: 21;
 
-  #JTM-S-ScrollToTop-Desktop {
+  #s-scrolltop-desktop {
     @include material-symbols($size: 24);
 
     position: fixed;
@@ -30,7 +30,7 @@
     overflow: hidden;
   }
 
-  #JTM-S-ScrollToTop-Mobile {
+  #s-scrolltop-mobile {
     display: none;
 
     position: fixed;

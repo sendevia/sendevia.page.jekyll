@@ -26,40 +26,40 @@
 
 @keyframes ripple {
   from {
-    height: calc(var(--JTM-E-Ripple-Diameter) * 0.5px);
-    width: calc(var(--JTM-E-Ripple-Diameter) * 0.5px);
+    height: calc(var(--e-ripple-Diameter) * 0.5px);
+    width: calc(var(--e-ripple-Diameter) * 0.5px);
 
     filter: blur(5px);
     opacity: 0.5;
   }
 
   to {
-    height: calc(var(--JTM-E-Ripple-Diameter) * 2px);
-    width: calc(var(--JTM-E-Ripple-Diameter) * 2px);
+    height: calc(var(--e-ripple-Diameter) * 2px);
+    width: calc(var(--e-ripple-Diameter) * 2px);
 
     filter: blur(0);
     opacity: 0;
   }
 }
 
-@keyframes JTM-C-ProgressIndicator-Loop {
+@keyframes c-progress-loop {
   0% {
-    --JTM-C-ProgressIndicator-Deg: 30deg;
+    --c-progress-deg: 30deg;
     rotate: 0deg;
   }
 
   50% {
-    --JTM-C-ProgressIndicator-Deg: 300deg;
+    --c-progress-deg: 300deg;
     transform: rotateZ(0deg);
   }
   100% {
-    --JTM-C-ProgressIndicator-Deg: 30deg;
+    --c-progress-deg: 30deg;
     rotate: 360deg;
     transform: rotateZ(360deg);
   }
 }
 
-@keyframes JTM-C-Dialog-ContainerShow {
+@keyframes c-dialog-container-show {
   from {
     opacity: 0;
     transform: translateY(-120px);
@@ -71,7 +71,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-ContainerShow-Alt {
+@keyframes c-dialog-container-show-alt {
   from {
     opacity: 0;
     transform: translateY(-60px);
@@ -83,7 +83,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-LayoutShow {
+@keyframes c-dialog-layout-show {
   from {
     clip-path: inset(0 0 80% 0 round 24px);
   }
@@ -93,7 +93,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-ContentShow {
+@keyframes c-dialog-content-show {
   from {
     margin-block-start: 0;
 
@@ -107,7 +107,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-SupportingListShow {
+@keyframes c-dialog-supporting-list-show {
   from {
     opacity: 0;
   }
@@ -117,7 +117,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-ButtonShow {
+@keyframes c-dialog-button-show {
   0% {
     bottom: calc(100% - 64px);
 
@@ -135,7 +135,7 @@
   }
 }
 
-@keyframes JTM-C-Dialog-ContainerClose {
+@keyframes c-dialog-container-close {
   from {
     clip-path: inset(0 0 0% 0 round 24px);
     opacity: 1;

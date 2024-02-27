@@ -6,11 +6,11 @@ import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
 /**
  * 主题 - 根节点
  */
-const theme_Root = document.querySelector(".JTM-Root");
+const theme_Root = document.querySelector(".t-root");
 /**
  * 主题 - 加载指示器
  */
-const theme_LoadingIndicator = document.querySelector(".JTM-S-LoadingSplash");
+const theme_LoadingIndicator = document.querySelector(".s-loading");
 /**
  * 主题 - 定位当前所在页面
  */
@@ -18,11 +18,11 @@ const theme_CurrentPage = window.location.pathname;
 /**
  * 主题 - 模态对话框
  */
-const theme_Dialog = document.querySelector(".JTM-C-Dialog");
+const theme_Dialog = document.querySelector(".c-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
-const theme_Dialog_Controller_Open = document.querySelectorAll("#JTM-S-WebsiteInformation, #JTM-C-AppBar-InfoIcon");
+const theme_Dialog_Controller_Open = document.querySelectorAll("#s-webinfo, #c-appbar-InfoIcon");
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
@@ -30,18 +30,18 @@ const theme_Dialog_Controller_Close = document.querySelector("#dialog-close");
 /**
  * 主题 - 跳转到页首
  */
-const theme_ScrollToTop = document.querySelectorAll(".JTM-S-ScrollToTop");
+const theme_ScrollToTop = document.querySelectorAll(".s-scrolltop");
 /**
  * 主题 - 涟漪效果元素
  */
 const theme_RippleElements = document.querySelectorAll(
-  `#JTM-S-UniversalLayout-ContentFiller[spec='article'] li a, #JTM-S-UniversalLayout-ContentFiller[spec='article'] p a, button, .JTM-C-Card[spec='clear'], .JTM-C-Card[spec='focus'], .JTM-C-NavigationDrawer details a, #JTM-C-Navigation-DestinationAccent, .JTM-S-WebsiteInformation, .JTM-S-Carousel-PostItem`
+  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], .c-navdrawer details a, .c-navigation-destination-accent, .s-webinfo, .s-carousel-article`
 );
 /**
  * 主题 - 延迟跳转元素
  */
 const theme_DelayRedirect = document.querySelectorAll(
-  "#JTM-P-Index-ReadMore, .JTM-P-Index-Card, .JTM-S-Carousel-PostItem, #JTM-C-Navigation-Destinations a, #JTM-P-Posts-Timeline-PostCard a, .JTM-S-QuickJump"
+  "#p-index-article-summary--content-read-more, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
 );
 /**
  * 调色盘 - HEX颜色
@@ -50,7 +50,7 @@ const palette_HEX = document.body.getAttribute("color");
 /**
  * 文章 - 内容流
  */
-const content_Flow = document.querySelector("#JTM-S-UniversalLayout-ContentFlow");
+const content_Flow = document.querySelector("#s-unilayout-content-flow");
 /**
  * 文章 - ul随机旋转的marker
  */
@@ -58,11 +58,11 @@ const content_RotationListItemsBullet = document.querySelectorAll("ul li");
 /**
  * 全局导航栏
  */
-const navigation_Container = document.querySelector(".JTM-C-Navigation");
+const navigation_Container = document.querySelector(".c-navigation");
 /**
  * 全局导航栏 - 展开
  */
-const navigation_Drawer = document.querySelector(".JTM-C-NavigationDrawer");
+const navigation_Drawer = document.querySelector(".c-navdrawer");
 /**
  * 全局导航栏 - 展开 - 一级目录元素
  */
@@ -74,26 +74,26 @@ const navigation_Drawer_H2Entries = navigation_Drawer ? navigation_Drawer.queryS
 /**
  * 全局导航栏 - 状态控制器
  */
-const search_ContainerController = document.querySelectorAll("#JTM-C-Navigation-FAB > button, #JTM-C-AppBar-MenuIcon, #JTM-C-NavigationDrawer-MenuCloseIcon");
+const search_ContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-MenuIcon, #c-navdrawer-close-icon");
 
-const navigation_Controller = document.querySelector("#JTM-C-Navigation-Destinations > div");
+const navigation_Controller = document.querySelector("#c-navigation-destinations > div");
 
 /**
  * 移动端 - 标题栏
  */
-const mobile_AppBar = document.querySelector(".JTM-C-AppBar");
+const mobile_AppBar = document.querySelector(".c-appbar");
 /**
  * Carousel - 内容容器
  */
-const carousel_Container = document.querySelector(".JTM-S-Carousel");
+const carousel_Container = document.querySelector(".s-carousel");
 /**
  * Carousel - 状态控制器
  */
-const carousel_Controller = carousel_Container ? carousel_Container.querySelectorAll(".JTM-S-Carousel-Control") : [];
+const carousel_Controller = carousel_Container ? carousel_Container.querySelectorAll(".s-carousel-control") : [];
 /**
  * Carousel - 展示的文章
  */
-const carousel_PostList = carousel_Container ? carousel_Container.querySelector("#JTM-S-Carousel-PostsList") : [];
+const carousel_PostList = carousel_Container ? carousel_Container.querySelector("#s-carousel-container") : [];
 
 /**
  * 切换 attribute
@@ -116,9 +116,9 @@ function bodyScroll() {
   mobile_AppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
 
   if (scrollDirection === "up") {
-    theme_Root.setAttribute("JTM-O-OnScrollEvent", "false");
+    theme_Root.setAttribute("o-onscroll", "false");
   } else if (scrollDirection === "down" && scrollY >= 500) {
-    theme_Root.setAttribute("JTM-O-OnScrollEvent", "true");
+    theme_Root.setAttribute("o-onscroll", "true");
   }
   theme_ScrollToTop.forEach((element) => {
     element.style.cssText = `
@@ -162,7 +162,7 @@ function handleLinkDelayRedirection(link) {
  */
 function initModal() {
   const toggleDim = (boolean) => {
-    theme_Root.toggleAttribute("JTM-O-BodyBlur", boolean);
+    theme_Root.toggleAttribute("o-bodyblur", boolean);
   };
 
   const openModal = () => {
@@ -172,7 +172,7 @@ function initModal() {
 
   const closeModal = () => {
     toggleDim(false);
-    theme_Dialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both JTM-C-Dialog-ContainerClose`;
+    theme_Dialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-close`;
     setTimeout(() => {
       theme_Dialog.close();
       theme_Dialog.style.animation = "";
@@ -202,7 +202,7 @@ function initModal() {
  * 增加加载屏幕
  */
 function addLoadScreen() {
-  theme_Root.removeAttribute("JTM-O-OnSiteLoaded");
+  theme_Root.removeAttribute("o-onload");
 }
 
 /**
@@ -210,7 +210,7 @@ function addLoadScreen() {
  */
 function removeLoadScreen() {
   const delay = 450;
-  theme_Root.setAttribute("JTM-O-OnSiteLoaded", true);
+  theme_Root.setAttribute("o-onload", true);
   setTimeout(() => {
     theme_LoadingIndicator.style.display = "none";
   }, delay);
@@ -235,17 +235,17 @@ function randomRotationBullet() {
 var snackbars = [];
 function createSnackbar(content) {
   var snackbar = document.createElement("div");
-  snackbar.className = "JTM-C-Snackbar";
+  snackbar.className = "c-snackbar";
   snackbar.setAttribute("visible", "false");
 
   var p = document.createElement("p");
-  p.id = "JTM-C-Snackbar-Supporting";
+  p.id = "c-snackbar-supporting";
   p.textContent = content;
 
   var closeButton = document.createElement("button");
   closeButton.textContent = "close";
-  closeButton.id = "JTM-C-Snackbar-Icon";
-  closeButton.className = "JTM-C-IconButton";
+  closeButton.id = "c-snackbar-icon";
+  closeButton.className = "c-iconbtn";
   closeButton.onclick = function () {
     snackbar.setAttribute("visible", "false");
     setTimeout(function () {
@@ -305,15 +305,15 @@ window.onload = () => {
     fuzzy: false,
     json: `${searchRoot}/postsmap.json`,
     noResultsText: "＞︿＜ 无结果",
-    resultsContainer: document.getElementById("JTM-C-Search-ResultsContainer"),
-    searchInput: document.getElementById("JTM-C-Search-InputBox"),
+    resultsContainer: document.getElementById("c-search-results-container"),
+    searchInput: document.getElementById("c-search-input-box"),
     searchResultTemplate: `
-      <a id="JTM-C-Search-ResultItem" href="{url}">
-        <div class="JTM-C-Card" spec="clear">
-          <div class="JTM-C-Card-Impression">
+      <a class="c-search-result-item" href="{url}">
+        <div class="c-card" spec="clear">
+          <div class="c-card-impression">
             <img src="{impression}" alt="image" />
           </div>
-          <div class="JTM-C-Card-Supporting">
+          <div class="c-card-supporting">
             <h3>{title}</h3>
           </div>
         </div>
@@ -322,7 +322,7 @@ window.onload = () => {
 
   randomRotationBullet();
 
-  document.querySelectorAll("#JTM-S-UniversalLayout-ContentFiller > h1").forEach((h1) => {
+  document.querySelectorAll("#s-unilayout-content-filler > h1").forEach((h1) => {
     h1.addEventListener("click", function () {
       const anchorLink = this.id ? `#${this.id}` : "";
 
@@ -353,10 +353,10 @@ window.onpageshow = () => {
 
   try {
     const activatedSegment = document.querySelector(`a[href="${theme_CurrentPage}"]`);
-    const inactiveSegment = activatedSegment.querySelector("#JTM-C-Navigation-SegmentInactive");
-    inactiveSegment.id = "JTM-C-Navigation-SegmentActive";
+    const inactiveSegment = activatedSegment.querySelector(".c-navigation-segment-inactive");
+    inactiveSegment.className = "c-navigation-segment-active";
   } catch (err) {
-    document.querySelector("#JTM-C-Navigation-Destinations > div").id = "JTM-C-Navigation-SegmentActive";
+    document.querySelector("#c-navigation-destinations > div").className = "c-navigation-segment-active";
   }
 
   theme_ScrollToTop.forEach((element) => element.addEventListener("click", () => content_Flow.scrollTo({ top: 0 })));
@@ -366,7 +366,7 @@ window.onpageshow = () => {
 
   initModal();
 
-  search_ContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(theme_Root, "JTM-O-ShowSearchContainer")));
+  search_ContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(theme_Root, "o-showsearch")));
 
   if (navigation_Drawer) {
     let enterTimeout;
@@ -389,9 +389,9 @@ window.onpageshow = () => {
     });
     navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigation_Drawer, "show", false)));
     document.addEventListener("click", (event) => {
-      const isJTM_C_NavigationDrawer = event.target.closest(".JTM-C-NavigationDrawer");
-      const isJTM_C_AppBar = event.target.closest(".JTM-C-AppBar");
-      const isMAB = event.target.closest("#JTM-C-Navigation-FAB");
+      const isJTM_C_NavigationDrawer = event.target.closest(".c-navdrawer");
+      const isJTM_C_AppBar = event.target.closest(".c-appbar");
+      const isMAB = event.target.closest("#c-navigation-fab");
       if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
         toggleAttr(navigation_Drawer, "show", false);
       }

@@ -1,7 +1,7 @@
 // https://m3.material.io/components/top-app-bar/
 // 移动端标题栏
 
-.JTM-C-AppBar {
+.c-appbar {
   @include mixin-userselect();
 
   display: flex;
@@ -33,7 +33,7 @@
     background-color: var(--md-sys-color-surface-dim);
   }
 
-  #JTM-C-AppBar-DynamicTitle {
+  #c-appbar-dynamic-title {
     @include typescale-style("title-large");
 
     display: flex;
@@ -74,7 +74,7 @@
   }
 
   &[scroll="true"] {
-    #JTM-C-AppBar-DynamicTitle {
+    #c-appbar-dynamic-title {
       span {
         &:nth-child(1) {
           transform: translateY(-45px);

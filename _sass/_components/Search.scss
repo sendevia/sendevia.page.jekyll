@@ -1,4 +1,4 @@
-.JTM-C-Search {
+.c-search {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(12, 72px);
@@ -19,7 +19,7 @@
   visibility: hidden;
   z-index: 100;
 
-  #JTM-C-Search-InputBox {
+  #c-search-input-box {
     @include typescale-style("title-large");
     grid-column: span 12;
 
@@ -35,7 +35,7 @@
     border-radius: var(--md-sys-shape-corner-extra-large);
   }
 
-  #JTM-C-Search-ResultsContainer {
+  #c-search-results-container {
     display: grid;
     gap: 12px;
     grid-auto-rows: minmax(auto, 0);
@@ -44,7 +44,7 @@
 
     width: 100%;
 
-    #JTM-C-Search-ResultItem {
+    .c-search-result-item {
       grid-column: span 1;
 
       width: 100%;

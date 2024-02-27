@@ -1,84 +1,84 @@
-<div class="JTM-C-Navigation" spec="rail">
-  <div id="JTM-C-Navigation-FAB">
+<div class="c-navigation" spec="rail">
+  <div id="c-navigation-fab">
     <button
-      class="JTM-C-FAB"
+      class="c-fab"
       spec="surface"
       size="normal">search</button>
   </div>
-  <div id="JTM-C-Navigation-Destinations">
+  <div id="c-navigation-destinations">
     <a href="/">
-      <div id="JTM-C-Navigation-SegmentInactive">
-        <div id="JTM-C-Navigation-DestinationAccent">
-          <div id="JTM-C-Navigation-SegmentIcon">
+      <div class="c-navigation-segment-inactive">
+        <div class="c-navigation-destination-accent">
+          <div class="c-navigation-segment-icon">
             <!-- https://fonts.google.com/icons?selected=Material+Icons&icon.set=Material+Symbols -->
             <span>home</span>
           </div>
         </div>
-        <p id="JTM-C-Navigation-DestinationLabel">首页</p>
+        <p class="c-navigation-destination-label">首页</p>
       </div>
     </a>
 
-    <div id="JTM-C-Navigation-SegmentInactive">
-      <div id="JTM-C-Navigation-DestinationAccent">
-        <div id="JTM-C-Navigation-SegmentIcon">
+    <div class="c-navigation-segment-inactive">
+      <div class="c-navigation-destination-accent">
+        <div class="c-navigation-segment-icon">
           <span>article</span>
         </div>
       </div>
-      <p id="JTM-C-Navigation-DestinationLabel">文章目录</p>
+      <p class="c-navigation-destination-label">文章目录</p>
     </div>
 
     {% for s in site.pages %}
       {% if s.navigation and s.published == true %}
         <a href="{{ s.url | remove: '.html' }}">
-          <div id="JTM-C-Navigation-SegmentInactive">
-            <div id="JTM-C-Navigation-DestinationAccent">
-              <div id="JTM-C-Navigation-SegmentIcon">
+          <div class="c-navigation-segment-inactive">
+            <div class="c-navigation-destination-accent">
+              <div class="c-navigation-segment-icon">
                 <span>{{ s.segment_icon }}</span>
               </div>
             </div>
-            <p id="JTM-C-Navigation-DestinationLabel">{{ s.segment_title }}</p>
+            <p class="c-navigation-destination-label">{{ s.segment_title }}</p>
           </div>
         </a>
       {% endif %}
     {% endfor %}
   </div>
 </div>
-<div class="JTM-C-AppBar">
+<div class="c-appbar">
   {% if page.toc %}
-    <button class="JTM-C-IconButton" id="JTM-C-AppBar-MenuIcon">menu</button>
+    <button class="c-iconbtn" id="c-appbar-MenuIcon">menu</button>
   {% else %}
     <span></span>
   {% endif %}
-  <div id="JTM-C-AppBar-DynamicTitle">
+  <div id="c-appbar-dynamic-title">
     <span>{{ site.title }}</span>
     <span>{{ page.title | default: site.title }}</span>
   </div>
-  <button class="JTM-C-IconButton" id="JTM-C-AppBar-InfoIcon">info</button>
+  <button class="c-iconbtn" id="c-appbar-InfoIcon">info</button>
 </div>
-<dialog class="JTM-C-Dialog">
-  <div class="JTM-C-Dialog-Layout">
-    <div id="JTM-C-Dialog-Content">
-      <span class="JTM-C-Dialog-LeaderIcon">help</span>
-      <div class="JTM-C-Dialog-Headline">
+<dialog class="c-dialog">
+  <div id="c-dialog-layout">
+    <div id="c-dialog-content">
+      <span id="c-dialog-leader-icon">help</span>
+      <div id="c-dialog-headline">
         <h3>{{ page.title | default: site.title }}</h3>
         {% if page.description and page.description != "" %}
           <p>{{ page.description }}</p>
         {% endif %}
       </div>
-      <div class="JTM-C-Dialog-SupportingList">
+      <div id="c-dialog-supporting-list">
         {% if page.date %}
-          <div class="JTM-C-Dialog-TipItems">
+          <div class="c-dialog-tip-items">
             <button
-              class="JTM-C-IconButton"
+              class="c-iconbtn"
               spec="standard"
               disabled>calendar_month</button>
             <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
           </div>
         {% endif %}
         {% assign page_words = page.content | number_of_words: "auto" %} {% assign read_estimate = page_words | divided_by: 120 %}
-        <div class="JTM-C-Dialog-TipItems">
+        <div class="c-dialog-tip-items">
           <button
-            class="JTM-C-IconButton"
+            class="c-iconbtn"
             spec="standard"
             disabled>schedule</button>
           <p>估计阅读时间：{% if read_estimate > 0 %}
@@ -88,27 +88,27 @@
             {% endif %}分钟</p>
         </div>
         {% if page.author %}
-          <div class="JTM-C-Dialog-TipItems">
+          <div class="c-dialog-tip-items">
             <button
-              class="JTM-C-IconButton"
+              class="c-iconbtn"
               spec="standard"
               disabled>person</button>
             <p>作者：{{ page.author }}</p>
           </div>
         {% endif %}
         {% if page.categories.size > 0 %}
-          <div class="JTM-C-Dialog-TipItems">
+          <div class="c-dialog-tip-items">
             <button
-              class="JTM-C-IconButton"
+              class="c-iconbtn"
               spec="standard"
               disabled>category</button>
             <p>分类：{{ page.categories }}</p>
           </div>
         {% endif %}
         {% if page.color and page.color != "" %}
-          <div class="JTM-C-Dialog-TipItems">
+          <div class="c-dialog-tip-items">
             <button
-              class="JTM-C-IconButton"
+              class="c-iconbtn"
               spec="standard"
               disabled>palette</button>
             <p>主题颜色：{{ page.color }}</p>
@@ -116,9 +116,9 @@
         {% endif %}
       </div>
     </div>
-    <div id="JTM-C-Dialog-Button">
+    <div id="c-dialog-button">
       <button
-        class="JTM-C-CommonButton"
+        class="c-button"
         spec="text"
         id="dialog-close">关闭</button>
     </div>
