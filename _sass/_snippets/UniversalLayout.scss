@@ -247,6 +247,8 @@
         }
 
         mjx-container {
+          @include typescale-style("body-large");
+
           margin-inline: 10px;
         }
 
