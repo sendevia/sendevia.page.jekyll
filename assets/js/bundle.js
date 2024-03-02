@@ -6708,7 +6708,7 @@ window.onload = () => {
 
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     fuzzy: false,
-    json: `${searchRoot}/postsmap.json`,
+    json: `${searchRoot}/assets/postsmap.json`,
     noResultsText: "＞︿＜ 无结果",
     resultsContainer: document.getElementById("c-search-results-container"),
     searchInput: document.getElementById("c-search-input-box"),
