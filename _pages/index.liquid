@@ -5,17 +5,17 @@ author: sendevia
 <div class="p-index">
   <div id="p-index-cardset">
     {% assign latest_post = site.posts | first %}
-    <div id="p-index-article-summary">
-      <div id="p-index-article-summary--title-container">
-        <div>
-          <p id="p-index-article-summary--title-date">{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
-          <h2 id="p-index-article-summary--title-content">{{ latest_post.title }}</h2>
+    <div id="p-index-latest-article">
+      <div id="p-index-latest-article--date-container">
+        <div id="p-index-latest-article--date-detail">
+          <span>fiber_new</span>
+          <p>{{ latest_post.date | date: "%y年%-m月%-d日" }}发布了文章</p>
+        </div>
+        <div id="p-index-latest-article--title">
+          <h2>{{ latest_post.title }}</h2>
+          <a href="{{ latest_post.url }}">详细阅读</a>
         </div>
       </div>
-      <p id="p-index-article-summary--content">
-        {{ latest_post.content | strip_html | truncatewords: 24, "..." }}
-        <a id="p-index-article-summary--content-read-more" href="{{ latest_post.url }}">详细阅读</a>
-      </p>
     </div>
 
     <a href="/" class="p-index-card">

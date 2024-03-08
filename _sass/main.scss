@@ -239,7 +239,7 @@ hr {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 
-    #p-index-article-summary {
+    #p-index-latest-article {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -254,45 +254,65 @@ hr {
 
       background-color: var(--md-sys-color-surface-container-low);
 
-      #p-index-article-summary--title-container {
+      #p-index-latest-article--date-container {
         display: flex;
         align-items: flex-start;
+        flex-direction: column;
         gap: 12px;
 
-        #p-index-article-summary--title-date {
-          color: var(--md-sys-color-on-surface-variant);
-        }
+        #p-index-latest-article--date-detail {
+          @include typescale-style("body-medium");
 
-        #p-index-article-summary--title-content {
-          letter-spacing: 1.3px;
-        }
-
-        &::before {
-          @include material-symbols("fiber_new", $size: 30);
-        }
-      }
-
-      #p-index-article-summary--content {
-        letter-spacing: 1.1px;
-        text-indent: 1.1em;
-
-        #p-index-article-summary--content-read-more {
-          display: inline-flex;
-          align-items: center;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: row;
           flex-wrap: nowrap;
-          gap: 3px;
+          gap: 12px;
 
-          text-decoration: none;
-          text-indent: initial;
+          color: var(--md-sys-color-on-surface-variant);
 
-          &::after {
-            @include material-symbols("east", $size: 18);
-
-            transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+          span {
+            @include material-symbols($size: 30);
           }
 
-          &:hover::after {
-            transform: translateX(4px);
+          p {
+            @include typescale-style("body-medium", $line-height: 27.5px);
+          }
+        }
+
+        #p-index-latest-article--title {
+          display: flex;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: space-between;
+
+          width: 100%;
+
+          h2 {
+            letter-spacing: 1.3px;
+          }
+
+          a {
+            @include typescale-style("body-medium");
+
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 3px;
+
+            text-decoration: none;
+            text-indent: initial;
+
+            &::after {
+              @include material-symbols("east", $size: 18);
+
+              transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+            }
+
+            &:hover::after {
+              transform: translateX(4px);
+            }
           }
         }
       }
