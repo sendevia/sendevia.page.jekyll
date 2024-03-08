@@ -1,4 +1,10 @@
 <div class="s-header" spec="page-index">
+  {% if page.url != "/index.html" %}
+    <button
+      class="c-iconbtn"
+      id="s-header-webinfo"
+      spec="standard">info</button>
+  {% endif %}
   {% assign photograph = page.impression | default: site.impression %}
   <div id="s-header-hero-container" style="background-image: url('{{ photograph }}');">
     {% if include.spec_page_index == "true" %}

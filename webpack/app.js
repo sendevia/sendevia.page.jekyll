@@ -22,7 +22,7 @@ const theme_Dialog = document.querySelector(".c-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
-const theme_Dialog_Controller_Open = document.querySelectorAll("#s-webinfo, #c-appbar-InfoIcon");
+const theme_Dialog_Controller_Open = document.querySelectorAll("#s-header-webinfo, #c-appbar-InfoIcon");
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
@@ -35,7 +35,7 @@ const theme_ScrollToTop = document.querySelectorAll(".s-scrolltop");
  * 主题 - 涟漪效果元素
  */
 const theme_RippleElements = document.querySelectorAll(
-  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], .c-navdrawer details a, .c-navigation-destination-accent, .s-webinfo, .s-carousel-article`
+  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], .c-navdrawer details a, .c-navigation-destination-accent, .s-header-webinfo, .s-carousel-article`
 );
 /**
  * 主题 - 延迟跳转元素

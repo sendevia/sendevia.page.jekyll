@@ -1,11 +1,21 @@
 .s-header {
   grid-column: span 12;
 
+  position: relative;
+
   height: 540px;
 
   margin-block-start: 12px;
 
   word-break: break-word;
+
+  #s-header-webinfo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    overflow: hidden;
+  }
 
   #s-header-hero-container {
     display: flex;
