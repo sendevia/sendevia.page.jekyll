@@ -6,7 +6,8 @@
 
   background-color: var(--md-sys-color-surface-container);
 
-  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
+    filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 15;
 
   a {

@@ -51,7 +51,7 @@
 
     padding-block: 60px 8px;
 
-    #c-navdrawer-close-icon {
+    #c-navdrawer-close {
       display: block;
 
       position: fixed;
@@ -73,12 +73,21 @@
   }
 
   #s-webinfo {
-    display: none;
+    margin-inline-end: 18px;
+    margin-block-start: 82px;
   }
 
   .s-unilayout {
     grid-template-columns: none;
     grid-template-rows: auto 80px;
+
+    .c-search {
+      width: 100%;
+
+      #c-search-results-container {
+        grid-template-columns: repeat(1, 100%);
+      }
+    }
 
     #s-unilayout-content-flow {
       grid-column: auto;
@@ -188,7 +197,7 @@
     #p-index-cardset {
       grid-template-columns: repeat(1, 1fr);
 
-      #p-index-article-summary {
+      #p-index-latest-article {
         grid-column: span 1;
       }
     }

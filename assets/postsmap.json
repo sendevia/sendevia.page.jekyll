@@ -4,13 +4,14 @@ layout: none
 [
   {% for post in site.posts -%}
     {
-      "title"     : "{{ post.title | escape }}",
-      "author"    : "{{ post.author }}",
-      "category"  : "{{ post.categories }}",
-      "tags"      : "{{ post.tags | join: ', ' }}",
-      "date"      : "{{ post.date }}",
-      "impression": "{{ post.impression | default: site.impression }}",
-      "url"       : "{{ site.url }}{{ post.url }}"
+      "title"       : "{{ post.title | escape }}",
+      "description" : "{{ post.description | default: site.description }}",
+      "author"      : "{{ post.author }}",
+      "category"    : "{{ post.categories }}",
+      "tags"        : "{{ post.tags | join: ', ' }}",
+      "date"        : "{{ post.date }}",
+      "impression"  : "{{ post.impression | default: site.impression }}",
+      "url"         : "{{ site.url }}{{ post.url }}"
     }
     {% unless forloop.last -%},{% endunless %}
   {% endfor %}

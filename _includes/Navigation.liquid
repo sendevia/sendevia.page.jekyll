@@ -44,16 +44,12 @@
   </div>
 </div>
 <div class="c-appbar">
-  {% if page.toc %}
-    <button class="c-iconbtn" id="c-appbar-MenuIcon">menu</button>
-  {% else %}
-    <span></span>
-  {% endif %}
+  <button class="c-iconbtn" id="c-appbar-menu">menu</button>
   <div id="c-appbar-dynamic-title">
     <span>{{ site.title }}</span>
     <span>{{ page.title | default: site.title }}</span>
   </div>
-  <button class="c-iconbtn" id="c-appbar-InfoIcon">info</button>
+  <button class="c-iconbtn" id="c-appbar-search">search</button>
 </div>
 <dialog class="c-dialog">
   <div id="c-dialog-layout">

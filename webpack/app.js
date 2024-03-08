@@ -41,7 +41,7 @@ const theme_RippleElements = document.querySelectorAll(
  * 主题 - 延迟跳转元素
  */
 const theme_DelayRedirect = document.querySelectorAll(
-  "#p-index-article-summary--content-read-more, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
+  ".c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
 );
 /**
  * 调色盘 - HEX颜色
@@ -74,9 +74,15 @@ const navigation_Drawer_H2Entries = navigation_Drawer ? navigation_Drawer.queryS
 /**
  * 全局导航栏 - 状态控制器
  */
-const search_ContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-MenuIcon, #c-navdrawer-close-icon");
-
 const navigation_Controller = document.querySelector("#c-navigation-destinations > div");
+/**
+ * 全局导航栏 - 状态控制器按钮
+ */
+const navigation_Controller_Button = document.querySelectorAll("#c-appbar-menu, #c-navdrawer-close");
+/**
+ * 搜索 - 状态控制器
+ */
+const search_ContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
 
 /**
  * 移动端 - 标题栏
@@ -310,11 +316,9 @@ window.onload = () => {
     searchResultTemplate: `
       <a class="c-search-result-item" href="{url}">
         <div class="c-card" spec="clear">
-          <div class="c-card-impression">
-            <img src="{impression}" alt="image" />
-          </div>
           <div class="c-card-supporting">
             <h3>{title}</h3>
+            <p>{description}</p>
           </div>
         </div>
       </a>`,
@@ -377,6 +381,12 @@ window.onpageshow = () => {
     });
     navigation_Controller.addEventListener("pointerleave", () => {
       clearTimeout(enterTimeout);
+    });
+
+    navigation_Controller_Button.forEach((element) => {
+      element.addEventListener("click", () => {
+        toggleAttr(navigation_Drawer, "show");
+      });
     });
 
     navigation_Drawer_H1Entries.forEach((element) => {

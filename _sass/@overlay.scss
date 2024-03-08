@@ -69,11 +69,21 @@
   }
   .s-unilayout {
     #s-unilayout-content-flow {
-      overflow: hidden;
+      filter: brightness(0.5);
     }
   }
+
   .c-search {
+    clip-path: inset(0 0 0 0 round 0);
+
     opacity: 1;
     visibility: visible;
+  }
+
+  @media screen and (max-width: 768px) {
+    .c-navigation[spec="bar"],
+    .c-appbar {
+      filter: brightness(0.5);
+    }
   }
 }

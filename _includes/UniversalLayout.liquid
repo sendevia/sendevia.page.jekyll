@@ -1,10 +1,10 @@
 <div class="s-unilayout">
   {% include Navigation.liquid %}
   <div class="c-search">
-    <input
-      type="text"
-      id="c-search-input-box"
-      placeholder="输入内容以检索文章的标题、标签、分类、作者...">
+    <div id="c-search-input-box">
+      <button class="c-iconbtn">arrow_back</button>
+      <input type="search" placeholder="输入内容以检索">
+    </div>
     <div id="c-search-results-container"></div>
   </div>
   <div id="s-unilayout-content-flow">

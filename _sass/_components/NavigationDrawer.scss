@@ -26,13 +26,13 @@
   transition: padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-medium2),
     opacity var(--md-sys-motion-duration-short4), transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
   visibility: hidden;
-  z-index: 14;
+  z-index: 15;
 
   a {
     text-decoration: none;
   }
 
-  #c-navdrawer-close-icon {
+  #c-navdrawer-close {
     display: none;
   }
 
