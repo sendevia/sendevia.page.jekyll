@@ -13,7 +13,7 @@
   height: 100%;
   width: 240px;
 
-  padding-block: 60px 8px;
+  padding-block: 8px;
 
   border-left: 1px solid var(--md-sys-color-surface-container-high);
   border-radius: var(--md-sys-shape-corner-large-end);
@@ -160,8 +160,6 @@
   }
 
   &[show] {
-    padding-block: 8px;
-
     transform: translateX(0);
     transition: padding-block var(--md-sys-motion-duration-medium2) var(--md-sys-motion-duration-short1), visibility var(--md-sys-motion-duration-short1),
       opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
