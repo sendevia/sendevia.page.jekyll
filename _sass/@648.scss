@@ -34,6 +34,26 @@
   }
 
   .c-navigation {
+    #c-navigation-drawer {
+      left: 0;
+
+      padding-block: 60px 8px;
+
+      #c-navigation-drawer-close {
+        display: block;
+
+        position: fixed;
+        left: 4px;
+        top: 12px;
+
+        z-index: 11;
+      }
+
+      &[show] {
+        padding-block: 54px 8px;
+      }
+    }
+
     &[spec="bar"] {
       grid-row: 2/2;
 
@@ -43,26 +63,6 @@
 
     &[spec="rail"] {
       visibility: hidden;
-    }
-  }
-
-  .c-navdrawer {
-    left: 0;
-
-    padding-block: 60px 8px;
-
-    #c-navdrawer-close {
-      display: block;
-
-      position: fixed;
-      left: 4px;
-      top: 12px;
-
-      z-index: 11;
-    }
-
-    &[show] {
-      padding-block: 54px 8px;
     }
   }
 

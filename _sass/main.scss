@@ -13,7 +13,6 @@
 @import "_components/FAB";
 @import "_components/IconButton";
 @import "_components/Navigation";
-@import "_components/NavigationDrawer";
 @import "_components/ProgressIndicator";
 @import "_components/Search";
 @import "_components/Snackbar";
@@ -52,6 +51,8 @@ body {
 }
 
 .t-root {
+  position: relative;
+
   color: var(--md-sys-color-on-surface);
 
   background-color: var(--md-sys-color-surface-container-low);
@@ -59,6 +60,7 @@ body {
   opacity: 1;
   transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
     filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+  z-index: 1;
 
   :disabled,
   [disabled] {

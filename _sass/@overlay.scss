@@ -25,10 +25,10 @@
     #c-navigation-destinations {
       opacity: 1;
     }
-  }
 
-  .c-navdrawer[show] {
-    opacity: 1;
+    #c-navigation-drawer[show] {
+      opacity: 1;
+    }
   }
 
   .s-loading {

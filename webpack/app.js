@@ -35,7 +35,7 @@ const theme_ScrollToTop = document.querySelectorAll(".s-scrolltop");
  * 主题 - 涟漪效果元素
  */
 const theme_RippleElements = document.querySelectorAll(
-  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], .c-navdrawer details a, .c-navigation-destination-accent, .s-header-webinfo, .s-carousel-article`
+  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], #c-navigation-drawer details a, .c-navigation-destination-accent, .s-header-webinfo, .s-carousel-article`
 );
 /**
  * 主题 - 延迟跳转元素
@@ -62,7 +62,7 @@ const navigation_Container = document.querySelector(".c-navigation");
 /**
  * 全局导航栏 - 展开
  */
-const navigation_Drawer = document.querySelector(".c-navdrawer");
+const navigation_Drawer = document.querySelector("#c-navigation-drawer");
 /**
  * 全局导航栏 - 展开 - 一级目录元素
  */
@@ -78,7 +78,7 @@ const navigation_Controller = document.querySelector("#c-navigation-destinations
 /**
  * 全局导航栏 - 状态控制器按钮
  */
-const navigation_Controller_Button = document.querySelectorAll("#c-appbar-menu, #c-navdrawer-close");
+const navigation_Controller_Button = document.querySelectorAll("#c-appbar-menu, #c-navigation-drawer-close");
 /**
  * 搜索 - 状态控制器
  */
@@ -399,7 +399,7 @@ window.onpageshow = () => {
     });
     navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigation_Drawer, "show", false)));
     document.addEventListener("click", (event) => {
-      const isJTM_C_NavigationDrawer = event.target.closest(".c-navdrawer");
+      const isJTM_C_NavigationDrawer = event.target.closest("#c-navigation-drawer");
       const isJTM_C_AppBar = event.target.closest(".c-appbar");
       const isMAB = event.target.closest("#c-navigation-fab");
       if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
