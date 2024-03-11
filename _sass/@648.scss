@@ -95,8 +95,7 @@
       .s-carousel {
         grid-column: span 4;
 
-        height: 42vh;
-        max-height: 480px;
+        max-height: 420px;
         min-height: 360px;
 
         margin-inline: 0;
@@ -105,11 +104,10 @@
           margin: 0;
 
           .s-carousel-article .s-carousel-article-info {
-            padding-block: 40px 20px;
             padding-inline: 30px;
 
             h1 {
-              @include typescale-style("headline-large");
+              @include typescale-style("display-small");
             }
 
             h4 {

@@ -24,7 +24,6 @@
         grid-column: span 8;
 
         #s-carousel-container .s-carousel-article .s-carousel-article-info {
-          padding-block: 40px 20px;
           padding-inline: 30px;
 
           h1 {
@@ -32,7 +31,7 @@
           }
 
           h4 {
-            @include typescale-style("title-medium");
+            @include typescale-style("title-large");
           }
         }
       }
