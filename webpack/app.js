@@ -133,6 +133,7 @@ function scrollHandler() {
  */
 function handleResize() {
   navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
 }
 
 /**
@@ -156,7 +157,7 @@ function handleLinkDelayRedirection(linkElement) {
 }
 
 /**
- * Initializes the modal.
+ * 初始模态框
  */
 function initializeModal() {
   const toggleBodyBlur = (shouldBlur) => {
@@ -340,6 +341,7 @@ window.onload = () => {
 
 window.onpageshow = () => {
   navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
 
   try {
     const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
