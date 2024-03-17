@@ -1,18 +1,14 @@
 // 操作覆盖层
 
-[o-onscroll="true"] {
+[o-increasescroll="true"] {
   .c-appbar {
     top: -64px;
 
     transition: var(--md-sys-motion-duration-medium2);
   }
-
-  #s-header-webinfo {
-    margin-block-start: 18px;
-  }
 }
 
-[o-onload="true"] {
+[o-onload] {
   .c-appbar {
     opacity: 1;
   }
