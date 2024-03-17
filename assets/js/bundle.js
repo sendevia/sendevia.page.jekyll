@@ -111,13 +111,13 @@ async function generateColorPalette(argbColor) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   effect_ripple: () => (/* binding */ effect_ripple)
+/* harmony export */   effectRipple: () => (/* binding */ effectRipple)
 /* harmony export */ });
 /**
  * 添加涟漪效果
  * @param {selector} element
  */
-const effect_ripple = (element) => {
+const effectRipple = (element) => {
   element.addEventListener("mousedown", (e) => {
     const x = e.offsetX;
     const y = e.offsetY;
@@ -6411,106 +6411,103 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * 主题 - 根节点
  */
-const theme_Root = document.querySelector(".t-root");
+const themeRoot = document.querySelector(".t-root");
 /**
  * 主题 - 加载指示器
  */
-const theme_LoadingIndicator = document.querySelector(".s-loading");
+const themeLoadingIndicator = document.querySelector(".s-loading");
 /**
  * 主题 - 定位当前所在页面
  */
-const theme_CurrentPage = window.location.pathname;
+const themeCurrentPage = window.location.pathname;
 /**
  * 主题 - 模态对话框
  */
-const theme_Dialog = document.querySelector(".c-dialog");
+const themeDialog = document.querySelector(".c-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
-const theme_Dialog_Controller_Open = document.querySelectorAll("#s-header-webinfo, #c-appbar-InfoIcon");
+const themeDialogControllerOpen = document.querySelectorAll("#s-header-webinfo, #c-appbar-InfoIcon");
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
-const theme_Dialog_Controller_Close = document.querySelector("#dialog-close");
+const themeDialogControllerClose = document.querySelector("#dialog-close");
 /**
  * 主题 - 跳转到页首
  */
-const theme_ScrollToTop = document.querySelectorAll(".s-scrolltop");
+const themeScrollToTop = document.querySelectorAll(".s-scrolltop");
 /**
  * 主题 - 涟漪效果元素
  */
-const theme_RippleElements = document.querySelectorAll(
+const themeRippleElements = document.querySelectorAll(
   `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], #c-navigation-drawer details a, .c-navigation-destination-accent, .s-header-webinfo, .s-carousel-article`
 );
 /**
  * 主题 - 延迟跳转元素
  */
-const theme_DelayRedirect = document.querySelectorAll(
+const themeDelayRedirect = document.querySelectorAll(
   ".c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
 );
 /**
  * 调色盘 - HEX颜色
  */
-const palette_HEX = document.body.getAttribute("color");
+const paletteHEX = document.body.getAttribute("color");
 /**
  * 文章 - 内容流
  */
-const content_Flow = document.querySelector("#s-unilayout-content-flow");
+const contentFlow = document.querySelector("#s-unilayout-content-flow");
 /**
  * 文章 - ul随机旋转的marker
  */
-const content_RotationListItemsBullet = document.querySelectorAll("ul li");
+const contentRotationListItemsBullet = document.querySelectorAll("ul li");
 /**
  * 全局导航栏
  */
-const navigation_Container = document.querySelector(".c-navigation");
+const navigationContainer = document.querySelector(".c-navigation");
 /**
  * 全局导航栏 - 展开
  */
-const navigation_Drawer = document.querySelector("#c-navigation-drawer");
+const navigationDrawer = document.querySelector("#c-navigation-drawer");
 /**
  * 全局导航栏 - 展开 - 一级目录元素
  */
-const navigation_Drawer_H1Entries = navigation_Drawer ? navigation_Drawer.querySelectorAll("details summary > a") : [];
+const navigationDrawerH1Entries = navigationDrawer ? navigationDrawer.querySelectorAll("details summary > a") : [];
 /**
  * 全局导航栏 - 展开 - 二级目录元素
  */
-const navigation_Drawer_H2Entries = navigation_Drawer ? navigation_Drawer.querySelectorAll("details > a") : [];
+const navigationDrawerH2Entries = navigationDrawer ? navigationDrawer.querySelectorAll("details > a") : [];
 /**
  * 全局导航栏 - 状态控制器
  */
-const navigation_Controller = document.querySelector("#c-navigation-destinations > div");
+const navigationController = document.querySelector("#c-navigation-destinations > div");
 /**
  * 全局导航栏 - 状态控制器按钮
  */
-const navigation_Controller_Button = document.querySelectorAll("#c-appbar-menu, #c-navigation-drawer-close");
+const navigationControllerButton = document.querySelectorAll("#c-appbar-menu, #c-navigation-drawer-close");
 /**
  * 搜索 - 状态控制器
  */
-const search_ContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
+const searchContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
 
 /**
  * 移动端 - 标题栏
  */
-const mobile_AppBar = document.querySelector(".c-appbar");
+const mobileAppBar = document.querySelector(".c-appbar");
 /**
  * Carousel - 内容容器
  */
-const carousel_Container = document.querySelector(".s-carousel");
+const carouselContainer = document.querySelector(".s-carousel");
 /**
  * Carousel - 状态控制器
  */
-const carousel_Controller = carousel_Container ? carousel_Container.querySelectorAll(".s-carousel-control") : [];
+const carouselController = carouselContainer ? carouselContainer.querySelectorAll(".s-carousel-control") : [];
 /**
  * Carousel - 展示的文章
  */
-const carousel_PostList = carousel_Container ? carousel_Container.querySelector("#s-carousel-container") : [];
+const carouselPostList = carouselContainer ? carouselContainer.querySelector("#s-carousel-container") : [];
 
 /**
  * 切换 attribute
- * @param {} element 需要切换状态的元素
- * @param {string} attribute 状态内容
- * @param {boolean} boolean
  */
 function toggleAttr(element, attribute, boolean) {
   element.toggleAttribute(attribute, boolean);
@@ -6520,198 +6517,189 @@ function toggleAttr(element, attribute, boolean) {
  * 滚动事件
  */
 let lastScrollY = 0;
-function bodyScroll() {
-  const scrollY = content_Flow.scrollTop;
+function scrollHandler() {
+  const scrollPosition = contentFlow.scrollTop;
   const scrollThreshold = 64;
-  const scrollDirection = scrollY > lastScrollY ? "down" : "up";
-  mobile_AppBar.setAttribute("scroll", scrollY >= scrollThreshold ? "true" : "false");
+  const scrollDirection = scrollPosition > lastScrollY ? "down" : "up";
+  mobileAppBar.setAttribute("scroll", scrollPosition >= scrollThreshold ? "true" : "false");
 
-  if (scrollDirection === "up") {
-    theme_Root.setAttribute("o-onscroll", "false");
-  } else if (scrollDirection === "down" && scrollY >= 500) {
-    theme_Root.setAttribute("o-onscroll", "true");
-  }
-  theme_ScrollToTop.forEach((element) => {
-    element.style.cssText = `
-          opacity: ${scrollY >= 400 ? "1" : "0"};
-          visibility: ${scrollY >= 400 ? "visible" : "hidden"};
-        `;
+  themeRoot.setAttribute("o-increasescroll", scrollDirection === "down" && scrollPosition >= 500 ? "true" : "false");
+
+  themeScrollToTop.forEach((element) => {
+    element.style.opacity = scrollPosition >= 400 ? "1" : "0";
+    element.style.visibility = scrollPosition >= 400 ? "visible" : "hidden";
   });
 
-  lastScrollY = scrollY;
+  lastScrollY = scrollPosition;
 }
 
 /**
  * 缩放事件
  */
 function handleResize() {
-  navigation_Container.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
 }
 
 /**
  * 链接跳转事件
  */
-function handleLinkDelayRedirection(link) {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const delay = 240;
-    const target = link.getAttribute("target");
+function handleLinkDelayRedirection(linkElement) {
+  linkElement.addEventListener("click", (event) => {
+    event.preventDefault();
+    const redirectDelay = 240;
+    const target = linkElement.target;
 
     if (target === "_blank") {
-      window.open(link.getAttribute("href"));
+      window.open(linkElement.href);
     } else {
-      addLoadScreen();
+      displayLoadingScreen();
       setTimeout(() => {
-        window.location.href = link.getAttribute("href");
-      }, delay);
+        window.location.href = linkElement.href;
+      }, redirectDelay);
     }
   });
 }
 
 /**
- * 初始化模态提示框
+ * 初始模态框
  */
-function initModal() {
-  const toggleDim = (boolean) => {
-    theme_Root.toggleAttribute("o-bodyblur", boolean);
+function initializeModal() {
+  const toggleBodyBlur = (shouldBlur) => {
+    themeRoot.toggleAttribute("o-bodyblur", shouldBlur);
   };
 
   const openModal = () => {
-    toggleDim();
-    theme_Dialog.showModal();
+    toggleBodyBlur(true);
+    themeDialog.showModal();
   };
 
   const closeModal = () => {
-    toggleDim(false);
-    theme_Dialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-close`;
+    toggleBodyBlur(false);
+    themeDialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-close`;
     setTimeout(() => {
-      theme_Dialog.close();
-      theme_Dialog.style.animation = "";
+      themeDialog.close();
+      themeDialog.style.animation = "";
     }, 400);
   };
 
-  const handleKeyboardEvent = (e) => {
-    if (e.key === "Escape") {
-      e.preventDefault();
+  const handleKeyboardEvent = (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
       closeModal();
     }
   };
 
-  const handleClickOutsideEvent = (e) => {
-    if (e.target === theme_Dialog) {
+  const handleClickOutsideEvent = (event) => {
+    if (event.target === themeDialog) {
       closeModal();
     }
   };
 
-  theme_Dialog_Controller_Open.forEach((element) => element.addEventListener("click", openModal));
-  theme_Dialog_Controller_Close.addEventListener("click", closeModal);
-  theme_Dialog.addEventListener("keydown", handleKeyboardEvent);
-  theme_Dialog.addEventListener("click", handleClickOutsideEvent);
+  themeDialogControllerOpen.forEach((element) => element.addEventListener("click", openModal));
+  themeDialogControllerClose.addEventListener("click", closeModal);
+  themeDialog.addEventListener("keydown", handleKeyboardEvent);
+  themeDialog.addEventListener("click", handleClickOutsideEvent);
 }
 
 /**
  * 增加加载屏幕
  */
-function addLoadScreen() {
-  theme_Root.removeAttribute("o-onload");
+function displayLoadingScreen() {
+  themeRoot.removeAttribute("o-onload");
 }
 
 /**
  * 移除加载屏幕
  */
-function removeLoadScreen() {
-  const delay = 450;
-  theme_Root.setAttribute("o-onload", true);
+function removeLoadingScreen() {
+  const loadingDelay = 450;
+  themeRoot.setAttribute("o-onload", "");
   setTimeout(() => {
-    theme_LoadingIndicator.style.display = "none";
-  }, delay);
+    themeLoadingIndicator.style.display = "none";
+  }, loadingDelay);
 }
 
 /**
  * 随机旋转列表的Bullet
  */
-function randomRotationBullet() {
-  const style = document.createElement("style");
-  document.head.appendChild(style);
+function rotateBulletPoints() {
+  const styleElement = document.createElement("style");
+  document.head.appendChild(styleElement);
 
-  content_RotationListItemsBullet.forEach((li, index) => {
-    const randomRotation = Math.floor(Math.random() * 360);
-    style.sheet.insertRule(`ul li:nth-child(${index + 1})::before { transform: rotate(${randomRotation}deg); }`, style.sheet.cssRules.length);
+  const listItems = Array.from(contentRotationListItemsBullet);
+  listItems.forEach((listItem, index) => {
+    const rotationDegrees = Math.floor(Math.random() * 360);
+    const cssRule = `ul li:nth-child(${index + 1})::before { transform: rotate(${rotationDegrees}deg); }`;
+    styleElement.sheet.insertRule(cssRule, styleElement.sheet.cssRules.length);
   });
 }
 
 /**
- * 创建一个底部提示条
+ * 底部提示条
  */
 var snackbars = [];
-function createSnackbar(content) {
-  var snackbar = document.createElement("div");
-  snackbar.className = "c-snackbar";
-  snackbar.setAttribute("visible", "false");
+function createSnackbar(message) {
+  const snackbarElement = document.createElement("div");
+  snackbarElement.className = "c-snackbar";
+  snackbarElement.setAttribute("visible", "false");
 
-  var p = document.createElement("p");
-  p.id = "c-snackbar-supporting";
-  p.textContent = content;
+  const messageElement = document.createElement("p");
+  messageElement.id = "c-snackbar-supporting";
+  messageElement.textContent = message;
 
-  var closeButton = document.createElement("button");
+  const closeButton = document.createElement("button");
   closeButton.textContent = "close";
-  closeButton.id = "c-snackbar-icon";
   closeButton.className = "c-iconbtn";
-  closeButton.onclick = function () {
-    snackbar.setAttribute("visible", "false");
-    setTimeout(function () {
-      snackbar.remove();
-      var index = snackbars.indexOf(snackbar);
+  closeButton.id = "c-snackbar-icon";
+  closeButton.addEventListener("click", () => {
+    snackbarElement.setAttribute("visible", "false");
+    setTimeout(() => {
+      const index = snackbars.indexOf(snackbarElement);
       if (index !== -1) {
         snackbars.splice(index, 1);
         updateSnackbarPositions();
       }
+      snackbarElement.remove();
     }, 600);
-  };
+  });
 
-  snackbar.appendChild(p);
-  snackbar.appendChild(closeButton);
-  document.body.appendChild(snackbar);
+  snackbarElement.appendChild(messageElement);
+  snackbarElement.appendChild(closeButton);
+  document.body.appendChild(snackbarElement);
 
   setTimeout(() => {
-    snackbar.setAttribute("visible", "true");
+    snackbarElement.setAttribute("visible", "true");
   }, 0);
 
-  snackbars.push(snackbar);
+  snackbars.push(snackbarElement);
   updateSnackbarPositions();
 
   setTimeout(() => {
-    snackbar.setAttribute("visible", "false");
-    snackbar.addEventListener("transitionend", () => {
-      if (snackbar.getAttribute("visible") === "false") {
-        snackbar.remove();
-        var index = snackbars.indexOf(snackbar);
+    snackbarElement.setAttribute("visible", "false");
+    snackbarElement.addEventListener("transitionend", () => {
+      if (snackbarElement.getAttribute("visible") === "false") {
+        const index = snackbars.indexOf(snackbarElement);
         if (index !== -1) {
           snackbars.splice(index, 1);
           updateSnackbarPositions();
         }
+        snackbarElement.remove();
       }
     });
   }, 5000);
 }
-
-/**
- * 更新提示条位置
- */
 function updateSnackbarPositions() {
-  var bottomValue = window.innerWidth >= 768 ? 10 : 90;
+  let bottom = window.innerWidth >= 768 ? 10 : 90;
 
-  for (var i = snackbars.length - 1; i >= 0; i--) {
-    var snackbar = snackbars[i];
-    snackbar.style.bottom = bottomValue + "px";
-
-    bottomValue += snackbar.offsetHeight + 10;
-  }
+  snackbars.forEach((snackbar) => {
+    snackbar.style.bottom = `${bottom}px`;
+    bottom += snackbar.offsetHeight + 10;
+  });
 }
 
 window.onload = () => {
   const searchRoot = window.location.origin;
-
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     fuzzy: false,
     json: `${searchRoot}/assets/postsmap.json`,
@@ -6729,7 +6717,7 @@ window.onload = () => {
       </a>`,
   });
 
-  randomRotationBullet();
+  rotateBulletPoints();
 
   document.querySelectorAll("#s-unilayout-content-filler > h1").forEach((h1) => {
     h1.addEventListener("click", function () {
@@ -6740,7 +6728,6 @@ window.onload = () => {
       }
     });
   });
-
   var testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
   if (testButton) {
     testButton.addEventListener("click", function () {
@@ -6749,52 +6736,53 @@ window.onload = () => {
   }
 
   setTimeout(() => {
-    removeLoadScreen();
-
-    if (palette_HEX) {
-      (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(palette_HEX));
+    if (paletteHEX) {
+      (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(paletteHEX));
     }
+
+    removeLoadingScreen();
   }, 500);
 };
 
 window.onpageshow = () => {
-  navigation_Container.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
+  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
 
   try {
-    const activatedSegment = document.querySelector(`a[href="${theme_CurrentPage}"]`);
+    const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
     const inactiveSegment = activatedSegment.querySelector(".c-navigation-segment-inactive");
     inactiveSegment.className = "c-navigation-segment-active";
   } catch (err) {
     document.querySelector("#c-navigation-destinations > div").className = "c-navigation-segment-active";
   }
 
-  theme_ScrollToTop.forEach((element) => element.addEventListener("click", () => content_Flow.scrollTo({ top: 0 })));
-  theme_RippleElements.forEach(_components_ripple__WEBPACK_IMPORTED_MODULE_2__.effect_ripple);
-  content_Flow.onscroll = bodyScroll;
+  themeScrollToTop.forEach((element) => element.addEventListener("click", () => contentFlow.scrollTo({ top: 0 })));
+  themeRippleElements.forEach(_components_ripple__WEBPACK_IMPORTED_MODULE_2__.effectRipple);
+  contentFlow.onscroll = scrollHandler;
   window.onresize = handleResize;
 
-  initModal();
+  initializeModal();
 
-  search_ContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(theme_Root, "o-showsearch")));
+  searchContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(themeRoot, "o-showsearch")));
 
-  if (navigation_Drawer) {
+  if (navigationDrawer) {
     let enterTimeout;
-    navigation_Controller.addEventListener("pointerenter", () => {
+    navigationController.addEventListener("pointerenter", () => {
       enterTimeout = setTimeout(() => {
-        toggleAttr(navigation_Drawer, "show");
+        toggleAttr(navigationDrawer, "show");
       }, 500);
     });
-    navigation_Controller.addEventListener("pointerleave", () => {
+    navigationController.addEventListener("pointerleave", () => {
       clearTimeout(enterTimeout);
     });
 
-    navigation_Controller_Button.forEach((element) => {
+    navigationControllerButton.forEach((element) => {
       element.addEventListener("click", () => {
-        toggleAttr(navigation_Drawer, "show");
+        toggleAttr(navigationDrawer, "show");
       });
     });
 
-    navigation_Drawer_H1Entries.forEach((element) => {
+    navigationDrawerH1Entries.forEach((element) => {
       element.addEventListener("click", () => {
         const parentDetails = element.closest("details");
         if (parentDetails) {
@@ -6802,22 +6790,22 @@ window.onpageshow = () => {
         }
       });
     });
-    navigation_Drawer_H2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigation_Drawer, "show", false)));
+    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigationDrawer, "show", false)));
     document.addEventListener("click", (event) => {
       const isJTM_C_NavigationDrawer = event.target.closest("#c-navigation-drawer");
       const isJTM_C_AppBar = event.target.closest(".c-appbar");
       const isMAB = event.target.closest("#c-navigation-fab");
       if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
-        toggleAttr(navigation_Drawer, "show", false);
+        toggleAttr(navigationDrawer, "show", false);
       }
     });
   }
 
-  theme_DelayRedirect.forEach(handleLinkDelayRedirection);
+  themeDelayRedirect.forEach(handleLinkDelayRedirection);
 
-  if (carousel_Container && carousel_PostList && carousel_Controller.length === 2) {
+  if (carouselContainer && carouselPostList && carouselController.length === 2) {
     var currentValue = 1;
-    carousel_PostList.setAttribute("data-scroll", currentValue);
+    carouselPostList.setAttribute("data-scroll", currentValue);
 
     function updateValue(direction) {
       currentValue += direction;
@@ -6826,18 +6814,18 @@ window.onpageshow = () => {
       } else if (currentValue < 1) {
         currentValue = 3;
       }
-      carousel_PostList.setAttribute("data-scroll", currentValue);
+      carouselPostList.setAttribute("data-scroll", currentValue);
     }
 
-    carousel_Controller[0].addEventListener("click", function () {
+    carouselController[0].addEventListener("click", function () {
       updateValue(-1);
     });
 
-    carousel_Controller[1].addEventListener("click", function () {
+    carouselController[1].addEventListener("click", function () {
       updateValue(1);
     });
 
-    carousel_PostList.addEventListener("wheel", function (event) {
+    carouselPostList.addEventListener("wheel", function (event) {
       event.preventDefault();
       updateValue(event.deltaY > 0 ? 1 : -1);
     });
@@ -6845,7 +6833,7 @@ window.onpageshow = () => {
     window.addEventListener(
       "wheel",
       function (event) {
-        if (event.target === carousel_PostList) {
+        if (event.target === carouselPostList) {
           event.preventDefault();
         }
       },

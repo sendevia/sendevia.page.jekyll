@@ -1,6 +1,6 @@
 {
   "name": "sendevia.page.jekyll",
-  "version": "24.0311.0",
+  "version": "24.0317.0",
   "description": "一个博客",
   "scripts": {
     "dev": "npx webpack -w & bundle exec jekyll serve --livereload --host localhost",
