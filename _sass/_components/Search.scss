@@ -27,14 +27,14 @@
     margin-block-start: 12px;
     padding-inline: 12px;
 
-    height: 60px;
+    height: 56px;
     width: 100%;
 
     button {
       position: absolute;
 
-      width: 60px;
-      height: 60px;
+      width: 56px;
+      height: 56px;
 
       color: var(--md-sys-color-on-surface);
 
@@ -46,7 +46,7 @@
     input {
       @include typescale-style("title-large");
 
-      padding-inline: 60px 24px;
+      padding-inline: 56px 24px;
 
       height: 100%;
       width: 100%;

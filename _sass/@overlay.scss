@@ -80,6 +80,11 @@
     visibility: visible;
   }
 
+  .s-scrolltop {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
   @media screen and (max-width: 768px) {
     .c-navigation[spec="bar"],
     .c-appbar {
