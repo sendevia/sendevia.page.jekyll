@@ -125,23 +125,6 @@
 
           z-index: 1;
         }
-
-        .s-carousel-featured-tip {
-          display: flex;
-          align-items: center;
-
-          position: absolute;
-
-          color: var(--md-sys-color-inverse-surface);
-
-          mix-blend-mode: soft-light;
-
-          z-index: 0;
-
-          .s-carousel-featured-tip-icon {
-            @include material-symbols($size: 300);
-          }
-        }
       }
 
       &:nth-of-type(1) {
