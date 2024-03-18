@@ -27,7 +27,7 @@ Archlinux
 1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 > ```
-> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 > ```
 
 > `重启终端`
