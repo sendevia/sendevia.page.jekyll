@@ -6446,8 +6446,12 @@ const themeRippleElements = document.querySelectorAll(
  * 主题 - 延迟跳转元素
  */
 const themeDelayRedirect = document.querySelectorAll(
-  ".c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
+  "#c-navigation-drawer-backward, .c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
 );
+/**
+ * 主题 - 复制代码块的按钮
+ */
+const themeCopyButtons = document.querySelectorAll("span.copy-button");
 /**
  * 调色盘 - HEX颜色
  */
@@ -6488,7 +6492,6 @@ const navigationControllerButton = document.querySelectorAll("#c-appbar-menu, #c
  * 搜索 - 状态控制器
  */
 const searchContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
-
 /**
  * 移动端 - 标题栏
  */
@@ -6690,7 +6693,7 @@ function createSnackbar(message) {
   }, 5000);
 }
 function updateSnackbarPositions() {
-  let bottom = window.innerWidth >= 768 ? 10 : 90;
+  let bottom = window.innerWidth >= 648 ? 10 : 90;
 
   snackbars.forEach((snackbar) => {
     snackbar.style.bottom = `${bottom}px`;
@@ -6719,20 +6722,19 @@ window.onload = () => {
 
   rotateBulletPoints();
 
-  document.querySelectorAll("#s-unilayout-content-filler > h1").forEach((h1) => {
-    h1.addEventListener("click", function () {
-      const anchorLink = this.id ? `#${this.id}` : "";
-
-      if (anchorLink) {
-        navigator.clipboard.writeText(window.location.href.split("#")[0] + anchorLink).then(() => createSnackbar("已将快捷链接复制到剪贴板"));
-      }
-    });
+  const headers = document.querySelectorAll("#s-unilayout-content-filler > h1");
+  headers.forEach((element) => {
+    element.addEventListener("click", copyAnchorLink);
   });
-  var testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
+  const testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
   if (testButton) {
-    testButton.addEventListener("click", function () {
-      createSnackbar(testButton.innerText);
-    });
+    testButton.addEventListener("click", () => createSnackbar(testButton.innerText));
+  }
+  function copyAnchorLink() {
+    const anchorLink = this.id ? `#${this.id}` : "";
+    if (anchorLink) {
+      navigator.clipboard.writeText(`${window.location.href.split("#")[0]}${anchorLink}`).then(() => createSnackbar("已将快捷链接复制到剪贴板"));
+    }
   }
 
   setTimeout(() => {
@@ -6742,6 +6744,14 @@ window.onload = () => {
 
     removeLoadingScreen();
   }, 500);
+
+  themeCopyButtons.forEach((element) =>
+    element.addEventListener("click", (e) => {
+      const highlightBlock = e.target.closest(".highlight");
+      const codeToCopy = highlightBlock.querySelector("code").innerText;
+      navigator.clipboard.writeText(codeToCopy).then(() => createSnackbar("已将代码复制到剪贴板"));
+    })
+  );
 };
 
 window.onpageshow = () => {
@@ -6775,7 +6785,6 @@ window.onpageshow = () => {
     navigationController.addEventListener("pointerleave", () => {
       clearTimeout(enterTimeout);
     });
-
     navigationControllerButton.forEach((element) => {
       element.addEventListener("click", () => {
         toggleAttr(navigationDrawer, "show");
@@ -6791,11 +6800,12 @@ window.onpageshow = () => {
       });
     });
     navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigationDrawer, "show", false)));
-    document.addEventListener("click", (event) => {
-      const isJTM_C_NavigationDrawer = event.target.closest("#c-navigation-drawer");
-      const isJTM_C_AppBar = event.target.closest(".c-appbar");
-      const isMAB = event.target.closest("#c-navigation-fab");
-      if (!isJTM_C_NavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isJTM_C_AppBar : !isMAB)) {
+
+    document.addEventListener("click", (e) => {
+      const isNavigationDrawer = e.target.closest("#c-navigation-drawer");
+      const isAppBar = e.target.closest(".c-appbar");
+      const isMAB = e.target.closest("#c-navigation-fab");
+      if (!isNavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isAppBar : !isMAB)) {
         toggleAttr(navigationDrawer, "show", false);
       }
     });
