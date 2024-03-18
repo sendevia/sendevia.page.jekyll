@@ -44,6 +44,10 @@ const themeDelayRedirect = document.querySelectorAll(
   ".c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
 );
 /**
+ * 主题 - 复制代码块的按钮
+ */
+const themeCopyButtons = document.querySelectorAll("span.copy-button");
+/**
  * 调色盘 - HEX颜色
  */
 const paletteHEX = document.body.getAttribute("color");
@@ -83,7 +87,6 @@ const navigationControllerButton = document.querySelectorAll("#c-appbar-menu, #c
  * 搜索 - 状态控制器
  */
 const searchContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
-
 /**
  * 移动端 - 标题栏
  */
@@ -337,6 +340,14 @@ window.onload = () => {
 
     removeLoadingScreen();
   }, 500);
+
+  themeCopyButtons.forEach((element) =>
+    element.addEventListener("click", (e) => {
+      const highlightBlock = e.target.closest(".highlight");
+      const codeToCopy = highlightBlock.querySelector("code").innerText;
+      navigator.clipboard.writeText(codeToCopy).then(() => createSnackbar("已将代码复制到剪贴板"));
+    })
+  );
 };
 
 window.onpageshow = () => {
