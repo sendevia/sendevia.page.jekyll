@@ -351,7 +351,7 @@ window.onload = () => {
 
 window.onpageshow = () => {
   navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
-  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
+  themeRoot.setAttribute("o-showdrawer", window.innerWidth >= 1100 ? true : false);
 
   try {
     const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
@@ -372,38 +372,28 @@ window.onpageshow = () => {
 
   if (navigationDrawer) {
     let enterTimeout;
-    navigationController.addEventListener("pointerenter", () => {
-      enterTimeout = setTimeout(() => {
-        toggleAttr(navigationDrawer, "show");
-      }, 500);
-    });
-    navigationController.addEventListener("pointerleave", () => {
-      clearTimeout(enterTimeout);
-    });
-    navigationControllerButton.forEach((element) => {
-      element.addEventListener("click", () => {
-        toggleAttr(navigationDrawer, "show");
-      });
-    });
+    const onPointerEnter = () => {
+      enterTimeout = setTimeout(() => themeRoot.setAttribute("o-showdrawer", true), 500);
+    };
+    const onPointerLeave = () => clearTimeout(enterTimeout);
+    const onClick = () => themeRoot.setAttribute("o-showdrawer", true);
+    const onCloseClick = () => themeRoot.setAttribute("o-showdrawer", false);
 
-    navigationDrawerH1Entries.forEach((element) => {
-      element.addEventListener("click", () => {
-        const parentDetails = element.closest("details");
-        if (parentDetails) {
-          parentDetails.open = !parentDetails.open;
-        }
-      });
-    });
-    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", () => toggleAttr(navigationDrawer, "show", false)));
+    navigationController.addEventListener("pointerenter", onPointerEnter);
+    navigationController.addEventListener("pointerleave", onPointerLeave);
+    navigationControllerButton.forEach((element) => element.addEventListener("click", onClick));
+    document.querySelector("#c-navigation-drawer-close").addEventListener("click", onCloseClick);
 
-    document.addEventListener("click", (e) => {
-      const isNavigationDrawer = e.target.closest("#c-navigation-drawer");
-      const isAppBar = e.target.closest(".c-appbar");
-      const isMAB = e.target.closest("#c-navigation-fab");
-      if (!isNavigationDrawer && (window.matchMedia("(max-width: 648px)").matches ? !isAppBar : !isMAB)) {
-        toggleAttr(navigationDrawer, "show", false);
-      }
-    });
+    const onH1Click = (element) => {
+      const parentDetails = element.closest("details");
+      if (parentDetails) parentDetails.open = !parentDetails.open;
+    };
+    const onH2Click = () => themeRoot.setAttribute("o-showdrawer", false);
+    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
+
+    navigationDrawerH1Entries.forEach((element) => element.addEventListener("click", onH1Click));
+    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", onH2Click));
+    contentFlow.addEventListener("click", onDocumentClick);
   }
 
   themeDelayRedirect.forEach(handleLinkDelayRedirection);

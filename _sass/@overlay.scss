@@ -21,10 +21,6 @@
     #c-navigation-destinations {
       opacity: 1;
     }
-
-    #c-navigation-drawer[show] {
-      opacity: 1;
-    }
   }
 
   .s-loading {
@@ -89,6 +85,27 @@
     .c-navigation[spec="bar"],
     .c-appbar {
       filter: brightness(0.5);
+    }
+  }
+}
+
+[o-showdrawer="true"] {
+  .s-unilayout {
+    .c-navigation {
+      #c-navigation-drawer {
+        opacity: 1;
+        transform: translateX(0);
+        transition: padding-block var(--md-sys-motion-duration-medium2) var(--md-sys-motion-duration-short1), visibility var(--md-sys-motion-duration-short1),
+          opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
+          transform var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
+        visibility: visible;
+
+        #c-navigation-drawer-container {
+          details a {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
