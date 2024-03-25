@@ -16,7 +16,7 @@
 - name: jekyll
   license: MIT
   repository: https://github.com/jekyll/jekyll
-  version: 4.3.2
+  version: 4.3.3
 
 - name: jekyll-loading-lazy
   license: MIT
