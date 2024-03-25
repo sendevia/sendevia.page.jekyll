@@ -1,4 +1,4 @@
-version: "24.0321.0"
+version: "24.0325.0"
 
 title: "sendevia 的小站"
 description: "Contrary to common opinion, less is more. Only by concentrating on the few important and vital things, and refusing to worry over the mass of trivial ones, can we find happiness."
@@ -13,20 +13,20 @@ color: "#ff6b6b"
 impression: "/assets/images/114570856_p0.webp"
 
 defaults:
-- scope:
-    path: ""
-  values:
-    layout: "default"
-    published: true
-- scope:
-    path: "_pages"
-  values:
-    permalink: "/:basename.html"
-- scope:
-    path: "_posts"
-  values:
-    permalink: "/posts/:title"
-    toc: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      published: true
+  - scope:
+      path: "_pages"
+    values:
+      permalink: "/:basename.html"
+  - scope:
+      path: "_posts"
+    values:
+      permalink: "/posts/:title"
+      toc: true
 
 markdown: "kramdown"
 kramdown:
@@ -41,25 +41,25 @@ webrick:
     Cache-Control: "must-revalidate"
 
 exclude:
-- .gitignore
-- .jekyll-cache/
-- .sass-cache/
-- .typescript
-- .vscode/
-- Gemfile
-- Gemfile.lock
-- gemfiles/
-- LICENSE
-- node_modules/
-- package-lock.json
-- package.json
-- README.MD
-- sendevia.page.jekyll.code-workspace
-- tsconfig.json
-- vendor/
-- webpack.config.js
-- babel.config.js
-- webpack/
+  - .gitignore
+  - .jekyll-cache/
+  - .sass-cache/
+  - .typescript
+  - .vscode/
+  - Gemfile
+  - Gemfile.lock
+  - gemfiles/
+  - LICENSE
+  - node_modules/
+  - package-lock.json
+  - package.json
+  - README.MD
+  - sendevia.page.jekyll.code-workspace
+  - tsconfig.json
+  - vendor/
+  - webpack.config.js
+  - babel.config.js
+  - webpack/
 
 include:
-- _pages/
+  - _pages/

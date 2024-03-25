@@ -6789,9 +6789,12 @@ window.onpageshow = () => {
     navigationControllerButton.forEach((element) => element.addEventListener("click", onClick));
     document.querySelector("#c-navigation-drawer-close").addEventListener("click", onCloseClick);
 
-    const onH1Click = (element) => {
+    const onH1Click = (event) => {
+      const element = event.target;
       const parentDetails = element.closest("details");
-      if (parentDetails) parentDetails.open = !parentDetails.open;
+      if (parentDetails instanceof HTMLElement) {
+        parentDetails.open = !parentDetails.open;
+      }
     };
     const onH2Click = () => themeRoot.setAttribute("o-showdrawer", false);
     const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
