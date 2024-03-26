@@ -12,6 +12,10 @@ table {
   box-shadow: 0 0 0 1px var(--md-sys-color-outline);
   overflow: auto;
 
+  a {
+    text-decoration: none;
+  }
+
   caption {
     @include typescale-style("title-medium", $font-weight: 700);
 

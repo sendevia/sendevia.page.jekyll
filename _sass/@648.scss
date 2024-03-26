@@ -94,6 +94,10 @@
       padding-block: 64px 120px;
       padding-inline: 12px;
 
+      &[spec="nocontent"] {
+        height: 100%;
+      }
+
       .s-carousel {
         grid-column: span 4;
 
