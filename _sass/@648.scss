@@ -97,7 +97,7 @@
       .s-carousel {
         grid-column: span 4;
 
-        max-height: 420px;
+        height: calc(48vh - 64px - 80px);
         min-height: 360px;
 
         margin-inline: 0;
@@ -122,7 +122,8 @@
       .s-header {
         grid-column: span 4;
 
-        height: calc(55vh - 64px - 80px);
+        height: calc(48vh - 64px - 80px);
+        min-height: 360px;
 
         margin-inline: 0;
 

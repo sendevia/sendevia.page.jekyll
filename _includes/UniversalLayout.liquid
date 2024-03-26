@@ -7,7 +7,12 @@
     </div>
     <div id="c-search-results-container"></div>
   </div>
-  <div id="s-unilayout-content-flow">
+  <div
+    id="s-unilayout-content-flow"
+    {% assign page_words = page.content | number_of_words: "auto" %}
+    {% if page_words == 0 %}
+    spec="nocontent"
+    {% endif %}>
     {% if include.spec_carousel == "true" %}
       {% include Carousel.liquid %}
     {% elsif include.spec_page_index == "true" %}
