@@ -95,7 +95,8 @@
       #c-navigation-drawer {
         opacity: 1;
         transform: translateX(0);
-        transition: padding-block var(--md-sys-motion-duration-medium2) var(--md-sys-motion-duration-short1), visibility var(--md-sys-motion-duration-short1),
+        transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
+          padding-block var(--md-sys-motion-duration-medium2) var(--md-sys-motion-duration-short1), visibility var(--md-sys-motion-duration-short1),
           opacity var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized),
           transform var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
         visibility: visible;

@@ -173,8 +173,9 @@
     opacity: 0;
     overflow: auto;
     transform: translateX(-100px);
-    transition: padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-medium2),
-      opacity var(--md-sys-motion-duration-short4), transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+    transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
+      padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-medium2), opacity var(--md-sys-motion-duration-short4),
+      transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
     visibility: hidden;
     z-index: -1;
 
