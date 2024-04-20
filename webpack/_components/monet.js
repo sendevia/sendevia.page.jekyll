@@ -1,68 +1,73 @@
-import { CorePalette, hexFromArgb } from "@material/material-color-utilities";
+import { CorePalette, hexFromArgb, Blend, argbFromHex } from "@material/material-color-utilities";
 
 /**
  * 调色板提供器
- * @param {*} 生成调色板
- * @returns
+ * @param {number} argbColor 颜色来源
+ * @param {string} name token的后缀
+ * @param {"a1/a2/a3/n1/n2/error"} append 调色板的类型
+ * @param {[]} tones 调色板的色相
+ * @return CorePalette Object
  */
-export function paletteProperty(source, key, append, tones) {
-  const palette = CorePalette.of(source);
+function paletteProperty(argbColor, name, append, tones) {
+  const palette = CorePalette.of(argbColor);
   return {
     rawPalette: {
-      [key]: palette[append],
+      [name]: palette[append],
     },
     tones: tones,
   };
 }
 
 /**
- * 在DOM中设置调色板
- * @param {*} paletteProvider 调色板提供器
+ * 设置调色板
+ * @param {Object} paletteProvider - 一个 palette object
  */
-export function setPaletteProperty(paletteProvider) {
-  function updateVariables(variables) {
-    var style = document.createElement("style");
-    var cssVarsString = ":root {";
-    for (var key in variables) {
-      cssVarsString += `${key}: ${variables[key]};`;
-    }
-    cssVarsString += "}";
-    style.innerHTML = cssVarsString;
-    document.head.appendChild(style);
-  }
-
-  for (const [key, palette] of Object.entries(paletteProvider.rawPalette)) {
-    var cssTokens = {};
+function setPalette(paletteProvider) {
+  const cssVars = Object.entries(paletteProvider.rawPalette).reduce((cssTokens, [key, palette]) => {
     const paletteKey = key.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-    for (const tone of paletteProvider.tones) {
-      const token = `--md-ref-palette-${paletteKey}${tone}`;
-      const color = hexFromArgb(palette.tone(tone));
-      cssTokens[token] = color;
-    }
-    updateVariables(cssTokens);
-  }
+    paletteProvider.tones.forEach((tone) => {
+      const varName = `--md-ref-palette-${paletteKey}${tone}`;
+      cssTokens[varName] = hexFromArgb(palette.tone(tone));
+    });
+    return cssTokens;
+  }, {});
+
+  const styleElement = document.createElement("style");
+  styleElement.innerHTML = `:root { ${Object.entries(cssVars)
+    .map(([varName, color]) => `${varName}: ${color};`)
+    .join("")} }`;
+  document.head.appendChild(styleElement);
 }
 
 /**
  * 根据颜色生成调色板
- * @param argbColor 输入一个 argb 颜色
+ * @param {number} baseColor - 输入一个 argb 颜色
  */
-export async function generateColorPalette(argbColor) {
-  const errorTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "error", "error", errorTones));
+export async function generateColorPalette(baseColor) {
+  const palettes = [
+    { name: "error", append: "error", tones: [10, 20, 30, 40, 80, 90, 100] },
+    { name: "neutralVariant", append: "n2", tones: [30, 50, 60, 80, 90] },
+    { name: "neutral", append: "n1", tones: [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100] },
+    { name: "tertiary", append: "a3", tones: [10, 20, 30, 40, 80, 90, 100] },
+    { name: "secondary", append: "a2", tones: [10, 20, 30, 40, 80, 90, 100] },
+    { name: "primary", append: "a1", tones: [10, 20, 30, 40, 80, 90, 100] },
+  ];
 
-  const neutralVariantTones = [30, 50, 60, 80, 90];
-  setPaletteProperty(paletteProperty(argbColor, "neutralVariant", "n2", neutralVariantTones));
+  const harmonizedPalettes = [
+    { color: "#813c85", name: "purple", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#f2ce2b", name: "yellow", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#8cc269", name: "green", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#1772b4", name: "blue", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#bf3553", name: "red", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+  ];
 
-  const neutralTones = [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100];
-  setPaletteProperty(paletteProperty(argbColor, "neutral", "n1", neutralTones));
+  for (const palette of palettes) {
+    const paletteObject = paletteProperty(baseColor, palette.name, palette.append, palette.tones);
+    setPalette(paletteObject);
+  }
 
-  const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "tertiary", "a3", tertiaryTones));
-
-  const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "secondary", "a2", secondaryTones));
-
-  const primaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "primary", "a1", primaryTones));
+  for (const palette of harmonizedPalettes) {
+    const paletteObject = paletteProperty(Blend.harmonize(argbFromHex(palette.color), baseColor), palette.name, palette.append, palette.tones);
+    setPalette(paletteObject);
+  }
 }
