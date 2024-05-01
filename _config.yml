@@ -40,6 +40,63 @@ webrick:
   headers:
     Cache-Control: "must-revalidate"
 
+sass:
+  style: compressed
+  sass_dir: _sass
+  sourcemap: always
+
+jekyll-spaceship:
+  processors:
+    - table-processor
+    - mathjax-processor
+    - plantuml-processor
+    - mermaid-processor
+    - polyfill-processor
+    - element-processor
+  mathjax-processor:
+    src:
+      - https://polyfill.io/v3/polyfill.min.js?features=es6
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    config:
+      tex:
+        inlineMath:
+          - ["$", "$"]
+          - ['\(', '\)']
+        displayMath:
+          - ["$$", "$$"]
+          - ['\[', '\]']
+      svg:
+        fontCache: "global"
+      options:
+        enableMenu: false
+    optimize:
+      enabled: true
+      include: []
+      exclude: []
+  plantuml-processor:
+    mode: default
+    css:
+      class: plantuml
+    syntax:
+      code: "plantuml!"
+      custom: ["@startuml", "@enduml"]
+    src: https://www.plantuml.com/plantuml/svg/
+  mermaid-processor:
+    mode: default
+    css:
+      class: mermaid
+    syntax:
+      code: "mermaid!"
+      custom: ["@startmermaid", "@endmermaid"]
+    config:
+      theme: default
+    src: https://mermaid.ink/svg/
+  element-processor:
+    css:
+      - img:
+          props:
+            loading: lazy
+
 exclude:
   - .gitignore
   - .jekyll-cache/

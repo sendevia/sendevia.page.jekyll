@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll'
 gem "jekyll-sass-converter", "~> 3.0"
 group :jekyll_plugins do
-  gem 'jekyll-loading-lazy'
+  gem 'jekyll-spaceship'
   gem 'jekyll-seo-tag'
   gem 'jekyll-sitemap'
 end
