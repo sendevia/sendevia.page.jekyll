@@ -54,11 +54,11 @@ export async function generateColorPalette(baseColor) {
   ];
 
   const harmonizedPalettes = [
-    { color: "#813c85", name: "purple", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
-    { color: "#f2ce2b", name: "yellow", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
-    { color: "#8cc269", name: "green", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
-    { color: "#1772b4", name: "blue", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
-    { color: "#bf3553", name: "red", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#c08eaf", name: "purple", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#f9d770", name: "yellow", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#68b88e", name: "green", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#5cb3cc", name: "blue", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#c27c88", name: "red", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
   ];
 
   for (const palette of palettes) {
