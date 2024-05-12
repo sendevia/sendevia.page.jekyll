@@ -4,9 +4,9 @@
 
 **如果不需要对主题进行开发，直接按部署 jekyll 的方式部署本主题即可。**
 
-> ```
-> bundle exec jekyll build
-> ```
+```bash
+bundle exec jekyll build
+```
 
 ## 配置开发环境
 
@@ -14,74 +14,72 @@
 
 Debian/Ubuntu
 
-> ```
-> sudo apt install ruby-full build-essential zlib1g-dev curl -y
-> ```
+```bash
+sudo apt install ruby-full build-essential zlib1g-dev curl -y
+```
 
 Archlinux
 
-> ```
-> sudo pacman -S ruby base-devel curl
-> ```
+```bash
+sudo pacman -S ruby base-devel curl
+```
 
 1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
-> ```
-> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-> ```
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
 
-> `重启终端`
+`重启终端`
 
-> ```
-> nvm install --lts
-> ```
+```bash
+nvm install --lts
+```
 
-### 配置环境变量
-
-_以 bash 为例_
+### 配置环境变量，以 bash 为例
 
 Debian/Ubuntu
 
-> ```
-> echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-> ```
->
-> ```
-> echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-> ```
+```bash
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+```
 
-> `重启终端`
+```bash
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+```
+
+`重启终端`
 
 Archlinux
 
-> ```
-> echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
-> ```
->
-> ```
-> echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
-> ```
+```bash
+echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
+```
 
-> `重启终端`
+```bash
+echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
+```
+
+`重启终端`
 
 ### 安装 Jekyll
 
-> ```
-> gem install bundler jekyll
-> ```
+```bash
+gem install bundler jekyll
+```
 
 ### 开发本项目
 
 切换到本项目文件夹
 
-> ```
-> npm i
-> ```
->
-> ```
-> bundle i
-> ```
+```bash
+npm i
+```
 
-> ```
-> npm run dev
-> ```
+```bash
+bundle i
+```
+
+```bash
+npm run dev
+```
