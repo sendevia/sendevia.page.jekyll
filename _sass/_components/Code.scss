@@ -11,40 +11,65 @@ figure.highlight {
 
   margin-block: 0;
 
-  span.copy-button {
-    @include material-symbols("content_copy", $line-height: 40);
-    display: block;
+  div.blockcopy {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 4px;
 
     position: absolute;
     right: 0;
     top: 0;
 
-    width: 40px;
-    height: 40px;
-
     margin: 4px;
 
     color: var(--md-sys-color-surface-variant);
-    text-align: center;
-
-    border-radius: var(--md-sys-shape-corner-small);
 
     cursor: pointer;
     opacity: 0.6;
     transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
     z-index: 11;
 
-    @media (prefers-color-scheme: dark) {
-      color: var(--md-sys-color-on-surface-variant);
+    span {
+      @include material-symbols("content_copy", $line-height: 40);
+
+      height: 40px;
+      width: 40px;
+
+      text-align: center;
+
+      border-radius: var(--md-sys-shape-corner-small);
+
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+
+      height: 40px;
+
+      padding: 4px 12px;
+
+      border-radius: var(--md-sys-shape-corner-small);
+
+      opacity: 0;
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+      visibility: hidden;
     }
 
     &:hover {
-      background-color: var(--md-sys-color-on-surface-variant);
-
       opacity: 1;
 
-      @media (prefers-color-scheme: dark) {
-        background-color: var(--md-sys-color-surface-variant);
+      span {
+        background-color: var(--md-sys-color-on-surface-variant);
+      }
+
+      p {
+        background-color: var(--md-sys-color-on-surface-variant);
+
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
