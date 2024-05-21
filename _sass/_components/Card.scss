@@ -10,27 +10,16 @@
   overflow: hidden;
   transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
 
-  img {
-    @include mixin-userselect();
-
-    display: block;
-
-    max-width: unset;
-  }
-
   .c-card-impression {
-    span {
-      @include material-symbols($size: 72);
+    img {
+      @include mixin-userselect();
 
-      width: 100%;
+      display: block;
 
-      padding-block: 60px;
+      max-width: unset;
 
-      color: var(--md-sys-color-on-tertiary);
-      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 25, "opsz" 24;
-      text-align: center;
-
-      mix-blend-mode: luminosity;
+      object-fit: cover;
+      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
     }
   }
 
@@ -41,6 +30,178 @@
 
     h3 {
       transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+    }
+  }
+
+  &[spec="feed"] {
+    margin-block-end: 24px;
+    padding: 24px;
+
+    width: calc(50% - 12px);
+
+    border-radius: var(--md-sys-shape-corner-extra-large);
+
+    background-color: var(--md-sys-color-surface-container-lowest);
+
+    .c-card-impression {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        height: 240px;
+        width: 100%;
+
+        border-radius: var(--md-sys-shape-corner-large);
+        outline: 1px solid var(--md-sys-color-outline-variant);
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 12px;
+
+        span {
+          @include material-symbols($size: 24);
+
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 25, "opsz" 24;
+
+          text-align: center;
+        }
+        h4 {
+          font-family: "Kalnia", serif;
+          font-optical-sizing: auto;
+          font-style: normal;
+          font-variation-settings: "wdth" 100;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .c-card-action {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        padding: 8px 12px;
+
+        color: var(--md-sys-color-on-surface);
+
+        background-color: var(--md-sys-color-surface-bright);
+
+        border-radius: var(--md-sys-shape-corner-medium);
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+
+        button {
+          color: var(--md-sys-color-on-surface);
+
+          background-color: var(--md-sys-color-surface-bright);
+
+          &.c-iconbtn {
+            font-weight: 300;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &[size="large"] {
+      gap: 12px;
+
+      .c-card-impression {
+        gap: 24px;
+
+        img {
+          height: 300px;
+        }
+      }
+
+      .c-card-supporting h3 {
+        min-height: 150px;
+      }
+    }
+
+    &[size="medium"] {
+      gap: 12px;
+
+      .c-card-impression {
+        flex-direction: row-reverse;
+        gap: 12px;
+        justify-content: space-between;
+
+        img {
+          width: 140px;
+          height: 140px;
+        }
+
+        h3 {
+          min-height: 180px;
+        }
+      }
+    }
+
+    &[size="small"] {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding-block: 6px;
+      padding-inline: 18px 6px;
+
+      .c-card-action button {
+        justify-content: end;
+      }
+
+      $colors: ("red", "blue", "green", "yellow", "purple");
+
+      @each $color in $colors {
+        &[color="#{$color}"] {
+          color: var(--md-sys-color-on-#{$color}-container);
+
+          background-color: var(--md-sys-color-#{$color}-container);
+
+          .c-card-action button {
+            color: var(--md-sys-color-#{$color});
+
+            background-color: var(--md-sys-color-on-#{$color});
+
+            e-ripple {
+              background-color: var(--md-sys-color-#{$color});
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      &[size="large"],
+      &[size="medium"] {
+        filter: drop-shadow(0 12px 12px var(--md-sys-color-surface-dim));
+        transform: translateY(-6px);
+      }
+
+      &[size="small"] {
+        border-radius: var(--md-sys-shape-corner-large);
+
+        .c-card-action button {
+          border-radius: var(--md-sys-shape-corner-large);
+        }
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
     }
   }
 
@@ -55,14 +216,6 @@
 
     cursor: pointer;
 
-    img {
-      height: 240px;
-      width: 100%;
-
-      object-fit: cover;
-      transition: var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-standard);
-    }
-
     .c-card-impression {
       position: relative;
 
@@ -71,6 +224,11 @@
       background-color: var(--md-sys-color-inverse-primary);
 
       overflow: hidden;
+
+      img {
+        height: 240px;
+        width: 100%;
+      }
     }
 
     .c-card-supporting {
@@ -117,16 +275,19 @@
     height: 240px;
 
     border-radius: var(--md-sys-shape-corner-extra-large);
+    outline: 1px solid var(--md-sys-color-outline-variant);
 
     background-color: var(--md-sys-color-primary);
 
     cursor: pointer;
 
-    img {
+    .c-card-impression {
       height: 100%;
 
-      object-fit: cover;
-      transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .c-card-supporting {
@@ -163,6 +324,10 @@
           font-weight: 700;
         }
       }
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }
