@@ -5,6 +5,7 @@
       spec="surface"
       size="normal">search</button>
   </div>
+
   <div id="c-navigation-destinations">
     <a href="/">
       <div class="c-navigation-segment-inactive">
@@ -27,7 +28,7 @@
       <p class="c-navigation-destination-label">文章目录</p>
     </div>
 
-    {% for s in site.pages %}
+    {% for s in site.pages -%}
       {% if s.navigation and s.published == true %}
         <a href="{{ s.url | remove: '.html' }}">
           <div class="c-navigation-segment-inactive">
@@ -39,9 +40,10 @@
             <p class="c-navigation-destination-label">{{ s.segment_title }}</p>
           </div>
         </a>
-      {% endif %}
-    {% endfor %}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
+
   <div id="c-navigation-drawer">
     <button class="c-iconbtn" id="c-navigation-drawer-close">menu_open</button>
     {% capture toc_content %}{% toc %}{% endcapture %}
@@ -58,6 +60,7 @@
         {% endfor %}
       {% endif %}
     </div>
+
     <a id="c-navigation-drawer-backward" href="/posts/">
       <button
         class="c-button"
@@ -69,24 +72,33 @@
     </a>
   </div>
 </div>
+
+
 <div class="c-appbar">
   <button class="c-iconbtn" id="c-appbar-menu">menu</button>
+
   <div id="c-appbar-dynamic-title">
     <span>{{ site.title }}</span>
     <span>{{ page.title | default: site.title }}</span>
   </div>
+
   <button class="c-iconbtn" id="c-appbar-search">search</button>
 </div>
+
+
 <dialog class="c-dialog">
   <div id="c-dialog-layout">
     <div id="c-dialog-content">
+
       <span id="c-dialog-leader-icon">help</span>
+
       <div id="c-dialog-headline">
         <h3>{{ page.title | default: site.title }}</h3>
         {% if page.description and page.description != "" %}
           <p>{{ page.description }}</p>
         {% endif %}
       </div>
+
       <div id="c-dialog-supporting-list">
         {% if page.date %}
           <div class="c-dialog-tip-items">
@@ -97,7 +109,9 @@
             <p>发布于：{{ page.date | date: "%Y年%-m月%-d日" }}</p>
           </div>
         {% endif %}
-        {% assign page_words = page.content | number_of_words: "auto" %} {% assign read_estimate = page_words | divided_by: 120 %}
+
+        {% assign page_words = page.content | number_of_words: "auto" %}
+        {% assign read_estimate = page_words | divided_by: 120 %}
         <div class="c-dialog-tip-items">
           <button
             class="c-iconbtn"
@@ -109,6 +123,7 @@
               少于 1
             {% endif %}分钟</p>
         </div>
+
         {% if page.author %}
           <div class="c-dialog-tip-items">
             <button
@@ -118,6 +133,7 @@
             <p>作者：{{ page.author }}</p>
           </div>
         {% endif %}
+
         {% if page.categories.size > 0 %}
           <div class="c-dialog-tip-items">
             <button
@@ -127,17 +143,17 @@
             <p>分类：{{ page.categories }}</p>
           </div>
         {% endif %}
-        {% if page.color and page.color != "" %}
-          <div class="c-dialog-tip-items">
-            <button
-              class="c-iconbtn"
-              spec="standard"
-              disabled>palette</button>
-            <p>主题颜色：{{ page.color }}</p>
-          </div>
-        {% endif %}
+
+        <div class="c-dialog-tip-items">
+          <button
+            class="c-iconbtn"
+            spec="standard"
+            disabled>palette</button>
+          <p>主题颜色：{{ page.color | default: site.color }}</p>
+        </div>
       </div>
     </div>
+
     <div id="c-dialog-button">
       <button
         class="c-button"

@@ -6,10 +6,7 @@
 
   position: relative;
 
-  background-color: var(--md-sys-color-surface-container);
-
-  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
-    filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+  transition: filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 3;
 
   a {
@@ -172,7 +169,7 @@
 
     opacity: 0;
     overflow: auto;
-    transform: translateX(-100px);
+    transform: translateX(-24px);
     transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
       padding-block var(--md-sys-motion-duration-medium2), visibility var(--md-sys-motion-duration-medium2), opacity var(--md-sys-motion-duration-short4),
       transform var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
@@ -377,7 +374,7 @@
     #c-navigation-destinations {
       align-items: flex-start;
       flex-direction: column;
-      justify-content: start;
+      justify-content: center;
 
       .c-navigation-segment-active {
         height: 56px;

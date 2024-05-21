@@ -57,9 +57,9 @@ body {
 
   background-color: var(--md-sys-color-surface-container-low);
 
+  backdrop-filter: contrast(1);
   opacity: 1;
-  transition: background-color var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard),
-    filter var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
+  transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 1;
 
   :disabled,

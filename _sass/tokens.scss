@@ -196,6 +196,36 @@
     --md-sys-color-surface-tint-color: var(--md-sys-color-primary);
     --md-sys-color-scrim: var(--md-ref-palette-neutral0);
 
+    --md-sys-color-red: var(--md-ref-palette-red40);
+    --md-sys-color-red-container: var(--md-ref-palette-red90);
+    --md-sys-color-on-red: var(--md-ref-palette-red95);
+    --md-sys-color-on-red-container: var(--md-ref-palette-red10);
+    --md-sys-color-inverse-red: var(--md-ref-palette-red80);
+
+    --md-sys-color-blue: var(--md-ref-palette-blue40);
+    --md-sys-color-blue-container: var(--md-ref-palette-blue90);
+    --md-sys-color-on-blue: var(--md-ref-palette-blue95);
+    --md-sys-color-on-blue-container: var(--md-ref-palette-blue10);
+    --md-sys-color-inverse-blue: var(--md-ref-palette-blue80);
+
+    --md-sys-color-green: var(--md-ref-palette-green40);
+    --md-sys-color-green-container: var(--md-ref-palette-green90);
+    --md-sys-color-on-green: var(--md-ref-palette-green95);
+    --md-sys-color-on-green-container: var(--md-ref-palette-green10);
+    --md-sys-color-inverse-green: var(--md-ref-palette-green80);
+
+    --md-sys-color-yellow: var(--md-ref-palette-yellow40);
+    --md-sys-color-yellow-container: var(--md-ref-palette-yellow90);
+    --md-sys-color-on-yellow: var(--md-ref-palette-yellow95);
+    --md-sys-color-on-yellow-container: var(--md-ref-palette-yellow10);
+    --md-sys-color-inverse-yellow: var(--md-ref-palette-yellow80);
+
+    --md-sys-color-purple: var(--md-ref-palette-purple40);
+    --md-sys-color-purple-container: var(--md-ref-palette-purple90);
+    --md-sys-color-on-purple: var(--md-ref-palette-purple95);
+    --md-sys-color-on-purple-container: var(--md-ref-palette-purple10);
+    --md-sys-color-inverse-purple: var(--md-ref-palette-purple80);
+
     --md-sys-elevation-level1: var(--md-sys-elevation-level1-light);
     --md-sys-elevation-level2: var(--md-sys-elevation-level2-light);
     --md-sys-elevation-level3: var(--md-sys-elevation-level3-light);
@@ -241,6 +271,36 @@
     --md-sys-color-shadow: var(--md-ref-palette-neutral0);
     --md-sys-color-surface-tint-color: var(--md-sys-color-primary);
     --md-sys-color-scrim: var(--md-ref-palette-neutral0);
+
+    --md-sys-color-red: var(--md-ref-palette-red80);
+    --md-sys-color-red-container: var(--md-ref-palette-red30);
+    --md-sys-color-on-red: var(--md-ref-palette-red20);
+    --md-sys-color-on-red-container: var(--md-ref-palette-red90);
+    --md-sys-color-inverse-red: var(--md-ref-palette-red40);
+
+    --md-sys-color-blue: var(--md-ref-palette-blue80);
+    --md-sys-color-blue-container: var(--md-ref-palette-blue30);
+    --md-sys-color-on-blue: var(--md-ref-palette-blue20);
+    --md-sys-color-on-blue-container: var(--md-ref-palette-blue90);
+    --md-sys-color-inverse-blue: var(--md-ref-palette-blue40);
+
+    --md-sys-color-green: var(--md-ref-palette-green80);
+    --md-sys-color-green-container: var(--md-ref-palette-green30);
+    --md-sys-color-on-green: var(--md-ref-palette-green20);
+    --md-sys-color-on-green-container: var(--md-ref-palette-green90);
+    --md-sys-color-inverse-green: var(--md-ref-palette-green40);
+
+    --md-sys-color-yellow: var(--md-ref-palette-yellow80);
+    --md-sys-color-yellow-container: var(--md-ref-palette-yellow30);
+    --md-sys-color-on-yellow: var(--md-ref-palette-yellow20);
+    --md-sys-color-on-yellow-container: var(--md-ref-palette-yellow90);
+    --md-sys-color-inverse-yellow: var(--md-ref-palette-yellow40);
+
+    --md-sys-color-purple: var(--md-ref-palette-purple80);
+    --md-sys-color-purple-container: var(--md-ref-palette-purple30);
+    --md-sys-color-on-purple: var(--md-ref-palette-purple20);
+    --md-sys-color-on-purple-container: var(--md-ref-palette-purple90);
+    --md-sys-color-inverse-purple: var(--md-ref-palette-purple40);
 
     --md-sys-elevation-level1: var(--md-sys-elevation-level1-dark);
     --md-sys-elevation-level2: var(--md-sys-elevation-level2-dark);

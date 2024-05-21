@@ -4,26 +4,6 @@
       type="application/javascript"
       src="/assets/js/bundle.js?v={{ site.version }}"
       defer></script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["$$", "$$"],
-            ["\\(", "\\)"],
-          ],
-        },
-        options: {
-          enableMenu: false,
-        },
-      };
-    </script>
-    <script
-      async
-      crossorigin="anonymous"
-      integrity="sha512-EtUjpk/hY3NXp8vfrPUJWhepp1ZbgSI10DKPzfd+3J/p2Wo89JRBvQIdk3Q83qAEhKOiFOsYfhqFnOEv23L+dA=="
-      referrerpolicy="no-referrer"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
   {% endif %}
   <link rel="stylesheet" href="/assets/css/style.css?v={{ site.version }}" />
   <link
