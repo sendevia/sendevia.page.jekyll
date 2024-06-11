@@ -3,7 +3,7 @@ version: "24.0521.0"
 title: "sendevia 的小站"
 description: "Contrary to common opinion, less is more. Only by concentrating on the few important and vital things, and refusing to worry over the mass of trivial ones, can we find happiness."
 baseurl: ""
-locale: "zh_CN"
+lang: "zh"
 timezone: "Asia/Shanghai"
 
 author: "sendevia"
@@ -41,9 +41,9 @@ webrick:
     Cache-Control: "must-revalidate"
 
 sass:
-  style: compressed
-  sass_dir: _sass
-  sourcemap: always
+  style: "compressed"
+  sass_dir: "_sass"
+  sourcemap: "always"
 
 jekyll-spaceship:
   processors:
@@ -74,28 +74,28 @@ jekyll-spaceship:
       include: []
       exclude: []
   plantuml-processor:
-    mode: default
+    mode: "default"
     css:
-      class: plantuml
+      class: "plantuml"
     syntax:
       code: "plantuml!"
       custom: ["@startuml", "@enduml"]
-    src: https://www.plantuml.com/plantuml/svg/
+    src: "https://www.plantuml.com/plantuml/svg/"
   mermaid-processor:
-    mode: default
+    mode: "default"
     css:
-      class: mermaid
+      class: "mermaid"
     syntax:
       code: "mermaid!"
       custom: ["@startmermaid", "@endmermaid"]
     config:
-      theme: default
-    src: https://mermaid.ink/svg/
+      theme: "default"
+    src: "https://mermaid.ink/svg/"
   element-processor:
     css:
       - img:
           props:
-            loading: lazy
+            loading: "lazy"
 
 exclude:
   - .gitignore

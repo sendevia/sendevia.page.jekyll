@@ -107,6 +107,10 @@
           }
         }
       }
+
+      &[spec="rail"] {
+        background-color: var(--md-sys-color-surface-container);
+      }
     }
   }
 }

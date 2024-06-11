@@ -149,7 +149,9 @@ function handleLinkDelayRedirection(linkElement) {
     const target = linkElement.target;
 
     if (target === "_blank") {
+      setTimeout(() => {
       window.open(linkElement.href);
+      }, redirectDelay);
     } else {
       displayLoadingScreen();
       setTimeout(() => {
@@ -210,12 +212,11 @@ function displayLoadingScreen() {
 /**
  * 移除加载屏幕
  */
-function removeLoadingScreen() {
-  const loadingDelay = 450;
-  themeRoot.setAttribute("o-onload", "");
+function removeLoadingScreen(delay = 450) {
   setTimeout(() => {
+    themeRoot.setAttribute("o-onload", "");
     themeLoadingIndicator.style.display = "none";
-  }, loadingDelay);
+  }, delay);
 }
 
 /**
@@ -226,7 +227,7 @@ function rotateBulletPoints() {
   document.head.appendChild(styleElement);
 
   const listItems = Array.from(contentRotationListItemsBullet);
-  listItems.forEach((listItem, index) => {
+  listItems.forEach((_, index) => {
     const rotationDegrees = Math.floor(Math.random() * 360);
     const cssRule = `ul li:nth-child(${index + 1})::before { transform: rotate(${rotationDegrees}deg); }`;
     styleElement.sheet.insertRule(cssRule, styleElement.sheet.cssRules.length);
