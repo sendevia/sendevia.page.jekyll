@@ -2,7 +2,7 @@
 
 我自己的博客网站的源码仓库，使用自制的 `jekyll-theme-m3` 主题，目前正积极开发中。**推荐在 CloudFlare 上部署本项目。**
 
-**如果不需要对主题进行开发，直接按部署 jekyll 的方式部署本主题即可。**
+**如果不需要对主题进行开发，直接按通常部署 jekyll 的方式部署本主题即可。**
 
 ```bash
 bundle exec jekyll build

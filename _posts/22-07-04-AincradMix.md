@@ -1,9 +1,9 @@
 ---
-title: AincradMix
-description: 一个 osu! 皮肤
-author: sendevia
+title: "AincradMix"
+description: "一个 osu! 皮肤"
+author: "sendevia"
 color: "#0089ff"
-impression: /assets/images/22/screenshot01.webp
+impression: "/assets/images/22/screenshot01.webp"
 categories: osu!皮肤
 tags:
   - Readme
