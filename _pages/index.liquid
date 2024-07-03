@@ -40,7 +40,7 @@ layout: "feed"
   <div class="card-action">
     <div>
       <p>{{ latest_post.categories | default: "未分类" }}</p>
-      <p>{{ latest_post.tags }}</p>
+    {% comment %} <p>{{ latest_post.tags }}</p> {% endcomment %}
     </div>
 
     <div>
