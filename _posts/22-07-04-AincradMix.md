@@ -4,7 +4,9 @@ description: "一个 osu! 皮肤"
 author: "sendevia"
 color: "#0089ff"
 impression: "/assets/images/22/screenshot01.webp"
-categories: osu!皮肤
+categories: 
+  - osu!皮肤
+  - 测试
 tags:
   - Readme
 featured: true
@@ -68,15 +70,15 @@ featured: true
 
 <div>
   <a href="https://github.com/Sendevia/AincradMix/releases/download/release1.0/AincradMix_r1.0.osk">
-    <button class="c-button" spec="tonal" icon>
+    <button class="common-button" spec="tonal" icon>
       <span>download</span>
       最新版 (1.0/2022.3.21) 下载
     </button>
   </a>
 </div>
 <div>
-  <a href="https://github.com/Sendevia/AincradMix" class="c-button" spec="tonal" icon>
-    <button class="c-button" spec="tonal" icon>
+  <a href="https://github.com/Sendevia/AincradMix" class="common-button" spec="tonal" icon>
+    <button class="common-button" spec="tonal" icon>
       <span>code</span>
       Github
     </button>

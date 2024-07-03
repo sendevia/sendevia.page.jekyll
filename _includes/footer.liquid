@@ -1,0 +1,41 @@
+<footer class="main-layout-footer">
+  <div id="main-layout-footer-description">
+    <div id="main-layout-footer-description-topic">
+      <img src="/assets/images/avatar.webp" alt="logo" />
+      <div>
+        <h3>{{ page.title | default: site.title }}</h3>
+        <p>来自 {{ site.title }}</p>
+      </div>
+    </div>
+    <div id="main-layout-footer-description-theme">
+      <p>使用
+        <a href="https://github.com/Sendevia/jekyll-theme-m3" target="_blank">jekyll-theme-m3</a>
+        主题
+      </p>
+      <a href="https://github.com/Sendevia/sendevia.page.jekyll/releases/tag/{{site.version}}" target="_blank">
+        版本：{{ site.version }}</a>
+    </div>
+    <div id="main-layout-footer-description-beian">
+      <div id="main-layout-footer-beian-gongan">
+        <img src="/assets/images/beian.png" loading="eager">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=23020002230215" target="_blank">黑公网安备23020002230215</a>
+      </div>
+      <div id="main-layout-footer-Registration-icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">黑ICP备2024016516号-1</a>
+      </div>
+    </div>
+  </div>
+  <div id="main-layout-footer-social-media">
+    {% for item in site.data.socialmedia %}
+      <a
+        href="{{ item.link }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="{{ item.name }}">
+        <button class="icon-button" spec="text">
+          {{ item.icon }}
+        </button>
+      </a>
+    {% endfor %}
+  </div>
+</footer>

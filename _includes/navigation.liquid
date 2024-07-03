@@ -1,0 +1,87 @@
+<div class="appbar">
+  <button class="icon-button" id="appbar-menu">menu</button>
+
+  <div id="appbar-dynamic-title">
+    <span>{{ site.title }}</span>
+    <span>{{ page.title | default: site.title }}</span>
+  </div>
+
+{% comment %} <button class="icon-button" id="appbar-search">search</button> {% endcomment %}
+</div>
+
+<div class="navigation" spec="rail">
+  {% if include.fab != false %}
+    <div id="navigation-fab">
+      <button
+        class="fab"
+        spec="surface"
+        size="normal">search</button>
+    </div>
+  {% endif %}
+
+  <div id="navigation-destinations">
+    <a href="/">
+      <div class="navigation-segment-inactive">
+        <div class="navigation-destination-accent">
+          <div class="navigation-segment-icon">
+            <!-- https://fonts.google.com/icons?selected=Material+Icons&icon.set=Material+Symbols -->
+            <span>home</span>
+          </div>
+        </div>
+        <p class="navigation-destination-label">首页</p>
+      </div>
+    </a>
+
+    <div class="navigation-segment-inactive">
+      <div class="navigation-destination-accent">
+        <div class="navigation-segment-icon">
+          <span>article</span>
+        </div>
+      </div>
+      <p class="navigation-destination-label">文章目录</p>
+    </div>
+
+    {% for s in site.pages %}
+      {% if s.navigation and s.published == true %}
+        <a href="{{ s.url | remove: '.html' }}">
+          <div class="navigation-segment-inactive">
+            <div class="navigation-destination-accent">
+              <div class="navigation-segment-icon">
+                <span>{{ s.segment_icon }}</span>
+              </div>
+            </div>
+            <p class="navigation-destination-label">{{ s.segment_title }}</p>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div id="navigation-drawer">
+    <button class="icon-button" id="navigation-drawer-close">menu_open</button>
+    {% capture toc_content %}{% toc %}{% endcapture %}
+    <div id="navigation-drawer-container">
+      {% if toc_content != "" and page.toc %}
+        {{ toc_content }}
+      {% else %}
+        {% for item in site.posts %}
+          <details>
+            <summary>
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </summary>
+          </details>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <a id="navigation-drawer-backward" href="/posts/">
+      <button
+        class="common-button"
+        spec="text"
+        icon>
+        <span>west</span>
+        查看全部文章
+      </button>
+    </a>
+  </div>
+</div>

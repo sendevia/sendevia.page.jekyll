@@ -7,7 +7,7 @@ module Jekyll
 
       result = sections.map.with_index do |(h1_id, h1_content, h2_content), index|
         h2_links = generate_h2_links(h2_content)
-        summary_class = h2_links.empty? ? "c-navigation-drawer-normal-item" : "c-navigation-drawer-expandable-item"
+        summary_class = h2_links.empty? ? "navigation-drawer-normal-item" : "navigation-drawer-expandable-item"
         details_open = index.zero? ? " open" : ""
         "<details#{details_open}><summary class='#{summary_class}'><a href='##{h1_id}'>#{h1_content}</a></summary>#{h2_links}</details>"
       end.join("\n")

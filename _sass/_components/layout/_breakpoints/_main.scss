@@ -1,0 +1,12 @@
+@media screen and (max-width: 1600px) {
+  @import "large";
+}
+@media screen and (max-width: 1200px) {
+  @import "expanded";
+}
+@media screen and (max-width: 840px) {
+  @import "medium";
+}
+@media screen and (max-width: 600px) {
+  @import "compact";
+}

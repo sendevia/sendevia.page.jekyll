@@ -1,0 +1,21 @@
+// 1200_header
+& {
+  grid-column: span 6;
+
+  height: 45vh;
+  min-height: 360px;
+
+  #default-header-hero-container {
+    grid-column: span 2;
+
+    padding: 5vw;
+
+    #default-header-hero-headline {
+      @include typescale-style("display-large", $font-size: 7vw, $font-weight: 500, $line-height: 7vw);
+    }
+
+    #default-header-hero-subtitle {
+      @include typescale-style("display-small", $font-size: 18rem, $font-weight: 500, $line-height: 20rem);
+    }
+  }
+}

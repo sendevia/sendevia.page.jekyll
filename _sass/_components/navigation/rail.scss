@@ -1,0 +1,77 @@
+&[spec="rail"] {
+  flex-direction: column;
+
+  height: 100%;
+  width: 80px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 3;
+
+  #navigation-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navigation-destinations {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    .navigation-segment-active {
+      height: 56px;
+
+      margin: 4px 5px;
+
+      .navigation-destination-accent {
+        height: 32px;
+        width: 56px;
+
+        margin: 4px 0px;
+      }
+
+      .navigation-destination-label {
+        margin: 4px 0px;
+      }
+    }
+
+    .navigation-segment-inactive {
+      .navigation-destination-label {
+        @extend .navigation-destination-label;
+
+        color: transparent;
+        line-height: 0px;
+        text-decoration: none;
+
+        transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+        visibility: hidden;
+      }
+
+      &:hover {
+        .navigation-destination-accent {
+          width: 56px;
+        }
+
+        .navigation-destination-label {
+          color: var(--md-sys-color-on-secondary-container);
+          line-height: 16px;
+          text-decoration: none;
+
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  #navigation-drawer {
+    top: 0px;
+    left: 80px;
+
+    height: 100%;
+
+    #navigation-drawer-close {
+      display: none;
+    }
+  }
+}

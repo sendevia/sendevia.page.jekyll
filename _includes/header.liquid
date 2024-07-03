@@ -1,0 +1,15 @@
+<div class="default-header">
+  {% if page.url != "/index.html" %}
+    <button
+      class="icon-button"
+      id="default-header-webinfo"
+      spec="standard">info</button>
+  {% endif %}
+  {% assign photograph = page.impression | default: site.impression %}
+  <div id="default-header-hero-container" style="background-image: url('{{ photograph }}');">
+    <span id="default-header-hero-headline">{{ page.title | default: site.title }}</span>
+    {% if page.description and page.description != "" %}
+      <span id="default-header-hero-subtitle">{{ page.description }}</span>
+    {% endif %}
+  </div>
+</div>

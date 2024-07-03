@@ -1,0 +1,16 @@
+// 840_carousel
+& {
+  grid-column: span 4;
+
+  #carousel-container .carousel-article .carousel-article-info {
+    padding-inline: 30px;
+
+    h1 {
+      @include typescale-style("display-medium");
+    }
+
+    h4 {
+      @include typescale-style("title-large");
+    }
+  }
+}

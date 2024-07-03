@@ -1,26 +1,31 @@
-@import "mixin";
-@import "@font-face";
-@import "tokens";
-@import "@animation";
-@import "@overlay";
-
-@import "_components/AppBar";
-@import "_components/Card";
-@import "_components/Chip";
-@import "_components/Code";
-@import "_components/CommonButton";
-@import "_components/Dialog";
-@import "_components/FAB";
-@import "_components/IconButton";
-@import "_components/Navigation";
-@import "_components/ProgressIndicator";
-@import "_components/Search";
-@import "_components/Snackbar";
-@import "_components/Table";
-
 * {
   box-sizing: border-box;
 }
+
+@import "mixin";
+@import "fonts";
+@import "tokens";
+@import "animation";
+@import "overlay";
+
+@import "_components/appbar/main";
+@import "_components/card/main";
+@import "_components/carousel/main";
+@import "_components/chip/main";
+@import "_components/code/main";
+@import "_components/common-button/main";
+@import "_components/dialog/main";
+@import "_components/fab/main";
+@import "_components/footer/main";
+@import "_components/header/main";
+@import "_components/icon-button/main";
+@import "_components/layout/main";
+@import "_components/loading-splash/main";
+@import "_components/navigation/main";
+@import "_components/notfound/main";
+@import "_components/progress-indicator/main";
+@import "_components/snackbar/main";
+@import "_components/table/main";
 
 :root {
   -moz-osx-font-smoothing: grayscale;
@@ -38,8 +43,8 @@ body {
   height: 100%;
   width: 100%;
 
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 
   overflow: hidden;
 
@@ -50,7 +55,7 @@ body {
   }
 }
 
-.t-root {
+.theme-root {
   position: relative;
 
   color: var(--md-sys-color-on-surface);
@@ -72,10 +77,10 @@ body {
     pointer-events: none;
   }
 
-  e-ripple {
+  ripple-effect {
     position: absolute;
-    left: calc(var(--e-ripple-PosX) * 1px);
-    top: calc(var(--e-ripple-PosY) * 1px);
+    left: calc(var(--ripple-effect-PosX) * 1px);
+    top: calc(var(--ripple-effect-PosY) * 1px);
 
     border-radius: var(--md-sys-shape-corner-full);
 
@@ -86,17 +91,17 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  [spec="filled"]e-ripple {
+  [spec="filled"]ripple-effect {
     background-color: var(--md-sys-color-on-primary);
   }
 
-  [spec="outlined"]e-ripple,
-  [spec="text"]e-ripple,
-  [spec="elevated"]e-ripple {
+  [spec="outlined"]ripple-effect,
+  [spec="text"]ripple-effect,
+  [spec="elevated"]ripple-effect {
     background-color: var(--md-sys-color-primary);
   }
 
-  [spec="tonal"]e-ripple {
+  [spec="tonal"]ripple-effect {
     background-color: var(--md-sys-color-on-secondary-container);
   }
 }
@@ -104,43 +109,43 @@ body {
 h1 {
   @include typescale-style("headline-large");
 
-  margin: 0;
+  margin: 0px;
 }
 
 h2 {
   @include typescale-style("headline-medium");
 
-  margin: 0;
+  margin: 0px;
 }
 
 h3 {
   @include typescale-style("headline-small");
 
-  margin: 0;
+  margin: 0px;
 }
 
 h4 {
   @include typescale-style("title-large");
 
-  margin: 0;
+  margin: 0px;
 }
 
 h5 {
   @include typescale-style("title-medium");
 
-  margin: 0;
+  margin: 0px;
 }
 
 h6 {
   @include typescale-style("title-small");
 
-  margin: 0;
+  margin: 0px;
 }
 
 p {
   @include typescale-style("body-large");
 
-  margin: 0;
+  margin: 0px;
 }
 
 a {
@@ -150,7 +155,7 @@ a {
   width: max-content;
 
   color: var(--md-sys-color-primary);
-  letter-spacing: 0;
+  letter-spacing: 0px;
   text-underline-offset: 5px;
 
   code {
@@ -177,7 +182,7 @@ hr {
   &[spec="wave"] {
     height: 15px;
 
-    margin: 0;
+    margin: 0px;
 
     border-radius: var(--md-sys-shape-corner-small);
     border: none;
@@ -195,12 +200,12 @@ hr {
   list-style-type: none;
 
   .task-list-item {
-    margin: 5px 0;
+    margin: 5px 0px;
 
     vertical-align: middle;
 
     input {
-      line-height: 0;
+      line-height: 0px;
 
       &.task-list-item-checkbox {
         @include material-symbols($size: 24);
@@ -209,7 +214,7 @@ hr {
 
         margin-inline-end: 2px;
 
-        letter-spacing: 0;
+        letter-spacing: 0px;
         vertical-align: inherit;
 
         appearance: none;
@@ -230,124 +235,6 @@ hr {
           color: var(--md-sys-color-primary);
           font-variation-settings: "FILL" 1;
         }
-      }
-    }
-  }
-}
-
-.p-index {
-  #p-index-cardset {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-
-    #p-index-latest-article {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      gap: 12px;
-      grid-column: span 3;
-
-      padding-block: 24px;
-      padding-inline: 28px;
-
-      border-radius: var(--md-sys-shape-corner-extra-large);
-      border: 1px solid var(--md-sys-color-outline-variant);
-
-      background-color: var(--md-sys-color-surface-container-low);
-
-      #p-index-latest-article--date-container {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-
-        #p-index-latest-article--date-detail {
-          @include typescale-style("body-medium");
-
-          display: flex;
-          align-items: flex-start;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          gap: 12px;
-
-          color: var(--md-sys-color-on-surface-variant);
-
-          span {
-            @include material-symbols($size: 30);
-          }
-
-          p {
-            @include typescale-style("body-medium", $line-height: 27.5px);
-          }
-        }
-
-        #p-index-latest-article--title {
-          display: flex;
-          align-items: flex-end;
-          flex-wrap: wrap;
-          gap: 12px;
-          justify-content: space-between;
-
-          width: 100%;
-
-          h2 {
-            letter-spacing: 1.3px;
-          }
-
-          a {
-            @include typescale-style("body-medium");
-
-            display: inline-flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 3px;
-
-            text-decoration: none;
-            text-indent: initial;
-
-            &::after {
-              @include material-symbols("east", $size: 18);
-
-              transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
-            }
-
-            &:hover::after {
-              transform: translateX(4px);
-            }
-          }
-        }
-      }
-    }
-
-    .p-index-card {
-      width: 100%;
-      height: 100%;
-
-      text-decoration: none;
-
-      &:nth-of-type(1) .c-card-impression {
-        background-color: #5574a9;
-      }
-
-      &:nth-of-type(2) .c-card-impression {
-        background-color: #a95586;
-      }
-
-      &:nth-of-type(3) .c-card-impression {
-        background-color: #a97155;
-      }
-
-      &:nth-of-type(4) .c-card-impression {
-        background-color: #7255a9;
-      }
-
-      &:nth-of-type(5) .c-card-impression {
-        background-color: #82a955;
-      }
-
-      &:nth-of-type(6) .c-card-impression {
-        background-color: #a95555;
       }
     }
   }
@@ -418,16 +305,3 @@ hr {
     flex-grow: 1;
   }
 }
-
-@import "_snippets/404NotFound.scss";
-@import "_snippets/Carousel";
-@import "_snippets/Footer.scss";
-@import "_snippets/Header.scss";
-@import "_snippets/LoadingSplash.scss";
-@import "_snippets/QuickJump.scss";
-@import "_snippets/ScrollToTop.scss";
-@import "_snippets/UniversalLayout.scss";
-
-@import "@1100";
-@import "@648";
-@import "@425";

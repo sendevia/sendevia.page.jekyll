@@ -16,125 +16,91 @@
 
 /***/ }),
 
-/***/ "./webpack/_components/monet.js":
-/*!**************************************!*\
-  !*** ./webpack/_components/monet.js ***!
-  \**************************************/
+/***/ "./webpack/monet.js":
+/*!**************************!*\
+  !*** ./webpack/monet.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   generateColorPalette: () => (/* binding */ generateColorPalette),
-/* harmony export */   paletteProperty: () => (/* binding */ paletteProperty),
-/* harmony export */   setPaletteProperty: () => (/* binding */ setPaletteProperty)
+/* harmony export */   generateColorPalette: () => (/* binding */ generateColorPalette)
 /* harmony export */ });
 /* harmony import */ var _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/material-color-utilities */ "./node_modules/@material/material-color-utilities/index.js");
 
 
 /**
  * 调色板提供器
- * @param {*} 生成调色板
- * @returns
+ * @param {number} argbColor 颜色来源
+ * @param {string} name token的后缀
+ * @param {"a1/a2/a3/n1/n2/error"} append 调色板的类型
+ * @param {[]} tones 调色板的色相
+ * @return CorePalette Object
  */
-function paletteProperty(source, key, append, tones) {
-  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(source);
+function paletteProperty(argbColor, name, append, tones) {
+  const palette = _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.CorePalette.of(argbColor);
   return {
     rawPalette: {
-      [key]: palette[append],
+      [name]: palette[append],
     },
     tones: tones,
   };
 }
 
 /**
- * 在DOM中设置调色板
- * @param {*} paletteProvider 调色板提供器
+ * 设置调色板
+ * @param {Object} paletteProvider - 一个 palette object
  */
-function setPaletteProperty(paletteProvider) {
-  function updateVariables(variables) {
-    var style = document.createElement("style");
-    var cssVarsString = ":root {";
-    for (var key in variables) {
-      cssVarsString += `${key}: ${variables[key]};`;
-    }
-    cssVarsString += "}";
-    style.innerHTML = cssVarsString;
-    document.head.appendChild(style);
-  }
-
-  for (const [key, palette] of Object.entries(paletteProvider.rawPalette)) {
-    var cssTokens = {};
+function setPalette(paletteProvider) {
+  const cssVars = Object.entries(paletteProvider.rawPalette).reduce((cssTokens, [key, palette]) => {
     const paletteKey = key.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-    for (const tone of paletteProvider.tones) {
-      const token = `--md-ref-palette-${paletteKey}${tone}`;
-      const color = (0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.hexFromArgb)(palette.tone(tone));
-      cssTokens[token] = color;
-    }
-    updateVariables(cssTokens);
-  }
+    paletteProvider.tones.forEach((tone) => {
+      const varName = `--md-ref-palette-${paletteKey}${tone}`;
+      cssTokens[varName] = (0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.hexFromArgb)(palette.tone(tone));
+    });
+    return cssTokens;
+  }, {});
+
+  const styleElement = document.createElement("style");
+  styleElement.innerHTML = `:root { ${Object.entries(cssVars)
+    .map(([varName, color]) => `${varName}: ${color};`)
+    .join("")} }`;
+  document.head.appendChild(styleElement);
 }
 
 /**
  * 根据颜色生成调色板
- * @param argbColor 输入一个 argb 颜色
+ * @param {number} baseColor - 输入一个 argb 颜色
  */
-async function generateColorPalette(argbColor) {
-  const errorTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "error", "error", errorTones));
+async function generateColorPalette(baseColor) {
+  const palettes = [
+    { name: "error", append: "error", tones: [10, 20, 30, 40, 80, 90, 100] },
+    { name: "neutralVariant", append: "n2", tones: [30, 50, 60, 80, 90] },
+    { name: "neutral", append: "n1", tones: [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100] },
+    { name: "tertiary", append: "a3", tones: [10, 20, 30, 40, 80, 90, 100] },
+    { name: "secondary", append: "a2", tones: [10, 20, 30, 40, 48, 80, 90, 100] },
+    { name: "primary", append: "a1", tones: [10, 20, 30, 40, 80, 90, 100] },
+  ];
 
-  const neutralVariantTones = [30, 50, 60, 80, 90];
-  setPaletteProperty(paletteProperty(argbColor, "neutralVariant", "n2", neutralVariantTones));
+  const harmonizedPalettes = [
+    { color: "#c08eaf", name: "purple", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#f9d770", name: "yellow", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#68b88e", name: "green", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#5cb3cc", name: "blue", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+    { color: "#c27c88", name: "red", append: "a1", tones: [10, 20, 30, 40, 80, 90, 95] },
+  ];
 
-  const neutralTones = [0, 4, 6, 10, 12, 17, 20, 22, 24, 87, 90, 92, 94, 95, 96, 98, 100];
-  setPaletteProperty(paletteProperty(argbColor, "neutral", "n1", neutralTones));
+  for (const palette of palettes) {
+    const paletteObject = paletteProperty(baseColor, palette.name, palette.append, palette.tones);
+    setPalette(paletteObject);
+  }
 
-  const tertiaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "tertiary", "a3", tertiaryTones));
-
-  const secondaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "secondary", "a2", secondaryTones));
-
-  const primaryTones = [10, 20, 30, 40, 80, 90, 100];
-  setPaletteProperty(paletteProperty(argbColor, "primary", "a1", primaryTones));
+  for (const palette of harmonizedPalettes) {
+    const paletteObject = paletteProperty(_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.Blend.harmonize((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(palette.color), baseColor), palette.name, palette.append, palette.tones);
+    setPalette(paletteObject);
+  }
 }
-
-
-/***/ }),
-
-/***/ "./webpack/_components/ripple.js":
-/*!***************************************!*\
-  !*** ./webpack/_components/ripple.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   effectRipple: () => (/* binding */ effectRipple)
-/* harmony export */ });
-/**
- * 添加涟漪效果
- * @param {selector} element
- */
-const effectRipple = (element) => {
-  element.addEventListener("mousedown", (e) => {
-    const x = e.offsetX;
-    const y = e.offsetY;
-    const d = Math.max(element.clientWidth, element.clientHeight);
-
-    const rippleC = document.createElement("e-ripple");
-    element.appendChild(rippleC);
-
-    rippleC.style.setProperty("--e-ripple-PosX", x);
-    rippleC.style.setProperty("--e-ripple-PosY", y);
-    rippleC.style.setProperty("--e-ripple-Diameter", d);
-  });
-  element.addEventListener("animationend", () => {
-    const rippleR = element.querySelector("e-ripple");
-    element.removeChild(rippleR);
-  });
-};
 
 
 /***/ }),
@@ -6399,11 +6365,9 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/material-color-utilities */ "./node_modules/@material/material-color-utilities/index.js");
-/* harmony import */ var _components_monet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_components/monet */ "./webpack/_components/monet.js");
-/* harmony import */ var _components_ripple__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_components/ripple */ "./webpack/_components/ripple.js");
-/* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! simple-jekyll-search/dest/simple-jekyll-search.min.js */ "./node_modules/simple-jekyll-search/dest/simple-jekyll-search.min.js");
-/* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _monet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./monet */ "./webpack/monet.js");
+/* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-jekyll-search/dest/simple-jekyll-search.min.js */ "./node_modules/simple-jekyll-search/dest/simple-jekyll-search.min.js");
+/* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -6411,11 +6375,11 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * 主题 - 根节点
  */
-const themeRoot = document.querySelector(".t-root");
+const themeRoot = document.querySelector(".theme-root");
 /**
- * 主题 - 加载指示器
+ * 主题 - 加载闪屏
  */
-const themeLoadingIndicator = document.querySelector(".s-loading");
+const themeLoadingIndicator = document.querySelector(".loading-splash");
 /**
  * 主题 - 定位当前所在页面
  */
@@ -6423,11 +6387,11 @@ const themeCurrentPage = window.location.pathname;
 /**
  * 主题 - 模态对话框
  */
-const themeDialog = document.querySelector(".c-dialog");
+const themeDialog = document.querySelector(".modal-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
-const themeDialogControllerOpen = document.querySelectorAll("#s-header-webinfo, #c-appbar-InfoIcon");
+const themeDialogControllerOpen = document.querySelectorAll("#default-header-webinfo, #appbar-InfoIcon");
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
@@ -6435,23 +6399,27 @@ const themeDialogControllerClose = document.querySelector("#dialog-close");
 /**
  * 主题 - 跳转到页首
  */
-const themeScrollToTop = document.querySelectorAll(".s-scrolltop");
+const themeScrollToTop = document.querySelectorAll("#main-layout-scrolltop");
 /**
  * 主题 - 涟漪效果元素
  */
 const themeRippleElements = document.querySelectorAll(
-  `#s-unilayout-content-filler[spec='article'] li a, #s-unilayout-content-filler[spec='article'] p a, button, .c-card[spec='clear'], .c-card[spec='focus'], #c-navigation-drawer details a, .c-navigation-destination-accent, .s-header-webinfo, .s-carousel-article`
+  `#main-layout-content-filler[spec='article'] li a, #main-layout-content-filler[spec='article'] p a, button, .card[spec='clear'], .card[spec='focus'], #navigation-drawer details a, .navigation-destination-accent, .default-header-webinfo, .carousel-article`
 );
 /**
  * 主题 - 延迟跳转元素
  */
 const themeDelayRedirect = document.querySelectorAll(
-  "#c-navigation-drawer-backward, .c-search-result-item, #p-index-latest-article--title > a, .p-index-card, .s-carousel-article, #c-navigation-destinations a, .p-posts-timeline-post-card a, .s-quickjmp"
+  "#navigation-drawer-backward, .main-layout-search-result-item, #main-layout-content-filler .card a, .carousel-article, #navigation-destinations a, .p-posts-timeline-post-card a, .main-layout-quicklinks, .p-pixivgallery a"
 );
 /**
  * 主题 - 复制代码块的按钮
  */
-const themeCopyButtons = document.querySelectorAll("span.copy-button");
+const themeCopyButtons = document.querySelectorAll("div.blockcopy");
+/**
+ * 主题 - 首页文章瀑布流容器
+ */
+const themeFeedflow = document.querySelector(".main-layout[spec='feed'] #main-layout-content-filler");
 /**
  * 调色盘 - HEX颜色
  */
@@ -6459,7 +6427,11 @@ const paletteHEX = document.body.getAttribute("color");
 /**
  * 文章 - 内容流
  */
-const contentFlow = document.querySelector("#s-unilayout-content-flow");
+const contentFlow = document.querySelector("#main-layout-content-flow");
+/**
+ * 文章 - 标题锚点
+ */
+const contentAnchors = document.querySelectorAll("#main-layout-content-filler section:nth-child(1) h1");
 /**
  * 文章 - ul随机旋转的marker
  */
@@ -6467,11 +6439,11 @@ const contentRotationListItemsBullet = document.querySelectorAll("ul li");
 /**
  * 全局导航栏
  */
-const navigationContainer = document.querySelector(".c-navigation");
+const navigationContainer = document.querySelector(".navigation");
 /**
  * 全局导航栏 - 展开
  */
-const navigationDrawer = document.querySelector("#c-navigation-drawer");
+const navigationDrawer = document.querySelector("#navigation-drawer");
 /**
  * 全局导航栏 - 展开 - 一级目录元素
  */
@@ -6483,38 +6455,36 @@ const navigationDrawerH2Entries = navigationDrawer ? navigationDrawer.querySelec
 /**
  * 全局导航栏 - 状态控制器
  */
-const navigationController = document.querySelector("#c-navigation-destinations > div");
+const navigationController = document.querySelector("#navigation-destinations > div");
 /**
  * 全局导航栏 - 状态控制器按钮
  */
-const navigationControllerButton = document.querySelectorAll("#c-appbar-menu, #c-navigation-drawer-close");
+const navigationControllerButton = document.querySelectorAll("#appbar-menu, #navigation-drawer-close");
 /**
  * 搜索 - 状态控制器
  */
-const searchContainerController = document.querySelectorAll("#c-navigation-fab > button, #c-appbar-search, #c-search-input-box > button");
+const searchContainerController = document.querySelectorAll("#navigation-fab > button, #appbar-search");
 /**
  * 移动端 - 标题栏
  */
-const mobileAppBar = document.querySelector(".c-appbar");
+const mobileAppBar = document.querySelector(".appbar");
 /**
  * Carousel - 内容容器
  */
-const carouselContainer = document.querySelector(".s-carousel");
+const carouselContainer = document.querySelector(".carousel");
 /**
  * Carousel - 状态控制器
  */
-const carouselController = carouselContainer ? carouselContainer.querySelectorAll(".s-carousel-control") : [];
+const carouselController = carouselContainer ? carouselContainer.querySelectorAll(".carousel-control") : [];
 /**
  * Carousel - 展示的文章
  */
-const carouselPostList = carouselContainer ? carouselContainer.querySelector("#s-carousel-container") : [];
+const carouselPostList = carouselContainer ? carouselContainer.querySelector("#carousel-container") : [];
 
-/**
- * 切换 attribute
- */
-function toggleAttr(element, attribute, boolean) {
-  element.toggleAttribute(attribute, boolean);
-}
+const bpLarge = 1600;
+const bpExpanded = 1200;
+const bpMedium = 840;
+const bpCompact = 600;
 
 /**
  * 滚动事件
@@ -6537,15 +6507,8 @@ function scrollHandler() {
 }
 
 /**
- * 缩放事件
- */
-function handleResize() {
-  navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
-  navigationDrawer.toggleAttribute("show", window.innerWidth >= 1100 ? true : false);
-}
-
-/**
  * 链接跳转事件
+ * @param {string} linkElement
  */
 function handleLinkDelayRedirection(linkElement) {
   linkElement.addEventListener("click", (event) => {
@@ -6554,7 +6517,9 @@ function handleLinkDelayRedirection(linkElement) {
     const target = linkElement.target;
 
     if (target === "_blank") {
-      window.open(linkElement.href);
+      setTimeout(() => {
+        window.open(linkElement.href);
+      }, redirectDelay);
     } else {
       displayLoadingScreen();
       setTimeout(() => {
@@ -6579,7 +6544,7 @@ function initializeModal() {
 
   const closeModal = () => {
     toggleBodyBlur(false);
-    themeDialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both c-dialog-container-close`;
+    themeDialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both modal-dialog-container-close`;
     setTimeout(() => {
       themeDialog.close();
       themeDialog.style.animation = "";
@@ -6615,12 +6580,11 @@ function displayLoadingScreen() {
 /**
  * 移除加载屏幕
  */
-function removeLoadingScreen() {
-  const loadingDelay = 450;
-  themeRoot.setAttribute("o-onload", "");
+function removeLoadingScreen(delay = 450) {
   setTimeout(() => {
+    themeRoot.setAttribute("o-onload", "");
     themeLoadingIndicator.style.display = "none";
-  }, loadingDelay);
+  }, delay);
 }
 
 /**
@@ -6631,181 +6595,308 @@ function rotateBulletPoints() {
   document.head.appendChild(styleElement);
 
   const listItems = Array.from(contentRotationListItemsBullet);
-  listItems.forEach((listItem, index) => {
+  listItems.forEach((_, index) => {
     const rotationDegrees = Math.floor(Math.random() * 360);
     const cssRule = `ul li:nth-child(${index + 1})::before { transform: rotate(${rotationDegrees}deg); }`;
     styleElement.sheet.insertRule(cssRule, styleElement.sheet.cssRules.length);
   });
 }
 
+var snackbarQueue = [];
 /**
  * 底部提示条
+ * @param {string} message
  */
-var snackbars = [];
 function createSnackbar(message) {
   const snackbarElement = document.createElement("div");
-  snackbarElement.className = "c-snackbar";
+  snackbarElement.className = "snackbar";
   snackbarElement.setAttribute("visible", "false");
 
   const messageElement = document.createElement("p");
-  messageElement.id = "c-snackbar-supporting";
+  messageElement.id = "snackbar-supporting";
   messageElement.textContent = message;
 
   const closeButton = document.createElement("button");
   closeButton.textContent = "close";
-  closeButton.className = "c-iconbtn";
-  closeButton.id = "c-snackbar-icon";
-  closeButton.addEventListener("click", () => {
-    snackbarElement.setAttribute("visible", "false");
-    setTimeout(() => {
-      const index = snackbars.indexOf(snackbarElement);
-      if (index !== -1) {
-        snackbars.splice(index, 1);
-        updateSnackbarPositions();
-      }
-      snackbarElement.remove();
-    }, 600);
-  });
+  closeButton.className = "icon-button";
+  closeButton.id = "snackbar-icon";
+  closeButton.addEventListener("click", () => removeSnackbar());
 
   snackbarElement.appendChild(messageElement);
   snackbarElement.appendChild(closeButton);
   document.body.appendChild(snackbarElement);
 
+  snackbarQueue.unshift(snackbarElement);
+  snackbarQueue.forEach((snackbar) => {
+    snackbar.style.bottom = `${snackbarQueue.indexOf(snackbar) * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`;
+  });
+
   setTimeout(() => {
     snackbarElement.setAttribute("visible", "true");
   }, 0);
 
-  snackbars.push(snackbarElement);
-  updateSnackbarPositions();
+  setTimeout(() => removeSnackbar(), 5000);
 
-  setTimeout(() => {
+  function removeSnackbar() {
     snackbarElement.setAttribute("visible", "false");
     snackbarElement.addEventListener("transitionend", () => {
       if (snackbarElement.getAttribute("visible") === "false") {
-        const index = snackbars.indexOf(snackbarElement);
+        const index = snackbarQueue.indexOf(snackbarElement);
         if (index !== -1) {
-          snackbars.splice(index, 1);
-          updateSnackbarPositions();
+          snackbarQueue.splice(index, 1);
+          snackbarQueue.forEach(
+            (snackbar) =>
+              (snackbar.style.bottom = `${snackbarQueue.indexOf(snackbar) * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`)
+          );
         }
         snackbarElement.remove();
       }
     });
-  }, 5000);
+  }
 }
-function updateSnackbarPositions() {
-  let bottom = window.innerWidth >= 648 ? 10 : 90;
 
-  snackbars.forEach((snackbar) => {
-    snackbar.style.bottom = `${bottom}px`;
-    bottom += snackbar.offsetHeight + 10;
+/**
+ * 复制标题链接
+ */
+function copyAnchorLink() {
+  const anchorLink = this.id ? `#${this.id}` : "";
+  if (anchorLink) {
+    navigator.clipboard.writeText(`${window.location.href.split("#")[0]}${anchorLink}`).then(() => createSnackbar("已将快捷链接复制到剪贴板"));
+  }
+}
+
+/**
+ * 监听主题色更改
+ * @param {*} root
+ * @param {*} callback
+ */
+function observeThemeColorChanges(root, callback) {
+  const observer = new MutationObserver(function (mutationsList) {
+    for (let mutation of mutationsList) {
+      if (mutation.type === "attributes" && mutation.attributeName === "color") {
+        callback(mutation.target.getAttribute(mutation.attributeName));
+      }
+    }
   });
+  const config = { attributes: true, attributeFilter: ["color"] };
+  observer.observe(root, config);
+}
+
+/**
+ * 布局提示
+ */
+function layoutNotfication() {
+  const innerWidth = window.innerWidth;
+  const logMessages = {
+    600: "切换布局到 Compact",
+    840: "切换布局到 Medium",
+    1200: "切换布局到 Expended",
+    1600: "切换布局到 Large",
+  };
+
+  for (const width in logMessages) {
+    if (innerWidth === Number(width)) {
+      createSnackbar(logMessages[width]);
+      break;
+    }
+  }
+}
+
+/**
+ * 初始化的元素状态
+ */
+function initState() {
+  navigationContainer.setAttribute("spec", window.innerWidth <= bpMedium ? "bar" : "rail");
+
+  if (themeFeedflow) {
+    const getCardsActualHeight = (element) => {
+      const computedStyle = window.getComputedStyle(element);
+      const height = parseFloat(computedStyle.height);
+      const marginBlockEnd = parseFloat(computedStyle.marginBlockEnd || computedStyle.marginBottom);
+      return height + marginBlockEnd;
+    };
+
+    const accumulateHeights = (orderValue) => {
+      const childrenWithOrder = Array.from(themeFeedflow.children).filter((child) => window.getComputedStyle(child).order === orderValue);
+      const totalHeight = childrenWithOrder.reduce((totalHeight, child) => totalHeight + getCardsActualHeight(child), 0);
+      return { count: childrenWithOrder.length, height: totalHeight + 24 };
+    };
+
+    const resultOrder1 = accumulateHeights("1");
+    const resultOrder2 = accumulateHeights("2");
+
+    if (window.innerWidth <= bpMedium) {
+      var maxHeight = resultOrder1.height + resultOrder2.height;
+    } else {
+      var maxHeight = Math.max(resultOrder1.height, resultOrder2.height);
+    }
+
+    themeFeedflow.style.height = `${maxHeight}px`;
+  }
+}
+
+/**
+ * 获取文章对应id
+ * @param {string} postsArray
+ * @param {string} urlValue
+ * @returns
+ */
+function getIdByUrl(postsArray, urlValue) {
+  const post = postsArray.find((post) => post.url === urlValue);
+  return post ? post.id : null;
+}
+
+/**
+ * 添加涟漪效果
+ * @param {selector} parentElement
+ */
+function effectRipple(parentElement) {
+  const clearRipple = (parentElement) => {
+    const rippleR = parentElement.querySelector("ripple-effect");
+    if (rippleR) {
+      rippleR.style.opacity = 0;
+      parentElement.removeChild(rippleR);
+    }
+  };
+
+  const addRipple = (parentElement, event) => {
+    const rippleA = document.createElement("ripple-effect");
+
+    const { clientWidth, clientHeight } = parentElement;
+    const diameter = Math.max(clientWidth, clientHeight);
+    const { offsetX, offsetY } = event;
+
+    rippleA.style.setProperty("--ripple-effect-PosX", offsetX);
+    rippleA.style.setProperty("--ripple-effect-PosY", offsetY);
+    rippleA.style.setProperty("--ripple-effect-Diameter", diameter);
+
+    parentElement.appendChild(rippleA);
+  };
+
+  let isLongPress = false;
+  let isPressing = false;
+
+  const handleMouseDown = (event) => {
+    isPressing = true;
+    isLongPress = false;
+
+    // 设置一个短延时用于判断是否为短按
+    setTimeout(() => {
+      if (isPressing) {
+        isLongPress = true;
+        console.log("Long Press Detected");
+        addRipple(parentElement, event);
+      }
+    }, 100); // 可以根据需要调整延时时间
+  };
+
+  const handleMouseUp = (event) => {
+    if (isPressing) {
+      if (!isLongPress) {
+        console.log("Quick Click Detected");
+        addRipple(parentElement, event);
+      }
+      isPressing = false;
+    }
+  };
+
+  parentElement.addEventListener("mousedown", handleMouseDown);
+  parentElement.addEventListener("mouseup", handleMouseUp);
+  parentElement.addEventListener("mouseleave", () => {
+    isPressing = false;
+  });
+  parentElement.addEventListener("animationend", () => clearRipple(parentElement));
 }
 
 window.onload = () => {
-  const searchRoot = window.location.origin;
-  window.simpleJekyllSearch = new SimpleJekyllSearch({
-    fuzzy: false,
-    json: `${searchRoot}/assets/postsmap.json`,
-    noResultsText: "<p>＞︿＜ 无结果</p>",
-    resultsContainer: document.getElementById("c-search-results-container"),
-    searchInput: document.getElementById("c-search-input-box"),
-    searchResultTemplate: `
-      <a class="c-search-result-item" href="{url}">
-        <div class="c-card" spec="clear">
-          <div class="c-card-supporting">
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-        </div>
-      </a>`,
-  });
+  // 初始化涟漪效果
+  themeRippleElements.forEach(effectRipple);
 
+  // 初始化滚动监听
+  contentFlow.onscroll = scrollHandler;
+
+  // 初始化跳转到页首按钮
+  themeScrollToTop.forEach((element) => element.addEventListener("click", () => contentFlow.scrollTo({ top: 0 })));
+
+  // 随机旋转列表mark
   rotateBulletPoints();
 
-  const headers = document.querySelectorAll("#s-unilayout-content-filler > h1");
-  headers.forEach((element) => {
+  // 获取postsmap.json并初始化搜索
+  const siteRoot = window.location.origin;
+  fetch(`${siteRoot}/assets/postsmap.json`)
+    .then((response) => {
+      if (!response.ok) {
+        createSnackbar("无法获取postsmap.json文件");
+      }
+      return response.json();
+    })
+    .then((postsArray) => {
+      try {
+        console.log("初始化搜索");
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+          fuzzy: false,
+          json: postsArray,
+          noResultsText: "<p>(´。＿。｀)? 没有找到哦</p>",
+          resultsContainer: document.getElementById("main-layout-search-results-container"),
+          searchInput: document.getElementById("main-layout-search-input-box"),
+          searchResultTemplate: `
+          <a class="main-layout-search-result-item" href="{url}">
+            <div class="card" spec="clear">
+              <div class="card-supporting">
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </div>
+          </a>`,
+        });
+      } catch (error) {
+        createSnackbar("无法初始化搜索功能：" + error);
+        console.error("在初始化搜索时发生错误：", error);
+      }
+      // 获取文章与对应id
+      try {
+        createSnackbar("当前文章id：" + getIdByUrl(postsArray, window.location.pathname));
+      } catch (error) {
+        createSnackbar("无法获取文章与对应id：" + error);
+      }
+    })
+    .catch((error) => {
+      createSnackbar("在获取postsmap.json文件时发生错误：" + error);
+      console.error("在获取postsmap.json文件时发生错误：", error);
+    });
+
+  // 标题锚点点击事件
+  contentAnchors.forEach((element) => {
     element.addEventListener("click", copyAnchorLink);
   });
-  const testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
-  if (testButton) {
-    testButton.addEventListener("click", () => createSnackbar(testButton.innerText));
-  }
-  function copyAnchorLink() {
-    const anchorLink = this.id ? `#${this.id}` : "";
-    if (anchorLink) {
-      navigator.clipboard.writeText(`${window.location.href.split("#")[0]}${anchorLink}`).then(() => createSnackbar("已将快捷链接复制到剪贴板"));
-    }
-  }
 
-  setTimeout(() => {
-    if (paletteHEX) {
-      (0,_components_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(paletteHEX));
-    }
-
-    removeLoadingScreen();
-  }, 500);
-
+  // 复制按钮点击事件
   themeCopyButtons.forEach((element) =>
     element.addEventListener("click", (e) => {
       const highlightBlock = e.target.closest(".highlight");
       const codeToCopy = highlightBlock.querySelector("code").innerText;
-      navigator.clipboard.writeText(codeToCopy).then(() => createSnackbar("已将代码复制到剪贴板"));
+      navigator.clipboard
+        .writeText(codeToCopy)
+        .then(() => createSnackbar("已将代码复制到剪贴板"))
+        .catch((error) => createSnackbar("未能将代码复制到剪贴板：" + error));
     })
   );
-};
 
-window.onpageshow = () => {
-  navigationContainer.setAttribute("spec", window.innerWidth <= 648 ? "bar" : "rail");
-  themeRoot.setAttribute("o-showdrawer", window.innerWidth >= 1100 ? true : false);
-
-  try {
-    const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
-    const inactiveSegment = activatedSegment.querySelector(".c-navigation-segment-inactive");
-    inactiveSegment.className = "c-navigation-segment-active";
-  } catch (err) {
-    document.querySelector("#c-navigation-destinations > div").className = "c-navigation-segment-active";
+  // 测试按钮点击事件
+  const testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
+  if (testButton) {
+    testButton.addEventListener("click", () => createSnackbar(testButton.innerText));
   }
 
-  themeScrollToTop.forEach((element) => element.addEventListener("click", () => contentFlow.scrollTo({ top: 0 })));
-  themeRippleElements.forEach(_components_ripple__WEBPACK_IMPORTED_MODULE_2__.effectRipple);
-  contentFlow.onscroll = scrollHandler;
-  window.onresize = handleResize;
-
-  initializeModal();
-
-  searchContainerController.forEach((element) => element.addEventListener("click", () => toggleAttr(themeRoot, "o-showsearch")));
-
-  if (navigationDrawer) {
-    let enterTimeout;
-    const onPointerEnter = () => {
-      enterTimeout = setTimeout(() => themeRoot.setAttribute("o-showdrawer", true), 500);
-    };
-    const onPointerLeave = () => clearTimeout(enterTimeout);
-    const onClick = () => themeRoot.setAttribute("o-showdrawer", true);
-    const onCloseClick = () => themeRoot.setAttribute("o-showdrawer", false);
-
-    navigationController.addEventListener("pointerenter", onPointerEnter);
-    navigationController.addEventListener("pointerleave", onPointerLeave);
-    navigationControllerButton.forEach((element) => element.addEventListener("click", onClick));
-    document.querySelector("#c-navigation-drawer-close").addEventListener("click", onCloseClick);
-
-    const onH1Click = (event) => {
-      const element = event.target;
-      const parentDetails = element.closest("details");
-      if (parentDetails instanceof HTMLElement) {
-        parentDetails.open = !parentDetails.open;
-      }
-    };
-    const onH2Click = () => themeRoot.setAttribute("o-showdrawer", false);
-    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
-
-    navigationDrawerH1Entries.forEach((element) => element.addEventListener("click", onH1Click));
-    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", onH2Click));
-    contentFlow.addEventListener("click", onDocumentClick);
+  // 初始化模态框
+  if (themeDialog) {
+    initializeModal();
   }
 
+  // 创建跳转延迟
   themeDelayRedirect.forEach(handleLinkDelayRedirection);
 
+  // 初始化文章轮播
   if (carouselContainer && carouselPostList && carouselController.length === 2) {
     var currentValue = 1;
     carouselPostList.setAttribute("data-scroll", currentValue);
@@ -6842,6 +6933,83 @@ window.onpageshow = () => {
       },
       { passive: false }
     );
+  }
+
+  // 移除加载屏幕
+  removeLoadingScreen(1500);
+
+  // 监听主题色更改
+  observeThemeColorChanges(themeRoot, function (color) {
+    createSnackbar("主题色已更改为 " + color);
+    (0,_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(color));
+  });
+};
+
+window.onpageshow = () => {
+  initState();
+
+  // 初始化缩放事件
+  window.addEventListener("resize", () => {
+    initState();
+    layoutNotfication();
+  });
+
+  // 创建主题色调色板
+  if (paletteHEX) {
+    (0,_monet__WEBPACK_IMPORTED_MODULE_1__.generateColorPalette)((0,_material_material_color_utilities__WEBPACK_IMPORTED_MODULE_0__.argbFromHex)(paletteHEX));
+  }
+
+  // 初始化侧边栏
+  if (navigationDrawer) {
+    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
+    themeRoot.setAttribute("o-showdrawer", window.innerWidth <= bpMedium ? false : true);
+    window.innerWidth <= bpLarge ? contentFlow.addEventListener("click", onDocumentClick) : contentFlow.removeEventListener("click", onDocumentClick);
+    window.onresize = () => {
+      if (window.innerWidth <= bpLarge) {
+        contentFlow.addEventListener("click", onDocumentClick);
+      } else {
+        themeRoot.setAttribute("o-showdrawer", true);
+        contentFlow.removeEventListener("click", onDocumentClick);
+      }
+    };
+
+    let enterTimeout;
+    const onPointerEnter = () => {
+      enterTimeout = setTimeout(() => themeRoot.setAttribute("o-showdrawer", true), 500);
+    };
+    const onPointerLeave = () => clearTimeout(enterTimeout);
+    const onClick = () => themeRoot.setAttribute("o-showdrawer", true);
+    const onCloseClick = () => themeRoot.setAttribute("o-showdrawer", false);
+
+    navigationController.addEventListener("pointerenter", onPointerEnter);
+    navigationController.addEventListener("pointerleave", onPointerLeave);
+    navigationControllerButton.forEach((element) => element.addEventListener("click", onClick));
+    document.querySelector("#navigation-drawer-close").addEventListener("click", onCloseClick);
+
+    const onH1Click = (event) => {
+      const element = event.target;
+      const parentDetails = element.closest("details");
+      if (parentDetails instanceof HTMLElement) {
+        parentDetails.open = !parentDetails.open;
+      }
+    };
+    const onH2Click = () => {
+      if (window.innerWidth <= bpLarge) {
+        themeRoot.setAttribute("o-showdrawer", false);
+      }
+    };
+
+    navigationDrawerH1Entries.forEach((element) => element.addEventListener("click", onH1Click));
+    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", onH2Click));
+  }
+
+  // 初始化导航栏
+  try {
+    const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
+    const inactiveSegment = activatedSegment.querySelector(".navigation-segment-inactive");
+    inactiveSegment.className = "navigation-segment-active";
+  } catch (err) {
+    document.querySelector("#navigation-destinations > div").className = "navigation-segment-active";
   }
 };
 

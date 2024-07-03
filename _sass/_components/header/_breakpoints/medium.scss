@@ -1,0 +1,16 @@
+// 840_header
+& {
+  grid-column: span 4;
+
+  #default-header-hero-container {
+    width: 100%;
+
+    #default-header-hero-headline {
+      @include typescale-style("display-large", $font-size: 8vw, $font-weight: 600, $line-height: 8vw);
+    }
+
+    #default-header-hero-subtitle {
+      @include typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
+    }
+  }
+}

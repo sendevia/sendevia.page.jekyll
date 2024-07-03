@@ -1,0 +1,100 @@
+// https://m3.material.io/components/dialogs/
+// 对话
+
+.modal-dialog[open] {
+  @include mixin-userselect();
+
+  border: none;
+
+  background-color: transparent;
+
+  animation: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized) 1 normal both modal-dialog-container-show;
+
+  #modal-dialog-layout {
+    position: relative;
+
+    max-width: 360px;
+    min-width: 280px;
+
+    overflow: hidden;
+
+    border-radius: var(--md-sys-shape-corner-extra-large);
+
+    background-color: var(--md-sys-color-surface);
+
+    animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+      modal-dialog-layout-show;
+    pointer-events: auto;
+
+    #modal-dialog-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 12px;
+
+      margin-block-end: 64px;
+      margin-inline: 12px;
+
+      color: var(--md-sys-color-on-surface-variant);
+
+      animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+        modal-dialog-content-show;
+
+      #modal-dialog-leader-icon {
+        @include material-symbols($size: 24);
+      }
+
+      #modal-dialog-headline {
+        margin-inline: 10px;
+
+        h3 {
+          margin-block-end: 6px;
+
+          color: var(--md-sys-color-on-surface);
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+
+      #modal-dialog-supporting-list {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+
+        width: 100%;
+
+        animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short2) 1 normal both
+          modal-dialog-supporting-list-show;
+
+        .modal-dialog-tip-items {
+          display: grid;
+          align-items: center;
+          gap: 12px;
+          grid-template-columns: auto auto;
+        }
+      }
+    }
+
+    #modal-dialog-button {
+      display: flex;
+      justify-content: end;
+
+      position: absolute;
+      right: 0px;
+
+      margin: 12px;
+
+      animation: var(--md-sys-motion-duration-long1) var(--md-sys-motion-easing-emphasized) var(--md-sys-motion-duration-short1) 1 normal both
+        modal-dialog-button-show;
+    }
+  }
+
+  &::backdrop {
+    background-color: transparent;
+  }
+}

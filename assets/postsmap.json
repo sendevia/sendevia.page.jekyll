@@ -2,16 +2,16 @@
 layout: none
 ---
 [
-  {% for post in site.posts reversed -%}
+  {% for article in site.posts reversed -%}
     {
-      "title"       : "{{ post.title | escape }}",
-      "description" : "{{ post.description | default: site.description }}",
-      "author"      : "{{ post.author }}",
-      "category"    : "{{ post.categories }}",
-      "tags"        : "{{ post.tags | join: ', ' }}",
-      "date"        : "{{ post.date }}",
-      "impression"  : "{{ post.impression | default: site.impression }}",
-      "url"         : "{{ post.url }}",
+      "title"       : "{{ article.title | escape }}",
+      "description" : "{{ article.description | default: site.description }}",
+      "author"      : "{{ site.data.authors[article.author].name | default: site.author.name }}",
+      "category"    : "{{ article.categories }}",
+      "tags"        : "{{ article.tags | join: ', ' }}",
+      "date"        : "{{ article.date }}",
+      "impression"  : "{{ article.impression | default: site.impression }}",
+      "url"         : "{{ article.url }}",
       "id"          : "{{ forloop.index }}"
     }
     {%- unless forloop.last -%},{% endunless %}

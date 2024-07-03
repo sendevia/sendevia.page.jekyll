@@ -20,8 +20,8 @@ color: "#c4518d"
               {% for post in day.items %}
                 <div class="p-posts-timeline-post-card">
                   <a href="{{ post.url }}">
-                    <div class="c-card" spec="clear">
-                      <div class="c-card-impression">
+                    <div class="card" spec="clear">
+                      <div class="card-impression">
                         {% if post.impression and post.impression != "" %}
                           {% assign photograph = post.impression %}
                         {% elsif site.impression %}
@@ -33,12 +33,12 @@ color: "#c4518d"
                           <img src="{{ photograph }}" alt="{{ post.title }}的封面" />
                         {% endif %}
                       </div>
-                      <div class="c-card-supporting">
+                      <div class="card-supporting">
                         <h3>{{ post.title }}</h3>
                         {% if post.description %}
                           <p>{{ post.description }}</p>
                         {% endif %}
-                        <p id="c-card-supporting--weaken">发布于{{ year.name }}年{{ month.name }}月{{ day.name }}日</p>
+                        <p id="card-supporting--weaken">发布于{{ year.name }}年{{ month.name }}月{{ day.name }}日</p>
                       </div>
                     </div>
                   </a>
