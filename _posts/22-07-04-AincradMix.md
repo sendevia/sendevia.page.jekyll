@@ -6,9 +6,9 @@ color: "#0089ff"
 impression: "/assets/images/22/screenshot01.webp"
 categories: 
   - osu!皮肤
-  - 测试
 tags:
-  - Readme
+  - readme
+  - osu!
 featured: true
 ---
 
@@ -130,4 +130,4 @@ featured: true
 
 - `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
 
-_非常感谢这些资源的贡献者_
+> _非常感谢这些资源的贡献者_
