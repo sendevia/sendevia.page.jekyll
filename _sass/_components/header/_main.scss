@@ -7,12 +7,19 @@
 
   word-break: break-word;
 
+  svg {
+    display: none;
+  }
+
   #default-header-webinfo {
     position: absolute;
     bottom: 0px;
     right: 0px;
 
+    color: var(--md-ref-palette-secondary100);
+
     overflow: hidden;
+    z-index: 2;
   }
 
   #default-header-hero-container {
@@ -21,6 +28,8 @@
     flex-direction: column;
     gap: 12px;
     justify-content: center;
+
+    position: relative;
 
     height: 100%;
 
@@ -31,22 +40,16 @@
     border-radius: var(--md-sys-shape-corner-medium);
     border: 1px solid var(--md-sys-color-outline-variant);
 
-    background-blend-mode: overlay;
-    background: center/cover no-repeat var(--md-ref-palette-secondary48);
-
     overflow: hidden;
     transition: var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard);
-
-    @media (prefers-color-scheme: dark) {
-      color: var(--md-ref-palette-secondary90);
-      background-color: var(--md-ref-palette-secondary30);
-    }
+    z-index: 1;
 
     #default-header-hero-headline {
       @include typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
 
       width: 100%;
 
+      mix-blend-mode: hard-light;
       transition: var(--md-sys-motion-duration-short1) var(--md-sys-motion-easing-standard);
     }
 
@@ -55,7 +58,53 @@
 
       width: 100%;
 
+      mix-blend-mode: hard-light;
       transition: var(--md-sys-motion-duration-short1) var(--md-sys-motion-easing-standard);
+    }
+
+    #default-header-impression {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      height: 100%;
+      width: 100%;
+
+      background-color: var(--md-ref-palette-secondary48);
+
+      z-index: -1;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--md-ref-palette-secondary10);
+      }
+
+      #default-header-impression-noise {
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        filter: url(#noise-filter);
+        mix-blend-mode: difference;
+        opacity: 0.1;
+        z-index: 2;
+      }
+
+      #default-header-impression-image {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
+        height: 100%;
+        width: 100%;
+
+        background: center/cover no-repeat;
+
+        filter: blur(3px);
+        opacity: 0.85;
+        transform: scale(1.02);
+        z-index: 1;
+      }
     }
   }
 

@@ -1,4 +1,24 @@
 <div class="default-header">
+  <svg width="0" height="0">
+    <filter id="noise-filter">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="1"
+        numOctaves="5"
+        seed="{{ site.version }}"
+        result="noise" />
+      <feColorMatrix
+        type="saturate"
+        values="0"
+        result="desaturatedNoise" />
+      <feComponentTransfer>
+        <feFuncG type="discrete" tableValues="0 1" />
+        <feFuncR type="discrete" tableValues="0 1" />
+        <feFuncB type="discrete" tableValues="0 1" />
+        <feFuncA type="discrete" tableValues="1 1" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
   {% if page.url != "/index.html" %}
     <button
       class="icon-button"
@@ -6,10 +26,14 @@
       spec="standard">info</button>
   {% endif %}
   {% assign photograph = page.impression | default: site.impression %}
-  <div id="default-header-hero-container" style="background-image: url('{{ photograph }}');">
+  <div id="default-header-hero-container">
     <span id="default-header-hero-headline">{{ page.title | default: site.title }}</span>
     {% if page.description and page.description != "" %}
       <span id="default-header-hero-subtitle">{{ page.description }}</span>
     {% endif %}
+    <div id="default-header-impression">
+      <div id="default-header-impression-noise"></div>
+      <div id="default-header-impression-image" style="background-image: url('{{ photograph }}');"></div>
+    </div>
   </div>
 </div>
