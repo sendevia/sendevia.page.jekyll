@@ -7,9 +7,9 @@
 
   position: fixed;
   bottom: 0px;
-  right: 50%;
+  left: 92px;
 
-  max-width: 480px;
+  max-width: 840px;
   min-width: 240px;
 
   padding-inline: 16px 8px;
@@ -20,7 +20,6 @@
 
   box-shadow: var(--md-sys-elevation-level3);
   opacity: 0;
-  transform: translateX(50%);
   transition: var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-emphasized);
   z-index: 99;
 
@@ -47,4 +46,6 @@
   &[visible="false"] {
     opacity: 0;
   }
+
+  @import "_breakpoints/main";
 }

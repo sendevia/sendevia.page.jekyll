@@ -5,7 +5,7 @@
         type="fractalNoise"
         baseFrequency="1"
         numOctaves="5"
-        seed="{{ site.version }}"
+        seed="{{ site.version | remove: '.'  }}"
         result="noise" />
       <feColorMatrix
         type="saturate"

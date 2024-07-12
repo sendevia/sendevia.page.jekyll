@@ -7,7 +7,7 @@ $columns: 4;
   #main-layout-content-flow {
     grid-template-columns: repeat($columns, 1fr);
 
-    padding-block: 68px;
+    padding-block: 64px;
     padding-inline: 42px;
 
     #main-layout-search {
