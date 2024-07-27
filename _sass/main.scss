@@ -64,6 +64,7 @@ body {
 
   backdrop-filter: contrast(1);
   opacity: 1;
+  touch-action: none;
   transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
   z-index: 1;
 

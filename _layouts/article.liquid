@@ -32,11 +32,7 @@
           <div id="main-layout-search-results-container"></div>
         </div>
 
-        {% if page.url == "/posts.html" %}
-          {% include carousel.liquid %}
-        {% else %}
-          {% include header.liquid %}
-        {% endif %}
+        {% include header.liquid %}
 
         <div id="main-layout-content-filler">
           <section>{% include content.liquid %}</section>
