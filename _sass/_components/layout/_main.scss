@@ -34,9 +34,9 @@
 
     #main-layout-search {
       grid-column: span 12;
-      padding-block-start: 24px;
+      margin-block-start: 24px;
 
-      height: max-content;
+      height: 56px;
 
       overflow: hidden;
       transition: height var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard) var(--md-sys-motion-duration-short1),

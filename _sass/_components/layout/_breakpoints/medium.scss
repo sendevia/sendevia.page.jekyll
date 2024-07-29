@@ -56,13 +56,14 @@ $columns: 4;
         }
 
         h6 {
-          grid-column: span calc($columns - 1);
+          grid-column: span $columns;
 
           margin-inline-start: 12px;
         }
 
         img {
           grid-column: $columns;
+          grid-row: 1;
         }
       }
 
