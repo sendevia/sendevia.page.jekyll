@@ -17,6 +17,14 @@
       section:nth-child(1) {
         overflow: hidden;
 
+        em {
+          display: inline-block;
+
+          font-style: normal;
+
+          transform: skewX(-10deg);
+        }
+
         pre {
           overflow: auto;
         }
