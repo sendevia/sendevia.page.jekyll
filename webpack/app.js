@@ -1,6 +1,7 @@
 import { argbFromHex } from "@material/material-color-utilities";
 import { generateColorPalette } from "./monet";
 import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
+import "giscus";
 
 /**
  * 主题 - 根节点

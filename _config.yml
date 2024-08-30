@@ -1,7 +1,7 @@
 version: "24.0703.0"
 
 title: "sendevia 的小站"
-description: "Contrary to common opinion, less is more. Only by concentrating on the few important and vital things, and refusing to worry over the mass of trivial ones, can we find happiness."
+description: "Contrary to common opinion, less is more."
 baseurl: ""
 lang: "zh"
 timezone: "Asia/Shanghai"
@@ -99,6 +99,21 @@ jekyll-spaceship:
       - img:
           props:
             loading: "lazy"
+
+giscus:
+  id: "comments"
+  repo: "Sendevia/sendevia.page.jekyll"
+  repoid: "MDEwOlJlcG9zaXRvcnkyOTI3ODY4MjI="
+  category: "General"
+  categoryid: "DIC_kwDOEXOShs4CiDp_"
+  mapping: "title"
+  trem: "Welcome to giscus!"
+  reactionsenabled: "1"
+  emitmetadata: "0"
+  inputposition: "top"
+  theme: "preferred_color_scheme"
+  lang: "zh-CN"
+  loading: "lazy"
 
 exclude:
   - .gitignore
