@@ -80,11 +80,11 @@ button.icon-button {
     background-color: var(--md-sys-color-secondary-container);
 
     &:hover {
+      box-shadow: var(--md-sys-elevation-level1);
+
       &::after {
         background-color: var(--md-sys-color-on-secondary-container);
       }
-
-      box-shadow: var(--md-sys-elevation-level1);
     }
 
     &:focus::after,

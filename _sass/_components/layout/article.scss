@@ -214,6 +214,8 @@
           }
 
           &[open] {
+            border-radius: var(--md-sys-shape-corner-extra-large);
+
             summary {
               &:focus-visible {
                 border-radius: var(--md-sys-shape-corner-extra-large-top);
@@ -223,8 +225,6 @@
                 transform: rotateZ(0deg);
               }
             }
-
-            border-radius: var(--md-sys-shape-corner-extra-large);
           }
         }
 

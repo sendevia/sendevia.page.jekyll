@@ -374,7 +374,7 @@ function initState() {
  */
 function getIdByUrl(postsArray, urlValue) {
   const post = postsArray.find((post) => post.url === urlValue);
-  return post ? post.id : null;
+  return post ? post.id : themeCurrentPage;
 }
 
 /**
@@ -415,7 +415,6 @@ function effectRipple(parentElement) {
     setTimeout(() => {
       if (isPressing) {
         isLongPress = true;
-        console.log("Long Press Detected");
         addRipple(parentElement, event);
       }
     }, 100); // 可以根据需要调整延时时间
@@ -424,7 +423,6 @@ function effectRipple(parentElement) {
   const handleMouseUp = (event) => {
     if (isPressing) {
       if (!isLongPress) {
-        console.log("Quick Click Detected");
         addRipple(parentElement, event);
       }
       isPressing = false;
@@ -484,9 +482,14 @@ window.onload = () => {
         createSnackbar("无法初始化搜索功能：" + error);
         console.error("在初始化搜索时发生错误：", error);
       }
+
       // 获取文章与对应id
       try {
-        createSnackbar("当前文章id：" + getIdByUrl(postsArray, window.location.pathname));
+        let id = getIdByUrl(postsArray, window.location.pathname);
+        if (id == "/") {
+          return;
+        }
+        createSnackbar("当前文章id：" + id);
       } catch (error) {
         createSnackbar("无法获取文章与对应id：" + error);
       }

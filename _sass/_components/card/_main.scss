@@ -239,11 +239,11 @@
 
     background-color: var(--md-sys-color-surface-bright);
 
+    cursor: pointer;
+
     @media (prefers-color-scheme: dark) {
       background-color: var(--md-sys-color-surface-dim);
     }
-
-    cursor: pointer;
 
     .card-impression {
       position: relative;
@@ -280,23 +280,23 @@
     }
 
     &:hover {
-      .card-supporting h3 {
-        font-weight: 700;
-      }
-
       color: var(--md-sys-color-on-secondary-container);
 
       background-color: var(--md-sys-color-secondary-container);
+
+      .card-supporting h3 {
+        font-weight: 700;
+      }
     }
 
     &:active {
-      .card-supporting h3 {
-        font-weight: 200;
-      }
-
       border-radius: calc(2 * var(--md-sys-shape-corner-extra-large));
 
       transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+
+      .card-supporting h3 {
+        font-weight: 200;
+      }
     }
   }
 
