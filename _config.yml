@@ -101,6 +101,7 @@ jekyll-spaceship:
             loading: "lazy"
 
 giscus:
+  enabled: true
   id: "comments"
   repo: "Sendevia/sendevia.page.jekyll"
   repoid: "MDEwOlJlcG9zaXRvcnkyOTI3ODY4MjI="

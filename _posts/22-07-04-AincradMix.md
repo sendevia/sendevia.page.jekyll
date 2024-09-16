@@ -29,7 +29,7 @@ featured: true
 
 ## 你需要注意的
 
-- 在 std 模式中，本皮肤的 _**正常版本**_ 适用于 **★6.5** 及以下的大多数谱面[^2]
+- 在 std 模式中，本皮肤适用于 **★6.5** 及以下的大多数谱面[^2]
 - 在应用全局皮肤时，要注意备份 `osu!ui.dll` 和 `osu!gameplay.dll`
 - 本皮肤所提供的 dll 文件仅替换了图像资源，未做其他修改。如果不放心，你可以使用 dnSpy 自行替换文件
 
@@ -128,6 +128,6 @@ featured: true
 
 ## 音效
 
-- `style_lazer/old` 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
+- 来自 [`ppy/osu-resources`](https://github.com/ppy/osu-resources/)
 
 > _非常感谢这些资源的贡献者_
