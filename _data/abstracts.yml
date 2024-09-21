@@ -1,0 +1,45 @@
+- title: "一切开始的地方"
+  content: "
+    这篇文章是一个Jekyll博客文章模板，提供了如何开始使用Jekyll的基本指导。文章内容包括：
+    1. 如何在`_posts`目录下编辑示例文章并重新构建网站以查看更改。
+    2. 博客文章文件命名规则，格式为`YEAR-MONTH-DAY-title.MARKUP`。
+    3. 如何在文章中包含必要的front matter。
+    4. Jekyll对代码片段的强大支持，示例为Ruby代码。
+    5. 推荐查看Jekyll文档以获取更多信息，报告问题或功能请求到Jekyll的GitHub仓库，以及在Jekyll Talk上提问。
+    文章还提供了指向Jekyll文档、GitHub仓库和Jekyll Talk社区的链接。
+    "
+
+- title: "AincradMix"
+  content: "
+    AincradMix是一个为osu!设计的《刀剑神域》主题皮肤，由sendevia制作。
+    它覆盖了游戏的大部分界面元素，采用现代设计，提供良好的打图手感和视觉体验。
+    支持std模式下6.5星及以下谱面，可个性化搭配。用户需注意备份相关文件，并可通过提供的链接下载最新版。
+    推荐设置包括渐出滑条、连击提示图等，同时提供了详细的设置选项。音效素材来源于osu-resources。
+    "
+
+- title: "关于这个主题的一些事"
+  content: "
+    这是一个轻量化的Material 3设计风格的Jekyll主题，由sendevia设计。
+    主题不依赖任何UI框架，支持动态生成调色板，包含多种Material 3样式组件，且为响应式布局。
+    用户可以在文章头信息中自定义头图和主题颜色。
+    主题设计参考了material.io官网和Google设计规范，代码高亮支持多种语言。
+    同时，主题还展示了一些来自Pixiv的图片作品。
+    "
+
+- title: "Components"
+  content: "
+    这是一篇介绍Material3组件的文章，包括Snackbar、Buttons、Icon buttons、Cards、Fabs和Progress Indicators。
+    每个组件都有不同的样式和规格，如elevated、filled、tonal、outlined等，以及不同的尺寸和颜色。
+    文章提供了每个组件的HTML代码示例，以及预览图。
+    "
+
+- title: "设置开机自启动的 Jekyll 服务"
+  content: "
+    这篇文章介绍了如何通过systemd设置Jekyll服务的开机自启动。主要步骤包括：
+    1. 使用`sudo nano /etc/systemd/system/jekyll.service`命令创建一个新的systemd服务文件。
+    2. 在该文件中编辑服务配置，包括设置服务描述、依赖、环境变量（GEM_HOME）、工作目录、用户、启动命令等。
+    3. 保存文件后，使用`sudo systemctl daemon-reload`命令重新加载systemd管理器配置。
+    4. 使用`sudo systemctl enable jekyll --now`命令启动服务并设置开机自启。
+    5. 使用`sudo journalctl -u jekyll`命令检查服务的运行状况。
+    文章强调了在普通用户下启动Jekyll服务，并在用户目录下进行所有操作的重要性。
+    "
