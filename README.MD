@@ -8,49 +8,43 @@
 bundle exec jekyll build
 ```
 
-## 配置开发环境
+# 配置开发环境
 
-### 安装依赖
+## 安装依赖
 
-Debian/Ubuntu
-
-```bash
-sudo apt install ruby-full build-essential zlib1g-dev curl -y
-```
-
-Archlinux
+#### Archlinux
 
 ```bash
 sudo pacman -S ruby base-devel curl
 ```
 
-1. 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
+#### Debian/Ubuntu
+
+```bash
+sudo apt install ruby-full build-essential zlib1g-dev curl -y
+```
+
+#### Fedora
+
+```bash
+sudo dnf install ruby ruby-devel openssl-devel redhat-rpm-config gcc-c++ @development-tools -y
+```
+
+## 使用 [nvm](https://github.com/nvm-sh/nvm) 安装 nodejs
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
 
-`重启终端`
+**`重启终端后`**
 
 ```bash
 nvm install --lts
 ```
 
-### 配置环境变量，以 bash 为例
+## 配置环境变量，以 bash 为例
 
-Debian/Ubuntu
-
-```bash
-echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-```
-
-```bash
-echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-```
-
-`重启终端`
-
-Archlinux
+#### Archlinux
 
 ```bash
 echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
@@ -60,15 +54,25 @@ echo 'export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"' >> ~/.bashrc
 echo 'export PATH="$PATH:$GEM_HOME/bin"' >> ~/.bashrc
 ```
 
-`重启终端`
+#### Debian/Ubuntu/Fedora
 
-### 安装 Jekyll
+```bash
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+```
+
+```bash
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+```
+
+## 安装 Jekyll
+
+**`重启终端后`**
 
 ```bash
 gem install bundler jekyll
 ```
 
-### 开发本项目
+## 开发本项目
 
 切换到本项目文件夹
 
