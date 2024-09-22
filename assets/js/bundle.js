@@ -2473,19 +2473,20 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 /**
- * A class containing the contrast curve for a dynamic color on its background.
+ * A class containing a value that changes with the contrast level.
  *
- * The four values correspond to contrast requirements for contrast levels
- * -1.0, 0.0, 0.5, and 1.0, respectively.
+ * Usually represents the contrast requirements for a dynamic color on its
+ * background. The four values correspond to values for contrast levels -1.0,
+ * 0.0, 0.5, and 1.0, respectively.
  */
 class ContrastCurve {
     /**
      * Creates a `ContrastCurve` object.
      *
-     * @param low Contrast requirement for contrast level -1.0
-     * @param normal Contrast requirement for contrast level 0.0
-     * @param medium Contrast requirement for contrast level 0.5
-     * @param high Contrast requirement for contrast level 1.0
+     * @param low Value for contrast level -1.0
+     * @param normal Value for contrast level 0.0
+     * @param medium Value for contrast level 0.5
+     * @param high Value for contrast level 1.0
      */
     constructor(low, normal, medium, high) {
         this.low = low;
@@ -2494,13 +2495,13 @@ class ContrastCurve {
         this.high = high;
     }
     /**
-     * Returns the contrast ratio at a given contrast level.
+     * Returns the value at a given contrast level.
      *
-     * @param contrastLevel The contrast level. 0.0 is the default (normal);
-     * -1.0 is the lowest; 1.0 is the highest.
-     * @return The contrast ratio, a number between 1.0 and 21.0.
+     * @param contrastLevel The contrast level. 0.0 is the default (normal); -1.0
+     *     is the lowest; 1.0 is the highest.
+     * @return The value. For contrast ratios, a number between 1.0 and 21.0.
      */
-    getContrast(contrastLevel) {
+    get(contrastLevel) {
         if (contrastLevel <= -1.0) {
             return this.low;
         }
@@ -2688,8 +2689,8 @@ class DynamicColor {
             const amNearer = this.name === nearer.name;
             const expansionDir = scheme.isDark ? 1 : -1;
             // 1st round: solve to min, each
-            const nContrast = nearer.contrastCurve.getContrast(scheme.contrastLevel);
-            const fContrast = farther.contrastCurve.getContrast(scheme.contrastLevel);
+            const nContrast = nearer.contrastCurve.get(scheme.contrastLevel);
+            const fContrast = farther.contrastCurve.get(scheme.contrastLevel);
             // If a color is good enough, it is not adjusted.
             // Initial and adjusted tones for `nearer`
             const nInitialTone = nearer.tone(scheme);
@@ -2767,7 +2768,7 @@ class DynamicColor {
                 return answer; // No adjustment for colors with no background.
             }
             const bgTone = this.background(scheme).getTone(scheme);
-            const desiredRatio = this.contrastCurve.getContrast(scheme.contrastLevel);
+            const desiredRatio = this.contrastCurve.get(scheme.contrastLevel);
             if (_contrast_contrast_js__WEBPACK_IMPORTED_MODULE_0__.Contrast.ratioOfTones(bgTone, answer) >= desiredRatio) {
                 // Don't "improve" what's good enough.
             }
@@ -2895,6 +2896,264 @@ class DynamicColor {
 
 /***/ }),
 
+/***/ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DynamicScheme: () => (/* binding */ DynamicScheme)
+/* harmony export */ });
+/* harmony import */ var _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hct/hct.js */ "./node_modules/@material/material-color-utilities/hct/hct.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
+/* harmony import */ var _material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./material_dynamic_colors.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+/**
+ * Constructed by a set of values representing the current UI state (such as
+ * whether or not its dark theme, what the theme style is, etc.), and
+ * provides a set of TonalPalettes that can create colors that fit in
+ * with the theme style. Used by DynamicColor to resolve into a color.
+ */
+class DynamicScheme {
+    constructor(args) {
+        this.sourceColorArgb = args.sourceColorArgb;
+        this.variant = args.variant;
+        this.contrastLevel = args.contrastLevel;
+        this.isDark = args.isDark;
+        this.sourceColorHct = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.fromInt(args.sourceColorArgb);
+        this.primaryPalette = args.primaryPalette;
+        this.secondaryPalette = args.secondaryPalette;
+        this.tertiaryPalette = args.tertiaryPalette;
+        this.neutralPalette = args.neutralPalette;
+        this.neutralVariantPalette = args.neutralVariantPalette;
+        this.errorPalette = _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(25.0, 84.0);
+    }
+    /**
+     * Support design spec'ing Dynamic Color by schemes that specify hue
+     * rotations that should be applied at certain breakpoints.
+     * @param sourceColor the source color of the theme, in HCT.
+     * @param hues The "breakpoints", i.e. the hues at which a rotation should
+     * be apply.
+     * @param rotations The rotation that should be applied when source color's
+     * hue is >= the same index in hues array, and <= the hue at the next index
+     * in hues array.
+     */
+    static getRotatedHue(sourceColor, hues, rotations) {
+        const sourceHue = sourceColor.hue;
+        if (hues.length !== rotations.length) {
+            throw new Error(`mismatch between hue length ${hues.length} & rotations ${rotations.length}`);
+        }
+        if (rotations.length === 1) {
+            return _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__.sanitizeDegreesDouble(sourceColor.hue + rotations[0]);
+        }
+        const size = hues.length;
+        for (let i = 0; i <= size - 2; i++) {
+            const thisHue = hues[i];
+            const nextHue = hues[i + 1];
+            if (thisHue < sourceHue && sourceHue < nextHue) {
+                return _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__.sanitizeDegreesDouble(sourceHue + rotations[i]);
+            }
+        }
+        // If this statement executes, something is wrong, there should have been a
+        // rotation found using the arrays.
+        return sourceHue;
+    }
+    getArgb(dynamicColor) {
+        return dynamicColor.getArgb(this);
+    }
+    getHct(dynamicColor) {
+        return dynamicColor.getHct(this);
+    }
+    get primaryPaletteKeyColor() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.primaryPaletteKeyColor);
+    }
+    get secondaryPaletteKeyColor() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.secondaryPaletteKeyColor);
+    }
+    get tertiaryPaletteKeyColor() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.tertiaryPaletteKeyColor);
+    }
+    get neutralPaletteKeyColor() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.neutralPaletteKeyColor);
+    }
+    get neutralVariantPaletteKeyColor() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.neutralVariantPaletteKeyColor);
+    }
+    get background() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.background);
+    }
+    get onBackground() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onBackground);
+    }
+    get surface() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surface);
+    }
+    get surfaceDim() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceDim);
+    }
+    get surfaceBright() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceBright);
+    }
+    get surfaceContainerLowest() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceContainerLowest);
+    }
+    get surfaceContainerLow() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceContainerLow);
+    }
+    get surfaceContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceContainer);
+    }
+    get surfaceContainerHigh() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceContainerHigh);
+    }
+    get surfaceContainerHighest() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceContainerHighest);
+    }
+    get onSurface() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSurface);
+    }
+    get surfaceVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceVariant);
+    }
+    get onSurfaceVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSurfaceVariant);
+    }
+    get inverseSurface() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.inverseSurface);
+    }
+    get inverseOnSurface() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.inverseOnSurface);
+    }
+    get outline() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.outline);
+    }
+    get outlineVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.outlineVariant);
+    }
+    get shadow() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.shadow);
+    }
+    get scrim() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.scrim);
+    }
+    get surfaceTint() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.surfaceTint);
+    }
+    get primary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.primary);
+    }
+    get onPrimary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onPrimary);
+    }
+    get primaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.primaryContainer);
+    }
+    get onPrimaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onPrimaryContainer);
+    }
+    get inversePrimary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.inversePrimary);
+    }
+    get secondary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.secondary);
+    }
+    get onSecondary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSecondary);
+    }
+    get secondaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.secondaryContainer);
+    }
+    get onSecondaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSecondaryContainer);
+    }
+    get tertiary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.tertiary);
+    }
+    get onTertiary() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onTertiary);
+    }
+    get tertiaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.tertiaryContainer);
+    }
+    get onTertiaryContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onTertiaryContainer);
+    }
+    get error() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.error);
+    }
+    get onError() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onError);
+    }
+    get errorContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.errorContainer);
+    }
+    get onErrorContainer() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onErrorContainer);
+    }
+    get primaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.primaryFixed);
+    }
+    get primaryFixedDim() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.primaryFixedDim);
+    }
+    get onPrimaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onPrimaryFixed);
+    }
+    get onPrimaryFixedVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onPrimaryFixedVariant);
+    }
+    get secondaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.secondaryFixed);
+    }
+    get secondaryFixedDim() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.secondaryFixedDim);
+    }
+    get onSecondaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSecondaryFixed);
+    }
+    get onSecondaryFixedVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onSecondaryFixedVariant);
+    }
+    get tertiaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.tertiaryFixed);
+    }
+    get tertiaryFixedDim() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.tertiaryFixedDim);
+    }
+    get onTertiaryFixed() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onTertiaryFixed);
+    }
+    get onTertiaryFixedVariant() {
+        return this.getArgb(_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_3__.MaterialDynamicColors.onTertiaryFixedVariant);
+    }
+}
+//# sourceMappingURL=dynamic_scheme.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js":
 /*!*************************************************************************************************!*\
   !*** ./node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js ***!
@@ -2908,11 +3167,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dislike/dislike_analyzer.js */ "./node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js");
 /* harmony import */ var _hct_hct_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hct/hct.js */ "./node_modules/@material/material-color-utilities/hct/hct.js");
-/* harmony import */ var _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hct/viewing_conditions.js */ "./node_modules/@material/material-color-utilities/hct/viewing_conditions.js");
-/* harmony import */ var _scheme_variant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scheme/variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
-/* harmony import */ var _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contrast_curve.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/contrast_curve.js");
-/* harmony import */ var _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dynamic_color.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js");
-/* harmony import */ var _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tone_delta_pair.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/tone_delta_pair.js");
+/* harmony import */ var _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contrast_curve.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/contrast_curve.js");
+/* harmony import */ var _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dynamic_color.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js");
+/* harmony import */ var _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tone_delta_pair.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/tone_delta_pair.js");
+/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -2935,13 +3193,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function isFidelity(scheme) {
-    return scheme.variant === _scheme_variant_js__WEBPACK_IMPORTED_MODULE_3__.Variant.FIDELITY ||
-        scheme.variant === _scheme_variant_js__WEBPACK_IMPORTED_MODULE_3__.Variant.CONTENT;
+    return scheme.variant === _variant_js__WEBPACK_IMPORTED_MODULE_5__.Variant.FIDELITY ||
+        scheme.variant === _variant_js__WEBPACK_IMPORTED_MODULE_5__.Variant.CONTENT;
 }
 function isMonochrome(scheme) {
-    return scheme.variant === _scheme_variant_js__WEBPACK_IMPORTED_MODULE_3__.Variant.MONOCHROME;
+    return scheme.variant === _variant_js__WEBPACK_IMPORTED_MODULE_5__.Variant.MONOCHROME;
 }
 function findDesiredChromaByTone(hue, chroma, tone, byDecreasingTone) {
     let answer = tone;
@@ -2967,24 +3224,6 @@ function findDesiredChromaByTone(hue, chroma, tone, byDecreasingTone) {
     }
     return answer;
 }
-function viewingConditionsForAlbers(scheme) {
-    return _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_2__.ViewingConditions.make(
-    /*whitePoint=*/ undefined, 
-    /*adaptingLuminance=*/ undefined, 
-    /*backgroundLstar=*/ scheme.isDark ? 30 : 80, 
-    /*surround=*/ undefined, 
-    /*discountingIlluminant=*/ undefined);
-}
-function performAlbers(prealbers, scheme) {
-    const albersd = prealbers.inViewingConditions(viewingConditionsForAlbers(scheme));
-    if (_dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.tonePrefersLightForeground(prealbers.tone) &&
-        !_dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.toneAllowsLightForeground(albersd.tone)) {
-        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.enableLightForeground(prealbers.tone);
-    }
-    else {
-        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.enableLightForeground(albersd.tone);
-    }
-}
 /**
  * DynamicColors for the colors in the Material Design system.
  */
@@ -2997,155 +3236,163 @@ class MaterialDynamicColors {
     }
 }
 MaterialDynamicColors.contentAccentToneDelta = 15.0;
-MaterialDynamicColors.primaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.primaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'primary_palette_key_color',
     palette: (s) => s.primaryPalette,
     tone: (s) => s.primaryPalette.keyColor.tone,
 });
-MaterialDynamicColors.secondaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.secondaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'secondary_palette_key_color',
     palette: (s) => s.secondaryPalette,
     tone: (s) => s.secondaryPalette.keyColor.tone,
 });
-MaterialDynamicColors.tertiaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.tertiaryPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'tertiary_palette_key_color',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => s.tertiaryPalette.keyColor.tone,
 });
-MaterialDynamicColors.neutralPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.neutralPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'neutral_palette_key_color',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.neutralPalette.keyColor.tone,
 });
-MaterialDynamicColors.neutralVariantPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.neutralVariantPaletteKeyColor = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'neutral_variant_palette_key_color',
     palette: (s) => s.neutralVariantPalette,
     tone: (s) => s.neutralVariantPalette.keyColor.tone,
 });
-MaterialDynamicColors.background = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.background = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'background',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 6 : 98,
     isBackground: true,
 });
-MaterialDynamicColors.onBackground = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onBackground = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_background',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 90 : 10,
     background: (s) => MaterialDynamicColors.background,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 3, 4.5, 7),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 3, 4.5, 7),
 });
-MaterialDynamicColors.surface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 6 : 98,
     isBackground: true,
 });
-MaterialDynamicColors.surfaceDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_dim',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 6 : 87,
+    tone: (s) => s.isDark ? 6 : new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(87, 87, 80, 75).get(s.contrastLevel),
     isBackground: true,
 });
-MaterialDynamicColors.surfaceBright = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceBright = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_bright',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 24 : 98,
+    tone: (s) => s.isDark ? new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(24, 24, 29, 34).get(s.contrastLevel) : 98,
     isBackground: true,
 });
-MaterialDynamicColors.surfaceContainerLowest = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceContainerLowest = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_container_lowest',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 4 : 100,
+    tone: (s) => s.isDark ? new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4, 4, 2, 0).get(s.contrastLevel) : 100,
     isBackground: true,
 });
-MaterialDynamicColors.surfaceContainerLow = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceContainerLow = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_container_low',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 10 : 96,
+    tone: (s) => s.isDark ?
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(10, 10, 11, 12).get(s.contrastLevel) :
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(96, 96, 96, 95).get(s.contrastLevel),
     isBackground: true,
 });
-MaterialDynamicColors.surfaceContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_container',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 12 : 94,
+    tone: (s) => s.isDark ?
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(12, 12, 16, 20).get(s.contrastLevel) :
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(94, 94, 92, 90).get(s.contrastLevel),
     isBackground: true,
 });
-MaterialDynamicColors.surfaceContainerHigh = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceContainerHigh = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_container_high',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 17 : 92,
+    tone: (s) => s.isDark ?
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(17, 17, 21, 25).get(s.contrastLevel) :
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(92, 92, 88, 85).get(s.contrastLevel),
     isBackground: true,
 });
-MaterialDynamicColors.surfaceContainerHighest = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceContainerHighest = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_container_highest',
     palette: (s) => s.neutralPalette,
-    tone: (s) => s.isDark ? 22 : 90,
+    tone: (s) => s.isDark ?
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(22, 22, 26, 30).get(s.contrastLevel) :
+        new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(90, 90, 84, 80).get(s.contrastLevel),
     isBackground: true,
 });
-MaterialDynamicColors.onSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_surface',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 90 : 10,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.surfaceVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_variant',
     palette: (s) => s.neutralVariantPalette,
     tone: (s) => s.isDark ? 30 : 90,
     isBackground: true,
 });
-MaterialDynamicColors.onSurfaceVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSurfaceVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_surface_variant',
     palette: (s) => s.neutralVariantPalette,
     tone: (s) => s.isDark ? 80 : 30,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.inverseSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.inverseSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'inverse_surface',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 90 : 20,
 });
-MaterialDynamicColors.inverseOnSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.inverseOnSurface = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'inverse_on_surface',
     palette: (s) => s.neutralPalette,
     tone: (s) => s.isDark ? 20 : 95,
     background: (s) => MaterialDynamicColors.inverseSurface,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.outline = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.outline = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'outline',
     palette: (s) => s.neutralVariantPalette,
     tone: (s) => s.isDark ? 60 : 50,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1.5, 3, 4.5, 7),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1.5, 3, 4.5, 7),
 });
-MaterialDynamicColors.outlineVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.outlineVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'outline_variant',
     palette: (s) => s.neutralVariantPalette,
     tone: (s) => s.isDark ? 30 : 80,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
 });
-MaterialDynamicColors.shadow = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.shadow = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'shadow',
     palette: (s) => s.neutralPalette,
     tone: (s) => 0,
 });
-MaterialDynamicColors.scrim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.scrim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'scrim',
     palette: (s) => s.neutralPalette,
     tone: (s) => 0,
 });
-MaterialDynamicColors.surfaceTint = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.surfaceTint = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'surface_tint',
     palette: (s) => s.primaryPalette,
     tone: (s) => s.isDark ? 80 : 40,
     isBackground: true,
 });
-MaterialDynamicColors.primary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.primary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'primary',
     palette: (s) => s.primaryPalette,
     tone: (s) => {
@@ -3156,10 +3403,10 @@ MaterialDynamicColors.primary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.D
     },
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 7),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onPrimary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onPrimary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_primary',
     palette: (s) => s.primaryPalette,
     tone: (s) => {
@@ -3169,14 +3416,14 @@ MaterialDynamicColors.onPrimary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__
         return s.isDark ? 20 : 100;
     },
     background: (s) => MaterialDynamicColors.primary,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.primaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.primaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'primary_container',
     palette: (s) => s.primaryPalette,
     tone: (s) => {
         if (isFidelity(s)) {
-            return performAlbers(s.sourceColorHct, s);
+            return s.sourceColorHct.tone;
         }
         if (isMonochrome(s)) {
             return s.isDark ? 85 : 25;
@@ -3185,41 +3432,41 @@ MaterialDynamicColors.primaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MOD
     },
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onPrimaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onPrimaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_primary_container',
     palette: (s) => s.primaryPalette,
     tone: (s) => {
         if (isFidelity(s)) {
-            return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.foregroundTone(MaterialDynamicColors.primaryContainer.tone(s), 4.5);
+            return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.foregroundTone(MaterialDynamicColors.primaryContainer.tone(s), 4.5);
         }
         if (isMonochrome(s)) {
             return s.isDark ? 0 : 100;
         }
-        return s.isDark ? 90 : 10;
+        return s.isDark ? 90 : 30;
     },
     background: (s) => MaterialDynamicColors.primaryContainer,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.inversePrimary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.inversePrimary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'inverse_primary',
     palette: (s) => s.primaryPalette,
     tone: (s) => s.isDark ? 40 : 80,
     background: (s) => MaterialDynamicColors.inverseSurface,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 7),
 });
-MaterialDynamicColors.secondary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.secondary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'secondary',
     palette: (s) => s.secondaryPalette,
     tone: (s) => s.isDark ? 80 : 40,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 7),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onSecondary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSecondary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_secondary',
     palette: (s) => s.secondaryPalette,
     tone: (s) => {
@@ -3231,9 +3478,9 @@ MaterialDynamicColors.onSecondary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5
         }
     },
     background: (s) => MaterialDynamicColors.secondary,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.secondaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.secondaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'secondary_container',
     palette: (s) => s.secondaryPalette,
     tone: (s) => {
@@ -3244,28 +3491,29 @@ MaterialDynamicColors.secondaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_M
         if (!isFidelity(s)) {
             return initialTone;
         }
-        let answer = findDesiredChromaByTone(s.secondaryPalette.hue, s.secondaryPalette.chroma, initialTone, s.isDark ? false : true);
-        answer = performAlbers(s.secondaryPalette.getHct(answer), s);
-        return answer;
+        return findDesiredChromaByTone(s.secondaryPalette.hue, s.secondaryPalette.chroma, initialTone, s.isDark ? false : true);
     },
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onSecondaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSecondaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_secondary_container',
     palette: (s) => s.secondaryPalette,
     tone: (s) => {
-        if (!isFidelity(s)) {
+        if (isMonochrome(s)) {
             return s.isDark ? 90 : 10;
         }
-        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.foregroundTone(MaterialDynamicColors.secondaryContainer.tone(s), 4.5);
+        if (!isFidelity(s)) {
+            return s.isDark ? 90 : 30;
+        }
+        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.foregroundTone(MaterialDynamicColors.secondaryContainer.tone(s), 4.5);
     },
     background: (s) => MaterialDynamicColors.secondaryContainer,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.tertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.tertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'tertiary',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => {
@@ -3276,10 +3524,10 @@ MaterialDynamicColors.tertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.
     },
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 7),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onTertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onTertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_tertiary',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => {
@@ -3289,9 +3537,9 @@ MaterialDynamicColors.onTertiary = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5_
         return s.isDark ? 20 : 100;
     },
     background: (s) => MaterialDynamicColors.tertiary,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.tertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.tertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'tertiary_container',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => {
@@ -3301,16 +3549,15 @@ MaterialDynamicColors.tertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MO
         if (!isFidelity(s)) {
             return s.isDark ? 30 : 90;
         }
-        const albersTone = performAlbers(s.tertiaryPalette.getHct(s.sourceColorHct.tone), s);
-        const proposedHct = s.tertiaryPalette.getHct(albersTone);
+        const proposedHct = s.tertiaryPalette.getHct(s.sourceColorHct.tone);
         return _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__.DislikeAnalyzer.fixIfDisliked(proposedHct).tone;
     },
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 10, 'nearer', false),
 });
-MaterialDynamicColors.onTertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onTertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_tertiary_container',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => {
@@ -3318,146 +3565,151 @@ MaterialDynamicColors.onTertiaryContainer = _dynamic_color_js__WEBPACK_IMPORTED_
             return s.isDark ? 0 : 100;
         }
         if (!isFidelity(s)) {
-            return s.isDark ? 90 : 10;
+            return s.isDark ? 90 : 30;
         }
-        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.foregroundTone(MaterialDynamicColors.tertiaryContainer.tone(s), 4.5);
+        return _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.foregroundTone(MaterialDynamicColors.tertiaryContainer.tone(s), 4.5);
     },
     background: (s) => MaterialDynamicColors.tertiaryContainer,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.error = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.error = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'error',
     palette: (s) => s.errorPalette,
     tone: (s) => s.isDark ? 80 : 40,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 7),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 10, 'nearer', false),
 });
-MaterialDynamicColors.onError = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onError = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_error',
     palette: (s) => s.errorPalette,
     tone: (s) => s.isDark ? 20 : 100,
     background: (s) => MaterialDynamicColors.error,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.errorContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.errorContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'error_container',
     palette: (s) => s.errorPalette,
     tone: (s) => s.isDark ? 30 : 90,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 15, 'nearer', false),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 10, 'nearer', false),
 });
-MaterialDynamicColors.onErrorContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onErrorContainer = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_error_container',
     palette: (s) => s.errorPalette,
-    tone: (s) => s.isDark ? 90 : 10,
+    tone: (s) => {
+        if (isMonochrome(s)) {
+            return s.isDark ? 90 : 10;
+        }
+        return s.isDark ? 90 : 30;
+    },
     background: (s) => MaterialDynamicColors.errorContainer,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.primaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.primaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'primary_fixed',
     palette: (s) => s.primaryPalette,
     tone: (s) => isMonochrome(s) ? 40.0 : 90.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.primaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.primaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'primary_fixed_dim',
     palette: (s) => s.primaryPalette,
     tone: (s) => isMonochrome(s) ? 30.0 : 80.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.onPrimaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onPrimaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_primary_fixed',
     palette: (s) => s.primaryPalette,
     tone: (s) => isMonochrome(s) ? 100.0 : 10.0,
     background: (s) => MaterialDynamicColors.primaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.primaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.onPrimaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onPrimaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_primary_fixed_variant',
     palette: (s) => s.primaryPalette,
     tone: (s) => isMonochrome(s) ? 90.0 : 30.0,
     background: (s) => MaterialDynamicColors.primaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.primaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.secondaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.secondaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'secondary_fixed',
     palette: (s) => s.secondaryPalette,
     tone: (s) => isMonochrome(s) ? 80.0 : 90.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.secondaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.secondaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'secondary_fixed_dim',
     palette: (s) => s.secondaryPalette,
     tone: (s) => isMonochrome(s) ? 70.0 : 80.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.onSecondaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSecondaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_secondary_fixed',
     palette: (s) => s.secondaryPalette,
     tone: (s) => 10.0,
     background: (s) => MaterialDynamicColors.secondaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.secondaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.onSecondaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onSecondaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_secondary_fixed_variant',
     palette: (s) => s.secondaryPalette,
     tone: (s) => isMonochrome(s) ? 25.0 : 30.0,
     background: (s) => MaterialDynamicColors.secondaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.secondaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
-MaterialDynamicColors.tertiaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.tertiaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'tertiary_fixed',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => isMonochrome(s) ? 40.0 : 90.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.tertiaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.tertiaryFixedDim = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'tertiary_fixed_dim',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => isMonochrome(s) ? 30.0 : 80.0,
     isBackground: true,
     background: (s) => MaterialDynamicColors.highestSurface(s),
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(1, 1, 3, 7),
-    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_6__.ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, 'lighter', true),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(1, 1, 3, 4.5),
+    toneDeltaPair: (s) => new _tone_delta_pair_js__WEBPACK_IMPORTED_MODULE_4__.ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, 'lighter', true),
 });
-MaterialDynamicColors.onTertiaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onTertiaryFixed = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_tertiary_fixed',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => isMonochrome(s) ? 100.0 : 10.0,
     background: (s) => MaterialDynamicColors.tertiaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.tertiaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(4.5, 7, 11, 21),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(4.5, 7, 11, 21),
 });
-MaterialDynamicColors.onTertiaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_5__.DynamicColor.fromPalette({
+MaterialDynamicColors.onTertiaryFixedVariant = _dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor.fromPalette({
     name: 'on_tertiary_fixed_variant',
     palette: (s) => s.tertiaryPalette,
     tone: (s) => isMonochrome(s) ? 90.0 : 30.0,
     background: (s) => MaterialDynamicColors.tertiaryFixedDim,
     secondBackground: (s) => MaterialDynamicColors.tertiaryFixed,
-    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_4__.ContrastCurve(3, 4.5, 7, 11),
+    contrastCurve: new _contrast_curve_js__WEBPACK_IMPORTED_MODULE_2__.ContrastCurve(3, 4.5, 7, 11),
 });
 //# sourceMappingURL=material_dynamic_colors.js.map
 
@@ -3531,6 +3783,54 @@ class ToneDeltaPair {
     }
 }
 //# sourceMappingURL=tone_delta_pair.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@material/material-color-utilities/dynamiccolor/variant.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Variant: () => (/* binding */ Variant)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Set of themes supported by Dynamic Color.
+ * Instantiate the corresponding subclass, ex. SchemeTonalSpot, to create
+ * colors corresponding to the theme.
+ */
+var Variant;
+(function (Variant) {
+    Variant[Variant["MONOCHROME"] = 0] = "MONOCHROME";
+    Variant[Variant["NEUTRAL"] = 1] = "NEUTRAL";
+    Variant[Variant["TONAL_SPOT"] = 2] = "TONAL_SPOT";
+    Variant[Variant["VIBRANT"] = 3] = "VIBRANT";
+    Variant[Variant["EXPRESSIVE"] = 4] = "EXPRESSIVE";
+    Variant[Variant["FIDELITY"] = 5] = "FIDELITY";
+    Variant[Variant["CONTENT"] = 6] = "CONTENT";
+    Variant[Variant["RAINBOW"] = 7] = "RAINBOW";
+    Variant[Variant["FRUIT_SALAD"] = 8] = "FRUIT_SALAD";
+})(Variant || (Variant = {}));
+//# sourceMappingURL=variant.js.map
 
 /***/ }),
 
@@ -4737,99 +5037,103 @@ ViewingConditions.DEFAULT = ViewingConditions.make();
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Blend: () => (/* reexport safe */ _blend_blend_js__WEBPACK_IMPORTED_MODULE_0__.Blend),
-/* harmony export */   Cam16: () => (/* reexport safe */ _hct_cam16_js__WEBPACK_IMPORTED_MODULE_5__.Cam16),
+/* harmony export */   Cam16: () => (/* reexport safe */ _hct_cam16_js__WEBPACK_IMPORTED_MODULE_6__.Cam16),
 /* harmony export */   Contrast: () => (/* reexport safe */ _contrast_contrast_js__WEBPACK_IMPORTED_MODULE_1__.Contrast),
-/* harmony export */   CorePalette: () => (/* reexport safe */ _palettes_core_palette_js__WEBPACK_IMPORTED_MODULE_8__.CorePalette),
+/* harmony export */   CorePalette: () => (/* reexport safe */ _palettes_core_palette_js__WEBPACK_IMPORTED_MODULE_9__.CorePalette),
 /* harmony export */   DislikeAnalyzer: () => (/* reexport safe */ _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_2__.DislikeAnalyzer),
 /* harmony export */   DynamicColor: () => (/* reexport safe */ _dynamiccolor_dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__.DynamicColor),
-/* harmony export */   DynamicScheme: () => (/* reexport safe */ _scheme_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_14__.DynamicScheme),
-/* harmony export */   Hct: () => (/* reexport safe */ _hct_hct_js__WEBPACK_IMPORTED_MODULE_6__.Hct),
-/* harmony export */   MaterialDynamicColors: () => (/* reexport safe */ _dynamiccolor_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_4__.MaterialDynamicColors),
-/* harmony export */   QuantizerCelebi: () => (/* reexport safe */ _quantize_quantizer_celebi_js__WEBPACK_IMPORTED_MODULE_10__.QuantizerCelebi),
-/* harmony export */   QuantizerMap: () => (/* reexport safe */ _quantize_quantizer_map_js__WEBPACK_IMPORTED_MODULE_11__.QuantizerMap),
-/* harmony export */   QuantizerWsmeans: () => (/* reexport safe */ _quantize_quantizer_wsmeans_js__WEBPACK_IMPORTED_MODULE_12__.QuantizerWsmeans),
-/* harmony export */   QuantizerWu: () => (/* reexport safe */ _quantize_quantizer_wu_js__WEBPACK_IMPORTED_MODULE_13__.QuantizerWu),
+/* harmony export */   DynamicScheme: () => (/* reexport safe */ _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_4__.DynamicScheme),
+/* harmony export */   Hct: () => (/* reexport safe */ _hct_hct_js__WEBPACK_IMPORTED_MODULE_7__.Hct),
+/* harmony export */   MaterialDynamicColors: () => (/* reexport safe */ _dynamiccolor_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_5__.MaterialDynamicColors),
+/* harmony export */   QuantizerCelebi: () => (/* reexport safe */ _quantize_quantizer_celebi_js__WEBPACK_IMPORTED_MODULE_11__.QuantizerCelebi),
+/* harmony export */   QuantizerMap: () => (/* reexport safe */ _quantize_quantizer_map_js__WEBPACK_IMPORTED_MODULE_12__.QuantizerMap),
+/* harmony export */   QuantizerWsmeans: () => (/* reexport safe */ _quantize_quantizer_wsmeans_js__WEBPACK_IMPORTED_MODULE_13__.QuantizerWsmeans),
+/* harmony export */   QuantizerWu: () => (/* reexport safe */ _quantize_quantizer_wu_js__WEBPACK_IMPORTED_MODULE_14__.QuantizerWu),
 /* harmony export */   Scheme: () => (/* reexport safe */ _scheme_scheme_js__WEBPACK_IMPORTED_MODULE_15__.Scheme),
 /* harmony export */   SchemeAndroid: () => (/* reexport safe */ _scheme_scheme_android_js__WEBPACK_IMPORTED_MODULE_16__.SchemeAndroid),
 /* harmony export */   SchemeContent: () => (/* reexport safe */ _scheme_scheme_content_js__WEBPACK_IMPORTED_MODULE_17__.SchemeContent),
 /* harmony export */   SchemeExpressive: () => (/* reexport safe */ _scheme_scheme_expressive_js__WEBPACK_IMPORTED_MODULE_18__.SchemeExpressive),
 /* harmony export */   SchemeFidelity: () => (/* reexport safe */ _scheme_scheme_fidelity_js__WEBPACK_IMPORTED_MODULE_19__.SchemeFidelity),
-/* harmony export */   SchemeMonochrome: () => (/* reexport safe */ _scheme_scheme_monochrome_js__WEBPACK_IMPORTED_MODULE_20__.SchemeMonochrome),
-/* harmony export */   SchemeNeutral: () => (/* reexport safe */ _scheme_scheme_neutral_js__WEBPACK_IMPORTED_MODULE_21__.SchemeNeutral),
-/* harmony export */   SchemeTonalSpot: () => (/* reexport safe */ _scheme_scheme_tonal_spot_js__WEBPACK_IMPORTED_MODULE_22__.SchemeTonalSpot),
-/* harmony export */   SchemeVibrant: () => (/* reexport safe */ _scheme_scheme_vibrant_js__WEBPACK_IMPORTED_MODULE_23__.SchemeVibrant),
-/* harmony export */   Score: () => (/* reexport safe */ _score_score_js__WEBPACK_IMPORTED_MODULE_24__.Score),
-/* harmony export */   TemperatureCache: () => (/* reexport safe */ _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_25__.TemperatureCache),
-/* harmony export */   TonalPalette: () => (/* reexport safe */ _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_9__.TonalPalette),
-/* harmony export */   ViewingConditions: () => (/* reexport safe */ _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_7__.ViewingConditions),
-/* harmony export */   alphaFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.alphaFromArgb),
-/* harmony export */   applyTheme: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_30__.applyTheme),
-/* harmony export */   argbFromHex: () => (/* reexport safe */ _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromHex),
-/* harmony export */   argbFromLab: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromLab),
-/* harmony export */   argbFromLinrgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromLinrgb),
-/* harmony export */   argbFromLstar: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromLstar),
-/* harmony export */   argbFromRgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromRgb),
-/* harmony export */   argbFromRgba: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromRgba),
-/* harmony export */   argbFromXyz: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.argbFromXyz),
-/* harmony export */   blueFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.blueFromArgb),
-/* harmony export */   clampDouble: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.clampDouble),
-/* harmony export */   clampInt: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.clampInt),
-/* harmony export */   customColor: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_30__.customColor),
-/* harmony export */   delinearized: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.delinearized),
-/* harmony export */   differenceDegrees: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.differenceDegrees),
-/* harmony export */   greenFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.greenFromArgb),
-/* harmony export */   hexFromArgb: () => (/* reexport safe */ _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_28__.hexFromArgb),
-/* harmony export */   isOpaque: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.isOpaque),
-/* harmony export */   labFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.labFromArgb),
-/* harmony export */   lerp: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.lerp),
-/* harmony export */   linearized: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.linearized),
-/* harmony export */   lstarFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.lstarFromArgb),
-/* harmony export */   lstarFromY: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.lstarFromY),
-/* harmony export */   matrixMultiply: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.matrixMultiply),
-/* harmony export */   redFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.redFromArgb),
-/* harmony export */   rgbaFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.rgbaFromArgb),
-/* harmony export */   rotationDirection: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.rotationDirection),
-/* harmony export */   sanitizeDegreesDouble: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.sanitizeDegreesDouble),
-/* harmony export */   sanitizeDegreesInt: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.sanitizeDegreesInt),
-/* harmony export */   signum: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__.signum),
-/* harmony export */   sourceColorFromImage: () => (/* reexport safe */ _utils_image_utils_js__WEBPACK_IMPORTED_MODULE_29__.sourceColorFromImage),
-/* harmony export */   themeFromImage: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_30__.themeFromImage),
-/* harmony export */   themeFromSourceColor: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_30__.themeFromSourceColor),
-/* harmony export */   whitePointD65: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.whitePointD65),
-/* harmony export */   xyzFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.xyzFromArgb),
-/* harmony export */   yFromLstar: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__.yFromLstar)
+/* harmony export */   SchemeFruitSalad: () => (/* reexport safe */ _scheme_scheme_fruit_salad_js__WEBPACK_IMPORTED_MODULE_20__.SchemeFruitSalad),
+/* harmony export */   SchemeMonochrome: () => (/* reexport safe */ _scheme_scheme_monochrome_js__WEBPACK_IMPORTED_MODULE_21__.SchemeMonochrome),
+/* harmony export */   SchemeNeutral: () => (/* reexport safe */ _scheme_scheme_neutral_js__WEBPACK_IMPORTED_MODULE_22__.SchemeNeutral),
+/* harmony export */   SchemeRainbow: () => (/* reexport safe */ _scheme_scheme_rainbow_js__WEBPACK_IMPORTED_MODULE_23__.SchemeRainbow),
+/* harmony export */   SchemeTonalSpot: () => (/* reexport safe */ _scheme_scheme_tonal_spot_js__WEBPACK_IMPORTED_MODULE_24__.SchemeTonalSpot),
+/* harmony export */   SchemeVibrant: () => (/* reexport safe */ _scheme_scheme_vibrant_js__WEBPACK_IMPORTED_MODULE_25__.SchemeVibrant),
+/* harmony export */   Score: () => (/* reexport safe */ _score_score_js__WEBPACK_IMPORTED_MODULE_26__.Score),
+/* harmony export */   TemperatureCache: () => (/* reexport safe */ _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_27__.TemperatureCache),
+/* harmony export */   TonalPalette: () => (/* reexport safe */ _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_10__.TonalPalette),
+/* harmony export */   ViewingConditions: () => (/* reexport safe */ _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_8__.ViewingConditions),
+/* harmony export */   alphaFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.alphaFromArgb),
+/* harmony export */   applyTheme: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_32__.applyTheme),
+/* harmony export */   argbFromHex: () => (/* reexport safe */ _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_30__.argbFromHex),
+/* harmony export */   argbFromLab: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromLab),
+/* harmony export */   argbFromLinrgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromLinrgb),
+/* harmony export */   argbFromLstar: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromLstar),
+/* harmony export */   argbFromRgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromRgb),
+/* harmony export */   argbFromRgba: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromRgba),
+/* harmony export */   argbFromXyz: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.argbFromXyz),
+/* harmony export */   blueFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.blueFromArgb),
+/* harmony export */   clampDouble: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.clampDouble),
+/* harmony export */   clampInt: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.clampInt),
+/* harmony export */   customColor: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_32__.customColor),
+/* harmony export */   delinearized: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.delinearized),
+/* harmony export */   differenceDegrees: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.differenceDegrees),
+/* harmony export */   greenFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.greenFromArgb),
+/* harmony export */   hexFromArgb: () => (/* reexport safe */ _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_30__.hexFromArgb),
+/* harmony export */   isOpaque: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.isOpaque),
+/* harmony export */   labFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.labFromArgb),
+/* harmony export */   lerp: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.lerp),
+/* harmony export */   linearized: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.linearized),
+/* harmony export */   lstarFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.lstarFromArgb),
+/* harmony export */   lstarFromY: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.lstarFromY),
+/* harmony export */   matrixMultiply: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.matrixMultiply),
+/* harmony export */   redFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.redFromArgb),
+/* harmony export */   rgbaFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.rgbaFromArgb),
+/* harmony export */   rotationDirection: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.rotationDirection),
+/* harmony export */   sanitizeDegreesDouble: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.sanitizeDegreesDouble),
+/* harmony export */   sanitizeDegreesInt: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.sanitizeDegreesInt),
+/* harmony export */   signum: () => (/* reexport safe */ _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__.signum),
+/* harmony export */   sourceColorFromImage: () => (/* reexport safe */ _utils_image_utils_js__WEBPACK_IMPORTED_MODULE_31__.sourceColorFromImage),
+/* harmony export */   themeFromImage: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_32__.themeFromImage),
+/* harmony export */   themeFromSourceColor: () => (/* reexport safe */ _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_32__.themeFromSourceColor),
+/* harmony export */   whitePointD65: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.whitePointD65),
+/* harmony export */   xyzFromArgb: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.xyzFromArgb),
+/* harmony export */   yFromLstar: () => (/* reexport safe */ _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__.yFromLstar)
 /* harmony export */ });
 /* harmony import */ var _blend_blend_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blend/blend.js */ "./node_modules/@material/material-color-utilities/blend/blend.js");
 /* harmony import */ var _contrast_contrast_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contrast/contrast.js */ "./node_modules/@material/material-color-utilities/contrast/contrast.js");
 /* harmony import */ var _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dislike/dislike_analyzer.js */ "./node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js");
 /* harmony import */ var _dynamiccolor_dynamic_color_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dynamiccolor/dynamic_color.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js");
-/* harmony import */ var _dynamiccolor_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dynamiccolor/material_dynamic_colors.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js");
-/* harmony import */ var _hct_cam16_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hct/cam16.js */ "./node_modules/@material/material-color-utilities/hct/cam16.js");
-/* harmony import */ var _hct_hct_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hct/hct.js */ "./node_modules/@material/material-color-utilities/hct/hct.js");
-/* harmony import */ var _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./hct/viewing_conditions.js */ "./node_modules/@material/material-color-utilities/hct/viewing_conditions.js");
-/* harmony import */ var _palettes_core_palette_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./palettes/core_palette.js */ "./node_modules/@material/material-color-utilities/palettes/core_palette.js");
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _quantize_quantizer_celebi_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./quantize/quantizer_celebi.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_celebi.js");
-/* harmony import */ var _quantize_quantizer_map_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./quantize/quantizer_map.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_map.js");
-/* harmony import */ var _quantize_quantizer_wsmeans_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./quantize/quantizer_wsmeans.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_wsmeans.js");
-/* harmony import */ var _quantize_quantizer_wu_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./quantize/quantizer_wu.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_wu.js");
-/* harmony import */ var _scheme_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./scheme/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_material_dynamic_colors_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dynamiccolor/material_dynamic_colors.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js");
+/* harmony import */ var _hct_cam16_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hct/cam16.js */ "./node_modules/@material/material-color-utilities/hct/cam16.js");
+/* harmony import */ var _hct_hct_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./hct/hct.js */ "./node_modules/@material/material-color-utilities/hct/hct.js");
+/* harmony import */ var _hct_viewing_conditions_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./hct/viewing_conditions.js */ "./node_modules/@material/material-color-utilities/hct/viewing_conditions.js");
+/* harmony import */ var _palettes_core_palette_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./palettes/core_palette.js */ "./node_modules/@material/material-color-utilities/palettes/core_palette.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _quantize_quantizer_celebi_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./quantize/quantizer_celebi.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_celebi.js");
+/* harmony import */ var _quantize_quantizer_map_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./quantize/quantizer_map.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_map.js");
+/* harmony import */ var _quantize_quantizer_wsmeans_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./quantize/quantizer_wsmeans.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_wsmeans.js");
+/* harmony import */ var _quantize_quantizer_wu_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./quantize/quantizer_wu.js */ "./node_modules/@material/material-color-utilities/quantize/quantizer_wu.js");
 /* harmony import */ var _scheme_scheme_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./scheme/scheme.js */ "./node_modules/@material/material-color-utilities/scheme/scheme.js");
 /* harmony import */ var _scheme_scheme_android_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scheme/scheme_android.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_android.js");
 /* harmony import */ var _scheme_scheme_content_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./scheme/scheme_content.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_content.js");
 /* harmony import */ var _scheme_scheme_expressive_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./scheme/scheme_expressive.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_expressive.js");
 /* harmony import */ var _scheme_scheme_fidelity_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./scheme/scheme_fidelity.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_fidelity.js");
-/* harmony import */ var _scheme_scheme_monochrome_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scheme/scheme_monochrome.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_monochrome.js");
-/* harmony import */ var _scheme_scheme_neutral_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scheme/scheme_neutral.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_neutral.js");
-/* harmony import */ var _scheme_scheme_tonal_spot_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./scheme/scheme_tonal_spot.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_tonal_spot.js");
-/* harmony import */ var _scheme_scheme_vibrant_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./scheme/scheme_vibrant.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_vibrant.js");
-/* harmony import */ var _score_score_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./score/score.js */ "./node_modules/@material/material-color-utilities/score/score.js");
-/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
-/* harmony import */ var _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./utils/color_utils.js */ "./node_modules/@material/material-color-utilities/utils/color_utils.js");
-/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
-/* harmony import */ var _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./utils/string_utils.js */ "./node_modules/@material/material-color-utilities/utils/string_utils.js");
-/* harmony import */ var _utils_image_utils_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./utils/image_utils.js */ "./node_modules/@material/material-color-utilities/utils/image_utils.js");
-/* harmony import */ var _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./utils/theme_utils.js */ "./node_modules/@material/material-color-utilities/utils/theme_utils.js");
+/* harmony import */ var _scheme_scheme_fruit_salad_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scheme/scheme_fruit_salad.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_fruit_salad.js");
+/* harmony import */ var _scheme_scheme_monochrome_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scheme/scheme_monochrome.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_monochrome.js");
+/* harmony import */ var _scheme_scheme_neutral_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./scheme/scheme_neutral.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_neutral.js");
+/* harmony import */ var _scheme_scheme_rainbow_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./scheme/scheme_rainbow.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_rainbow.js");
+/* harmony import */ var _scheme_scheme_tonal_spot_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./scheme/scheme_tonal_spot.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_tonal_spot.js");
+/* harmony import */ var _scheme_scheme_vibrant_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./scheme/scheme_vibrant.js */ "./node_modules/@material/material-color-utilities/scheme/scheme_vibrant.js");
+/* harmony import */ var _score_score_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./score/score.js */ "./node_modules/@material/material-color-utilities/score/score.js");
+/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
+/* harmony import */ var _utils_color_utils_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./utils/color_utils.js */ "./node_modules/@material/material-color-utilities/utils/color_utils.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
+/* harmony import */ var _utils_string_utils_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./utils/string_utils.js */ "./node_modules/@material/material-color-utilities/utils/string_utils.js");
+/* harmony import */ var _utils_image_utils_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./utils/image_utils.js */ "./node_modules/@material/material-color-utilities/utils/image_utils.js");
+/* harmony import */ var _utils_theme_utils_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./utils/theme_utils.js */ "./node_modules/@material/material-color-utilities/utils/theme_utils.js");
 /**
  * @license
  * Copyright 2021 Google LLC
@@ -4846,6 +5150,8 @@ __webpack_require__.r(__webpack_exports__);
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
 
 
 
@@ -5046,46 +5352,14 @@ class TonalPalette {
      * @return Tones matching hue and chroma.
      */
     static fromHueAndChroma(hue, chroma) {
-        return new TonalPalette(hue, chroma, TonalPalette.createKeyColor(hue, chroma));
+        const keyColor = new KeyColor(hue, chroma).create();
+        return new TonalPalette(hue, chroma, keyColor);
     }
     constructor(hue, chroma, keyColor) {
         this.hue = hue;
         this.chroma = chroma;
         this.keyColor = keyColor;
         this.cache = new Map();
-    }
-    static createKeyColor(hue, chroma) {
-        const startTone = 50.0;
-        let smallestDeltaHct = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(hue, chroma, startTone);
-        let smallestDelta = Math.abs(smallestDeltaHct.chroma - chroma);
-        // Starting from T50, check T+/-delta to see if they match the requested
-        // chroma.
-        //
-        // Starts from T50 because T50 has the most chroma available, on
-        // average. Thus it is most likely to have a direct answer and minimize
-        // iteration.
-        for (let delta = 1.0; delta < 50.0; delta += 1.0) {
-            // Termination condition rounding instead of minimizing delta to avoid
-            // case where requested chroma is 16.51, and the closest chroma is 16.49.
-            // Error is minimized, but when rounded and displayed, requested chroma
-            // is 17, key color's chroma is 16.
-            if (Math.round(chroma) === Math.round(smallestDeltaHct.chroma)) {
-                return smallestDeltaHct;
-            }
-            const hctAdd = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(hue, chroma, startTone + delta);
-            const hctAddDelta = Math.abs(hctAdd.chroma - chroma);
-            if (hctAddDelta < smallestDelta) {
-                smallestDelta = hctAddDelta;
-                smallestDeltaHct = hctAdd;
-            }
-            const hctSubtract = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(hue, chroma, startTone - delta);
-            const hctSubtractDelta = Math.abs(hctSubtract.chroma - chroma);
-            if (hctSubtractDelta < smallestDelta) {
-                smallestDelta = hctSubtractDelta;
-                smallestDeltaHct = hctSubtract;
-            }
-        }
-        return smallestDeltaHct;
     }
     /**
      * @param tone HCT tone, measured from 0 to 100.
@@ -5105,6 +5379,76 @@ class TonalPalette {
      */
     getHct(tone) {
         return _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.fromInt(this.tone(tone));
+    }
+}
+/**
+ * Key color is a color that represents the hue and chroma of a tonal palette
+ */
+class KeyColor {
+    constructor(hue, requestedChroma) {
+        this.hue = hue;
+        this.requestedChroma = requestedChroma;
+        // Cache that maps tone to max chroma to avoid duplicated HCT calculation.
+        this.chromaCache = new Map();
+        this.maxChromaValue = 200.0;
+    }
+    /**
+     * Creates a key color from a [hue] and a [chroma].
+     * The key color is the first tone, starting from T50, matching the given hue
+     * and chroma.
+     *
+     * @return Key color [Hct]
+     */
+    create() {
+        // Pivot around T50 because T50 has the most chroma available, on
+        // average. Thus it is most likely to have a direct answer.
+        const pivotTone = 50;
+        const toneStepSize = 1;
+        // Epsilon to accept values slightly higher than the requested chroma.
+        const epsilon = 0.01;
+        // Binary search to find the tone that can provide a chroma that is closest
+        // to the requested chroma.
+        let lowerTone = 0;
+        let upperTone = 100;
+        while (lowerTone < upperTone) {
+            const midTone = Math.floor((lowerTone + upperTone) / 2);
+            const isAscending = this.maxChroma(midTone) < this.maxChroma(midTone + toneStepSize);
+            const sufficientChroma = this.maxChroma(midTone) >= this.requestedChroma - epsilon;
+            if (sufficientChroma) {
+                // Either range [lowerTone, midTone] or [midTone, upperTone] has
+                // the answer, so search in the range that is closer the pivot tone.
+                if (Math.abs(lowerTone - pivotTone) < Math.abs(upperTone - pivotTone)) {
+                    upperTone = midTone;
+                }
+                else {
+                    if (lowerTone === midTone) {
+                        return _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(this.hue, this.requestedChroma, lowerTone);
+                    }
+                    lowerTone = midTone;
+                }
+            }
+            else {
+                // As there is no sufficient chroma in the midTone, follow the direction
+                // to the chroma peak.
+                if (isAscending) {
+                    lowerTone = midTone + toneStepSize;
+                }
+                else {
+                    // Keep midTone for potential chroma peak.
+                    upperTone = midTone;
+                }
+            }
+        }
+        return _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(this.hue, this.requestedChroma, lowerTone);
+    }
+    // Find the maximum chroma for a given tone
+    maxChroma(tone) {
+        if (this.chromaCache.has(tone)) {
+            return this.chromaCache.get(tone);
+        }
+        const chroma = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.from(this.hue, this.maxChromaValue, tone).chroma;
+        this.chromaCache.set(tone, chroma);
+        return chroma;
     }
 }
 //# sourceMappingURL=tonal_palette.js.map
@@ -5919,94 +6263,6 @@ class MaximizeResult {
 
 /***/ }),
 
-/***/ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js ***!
-  \**********************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   DynamicScheme: () => (/* binding */ DynamicScheme)
-/* harmony export */ });
-/* harmony import */ var _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hct/hct.js */ "./node_modules/@material/material-color-utilities/hct/hct.js");
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
-/**
- * @license
- * Copyright 2022 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/**
- * Constructed by a set of values representing the current UI state (such as
- * whether or not its dark theme, what the theme style is, etc.), and
- * provides a set of TonalPalettes that can create colors that fit in
- * with the theme style. Used by DynamicColor to resolve into a color.
- */
-class DynamicScheme {
-    constructor(args) {
-        this.sourceColorArgb = args.sourceColorArgb;
-        this.variant = args.variant;
-        this.contrastLevel = args.contrastLevel;
-        this.isDark = args.isDark;
-        this.sourceColorHct = _hct_hct_js__WEBPACK_IMPORTED_MODULE_0__.Hct.fromInt(args.sourceColorArgb);
-        this.primaryPalette = args.primaryPalette;
-        this.secondaryPalette = args.secondaryPalette;
-        this.tertiaryPalette = args.tertiaryPalette;
-        this.neutralPalette = args.neutralPalette;
-        this.neutralVariantPalette = args.neutralVariantPalette;
-        this.errorPalette = _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(25.0, 84.0);
-    }
-    /**
-     * Support design spec'ing Dynamic Color by schemes that specify hue
-     * rotations that should be applied at certain breakpoints.
-     * @param sourceColor the source color of the theme, in HCT.
-     * @param hues The "breakpoints", i.e. the hues at which a rotation should
-     * be apply.
-     * @param rotations The rotation that should be applied when source color's
-     * hue is >= the same index in hues array, and <= the hue at the next index
-     * in hues array.
-     */
-    static getRotatedHue(sourceColor, hues, rotations) {
-        const sourceHue = sourceColor.hue;
-        if (hues.length !== rotations.length) {
-            throw new Error(`mismatch between hue length ${hues.length} & rotations ${rotations.length}`);
-        }
-        if (rotations.length === 1) {
-            return _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__.sanitizeDegreesDouble(sourceColor.hue + rotations[0]);
-        }
-        const size = hues.length;
-        for (let i = 0; i <= size - 2; i++) {
-            const thisHue = hues[i];
-            const nextHue = hues[i + 1];
-            if (thisHue < sourceHue && sourceHue < nextHue) {
-                return _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_2__.sanitizeDegreesDouble(sourceHue + rotations[i]);
-            }
-        }
-        // If this statement executes, something is wrong, there should have been a
-        // rotation found using the arrays.
-        return sourceHue;
-    }
-}
-//# sourceMappingURL=dynamic_scheme.js.map
-
-/***/ }),
-
 /***/ "./node_modules/@material/material-color-utilities/scheme/scheme.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@material/material-color-utilities/scheme/scheme.js ***!
@@ -6038,6 +6294,11 @@ __webpack_require__.r(__webpack_exports__);
 // This file is automatically generated. Do not modify it.
 
 /**
+ * DEPRECATED. The `Scheme` class is deprecated in favor of `DynamicScheme`.
+ * Please see
+ * https://github.com/material-foundation/material-color-utilities/blob/main/make_schemes.md
+ * for migration guidance.
+ *
  * Represents a Material color scheme, a mapping of color roles to colors.
  */
 class Scheme {
@@ -6468,10 +6729,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   SchemeContent: () => (/* binding */ SchemeContent)
 /* harmony export */ });
 /* harmony import */ var _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dislike/dislike_analyzer.js */ "./node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js");
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
 /**
  * @license
  * Copyright 2023 Google LLC
@@ -6502,20 +6763,20 @@ __webpack_require__.r(__webpack_exports__);
  * Tertiary Container is the complement to the source color, using
  * `TemperatureCache`. It also maintains constant appearance.
  */
-class SchemeContent extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_3__.DynamicScheme {
+class SchemeContent extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_4__.Variant.CONTENT,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_2__.Variant.CONTENT,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, Math.max(sourceColorHct.chroma - 32.0, sourceColorHct.chroma * 0.5)),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromInt(_dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__.DislikeAnalyzer
-                .fixIfDisliked(new _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_2__.TemperatureCache(sourceColorHct).analogous(3, 6)[2])
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, Math.max(sourceColorHct.chroma - 32.0, sourceColorHct.chroma * 0.5)),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromInt(_dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__.DislikeAnalyzer
+                .fixIfDisliked(new _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_4__.TemperatureCache(sourceColorHct).analogous(3, 6)[2])
                 .toInt()),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0 + 4.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0 + 4.0),
         });
     }
 }
@@ -6534,10 +6795,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SchemeExpressive: () => (/* binding */ SchemeExpressive)
 /* harmony export */ });
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -6561,18 +6822,18 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * A Dynamic Color theme that is intentionally detached from the source color.
  */
-class SchemeExpressive extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__.DynamicScheme {
+class SchemeExpressive extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_3__.Variant.EXPRESSIVE,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.EXPRESSIVE,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_1__.sanitizeDegreesDouble(sourceColorHct.hue + 240.0), 40.0),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.secondaryRotations), 24.0),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.tertiaryRotations), 32.0),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 8.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 12.0),
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__.sanitizeDegreesDouble(sourceColorHct.hue + 240.0), 40.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.secondaryRotations), 24.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.tertiaryRotations), 32.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 8.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 12.0),
         });
     }
 }
@@ -6637,10 +6898,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   SchemeFidelity: () => (/* binding */ SchemeFidelity)
 /* harmony export */ });
 /* harmony import */ var _dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dislike/dislike_analyzer.js */ "./node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js");
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../temperature/temperature_cache.js */ "./node_modules/@material/material-color-utilities/temperature/temperature_cache.js");
 /**
  * @license
  * Copyright 2023 Google LLC
@@ -6671,24 +6932,81 @@ __webpack_require__.r(__webpack_exports__);
  * Tertiary Container is the complement to the source color, using
  * `TemperatureCache`. It also maintains constant appearance.
  */
-class SchemeFidelity extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_3__.DynamicScheme {
+class SchemeFidelity extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_4__.Variant.FIDELITY,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_2__.Variant.FIDELITY,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, Math.max(sourceColorHct.chroma - 32.0, sourceColorHct.chroma * 0.5)),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromInt(_dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__.DislikeAnalyzer
-                .fixIfDisliked(new _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_2__.TemperatureCache(sourceColorHct).complement)
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, Math.max(sourceColorHct.chroma - 32.0, sourceColorHct.chroma * 0.5)),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromInt(_dislike_dislike_analyzer_js__WEBPACK_IMPORTED_MODULE_0__.DislikeAnalyzer
+                .fixIfDisliked(new _temperature_temperature_cache_js__WEBPACK_IMPORTED_MODULE_4__.TemperatureCache(sourceColorHct).complement)
                 .toInt()),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_1__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0 + 4.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_3__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, sourceColorHct.chroma / 8.0 + 4.0),
         });
     }
 }
 //# sourceMappingURL=scheme_fidelity.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/material-color-utilities/scheme/scheme_fruit_salad.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@material/material-color-utilities/scheme/scheme_fruit_salad.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SchemeFruitSalad: () => (/* binding */ SchemeFruitSalad)
+/* harmony export */ });
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+/**
+ * A playful theme - the source color's hue does not appear in the theme.
+ */
+class SchemeFruitSalad extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
+    constructor(sourceColorHct, isDark, contrastLevel) {
+        super({
+            sourceColorArgb: sourceColorHct.toInt(),
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.FRUIT_SALAD,
+            contrastLevel,
+            isDark,
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__.sanitizeDegreesDouble(sourceColorHct.hue - 50.0), 48.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__.sanitizeDegreesDouble(sourceColorHct.hue - 50.0), 36.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 36.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
+        });
+    }
+}
+//# sourceMappingURL=scheme_fruit_salad.js.map
 
 /***/ }),
 
@@ -6703,9 +7021,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SchemeMonochrome: () => (/* binding */ SchemeMonochrome)
 /* harmony export */ });
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -6726,18 +7044,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /** A Dynamic Color theme that is grayscale. */
-class SchemeMonochrome extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme {
+class SchemeMonochrome extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_2__.Variant.MONOCHROME,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.MONOCHROME,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
         });
     }
 }
@@ -6756,9 +7074,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SchemeNeutral: () => (/* binding */ SchemeNeutral)
 /* harmony export */ });
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -6779,22 +7097,79 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /** A Dynamic Color theme that is near grayscale. */
-class SchemeNeutral extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme {
+class SchemeNeutral extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_2__.Variant.NEUTRAL,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.NEUTRAL,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12.0),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 8.0),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 2.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 2.0),
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 8.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 2.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 2.0),
         });
     }
 }
 //# sourceMappingURL=scheme_neutral.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/material-color-utilities/scheme/scheme_rainbow.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@material/material-color-utilities/scheme/scheme_rainbow.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SchemeRainbow: () => (/* binding */ SchemeRainbow)
+/* harmony export */ });
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+/**
+ * A playful theme - the source color's hue does not appear in the theme.
+ */
+class SchemeRainbow extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
+    constructor(sourceColorHct, isDark, contrastLevel) {
+        super({
+            sourceColorArgb: sourceColorHct.toInt(),
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.RAINBOW,
+            contrastLevel,
+            isDark,
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 48.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__.sanitizeDegreesDouble(sourceColorHct.hue + 60.0), 24.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 0.0),
+        });
+    }
+}
+//# sourceMappingURL=scheme_rainbow.js.map
 
 /***/ }),
 
@@ -6809,10 +7184,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SchemeTonalSpot: () => (/* binding */ SchemeTonalSpot)
 /* harmony export */ });
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
+/* harmony import */ var _utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/math_utils.js */ "./node_modules/@material/material-color-utilities/utils/math_utils.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -6839,18 +7214,18 @@ __webpack_require__.r(__webpack_exports__);
  *
  * The default Material You theme on Android 12 and 13.
  */
-class SchemeTonalSpot extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_2__.DynamicScheme {
+class SchemeTonalSpot extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_3__.Variant.TONAL_SPOT,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.TONAL_SPOT,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 36.0),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_1__.sanitizeDegreesDouble(sourceColorHct.hue + 60.0), 24.0),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 6.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 8.0),
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 36.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 16.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_utils_math_utils_js__WEBPACK_IMPORTED_MODULE_3__.sanitizeDegreesDouble(sourceColorHct.hue + 60.0), 24.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 6.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 8.0),
         });
     }
 }
@@ -6869,9 +7244,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SchemeVibrant: () => (/* binding */ SchemeVibrant)
 /* harmony export */ });
-/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
-/* harmony import */ var _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js");
-/* harmony import */ var _variant_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variant.js */ "./node_modules/@material/material-color-utilities/scheme/variant.js");
+/* harmony import */ var _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dynamiccolor/dynamic_scheme.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/dynamic_scheme.js");
+/* harmony import */ var _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dynamiccolor/variant.js */ "./node_modules/@material/material-color-utilities/dynamiccolor/variant.js");
+/* harmony import */ var _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../palettes/tonal_palette.js */ "./node_modules/@material/material-color-utilities/palettes/tonal_palette.js");
 /**
  * @license
  * Copyright 2022 Google LLC
@@ -6895,18 +7270,18 @@ __webpack_require__.r(__webpack_exports__);
  * A Dynamic Color theme that maxes out colorfulness at each position in the
  * Primary Tonal Palette.
  */
-class SchemeVibrant extends _dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme {
+class SchemeVibrant extends _dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme {
     constructor(sourceColorHct, isDark, contrastLevel) {
         super({
             sourceColorArgb: sourceColorHct.toInt(),
-            variant: _variant_js__WEBPACK_IMPORTED_MODULE_2__.Variant.VIBRANT,
+            variant: _dynamiccolor_variant_js__WEBPACK_IMPORTED_MODULE_1__.Variant.VIBRANT,
             contrastLevel,
             isDark,
-            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 200.0),
-            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.secondaryRotations), 24.0),
-            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_1__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.tertiaryRotations), 32.0),
-            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10.0),
-            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_0__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12.0),
+            primaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 200.0),
+            secondaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.secondaryRotations), 24.0),
+            tertiaryPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(_dynamiccolor_dynamic_scheme_js__WEBPACK_IMPORTED_MODULE_0__.DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.tertiaryRotations), 32.0),
+            neutralPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10.0),
+            neutralVariantPalette: _palettes_tonal_palette_js__WEBPACK_IMPORTED_MODULE_2__.TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12.0),
         });
     }
 }
@@ -6956,54 +7331,6 @@ SchemeVibrant.tertiaryRotations = [
     25.0,
 ];
 //# sourceMappingURL=scheme_vibrant.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@material/material-color-utilities/scheme/variant.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@material/material-color-utilities/scheme/variant.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Variant: () => (/* binding */ Variant)
-/* harmony export */ });
-/**
- * @license
- * Copyright 2022 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Set of themes supported by Dynamic Color.
- * Instantiate the corresponding subclass, ex. SchemeTonalSpot, to create
- * colors corresponding to the theme.
- */
-var Variant;
-(function (Variant) {
-    Variant[Variant["MONOCHROME"] = 0] = "MONOCHROME";
-    Variant[Variant["NEUTRAL"] = 1] = "NEUTRAL";
-    Variant[Variant["TONAL_SPOT"] = 2] = "TONAL_SPOT";
-    Variant[Variant["VIBRANT"] = 3] = "VIBRANT";
-    Variant[Variant["EXPRESSIVE"] = 4] = "EXPRESSIVE";
-    Variant[Variant["FIDELITY"] = 5] = "FIDELITY";
-    Variant[Variant["CONTENT"] = 6] = "CONTENT";
-    Variant[Variant["RAINBOW"] = 7] = "RAINBOW";
-    Variant[Variant["FRUIT_SALAD"] = 8] = "FRUIT_SALAD";
-})(Variant || (Variant = {}));
-//# sourceMappingURL=variant.js.map
 
 /***/ }),
 
@@ -7832,7 +8159,7 @@ async function sourceColorFromImage(image) {
             reject(new Error('Could not get canvas context'));
             return;
         }
-        const callback = () => {
+        const loadCallback = () => {
             canvas.width = image.width;
             canvas.height = image.height;
             context.drawImage(image, 0, 0);
@@ -7847,11 +8174,15 @@ async function sourceColorFromImage(image) {
             const [sx, sy, sw, sh] = rect;
             resolve(context.getImageData(sx, sy, sw, sh).data);
         };
+        const errorCallback = () => {
+            reject(new Error('Image load failed'));
+        };
         if (image.complete) {
-            callback();
+            loadCallback();
         }
         else {
-            image.onload = callback;
+            image.onload = loadCallback;
+            image.onerror = errorCallback;
         }
     });
     // Convert Image data to Pixel Array
