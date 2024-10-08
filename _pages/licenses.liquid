@@ -17,16 +17,24 @@ published: true
   <thead>
     <tr>
       <th>名称</th>
-      <th>版本</th>
-      <th>源地址</th>
       <th>许可证</th>
+      <th>源地址</th>
     </tr>
   </thead>
   <tbody>
     {% for item in site.data.licenses %}
       <tr>
         <td>{{ item.name }}</td>
-        <td>{{ item.version }}</td>
+        <td>
+          <button
+            class="chip"
+            spec="assist"
+            icon
+            disabled>
+            <span>balance</span>
+            {{ item.license }}
+          </button>
+        </td>
         <td>
           <a href="{{ item.repository }}" target="_blank">
             <button
@@ -37,16 +45,6 @@ published: true
               访问
             </button>
           </a>
-        </td>
-        <td>
-          <button
-            class="chip"
-            spec="assist"
-            icon
-            disabled>
-            <span>balance</span>
-            {{ item.license }}
-          </button>
         </td>
       </tr>
     {% endfor %}
