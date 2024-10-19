@@ -7,6 +7,8 @@ layout: "feed"
   class="card"
   spec="feed"
   size="large">
+  <md-ripple></md-ripple>
+
   {% assign latest_post = site.posts | first %}
   {% assign article_by_author = site.data.authors[latest_post.author] | default: site.author %}
 
@@ -44,14 +46,10 @@ layout: "feed"
     </div>
 
     <div>
-      <button class="icon-button" spec="tonal">favorite</button>
-      <a href="{{ latest_post.url }}">
-        <button
-          class="common-button"
-          spec="filled"
-          icon>
-          <span>open_in_new</span>详细阅读文章</button>
-      </a>
+      <md-icon-button>
+        <md-icon>favorite</md-icon>
+      </md-icon-button>
+      <md-filled-button href="{{ latest_post.url }}">详细阅读文章</md-filled-button>
     </div>
   </div>
 </div>
@@ -61,6 +59,9 @@ layout: "feed"
   spec="feed"
   size="small"
   color="blue">
+
+  <md-ripple></md-ripple>
+
   <a href="/posts/关于这个主题的一些事">
     <div class="card-supporting">
       <h5>了解这个 Jekyll 主题</h5>
@@ -68,9 +69,9 @@ layout: "feed"
   </a>
 
   <div class="card-action">
-    <a href="/posts/关于这个主题的一些事">
-      <button class="icon-button" spec="filled">chevron_right</button>
-    </a>
+    <md-icon-button href="/posts/关于这个主题的一些事">
+      <md-icon>chevron_right</md-icon>
+    </md-icon-button>
   </div>
 </div>
 
@@ -81,6 +82,9 @@ layout: "feed"
     class="card"
     spec="feed"
     size="medium">
+
+    <md-ripple></md-ripple>
+
     <a href="{{ post.url }}">
       <div class="card-impression">
         <div class="impression-image">
@@ -100,10 +104,12 @@ layout: "feed"
     <div class="card-action">
       <p>{{ post.categories | default: "未分类" }}</p>
       <div>
-        <button class="icon-button" spec="tonal">favorite</button>
-        <a href="{{ post.url }}">
-          <button class="icon-button" spec="tonal">open_in_new</button>
-        </a>
+        <md-icon-button>
+          <md-icon>favorite</md-icon>
+        </md-icon-button>
+        <md-filled-icon-button href="{{ post.url }}">
+          <md-icon>open_in_new</md-icon>
+        </md-filled-icon-button>
       </div>
     </div>
   </div>

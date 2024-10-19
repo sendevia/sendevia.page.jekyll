@@ -26,25 +26,21 @@ published: true
       <tr>
         <td>{{ item.name }}</td>
         <td>
-          <button
-            class="chip"
-            spec="assist"
-            icon
-            disabled>
-            <span>balance</span>
-            {{ item.license }}
-          </button>
+          <md-chip-set>
+            <md-assist-chip label="{{ item.license }}">
+              <md-icon slot="icon">balance</md-icon>
+            </md-assist-chip>
+          </md-chip-set>
         </td>
         <td>
-          <a href="{{ item.repository }}" target="_blank">
-            <button
-              class="chip"
-              spec="assist"
-              icon>
-              <span>open_in_new</span>
-              访问
-            </button>
-          </a>
+          <md-chip-set>
+            <md-assist-chip
+              label="访问"
+              href="{{ item.repository }}"
+              target="_blank">
+              <md-icon slot="icon">open_in_new</md-icon>
+            </md-assist-chip>
+          </md-chip-set>
         </td>
       </tr>
     {% endfor %}

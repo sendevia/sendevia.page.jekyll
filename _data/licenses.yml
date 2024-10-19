@@ -2,9 +2,13 @@
   license: MIT
   repository: https://github.com/Sendevia/jekyll-theme-m3
 
-- name: "@material/material-color-utilities"
+- name: material-color-utilities
   license: Apache-2.0
   repository: https://github.com/material-foundation/material-color-utilities
+
+- name: material-web
+  license: Apache-2.0
+  repository: https://github.com/material-components/material-web
 
 - name: jekyll
   license: MIT
@@ -37,11 +41,3 @@
 - name: Noto Sans SC
   license: Open Font License
   repository: https://fonts.google.com/noto/specimen/Noto+Sans+SC
-
-- name: Material Symbols
-  license: Apache-2.0
-  repository: https://github.com/google/material-design-icons
-
-- name: Font Awesome
-  license: CC BY 4.0
-  repository: https://fontawesome.com

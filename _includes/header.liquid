@@ -20,10 +20,9 @@
     </filter>
   </svg>
   {% if page.url != "/index.html" %}
-    <button
-      class="icon-button"
-      id="default-header-webinfo"
-      spec="standard">info</button>
+    <md-icon-button id="default-header-webinfo">
+      <md-icon>info</md-icon>
+    </md-icon-button>
   {% endif %}
   {% assign photograph = page.impression | default: site.impression %}
   <div id="default-header-hero-container">

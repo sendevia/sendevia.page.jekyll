@@ -23,9 +23,9 @@
     <a href="/">
       <div class="navigation-segment-inactive">
         <div class="navigation-destination-accent">
+          <md-ripple></md-ripple>
           <div class="navigation-segment-icon">
-            <!-- https://fonts.google.com/icons?selected=Material+Icons&icon.set=Material+Symbols -->
-            <span>home</span>
+            <md-icon>home</md-icon>
           </div>
         </div>
         <p class="navigation-destination-label">首页</p>
@@ -34,8 +34,9 @@
 
     <div class="navigation-segment-inactive">
       <div class="navigation-destination-accent">
+        <md-ripple></md-ripple>
         <div class="navigation-segment-icon">
-          <span>article</span>
+          <md-icon>article</md-icon>
         </div>
       </div>
       <p class="navigation-destination-label">文章目录</p>
@@ -46,8 +47,9 @@
         <a href="{{ s.url | remove: '.html' }}">
           <div class="navigation-segment-inactive">
             <div class="navigation-destination-accent">
+              <md-ripple></md-ripple>
               <div class="navigation-segment-icon">
-                <span>{{ s.segment_icon }}</span>
+                <md-icon>{{ s.segment_icon }}</md-icon>
               </div>
             </div>
             <p class="navigation-destination-label">{{ s.segment_title }}</p>
@@ -74,14 +76,9 @@
       {% endif %}
     </div>
 
-    <a id="navigation-drawer-backward" href="/posts/">
-      <button
-        class="common-button"
-        spec="text"
-        icon>
-        <span>west</span>
-        查看全部文章
-      </button>
-    </a>
+    <md-text-button href="/posts/">
+      查看全部文章
+      <md-icon slot="icon">chevron_left</md-icon>
+    </md-text-button>
   </div>
 </div>

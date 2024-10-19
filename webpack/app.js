@@ -3,6 +3,24 @@ import { generateColorPalette } from "./monet";
 import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
 import "giscus";
 
+import "@material/web/icon/icon";
+
+import "@material/web/button/filled-button";
+import "@material/web/button/filled-tonal-button";
+import "@material/web/button/text-button";
+
+import "@material/web/iconbutton/icon-button";
+import "@material/web/iconbutton/filled-icon-button";
+
+import "@material/web/chips/chip-set";
+import "@material/web/chips/assist-chip";
+
+import "@material/web/dialog/dialog";
+
+import "@material/web/progress/circular-progress";
+
+import "@material/web/ripple/ripple";
+
 /**
  * 主题 - 根节点
  */
@@ -18,7 +36,7 @@ const themeCurrentPage = window.location.pathname;
 /**
  * 主题 - 模态对话框
  */
-const themeDialog = document.querySelector(".modal-dialog");
+const themeDialog = document.querySelector("md-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
@@ -26,17 +44,11 @@ const themeDialogControllerOpen = document.querySelectorAll("#default-header-web
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
-const themeDialogControllerClose = document.querySelector("#dialog-close");
+const themeDialogControllerClose = document.querySelector("md-dialog div[slot='actions'] md-text-button");
 /**
  * 主题 - 跳转到页首
  */
 const themeScrollToTop = document.querySelectorAll("#main-layout-scrolltop");
-/**
- * 主题 - 涟漪效果元素
- */
-const themeRippleElements = document.querySelectorAll(
-  `#main-layout-content-filler[spec='article'] li a, #main-layout-content-filler[spec='article'] p a, button, .card[spec='clear'], .card[spec='focus'], #navigation-drawer details a, .navigation-destination-accent, .default-header-webinfo, .carousel-article`
-);
 /**
  * 主题 - 延迟跳转元素
  */
@@ -164,41 +176,14 @@ function handleLinkDelayRedirection(linkElement) {
  * 初始模态框
  */
 function initializeModal() {
-  const toggleBodyBlur = (shouldBlur) => {
-    themeRoot.toggleAttribute("o-bodyblur", shouldBlur);
-  };
-
-  const openModal = () => {
-    toggleBodyBlur(true);
-    themeDialog.showModal();
-  };
-
-  const closeModal = () => {
-    toggleBodyBlur(false);
-    themeDialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both modal-dialog-container-close`;
-    setTimeout(() => {
-      themeDialog.close();
-      themeDialog.style.animation = "";
-    }, 400);
-  };
-
-  const handleKeyboardEvent = (event) => {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeModal();
-    }
-  };
-
-  const handleClickOutsideEvent = (event) => {
-    if (event.target === themeDialog) {
-      closeModal();
-    }
-  };
-
-  themeDialogControllerOpen.forEach((element) => element.addEventListener("click", openModal));
-  themeDialogControllerClose.addEventListener("click", closeModal);
-  themeDialog.addEventListener("keydown", handleKeyboardEvent);
-  themeDialog.addEventListener("click", handleClickOutsideEvent);
+  themeDialogControllerOpen.forEach((element) =>
+    element.addEventListener("click", async () => {
+      await themeDialog.show();
+    })
+  );
+  themeDialogControllerClose.addEventListener("click", async () => {
+    await themeDialog.close();
+  });
 }
 
 /**
@@ -247,14 +232,9 @@ function createSnackbar(message) {
   messageElement.id = "snackbar-supporting";
   messageElement.textContent = message;
 
-  const closeButton = document.createElement("button");
-  closeButton.textContent = "close";
-  closeButton.className = "icon-button";
-  closeButton.id = "snackbar-icon";
-  closeButton.addEventListener("click", () => removeSnackbar());
+  snackbarElement.addEventListener("click", () => removeSnackbar());
 
   snackbarElement.appendChild(messageElement);
-  snackbarElement.appendChild(closeButton);
   document.body.appendChild(snackbarElement);
 
   snackbarQueue.unshift(snackbarElement);
@@ -377,70 +357,7 @@ function getIdByUrl(postsArray, urlValue) {
   return post ? post.id : themeCurrentPage;
 }
 
-/**
- * 添加涟漪效果
- * @param {selector} parentElement
- */
-function effectRipple(parentElement) {
-  const clearRipple = (parentElement) => {
-    const rippleR = parentElement.querySelector("ripple-effect");
-    if (rippleR) {
-      rippleR.style.opacity = 0;
-      parentElement.removeChild(rippleR);
-    }
-  };
-
-  const addRipple = (parentElement, event) => {
-    const rippleA = document.createElement("ripple-effect");
-
-    const { clientWidth, clientHeight } = parentElement;
-    const diameter = Math.max(clientWidth, clientHeight);
-    const { offsetX, offsetY } = event;
-
-    rippleA.style.setProperty("--ripple-effect-PosX", offsetX);
-    rippleA.style.setProperty("--ripple-effect-PosY", offsetY);
-    rippleA.style.setProperty("--ripple-effect-Diameter", diameter);
-
-    parentElement.appendChild(rippleA);
-  };
-
-  let isLongPress = false;
-  let isPressing = false;
-
-  const handleMouseDown = (event) => {
-    isPressing = true;
-    isLongPress = false;
-
-    // 设置一个短延时用于判断是否为短按
-    setTimeout(() => {
-      if (isPressing) {
-        isLongPress = true;
-        addRipple(parentElement, event);
-      }
-    }, 100); // 可以根据需要调整延时时间
-  };
-
-  const handleMouseUp = (event) => {
-    if (isPressing) {
-      if (!isLongPress) {
-        addRipple(parentElement, event);
-      }
-      isPressing = false;
-    }
-  };
-
-  parentElement.addEventListener("mousedown", handleMouseDown);
-  parentElement.addEventListener("mouseup", handleMouseUp);
-  parentElement.addEventListener("mouseleave", () => {
-    isPressing = false;
-  });
-  parentElement.addEventListener("animationend", () => clearRipple(parentElement));
-}
-
 window.onload = () => {
-  // 初始化涟漪效果
-  themeRippleElements.forEach(effectRipple);
-
   // 初始化滚动监听
   contentFlow.onscroll = scrollHandler;
 

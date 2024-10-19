@@ -77,12 +77,6 @@
     flex-wrap: wrap;
     gap: 6px;
     justify-content: flex-end;
-
-    .icon-button {
-      path {
-        fill: var(--md-sys-color-on-surface-variant);
-      }
-    }
   }
 
   @import "_breakpoints/main";

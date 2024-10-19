@@ -28,15 +28,11 @@
   </div>
   <div id="main-layout-footer-social-media">
     {% for item in site.data.socialmedia %}
-      <a
-        href="{{ item.link }}"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="{{ item.name }}">
-        <button class="icon-button" spec="text">
+      <md-icon-button href="{{ item.link }}" target="_blank">
+        <md-icon>
           {{ item.icon }}
-        </button>
-      </a>
+        </md-icon>
+      </md-icon-button>
     {% endfor %}
   </div>
 </footer>
