@@ -8607,6 +8607,4671 @@ function setSchemeProperties(target, scheme, suffix = '') {
 
 /***/ }),
 
+/***/ "./node_modules/@material/web/button/filled-button.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@material/web/button/filled-button.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdFilledButton: () => (/* binding */ MdFilledButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_filled_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/filled-button.js */ "./node_modules/@material/web/button/internal/filled-button.js");
+/* harmony import */ var _internal_filled_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/filled-styles.js */ "./node_modules/@material/web/button/internal/filled-styles.js");
+/* harmony import */ var _internal_shared_elevation_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/shared-elevation-styles.js */ "./node_modules/@material/web/button/internal/shared-elevation-styles.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/button/internal/shared-styles.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+/**
+ * @summary Buttons help people take action, such as sending an email, sharing a
+ * document, or liking a comment.
+ *
+ * @description
+ * __Emphasis:__ High emphasis – For the primary, most important, or most common
+ * action on a screen
+ *
+ * __Rationale:__ The filled button’s contrasting surface color makes it the
+ * most prominent button after the FAB. It’s used for final or unblocking
+ * actions in a flow.
+ *
+ * __Example usages:__
+ * - Save
+ * - Confirm
+ * - Done
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdFilledButton = class MdFilledButton extends _internal_filled_button_js__WEBPACK_IMPORTED_MODULE_1__.FilledButton {
+};
+MdFilledButton.styles = [
+    _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__.styles,
+    _internal_shared_elevation_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles,
+    _internal_filled_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles,
+];
+MdFilledButton = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-filled-button')
+], MdFilledButton);
+//# sourceMappingURL=filled-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/filled-tonal-button.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/button/filled-tonal-button.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdFilledTonalButton: () => (/* binding */ MdFilledTonalButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_filled_tonal_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/filled-tonal-button.js */ "./node_modules/@material/web/button/internal/filled-tonal-button.js");
+/* harmony import */ var _internal_filled_tonal_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/filled-tonal-styles.js */ "./node_modules/@material/web/button/internal/filled-tonal-styles.js");
+/* harmony import */ var _internal_shared_elevation_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/shared-elevation-styles.js */ "./node_modules/@material/web/button/internal/shared-elevation-styles.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/button/internal/shared-styles.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+/**
+ * @summary Buttons help people take action, such as sending an email, sharing a
+ * document, or liking a comment.
+ *
+ * @description
+ * __Emphasis:__ Medium emphasis – For important actions that don’t distract
+ * from other onscreen elements.
+ *
+ * __Rationale:__ Filled tonal buttons have a lighter background color and
+ * darker label color, making them less visually prominent than a regular,
+ * filled button. They’re still used for final or unblocking actions in a flow,
+ * but do so with less emphasis.
+ *
+ * __Example usages:__
+ * - Save
+ * - Confirm
+ * - Done
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdFilledTonalButton = class MdFilledTonalButton extends _internal_filled_tonal_button_js__WEBPACK_IMPORTED_MODULE_1__.FilledTonalButton {
+};
+MdFilledTonalButton.styles = [
+    _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__.styles,
+    _internal_shared_elevation_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles,
+    _internal_filled_tonal_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles,
+];
+MdFilledTonalButton = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-filled-tonal-button')
+], MdFilledTonalButton);
+//# sourceMappingURL=filled-tonal-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/button.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/button.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* binding */ Button)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _focus_md_focus_ring_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../focus/md-focus-ring.js */ "./node_modules/@material/web/focus/md-focus-ring.js");
+/* harmony import */ var _ripple_ripple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ripple/ripple.js */ "./node_modules/@material/web/ripple/ripple.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/aria/delegate.js */ "./node_modules/@material/web/internal/aria/delegate.js");
+/* harmony import */ var _internal_controller_form_submitter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../internal/controller/form-submitter.js */ "./node_modules/@material/web/internal/controller/form-submitter.js");
+/* harmony import */ var _internal_events_form_label_activation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../internal/events/form-label-activation.js */ "./node_modules/@material/web/internal/events/form-label-activation.js");
+/* harmony import */ var _labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../labs/behaviors/element-internals.js */ "./node_modules/@material/web/labs/behaviors/element-internals.js");
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+
+
+
+// Separate variable needed for closure.
+const buttonBaseClass = (0,_internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_4__.mixinDelegatesAria)((0,_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_7__.mixinElementInternals)(lit__WEBPACK_IMPORTED_MODULE_2__.LitElement));
+/**
+ * A button component.
+ */
+class Button extends buttonBaseClass {
+    get name() {
+        return this.getAttribute('name') ?? '';
+    }
+    set name(name) {
+        this.setAttribute('name', name);
+    }
+    /**
+     * The associated form element with which this element's value will submit.
+     */
+    get form() {
+        return this[_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_7__.internals].form;
+    }
+    constructor() {
+        super();
+        /**
+         * Whether or not the button is disabled.
+         */
+        this.disabled = false;
+        /**
+         * Whether or not the button is "soft-disabled" (disabled but still
+         * focusable).
+         *
+         * Use this when a button needs increased visibility when disabled. See
+         * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls
+         * for more guidance on when this is needed.
+         */
+        this.softDisabled = false;
+        /**
+         * The URL that the link button points to.
+         */
+        this.href = '';
+        /**
+         * Where to display the linked `href` URL for a link button. Common options
+         * include `_blank` to open in a new tab.
+         */
+        this.target = '';
+        /**
+         * Whether to render the icon at the inline end of the label rather than the
+         * inline start.
+         *
+         * _Note:_ Link buttons cannot have trailing icons.
+         */
+        this.trailingIcon = false;
+        /**
+         * Whether to display the icon or not.
+         */
+        this.hasIcon = false;
+        /**
+         * The default behavior of the button. May be "button", "reset", or "submit"
+         * (default).
+         */
+        this.type = 'submit';
+        /**
+         * The value added to a form with the button's name when the button submits a
+         * form.
+         */
+        this.value = '';
+        if (!lit__WEBPACK_IMPORTED_MODULE_2__.isServer) {
+            this.addEventListener('click', this.handleClick.bind(this));
+        }
+    }
+    focus() {
+        this.buttonElement?.focus();
+    }
+    blur() {
+        this.buttonElement?.blur();
+    }
+    render() {
+        // Link buttons may not be disabled
+        const isRippleDisabled = !this.href && (this.disabled || this.softDisabled);
+        const buttonOrLink = this.href ? this.renderLink() : this.renderButton();
+        // TODO(b/310046938): due to a limitation in focus ring/ripple, we can't use
+        // the same ID for different elements, so we change the ID instead.
+        const buttonId = this.href ? 'link' : 'button';
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      ${this.renderElevationOrOutline?.()}
+      <div class="background"></div>
+      <md-focus-ring part="focus-ring" for=${buttonId}></md-focus-ring>
+      <md-ripple
+        part="ripple"
+        for=${buttonId}
+        ?disabled="${isRippleDisabled}"></md-ripple>
+      ${buttonOrLink}
+    `;
+    }
+    renderButton() {
+        // Needed for closure conformance
+        const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<button
+      id="button"
+      class="button"
+      ?disabled=${this.disabled}
+      aria-disabled=${this.softDisabled || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+      aria-label="${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+      aria-haspopup="${ariaHasPopup || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+      aria-expanded="${ariaExpanded || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}">
+      ${this.renderContent()}
+    </button>`;
+    }
+    renderLink() {
+        // Needed for closure conformance
+        const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<a
+      id="link"
+      class="button"
+      aria-label="${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+      aria-haspopup="${ariaHasPopup || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+      aria-expanded="${ariaExpanded || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+      href=${this.href}
+      target=${this.target || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+      >${this.renderContent()}
+    </a>`;
+    }
+    renderContent() {
+        const icon = (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<slot
+      name="icon"
+      @slotchange="${this.handleSlotChange}"></slot>`;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      <span class="touch"></span>
+      ${this.trailingIcon ? lit__WEBPACK_IMPORTED_MODULE_2__.nothing : icon}
+      <span class="label"><slot></slot></span>
+      ${this.trailingIcon ? icon : lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+    `;
+    }
+    handleClick(event) {
+        // If the button is soft-disabled, we need to explicitly prevent the click
+        // from propagating to other event listeners as well as prevent the default
+        // action.
+        if (!this.href && this.softDisabled) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return;
+        }
+        if (!(0,_internal_events_form_label_activation_js__WEBPACK_IMPORTED_MODULE_6__.isActivationClick)(event) || !this.buttonElement) {
+            return;
+        }
+        this.focus();
+        (0,_internal_events_form_label_activation_js__WEBPACK_IMPORTED_MODULE_6__.dispatchActivationClick)(this.buttonElement);
+    }
+    handleSlotChange() {
+        this.hasIcon = this.assignedIcons.length > 0;
+    }
+}
+(() => {
+    (0,_internal_controller_form_submitter_js__WEBPACK_IMPORTED_MODULE_5__.setupFormSubmitter)(Button);
+})();
+/** @nocollapse */
+Button.formAssociated = true;
+/** @nocollapse */
+Button.shadowRootOptions = {
+    mode: 'open',
+    delegatesFocus: true,
+};
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, reflect: true })
+], Button.prototype, "disabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'soft-disabled', reflect: true })
+], Button.prototype, "softDisabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], Button.prototype, "href", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], Button.prototype, "target", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'trailing-icon', reflect: true })
+], Button.prototype, "trailingIcon", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'has-icon', reflect: true })
+], Button.prototype, "hasIcon", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], Button.prototype, "type", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ reflect: true })
+], Button.prototype, "value", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.query)('.button')
+], Button.prototype, "buttonElement", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.queryAssignedElements)({ slot: 'icon', flatten: true })
+], Button.prototype, "assignedIcons", void 0);
+//# sourceMappingURL=button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/filled-button.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/filled-button.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FilledButton: () => (/* binding */ FilledButton)
+/* harmony export */ });
+/* harmony import */ var _elevation_elevation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../elevation/elevation.js */ "./node_modules/@material/web/elevation/elevation.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var _button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button.js */ "./node_modules/@material/web/button/internal/button.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+/**
+ * A filled button component.
+ */
+class FilledButton extends _button_js__WEBPACK_IMPORTED_MODULE_2__.Button {
+    renderElevationOrOutline() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `<md-elevation part="elevation"></md-elevation>`;
+    }
+}
+//# sourceMappingURL=filled-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/filled-styles.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/filled-styles.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./button/internal/filled-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_container-color: var(--md-filled-button-container-color, var(--md-sys-color-primary, #6750a4));--_container-elevation: var(--md-filled-button-container-elevation, 0);--_container-height: var(--md-filled-button-container-height, 40px);--_container-shadow-color: var(--md-filled-button-container-shadow-color, var(--md-sys-color-shadow, #000));--_disabled-container-color: var(--md-filled-button-disabled-container-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-container-elevation: var(--md-filled-button-disabled-container-elevation, 0);--_disabled-container-opacity: var(--md-filled-button-disabled-container-opacity, 0.12);--_disabled-label-text-color: var(--md-filled-button-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-filled-button-disabled-label-text-opacity, 0.38);--_focus-container-elevation: var(--md-filled-button-focus-container-elevation, 0);--_focus-label-text-color: var(--md-filled-button-focus-label-text-color, var(--md-sys-color-on-primary, #fff));--_hover-container-elevation: var(--md-filled-button-hover-container-elevation, 1);--_hover-label-text-color: var(--md-filled-button-hover-label-text-color, var(--md-sys-color-on-primary, #fff));--_hover-state-layer-color: var(--md-filled-button-hover-state-layer-color, var(--md-sys-color-on-primary, #fff));--_hover-state-layer-opacity: var(--md-filled-button-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-filled-button-label-text-color, var(--md-sys-color-on-primary, #fff));--_label-text-font: var(--md-filled-button-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-filled-button-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-filled-button-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-filled-button-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-container-elevation: var(--md-filled-button-pressed-container-elevation, 0);--_pressed-label-text-color: var(--md-filled-button-pressed-label-text-color, var(--md-sys-color-on-primary, #fff));--_pressed-state-layer-color: var(--md-filled-button-pressed-state-layer-color, var(--md-sys-color-on-primary, #fff));--_pressed-state-layer-opacity: var(--md-filled-button-pressed-state-layer-opacity, 0.12);--_disabled-icon-color: var(--md-filled-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-filled-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-filled-button-focus-icon-color, var(--md-sys-color-on-primary, #fff));--_hover-icon-color: var(--md-filled-button-hover-icon-color, var(--md-sys-color-on-primary, #fff));--_icon-color: var(--md-filled-button-icon-color, var(--md-sys-color-on-primary, #fff));--_icon-size: var(--md-filled-button-icon-size, 18px);--_pressed-icon-color: var(--md-filled-button-pressed-icon-color, var(--md-sys-color-on-primary, #fff));--_container-shape-start-start: var(--md-filled-button-container-shape-start-start, var(--md-filled-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-filled-button-container-shape-start-end, var(--md-filled-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-filled-button-container-shape-end-end, var(--md-filled-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-filled-button-container-shape-end-start, var(--md-filled-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_leading-space: var(--md-filled-button-leading-space, 24px);--_trailing-space: var(--md-filled-button-trailing-space, 24px);--_with-leading-icon-leading-space: var(--md-filled-button-with-leading-icon-leading-space, 16px);--_with-leading-icon-trailing-space: var(--md-filled-button-with-leading-icon-trailing-space, 24px);--_with-trailing-icon-leading-space: var(--md-filled-button-with-trailing-icon-leading-space, 24px);--_with-trailing-icon-trailing-space: var(--md-filled-button-with-trailing-icon-trailing-space, 16px)}
+`;
+//# sourceMappingURL=filled-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/filled-tonal-button.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/filled-tonal-button.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FilledTonalButton: () => (/* binding */ FilledTonalButton)
+/* harmony export */ });
+/* harmony import */ var _elevation_elevation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../elevation/elevation.js */ "./node_modules/@material/web/elevation/elevation.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var _button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button.js */ "./node_modules/@material/web/button/internal/button.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+/**
+ * A filled tonal button component.
+ */
+class FilledTonalButton extends _button_js__WEBPACK_IMPORTED_MODULE_2__.Button {
+    renderElevationOrOutline() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `<md-elevation part="elevation"></md-elevation>`;
+    }
+}
+//# sourceMappingURL=filled-tonal-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/filled-tonal-styles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/filled-tonal-styles.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./button/internal/filled-tonal-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_container-color: var(--md-filled-tonal-button-container-color, var(--md-sys-color-secondary-container, #e8def8));--_container-elevation: var(--md-filled-tonal-button-container-elevation, 0);--_container-height: var(--md-filled-tonal-button-container-height, 40px);--_container-shadow-color: var(--md-filled-tonal-button-container-shadow-color, var(--md-sys-color-shadow, #000));--_disabled-container-color: var(--md-filled-tonal-button-disabled-container-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-container-elevation: var(--md-filled-tonal-button-disabled-container-elevation, 0);--_disabled-container-opacity: var(--md-filled-tonal-button-disabled-container-opacity, 0.12);--_disabled-label-text-color: var(--md-filled-tonal-button-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-filled-tonal-button-disabled-label-text-opacity, 0.38);--_focus-container-elevation: var(--md-filled-tonal-button-focus-container-elevation, 0);--_focus-label-text-color: var(--md-filled-tonal-button-focus-label-text-color, var(--md-sys-color-on-secondary-container, #1d192b));--_hover-container-elevation: var(--md-filled-tonal-button-hover-container-elevation, 1);--_hover-label-text-color: var(--md-filled-tonal-button-hover-label-text-color, var(--md-sys-color-on-secondary-container, #1d192b));--_hover-state-layer-color: var(--md-filled-tonal-button-hover-state-layer-color, var(--md-sys-color-on-secondary-container, #1d192b));--_hover-state-layer-opacity: var(--md-filled-tonal-button-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-filled-tonal-button-label-text-color, var(--md-sys-color-on-secondary-container, #1d192b));--_label-text-font: var(--md-filled-tonal-button-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-filled-tonal-button-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-filled-tonal-button-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-filled-tonal-button-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-container-elevation: var(--md-filled-tonal-button-pressed-container-elevation, 0);--_pressed-label-text-color: var(--md-filled-tonal-button-pressed-label-text-color, var(--md-sys-color-on-secondary-container, #1d192b));--_pressed-state-layer-color: var(--md-filled-tonal-button-pressed-state-layer-color, var(--md-sys-color-on-secondary-container, #1d192b));--_pressed-state-layer-opacity: var(--md-filled-tonal-button-pressed-state-layer-opacity, 0.12);--_disabled-icon-color: var(--md-filled-tonal-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-filled-tonal-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-filled-tonal-button-focus-icon-color, var(--md-sys-color-on-secondary-container, #1d192b));--_hover-icon-color: var(--md-filled-tonal-button-hover-icon-color, var(--md-sys-color-on-secondary-container, #1d192b));--_icon-color: var(--md-filled-tonal-button-icon-color, var(--md-sys-color-on-secondary-container, #1d192b));--_icon-size: var(--md-filled-tonal-button-icon-size, 18px);--_pressed-icon-color: var(--md-filled-tonal-button-pressed-icon-color, var(--md-sys-color-on-secondary-container, #1d192b));--_container-shape-start-start: var(--md-filled-tonal-button-container-shape-start-start, var(--md-filled-tonal-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-filled-tonal-button-container-shape-start-end, var(--md-filled-tonal-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-filled-tonal-button-container-shape-end-end, var(--md-filled-tonal-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-filled-tonal-button-container-shape-end-start, var(--md-filled-tonal-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_leading-space: var(--md-filled-tonal-button-leading-space, 24px);--_trailing-space: var(--md-filled-tonal-button-trailing-space, 24px);--_with-leading-icon-leading-space: var(--md-filled-tonal-button-with-leading-icon-leading-space, 16px);--_with-leading-icon-trailing-space: var(--md-filled-tonal-button-with-leading-icon-trailing-space, 24px);--_with-trailing-icon-leading-space: var(--md-filled-tonal-button-with-trailing-icon-leading-space, 24px);--_with-trailing-icon-trailing-space: var(--md-filled-tonal-button-with-trailing-icon-trailing-space, 16px)}
+`;
+//# sourceMappingURL=filled-tonal-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/shared-elevation-styles.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/shared-elevation-styles.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./button/internal/shared-elevation-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `md-elevation{transition-duration:280ms}:host(:is([disabled],[soft-disabled])) md-elevation{transition:none}md-elevation{--md-elevation-level: var(--_container-elevation);--md-elevation-shadow-color: var(--_container-shadow-color)}:host(:focus-within) md-elevation{--md-elevation-level: var(--_focus-container-elevation)}:host(:hover) md-elevation{--md-elevation-level: var(--_hover-container-elevation)}:host(:active) md-elevation{--md-elevation-level: var(--_pressed-container-elevation)}:host(:is([disabled],[soft-disabled])) md-elevation{--md-elevation-level: var(--_disabled-container-elevation)}
+`;
+//# sourceMappingURL=shared-elevation-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/shared-styles.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/shared-styles.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./button/internal/shared-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end);box-sizing:border-box;cursor:pointer;display:inline-flex;gap:8px;min-height:var(--_container-height);outline:none;padding-block:calc((var(--_container-height) - max(var(--_label-text-line-height),var(--_icon-size)))/2);padding-inline-start:var(--_leading-space);padding-inline-end:var(--_trailing-space);place-content:center;place-items:center;position:relative;font-family:var(--_label-text-font);font-size:var(--_label-text-size);line-height:var(--_label-text-line-height);font-weight:var(--_label-text-weight);text-overflow:ellipsis;text-wrap:nowrap;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);vertical-align:top;--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}:host(:is([disabled],[soft-disabled])){cursor:default;pointer-events:none}.button{border-radius:inherit;cursor:inherit;display:inline-flex;align-items:center;justify-content:center;border:none;outline:none;-webkit-appearance:none;vertical-align:middle;background:rgba(0,0,0,0);text-decoration:none;min-width:calc(64px - var(--_leading-space) - var(--_trailing-space));width:100%;z-index:0;height:100%;font:inherit;color:var(--_label-text-color);padding:0;gap:inherit;text-transform:inherit}.button::-moz-focus-inner{padding:0;border:0}:host(:hover) .button{color:var(--_hover-label-text-color)}:host(:focus-within) .button{color:var(--_focus-label-text-color)}:host(:active) .button{color:var(--_pressed-label-text-color)}.background{background-color:var(--_container-color);border-radius:inherit;inset:0;position:absolute}.label{overflow:hidden}:is(.button,.label,.label slot),.label ::slotted(*){text-overflow:inherit}:host(:is([disabled],[soft-disabled])) .label{color:var(--_disabled-label-text-color);opacity:var(--_disabled-label-text-opacity)}:host(:is([disabled],[soft-disabled])) .background{background-color:var(--_disabled-container-color);opacity:var(--_disabled-container-opacity)}@media(forced-colors: active){.background{border:1px solid CanvasText}:host(:is([disabled],[soft-disabled])){--_disabled-icon-color: GrayText;--_disabled-icon-opacity: 1;--_disabled-container-opacity: 1;--_disabled-label-text-color: GrayText;--_disabled-label-text-opacity: 1}}:host([has-icon]:not([trailing-icon])){padding-inline-start:var(--_with-leading-icon-leading-space);padding-inline-end:var(--_with-leading-icon-trailing-space)}:host([has-icon][trailing-icon]){padding-inline-start:var(--_with-trailing-icon-leading-space);padding-inline-end:var(--_with-trailing-icon-trailing-space)}::slotted([slot=icon]){display:inline-flex;position:relative;writing-mode:horizontal-tb;fill:currentColor;flex-shrink:0;color:var(--_icon-color);font-size:var(--_icon-size);inline-size:var(--_icon-size);block-size:var(--_icon-size)}:host(:hover) ::slotted([slot=icon]){color:var(--_hover-icon-color)}:host(:focus-within) ::slotted([slot=icon]){color:var(--_focus-icon-color)}:host(:active) ::slotted([slot=icon]){color:var(--_pressed-icon-color)}:host(:is([disabled],[soft-disabled])) ::slotted([slot=icon]){color:var(--_disabled-icon-color);opacity:var(--_disabled-icon-opacity)}.touch{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%)}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) 0}:host([touch-target=none]) .touch{display:none}
+`;
+//# sourceMappingURL=shared-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/text-button.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/text-button.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TextButton: () => (/* binding */ TextButton)
+/* harmony export */ });
+/* harmony import */ var _button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button.js */ "./node_modules/@material/web/button/internal/button.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * A text button component.
+ */
+class TextButton extends _button_js__WEBPACK_IMPORTED_MODULE_0__.Button {
+}
+//# sourceMappingURL=text-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/internal/text-styles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material/web/button/internal/text-styles.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./button/internal/text-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_container-height: var(--md-text-button-container-height, 40px);--_disabled-label-text-color: var(--md-text-button-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-text-button-disabled-label-text-opacity, 0.38);--_focus-label-text-color: var(--md-text-button-focus-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-label-text-color: var(--md-text-button-hover-label-text-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-color: var(--md-text-button-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_hover-state-layer-opacity: var(--md-text-button-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-text-button-label-text-color, var(--md-sys-color-primary, #6750a4));--_label-text-font: var(--md-text-button-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-text-button-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-text-button-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-text-button-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-label-text-color: var(--md-text-button-pressed-label-text-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-color: var(--md-text-button-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_pressed-state-layer-opacity: var(--md-text-button-pressed-state-layer-opacity, 0.12);--_disabled-icon-color: var(--md-text-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-text-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-text-button-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_hover-icon-color: var(--md-text-button-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-color: var(--md-text-button-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-size: var(--md-text-button-icon-size, 18px);--_pressed-icon-color: var(--md-text-button-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_container-shape-start-start: var(--md-text-button-container-shape-start-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-text-button-container-shape-start-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-text-button-container-shape-end-end, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-text-button-container-shape-end-start, var(--md-text-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_leading-space: var(--md-text-button-leading-space, 12px);--_trailing-space: var(--md-text-button-trailing-space, 12px);--_with-leading-icon-leading-space: var(--md-text-button-with-leading-icon-leading-space, 12px);--_with-leading-icon-trailing-space: var(--md-text-button-with-leading-icon-trailing-space, 16px);--_with-trailing-icon-leading-space: var(--md-text-button-with-trailing-icon-leading-space, 16px);--_with-trailing-icon-trailing-space: var(--md-text-button-with-trailing-icon-trailing-space, 12px);--_container-color: none;--_disabled-container-color: none;--_disabled-container-opacity: 0}
+`;
+//# sourceMappingURL=text-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/button/text-button.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material/web/button/text-button.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdTextButton: () => (/* binding */ MdTextButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/button/internal/shared-styles.js");
+/* harmony import */ var _internal_text_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/text-button.js */ "./node_modules/@material/web/button/internal/text-button.js");
+/* harmony import */ var _internal_text_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/text-styles.js */ "./node_modules/@material/web/button/internal/text-styles.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+/**
+ * @summary Buttons help people take action, such as sending an email, sharing a
+ * document, or liking a comment.
+ *
+ * @description
+ * __Emphasis:__ Low emphasis – For optional or supplementary actions with the
+ * least amount of prominence
+ *
+ * __Rationale:__ Text buttons have less visual prominence, so should be used
+ * for low emphasis actions, such as an alternative option.
+ *
+ * __Example usages:__
+ * - Learn more
+ * - View all
+ * - Change account
+ * - Turn on
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdTextButton = class MdTextButton extends _internal_text_button_js__WEBPACK_IMPORTED_MODULE_2__.TextButton {
+};
+MdTextButton.styles = [_internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_1__.styles, _internal_text_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles];
+MdTextButton = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-text-button')
+], MdTextButton);
+//# sourceMappingURL=text-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/assist-chip.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@material/web/chips/assist-chip.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdAssistChip: () => (/* binding */ MdAssistChip)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_assist_chip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/assist-chip.js */ "./node_modules/@material/web/chips/internal/assist-chip.js");
+/* harmony import */ var _internal_assist_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/assist-styles.js */ "./node_modules/@material/web/chips/internal/assist-styles.js");
+/* harmony import */ var _internal_elevated_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/elevated-styles.js */ "./node_modules/@material/web/chips/internal/elevated-styles.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/chips/internal/shared-styles.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+/**
+ * TODO(b/243982145): add docs
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdAssistChip = class MdAssistChip extends _internal_assist_chip_js__WEBPACK_IMPORTED_MODULE_1__.AssistChip {
+};
+MdAssistChip.styles = [_internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_4__.styles, _internal_elevated_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles, _internal_assist_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdAssistChip = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-assist-chip')
+], MdAssistChip);
+//# sourceMappingURL=assist-chip.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/chip-set.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@material/web/chips/chip-set.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdChipSet: () => (/* binding */ MdChipSet)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_chip_set_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/chip-set.js */ "./node_modules/@material/web/chips/internal/chip-set.js");
+/* harmony import */ var _internal_chip_set_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/chip-set-styles.js */ "./node_modules/@material/web/chips/internal/chip-set-styles.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * TODO(b/243982145): add docs
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdChipSet = class MdChipSet extends _internal_chip_set_js__WEBPACK_IMPORTED_MODULE_1__.ChipSet {
+};
+MdChipSet.styles = [_internal_chip_set_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdChipSet = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-chip-set')
+], MdChipSet);
+//# sourceMappingURL=chip-set.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/assist-chip.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/assist-chip.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssistChip: () => (/* binding */ AssistChip)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _elevation_elevation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../elevation/elevation.js */ "./node_modules/@material/web/elevation/elevation.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _chip_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chip.js */ "./node_modules/@material/web/chips/internal/chip.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+/**
+ * An assist chip component.
+ */
+class AssistChip extends _chip_js__WEBPACK_IMPORTED_MODULE_3__.Chip {
+    constructor() {
+        super(...arguments);
+        this.elevated = false;
+        this.href = '';
+        this.target = '';
+    }
+    get primaryId() {
+        return this.href ? 'link' : 'button';
+    }
+    get rippleDisabled() {
+        // Link chips cannot be disabled
+        return !this.href && (this.disabled || this.softDisabled);
+    }
+    getContainerClasses() {
+        return {
+            ...super.getContainerClasses(),
+            // Link chips cannot be disabled
+            disabled: !this.href && (this.disabled || this.softDisabled),
+            elevated: this.elevated,
+            link: !!this.href,
+        };
+    }
+    renderPrimaryAction(content) {
+        const { ariaLabel } = this;
+        if (this.href) {
+            return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `
+        <a
+          class="primary action"
+          id="link"
+          aria-label=${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+          href=${this.href}
+          target=${this.target || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+          >${content}</a
+        >
+      `;
+        }
+        return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `
+      <button
+        class="primary action"
+        id="button"
+        aria-label=${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        aria-disabled=${this.softDisabled || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        ?disabled=${this.disabled && !this.alwaysFocusable}
+        type="button"
+        >${content}</button
+      >
+    `;
+    }
+    renderOutline() {
+        if (this.elevated) {
+            return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `<md-elevation part="elevation"></md-elevation>`;
+        }
+        return super.renderOutline();
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)({ type: Boolean })
+], AssistChip.prototype, "elevated", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)()
+], AssistChip.prototype, "href", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)()
+], AssistChip.prototype, "target", void 0);
+//# sourceMappingURL=assist-chip.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/assist-styles.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/assist-styles.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./chips/internal/assist-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_container-height: var(--md-assist-chip-container-height, 32px);--_disabled-label-text-color: var(--md-assist-chip-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-assist-chip-disabled-label-text-opacity, 0.38);--_elevated-container-color: var(--md-assist-chip-elevated-container-color, var(--md-sys-color-surface-container-low, #f7f2fa));--_elevated-container-elevation: var(--md-assist-chip-elevated-container-elevation, 1);--_elevated-container-shadow-color: var(--md-assist-chip-elevated-container-shadow-color, var(--md-sys-color-shadow, #000));--_elevated-disabled-container-color: var(--md-assist-chip-elevated-disabled-container-color, var(--md-sys-color-on-surface, #1d1b20));--_elevated-disabled-container-elevation: var(--md-assist-chip-elevated-disabled-container-elevation, 0);--_elevated-disabled-container-opacity: var(--md-assist-chip-elevated-disabled-container-opacity, 0.12);--_elevated-focus-container-elevation: var(--md-assist-chip-elevated-focus-container-elevation, 1);--_elevated-hover-container-elevation: var(--md-assist-chip-elevated-hover-container-elevation, 2);--_elevated-pressed-container-elevation: var(--md-assist-chip-elevated-pressed-container-elevation, 1);--_focus-label-text-color: var(--md-assist-chip-focus-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-label-text-color: var(--md-assist-chip-hover-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-state-layer-color: var(--md-assist-chip-hover-state-layer-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-state-layer-opacity: var(--md-assist-chip-hover-state-layer-opacity, 0.08);--_label-text-color: var(--md-assist-chip-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_label-text-font: var(--md-assist-chip-label-text-font, var(--md-sys-typescale-label-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-assist-chip-label-text-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));--_label-text-size: var(--md-assist-chip-label-text-size, var(--md-sys-typescale-label-large-size, 0.875rem));--_label-text-weight: var(--md-assist-chip-label-text-weight, var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500)));--_pressed-label-text-color: var(--md-assist-chip-pressed-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_pressed-state-layer-color: var(--md-assist-chip-pressed-state-layer-color, var(--md-sys-color-on-surface, #1d1b20));--_pressed-state-layer-opacity: var(--md-assist-chip-pressed-state-layer-opacity, 0.12);--_disabled-outline-color: var(--md-assist-chip-disabled-outline-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-outline-opacity: var(--md-assist-chip-disabled-outline-opacity, 0.12);--_focus-outline-color: var(--md-assist-chip-focus-outline-color, var(--md-sys-color-on-surface, #1d1b20));--_outline-color: var(--md-assist-chip-outline-color, var(--md-sys-color-outline, #79747e));--_outline-width: var(--md-assist-chip-outline-width, 1px);--_disabled-leading-icon-color: var(--md-assist-chip-disabled-leading-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-leading-icon-opacity: var(--md-assist-chip-disabled-leading-icon-opacity, 0.38);--_focus-leading-icon-color: var(--md-assist-chip-focus-leading-icon-color, var(--md-sys-color-primary, #6750a4));--_hover-leading-icon-color: var(--md-assist-chip-hover-leading-icon-color, var(--md-sys-color-primary, #6750a4));--_leading-icon-color: var(--md-assist-chip-leading-icon-color, var(--md-sys-color-primary, #6750a4));--_icon-size: var(--md-assist-chip-icon-size, 18px);--_pressed-leading-icon-color: var(--md-assist-chip-pressed-leading-icon-color, var(--md-sys-color-primary, #6750a4));--_container-shape-start-start: var(--md-assist-chip-container-shape-start-start, var(--md-assist-chip-container-shape, var(--md-sys-shape-corner-small, 8px)));--_container-shape-start-end: var(--md-assist-chip-container-shape-start-end, var(--md-assist-chip-container-shape, var(--md-sys-shape-corner-small, 8px)));--_container-shape-end-end: var(--md-assist-chip-container-shape-end-end, var(--md-assist-chip-container-shape, var(--md-sys-shape-corner-small, 8px)));--_container-shape-end-start: var(--md-assist-chip-container-shape-end-start, var(--md-assist-chip-container-shape, var(--md-sys-shape-corner-small, 8px)));--_leading-space: var(--md-assist-chip-leading-space, 16px);--_trailing-space: var(--md-assist-chip-trailing-space, 16px);--_icon-label-space: var(--md-assist-chip-icon-label-space, 8px);--_with-leading-icon-leading-space: var(--md-assist-chip-with-leading-icon-leading-space, 8px)}@media(forced-colors: active){.link .outline{border-color:ActiveText}}
+`;
+//# sourceMappingURL=assist-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/chip-set-styles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/chip-set-styles.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./chips/internal/chip-set-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{display:flex;flex-wrap:wrap;gap:8px}
+`;
+//# sourceMappingURL=chip-set-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/chip-set.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/chip-set.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ChipSet: () => (/* binding */ ChipSet)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _chip_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chip.js */ "./node_modules/@material/web/chips/internal/chip.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * A chip set component.
+ */
+class ChipSet extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    get chips() {
+        return this.childElements.filter((child) => child instanceof _chip_js__WEBPACK_IMPORTED_MODULE_2__.Chip);
+    }
+    constructor() {
+        super();
+        this.internals = 
+        // Cast needed for closure
+        this.attachInternals();
+        if (!lit__WEBPACK_IMPORTED_MODULE_0__.isServer) {
+            this.addEventListener('focusin', this.updateTabIndices.bind(this));
+            this.addEventListener('update-focus', this.updateTabIndices.bind(this));
+            this.addEventListener('keydown', this.handleKeyDown.bind(this));
+            this.internals.role = 'toolbar';
+        }
+    }
+    render() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `<slot @slotchange=${this.updateTabIndices}></slot>`;
+    }
+    handleKeyDown(event) {
+        const isLeft = event.key === 'ArrowLeft';
+        const isRight = event.key === 'ArrowRight';
+        const isHome = event.key === 'Home';
+        const isEnd = event.key === 'End';
+        // Ignore non-navigation keys
+        if (!isLeft && !isRight && !isHome && !isEnd) {
+            return;
+        }
+        const { chips } = this;
+        // Don't try to select another chip if there aren't any.
+        if (chips.length < 2) {
+            return;
+        }
+        // Prevent default interactions, such as scrolling.
+        event.preventDefault();
+        if (isHome || isEnd) {
+            const index = isHome ? 0 : chips.length - 1;
+            chips[index].focus({ trailing: isEnd });
+            this.updateTabIndices();
+            return;
+        }
+        // Check if moving forwards or backwards
+        const isRtl = getComputedStyle(this).direction === 'rtl';
+        const forwards = isRtl ? isLeft : isRight;
+        const focusedChip = chips.find((chip) => chip.matches(':focus-within'));
+        if (!focusedChip) {
+            // If there is not already a chip focused, select the first or last chip
+            // based on the direction we're traveling.
+            const nextChip = forwards ? chips[0] : chips[chips.length - 1];
+            nextChip.focus({ trailing: !forwards });
+            this.updateTabIndices();
+            return;
+        }
+        const currentIndex = chips.indexOf(focusedChip);
+        let nextIndex = forwards ? currentIndex + 1 : currentIndex - 1;
+        // Search for the next sibling that is not disabled to select.
+        // If we return to the host index, there is nothing to select.
+        while (nextIndex !== currentIndex) {
+            if (nextIndex >= chips.length) {
+                // Return to start if moving past the last item.
+                nextIndex = 0;
+            }
+            else if (nextIndex < 0) {
+                // Go to end if moving before the first item.
+                nextIndex = chips.length - 1;
+            }
+            // Check if the next sibling is disabled. If so,
+            // move the index and continue searching.
+            //
+            // Some toolbar items may be focusable when disabled for increased
+            // visibility.
+            const nextChip = chips[nextIndex];
+            if (nextChip.disabled && !nextChip.alwaysFocusable) {
+                if (forwards) {
+                    nextIndex++;
+                }
+                else {
+                    nextIndex--;
+                }
+                continue;
+            }
+            nextChip.focus({ trailing: !forwards });
+            this.updateTabIndices();
+            break;
+        }
+    }
+    updateTabIndices() {
+        // The chip that should be focusable is either the chip that currently has
+        // focus or the first chip that can be focused.
+        const { chips } = this;
+        let chipToFocus;
+        for (const chip of chips) {
+            const isChipFocusable = chip.alwaysFocusable || !chip.disabled;
+            const chipIsFocused = chip.matches(':focus-within');
+            if (chipIsFocused && isChipFocusable) {
+                // Found the first chip that is actively focused. This overrides the
+                // first focusable chip found.
+                chipToFocus = chip;
+                continue;
+            }
+            if (isChipFocusable && !chipToFocus) {
+                chipToFocus = chip;
+            }
+            // Disable non-focused chips. If we disable all of them, we'll grant focus
+            // to the first focusable child that was found.
+            chip.tabIndex = -1;
+        }
+        if (chipToFocus) {
+            chipToFocus.tabIndex = 0;
+        }
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.queryAssignedElements)()
+], ChipSet.prototype, "childElements", void 0);
+//# sourceMappingURL=chip-set.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/chip.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/chip.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Chip: () => (/* binding */ Chip)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _focus_md_focus_ring_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../focus/md-focus-ring.js */ "./node_modules/@material/web/focus/md-focus-ring.js");
+/* harmony import */ var _ripple_ripple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ripple/ripple.js */ "./node_modules/@material/web/ripple/ripple.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lit/directives/class-map.js */ "./node_modules/lit/directives/class-map.js");
+/* harmony import */ var _internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../internal/aria/delegate.js */ "./node_modules/@material/web/internal/aria/delegate.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+
+// Separate variable needed for closure.
+const chipBaseClass = (0,_internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_5__.mixinDelegatesAria)(lit__WEBPACK_IMPORTED_MODULE_2__.LitElement);
+/**
+ * A chip component.
+ *
+ * @fires update-focus {Event} Dispatched when `disabled` is toggled. --bubbles
+ */
+class Chip extends chipBaseClass {
+    /**
+     * Whether or not the primary ripple is disabled (defaults to `disabled`).
+     * Some chip actions such as links cannot be disabled.
+     */
+    get rippleDisabled() {
+        return this.disabled || this.softDisabled;
+    }
+    constructor() {
+        super();
+        /**
+         * Whether or not the chip is disabled.
+         *
+         * Disabled chips are not focusable, unless `always-focusable` is set.
+         */
+        this.disabled = false;
+        /**
+         * Whether or not the chip is "soft-disabled" (disabled but still
+         * focusable).
+         *
+         * Use this when a chip needs increased visibility when disabled. See
+         * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls
+         * for more guidance on when this is needed.
+         */
+        this.softDisabled = false;
+        /**
+         * When true, allow disabled chips to be focused with arrow keys.
+         *
+         * Add this when a chip needs increased visibility when disabled. See
+         * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls
+         * for more guidance on when this is needed.
+         *
+         * @deprecated Use `softDisabled` instead of `alwaysFocusable` + `disabled`.
+         */
+        this.alwaysFocusable = false;
+        // TODO(b/350810013): remove the label property.
+        /**
+         * The label of the chip.
+         *
+         * @deprecated Set text as content of the chip instead.
+         */
+        this.label = '';
+        /**
+         * Only needed for SSR.
+         *
+         * Add this attribute when a chip has a `slot="icon"` to avoid a Flash Of
+         * Unstyled Content.
+         */
+        this.hasIcon = false;
+        if (!lit__WEBPACK_IMPORTED_MODULE_2__.isServer) {
+            this.addEventListener('click', this.handleClick.bind(this));
+        }
+    }
+    focus(options) {
+        if (this.disabled && !this.alwaysFocusable) {
+            return;
+        }
+        super.focus(options);
+    }
+    render() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      <div class="container ${(0,lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_4__.classMap)(this.getContainerClasses())}">
+        ${this.renderContainerContent()}
+      </div>
+    `;
+    }
+    updated(changed) {
+        if (changed.has('disabled') && changed.get('disabled') !== undefined) {
+            this.dispatchEvent(new Event('update-focus', { bubbles: true }));
+        }
+    }
+    getContainerClasses() {
+        return {
+            'disabled': this.disabled || this.softDisabled,
+            'has-icon': this.hasIcon,
+        };
+    }
+    renderContainerContent() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      ${this.renderOutline()}
+      <md-focus-ring part="focus-ring" for=${this.primaryId}></md-focus-ring>
+      <md-ripple
+        for=${this.primaryId}
+        ?disabled=${this.rippleDisabled}></md-ripple>
+      ${this.renderPrimaryAction(this.renderPrimaryContent())}
+    `;
+    }
+    renderOutline() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<span class="outline"></span>`;
+    }
+    renderLeadingIcon() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<slot name="icon" @slotchange=${this.handleIconChange}></slot>`;
+    }
+    renderPrimaryContent() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      <span class="leading icon" aria-hidden="true">
+        ${this.renderLeadingIcon()}
+      </span>
+      <span class="label">
+        <span class="label-text" id="label">
+          ${this.label ? this.label : (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<slot></slot>`}
+        </span>
+      </span>
+      <span class="touch"></span>
+    `;
+    }
+    handleIconChange(event) {
+        const slot = event.target;
+        this.hasIcon = slot.assignedElements({ flatten: true }).length > 0;
+    }
+    handleClick(event) {
+        // If the chip is soft-disabled or disabled + always-focusable, we need to
+        // explicitly prevent the click from propagating to other event listeners
+        // as well as prevent the default action.
+        if (this.softDisabled || (this.disabled && this.alwaysFocusable)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return;
+        }
+    }
+}
+/** @nocollapse */
+Chip.shadowRootOptions = {
+    ...lit__WEBPACK_IMPORTED_MODULE_2__.LitElement.shadowRootOptions,
+    delegatesFocus: true,
+};
+(0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, reflect: true })
+], Chip.prototype, "disabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'soft-disabled', reflect: true })
+], Chip.prototype, "softDisabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'always-focusable' })
+], Chip.prototype, "alwaysFocusable", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], Chip.prototype, "label", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, reflect: true, attribute: 'has-icon' })
+], Chip.prototype, "hasIcon", void 0);
+//# sourceMappingURL=chip.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/elevated-styles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/elevated-styles.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./chips/internal/elevated-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `.elevated{--md-elevation-level: var(--_elevated-container-elevation);--md-elevation-shadow-color: var(--_elevated-container-shadow-color)}.elevated::before{background:var(--_elevated-container-color)}.elevated:hover{--md-elevation-level: var(--_elevated-hover-container-elevation)}.elevated:focus-within{--md-elevation-level: var(--_elevated-focus-container-elevation)}.elevated:active{--md-elevation-level: var(--_elevated-pressed-container-elevation)}.elevated.disabled{--md-elevation-level: var(--_elevated-disabled-container-elevation)}.elevated.disabled::before{background:var(--_elevated-disabled-container-color);opacity:var(--_elevated-disabled-container-opacity)}@media(forced-colors: active){.elevated md-elevation{border:1px solid CanvasText}.elevated.disabled md-elevation{border-color:GrayText}}
+`;
+//# sourceMappingURL=elevated-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/chips/internal/shared-styles.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@material/web/chips/internal/shared-styles.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./chips/internal/shared-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end);display:inline-flex;height:var(--_container-height);cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0);--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}:host(:is([disabled],[soft-disabled])){pointer-events:none}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) 0}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}.container{border-radius:inherit;box-sizing:border-box;display:flex;height:100%;position:relative;width:100%}.container::before{border-radius:inherit;content:"";inset:0;pointer-events:none;position:absolute}.container:not(.disabled){cursor:pointer}.container.disabled{pointer-events:none}.cell{display:flex}.action{align-items:baseline;appearance:none;background:none;border:none;border-radius:inherit;display:flex;outline:none;padding:0;position:relative;text-decoration:none}.primary.action{min-width:0;padding-inline-start:var(--_leading-space);padding-inline-end:var(--_trailing-space)}.has-icon .primary.action{padding-inline-start:var(--_with-leading-icon-leading-space)}.touch{height:48px;inset:50% 0 0;position:absolute;transform:translateY(-50%);width:100%}:host([touch-target=none]) .touch{display:none}.outline{border:var(--_outline-width) solid var(--_outline-color);border-radius:inherit;inset:0;pointer-events:none;position:absolute}:where(:focus) .outline{border-color:var(--_focus-outline-color)}:where(.disabled) .outline{border-color:var(--_disabled-outline-color);opacity:var(--_disabled-outline-opacity)}md-ripple{border-radius:inherit}.label,.icon,.touch{z-index:1}.label{align-items:center;color:var(--_label-text-color);display:flex;font-family:var(--_label-text-font);font-size:var(--_label-text-size);font-weight:var(--_label-text-weight);height:100%;line-height:var(--_label-text-line-height);overflow:hidden;user-select:none}.label-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:where(:hover) .label{color:var(--_hover-label-text-color)}:where(:focus) .label{color:var(--_focus-label-text-color)}:where(:active) .label{color:var(--_pressed-label-text-color)}:where(.disabled) .label{color:var(--_disabled-label-text-color);opacity:var(--_disabled-label-text-opacity)}.icon{align-self:center;display:flex;fill:currentColor;position:relative}.icon ::slotted(:first-child){font-size:var(--_icon-size);height:var(--_icon-size);width:var(--_icon-size)}.leading.icon{color:var(--_leading-icon-color)}.leading.icon ::slotted(*),.leading.icon svg{margin-inline-end:var(--_icon-label-space)}:where(:hover) .leading.icon{color:var(--_hover-leading-icon-color)}:where(:focus) .leading.icon{color:var(--_focus-leading-icon-color)}:where(:active) .leading.icon{color:var(--_pressed-leading-icon-color)}:where(.disabled) .leading.icon{color:var(--_disabled-leading-icon-color);opacity:var(--_disabled-leading-icon-opacity)}@media(forced-colors: active){:where(.disabled) :is(.label,.outline,.leading.icon){color:GrayText;opacity:1}}a,button{text-transform:inherit}a,button:not(:disabled,[aria-disabled=true]){cursor:inherit}
+`;
+//# sourceMappingURL=shared-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/dialog/dialog.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@material/web/dialog/dialog.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdDialog: () => (/* binding */ MdDialog)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_dialog_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/dialog.js */ "./node_modules/@material/web/dialog/internal/dialog.js");
+/* harmony import */ var _internal_dialog_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/dialog-styles.js */ "./node_modules/@material/web/dialog/internal/dialog-styles.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * @summary Dialogs can require an action, communicate information, or help
+ * users accomplish a task. There are two types of dialogs: basic and
+ * full-screen.
+ *
+ * @description
+ * A dialog is a modal window that appears in front of app content to provide
+ * critical information or ask for a decision. Dialogs disable all app
+ * functionality when they appear, and remain on screen until confirmed,
+ * dismissed, or a required action has been taken.
+ *
+ * Dialogs are purposefully interruptive, so they should be used sparingly.
+ * A less disruptive alternative is to use a menu, which provides options
+ * without interrupting a user’s experience.
+ *
+ * On mobile devices only, complex dialogs should be displayed fullscreen.
+ *
+ * __Example usages:__
+ * - Common use cases for basic dialogs include alerts, quick selection, and
+ * confirmation.
+ * - More complex dialogs may contain actions that require a series of tasks
+ * to complete. One example is creating a calendar entry with the event title,
+ * date, location, and time.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdDialog = class MdDialog extends _internal_dialog_js__WEBPACK_IMPORTED_MODULE_1__.Dialog {
+};
+MdDialog.styles = [_internal_dialog_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdDialog = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-dialog')
+], MdDialog);
+//# sourceMappingURL=dialog.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/dialog/internal/animations.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/dialog/internal/animations.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DIALOG_DEFAULT_CLOSE_ANIMATION: () => (/* binding */ DIALOG_DEFAULT_CLOSE_ANIMATION),
+/* harmony export */   DIALOG_DEFAULT_OPEN_ANIMATION: () => (/* binding */ DIALOG_DEFAULT_OPEN_ANIMATION)
+/* harmony export */ });
+/* harmony import */ var _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../internal/motion/animation.js */ "./node_modules/@material/web/internal/motion/animation.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * The default dialog open animation.
+ */
+const DIALOG_DEFAULT_OPEN_ANIMATION = {
+    dialog: [
+        [
+            // Dialog slide down
+            [{ 'transform': 'translateY(-50px)' }, { 'transform': 'translateY(0)' }],
+            { duration: 500, easing: _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_0__.EASING.EMPHASIZED },
+        ],
+    ],
+    scrim: [
+        [
+            // Scrim fade in
+            [{ 'opacity': 0 }, { 'opacity': 0.32 }],
+            { duration: 500, easing: 'linear' },
+        ],
+    ],
+    container: [
+        [
+            // Container fade in
+            [{ 'opacity': 0 }, { 'opacity': 1 }],
+            { duration: 50, easing: 'linear', pseudoElement: '::before' },
+        ],
+        [
+            // Container grow
+            // Note: current spec says to grow from 0dp->100% and shrink from
+            // 100%->35%. We change this to 35%->100% to simplify the animation that
+            // is supposed to clip content as it grows. From 0dp it's possible to see
+            // text/actions appear before the container has fully grown.
+            [{ 'height': '35%' }, { 'height': '100%' }],
+            { duration: 500, easing: _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_0__.EASING.EMPHASIZED, pseudoElement: '::before' },
+        ],
+    ],
+    headline: [
+        [
+            // Headline fade in
+            [{ 'opacity': 0 }, { 'opacity': 0, offset: 0.2 }, { 'opacity': 1 }],
+            { duration: 250, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+    content: [
+        [
+            // Content fade in
+            [{ 'opacity': 0 }, { 'opacity': 0, offset: 0.2 }, { 'opacity': 1 }],
+            { duration: 250, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+    actions: [
+        [
+            // Actions fade in
+            [{ 'opacity': 0 }, { 'opacity': 0, offset: 0.5 }, { 'opacity': 1 }],
+            { duration: 300, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+};
+/**
+ * The default dialog close animation.
+ */
+const DIALOG_DEFAULT_CLOSE_ANIMATION = {
+    dialog: [
+        [
+            // Dialog slide up
+            [{ 'transform': 'translateY(0)' }, { 'transform': 'translateY(-50px)' }],
+            { duration: 150, easing: _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_0__.EASING.EMPHASIZED_ACCELERATE },
+        ],
+    ],
+    scrim: [
+        [
+            // Scrim fade out
+            [{ 'opacity': 0.32 }, { 'opacity': 0 }],
+            { duration: 150, easing: 'linear' },
+        ],
+    ],
+    container: [
+        [
+            // Container shrink
+            [{ 'height': '100%' }, { 'height': '35%' }],
+            {
+                duration: 150,
+                easing: _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_0__.EASING.EMPHASIZED_ACCELERATE,
+                pseudoElement: '::before',
+            },
+        ],
+        [
+            // Container fade out
+            [{ 'opacity': '1' }, { 'opacity': '0' }],
+            { delay: 100, duration: 50, easing: 'linear', pseudoElement: '::before' },
+        ],
+    ],
+    headline: [
+        [
+            // Headline fade out
+            [{ 'opacity': 1 }, { 'opacity': 0 }],
+            { duration: 100, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+    content: [
+        [
+            // Content fade out
+            [{ 'opacity': 1 }, { 'opacity': 0 }],
+            { duration: 100, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+    actions: [
+        [
+            // Actions fade out
+            [{ 'opacity': 1 }, { 'opacity': 0 }],
+            { duration: 100, easing: 'linear', fill: 'forwards' },
+        ],
+    ],
+};
+//# sourceMappingURL=animations.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/dialog/internal/dialog-styles.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/dialog/internal/dialog-styles.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./dialog/internal/dialog-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{border-start-start-radius:var(--md-dialog-container-shape-start-start, var(--md-dialog-container-shape, var(--md-sys-shape-corner-extra-large, 28px)));border-start-end-radius:var(--md-dialog-container-shape-start-end, var(--md-dialog-container-shape, var(--md-sys-shape-corner-extra-large, 28px)));border-end-end-radius:var(--md-dialog-container-shape-end-end, var(--md-dialog-container-shape, var(--md-sys-shape-corner-extra-large, 28px)));border-end-start-radius:var(--md-dialog-container-shape-end-start, var(--md-dialog-container-shape, var(--md-sys-shape-corner-extra-large, 28px)));display:contents;margin:auto;max-height:min(560px,100% - 48px);max-width:min(560px,100% - 48px);min-height:140px;min-width:280px;position:fixed;height:fit-content;width:fit-content}dialog{background:rgba(0,0,0,0);border:none;border-radius:inherit;flex-direction:column;height:inherit;margin:inherit;max-height:inherit;max-width:inherit;min-height:inherit;min-width:inherit;outline:none;overflow:visible;padding:0;width:inherit}dialog[open]{display:flex}::backdrop{background:none}.scrim{background:var(--md-sys-color-scrim, #000);display:none;inset:0;opacity:32%;pointer-events:none;position:fixed;z-index:1}:host([open]) .scrim{display:flex}h2{all:unset;align-self:stretch}.headline{align-items:center;color:var(--md-dialog-headline-color, var(--md-sys-color-on-surface, #1d1b20));display:flex;flex-direction:column;font-family:var(--md-dialog-headline-font, var(--md-sys-typescale-headline-small-font, var(--md-ref-typeface-brand, Roboto)));font-size:var(--md-dialog-headline-size, var(--md-sys-typescale-headline-small-size, 1.5rem));line-height:var(--md-dialog-headline-line-height, var(--md-sys-typescale-headline-small-line-height, 2rem));font-weight:var(--md-dialog-headline-weight, var(--md-sys-typescale-headline-small-weight, var(--md-ref-typeface-weight-regular, 400)));position:relative}slot[name=headline]::slotted(*){align-items:center;align-self:stretch;box-sizing:border-box;display:flex;gap:8px;padding:24px 24px 0}.icon{display:flex}slot[name=icon]::slotted(*){color:var(--md-dialog-icon-color, var(--md-sys-color-secondary, #625b71));fill:currentColor;font-size:var(--md-dialog-icon-size, 24px);margin-top:24px;height:var(--md-dialog-icon-size, 24px);width:var(--md-dialog-icon-size, 24px)}.has-icon slot[name=headline]::slotted(*){justify-content:center;padding-top:16px}.scrollable slot[name=headline]::slotted(*){padding-bottom:16px}.scrollable.has-headline slot[name=content]::slotted(*){padding-top:8px}.container{border-radius:inherit;display:flex;flex-direction:column;flex-grow:1;overflow:hidden;position:relative;transform-origin:top}.container::before{background:var(--md-dialog-container-color, var(--md-sys-color-surface-container-high, #ece6f0));border-radius:inherit;content:"";inset:0;position:absolute}.scroller{display:flex;flex:1;flex-direction:column;overflow:hidden;z-index:1}.scrollable .scroller{overflow-y:scroll}.content{color:var(--md-dialog-supporting-text-color, var(--md-sys-color-on-surface-variant, #49454f));font-family:var(--md-dialog-supporting-text-font, var(--md-sys-typescale-body-medium-font, var(--md-ref-typeface-plain, Roboto)));font-size:var(--md-dialog-supporting-text-size, var(--md-sys-typescale-body-medium-size, 0.875rem));line-height:var(--md-dialog-supporting-text-line-height, var(--md-sys-typescale-body-medium-line-height, 1.25rem));flex:1;font-weight:var(--md-dialog-supporting-text-weight, var(--md-sys-typescale-body-medium-weight, var(--md-ref-typeface-weight-regular, 400)));height:min-content;position:relative}slot[name=content]::slotted(*){box-sizing:border-box;padding:24px}.anchor{position:absolute}.top.anchor{top:0}.bottom.anchor{bottom:0}.actions{position:relative}slot[name=actions]::slotted(*){box-sizing:border-box;display:flex;gap:8px;justify-content:flex-end;padding:16px 24px 24px}.has-actions slot[name=content]::slotted(*){padding-bottom:8px}md-divider{display:none;position:absolute}.has-headline.show-top-divider .headline md-divider,.has-actions.show-bottom-divider .actions md-divider{display:flex}.headline md-divider{bottom:0}.actions md-divider{top:0}@media(forced-colors: active){dialog{outline:2px solid WindowText}}
+`;
+//# sourceMappingURL=dialog-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/dialog/internal/dialog.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material/web/dialog/internal/dialog.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Dialog: () => (/* binding */ Dialog)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _divider_divider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../divider/divider.js */ "./node_modules/@material/web/divider/divider.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lit/directives/class-map.js */ "./node_modules/lit/directives/class-map.js");
+/* harmony import */ var _internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/aria/delegate.js */ "./node_modules/@material/web/internal/aria/delegate.js");
+/* harmony import */ var _internal_events_redispatch_event_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../internal/events/redispatch-event.js */ "./node_modules/@material/web/internal/events/redispatch-event.js");
+/* harmony import */ var _animations_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations.js */ "./node_modules/@material/web/dialog/internal/animations.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+
+
+// Separate variable needed for closure.
+const dialogBaseClass = (0,_internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_4__.mixinDelegatesAria)(lit__WEBPACK_IMPORTED_MODULE_1__.LitElement);
+/**
+ * A dialog component.
+ *
+ * @fires open {Event} Dispatched when the dialog is opening before any animations.
+ * @fires opened {Event} Dispatched when the dialog has opened after any animations.
+ * @fires close {Event} Dispatched when the dialog is closing before any animations.
+ * @fires closed {Event} Dispatched when the dialog has closed after any animations.
+ * @fires cancel {Event} Dispatched when the dialog has been canceled by clicking
+ * on the scrim or pressing Escape.
+ */
+class Dialog extends dialogBaseClass {
+    // We do not use `delegatesFocus: true` due to a Chromium bug with
+    // selecting text.
+    // See https://bugs.chromium.org/p/chromium/issues/detail?id=950357
+    /**
+     * Opens the dialog when set to `true` and closes it when set to `false`.
+     */
+    get open() {
+        return this.isOpen;
+    }
+    set open(open) {
+        if (open === this.isOpen) {
+            return;
+        }
+        this.isOpen = open;
+        if (open) {
+            this.setAttribute('open', '');
+            this.show();
+        }
+        else {
+            this.removeAttribute('open');
+            this.close();
+        }
+    }
+    constructor() {
+        super();
+        /**
+         * Skips the opening and closing animations.
+         */
+        this.quick = false;
+        /**
+         * Gets or sets the dialog's return value, usually to indicate which button
+         * a user pressed to close it.
+         *
+         * https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue
+         */
+        this.returnValue = '';
+        /**
+         * Disables focus trapping, which by default keeps keyboard Tab navigation
+         * within the dialog.
+         *
+         * When disabled, after focusing the last element of a dialog, pressing Tab
+         * again will release focus from the window back to the browser (such as the
+         * URL bar).
+         *
+         * Focus trapping is recommended for accessibility, and should not typically
+         * be disabled. Only turn this off if the use case of a dialog is more
+         * accessible without focus trapping.
+         */
+        this.noFocusTrap = false;
+        /**
+         * Gets the opening animation for a dialog. Set to a new function to customize
+         * the animation.
+         */
+        this.getOpenAnimation = () => _animations_js__WEBPACK_IMPORTED_MODULE_6__.DIALOG_DEFAULT_OPEN_ANIMATION;
+        /**
+         * Gets the closing animation for a dialog. Set to a new function to customize
+         * the animation.
+         */
+        this.getCloseAnimation = () => _animations_js__WEBPACK_IMPORTED_MODULE_6__.DIALOG_DEFAULT_CLOSE_ANIMATION;
+        this.isOpen = false;
+        this.isOpening = false;
+        this.isConnectedPromise = this.getIsConnectedPromise();
+        this.isAtScrollTop = false;
+        this.isAtScrollBottom = false;
+        this.nextClickIsFromContent = false;
+        // Dialogs should not be SSR'd while open, so we can just use runtime checks.
+        this.hasHeadline = false;
+        this.hasActions = false;
+        this.hasIcon = false;
+        // See https://bugs.chromium.org/p/chromium/issues/detail?id=1512224
+        // Chrome v120 has a bug where escape keys do not trigger cancels. If we get
+        // a dialog "close" event that is triggered without a "cancel" after an escape
+        // keydown, then we need to manually trigger our closing logic.
+        //
+        // This bug occurs when pressing escape to close a dialog without first
+        // interacting with the dialog's content.
+        //
+        // Cleanup tracking:
+        // https://github.com/material-components/material-web/issues/5330
+        // This can be removed when full CloseWatcher support added and the above bug
+        // in Chromium is fixed to fire 'cancel' with one escape press and close with
+        // multiple.
+        this.escapePressedWithoutCancel = false;
+        // This TreeWalker is used to walk through a dialog's children to find
+        // focusable elements. TreeWalker is faster than `querySelectorAll('*')`.
+        // We check for isServer because there isn't a "document" during an SSR
+        // run.
+        this.treewalker = lit__WEBPACK_IMPORTED_MODULE_1__.isServer
+            ? null
+            : document.createTreeWalker(this, NodeFilter.SHOW_ELEMENT);
+        if (!lit__WEBPACK_IMPORTED_MODULE_1__.isServer) {
+            this.addEventListener('submit', this.handleSubmit);
+        }
+    }
+    /**
+     * Opens the dialog and fires a cancelable `open` event. After a dialog's
+     * animation, an `opened` event is fired.
+     *
+     * Add an `autofocus` attribute to a child of the dialog that should
+     * receive focus after opening.
+     *
+     * @return A Promise that resolves after the animation is finished and the
+     *     `opened` event was fired.
+     */
+    async show() {
+        this.isOpening = true;
+        // Dialogs can be opened before being attached to the DOM, so we need to
+        // wait until we're connected before calling `showModal()`.
+        await this.isConnectedPromise;
+        await this.updateComplete;
+        const dialog = this.dialog;
+        // Check if already opened or if `dialog.close()` was called while awaiting.
+        if (dialog.open || !this.isOpening) {
+            this.isOpening = false;
+            return;
+        }
+        const preventOpen = !this.dispatchEvent(new Event('open', { cancelable: true }));
+        if (preventOpen) {
+            this.open = false;
+            this.isOpening = false;
+            return;
+        }
+        // All Material dialogs are modal.
+        dialog.showModal();
+        this.open = true;
+        // Reset scroll position if re-opening a dialog with the same content.
+        if (this.scroller) {
+            this.scroller.scrollTop = 0;
+        }
+        // Native modal dialogs ignore autofocus and instead force focus to the
+        // first focusable child. Override this behavior if there is a child with
+        // an autofocus attribute.
+        this.querySelector('[autofocus]')?.focus();
+        await this.animateDialog(this.getOpenAnimation());
+        this.dispatchEvent(new Event('opened'));
+        this.isOpening = false;
+    }
+    /**
+     * Closes the dialog and fires a cancelable `close` event. After a dialog's
+     * animation, a `closed` event is fired.
+     *
+     * @param returnValue A return value usually indicating which button was used
+     *     to close a dialog. If a dialog is canceled by clicking the scrim or
+     *     pressing Escape, it will not change the return value after closing.
+     * @return A Promise that resolves after the animation is finished and the
+     *     `closed` event was fired.
+     */
+    async close(returnValue = this.returnValue) {
+        this.isOpening = false;
+        if (!this.isConnected) {
+            // Disconnected dialogs do not fire close events or animate.
+            this.open = false;
+            return;
+        }
+        await this.updateComplete;
+        const dialog = this.dialog;
+        // Check if already closed or if `dialog.show()` was called while awaiting.
+        if (!dialog.open || this.isOpening) {
+            this.open = false;
+            return;
+        }
+        const prevReturnValue = this.returnValue;
+        this.returnValue = returnValue;
+        const preventClose = !this.dispatchEvent(new Event('close', { cancelable: true }));
+        if (preventClose) {
+            this.returnValue = prevReturnValue;
+            return;
+        }
+        await this.animateDialog(this.getCloseAnimation());
+        dialog.close(returnValue);
+        this.open = false;
+        this.dispatchEvent(new Event('closed'));
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.isConnectedPromiseResolve();
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.isConnectedPromise = this.getIsConnectedPromise();
+    }
+    render() {
+        const scrollable = this.open && !(this.isAtScrollTop && this.isAtScrollBottom);
+        const classes = {
+            'has-headline': this.hasHeadline,
+            'has-actions': this.hasActions,
+            'has-icon': this.hasIcon,
+            'scrollable': scrollable,
+            'show-top-divider': scrollable && !this.isAtScrollTop,
+            'show-bottom-divider': scrollable && !this.isAtScrollBottom,
+        };
+        // The focus trap sentinels are only added after the dialog opens, since
+        // dialog.showModal() will try to autofocus them, even with tabindex="-1".
+        const showFocusTrap = this.open && !this.noFocusTrap;
+        const focusTrap = (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `
+      <div
+        class="focus-trap"
+        tabindex="0"
+        aria-hidden="true"
+        @focus=${this.handleFocusTrapFocus}></div>
+    `;
+        const { ariaLabel } = this;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_1__.html) `
+      <div class="scrim"></div>
+      <dialog
+        class=${(0,lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_3__.classMap)(classes)}
+        aria-label=${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        aria-labelledby=${this.hasHeadline ? 'headline' : lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        role=${this.type === 'alert' ? 'alertdialog' : lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        @cancel=${this.handleCancel}
+        @click=${this.handleDialogClick}
+        @close=${this.handleClose}
+        @keydown=${this.handleKeydown}
+        .returnValue=${this.returnValue || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}>
+        ${showFocusTrap ? focusTrap : lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+        <div class="container" @click=${this.handleContentClick}>
+          <div class="headline">
+            <div class="icon" aria-hidden="true">
+              <slot name="icon" @slotchange=${this.handleIconChange}></slot>
+            </div>
+            <h2 id="headline" aria-hidden=${!this.hasHeadline || lit__WEBPACK_IMPORTED_MODULE_1__.nothing}>
+              <slot
+                name="headline"
+                @slotchange=${this.handleHeadlineChange}></slot>
+            </h2>
+            <md-divider></md-divider>
+          </div>
+          <div class="scroller">
+            <div class="content">
+              <div class="top anchor"></div>
+              <slot name="content"></slot>
+              <div class="bottom anchor"></div>
+            </div>
+          </div>
+          <div class="actions">
+            <md-divider></md-divider>
+            <slot name="actions" @slotchange=${this.handleActionsChange}></slot>
+          </div>
+        </div>
+        ${showFocusTrap ? focusTrap : lit__WEBPACK_IMPORTED_MODULE_1__.nothing}
+      </dialog>
+    `;
+    }
+    firstUpdated() {
+        this.intersectionObserver = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+                this.handleAnchorIntersection(entry);
+            }
+        }, { root: this.scroller });
+        this.intersectionObserver.observe(this.topAnchor);
+        this.intersectionObserver.observe(this.bottomAnchor);
+    }
+    handleDialogClick() {
+        if (this.nextClickIsFromContent) {
+            // Avoid doing a layout calculation below if we know the click came from
+            // content.
+            this.nextClickIsFromContent = false;
+            return;
+        }
+        // Click originated on the backdrop. Native `<dialog>`s will not cancel,
+        // but Material dialogs do.
+        const preventDefault = !this.dispatchEvent(new Event('cancel', { cancelable: true }));
+        if (preventDefault) {
+            return;
+        }
+        this.close();
+    }
+    handleContentClick() {
+        this.nextClickIsFromContent = true;
+    }
+    handleSubmit(event) {
+        const form = event.target;
+        const { submitter } = event;
+        if (form.method !== 'dialog' || !submitter) {
+            return;
+        }
+        // Close reason is the submitter's value attribute, or the dialog's
+        // `returnValue` if there is no attribute.
+        this.close(submitter.getAttribute('value') ?? this.returnValue);
+    }
+    handleCancel(event) {
+        if (event.target !== this.dialog) {
+            // Ignore any cancel events dispatched by content.
+            return;
+        }
+        this.escapePressedWithoutCancel = false;
+        const preventDefault = !(0,_internal_events_redispatch_event_js__WEBPACK_IMPORTED_MODULE_5__.redispatchEvent)(this, event);
+        // We always prevent default on the original dialog event since we'll
+        // animate closing it before it actually closes.
+        event.preventDefault();
+        if (preventDefault) {
+            return;
+        }
+        this.close();
+    }
+    handleClose() {
+        if (!this.escapePressedWithoutCancel) {
+            return;
+        }
+        this.escapePressedWithoutCancel = false;
+        this.dialog?.dispatchEvent(new Event('cancel', { cancelable: true }));
+    }
+    handleKeydown(event) {
+        if (event.key !== 'Escape') {
+            return;
+        }
+        // An escape key was pressed. If a "close" event fires next without a
+        // "cancel" event first, then we know we're in the Chrome v120 bug.
+        this.escapePressedWithoutCancel = true;
+        // Wait a full task for the cancel/close event listeners to fire, then
+        // reset the flag.
+        setTimeout(() => {
+            this.escapePressedWithoutCancel = false;
+        });
+    }
+    async animateDialog(animation) {
+        // Always cancel the previous animations. Animations can include `fill`
+        // modes that need to be cleared when `quick` is toggled. If not, content
+        // that faded out will remain hidden when a `quick` dialog re-opens after
+        // previously opening and closing without `quick`.
+        this.cancelAnimations?.abort();
+        this.cancelAnimations = new AbortController();
+        if (this.quick) {
+            return;
+        }
+        const { dialog, scrim, container, headline, content, actions } = this;
+        if (!dialog || !scrim || !container || !headline || !content || !actions) {
+            return;
+        }
+        const { container: containerAnimate, dialog: dialogAnimate, scrim: scrimAnimate, headline: headlineAnimate, content: contentAnimate, actions: actionsAnimate, } = animation;
+        const elementAndAnimation = [
+            [dialog, dialogAnimate ?? []],
+            [scrim, scrimAnimate ?? []],
+            [container, containerAnimate ?? []],
+            [headline, headlineAnimate ?? []],
+            [content, contentAnimate ?? []],
+            [actions, actionsAnimate ?? []],
+        ];
+        const animations = [];
+        for (const [element, animation] of elementAndAnimation) {
+            for (const animateArgs of animation) {
+                const animation = element.animate(...animateArgs);
+                this.cancelAnimations.signal.addEventListener('abort', () => {
+                    animation.cancel();
+                });
+                animations.push(animation);
+            }
+        }
+        await Promise.all(animations.map((animation) => animation.finished.catch(() => {
+            // Ignore intentional AbortErrors when calling `animation.cancel()`.
+        })));
+    }
+    handleHeadlineChange(event) {
+        const slot = event.target;
+        this.hasHeadline = slot.assignedElements().length > 0;
+    }
+    handleActionsChange(event) {
+        const slot = event.target;
+        this.hasActions = slot.assignedElements().length > 0;
+    }
+    handleIconChange(event) {
+        const slot = event.target;
+        this.hasIcon = slot.assignedElements().length > 0;
+    }
+    handleAnchorIntersection(entry) {
+        const { target, isIntersecting } = entry;
+        if (target === this.topAnchor) {
+            this.isAtScrollTop = isIntersecting;
+        }
+        if (target === this.bottomAnchor) {
+            this.isAtScrollBottom = isIntersecting;
+        }
+    }
+    getIsConnectedPromise() {
+        return new Promise((resolve) => {
+            this.isConnectedPromiseResolve = resolve;
+        });
+    }
+    handleFocusTrapFocus(event) {
+        const [firstFocusableChild, lastFocusableChild] = this.getFirstAndLastFocusableChildren();
+        if (!firstFocusableChild || !lastFocusableChild) {
+            // When a dialog does not have focusable children, the dialog itself
+            // receives focus.
+            this.dialog?.focus();
+            return;
+        }
+        // To determine which child to focus, we need to know which focus trap
+        // received focus...
+        const isFirstFocusTrap = event.target === this.firstFocusTrap;
+        const isLastFocusTrap = !isFirstFocusTrap;
+        // ...and where the focus came from (what was previously focused).
+        const focusCameFromFirstChild = event.relatedTarget === firstFocusableChild;
+        const focusCameFromLastChild = event.relatedTarget === lastFocusableChild;
+        // Although this is a focus trap, focus can come from outside the trap.
+        // This can happen when elements are programmatically `focus()`'d. It also
+        // happens when focus leaves and returns to the window, such as clicking on
+        // the browser's URL bar and pressing Tab, or switching focus between
+        // iframes.
+        const focusCameFromOutsideDialog = !focusCameFromFirstChild && !focusCameFromLastChild;
+        // Focus the dialog's first child when we reach the end of the dialog and
+        // focus is moving forward. Or, when focus is moving forwards into the
+        // dialog from outside of the window.
+        const shouldFocusFirstChild = (isLastFocusTrap && focusCameFromLastChild) ||
+            (isFirstFocusTrap && focusCameFromOutsideDialog);
+        if (shouldFocusFirstChild) {
+            firstFocusableChild.focus();
+            return;
+        }
+        // Focus the dialog's last child when we reach the beginning of the dialog
+        // and focus is moving backward. Or, when focus is moving backwards into the
+        // dialog from outside of the window.
+        const shouldFocusLastChild = (isFirstFocusTrap && focusCameFromFirstChild) ||
+            (isLastFocusTrap && focusCameFromOutsideDialog);
+        if (shouldFocusLastChild) {
+            lastFocusableChild.focus();
+            return;
+        }
+        // The booleans above are verbose for readability, but code executation
+        // won't actually reach here.
+    }
+    getFirstAndLastFocusableChildren() {
+        if (!this.treewalker) {
+            return [null, null];
+        }
+        let firstFocusableChild = null;
+        let lastFocusableChild = null;
+        // Reset the current node back to the root host element.
+        this.treewalker.currentNode = this.treewalker.root;
+        while (this.treewalker.nextNode()) {
+            // Cast as Element since the TreeWalker filter only accepts Elements.
+            const nextChild = this.treewalker.currentNode;
+            if (!isFocusable(nextChild)) {
+                continue;
+            }
+            if (!firstFocusableChild) {
+                firstFocusableChild = nextChild;
+            }
+            lastFocusableChild = nextChild;
+        }
+        // We set lastFocusableChild immediately after finding a
+        // firstFocusableChild, which means the pair is either both null or both
+        // non-null. Cast since TypeScript does not recognize this.
+        return [firstFocusableChild, lastFocusableChild];
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)({ type: Boolean })
+], Dialog.prototype, "open", null);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)({ type: Boolean })
+], Dialog.prototype, "quick", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)({ attribute: false })
+], Dialog.prototype, "returnValue", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)()
+], Dialog.prototype, "type", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.property)({ type: Boolean, attribute: 'no-focus-trap' })
+], Dialog.prototype, "noFocusTrap", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('dialog')
+], Dialog.prototype, "dialog", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.scrim')
+], Dialog.prototype, "scrim", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.container')
+], Dialog.prototype, "container", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.headline')
+], Dialog.prototype, "headline", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.content')
+], Dialog.prototype, "content", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.actions')
+], Dialog.prototype, "actions", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.state)()
+], Dialog.prototype, "isAtScrollTop", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.state)()
+], Dialog.prototype, "isAtScrollBottom", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.scroller')
+], Dialog.prototype, "scroller", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.top.anchor')
+], Dialog.prototype, "topAnchor", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.bottom.anchor')
+], Dialog.prototype, "bottomAnchor", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.query)('.focus-trap')
+], Dialog.prototype, "firstFocusTrap", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.state)()
+], Dialog.prototype, "hasHeadline", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.state)()
+], Dialog.prototype, "hasActions", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_2__.state)()
+], Dialog.prototype, "hasIcon", void 0);
+function isFocusable(element) {
+    // Check if the element is a known built-in focusable element:
+    // - <a> and <area> with `href` attributes.
+    // - Form controls that are not disabled.
+    // - `contenteditable` elements.
+    // - Anything with a non-negative `tabindex`.
+    const knownFocusableElements = ':is(button,input,select,textarea,object,:is(a,area)[href],[tabindex],[contenteditable=true])';
+    const notDisabled = ':not(:disabled,[disabled])';
+    const notNegativeTabIndex = ':not([tabindex^="-"])';
+    if (element.matches(knownFocusableElements + notDisabled + notNegativeTabIndex)) {
+        return true;
+    }
+    const isCustomElement = element.localName.includes('-');
+    if (!isCustomElement) {
+        return false;
+    }
+    // If a custom element does not have a tabindex, it may still be focusable
+    // if it delegates focus with a shadow root. We also need to check again if
+    // the custom element is a disabled form control.
+    if (!element.matches(notDisabled)) {
+        return false;
+    }
+    return element.shadowRoot?.delegatesFocus ?? false;
+}
+//# sourceMappingURL=dialog.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/divider/divider.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@material/web/divider/divider.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdDivider: () => (/* binding */ MdDivider)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_divider_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/divider.js */ "./node_modules/@material/web/divider/internal/divider.js");
+/* harmony import */ var _internal_divider_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/divider-styles.js */ "./node_modules/@material/web/divider/internal/divider-styles.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * @summary A divider is a thin line that groups content in lists and
+ * containers.
+ *
+ * @description Dividers can reinforce tapability, such as when used to separate
+ * list items or define tappable regions in an accordion.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdDivider = class MdDivider extends _internal_divider_js__WEBPACK_IMPORTED_MODULE_1__.Divider {
+};
+MdDivider.styles = [_internal_divider_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdDivider = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-divider')
+], MdDivider);
+//# sourceMappingURL=divider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/divider/internal/divider-styles.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material/web/divider/internal/divider-styles.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./divider/internal/divider-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{box-sizing:border-box;color:var(--md-divider-color, var(--md-sys-color-outline-variant, #cac4d0));display:flex;height:var(--md-divider-thickness, 1px);width:100%}:host([inset]),:host([inset-start]){padding-inline-start:16px}:host([inset]),:host([inset-end]){padding-inline-end:16px}:host::before{background:currentColor;content:"";height:100%;width:100%}@media(forced-colors: active){:host::before{background:CanvasText}}
+`;
+//# sourceMappingURL=divider-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/divider/internal/divider.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@material/web/divider/internal/divider.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Divider: () => (/* binding */ Divider)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+/**
+ * A divider component.
+ */
+class Divider extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    constructor() {
+        super(...arguments);
+        /**
+         * Indents the divider with equal padding on both sides.
+         */
+        this.inset = false;
+        /**
+         * Indents the divider with padding on the leading side.
+         */
+        this.insetStart = false;
+        /**
+         * Indents the divider with padding on the trailing side.
+         */
+        this.insetEnd = false;
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true })
+], Divider.prototype, "inset", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true, attribute: 'inset-start' })
+], Divider.prototype, "insetStart", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true, attribute: 'inset-end' })
+], Divider.prototype, "insetEnd", void 0);
+//# sourceMappingURL=divider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/elevation/elevation.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@material/web/elevation/elevation.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdElevation: () => (/* binding */ MdElevation)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_elevation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/elevation.js */ "./node_modules/@material/web/elevation/internal/elevation.js");
+/* harmony import */ var _internal_elevation_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/elevation-styles.js */ "./node_modules/@material/web/elevation/internal/elevation-styles.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * The `<md-elevation>` custom element with default styles.
+ *
+ * Elevation is the relative distance between two surfaces along the z-axis.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdElevation = class MdElevation extends _internal_elevation_js__WEBPACK_IMPORTED_MODULE_1__.Elevation {
+};
+MdElevation.styles = [_internal_elevation_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdElevation = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-elevation')
+], MdElevation);
+//# sourceMappingURL=elevation.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/elevation/internal/elevation-styles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material/web/elevation/internal/elevation-styles.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./elevation/internal/elevation-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host,.shadow,.shadow::before,.shadow::after{border-radius:inherit;inset:0;position:absolute;transition-duration:inherit;transition-property:inherit;transition-timing-function:inherit}:host{display:flex;pointer-events:none;transition-property:box-shadow,opacity}.shadow::before,.shadow::after{content:"";transition-property:box-shadow,opacity;--_level: var(--md-elevation-level, 0);--_shadow-color: var(--md-elevation-shadow-color, var(--md-sys-color-shadow, #000))}.shadow::before{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 3,1) + 2*clamp(0,var(--_level) - 4,1))) calc(1px*(2*clamp(0,var(--_level),1) + clamp(0,var(--_level) - 2,1) + clamp(0,var(--_level) - 4,1))) 0px var(--_shadow-color);opacity:.3}.shadow::after{box-shadow:0px calc(1px*(clamp(0,var(--_level),1) + clamp(0,var(--_level) - 1,1) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(3*clamp(0,var(--_level),2) + 2*clamp(0,var(--_level) - 2,3))) calc(1px*(clamp(0,var(--_level),4) + 2*clamp(0,var(--_level) - 4,1))) var(--_shadow-color);opacity:.15}
+`;
+//# sourceMappingURL=elevation-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/elevation/internal/elevation.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@material/web/elevation/internal/elevation.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Elevation: () => (/* binding */ Elevation)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * A component for elevation.
+ */
+class Elevation extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    connectedCallback() {
+        super.connectedCallback();
+        // Needed for VoiceOver, which will create a "group" if the element is a
+        // sibling to other content.
+        this.setAttribute('aria-hidden', 'true');
+    }
+    render() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `<span class="shadow"></span>`;
+    }
+}
+//# sourceMappingURL=elevation.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/focus/internal/focus-ring-styles.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@material/web/focus/internal/focus-ring-styles.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./focus/internal/focus-ring-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{animation-delay:0s,calc(var(--md-focus-ring-duration, 600ms)*.25);animation-duration:calc(var(--md-focus-ring-duration, 600ms)*.25),calc(var(--md-focus-ring-duration, 600ms)*.75);animation-timing-function:cubic-bezier(0.2, 0, 0, 1);box-sizing:border-box;color:var(--md-focus-ring-color, var(--md-sys-color-secondary, #625b71));display:none;pointer-events:none;position:absolute}:host([visible]){display:flex}:host(:not([inward])){animation-name:outward-grow,outward-shrink;border-end-end-radius:calc(var(--md-focus-ring-shape-end-end, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) + var(--md-focus-ring-outward-offset, 2px));border-end-start-radius:calc(var(--md-focus-ring-shape-end-start, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) + var(--md-focus-ring-outward-offset, 2px));border-start-end-radius:calc(var(--md-focus-ring-shape-start-end, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) + var(--md-focus-ring-outward-offset, 2px));border-start-start-radius:calc(var(--md-focus-ring-shape-start-start, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) + var(--md-focus-ring-outward-offset, 2px));inset:calc(-1*var(--md-focus-ring-outward-offset, 2px));outline:var(--md-focus-ring-width, 3px) solid currentColor}:host([inward]){animation-name:inward-grow,inward-shrink;border-end-end-radius:calc(var(--md-focus-ring-shape-end-end, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) - var(--md-focus-ring-inward-offset, 0px));border-end-start-radius:calc(var(--md-focus-ring-shape-end-start, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) - var(--md-focus-ring-inward-offset, 0px));border-start-end-radius:calc(var(--md-focus-ring-shape-start-end, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) - var(--md-focus-ring-inward-offset, 0px));border-start-start-radius:calc(var(--md-focus-ring-shape-start-start, var(--md-focus-ring-shape, var(--md-sys-shape-corner-full, 9999px))) - var(--md-focus-ring-inward-offset, 0px));border:var(--md-focus-ring-width, 3px) solid currentColor;inset:var(--md-focus-ring-inward-offset, 0px)}@keyframes outward-grow{from{outline-width:0}to{outline-width:var(--md-focus-ring-active-width, 8px)}}@keyframes outward-shrink{from{outline-width:var(--md-focus-ring-active-width, 8px)}}@keyframes inward-grow{from{border-width:0}to{border-width:var(--md-focus-ring-active-width, 8px)}}@keyframes inward-shrink{from{border-width:var(--md-focus-ring-active-width, 8px)}}@media(prefers-reduced-motion){:host{animation:none}}
+`;
+//# sourceMappingURL=focus-ring-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/focus/internal/focus-ring.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material/web/focus/internal/focus-ring.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FocusRing: () => (/* binding */ FocusRing)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_controller_attachable_controller_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../internal/controller/attachable-controller.js */ "./node_modules/@material/web/internal/controller/attachable-controller.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * Events that the focus ring listens to.
+ */
+const EVENTS = ['focusin', 'focusout', 'pointerdown'];
+/**
+ * A focus ring component.
+ *
+ * @fires visibility-changed {Event} Fired whenever `visible` changes.
+ */
+class FocusRing extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    constructor() {
+        super(...arguments);
+        /**
+         * Makes the focus ring visible.
+         */
+        this.visible = false;
+        /**
+         * Makes the focus ring animate inwards instead of outwards.
+         */
+        this.inward = false;
+        this.attachableController = new _internal_controller_attachable_controller_js__WEBPACK_IMPORTED_MODULE_2__.AttachableController(this, this.onControlChange.bind(this));
+    }
+    get htmlFor() {
+        return this.attachableController.htmlFor;
+    }
+    set htmlFor(htmlFor) {
+        this.attachableController.htmlFor = htmlFor;
+    }
+    get control() {
+        return this.attachableController.control;
+    }
+    set control(control) {
+        this.attachableController.control = control;
+    }
+    attach(control) {
+        this.attachableController.attach(control);
+    }
+    detach() {
+        this.attachableController.detach();
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        // Needed for VoiceOver, which will create a "group" if the element is a
+        // sibling to other content.
+        this.setAttribute('aria-hidden', 'true');
+    }
+    /** @private */
+    handleEvent(event) {
+        if (event[HANDLED_BY_FOCUS_RING]) {
+            // This ensures the focus ring does not activate when multiple focus rings
+            // are used within a single component.
+            return;
+        }
+        switch (event.type) {
+            default:
+                return;
+            case 'focusin':
+                this.visible = this.control?.matches(':focus-visible') ?? false;
+                break;
+            case 'focusout':
+            case 'pointerdown':
+                this.visible = false;
+                break;
+        }
+        event[HANDLED_BY_FOCUS_RING] = true;
+    }
+    onControlChange(prev, next) {
+        if (lit__WEBPACK_IMPORTED_MODULE_0__.isServer)
+            return;
+        for (const event of EVENTS) {
+            prev?.removeEventListener(event, this);
+            next?.addEventListener(event, this);
+        }
+    }
+    update(changed) {
+        if (changed.has('visible')) {
+            // This logic can be removed once the `:has` selector has been introduced
+            // to Firefox. This is necessary to allow correct submenu styles.
+            this.dispatchEvent(new Event('visibility-changed'));
+        }
+        super.update(changed);
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true })
+], FocusRing.prototype, "visible", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true })
+], FocusRing.prototype, "inward", void 0);
+const HANDLED_BY_FOCUS_RING = Symbol('handledByFocusRing');
+//# sourceMappingURL=focus-ring.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/focus/md-focus-ring.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@material/web/focus/md-focus-ring.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdFocusRing: () => (/* binding */ MdFocusRing)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_focus_ring_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/focus-ring.js */ "./node_modules/@material/web/focus/internal/focus-ring.js");
+/* harmony import */ var _internal_focus_ring_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/focus-ring-styles.js */ "./node_modules/@material/web/focus/internal/focus-ring-styles.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * TODO(b/267336424): add docs
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdFocusRing = class MdFocusRing extends _internal_focus_ring_js__WEBPACK_IMPORTED_MODULE_1__.FocusRing {
+};
+MdFocusRing.styles = [_internal_focus_ring_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdFocusRing = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-focus-ring')
+], MdFocusRing);
+//# sourceMappingURL=md-focus-ring.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/icon/icon.js":
+/*!*************************************************!*\
+  !*** ./node_modules/@material/web/icon/icon.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdIcon: () => (/* binding */ MdIcon)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/icon.js */ "./node_modules/@material/web/icon/internal/icon.js");
+/* harmony import */ var _internal_icon_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/icon-styles.js */ "./node_modules/@material/web/icon/internal/icon-styles.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * @final
+ * @suppress {visibility}
+ */
+let MdIcon = class MdIcon extends _internal_icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon {
+};
+/** @nocollapse */
+MdIcon.styles = [_internal_icon_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdIcon = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-icon')
+], MdIcon);
+//# sourceMappingURL=icon.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/icon/internal/icon-styles.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material/web/icon/internal/icon-styles.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./icon/internal/icon-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{font-size:var(--md-icon-size, 24px);width:var(--md-icon-size, 24px);height:var(--md-icon-size, 24px);color:inherit;font-variation-settings:inherit;font-weight:400;font-family:var(--md-icon-font, Material Symbols Outlined);display:inline-flex;font-style:normal;place-items:center;place-content:center;line-height:1;overflow:hidden;letter-spacing:normal;text-transform:none;user-select:none;white-space:nowrap;word-wrap:normal;flex-shrink:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}::slotted(svg){fill:currentColor}::slotted(*){height:100%;width:100%}
+`;
+//# sourceMappingURL=icon-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/icon/internal/icon.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material/web/icon/internal/icon.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Icon: () => (/* binding */ Icon)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * TODO(b/265336902): add docs
+ */
+class Icon extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    render() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `<slot></slot>`;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        const ariaHidden = this.getAttribute('aria-hidden');
+        if (ariaHidden === 'false') {
+            // Allow the user to set `aria-hidden="false"` to create an icon that is
+            // announced by screenreaders.
+            this.removeAttribute('aria-hidden');
+            return;
+        }
+        // Needed for VoiceOver, which will create a "group" if the element is a
+        // sibling to other content.
+        this.setAttribute('aria-hidden', 'true');
+    }
+}
+//# sourceMappingURL=icon.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/filled-icon-button.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/filled-icon-button.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdFilledIconButton: () => (/* binding */ MdFilledIconButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_filled_styles_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/filled-styles.js */ "./node_modules/@material/web/iconbutton/internal/filled-styles.js");
+/* harmony import */ var _internal_icon_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/icon-button.js */ "./node_modules/@material/web/iconbutton/internal/icon-button.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/iconbutton/internal/shared-styles.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+/**
+ * @summary Icon buttons help people take supplementary actions with a single
+ * tap.
+ *
+ * @description
+ * __Emphasis:__ Low emphasis – For optional or supplementary actions with the
+ * least amount of prominence.
+ *
+ * __Rationale:__ The most compact and unobtrusive type of button, icon buttons
+ * are used for optional supplementary actions such as "Bookmark" or "Star."
+ *
+ * __Example usages:__
+ * - Add to Favorites
+ * - Print
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdFilledIconButton = class MdFilledIconButton extends _internal_icon_button_js__WEBPACK_IMPORTED_MODULE_2__.IconButton {
+    getRenderClasses() {
+        return {
+            ...super.getRenderClasses(),
+            'filled': true,
+            'toggle-filled': this.toggle,
+        };
+    }
+};
+MdFilledIconButton.styles = [_internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles, _internal_filled_styles_js__WEBPACK_IMPORTED_MODULE_1__.styles];
+MdFilledIconButton = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-filled-icon-button')
+], MdFilledIconButton);
+//# sourceMappingURL=filled-icon-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/icon-button.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/icon-button.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdIconButton: () => (/* binding */ MdIconButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_icon_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/icon-button.js */ "./node_modules/@material/web/iconbutton/internal/icon-button.js");
+/* harmony import */ var _internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/shared-styles.js */ "./node_modules/@material/web/iconbutton/internal/shared-styles.js");
+/* harmony import */ var _internal_standard_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./internal/standard-styles.js */ "./node_modules/@material/web/iconbutton/internal/standard-styles.js");
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+/**
+ * @summary Icon buttons help people take supplementary actions with a single
+ * tap.
+ *
+ * @description
+ * __Emphasis:__ Low emphasis – For optional or supplementary actions with the
+ * least amount of prominence.
+ *
+ * __Rationale:__ The most compact and unobtrusive type of button, icon buttons
+ * are used for optional supplementary actions such as "Bookmark" or "Star."
+ *
+ * __Example usages:__
+ * - Add to Favorites
+ * - Print
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdIconButton = class MdIconButton extends _internal_icon_button_js__WEBPACK_IMPORTED_MODULE_1__.IconButton {
+    getRenderClasses() {
+        return {
+            ...super.getRenderClasses(),
+            'standard': true,
+        };
+    }
+};
+MdIconButton.styles = [_internal_shared_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles, _internal_standard_styles_js__WEBPACK_IMPORTED_MODULE_3__.styles];
+MdIconButton = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-icon-button')
+], MdIconButton);
+//# sourceMappingURL=icon-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/internal/filled-styles.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/internal/filled-styles.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./iconbutton/internal/filled-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_container-color: var(--md-filled-icon-button-container-color, var(--md-sys-color-primary, #6750a4));--_container-height: var(--md-filled-icon-button-container-height, 40px);--_container-width: var(--md-filled-icon-button-container-width, 40px);--_disabled-container-color: var(--md-filled-icon-button-disabled-container-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-container-opacity: var(--md-filled-icon-button-disabled-container-opacity, 0.12);--_disabled-icon-color: var(--md-filled-icon-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-filled-icon-button-disabled-icon-opacity, 0.38);--_focus-icon-color: var(--md-filled-icon-button-focus-icon-color, var(--md-sys-color-on-primary, #fff));--_hover-icon-color: var(--md-filled-icon-button-hover-icon-color, var(--md-sys-color-on-primary, #fff));--_hover-state-layer-color: var(--md-filled-icon-button-hover-state-layer-color, var(--md-sys-color-on-primary, #fff));--_hover-state-layer-opacity: var(--md-filled-icon-button-hover-state-layer-opacity, 0.08);--_icon-color: var(--md-filled-icon-button-icon-color, var(--md-sys-color-on-primary, #fff));--_icon-size: var(--md-filled-icon-button-icon-size, 24px);--_pressed-icon-color: var(--md-filled-icon-button-pressed-icon-color, var(--md-sys-color-on-primary, #fff));--_pressed-state-layer-color: var(--md-filled-icon-button-pressed-state-layer-color, var(--md-sys-color-on-primary, #fff));--_pressed-state-layer-opacity: var(--md-filled-icon-button-pressed-state-layer-opacity, 0.12);--_selected-container-color: var(--md-filled-icon-button-selected-container-color, var(--md-sys-color-primary, #6750a4));--_toggle-selected-focus-icon-color: var(--md-filled-icon-button-toggle-selected-focus-icon-color, var(--md-sys-color-on-primary, #fff));--_toggle-selected-hover-icon-color: var(--md-filled-icon-button-toggle-selected-hover-icon-color, var(--md-sys-color-on-primary, #fff));--_toggle-selected-hover-state-layer-color: var(--md-filled-icon-button-toggle-selected-hover-state-layer-color, var(--md-sys-color-on-primary, #fff));--_toggle-selected-icon-color: var(--md-filled-icon-button-toggle-selected-icon-color, var(--md-sys-color-on-primary, #fff));--_toggle-selected-pressed-icon-color: var(--md-filled-icon-button-toggle-selected-pressed-icon-color, var(--md-sys-color-on-primary, #fff));--_toggle-selected-pressed-state-layer-color: var(--md-filled-icon-button-toggle-selected-pressed-state-layer-color, var(--md-sys-color-on-primary, #fff));--_unselected-container-color: var(--md-filled-icon-button-unselected-container-color, var(--md-sys-color-surface-container-highest, #e6e0e9));--_toggle-focus-icon-color: var(--md-filled-icon-button-toggle-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_toggle-hover-icon-color: var(--md-filled-icon-button-toggle-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_toggle-hover-state-layer-color: var(--md-filled-icon-button-toggle-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_toggle-icon-color: var(--md-filled-icon-button-toggle-icon-color, var(--md-sys-color-primary, #6750a4));--_toggle-pressed-icon-color: var(--md-filled-icon-button-toggle-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_toggle-pressed-state-layer-color: var(--md-filled-icon-button-toggle-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_container-shape-start-start: var(--md-filled-icon-button-container-shape-start-start, var(--md-filled-icon-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-start-end: var(--md-filled-icon-button-container-shape-start-end, var(--md-filled-icon-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-end: var(--md-filled-icon-button-container-shape-end-end, var(--md-filled-icon-button-container-shape, var(--md-sys-shape-corner-full, 9999px)));--_container-shape-end-start: var(--md-filled-icon-button-container-shape-end-start, var(--md-filled-icon-button-container-shape, var(--md-sys-shape-corner-full, 9999px)))}.icon-button{color:var(--_icon-color);--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}.icon-button:hover{color:var(--_hover-icon-color)}.icon-button:focus{color:var(--_focus-icon-color)}.icon-button:active{color:var(--_pressed-icon-color)}.icon-button:is(:disabled,[aria-disabled=true]){color:var(--_disabled-icon-color)}.icon-button::before{background-color:var(--_container-color);border-radius:inherit;content:"";inset:0;position:absolute;z-index:-1}.icon-button:is(:disabled,[aria-disabled=true])::before{background-color:var(--_disabled-container-color);opacity:var(--_disabled-container-opacity)}.icon-button:is(:disabled,[aria-disabled=true]) .icon{opacity:var(--_disabled-icon-opacity)}.toggle-filled{--md-ripple-hover-color: var(--_toggle-hover-state-layer-color);--md-ripple-pressed-color: var(--_toggle-pressed-state-layer-color)}.toggle-filled:not(:disabled,[aria-disabled=true]){color:var(--_toggle-icon-color)}.toggle-filled:not(:disabled,[aria-disabled=true]):hover{color:var(--_toggle-hover-icon-color)}.toggle-filled:not(:disabled,[aria-disabled=true]):focus{color:var(--_toggle-focus-icon-color)}.toggle-filled:not(:disabled,[aria-disabled=true]):active{color:var(--_toggle-pressed-icon-color)}.toggle-filled:not(:disabled,[aria-disabled=true])::before{background-color:var(--_unselected-container-color)}.selected{--md-ripple-hover-color: var(--_toggle-selected-hover-state-layer-color);--md-ripple-pressed-color: var(--_toggle-selected-pressed-state-layer-color)}.selected:not(:disabled,[aria-disabled=true]){color:var(--_toggle-selected-icon-color)}.selected:not(:disabled,[aria-disabled=true]):hover{color:var(--_toggle-selected-hover-icon-color)}.selected:not(:disabled,[aria-disabled=true]):focus{color:var(--_toggle-selected-focus-icon-color)}.selected:not(:disabled,[aria-disabled=true]):active{color:var(--_toggle-selected-pressed-icon-color)}.selected:not(:disabled,[aria-disabled=true])::before{background-color:var(--_selected-container-color)}
+`;
+//# sourceMappingURL=filled-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/internal/icon-button.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/internal/icon-button.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   IconButton: () => (/* binding */ IconButton)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _focus_md_focus_ring_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../focus/md-focus-ring.js */ "./node_modules/@material/web/focus/md-focus-ring.js");
+/* harmony import */ var _ripple_ripple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ripple/ripple.js */ "./node_modules/@material/web/ripple/ripple.js");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lit/directives/class-map.js */ "./node_modules/lit/directives/class-map.js");
+/* harmony import */ var lit_static_html_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lit/static-html.js */ "./node_modules/lit/static-html.js");
+/* harmony import */ var _internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../internal/aria/delegate.js */ "./node_modules/@material/web/internal/aria/delegate.js");
+/* harmony import */ var _internal_controller_form_submitter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../internal/controller/form-submitter.js */ "./node_modules/@material/web/internal/controller/form-submitter.js");
+/* harmony import */ var _internal_controller_is_rtl_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../internal/controller/is-rtl.js */ "./node_modules/@material/web/internal/controller/is-rtl.js");
+/* harmony import */ var _labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../labs/behaviors/element-internals.js */ "./node_modules/@material/web/labs/behaviors/element-internals.js");
+/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+
+
+
+
+
+// Separate variable needed for closure.
+const iconButtonBaseClass = (0,_internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_6__.mixinDelegatesAria)((0,_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_9__.mixinElementInternals)(lit__WEBPACK_IMPORTED_MODULE_2__.LitElement));
+/**
+ * A button for rendering icons.
+ *
+ * @fires input {InputEvent} Dispatched when a toggle button toggles --bubbles
+ * --composed
+ * @fires change {Event} Dispatched when a toggle button toggles --bubbles
+ */
+class IconButton extends iconButtonBaseClass {
+    get name() {
+        return this.getAttribute('name') ?? '';
+    }
+    set name(name) {
+        this.setAttribute('name', name);
+    }
+    /**
+     * The associated form element with which this element's value will submit.
+     */
+    get form() {
+        return this[_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_9__.internals].form;
+    }
+    /**
+     * The labels this element is associated with.
+     */
+    get labels() {
+        return this[_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_9__.internals].labels;
+    }
+    constructor() {
+        super();
+        /**
+         * Disables the icon button and makes it non-interactive.
+         */
+        this.disabled = false;
+        /**
+         * "Soft-disables" the icon button (disabled but still focusable).
+         *
+         * Use this when an icon button needs increased visibility when disabled. See
+         * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls
+         * for more guidance on when this is needed.
+         */
+        this.softDisabled = false;
+        /**
+         * Flips the icon if it is in an RTL context at startup.
+         */
+        this.flipIconInRtl = false;
+        /**
+         * Sets the underlying `HTMLAnchorElement`'s `href` resource attribute.
+         */
+        this.href = '';
+        /**
+         * Sets the underlying `HTMLAnchorElement`'s `target` attribute.
+         */
+        this.target = '';
+        /**
+         * The `aria-label` of the button when the button is toggleable and selected.
+         */
+        this.ariaLabelSelected = '';
+        /**
+         * When true, the button will toggle between selected and unselected
+         * states
+         */
+        this.toggle = false;
+        /**
+         * Sets the selected state. When false, displays the default icon. When true,
+         * displays the selected icon, or the default icon If no `slot="selected"`
+         * icon is provided.
+         */
+        this.selected = false;
+        /**
+         * The default behavior of the button. May be "button", "reset", or "submit"
+         * (default).
+         */
+        this.type = 'submit';
+        /**
+         * The value added to a form with the button's name when the button submits a
+         * form.
+         */
+        this.value = '';
+        this.flipIcon = (0,_internal_controller_is_rtl_js__WEBPACK_IMPORTED_MODULE_8__.isRtl)(this, this.flipIconInRtl);
+        if (!lit__WEBPACK_IMPORTED_MODULE_2__.isServer) {
+            this.addEventListener('click', this.handleClick.bind(this));
+        }
+    }
+    willUpdate() {
+        // Link buttons cannot be disabled or soft-disabled.
+        if (this.href) {
+            this.disabled = false;
+            this.softDisabled = false;
+        }
+    }
+    render() {
+        const tag = this.href ? (0,lit_static_html_js__WEBPACK_IMPORTED_MODULE_5__.literal) `div` : (0,lit_static_html_js__WEBPACK_IMPORTED_MODULE_5__.literal) `button`;
+        // Needed for closure conformance
+        const { ariaLabel, ariaHasPopup, ariaExpanded } = this;
+        const hasToggledAriaLabel = ariaLabel && this.ariaLabelSelected;
+        const ariaPressedValue = !this.toggle ? lit__WEBPACK_IMPORTED_MODULE_2__.nothing : this.selected;
+        let ariaLabelValue = lit__WEBPACK_IMPORTED_MODULE_2__.nothing;
+        if (!this.href) {
+            ariaLabelValue =
+                hasToggledAriaLabel && this.selected
+                    ? this.ariaLabelSelected
+                    : ariaLabel;
+        }
+        return (0,lit_static_html_js__WEBPACK_IMPORTED_MODULE_5__.html) `<${tag}
+        class="icon-button ${(0,lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_4__.classMap)(this.getRenderClasses())}"
+        id="button"
+        aria-label="${ariaLabelValue || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+        aria-haspopup="${(!this.href && ariaHasPopup) || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+        aria-expanded="${(!this.href && ariaExpanded) || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+        aria-pressed="${ariaPressedValue}"
+        aria-disabled=${(!this.href && this.softDisabled) || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+        ?disabled="${!this.href && this.disabled}"
+        @click="${this.handleClickOnChild}">
+        ${this.renderFocusRing()}
+        ${this.renderRipple()}
+        ${!this.selected ? this.renderIcon() : lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+        ${this.selected ? this.renderSelectedIcon() : lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+        ${this.renderTouchTarget()}
+        ${this.href && this.renderLink()}
+  </${tag}>`;
+    }
+    renderLink() {
+        // Needed for closure conformance
+        const { ariaLabel } = this;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `
+      <a
+        class="link"
+        id="link"
+        href="${this.href}"
+        target="${this.target || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"
+        aria-label="${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_2__.nothing}"></a>
+    `;
+    }
+    getRenderClasses() {
+        return {
+            'flip-icon': this.flipIcon,
+            'selected': this.toggle && this.selected,
+        };
+    }
+    renderIcon() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<span class="icon"><slot></slot></span>`;
+    }
+    renderSelectedIcon() {
+        // Use default slot as fallback to not require specifying multiple icons
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<span class="icon icon--selected"
+      ><slot name="selected"><slot></slot></slot
+    ></span>`;
+    }
+    renderTouchTarget() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<span class="touch"></span>`;
+    }
+    renderFocusRing() {
+        // TODO(b/310046938): use the same id for both elements
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<md-focus-ring
+      part="focus-ring"
+      for=${this.href ? 'link' : 'button'}></md-focus-ring>`;
+    }
+    renderRipple() {
+        const isRippleDisabled = !this.href && (this.disabled || this.softDisabled);
+        // TODO(b/310046938): use the same id for both elements
+        return (0,lit__WEBPACK_IMPORTED_MODULE_2__.html) `<md-ripple
+      for=${this.href ? 'link' : lit__WEBPACK_IMPORTED_MODULE_2__.nothing}
+      ?disabled="${isRippleDisabled}"></md-ripple>`;
+    }
+    connectedCallback() {
+        this.flipIcon = (0,_internal_controller_is_rtl_js__WEBPACK_IMPORTED_MODULE_8__.isRtl)(this, this.flipIconInRtl);
+        super.connectedCallback();
+    }
+    /** Handles a click on this element. */
+    handleClick(event) {
+        // If the icon button is soft-disabled, we need to explicitly prevent the
+        // click from propagating to other event listeners as well as prevent the
+        // default action.
+        if (!this.href && this.softDisabled) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return;
+        }
+    }
+    /**
+     * Handles a click on the child <div> or <button> element within this
+     * element's shadow DOM.
+     */
+    async handleClickOnChild(event) {
+        // Allow the event to propagate
+        await 0;
+        if (!this.toggle ||
+            this.disabled ||
+            this.softDisabled ||
+            event.defaultPrevented) {
+            return;
+        }
+        this.selected = !this.selected;
+        this.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
+        // Bubbles but does not compose to mimic native browser <input> & <select>
+        // Additionally, native change event is not an InputEvent.
+        this.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+}
+(() => {
+    (0,_internal_controller_form_submitter_js__WEBPACK_IMPORTED_MODULE_7__.setupFormSubmitter)(IconButton);
+})();
+/** @nocollapse */
+IconButton.formAssociated = true;
+/** @nocollapse */
+IconButton.shadowRootOptions = {
+    mode: 'open',
+    delegatesFocus: true,
+};
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, reflect: true })
+], IconButton.prototype, "disabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'soft-disabled', reflect: true })
+], IconButton.prototype, "softDisabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, attribute: 'flip-icon-in-rtl' })
+], IconButton.prototype, "flipIconInRtl", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], IconButton.prototype, "href", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], IconButton.prototype, "target", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ attribute: 'aria-label-selected' })
+], IconButton.prototype, "ariaLabelSelected", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean })
+], IconButton.prototype, "toggle", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ type: Boolean, reflect: true })
+], IconButton.prototype, "selected", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)()
+], IconButton.prototype, "type", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.property)({ reflect: true })
+], IconButton.prototype, "value", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_3__.state)()
+], IconButton.prototype, "flipIcon", void 0);
+//# sourceMappingURL=icon-button.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/internal/shared-styles.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/internal/shared-styles.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./iconbutton/internal/shared-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{display:inline-flex;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);height:var(--_container-height);width:var(--_container-width);justify-content:center}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_container-height))/2) max(0px,(48px - var(--_container-width))/2)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_container-shape-start-start);--md-focus-ring-shape-start-end: var(--_container-shape-start-end);--md-focus-ring-shape-end-end: var(--_container-shape-end-end);--md-focus-ring-shape-end-start: var(--_container-shape-end-start)}:host(:is([disabled],[soft-disabled])){pointer-events:none}.icon-button{place-items:center;background:none;border:none;box-sizing:border-box;cursor:pointer;display:flex;place-content:center;outline:none;padding:0;position:relative;text-decoration:none;user-select:none;z-index:0;flex:1;border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end)}.icon ::slotted(*){font-size:var(--_icon-size);height:var(--_icon-size);width:var(--_icon-size);font-weight:inherit}md-ripple{z-index:-1;border-start-start-radius:var(--_container-shape-start-start);border-start-end-radius:var(--_container-shape-start-end);border-end-start-radius:var(--_container-shape-end-start);border-end-end-radius:var(--_container-shape-end-end)}.flip-icon .icon{transform:scaleX(-1)}.icon{display:inline-flex}.link{height:100%;outline:none;position:absolute;width:100%}.touch{position:absolute;height:max(48px,100%);width:max(48px,100%)}:host([touch-target=none]) .touch{display:none}@media(forced-colors: active){:host(:is([disabled],[soft-disabled])){--_disabled-icon-color: GrayText;--_disabled-icon-opacity: 1}}
+`;
+//# sourceMappingURL=shared-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/iconbutton/internal/standard-styles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material/web/iconbutton/internal/standard-styles.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./iconbutton/internal/standard-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_disabled-icon-color: var(--md-icon-button-disabled-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-icon-opacity: var(--md-icon-button-disabled-icon-opacity, 0.38);--_icon-size: var(--md-icon-button-icon-size, 24px);--_selected-focus-icon-color: var(--md-icon-button-selected-focus-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-icon-color: var(--md-icon-button-selected-hover-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-state-layer-color: var(--md-icon-button-selected-hover-state-layer-color, var(--md-sys-color-primary, #6750a4));--_selected-hover-state-layer-opacity: var(--md-icon-button-selected-hover-state-layer-opacity, 0.08);--_selected-icon-color: var(--md-icon-button-selected-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-icon-color: var(--md-icon-button-selected-pressed-icon-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-state-layer-color: var(--md-icon-button-selected-pressed-state-layer-color, var(--md-sys-color-primary, #6750a4));--_selected-pressed-state-layer-opacity: var(--md-icon-button-selected-pressed-state-layer-opacity, 0.12);--_state-layer-height: var(--md-icon-button-state-layer-height, 40px);--_state-layer-shape: var(--md-icon-button-state-layer-shape, var(--md-sys-shape-corner-full, 9999px));--_state-layer-width: var(--md-icon-button-state-layer-width, 40px);--_focus-icon-color: var(--md-icon-button-focus-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-icon-color: var(--md-icon-button-hover-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-state-layer-color: var(--md-icon-button-hover-state-layer-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-state-layer-opacity: var(--md-icon-button-hover-state-layer-opacity, 0.08);--_icon-color: var(--md-icon-button-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-icon-color: var(--md-icon-button-pressed-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-state-layer-color: var(--md-icon-button-pressed-state-layer-color, var(--md-sys-color-on-surface-variant, #49454f));--_pressed-state-layer-opacity: var(--md-icon-button-pressed-state-layer-opacity, 0.12);--_container-shape-start-start: 0;--_container-shape-start-end: 0;--_container-shape-end-end: 0;--_container-shape-end-start: 0;--_container-height: 0;--_container-width: 0;height:var(--_state-layer-height);width:var(--_state-layer-width)}:host([touch-target=wrapper]){margin:max(0px,(48px - var(--_state-layer-height))/2) max(0px,(48px - var(--_state-layer-width))/2)}md-focus-ring{--md-focus-ring-shape-start-start: var(--_state-layer-shape);--md-focus-ring-shape-start-end: var(--_state-layer-shape);--md-focus-ring-shape-end-end: var(--_state-layer-shape);--md-focus-ring-shape-end-start: var(--_state-layer-shape)}.standard{background-color:rgba(0,0,0,0);color:var(--_icon-color);--md-ripple-hover-color: var(--_hover-state-layer-color);--md-ripple-hover-opacity: var(--_hover-state-layer-opacity);--md-ripple-pressed-color: var(--_pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity)}.standard:hover{color:var(--_hover-icon-color)}.standard:focus{color:var(--_focus-icon-color)}.standard:active{color:var(--_pressed-icon-color)}.standard:is(:disabled,[aria-disabled=true]){color:var(--_disabled-icon-color)}md-ripple{border-radius:var(--_state-layer-shape)}.standard:is(:disabled,[aria-disabled=true]){opacity:var(--_disabled-icon-opacity)}.selected{--md-ripple-hover-color: var(--_selected-hover-state-layer-color);--md-ripple-hover-opacity: var(--_selected-hover-state-layer-opacity);--md-ripple-pressed-color: var(--_selected-pressed-state-layer-color);--md-ripple-pressed-opacity: var(--_selected-pressed-state-layer-opacity)}.selected:not(:disabled,[aria-disabled=true]){color:var(--_selected-icon-color)}.selected:not(:disabled,[aria-disabled=true]):hover{color:var(--_selected-hover-icon-color)}.selected:not(:disabled,[aria-disabled=true]):focus{color:var(--_selected-focus-icon-color)}.selected:not(:disabled,[aria-disabled=true]):active{color:var(--_selected-pressed-icon-color)}
+`;
+//# sourceMappingURL=standard-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/aria/aria.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material/web/internal/aria/aria.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ARIA_ATTRIBUTES: () => (/* binding */ ARIA_ATTRIBUTES),
+/* harmony export */   ARIA_PROPERTIES: () => (/* binding */ ARIA_PROPERTIES),
+/* harmony export */   ariaPropertyToAttribute: () => (/* binding */ ariaPropertyToAttribute),
+/* harmony export */   isAriaAttribute: () => (/* binding */ isAriaAttribute)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * Accessibility Object Model reflective aria properties.
+ */
+const ARIA_PROPERTIES = [
+    'role',
+    'ariaAtomic',
+    'ariaAutoComplete',
+    'ariaBusy',
+    'ariaChecked',
+    'ariaColCount',
+    'ariaColIndex',
+    'ariaColSpan',
+    'ariaCurrent',
+    'ariaDisabled',
+    'ariaExpanded',
+    'ariaHasPopup',
+    'ariaHidden',
+    'ariaInvalid',
+    'ariaKeyShortcuts',
+    'ariaLabel',
+    'ariaLevel',
+    'ariaLive',
+    'ariaModal',
+    'ariaMultiLine',
+    'ariaMultiSelectable',
+    'ariaOrientation',
+    'ariaPlaceholder',
+    'ariaPosInSet',
+    'ariaPressed',
+    'ariaReadOnly',
+    'ariaRequired',
+    'ariaRoleDescription',
+    'ariaRowCount',
+    'ariaRowIndex',
+    'ariaRowSpan',
+    'ariaSelected',
+    'ariaSetSize',
+    'ariaSort',
+    'ariaValueMax',
+    'ariaValueMin',
+    'ariaValueNow',
+    'ariaValueText',
+];
+/**
+ * Accessibility Object Model aria attributes.
+ */
+const ARIA_ATTRIBUTES = ARIA_PROPERTIES.map(ariaPropertyToAttribute);
+/**
+ * Checks if an attribute is one of the AOM aria attributes.
+ *
+ * @example
+ * isAriaAttribute('aria-label'); // true
+ *
+ * @param attribute The attribute to check.
+ * @return True if the attribute is an aria attribute, or false if not.
+ */
+function isAriaAttribute(attribute) {
+    return ARIA_ATTRIBUTES.includes(attribute);
+}
+/**
+ * Converts an AOM aria property into its corresponding attribute.
+ *
+ * @example
+ * ariaPropertyToAttribute('ariaLabel'); // 'aria-label'
+ *
+ * @param property The aria property.
+ * @return The aria attribute.
+ */
+function ariaPropertyToAttribute(property) {
+    return property
+        .replace('aria', 'aria-')
+        // IDREF attributes also include an "Element" or "Elements" suffix
+        .replace(/Elements?/g, '')
+        .toLowerCase();
+}
+//# sourceMappingURL=aria.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/aria/delegate.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material/web/internal/aria/delegate.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mixinDelegatesAria: () => (/* binding */ mixinDelegatesAria)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var _aria_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aria.js */ "./node_modules/@material/web/internal/aria/aria.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+// Private symbols
+const privateIgnoreAttributeChangesFor = Symbol('privateIgnoreAttributeChangesFor');
+/**
+ * Mixes in aria delegation for elements that delegate focus and aria to inner
+ * shadow root elements.
+ *
+ * This mixin fixes invalid aria announcements with shadow roots, caused by
+ * duplicate aria attributes on both the host and the inner shadow root element.
+ *
+ * Note: this mixin **does not yet support** ID reference attributes, such as
+ * `aria-labelledby` or `aria-controls`.
+ *
+ * @example
+ * ```ts
+ * class MyButton extends mixinDelegatesAria(LitElement) {
+ *   static shadowRootOptions = {mode: 'open', delegatesFocus: true};
+ *
+ *   render() {
+ *     return html`
+ *       <button aria-label=${this.ariaLabel || nothing}>
+ *         <slot></slot>
+ *       </button>
+ *     `;
+ *   }
+ * }
+ * ```
+ * ```html
+ * <my-button aria-label="Plus one">+1</my-button>
+ * ```
+ *
+ * Use `ARIAMixinStrict` for lit analyzer strict types, such as the "role"
+ * attribute.
+ *
+ * @example
+ * ```ts
+ * return html`
+ *   <button role=${(this as ARIAMixinStrict).role || nothing}>
+ *     <slot></slot>
+ *   </button>
+ * `;
+ * ```
+ *
+ * In the future, updates to the Accessibility Object Model (AOM) will provide
+ * built-in aria delegation features that will replace this mixin.
+ *
+ * @param base The class to mix functionality into.
+ * @return The provided class with aria delegation mixed in.
+ */
+function mixinDelegatesAria(base) {
+    var _a;
+    if (lit__WEBPACK_IMPORTED_MODULE_0__.isServer) {
+        // Don't shift attributes when running with lit-ssr. The SSR renderer
+        // implements a subset of DOM APIs, including the methods this mixin
+        // overrides, causing errors. We don't need to shift on the server anyway
+        // since elements will shift attributes immediately once they hydrate.
+        return base;
+    }
+    class WithDelegatesAriaElement extends base {
+        constructor() {
+            super(...arguments);
+            this[_a] = new Set();
+        }
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (!(0,_aria_js__WEBPACK_IMPORTED_MODULE_1__.isAriaAttribute)(name)) {
+                super.attributeChangedCallback(name, oldValue, newValue);
+                return;
+            }
+            if (this[privateIgnoreAttributeChangesFor].has(name)) {
+                return;
+            }
+            // Don't trigger another `attributeChangedCallback` once we remove the
+            // aria attribute from the host. We check the explicit name of the
+            // attribute to ignore since `attributeChangedCallback` can be called
+            // multiple times out of an expected order when hydrating an element with
+            // multiple attributes.
+            this[privateIgnoreAttributeChangesFor].add(name);
+            this.removeAttribute(name);
+            this[privateIgnoreAttributeChangesFor].delete(name);
+            const dataProperty = ariaAttributeToDataProperty(name);
+            if (newValue === null) {
+                delete this.dataset[dataProperty];
+            }
+            else {
+                this.dataset[dataProperty] = newValue;
+            }
+            this.requestUpdate(ariaAttributeToDataProperty(name), oldValue);
+        }
+        getAttribute(name) {
+            if ((0,_aria_js__WEBPACK_IMPORTED_MODULE_1__.isAriaAttribute)(name)) {
+                return super.getAttribute(ariaAttributeToDataAttribute(name));
+            }
+            return super.getAttribute(name);
+        }
+        removeAttribute(name) {
+            super.removeAttribute(name);
+            if ((0,_aria_js__WEBPACK_IMPORTED_MODULE_1__.isAriaAttribute)(name)) {
+                super.removeAttribute(ariaAttributeToDataAttribute(name));
+                // Since `aria-*` attributes are already removed`, we need to request
+                // an update because `attributeChangedCallback` will not be called.
+                this.requestUpdate();
+            }
+        }
+    }
+    _a = privateIgnoreAttributeChangesFor;
+    setupDelegatesAriaProperties(WithDelegatesAriaElement);
+    return WithDelegatesAriaElement;
+}
+/**
+ * Overrides the constructor's native `ARIAMixin` properties to ensure that
+ * aria properties reflect the values that were shifted to a data attribute.
+ *
+ * @param ctor The `ReactiveElement` constructor to patch.
+ */
+function setupDelegatesAriaProperties(ctor) {
+    for (const ariaProperty of _aria_js__WEBPACK_IMPORTED_MODULE_1__.ARIA_PROPERTIES) {
+        // The casing between ariaProperty and the dataProperty may be different.
+        // ex: aria-haspopup -> ariaHasPopup
+        const ariaAttribute = (0,_aria_js__WEBPACK_IMPORTED_MODULE_1__.ariaPropertyToAttribute)(ariaProperty);
+        // ex: aria-haspopup -> data-aria-haspopup
+        const dataAttribute = ariaAttributeToDataAttribute(ariaAttribute);
+        // ex: aria-haspopup -> dataset.ariaHaspopup
+        const dataProperty = ariaAttributeToDataProperty(ariaAttribute);
+        // Call `ReactiveElement.createProperty()` so that the `aria-*` and `data-*`
+        // attributes are added to the `static observedAttributes` array. This
+        // triggers `attributeChangedCallback` for the delegates aria mixin to
+        // handle.
+        ctor.createProperty(ariaProperty, {
+            attribute: ariaAttribute,
+            noAccessor: true,
+        });
+        ctor.createProperty(Symbol(dataAttribute), {
+            attribute: dataAttribute,
+            noAccessor: true,
+        });
+        // Re-define the `ARIAMixin` properties to handle data attribute shifting.
+        // It is safe to use `Object.defineProperty` here because the properties
+        // are native and not renamed.
+        // tslint:disable-next-line:ban-unsafe-reflection
+        Object.defineProperty(ctor.prototype, ariaProperty, {
+            configurable: true,
+            enumerable: true,
+            get() {
+                return this.dataset[dataProperty] ?? null;
+            },
+            set(value) {
+                const prevValue = this.dataset[dataProperty] ?? null;
+                if (value === prevValue) {
+                    return;
+                }
+                if (value === null) {
+                    delete this.dataset[dataProperty];
+                }
+                else {
+                    this.dataset[dataProperty] = value;
+                }
+                this.requestUpdate(ariaProperty, prevValue);
+            },
+        });
+    }
+}
+function ariaAttributeToDataAttribute(ariaAttribute) {
+    // aria-haspopup -> data-aria-haspopup
+    return `data-${ariaAttribute}`;
+}
+function ariaAttributeToDataProperty(ariaAttribute) {
+    // aria-haspopup -> dataset.ariaHaspopup
+    return ariaAttribute.replace(/-\w/, (dashLetter) => dashLetter[1].toUpperCase());
+}
+//# sourceMappingURL=delegate.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/controller/attachable-controller.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@material/web/internal/controller/attachable-controller.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AttachableController: () => (/* binding */ AttachableController)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
+ * A key to retrieve an `Attachable` element's `AttachableController` from a
+ * global `MutationObserver`.
+ */
+const ATTACHABLE_CONTROLLER = Symbol('attachableController');
+let FOR_ATTRIBUTE_OBSERVER;
+if (!lit__WEBPACK_IMPORTED_MODULE_0__.isServer) {
+    /**
+     * A global `MutationObserver` that reacts to `for` attribute changes on
+     * `Attachable` elements. If the `for` attribute changes, the controller will
+     * re-attach to the new referenced element.
+     */
+    FOR_ATTRIBUTE_OBSERVER = new MutationObserver((records) => {
+        for (const record of records) {
+            // When a control's `for` attribute changes, inform its
+            // `AttachableController` to update to a new control.
+            record.target[ATTACHABLE_CONTROLLER]?.hostConnected();
+        }
+    });
+}
+/**
+ * A controller that provides an implementation for `Attachable` elements.
+ *
+ * @example
+ * ```ts
+ * class MyElement extends LitElement implements Attachable {
+ *   get control() { return this.attachableController.control; }
+ *
+ *   private readonly attachableController = new AttachableController(
+ *     this,
+ *     (previousControl, newControl) => {
+ *       previousControl?.removeEventListener('click', this.handleClick);
+ *       newControl?.addEventListener('click', this.handleClick);
+ *     }
+ *   );
+ *
+ *   // Implement remaining `Attachable` properties/methods that call the
+ *   // controller's properties/methods.
+ * }
+ * ```
+ */
+class AttachableController {
+    get htmlFor() {
+        return this.host.getAttribute('for');
+    }
+    set htmlFor(htmlFor) {
+        if (htmlFor === null) {
+            this.host.removeAttribute('for');
+        }
+        else {
+            this.host.setAttribute('for', htmlFor);
+        }
+    }
+    get control() {
+        if (this.host.hasAttribute('for')) {
+            if (!this.htmlFor || !this.host.isConnected) {
+                return null;
+            }
+            return this.host.getRootNode().querySelector(`#${this.htmlFor}`);
+        }
+        return this.currentControl || this.host.parentElement;
+    }
+    set control(control) {
+        if (control) {
+            this.attach(control);
+        }
+        else {
+            this.detach();
+        }
+    }
+    /**
+     * Creates a new controller for an `Attachable` element.
+     *
+     * @param host The `Attachable` element.
+     * @param onControlChange A callback with two parameters for the previous and
+     *     next control. An `Attachable` element may perform setup or teardown
+     *     logic whenever the control changes.
+     */
+    constructor(host, onControlChange) {
+        this.host = host;
+        this.onControlChange = onControlChange;
+        this.currentControl = null;
+        host.addController(this);
+        host[ATTACHABLE_CONTROLLER] = this;
+        FOR_ATTRIBUTE_OBSERVER?.observe(host, { attributeFilter: ['for'] });
+    }
+    attach(control) {
+        if (control === this.currentControl) {
+            return;
+        }
+        this.setCurrentControl(control);
+        // When imperatively attaching, remove the `for` attribute so
+        // that the attached control is used instead of a referenced one.
+        this.host.removeAttribute('for');
+    }
+    detach() {
+        this.setCurrentControl(null);
+        // When imperatively detaching, add an empty `for=""` attribute. This will
+        // ensure the control is `null` rather than the `parentElement`.
+        this.host.setAttribute('for', '');
+    }
+    /** @private */
+    hostConnected() {
+        this.setCurrentControl(this.control);
+    }
+    /** @private */
+    hostDisconnected() {
+        this.setCurrentControl(null);
+    }
+    setCurrentControl(control) {
+        this.onControlChange(this.currentControl, control);
+        this.currentControl = control;
+    }
+}
+//# sourceMappingURL=attachable-controller.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/controller/form-submitter.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@material/web/internal/controller/form-submitter.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setupFormSubmitter: () => (/* binding */ setupFormSubmitter)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var _labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../labs/behaviors/element-internals.js */ "./node_modules/@material/web/labs/behaviors/element-internals.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+/**
+ * Sets up an element's constructor to enable form submission. The element
+ * instance should be form associated and have a `type` property.
+ *
+ * A click listener is added to each element instance. If the click is not
+ * default prevented, it will submit the element's form, if any.
+ *
+ * @example
+ * ```ts
+ * class MyElement extends mixinElementInternals(LitElement) {
+ *   static {
+ *     setupFormSubmitter(MyElement);
+ *   }
+ *
+ *   static formAssociated = true;
+ *
+ *   type: FormSubmitterType = 'submit';
+ * }
+ * ```
+ *
+ * @param ctor The form submitter element's constructor.
+ */
+function setupFormSubmitter(ctor) {
+    if (lit__WEBPACK_IMPORTED_MODULE_0__.isServer) {
+        return;
+    }
+    ctor.addInitializer((instance) => {
+        const submitter = instance;
+        submitter.addEventListener('click', async (event) => {
+            const { type, [_labs_behaviors_element_internals_js__WEBPACK_IMPORTED_MODULE_1__.internals]: elementInternals } = submitter;
+            const { form } = elementInternals;
+            if (!form || type === 'button') {
+                return;
+            }
+            // Wait a full task for event bubbling to complete.
+            await new Promise((resolve) => {
+                setTimeout(resolve);
+            });
+            if (event.defaultPrevented) {
+                return;
+            }
+            if (type === 'reset') {
+                form.reset();
+                return;
+            }
+            // form.requestSubmit(submitter) does not work with form associated custom
+            // elements. This patches the dispatched submit event to add the correct
+            // `submitter`.
+            // See https://github.com/WICG/webcomponents/issues/814
+            form.addEventListener('submit', (submitEvent) => {
+                Object.defineProperty(submitEvent, 'submitter', {
+                    configurable: true,
+                    enumerable: true,
+                    get: () => submitter,
+                });
+            }, { capture: true, once: true });
+            elementInternals.setFormValue(submitter.value);
+            form.requestSubmit();
+        });
+    });
+}
+//# sourceMappingURL=form-submitter.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/controller/is-rtl.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/internal/controller/is-rtl.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isRtl: () => (/* binding */ isRtl)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * Returns `true` if the given element is in a right-to-left direction.
+ *
+ * @param el Element to determine direction from
+ * @param shouldCheck Optional. If `false`, return `false` without checking
+ *     direction. Determining the direction of `el` is somewhat expensive, so
+ *     this parameter can be used as a conditional guard. Defaults to `true`.
+ */
+function isRtl(el, shouldCheck = true) {
+    return (shouldCheck &&
+        getComputedStyle(el).getPropertyValue('direction').trim() === 'rtl');
+}
+//# sourceMappingURL=is-rtl.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/events/form-label-activation.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@material/web/internal/events/form-label-activation.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   dispatchActivationClick: () => (/* binding */ dispatchActivationClick),
+/* harmony export */   isActivationClick: () => (/* binding */ isActivationClick)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * Dispatches a click event to the given element that triggers a native action,
+ * but is not composed and therefore is not seen outside the element.
+ *
+ * This is useful for responding to an external click event on the host element
+ * that should trigger an internal action like a button click.
+ *
+ * Note, a helper is provided because setting this up correctly is a bit tricky.
+ * In particular, calling `click` on an element creates a composed event, which
+ * is not desirable, and a manually dispatched event must specifically be a
+ * `MouseEvent` to trigger a native action.
+ *
+ * @example
+ * hostClickListener = (event: MouseEvent) {
+ *   if (isActivationClick(event)) {
+ *     this.dispatchActivationClick(this.buttonElement);
+ *   }
+ * }
+ *
+ */
+function dispatchActivationClick(element) {
+    const event = new MouseEvent('click', { bubbles: true });
+    element.dispatchEvent(event);
+    return event;
+}
+/**
+ * Returns true if the click event should trigger an activation behavior. The
+ * behavior is defined by the element and is whatever it should do when
+ * clicked.
+ *
+ * Typically when an element needs to handle a click, the click is generated
+ * from within the element and an event listener within the element implements
+ * the needed behavior; however, it's possible to fire a click directly
+ * at the element that the element should handle. This method helps
+ * distinguish these "external" clicks.
+ *
+ * An "external" click can be triggered in a number of ways: via a click
+ * on an associated label for a form  associated element, calling
+ * `element.click()`, or calling
+ * `element.dispatchEvent(new MouseEvent('click', ...))`.
+ *
+ * Also works around Firefox issue
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1804576 by squelching
+ * events for a microtask after called.
+ *
+ * @example
+ * hostClickListener = (event: MouseEvent) {
+ *   if (isActivationClick(event)) {
+ *     this.dispatchActivationClick(this.buttonElement);
+ *   }
+ * }
+ *
+ */
+function isActivationClick(event) {
+    // Event must start at the event target.
+    if (event.currentTarget !== event.target) {
+        return false;
+    }
+    // Event must not be retargeted from shadowRoot.
+    if (event.composedPath()[0] !== event.target) {
+        return false;
+    }
+    // Target must not be disabled; this should only occur for a synthetically
+    // dispatched click.
+    if (event.target.disabled) {
+        return false;
+    }
+    // This is an activation if the event should not be squelched.
+    return !squelchEvent(event);
+}
+// TODO(https://bugzilla.mozilla.org/show_bug.cgi?id=1804576)
+//  Remove when Firefox bug is addressed.
+function squelchEvent(event) {
+    const squelched = isSquelchingEvents;
+    if (squelched) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+    }
+    squelchEventsForMicrotask();
+    return squelched;
+}
+// Ignore events for one microtask only.
+let isSquelchingEvents = false;
+async function squelchEventsForMicrotask() {
+    isSquelchingEvents = true;
+    // Need to pause for just one microtask.
+    // tslint:disable-next-line
+    await null;
+    isSquelchingEvents = false;
+}
+//# sourceMappingURL=form-label-activation.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/events/redispatch-event.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@material/web/internal/events/redispatch-event.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   redispatchEvent: () => (/* binding */ redispatchEvent)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * Re-dispatches an event from the provided element.
+ *
+ * This function is useful for forwarding non-composed events, such as `change`
+ * events.
+ *
+ * @example
+ * class MyInput extends LitElement {
+ *   render() {
+ *     return html`<input @change=${this.redispatchEvent}>`;
+ *   }
+ *
+ *   protected redispatchEvent(event: Event) {
+ *     redispatchEvent(this, event);
+ *   }
+ * }
+ *
+ * @param element The element to dispatch the event from.
+ * @param event The event to re-dispatch.
+ * @return Whether or not the event was dispatched (if cancelable).
+ */
+function redispatchEvent(element, event) {
+    // For bubbling events in SSR light DOM (or composed), stop their propagation
+    // and dispatch the copy.
+    if (event.bubbles && (!element.shadowRoot || event.composed)) {
+        event.stopPropagation();
+    }
+    const copy = Reflect.construct(event.constructor, [event.type, event]);
+    const dispatched = element.dispatchEvent(copy);
+    if (!dispatched) {
+        event.preventDefault();
+    }
+    return dispatched;
+}
+//# sourceMappingURL=redispatch-event.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/internal/motion/animation.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material/web/internal/motion/animation.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EASING: () => (/* binding */ EASING),
+/* harmony export */   createAnimationSignal: () => (/* binding */ createAnimationSignal),
+/* harmony export */   createThrottle: () => (/* binding */ createThrottle),
+/* harmony export */   msFromTimeCSSValue: () => (/* binding */ msFromTimeCSSValue)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * Easing functions to use for web animations.
+ *
+ * **NOTE:** `EASING.EMPHASIZED` is approximated with unknown accuracy.
+ *
+ * TODO(b/241113345): replace with tokens
+ */
+const EASING = {
+    STANDARD: 'cubic-bezier(0.2, 0, 0, 1)',
+    STANDARD_ACCELERATE: 'cubic-bezier(.3,0,1,1)',
+    STANDARD_DECELERATE: 'cubic-bezier(0,0,0,1)',
+    EMPHASIZED: 'cubic-bezier(.3,0,0,1)',
+    EMPHASIZED_ACCELERATE: 'cubic-bezier(.3,0,.8,.15)',
+    EMPHASIZED_DECELERATE: 'cubic-bezier(.05,.7,.1,1)',
+};
+/**
+ * Creates an `AnimationSignal` that can be used to cancel a previous task.
+ *
+ * @example
+ * class MyClass {
+ *   private labelAnimationSignal = createAnimationSignal();
+ *
+ *   private async animateLabel() {
+ *     // Start of the task. Previous tasks will be canceled.
+ *     const signal = this.labelAnimationSignal.start();
+ *
+ *     // Do async work...
+ *     if (signal.aborted) {
+ *       // Use AbortSignal to check if a request was made to abort after some
+ *       // asynchronous work.
+ *       return;
+ *     }
+ *
+ *     const animation = this.animate(...);
+ *     // Add event listeners to be notified when the task should be canceled.
+ *     signal.addEventListener('abort', () => {
+ *       animation.cancel();
+ *     });
+ *
+ *     animation.addEventListener('finish', () => {
+ *       // Tell the signal that the current task is finished.
+ *       this.labelAnimationSignal.finish();
+ *     });
+ *   }
+ * }
+ *
+ * @return An `AnimationSignal`.
+ */
+function createAnimationSignal() {
+    // The current animation's AbortController
+    let animationAbortController = null;
+    return {
+        start() {
+            // Tell the previous animation to cancel.
+            animationAbortController?.abort();
+            // Set up a new AbortController for the current animation.
+            animationAbortController = new AbortController();
+            // Provide the AbortSignal so that the caller can check aborted status
+            // and add listeners.
+            return animationAbortController.signal;
+        },
+        finish() {
+            animationAbortController = null;
+        },
+    };
+}
+/**
+ * Returns a function which can be used to throttle function calls
+ * mapped to a key via a given function that should produce a promise that
+ * determines the throttle amount (defaults to requestAnimationFrame).
+ */
+function createThrottle() {
+    const stack = new Set();
+    return async (key = '', cb, timeout = async () => {
+        await new Promise(requestAnimationFrame);
+    }) => {
+        if (!stack.has(key)) {
+            stack.add(key);
+            await timeout();
+            if (stack.has(key)) {
+                stack.delete(key);
+                cb();
+            }
+        }
+    };
+}
+/**
+ * Parses an number in milliseconds from a css time value
+ */
+function msFromTimeCSSValue(value) {
+    const match = value.trim().match(/([\d.]+)(\s*s$)?/);
+    const time = match?.[1];
+    const seconds = match?.[2];
+    return Number(time ?? 0) * (seconds ? 1000 : 1);
+}
+//# sourceMappingURL=animation.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/labs/behaviors/element-internals.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@material/web/labs/behaviors/element-internals.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   internals: () => (/* binding */ internals),
+/* harmony export */   mixinElementInternals: () => (/* binding */ mixinElementInternals)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * A unique symbol used for protected access to an instance's
+ * `ElementInternals`.
+ *
+ * @example
+ * ```ts
+ * class MyElement extends mixinElementInternals(LitElement) {
+ *   constructor() {
+ *     super();
+ *     this[internals].role = 'button';
+ *   }
+ * }
+ * ```
+ */
+const internals = Symbol('internals');
+// Private symbols
+const privateInternals = Symbol('privateInternals');
+/**
+ * Mixes in an attached `ElementInternals` instance.
+ *
+ * This mixin is only needed when other shared code needs access to a
+ * component's `ElementInternals`, such as form-associated mixins.
+ *
+ * @param base The class to mix functionality into.
+ * @return The provided class with `WithElementInternals` mixed in.
+ */
+function mixinElementInternals(base) {
+    class WithElementInternalsElement extends base {
+        get [internals]() {
+            // Create internals in getter so that it can be used in methods called on
+            // construction in `ReactiveElement`, such as `requestUpdate()`.
+            if (!this[privateInternals]) {
+                // Cast needed for closure
+                this[privateInternals] = this.attachInternals();
+            }
+            return this[privateInternals];
+        }
+    }
+    return WithElementInternalsElement;
+}
+//# sourceMappingURL=element-internals.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/progress/circular-progress.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/progress/circular-progress.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdCircularProgress: () => (/* binding */ MdCircularProgress)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_circular_progress_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/circular-progress.js */ "./node_modules/@material/web/progress/internal/circular-progress.js");
+/* harmony import */ var _internal_circular_progress_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/circular-progress-styles.js */ "./node_modules/@material/web/progress/internal/circular-progress-styles.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * @summary Circular progress indicators display progress by animating along an
+ * invisible circular track in a clockwise direction. They can be applied
+ * directly to a surface, such as a button or card.
+ *
+ * @description
+ * Progress indicators inform users about the status of ongoing processes.
+ * - Determinate indicators display how long a process will take.
+ * - Indeterminate indicators express an unspecified amount of wait time.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdCircularProgress = class MdCircularProgress extends _internal_circular_progress_js__WEBPACK_IMPORTED_MODULE_1__.CircularProgress {
+};
+MdCircularProgress.styles = [_internal_circular_progress_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdCircularProgress = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-circular-progress')
+], MdCircularProgress);
+//# sourceMappingURL=circular-progress.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/progress/internal/circular-progress-styles.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@material/web/progress/internal/circular-progress-styles.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./progress/internal/circular-progress-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{--_active-indicator-color: var(--md-circular-progress-active-indicator-color, var(--md-sys-color-primary, #6750a4));--_active-indicator-width: var(--md-circular-progress-active-indicator-width, 10);--_four-color-active-indicator-four-color: var(--md-circular-progress-four-color-active-indicator-four-color, var(--md-sys-color-tertiary-container, #ffd8e4));--_four-color-active-indicator-one-color: var(--md-circular-progress-four-color-active-indicator-one-color, var(--md-sys-color-primary, #6750a4));--_four-color-active-indicator-three-color: var(--md-circular-progress-four-color-active-indicator-three-color, var(--md-sys-color-tertiary, #7d5260));--_four-color-active-indicator-two-color: var(--md-circular-progress-four-color-active-indicator-two-color, var(--md-sys-color-primary-container, #eaddff));--_size: var(--md-circular-progress-size, 48px);display:inline-flex;vertical-align:middle;width:var(--_size);height:var(--_size);position:relative;align-items:center;justify-content:center;contain:strict;content-visibility:auto}.progress{flex:1;align-self:stretch;margin:4px}.progress,.spinner,.left,.right,.circle,svg,.track,.active-track{position:absolute;inset:0}svg{transform:rotate(-90deg)}circle{cx:50%;cy:50%;r:calc(50%*(1 - var(--_active-indicator-width)/100));stroke-width:calc(var(--_active-indicator-width)*1%);stroke-dasharray:100;fill:rgba(0,0,0,0)}.active-track{transition:stroke-dashoffset 500ms cubic-bezier(0, 0, 0.2, 1);stroke:var(--_active-indicator-color)}.track{stroke:rgba(0,0,0,0)}.progress.indeterminate{animation:linear infinite linear-rotate;animation-duration:1568.2352941176ms}.spinner{animation:infinite both rotate-arc;animation-duration:5332ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.left{overflow:hidden;inset:0 50% 0 0}.right{overflow:hidden;inset:0 0 0 50%}.circle{box-sizing:border-box;border-radius:50%;border:solid calc(var(--_active-indicator-width)/100*(var(--_size) - 8px));border-color:var(--_active-indicator-color) var(--_active-indicator-color) rgba(0,0,0,0) rgba(0,0,0,0);animation:expand-arc;animation-iteration-count:infinite;animation-fill-mode:both;animation-duration:1333ms,5332ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.four-color .circle{animation-name:expand-arc,four-color}.left .circle{rotate:135deg;inset:0 -100% 0 0}.right .circle{rotate:100deg;inset:0 0 0 -100%;animation-delay:-666.5ms,0ms}@media(forced-colors: active){.active-track{stroke:CanvasText}.circle{border-color:CanvasText CanvasText Canvas Canvas}}@keyframes expand-arc{0%{transform:rotate(265deg)}50%{transform:rotate(130deg)}100%{transform:rotate(265deg)}}@keyframes rotate-arc{12.5%{transform:rotate(135deg)}25%{transform:rotate(270deg)}37.5%{transform:rotate(405deg)}50%{transform:rotate(540deg)}62.5%{transform:rotate(675deg)}75%{transform:rotate(810deg)}87.5%{transform:rotate(945deg)}100%{transform:rotate(1080deg)}}@keyframes linear-rotate{to{transform:rotate(360deg)}}@keyframes four-color{0%{border-top-color:var(--_four-color-active-indicator-one-color);border-right-color:var(--_four-color-active-indicator-one-color)}15%{border-top-color:var(--_four-color-active-indicator-one-color);border-right-color:var(--_four-color-active-indicator-one-color)}25%{border-top-color:var(--_four-color-active-indicator-two-color);border-right-color:var(--_four-color-active-indicator-two-color)}40%{border-top-color:var(--_four-color-active-indicator-two-color);border-right-color:var(--_four-color-active-indicator-two-color)}50%{border-top-color:var(--_four-color-active-indicator-three-color);border-right-color:var(--_four-color-active-indicator-three-color)}65%{border-top-color:var(--_four-color-active-indicator-three-color);border-right-color:var(--_four-color-active-indicator-three-color)}75%{border-top-color:var(--_four-color-active-indicator-four-color);border-right-color:var(--_four-color-active-indicator-four-color)}90%{border-top-color:var(--_four-color-active-indicator-four-color);border-right-color:var(--_four-color-active-indicator-four-color)}100%{border-top-color:var(--_four-color-active-indicator-one-color);border-right-color:var(--_four-color-active-indicator-one-color)}}
+`;
+//# sourceMappingURL=circular-progress-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/progress/internal/circular-progress.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material/web/progress/internal/circular-progress.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CircularProgress: () => (/* binding */ CircularProgress)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var _progress_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./progress.js */ "./node_modules/@material/web/progress/internal/progress.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+/**
+ * A circular progress component.
+ */
+class CircularProgress extends _progress_js__WEBPACK_IMPORTED_MODULE_1__.Progress {
+    renderIndicator() {
+        if (this.indeterminate) {
+            return this.renderIndeterminateContainer();
+        }
+        return this.renderDeterminateContainer();
+    }
+    // Determinate mode is rendered with an svg so the progress arc can be
+    // easily animated via stroke-dashoffset.
+    renderDeterminateContainer() {
+        const dashOffset = (1 - this.value / this.max) * 100;
+        // note, dash-array/offset are relative to Setting `pathLength` but
+        // Chrome seems to render this inaccurately and using a large viewbox helps.
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `
+      <svg viewBox="0 0 4800 4800">
+        <circle class="track" pathLength="100"></circle>
+        <circle
+          class="active-track"
+          pathLength="100"
+          stroke-dashoffset=${dashOffset}></circle>
+      </svg>
+    `;
+    }
+    // Indeterminate mode rendered with 2 bordered-divs. The borders are
+    // clipped into half circles by their containers. The divs are then carefully
+    // animated to produce changes to the spinner arc size.
+    // This approach has 4.5x the FPS of rendering via svg on Chrome 111.
+    // See https://lit.dev/playground/#gist=febb773565272f75408ab06a0eb49746.
+    renderIndeterminateContainer() {
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) ` <div class="spinner">
+      <div class="left">
+        <div class="circle"></div>
+      </div>
+      <div class="right">
+        <div class="circle"></div>
+      </div>
+    </div>`;
+    }
+}
+//# sourceMappingURL=circular-progress.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/progress/internal/progress.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material/web/progress/internal/progress.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Progress: () => (/* binding */ Progress)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit/directives/class-map.js */ "./node_modules/lit/directives/class-map.js");
+/* harmony import */ var _internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../internal/aria/delegate.js */ "./node_modules/@material/web/internal/aria/delegate.js");
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+// Separate variable needed for closure.
+const progressBaseClass = (0,_internal_aria_delegate_js__WEBPACK_IMPORTED_MODULE_3__.mixinDelegatesAria)(lit__WEBPACK_IMPORTED_MODULE_0__.LitElement);
+/**
+ * A progress component.
+ */
+class Progress extends progressBaseClass {
+    constructor() {
+        super(...arguments);
+        /**
+         * Progress to display, a fraction between 0 and `max`.
+         */
+        this.value = 0;
+        /**
+         * Maximum progress to display, defaults to 1.
+         */
+        this.max = 1;
+        /**
+         * Whether or not to display indeterminate progress, which gives no indication
+         * to how long an activity will take.
+         */
+        this.indeterminate = false;
+        /**
+         * Whether or not to render indeterminate mode using 4 colors instead of one.
+         */
+        this.fourColor = false;
+    }
+    render() {
+        // Needed for closure conformance
+        const { ariaLabel } = this;
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `
+      <div
+        class="progress ${(0,lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_2__.classMap)(this.getRenderClasses())}"
+        role="progressbar"
+        aria-label="${ariaLabel || lit__WEBPACK_IMPORTED_MODULE_0__.nothing}"
+        aria-valuemin="0"
+        aria-valuemax=${this.max}
+        aria-valuenow=${this.indeterminate ? lit__WEBPACK_IMPORTED_MODULE_0__.nothing : this.value}
+        >${this.renderIndicator()}</div
+      >
+    `;
+    }
+    getRenderClasses() {
+        return {
+            'indeterminate': this.indeterminate,
+            'four-color': this.fourColor,
+        };
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Number })
+], Progress.prototype, "value", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Number })
+], Progress.prototype, "max", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean })
+], Progress.prototype, "indeterminate", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, attribute: 'four-color' })
+], Progress.prototype, "fourColor", void 0);
+//# sourceMappingURL=progress.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/ripple/internal/ripple-styles.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material/web/ripple/internal/ripple-styles.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Generated stylesheet for ./ripple/internal/ripple-styles.css.
+
+const styles = (0,lit__WEBPACK_IMPORTED_MODULE_0__.css) `:host{display:flex;margin:auto;pointer-events:none}:host([disabled]){display:none}@media(forced-colors: active){:host{display:none}}:host,.surface{border-radius:inherit;position:absolute;inset:0;overflow:hidden}.surface{-webkit-tap-highlight-color:rgba(0,0,0,0)}.surface::before,.surface::after{content:"";opacity:0;position:absolute}.surface::before{background-color:var(--md-ripple-hover-color, var(--md-sys-color-on-surface, #1d1b20));inset:0;transition:opacity 15ms linear,background-color 15ms linear}.surface::after{background:radial-gradient(closest-side, var(--md-ripple-pressed-color, var(--md-sys-color-on-surface, #1d1b20)) max(100% - 70px, 65%), transparent 100%);transform-origin:center center;transition:opacity 375ms linear}.hovered::before{background-color:var(--md-ripple-hover-color, var(--md-sys-color-on-surface, #1d1b20));opacity:var(--md-ripple-hover-opacity, 0.08)}.pressed::after{opacity:var(--md-ripple-pressed-opacity, 0.12);transition-duration:105ms}
+`;
+//# sourceMappingURL=ripple-styles.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/ripple/internal/ripple.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material/web/ripple/internal/ripple.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Ripple: () => (/* binding */ Ripple)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit */ "./node_modules/lit/index.js");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lit/directives/class-map.js */ "./node_modules/lit/directives/class-map.js");
+/* harmony import */ var _internal_controller_attachable_controller_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../internal/controller/attachable-controller.js */ "./node_modules/@material/web/internal/controller/attachable-controller.js");
+/* harmony import */ var _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/motion/animation.js */ "./node_modules/@material/web/internal/motion/animation.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+
+
+const PRESS_GROW_MS = 450;
+const MINIMUM_PRESS_MS = 225;
+const INITIAL_ORIGIN_SCALE = 0.2;
+const PADDING = 10;
+const SOFT_EDGE_MINIMUM_SIZE = 75;
+const SOFT_EDGE_CONTAINER_RATIO = 0.35;
+const PRESS_PSEUDO = '::after';
+const ANIMATION_FILL = 'forwards';
+/**
+ * Interaction states for the ripple.
+ *
+ * On Touch:
+ *  - `INACTIVE -> TOUCH_DELAY -> WAITING_FOR_CLICK -> INACTIVE`
+ *  - `INACTIVE -> TOUCH_DELAY -> HOLDING -> WAITING_FOR_CLICK -> INACTIVE`
+ *
+ * On Mouse or Pen:
+ *   - `INACTIVE -> WAITING_FOR_CLICK -> INACTIVE`
+ */
+var State;
+(function (State) {
+    /**
+     * Initial state of the control, no touch in progress.
+     *
+     * Transitions:
+     *   - on touch down: transition to `TOUCH_DELAY`.
+     *   - on mouse down: transition to `WAITING_FOR_CLICK`.
+     */
+    State[State["INACTIVE"] = 0] = "INACTIVE";
+    /**
+     * Touch down has been received, waiting to determine if it's a swipe or
+     * scroll.
+     *
+     * Transitions:
+     *   - on touch up: begin press; transition to `WAITING_FOR_CLICK`.
+     *   - on cancel: transition to `INACTIVE`.
+     *   - after `TOUCH_DELAY_MS`: begin press; transition to `HOLDING`.
+     */
+    State[State["TOUCH_DELAY"] = 1] = "TOUCH_DELAY";
+    /**
+     * A touch has been deemed to be a press
+     *
+     * Transitions:
+     *  - on up: transition to `WAITING_FOR_CLICK`.
+     */
+    State[State["HOLDING"] = 2] = "HOLDING";
+    /**
+     * The user touch has finished, transition into rest state.
+     *
+     * Transitions:
+     *   - on click end press; transition to `INACTIVE`.
+     */
+    State[State["WAITING_FOR_CLICK"] = 3] = "WAITING_FOR_CLICK";
+})(State || (State = {}));
+/**
+ * Events that the ripple listens to.
+ */
+const EVENTS = [
+    'click',
+    'contextmenu',
+    'pointercancel',
+    'pointerdown',
+    'pointerenter',
+    'pointerleave',
+    'pointerup',
+];
+/**
+ * Delay reacting to touch so that we do not show the ripple for a swipe or
+ * scroll interaction.
+ */
+const TOUCH_DELAY_MS = 150;
+/**
+ * Used to detect if HCM is active. Events do not process during HCM when the
+ * ripple is not displayed.
+ */
+const FORCED_COLORS = lit__WEBPACK_IMPORTED_MODULE_0__.isServer
+    ? null
+    : window.matchMedia('(forced-colors: active)');
+/**
+ * A ripple component.
+ */
+class Ripple extends lit__WEBPACK_IMPORTED_MODULE_0__.LitElement {
+    constructor() {
+        super(...arguments);
+        /**
+         * Disables the ripple.
+         */
+        this.disabled = false;
+        this.hovered = false;
+        this.pressed = false;
+        this.rippleSize = '';
+        this.rippleScale = '';
+        this.initialSize = 0;
+        this.state = State.INACTIVE;
+        this.checkBoundsAfterContextMenu = false;
+        this.attachableController = new _internal_controller_attachable_controller_js__WEBPACK_IMPORTED_MODULE_3__.AttachableController(this, this.onControlChange.bind(this));
+    }
+    get htmlFor() {
+        return this.attachableController.htmlFor;
+    }
+    set htmlFor(htmlFor) {
+        this.attachableController.htmlFor = htmlFor;
+    }
+    get control() {
+        return this.attachableController.control;
+    }
+    set control(control) {
+        this.attachableController.control = control;
+    }
+    attach(control) {
+        this.attachableController.attach(control);
+    }
+    detach() {
+        this.attachableController.detach();
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        // Needed for VoiceOver, which will create a "group" if the element is a
+        // sibling to other content.
+        this.setAttribute('aria-hidden', 'true');
+    }
+    render() {
+        const classes = {
+            'hovered': this.hovered,
+            'pressed': this.pressed,
+        };
+        return (0,lit__WEBPACK_IMPORTED_MODULE_0__.html) `<div class="surface ${(0,lit_directives_class_map_js__WEBPACK_IMPORTED_MODULE_2__.classMap)(classes)}"></div>`;
+    }
+    update(changedProps) {
+        if (changedProps.has('disabled') && this.disabled) {
+            this.hovered = false;
+            this.pressed = false;
+        }
+        super.update(changedProps);
+    }
+    /**
+     * TODO(b/269799771): make private
+     * @private only public for slider
+     */
+    handlePointerenter(event) {
+        if (!this.shouldReactToEvent(event)) {
+            return;
+        }
+        this.hovered = true;
+    }
+    /**
+     * TODO(b/269799771): make private
+     * @private only public for slider
+     */
+    handlePointerleave(event) {
+        if (!this.shouldReactToEvent(event)) {
+            return;
+        }
+        this.hovered = false;
+        // release a held mouse or pen press that moves outside the element
+        if (this.state !== State.INACTIVE) {
+            this.endPressAnimation();
+        }
+    }
+    handlePointerup(event) {
+        if (!this.shouldReactToEvent(event)) {
+            return;
+        }
+        if (this.state === State.HOLDING) {
+            this.state = State.WAITING_FOR_CLICK;
+            return;
+        }
+        if (this.state === State.TOUCH_DELAY) {
+            this.state = State.WAITING_FOR_CLICK;
+            this.startPressAnimation(this.rippleStartEvent);
+            return;
+        }
+    }
+    async handlePointerdown(event) {
+        if (!this.shouldReactToEvent(event)) {
+            return;
+        }
+        this.rippleStartEvent = event;
+        if (!this.isTouch(event)) {
+            this.state = State.WAITING_FOR_CLICK;
+            this.startPressAnimation(event);
+            return;
+        }
+        // after a longpress contextmenu event, an extra `pointerdown` can be
+        // dispatched to the pressed element. Check that the down is within
+        // bounds of the element in this case.
+        if (this.checkBoundsAfterContextMenu && !this.inBounds(event)) {
+            return;
+        }
+        this.checkBoundsAfterContextMenu = false;
+        // Wait for a hold after touch delay
+        this.state = State.TOUCH_DELAY;
+        await new Promise((resolve) => {
+            setTimeout(resolve, TOUCH_DELAY_MS);
+        });
+        if (this.state !== State.TOUCH_DELAY) {
+            return;
+        }
+        this.state = State.HOLDING;
+        this.startPressAnimation(event);
+    }
+    handleClick() {
+        // Click is a MouseEvent in Firefox and Safari, so we cannot use
+        // `shouldReactToEvent`
+        if (this.disabled) {
+            return;
+        }
+        if (this.state === State.WAITING_FOR_CLICK) {
+            this.endPressAnimation();
+            return;
+        }
+        if (this.state === State.INACTIVE) {
+            // keyboard synthesized click event
+            this.startPressAnimation();
+            this.endPressAnimation();
+        }
+    }
+    handlePointercancel(event) {
+        if (!this.shouldReactToEvent(event)) {
+            return;
+        }
+        this.endPressAnimation();
+    }
+    handleContextmenu() {
+        if (this.disabled) {
+            return;
+        }
+        this.checkBoundsAfterContextMenu = true;
+        this.endPressAnimation();
+    }
+    determineRippleSize() {
+        const { height, width } = this.getBoundingClientRect();
+        const maxDim = Math.max(height, width);
+        const softEdgeSize = Math.max(SOFT_EDGE_CONTAINER_RATIO * maxDim, SOFT_EDGE_MINIMUM_SIZE);
+        const initialSize = Math.floor(maxDim * INITIAL_ORIGIN_SCALE);
+        const hypotenuse = Math.sqrt(width ** 2 + height ** 2);
+        const maxRadius = hypotenuse + PADDING;
+        this.initialSize = initialSize;
+        this.rippleScale = `${(maxRadius + softEdgeSize) / initialSize}`;
+        this.rippleSize = `${initialSize}px`;
+    }
+    getNormalizedPointerEventCoords(pointerEvent) {
+        const { scrollX, scrollY } = window;
+        const { left, top } = this.getBoundingClientRect();
+        const documentX = scrollX + left;
+        const documentY = scrollY + top;
+        const { pageX, pageY } = pointerEvent;
+        return { x: pageX - documentX, y: pageY - documentY };
+    }
+    getTranslationCoordinates(positionEvent) {
+        const { height, width } = this.getBoundingClientRect();
+        // end in the center
+        const endPoint = {
+            x: (width - this.initialSize) / 2,
+            y: (height - this.initialSize) / 2,
+        };
+        let startPoint;
+        if (positionEvent instanceof PointerEvent) {
+            startPoint = this.getNormalizedPointerEventCoords(positionEvent);
+        }
+        else {
+            startPoint = {
+                x: width / 2,
+                y: height / 2,
+            };
+        }
+        // center around start point
+        startPoint = {
+            x: startPoint.x - this.initialSize / 2,
+            y: startPoint.y - this.initialSize / 2,
+        };
+        return { startPoint, endPoint };
+    }
+    startPressAnimation(positionEvent) {
+        if (!this.mdRoot) {
+            return;
+        }
+        this.pressed = true;
+        this.growAnimation?.cancel();
+        this.determineRippleSize();
+        const { startPoint, endPoint } = this.getTranslationCoordinates(positionEvent);
+        const translateStart = `${startPoint.x}px, ${startPoint.y}px`;
+        const translateEnd = `${endPoint.x}px, ${endPoint.y}px`;
+        this.growAnimation = this.mdRoot.animate({
+            top: [0, 0],
+            left: [0, 0],
+            height: [this.rippleSize, this.rippleSize],
+            width: [this.rippleSize, this.rippleSize],
+            transform: [
+                `translate(${translateStart}) scale(1)`,
+                `translate(${translateEnd}) scale(${this.rippleScale})`,
+            ],
+        }, {
+            pseudoElement: PRESS_PSEUDO,
+            duration: PRESS_GROW_MS,
+            easing: _internal_motion_animation_js__WEBPACK_IMPORTED_MODULE_4__.EASING.STANDARD,
+            fill: ANIMATION_FILL,
+        });
+    }
+    async endPressAnimation() {
+        this.rippleStartEvent = undefined;
+        this.state = State.INACTIVE;
+        const animation = this.growAnimation;
+        let pressAnimationPlayState = Infinity;
+        if (typeof animation?.currentTime === 'number') {
+            pressAnimationPlayState = animation.currentTime;
+        }
+        else if (animation?.currentTime) {
+            pressAnimationPlayState = animation.currentTime.to('ms').value;
+        }
+        if (pressAnimationPlayState >= MINIMUM_PRESS_MS) {
+            this.pressed = false;
+            return;
+        }
+        await new Promise((resolve) => {
+            setTimeout(resolve, MINIMUM_PRESS_MS - pressAnimationPlayState);
+        });
+        if (this.growAnimation !== animation) {
+            // A new press animation was started. The old animation was canceled and
+            // should not finish the pressed state.
+            return;
+        }
+        this.pressed = false;
+    }
+    /**
+     * Returns `true` if
+     *  - the ripple element is enabled
+     *  - the pointer is primary for the input type
+     *  - the pointer is the pointer that started the interaction, or will start
+     * the interaction
+     *  - the pointer is a touch, or the pointer state has the primary button
+     * held, or the pointer is hovering
+     */
+    shouldReactToEvent(event) {
+        if (this.disabled || !event.isPrimary) {
+            return false;
+        }
+        if (this.rippleStartEvent &&
+            this.rippleStartEvent.pointerId !== event.pointerId) {
+            return false;
+        }
+        if (event.type === 'pointerenter' || event.type === 'pointerleave') {
+            return !this.isTouch(event);
+        }
+        const isPrimaryButton = event.buttons === 1;
+        return this.isTouch(event) || isPrimaryButton;
+    }
+    /**
+     * Check if the event is within the bounds of the element.
+     *
+     * This is only needed for the "stuck" contextmenu longpress on Chrome.
+     */
+    inBounds({ x, y }) {
+        const { top, left, bottom, right } = this.getBoundingClientRect();
+        return x >= left && x <= right && y >= top && y <= bottom;
+    }
+    isTouch({ pointerType }) {
+        return pointerType === 'touch';
+    }
+    /** @private */
+    async handleEvent(event) {
+        if (FORCED_COLORS?.matches) {
+            // Skip event logic since the ripple is `display: none`.
+            return;
+        }
+        switch (event.type) {
+            case 'click':
+                this.handleClick();
+                break;
+            case 'contextmenu':
+                this.handleContextmenu();
+                break;
+            case 'pointercancel':
+                this.handlePointercancel(event);
+                break;
+            case 'pointerdown':
+                await this.handlePointerdown(event);
+                break;
+            case 'pointerenter':
+                this.handlePointerenter(event);
+                break;
+            case 'pointerleave':
+                this.handlePointerleave(event);
+                break;
+            case 'pointerup':
+                this.handlePointerup(event);
+                break;
+            default:
+                break;
+        }
+    }
+    onControlChange(prev, next) {
+        if (lit__WEBPACK_IMPORTED_MODULE_0__.isServer)
+            return;
+        for (const event of EVENTS) {
+            prev?.removeEventListener(event, this);
+            next?.addEventListener(event, this);
+        }
+    }
+}
+(0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.property)({ type: Boolean, reflect: true })
+], Ripple.prototype, "disabled", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.state)()
+], Ripple.prototype, "hovered", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.state)()
+], Ripple.prototype, "pressed", void 0);
+(0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_1__.query)('.surface')
+], Ripple.prototype, "mdRoot", void 0);
+//# sourceMappingURL=ripple.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@material/web/ripple/ripple.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@material/web/ripple/ripple.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MdRipple: () => (/* binding */ MdRipple)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit/decorators.js */ "./node_modules/lit/decorators.js");
+/* harmony import */ var _internal_ripple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./internal/ripple.js */ "./node_modules/@material/web/ripple/internal/ripple.js");
+/* harmony import */ var _internal_ripple_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./internal/ripple-styles.js */ "./node_modules/@material/web/ripple/internal/ripple-styles.js");
+/**
+ * @license
+ * Copyright 2022 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
+
+
+/**
+ * @summary Ripples, also known as state layers, are visual indicators used to
+ * communicate the status of a component or interactive element.
+ *
+ * @description A state layer is a semi-transparent covering on an element that
+ * indicates its state. State layers provide a systematic approach to
+ * visualizing states by using opacity. A layer can be applied to an entire
+ * element or in a circular shape and only one state layer can be applied at a
+ * given time.
+ *
+ * @final
+ * @suppress {visibility}
+ */
+let MdRipple = class MdRipple extends _internal_ripple_js__WEBPACK_IMPORTED_MODULE_1__.Ripple {
+};
+MdRipple.styles = [_internal_ripple_styles_js__WEBPACK_IMPORTED_MODULE_2__.styles];
+MdRipple = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,lit_decorators_js__WEBPACK_IMPORTED_MODULE_0__.customElement)('md-ripple')
+], MdRipple);
+//# sourceMappingURL=ripple.js.map
+
+/***/ }),
+
 /***/ "./node_modules/giscus/dist/giscus.mjs":
 /*!*********************************************!*\
   !*** ./node_modules/giscus/dist/giscus.mjs ***!
@@ -9124,7 +13789,7 @@ const _$LE = {
 };
 // IMPORTANT: do not change the property name or the assignment expression.
 // This line will be used in regexes to search for LitElement usage.
-(globalThis.litElementVersions ??= []).push('4.1.0');
+(globalThis.litElementVersions ??= []).push('4.1.1');
 if (DEV_MODE && globalThis.litElementVersions.length > 1) {
     issueWarning('multiple-versions', `Multiple versions of Lit loaded. Loading multiple versions ` +
         `is not recommended.`);
@@ -9663,6 +14328,108 @@ class Directive {
     }
 }
 //# sourceMappingURL=directive.js.map
+
+/***/ }),
+
+/***/ "./node_modules/lit-html/development/directives/class-map.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/lit-html/development/directives/class-map.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   classMap: () => (/* binding */ classMap)
+/* harmony export */ });
+/* harmony import */ var _lit_html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lit-html.js */ "./node_modules/lit-html/development/lit-html.js");
+/* harmony import */ var _directive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../directive.js */ "./node_modules/lit-html/development/directive.js");
+/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+
+class ClassMapDirective extends _directive_js__WEBPACK_IMPORTED_MODULE_1__.Directive {
+    constructor(partInfo) {
+        super(partInfo);
+        if (partInfo.type !== _directive_js__WEBPACK_IMPORTED_MODULE_1__.PartType.ATTRIBUTE ||
+            partInfo.name !== 'class' ||
+            partInfo.strings?.length > 2) {
+            throw new Error('`classMap()` can only be used in the `class` attribute ' +
+                'and must be the only part in the attribute.');
+        }
+    }
+    render(classInfo) {
+        // Add spaces to ensure separation from static classes
+        return (' ' +
+            Object.keys(classInfo)
+                .filter((key) => classInfo[key])
+                .join(' ') +
+            ' ');
+    }
+    update(part, [classInfo]) {
+        // Remember dynamic classes on the first render
+        if (this._previousClasses === undefined) {
+            this._previousClasses = new Set();
+            if (part.strings !== undefined) {
+                this._staticClasses = new Set(part.strings
+                    .join(' ')
+                    .split(/\s/)
+                    .filter((s) => s !== ''));
+            }
+            for (const name in classInfo) {
+                if (classInfo[name] && !this._staticClasses?.has(name)) {
+                    this._previousClasses.add(name);
+                }
+            }
+            return this.render(classInfo);
+        }
+        const classList = part.element.classList;
+        // Remove old classes that no longer apply
+        for (const name of this._previousClasses) {
+            if (!(name in classInfo)) {
+                classList.remove(name);
+                this._previousClasses.delete(name);
+            }
+        }
+        // Add or remove classes based on their classMap value
+        for (const name in classInfo) {
+            // We explicitly want a loose truthy check of `value` because it seems
+            // more convenient that '' and 0 are skipped.
+            const value = !!classInfo[name];
+            if (value !== this._previousClasses.has(name) &&
+                !this._staticClasses?.has(name)) {
+                if (value) {
+                    classList.add(name);
+                    this._previousClasses.add(name);
+                }
+                else {
+                    classList.remove(name);
+                    this._previousClasses.delete(name);
+                }
+            }
+        }
+        return _lit_html_js__WEBPACK_IMPORTED_MODULE_0__.noChange;
+    }
+}
+/**
+ * A directive that applies dynamic CSS classes.
+ *
+ * This must be used in the `class` attribute and must be the only part used in
+ * the attribute. It takes each property in the `classInfo` argument and adds
+ * the property name to the element's `classList` if the property value is
+ * truthy; if the property value is falsy, the property name is removed from
+ * the element's `class`.
+ *
+ * For example `{foo: bar}` applies the class `foo` if the value of `bar` is
+ * truthy.
+ *
+ * @param classInfo
+ */
+const classMap = (0,_directive_js__WEBPACK_IMPORTED_MODULE_1__.directive)(ClassMapDirective);
+//# sourceMappingURL=class-map.js.map
 
 /***/ }),
 
@@ -11289,7 +16056,7 @@ const polyfillSupport = DEV_MODE
 polyfillSupport?.(Template, ChildPart);
 // IMPORTANT: do not change the property name or the assignment expression.
 // This line will be used in regexes to search for lit-html usage.
-(global.litHtmlVersions ??= []).push('3.2.0');
+(global.litHtmlVersions ??= []).push('3.2.1');
 if (DEV_MODE && global.litHtmlVersions.length > 1) {
     issueWarning('multiple-versions', `Multiple versions of Lit loaded. ` +
         `Loading multiple versions is not recommended.`);
@@ -11371,6 +16138,175 @@ if (ENABLE_EXTRA_SECURITY_HOOKS) {
 
 /***/ }),
 
+/***/ "./node_modules/lit-html/development/static.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/lit-html/development/static.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   html: () => (/* binding */ html),
+/* harmony export */   literal: () => (/* binding */ literal),
+/* harmony export */   mathml: () => (/* binding */ mathml),
+/* harmony export */   svg: () => (/* binding */ svg),
+/* harmony export */   unsafeStatic: () => (/* binding */ unsafeStatic),
+/* harmony export */   withStatic: () => (/* binding */ withStatic)
+/* harmony export */ });
+/* harmony import */ var _lit_html_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lit-html.js */ "./node_modules/lit-html/development/lit-html.js");
+/**
+ * @license
+ * Copyright 2020 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+// Any new exports need to be added to the export statement in
+// `packages/lit/src/index.all.ts`.
+
+/**
+ * Prevents JSON injection attacks.
+ *
+ * The goals of this brand:
+ *   1) fast to check
+ *   2) code is small on the wire
+ *   3) multiple versions of Lit in a single page will all produce mutually
+ *      interoperable StaticValues
+ *   4) normal JSON.parse (without an unusual reviver) can not produce a
+ *      StaticValue
+ *
+ * Symbols satisfy (1), (2), and (4). We use Symbol.for to satisfy (3), but
+ * we don't care about the key, so we break ties via (2) and use the empty
+ * string.
+ */
+const brand = Symbol.for('');
+/** Safely extracts the string part of a StaticValue. */
+const unwrapStaticValue = (value) => {
+    if (value?.r !== brand) {
+        return undefined;
+    }
+    return value?.['_$litStatic$'];
+};
+/**
+ * Wraps a string so that it behaves like part of the static template
+ * strings instead of a dynamic value.
+ *
+ * Users must take care to ensure that adding the static string to the template
+ * results in well-formed HTML, or else templates may break unexpectedly.
+ *
+ * Note that this function is unsafe to use on untrusted content, as it will be
+ * directly parsed into HTML. Do not pass user input to this function
+ * without sanitizing it.
+ *
+ * Static values can be changed, but they will cause a complete re-render
+ * since they effectively create a new template.
+ */
+const unsafeStatic = (value) => ({
+    ['_$litStatic$']: value,
+    r: brand,
+});
+const textFromStatic = (value) => {
+    if (value['_$litStatic$'] !== undefined) {
+        return value['_$litStatic$'];
+    }
+    else {
+        throw new Error(`Value passed to 'literal' function must be a 'literal' result: ${value}. Use 'unsafeStatic' to pass non-literal values, but
+            take care to ensure page security.`);
+    }
+};
+/**
+ * Tags a string literal so that it behaves like part of the static template
+ * strings instead of a dynamic value.
+ *
+ * The only values that may be used in template expressions are other tagged
+ * `literal` results or `unsafeStatic` values (note that untrusted content
+ * should never be passed to `unsafeStatic`).
+ *
+ * Users must take care to ensure that adding the static string to the template
+ * results in well-formed HTML, or else templates may break unexpectedly.
+ *
+ * Static values can be changed, but they will cause a complete re-render since
+ * they effectively create a new template.
+ */
+const literal = (strings, ...values) => ({
+    ['_$litStatic$']: values.reduce((acc, v, idx) => acc + textFromStatic(v) + strings[idx + 1], strings[0]),
+    r: brand,
+});
+const stringsCache = new Map();
+/**
+ * Wraps a lit-html template tag (`html` or `svg`) to add static value support.
+ */
+const withStatic = (coreTag) => (strings, ...values) => {
+    const l = values.length;
+    let staticValue;
+    let dynamicValue;
+    const staticStrings = [];
+    const dynamicValues = [];
+    let i = 0;
+    let hasStatics = false;
+    let s;
+    while (i < l) {
+        s = strings[i];
+        // Collect any unsafeStatic values, and their following template strings
+        // so that we treat a run of template strings and unsafe static values as
+        // a single template string.
+        while (i < l &&
+            ((dynamicValue = values[i]),
+                (staticValue = unwrapStaticValue(dynamicValue))) !== undefined) {
+            s += staticValue + strings[++i];
+            hasStatics = true;
+        }
+        // If the last value is static, we don't need to push it.
+        if (i !== l) {
+            dynamicValues.push(dynamicValue);
+        }
+        staticStrings.push(s);
+        i++;
+    }
+    // If the last value isn't static (which would have consumed the last
+    // string), then we need to add the last string.
+    if (i === l) {
+        staticStrings.push(strings[l]);
+    }
+    if (hasStatics) {
+        const key = staticStrings.join('$$lit$$');
+        strings = stringsCache.get(key);
+        if (strings === undefined) {
+            // Beware: in general this pattern is unsafe, and doing so may bypass
+            // lit's security checks and allow an attacker to execute arbitrary
+            // code and inject arbitrary content.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            staticStrings.raw = staticStrings;
+            stringsCache.set(key, (strings = staticStrings));
+        }
+        values = dynamicValues;
+    }
+    return coreTag(strings, ...values);
+};
+/**
+ * Interprets a template literal as an HTML template that can efficiently
+ * render to and update a container.
+ *
+ * Includes static value support from `lit-html/static.js`.
+ */
+const html = withStatic(_lit_html_js__WEBPACK_IMPORTED_MODULE_0__.html);
+/**
+ * Interprets a template literal as an SVG template that can efficiently
+ * render to and update a container.
+ *
+ * Includes static value support from `lit-html/static.js`.
+ */
+const svg = withStatic(_lit_html_js__WEBPACK_IMPORTED_MODULE_0__.svg);
+/**
+ * Interprets a template literal as MathML fragment that can efficiently render
+ * to and update a container.
+ *
+ * Includes static value support from `lit-html/static.js`.
+ */
+const mathml = withStatic(_lit_html_js__WEBPACK_IMPORTED_MODULE_0__.mathml);
+//# sourceMappingURL=static.js.map
+
+/***/ }),
+
 /***/ "./node_modules/lit/decorators.js":
 /*!****************************************!*\
   !*** ./node_modules/lit/decorators.js ***!
@@ -11402,6 +16338,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lit_reactive_element_decorators_query_assigned_nodes_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @lit/reactive-element/decorators/query-assigned-nodes.js */ "./node_modules/@lit/reactive-element/development/decorators/query-assigned-nodes.js");
 
 //# sourceMappingURL=decorators.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lit/directives/class-map.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lit/directives/class-map.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   classMap: () => (/* reexport safe */ lit_html_directives_class_map_js__WEBPACK_IMPORTED_MODULE_0__.classMap)
+/* harmony export */ });
+/* harmony import */ var lit_html_directives_class_map_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit-html/directives/class-map.js */ "./node_modules/lit-html/development/directives/class-map.js");
+
+//# sourceMappingURL=class-map.js.map
 
 
 /***/ }),
@@ -11460,6 +16414,468 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lit_html_is_server_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lit-html/is-server.js */ "./node_modules/lit-html/development/is-server.js");
 
 //# sourceMappingURL=index.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lit/static-html.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lit/static-html.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   html: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.html),
+/* harmony export */   literal: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.literal),
+/* harmony export */   mathml: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.mathml),
+/* harmony export */   svg: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.svg),
+/* harmony export */   unsafeStatic: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.unsafeStatic),
+/* harmony export */   withStatic: () => (/* reexport safe */ lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__.withStatic)
+/* harmony export */ });
+/* harmony import */ var lit_html_static_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lit-html/static.js */ "./node_modules/lit-html/development/static.js");
+
+//# sourceMappingURL=static-html.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/tslib/tslib.es6.mjs":
+/*!******************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.mjs ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __addDisposableResource: () => (/* binding */ __addDisposableResource),
+/* harmony export */   __assign: () => (/* binding */ __assign),
+/* harmony export */   __asyncDelegator: () => (/* binding */ __asyncDelegator),
+/* harmony export */   __asyncGenerator: () => (/* binding */ __asyncGenerator),
+/* harmony export */   __asyncValues: () => (/* binding */ __asyncValues),
+/* harmony export */   __await: () => (/* binding */ __await),
+/* harmony export */   __awaiter: () => (/* binding */ __awaiter),
+/* harmony export */   __classPrivateFieldGet: () => (/* binding */ __classPrivateFieldGet),
+/* harmony export */   __classPrivateFieldIn: () => (/* binding */ __classPrivateFieldIn),
+/* harmony export */   __classPrivateFieldSet: () => (/* binding */ __classPrivateFieldSet),
+/* harmony export */   __createBinding: () => (/* binding */ __createBinding),
+/* harmony export */   __decorate: () => (/* binding */ __decorate),
+/* harmony export */   __disposeResources: () => (/* binding */ __disposeResources),
+/* harmony export */   __esDecorate: () => (/* binding */ __esDecorate),
+/* harmony export */   __exportStar: () => (/* binding */ __exportStar),
+/* harmony export */   __extends: () => (/* binding */ __extends),
+/* harmony export */   __generator: () => (/* binding */ __generator),
+/* harmony export */   __importDefault: () => (/* binding */ __importDefault),
+/* harmony export */   __importStar: () => (/* binding */ __importStar),
+/* harmony export */   __makeTemplateObject: () => (/* binding */ __makeTemplateObject),
+/* harmony export */   __metadata: () => (/* binding */ __metadata),
+/* harmony export */   __param: () => (/* binding */ __param),
+/* harmony export */   __propKey: () => (/* binding */ __propKey),
+/* harmony export */   __read: () => (/* binding */ __read),
+/* harmony export */   __rest: () => (/* binding */ __rest),
+/* harmony export */   __rewriteRelativeImportExtension: () => (/* binding */ __rewriteRelativeImportExtension),
+/* harmony export */   __runInitializers: () => (/* binding */ __runInitializers),
+/* harmony export */   __setFunctionName: () => (/* binding */ __setFunctionName),
+/* harmony export */   __spread: () => (/* binding */ __spread),
+/* harmony export */   __spreadArray: () => (/* binding */ __spreadArray),
+/* harmony export */   __spreadArrays: () => (/* binding */ __spreadArrays),
+/* harmony export */   __values: () => (/* binding */ __values),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
+
+var extendStatics = function(d, b) {
+  extendStatics = Object.setPrototypeOf ||
+      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+      function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+  return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+  if (typeof b !== "function" && b !== null)
+      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+  extendStatics(d, b);
+  function __() { this.constructor = d; }
+  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+  __assign = Object.assign || function __assign(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+      return t;
+  }
+  return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+              t[p[i]] = s[p[i]];
+      }
+  return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+  return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+  function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+  var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+  var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+  var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+  var _, done = false;
+  for (var i = decorators.length - 1; i >= 0; i--) {
+      var context = {};
+      for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+      for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+      context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+      var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+      if (kind === "accessor") {
+          if (result === void 0) continue;
+          if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+          if (_ = accept(result.get)) descriptor.get = _;
+          if (_ = accept(result.set)) descriptor.set = _;
+          if (_ = accept(result.init)) initializers.unshift(_);
+      }
+      else if (_ = accept(result)) {
+          if (kind === "field") initializers.unshift(_);
+          else descriptor[key] = _;
+      }
+  }
+  if (target) Object.defineProperty(target, contextIn.name, descriptor);
+  done = true;
+};
+
+function __runInitializers(thisArg, initializers, value) {
+  var useValue = arguments.length > 2;
+  for (var i = 0; i < initializers.length; i++) {
+      value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+  }
+  return useValue ? value : void 0;
+};
+
+function __propKey(x) {
+  return typeof x === "symbol" ? x : "".concat(x);
+};
+
+function __setFunctionName(f, name, prefix) {
+  if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+  return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+
+function __metadata(metadataKey, metadataValue) {
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+  function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+  return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+      function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+}
+
+function __generator(thisArg, body) {
+  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+  return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+  function verb(n) { return function (v) { return step([n, v]); }; }
+  function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while (g && (g = 0, op[0] && (_ = 0)), _) try {
+          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+          if (y = 0, t) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+              case 0: case 1: t = op; break;
+              case 4: _.label++; return { value: op[1], done: false };
+              case 5: _.label++; y = op[1]; op = [0]; continue;
+              case 7: op = _.ops.pop(); _.trys.pop(); continue;
+              default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                  if (t[2]) _.ops.pop();
+                  _.trys.pop(); continue;
+          }
+          op = body.call(thisArg, _);
+      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+  }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+  }
+  Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+  for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+  if (m) return m.call(o);
+  if (o && typeof o.length === "number") return {
+      next: function () {
+          if (o && i >= o.length) o = void 0;
+          return { value: o && o[i++], done: !o };
+      }
+  };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o), r, ar = [], e;
+  try {
+      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+  }
+  catch (error) { e = { error: error }; }
+  finally {
+      try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+      }
+      finally { if (e) throw e.error; }
+  }
+  return ar;
+}
+
+/** @deprecated */
+function __spread() {
+  for (var ar = [], i = 0; i < arguments.length; i++)
+      ar = ar.concat(__read(arguments[i]));
+  return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+  for (var r = Array(s), k = 0, i = 0; i < il; i++)
+      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+          r[k] = a[j];
+  return r;
+}
+
+function __spreadArray(to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+      if (ar || !(i in from)) {
+          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+          ar[i] = from[i];
+      }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+  return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+  var g = generator.apply(thisArg, _arguments || []), i, q = [];
+  return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function () { return this; }, i;
+  function awaitReturn(f) { return function (v) { return Promise.resolve(v).then(f, reject); }; }
+  function verb(n, f) { if (g[n]) { i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; if (f) i[n] = f(i[n]); } }
+  function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+  function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+  function fulfill(value) { resume("next", value); }
+  function reject(value) { resume("throw", value); }
+  function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+  var i, p;
+  return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+  function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+  var m = o[Symbol.asyncIterator], i;
+  return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+  function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+  function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+  return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+  Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+  o["default"] = v;
+};
+
+function __importStar(mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  __setModuleDefault(result, mod);
+  return result;
+}
+
+function __importDefault(mod) {
+  return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+  return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+  if (kind === "m") throw new TypeError("Private method is not writable");
+  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+  return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
+function __classPrivateFieldIn(state, receiver) {
+  if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+  return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+function __addDisposableResource(env, value, async) {
+  if (value !== null && value !== void 0) {
+    if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+    var dispose, inner;
+    if (async) {
+      if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+      dispose = value[Symbol.asyncDispose];
+    }
+    if (dispose === void 0) {
+      if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+      dispose = value[Symbol.dispose];
+      if (async) inner = dispose;
+    }
+    if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+    if (inner) dispose = function() { try { inner.call(this); } catch (e) { return Promise.reject(e); } };
+    env.stack.push({ value: value, dispose: dispose, async: async });
+  }
+  else if (async) {
+    env.stack.push({ async: true });
+  }
+  return value;
+}
+
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+  var e = new Error(message);
+  return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+function __disposeResources(env) {
+  function fail(e) {
+    env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+    env.hasError = true;
+  }
+  var r, s = 0;
+  function next() {
+    while (r = env.stack.pop()) {
+      try {
+        if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
+        if (r.dispose) {
+          var result = r.dispose.call(r.value);
+          if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+        }
+        else s |= 1;
+      }
+      catch (e) {
+        fail(e);
+      }
+    }
+    if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
+    if (env.hasError) throw env.error;
+  }
+  return next();
+}
+
+function __rewriteRelativeImportExtension(path, preserveJsx) {
+  if (typeof path === "string" && /^\.\.?\//.test(path)) {
+      return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function (m, tsx, d, ext, cm) {
+          return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : (d + ext + "." + cm.toLowerCase() + "js");
+      });
+  }
+  return path;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __extends,
+  __assign,
+  __rest,
+  __decorate,
+  __param,
+  __esDecorate,
+  __runInitializers,
+  __propKey,
+  __setFunctionName,
+  __metadata,
+  __awaiter,
+  __generator,
+  __createBinding,
+  __exportStar,
+  __values,
+  __read,
+  __spread,
+  __spreadArrays,
+  __spreadArray,
+  __await,
+  __asyncGenerator,
+  __asyncDelegator,
+  __asyncValues,
+  __makeTemplateObject,
+  __importStar,
+  __importDefault,
+  __classPrivateFieldGet,
+  __classPrivateFieldSet,
+  __classPrivateFieldIn,
+  __addDisposableResource,
+  __disposeResources,
+  __rewriteRelativeImportExtension,
+});
 
 
 /***/ })
@@ -11545,6 +16961,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-jekyll-search/dest/simple-jekyll-search.min.js */ "./node_modules/simple-jekyll-search/dest/simple-jekyll-search.min.js");
 /* harmony import */ var simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_jekyll_search_dest_simple_jekyll_search_min_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var giscus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! giscus */ "./node_modules/giscus/dist/giscus.mjs");
+/* harmony import */ var _material_web_icon_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material/web/icon/icon */ "./node_modules/@material/web/icon/icon.js");
+/* harmony import */ var _material_web_button_filled_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material/web/button/filled-button */ "./node_modules/@material/web/button/filled-button.js");
+/* harmony import */ var _material_web_button_filled_tonal_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material/web/button/filled-tonal-button */ "./node_modules/@material/web/button/filled-tonal-button.js");
+/* harmony import */ var _material_web_button_text_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material/web/button/text-button */ "./node_modules/@material/web/button/text-button.js");
+/* harmony import */ var _material_web_iconbutton_icon_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material/web/iconbutton/icon-button */ "./node_modules/@material/web/iconbutton/icon-button.js");
+/* harmony import */ var _material_web_iconbutton_filled_icon_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material/web/iconbutton/filled-icon-button */ "./node_modules/@material/web/iconbutton/filled-icon-button.js");
+/* harmony import */ var _material_web_chips_chip_set__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material/web/chips/chip-set */ "./node_modules/@material/web/chips/chip-set.js");
+/* harmony import */ var _material_web_chips_assist_chip__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material/web/chips/assist-chip */ "./node_modules/@material/web/chips/assist-chip.js");
+/* harmony import */ var _material_web_dialog_dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material/web/dialog/dialog */ "./node_modules/@material/web/dialog/dialog.js");
+/* harmony import */ var _material_web_progress_circular_progress__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material/web/progress/circular-progress */ "./node_modules/@material/web/progress/circular-progress.js");
+/* harmony import */ var _material_web_ripple_ripple__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material/web/ripple/ripple */ "./node_modules/@material/web/ripple/ripple.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -11565,7 +17010,7 @@ const themeCurrentPage = window.location.pathname;
 /**
  * 主题 - 模态对话框
  */
-const themeDialog = document.querySelector(".modal-dialog");
+const themeDialog = document.querySelector("md-dialog");
 /**
  * 主题 - 模态对话框 - 状态控制器（开启）
  */
@@ -11573,17 +17018,11 @@ const themeDialogControllerOpen = document.querySelectorAll("#default-header-web
 /**
  * 主题 - 模态对话框 - 状态控制器（关闭）
  */
-const themeDialogControllerClose = document.querySelector("#dialog-close");
+const themeDialogControllerClose = document.querySelector("md-dialog div[slot='actions'] md-text-button");
 /**
  * 主题 - 跳转到页首
  */
 const themeScrollToTop = document.querySelectorAll("#main-layout-scrolltop");
-/**
- * 主题 - 涟漪效果元素
- */
-const themeRippleElements = document.querySelectorAll(
-  `#main-layout-content-filler[spec='article'] li a, #main-layout-content-filler[spec='article'] p a, button, .card[spec='clear'], .card[spec='focus'], #navigation-drawer details a, .navigation-destination-accent, .default-header-webinfo, .carousel-article`
-);
 /**
  * 主题 - 延迟跳转元素
  */
@@ -11711,41 +17150,14 @@ function handleLinkDelayRedirection(linkElement) {
  * 初始模态框
  */
 function initializeModal() {
-  const toggleBodyBlur = (shouldBlur) => {
-    themeRoot.toggleAttribute("o-bodyblur", shouldBlur);
-  };
-
-  const openModal = () => {
-    toggleBodyBlur(true);
-    themeDialog.showModal();
-  };
-
-  const closeModal = () => {
-    toggleBodyBlur(false);
-    themeDialog.style.animation = `var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized) 1 normal both modal-dialog-container-close`;
-    setTimeout(() => {
-      themeDialog.close();
-      themeDialog.style.animation = "";
-    }, 400);
-  };
-
-  const handleKeyboardEvent = (event) => {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeModal();
-    }
-  };
-
-  const handleClickOutsideEvent = (event) => {
-    if (event.target === themeDialog) {
-      closeModal();
-    }
-  };
-
-  themeDialogControllerOpen.forEach((element) => element.addEventListener("click", openModal));
-  themeDialogControllerClose.addEventListener("click", closeModal);
-  themeDialog.addEventListener("keydown", handleKeyboardEvent);
-  themeDialog.addEventListener("click", handleClickOutsideEvent);
+  themeDialogControllerOpen.forEach((element) =>
+    element.addEventListener("click", async () => {
+      await themeDialog.show();
+    })
+  );
+  themeDialogControllerClose.addEventListener("click", async () => {
+    await themeDialog.close();
+  });
 }
 
 /**
@@ -11794,14 +17206,9 @@ function createSnackbar(message) {
   messageElement.id = "snackbar-supporting";
   messageElement.textContent = message;
 
-  const closeButton = document.createElement("button");
-  closeButton.textContent = "close";
-  closeButton.className = "icon-button";
-  closeButton.id = "snackbar-icon";
-  closeButton.addEventListener("click", () => removeSnackbar());
+  snackbarElement.addEventListener("click", () => removeSnackbar());
 
   snackbarElement.appendChild(messageElement);
-  snackbarElement.appendChild(closeButton);
   document.body.appendChild(snackbarElement);
 
   snackbarQueue.unshift(snackbarElement);
@@ -11924,70 +17331,7 @@ function getIdByUrl(postsArray, urlValue) {
   return post ? post.id : themeCurrentPage;
 }
 
-/**
- * 添加涟漪效果
- * @param {selector} parentElement
- */
-function effectRipple(parentElement) {
-  const clearRipple = (parentElement) => {
-    const rippleR = parentElement.querySelector("ripple-effect");
-    if (rippleR) {
-      rippleR.style.opacity = 0;
-      parentElement.removeChild(rippleR);
-    }
-  };
-
-  const addRipple = (parentElement, event) => {
-    const rippleA = document.createElement("ripple-effect");
-
-    const { clientWidth, clientHeight } = parentElement;
-    const diameter = Math.max(clientWidth, clientHeight);
-    const { offsetX, offsetY } = event;
-
-    rippleA.style.setProperty("--ripple-effect-PosX", offsetX);
-    rippleA.style.setProperty("--ripple-effect-PosY", offsetY);
-    rippleA.style.setProperty("--ripple-effect-Diameter", diameter);
-
-    parentElement.appendChild(rippleA);
-  };
-
-  let isLongPress = false;
-  let isPressing = false;
-
-  const handleMouseDown = (event) => {
-    isPressing = true;
-    isLongPress = false;
-
-    // 设置一个短延时用于判断是否为短按
-    setTimeout(() => {
-      if (isPressing) {
-        isLongPress = true;
-        addRipple(parentElement, event);
-      }
-    }, 100); // 可以根据需要调整延时时间
-  };
-
-  const handleMouseUp = (event) => {
-    if (isPressing) {
-      if (!isLongPress) {
-        addRipple(parentElement, event);
-      }
-      isPressing = false;
-    }
-  };
-
-  parentElement.addEventListener("mousedown", handleMouseDown);
-  parentElement.addEventListener("mouseup", handleMouseUp);
-  parentElement.addEventListener("mouseleave", () => {
-    isPressing = false;
-  });
-  parentElement.addEventListener("animationend", () => clearRipple(parentElement));
-}
-
 window.onload = () => {
-  // 初始化涟漪效果
-  themeRippleElements.forEach(effectRipple);
-
   // 初始化滚动监听
   contentFlow.onscroll = scrollHandler;
 
