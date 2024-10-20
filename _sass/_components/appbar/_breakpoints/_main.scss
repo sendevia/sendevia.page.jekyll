@@ -1,12 +1,5 @@
-// @media screen and (max-width: 1600px) {
-//   @import "large";
-// }
-// @media screen and (max-width: 1200px) {
-//   @import "expanded";
-// }
+@use "sass:meta";
+
 @media screen and (max-width: 840px) {
-  @import "medium";
+  @include meta.load-css("medium");
 }
-// @media screen and (max-width: 600px) {
-//   @import "compact";
-// }

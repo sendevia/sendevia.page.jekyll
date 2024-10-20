@@ -1,26 +1,27 @@
+@use "sass:meta";
+
 * {
   box-sizing: border-box;
 }
 
-@import "mixin";
-@import "fonts";
-@import "tokens";
-@import "animation";
-@import "overlay";
+@include meta.load-css("fonts");
+@include meta.load-css("tokens");
+@include meta.load-css("animation");
+@include meta.load-css("overlay");
 
-@import "_components/appbar/main";
-@import "_components/card/main";
-@import "_components/carousel/main";
-@import "_components/code/main";
-@import "_components/dialog/main";
-@import "_components/footer/main";
-@import "_components/header/main";
-@import "_components/layout/main";
-@import "_components/loading-splash/main";
-@import "_components/navigation/main";
-@import "_components/notfound/main";
-@import "_components/snackbar/main";
-@import "_components/table/main";
+@include meta.load-css("_components/appbar/main");
+@include meta.load-css("_components/card/main");
+@include meta.load-css("_components/carousel/main");
+@include meta.load-css("_components/code/main");
+@include meta.load-css("_components/dialog/main");
+@include meta.load-css("_components/footer/main");
+@include meta.load-css("_components/header/main");
+@include meta.load-css("_components/layout/main");
+@include meta.load-css("_components/loading-splash/main");
+@include meta.load-css("_components/navigation/main");
+@include meta.load-css("_components/notfound/main");
+@include meta.load-css("_components/snackbar/main");
+@include meta.load-css("_components/table/main");
 
 :root {
   -moz-osx-font-smoothing: grayscale;
@@ -65,8 +66,6 @@ body {
 
   :disabled,
   [disabled] {
-    @include mixin-userselect(none);
-
     box-shadow: none;
     filter: grayscale(1);
     opacity: 0.38;

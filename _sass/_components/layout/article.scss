@@ -181,8 +181,6 @@
           transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
 
           img {
-            @include mixin-userselect();
-
             display: block;
           }
 

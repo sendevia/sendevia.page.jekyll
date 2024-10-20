@@ -1,8 +1,8 @@
-// https://m3.material.io/components/top-app-bar/
-// 移动端标题栏
-.appbar {
-  @include mixin-userselect();
+@use "sass:meta";
 
+// https://m3.material.io/components/top-app-bar/
+
+.appbar {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -84,5 +84,5 @@
     }
   }
 
-  @import "_breakpoints/main";
+  @include meta.load-css("_breakpoints/main");
 }

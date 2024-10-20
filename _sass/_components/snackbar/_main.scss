@@ -1,4 +1,7 @@
+@use "sass:meta";
+
 // https://m3.material.io/components/snackbar/overview
+
 .snackbar {
   display: flex;
   align-items: center;
@@ -47,5 +50,5 @@
     opacity: 0;
   }
 
-  @import "_breakpoints/main";
+  @include meta.load-css("_breakpoints/main");
 }

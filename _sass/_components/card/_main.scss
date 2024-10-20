@@ -1,5 +1,4 @@
 // https://m3.material.io/components/cards/
-// 卡片
 
 .card {
   display: flex;
@@ -12,8 +11,6 @@
 
   .card-impression {
     img {
-      @include mixin-userselect();
-
       display: block;
 
       max-width: unset;

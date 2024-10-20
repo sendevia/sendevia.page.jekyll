@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 .main-layout {
   display: grid;
   grid-template-columns: 80px 240px auto;
@@ -203,11 +205,11 @@
     }
   }
 
-  @import "article";
+  @include meta.load-css("article");
 
-  @import "feed";
+  @include meta.load-css("feed");
 
-  @import "blank";
+  @include meta.load-css("blank");
 
-  @import "_breakpoints/main";
+  @include meta.load-css("_breakpoints/main");
 }

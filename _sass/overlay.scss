@@ -33,32 +33,6 @@
   }
 }
 
-[o-contentblur] {
-  #main-layout-scrolltop,
-  #main-layout-content-flow {
-    @include mixin-userselect(none);
-
-    filter: contrast(0.6);
-    pointer-events: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    .navigation,
-    .appbar {
-      filter: contrast(0.6);
-      pointer-events: none;
-      transition: var(--md-sys-motion-duration-extra-long1) var(--md-sys-motion-easing-standard);
-    }
-  }
-}
-
-[o-bodyblur] {
-  @include mixin-userselect(none);
-
-  filter: contrast(0.6);
-  pointer-events: none;
-}
-
 [o-showsearch] {
   #default-header-webinfo {
     display: none;

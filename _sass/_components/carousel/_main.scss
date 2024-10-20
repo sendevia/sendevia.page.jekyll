@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 .carousel {
   grid-column: span 12;
 
@@ -204,5 +206,5 @@
     }
   }
 
-  @import "_breakpoints/main";
+  @include meta.load-css("_breakpoints/main");
 }

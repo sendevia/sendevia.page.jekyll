@@ -106,6 +106,21 @@
   $level1-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
   $level2-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
 
+  @mixin typescale-style(
+    $type-scale,
+    $font-family: var(--md-sys-typescale-#{$type-scale}-family),
+    $font-size: var(--md-sys-typescale-#{$type-scale}-size),
+    $font-weight: var(--md-sys-typescale-#{$type-scale}-weight),
+    $line-height: var(--md-sys-typescale-#{$type-scale}-line-height),
+    $letter-spacing: var(--md-sys-typescale-#{$type-scale}-letter-spacing)
+  ) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+  }
+
   @mixin typescale($name, $family, $weight, $size, $tracking, $line-height) {
     --md-sys-typescale-#{$name}-family: #{$family};
     --md-sys-typescale-#{$name}-weight: #{$weight};

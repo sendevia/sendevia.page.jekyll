@@ -1,9 +1,9 @@
+@use "sass:meta";
+
 // https://m3.material.io/components/navigation-bar/
 // 页面导航
 
 .navigation {
-  @include mixin-userselect();
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,8 +186,6 @@
         padding: 0px 8px;
 
         summary {
-          @include mixin-userselect(none);
-
           display: flex;
 
           a {
@@ -293,7 +291,7 @@
     }
   }
 
-  @import "bar";
+  @include meta.load-css("bar");
 
-  @import "rail";
+  @include meta.load-css("rail");
 }
