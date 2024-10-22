@@ -38,8 +38,6 @@ featured: true
 
 # 皮肤预览
 
-![主界面](/assets/images/22/screenshot01.webp)
-
 ![选歌界面1](/assets/images/22/screenshot02.webp)
 ![选歌界面2](/assets/images/22/screenshot06.webp)
 ![选歌界面3](/assets/images/22/screenshot07.webp)
