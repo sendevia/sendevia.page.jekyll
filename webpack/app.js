@@ -5,17 +5,13 @@ import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
 import "@material/web/button/filled-button";
 import "@material/web/button/filled-tonal-button";
 import "@material/web/button/text-button";
-
-import "@material/web/iconbutton/icon-button";
-import "@material/web/iconbutton/filled-icon-button";
-
-import "@material/web/chips/chip-set";
 import "@material/web/chips/assist-chip";
-
+import "@material/web/chips/chip-set";
 import "@material/web/dialog/dialog";
-
+import "@material/web/icon/icon";
+import "@material/web/iconbutton/filled-icon-button";
+import "@material/web/iconbutton/icon-button";
 import "@material/web/progress/circular-progress";
-
 import "@material/web/ripple/ripple";
 
 /**
@@ -369,7 +365,7 @@ window.onload = () => {
   fetch(`${siteRoot}/assets/postsmap.json`)
     .then((response) => {
       if (!response.ok) {
-        createSnackbar("无法获取postsmap.json文件");
+        createSnackbar("无法获取文章索引");
       }
       return response.json();
     })
@@ -409,8 +405,8 @@ window.onload = () => {
       }
     })
     .catch((error) => {
-      createSnackbar("在获取postsmap.json文件时发生错误：" + error);
-      console.error("在获取postsmap.json文件时发生错误：", error);
+      createSnackbar("在获取文章索引时发生错误：" + error);
+      console.error("在获取文章索引时发生错误：", error);
     });
 
   // 标题锚点点击事件
@@ -430,12 +426,6 @@ window.onload = () => {
     })
   );
 
-  // 测试按钮点击事件
-  const testButton = document.getElementById("JTM-P-Components-Snackbar-Test");
-  if (testButton) {
-    testButton.addEventListener("click", () => createSnackbar(testButton.innerText));
-  }
-
   // 初始化模态框
   if (themeDialog) {
     initializeModal();
@@ -443,45 +433,6 @@ window.onload = () => {
 
   // 创建跳转延迟
   themeDelayRedirect.forEach(handleLinkDelayRedirection);
-
-  // 初始化文章轮播
-  if (carouselContainer && carouselPostList && carouselController.length === 2) {
-    var currentValue = 1;
-    carouselPostList.setAttribute("data-scroll", currentValue);
-
-    function updateValue(direction) {
-      currentValue += direction;
-      if (currentValue > 3) {
-        currentValue = 1;
-      } else if (currentValue < 1) {
-        currentValue = 3;
-      }
-      carouselPostList.setAttribute("data-scroll", currentValue);
-    }
-
-    carouselController[0].addEventListener("click", function () {
-      updateValue(-1);
-    });
-
-    carouselController[1].addEventListener("click", function () {
-      updateValue(1);
-    });
-
-    carouselPostList.addEventListener("wheel", function (event) {
-      event.preventDefault();
-      updateValue(event.deltaY > 0 ? 1 : -1);
-    });
-
-    window.addEventListener(
-      "wheel",
-      function (event) {
-        if (event.target === carouselPostList) {
-          event.preventDefault();
-        }
-      },
-      { passive: false }
-    );
-  }
 
   // 移除加载屏幕
   removeLoadingScreen(1500);
