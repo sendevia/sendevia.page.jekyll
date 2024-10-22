@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 .default-header {
   grid-column: span 12;
@@ -18,9 +19,6 @@
     bottom: 0px;
     right: 0px;
 
-    color: var(--md-ref-palette-secondary100);
-
-    overflow: hidden;
     z-index: 2;
   }
 
@@ -47,7 +45,7 @@
     z-index: 1;
 
     #default-header-hero-headline {
-      @include typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
+      @include mixin.typescale-style("display-large", $font-size: 90rem, $font-weight: 700, $line-height: 90rem);
 
       width: 100%;
 
@@ -56,7 +54,7 @@
     }
 
     #default-header-hero-subtitle {
-      @include typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
+      @include mixin.typescale-style("headline-large", $font-size: 22rem, $line-height: 22rem);
 
       width: 100%;
 
@@ -110,5 +108,60 @@
     }
   }
 
-  @include meta.load-css("_breakpoints/main");
+  @media screen and (max-width: 1600px) {
+    grid-column: span 9;
+  }
+
+  @media screen and (max-width: 1200px) {
+    grid-column: span 6;
+
+    height: 45vh;
+    min-height: 360px;
+
+    #default-header-hero-container {
+      grid-column: span 2;
+
+      padding: 5vw;
+
+      #default-header-hero-headline {
+        @include mixin.typescale-style("display-large", $font-size: 7vw, $font-weight: 500, $line-height: 7vw);
+      }
+
+      #default-header-hero-subtitle {
+        @include mixin.typescale-style("display-small", $font-size: 18rem, $font-weight: 500, $line-height: 20rem);
+      }
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    grid-column: span 4;
+
+    #default-header-hero-container {
+      width: 100%;
+
+      #default-header-hero-headline {
+        @include mixin.typescale-style("display-large", $font-size: 8vw, $font-weight: 600, $line-height: 8vw);
+      }
+
+      #default-header-hero-subtitle {
+        @include mixin.typescale-style("headline-large", $font-size: 23rem, $line-height: 23rem);
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    #default-header-hero-container {
+      padding: 30px;
+
+      #default-header-hero-headline {
+        @include mixin.typescale-style("display-large", $font-size: 40rem, $font-weight: 700, $line-height: 40rem);
+
+        word-break: break-word;
+      }
+
+      #default-header-hero-subtitle {
+        @include mixin.typescale-style("display-small", $font-size: 15rem, $font-weight: 400, $line-height: 17rem);
+      }
+    }
+  }
 }

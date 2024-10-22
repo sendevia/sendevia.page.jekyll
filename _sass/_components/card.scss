@@ -1,3 +1,5 @@
+@use "mixin";
+
 // https://m3.material.io/components/cards/
 
 .card {
@@ -75,7 +77,7 @@
           }
 
           span {
-            @include material-symbols($size: 18);
+            @include mixin.material-symbols($size: 18);
 
             padding: 3px;
 
@@ -129,16 +131,6 @@
         display: flex;
         flex-direction: row;
         gap: 12px;
-
-        button {
-          color: var(--md-sys-color-on-surface);
-
-          background-color: var(--md-sys-color-surface-bright);
-
-          &.icon-button {
-            font-weight: 300;
-          }
-        }
       }
 
       a {
@@ -205,16 +197,6 @@
           color: var(--md-sys-color-on-#{$color}-container);
 
           background-color: var(--md-sys-color-#{$color}-container);
-
-          .card-action button {
-            color: var(--md-sys-color-#{$color});
-
-            background-color: var(--md-sys-color-on-#{$color});
-
-            ripple-effect {
-              background-color: var(--md-sys-color-#{$color});
-            }
-          }
         }
       }
     }
@@ -272,10 +254,6 @@
       }
     }
 
-    ripple-effect {
-      background-color: var(--md-sys-color-on-primary);
-    }
-
     &:hover {
       color: var(--md-sys-color-on-secondary-container);
 
@@ -330,10 +308,6 @@
       h3 {
         font-weight: 100;
       }
-    }
-
-    ripple-effect {
-      background-color: var(--md-sys-color-on-primary);
     }
 
     &:hover {

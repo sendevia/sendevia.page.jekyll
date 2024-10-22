@@ -1,12 +1,16 @@
 <div class="appbar">
-  <button class="icon-button" id="appbar-menu">menu</button>
+  <md-icon-button id="appbar-menu">
+    <md-icon>menu</md-icon>
+  </md-icon-button>
 
   <div id="appbar-dynamic-title">
     <span>{{ site.title }}</span>
     <span>{{ page.title | default: site.title }}</span>
   </div>
 
-{% comment %} <button class="icon-button" id="appbar-search">search</button> {% endcomment %}
+  <md-icon-button id="appbar-search">
+    <md-icon>search</md-icon>
+  </md-icon-button>
 </div>
 
 <div class="navigation" spec="rail">

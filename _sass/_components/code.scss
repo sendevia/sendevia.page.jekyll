@@ -1,8 +1,10 @@
+@use "mixin";
+
 // code
 
 code,
 figure.highlight {
-  @include typescale-style("body-large", $font-family: Source Code Pro);
+  @include mixin.typescale-style("body-large", $font-family: Source Code Pro);
 }
 
 div.highlight,
@@ -31,7 +33,7 @@ figure.highlight {
     z-index: 1;
 
     span {
-      @include material-symbols("content_copy", $line-height: 40);
+      @include mixin.material-symbols("content_copy", $line-height: 40);
 
       height: 40px;
       width: 40px;

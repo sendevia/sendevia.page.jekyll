@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 * {
   box-sizing: border-box;
@@ -9,19 +10,18 @@
 @include meta.load-css("animation");
 @include meta.load-css("overlay");
 
-@include meta.load-css("_components/appbar/main");
-@include meta.load-css("_components/card/main");
-@include meta.load-css("_components/carousel/main");
-@include meta.load-css("_components/code/main");
-@include meta.load-css("_components/dialog/main");
-@include meta.load-css("_components/footer/main");
-@include meta.load-css("_components/header/main");
-@include meta.load-css("_components/layout/main");
-@include meta.load-css("_components/loading-splash/main");
-@include meta.load-css("_components/navigation/main");
-@include meta.load-css("_components/notfound/main");
-@include meta.load-css("_components/snackbar/main");
-@include meta.load-css("_components/table/main");
+@include meta.load-css("_components/appbar");
+@include meta.load-css("_components/card");
+@include meta.load-css("_components/code");
+@include meta.load-css("_components/dialog");
+@include meta.load-css("_components/footer");
+@include meta.load-css("_components/header");
+@include meta.load-css("_components/layout");
+@include meta.load-css("_components/loading-splash");
+@include meta.load-css("_components/navigation");
+@include meta.load-css("_components/notfound");
+@include meta.load-css("_components/snackbar");
+@include meta.load-css("_components/table");
 
 :root {
   -moz-osx-font-smoothing: grayscale;
@@ -74,43 +74,43 @@ body {
 }
 
 h1 {
-  @include typescale-style("headline-large");
+  @include mixin.typescale-style("headline-large");
 
   margin: 0px;
 }
 
 h2 {
-  @include typescale-style("headline-medium");
+  @include mixin.typescale-style("headline-medium");
 
   margin: 0px;
 }
 
 h3 {
-  @include typescale-style("headline-small");
+  @include mixin.typescale-style("headline-small");
 
   margin: 0px;
 }
 
 h4 {
-  @include typescale-style("title-large");
+  @include mixin.typescale-style("title-large");
 
   margin: 0px;
 }
 
 h5 {
-  @include typescale-style("title-medium");
+  @include mixin.typescale-style("title-medium");
 
   margin: 0px;
 }
 
 h6 {
-  @include typescale-style("title-small");
+  @include mixin.typescale-style("title-small");
 
   margin: 0px;
 }
 
 p {
-  @include typescale-style("body-large");
+  @include mixin.typescale-style("body-large");
 
   margin: 0px;
 }
@@ -175,7 +175,7 @@ hr {
       line-height: 0px;
 
       &.task-list-item-checkbox {
-        @include material-symbols($size: 24);
+        @include mixin.material-symbols($size: 24);
 
         display: inline-block;
 

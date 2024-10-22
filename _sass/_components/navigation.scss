@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 // https://m3.material.io/components/navigation-bar/
 // 页面导航
@@ -177,7 +178,7 @@
       width: 100%;
 
       details {
-        @include typescale-style("title-small");
+        @include mixin.typescale-style("title-small");
 
         display: block;
         width: 100%;
@@ -209,7 +210,7 @@
 
           &.navigation-drawer-expandable-item a {
             &::after {
-              @include material-symbols("expand_more", $size: 18);
+              @include mixin.material-symbols("expand_more", $size: 18);
 
               transition: var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
             }
@@ -273,7 +274,7 @@
         &[open] {
           summary.navigation-drawer-expandable-item a {
             &::after {
-              @include material-symbols("expand_less", $size: 18);
+              @include mixin.material-symbols("expand_less", $size: 18);
             }
 
             &:active::after {
@@ -285,13 +286,150 @@
     }
 
     #navigation-drawer-backward {
-      @include typescale-style("title-small");
+      @include mixin.typescale-style("title-small");
       position: relative;
       overflow: hidden;
     }
   }
 
-  @include meta.load-css("bar");
+  &[spec="bar"] {
+    flex-direction: row;
 
-  @include meta.load-css("rail");
+    bottom: 0px;
+
+    height: 80px;
+    width: 100%;
+
+    overflow-y: hidden;
+    z-index: 5;
+
+    #navigation-Hero,
+    #navigation-fab {
+      display: none;
+    }
+
+    #navigation-destinations {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .navigation-segment-active {
+        margin: 0px 4px 0px 4px;
+
+        .navigation-destination-accent {
+          height: 32px;
+          width: 64px;
+
+          margin: 0px 0px 4px 0px;
+        }
+
+        .navigation-destination-label {
+          margin: 0px;
+        }
+      }
+
+      .navigation-segment-inactive:hover {
+        .navigation-destination-accent {
+          width: 64px;
+        }
+      }
+    }
+
+    #navigation-drawer {
+      top: 0px;
+      left: 0px;
+
+      height: calc(100% - 80px);
+
+      padding-block-start: 64px;
+
+      #navigation-drawer-close {
+        display: block;
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+
+        margin: 12px 6px;
+      }
+    }
+  }
+
+  &[spec="rail"] {
+    flex-direction: column;
+
+    height: 100%;
+    width: 80px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+
+    #navigation-fab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #navigation-destinations {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+
+      .navigation-segment-active {
+        height: 56px;
+
+        margin: 4px 5px;
+
+        .navigation-destination-accent {
+          height: 32px;
+          width: 56px;
+
+          margin: 4px 0px;
+        }
+
+        .navigation-destination-label {
+          margin: 4px 0px;
+        }
+      }
+
+      .navigation-segment-inactive {
+        .navigation-destination-label {
+          @extend .navigation-destination-label;
+
+          color: transparent;
+          line-height: 0px;
+          text-decoration: none;
+
+          transition: var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+          visibility: hidden;
+        }
+
+        &:hover {
+          .navigation-destination-accent {
+            width: 56px;
+          }
+
+          .navigation-destination-label {
+            color: var(--md-sys-color-on-secondary-container);
+            line-height: 16px;
+            text-decoration: none;
+
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    #navigation-drawer {
+      top: 0px;
+      left: 80px;
+
+      height: 100%;
+
+      #navigation-drawer-close {
+        display: none;
+      }
+    }
+  }
 }

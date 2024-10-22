@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 .main-layout-footer {
   display: flex;
@@ -45,7 +46,7 @@
     }
 
     #main-layout-footer-description-theme {
-      @include typescale-style("body-large");
+      @include mixin.typescale-style("body-large");
 
       display: flex;
       flex-wrap: wrap;
@@ -53,7 +54,7 @@
     }
 
     #main-layout-footer-description-beian {
-      @include typescale-style("body-large");
+      @include mixin.typescale-style("body-large");
 
       display: flex;
       flex-wrap: wrap;
@@ -80,6 +81,4 @@
     gap: 6px;
     justify-content: flex-end;
   }
-
-  @include meta.load-css("_breakpoints/main");
 }

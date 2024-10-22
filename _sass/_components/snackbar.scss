@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 // https://m3.material.io/components/snackbar/overview
 
@@ -27,7 +28,7 @@
   z-index: 99;
 
   #snackbar-supporting {
-    @include typescale-style("label-large");
+    @include mixin.typescale-style("label-large");
 
     display: inline-block;
 
@@ -50,5 +51,9 @@
     opacity: 0;
   }
 
-  @include meta.load-css("_breakpoints/main");
+  @media screen and (max-width: 840px) {
+    left: 12px;
+
+    width: calc(100% - 24px);
+  }
 }

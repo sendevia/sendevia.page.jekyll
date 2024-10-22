@@ -1,5 +1,0 @@
-@use "sass:meta";
-
-@media screen and (max-width: 840px) {
-  @include meta.load-css("medium");
-}

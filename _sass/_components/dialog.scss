@@ -1,3 +1,5 @@
+@use "mixin";
+
 // https://m3.material.io/components/dialogs/
 
 #modal-dialog-content {
@@ -7,7 +9,7 @@
   gap: 12px;
 
   #modal-dialog-leader-icon {
-    @include material-symbols($size: 24);
+    @include mixin.material-symbols($size: 24);
   }
 
   #modal-dialog-headline {

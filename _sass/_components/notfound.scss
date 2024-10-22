@@ -54,5 +54,14 @@
     }
   }
 
-  @include meta.load-css("_breakpoints/main");
+  @media screen and (max-width: 840px) {
+    #notfound-information {
+      h1 {
+        font-size: 75rem;
+      }
+      h3 {
+        font-size: 20rem;
+      }
+    }
+  }
 }

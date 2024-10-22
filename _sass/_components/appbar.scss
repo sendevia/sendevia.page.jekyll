@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "mixin";
 
 // https://m3.material.io/components/top-app-bar/
 
@@ -27,7 +28,7 @@
   z-index: 4;
 
   #appbar-dynamic-title {
-    @include typescale-style("title-large");
+    @include mixin.typescale-style("title-large");
 
     display: flex;
     align-items: flex-start;
@@ -84,5 +85,9 @@
     }
   }
 
-  @include meta.load-css("_breakpoints/main");
+  @media screen and (max-width: 840px) {
+    top: 0;
+
+    visibility: visible;
+  }
 }
