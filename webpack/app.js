@@ -1,9 +1,6 @@
 import { argbFromHex } from "@material/material-color-utilities";
 import { generateColorPalette } from "./monet";
 import "simple-jekyll-search/dest/simple-jekyll-search.min.js";
-import "giscus";
-
-import "@material/web/icon/icon";
 
 import "@material/web/button/filled-button";
 import "@material/web/button/filled-tonal-button";

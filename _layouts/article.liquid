@@ -36,23 +36,6 @@
         <div id="main-layout-content-filler">
           <section>
             {% include content.liquid %}
-
-            {% if site.giscus.enabled == true %}
-              <giscus-widget
-                id="{{ site.giscus.id }}"
-                repo="{{ site.giscus.repo }}"
-                repoid="{{ site.giscus.repoid }}"
-                category="{{ site.giscus.category }}"
-                categoryid="{{ site.giscus.categoryid }}"
-                mapping="{{ site.giscus.mapping }}"
-                term="{{ site.giscus.term }}"
-                reactionsenabled="{{ site.giscus.reactionsenabled }}"
-                emitmetadata="{{ site.giscus.emitmetadata }}"
-                inputposition="{{ site.giscus.inputposition }}"
-                theme="{{ site.giscus.theme }}"
-                lang="{{ site.giscus.lang }}"
-                loading="{{ site.giscus.loading }}"></giscus-widget>
-            {% endif %}
           </section>
           <section></section>
         </div>

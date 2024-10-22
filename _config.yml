@@ -100,22 +100,6 @@ jekyll-spaceship:
           props:
             loading: "lazy"
 
-giscus:
-  enabled: false
-  id: "comments"
-  repo: "Sendevia/sendevia.page.jekyll"
-  repoid: "MDEwOlJlcG9zaXRvcnkyOTI3ODY4MjI="
-  category: "General"
-  categoryid: "DIC_kwDOEXOShs4CiDp_"
-  mapping: "title"
-  trem: "Welcome to giscus!"
-  reactionsenabled: "1"
-  emitmetadata: "0"
-  inputposition: "top"
-  theme: "preferred_color_scheme"
-  lang: "zh-CN"
-  loading: "lazy"
-
 exclude:
   - .gitignore
   - .jekyll-cache/
