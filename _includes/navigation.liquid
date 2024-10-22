@@ -64,7 +64,10 @@
   </div>
 
   <div id="navigation-drawer">
-    <button class="icon-button" id="navigation-drawer-close">menu_open</button>
+    <md-icon-button id="navigation-drawer-close">
+      <md-icon>menu_open</md-icon>
+    </md-icon-button>
+
     {% capture toc_content %}{% toc %}{% endcapture %}
     <div id="navigation-drawer-container">
       {% if toc_content != "" and page.toc %}
@@ -73,7 +76,9 @@
         {% for item in site.posts %}
           <details>
             <summary>
-              <a href="{{ item.url }}">{{ item.title }}</a>
+              <a href="{{ item.url }}">
+                <md-ripple></md-ripple>
+                {{ item.title }}</a>
             </summary>
           </details>
         {% endfor %}
