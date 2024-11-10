@@ -67,13 +67,13 @@ featured: true
 # 下载
 
 <div>
-  <md-filled-tonal-button href="https://github.com/Sendevia/AincradMix/releases/latest/download/AincradMix.osk">
+  <md-filled-tonal-button href="https://github.com/sendevia/AincradMix/releases/latest/download/AincradMix.osk">
     最新版下载（1.1）
     <md-icon slot="icon">download</md-icon>
   </md-filled-tonal-button>
 </div>
 <div>
-  <md-text-button href="https://github.com/Sendevia/AincradMix">
+  <md-text-button href="https://github.com/sendevia/AincradMix">
     Github
     <md-icon slot="icon">code</md-icon>
   </md-text-button>

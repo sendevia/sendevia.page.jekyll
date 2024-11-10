@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sendevia/sendevia.page.jekyll.git"
+    "url": "git+https://github.com/sendevia/sendevia.page.jekyll.git"
   },
   "author": "sendevia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sendevia/sendevia.page.jekyll/issues"
+    "url": "https://github.com/sendevia/sendevia.page.jekyll/issues"
   },
   "homepage": "https://sendevia.top",
   "dependencies": {
