@@ -1,7 +1,7 @@
-version: "24.1022.1"
+version: "24.1115.0"
 
 title: "sendevia 的小站"
-description: "Contrary to common opinion, less is more."
+description: "Less is more."
 baseurl: ""
 lang: "zh"
 timezone: "Asia/Shanghai"
