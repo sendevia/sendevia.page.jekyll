@@ -46,7 +46,7 @@ const themeScrollToTop = document.querySelectorAll("#main-layout-scrolltop");
  * 主题 - 延迟跳转元素
  */
 const themeDelayRedirect = document.querySelectorAll(
-  "#navigation-drawer-backward, .main-layout-search-result-item, #main-layout-content-filler .card a, .carousel-article, #navigation-destinations a, .p-posts-timeline-post-card a, .main-layout-quicklinks, .p-pixivgallery a"
+  "#navigation-drawer-backward, .main-layout-search-result-item, #main-layout-content-filler .card a, #navigation-destinations a, .p-posts-timeline-post-card a, .main-layout-quicklinks, .p-pixivgallery a"
 );
 /**
  * 主题 - 复制代码块的按钮
@@ -104,18 +104,6 @@ const searchContainerController = document.querySelectorAll("#navigation-fab > b
  * 移动端 - 标题栏
  */
 const mobileAppBar = document.querySelector(".appbar");
-/**
- * Carousel - 内容容器
- */
-const carouselContainer = document.querySelector(".carousel");
-/**
- * Carousel - 状态控制器
- */
-const carouselController = carouselContainer ? carouselContainer.querySelectorAll(".carousel-control") : [];
-/**
- * Carousel - 展示的文章
- */
-const carouselPostList = carouselContainer ? carouselContainer.querySelector("#carousel-container") : [];
 
 const bpLarge = 1600;
 const bpExpanded = 1200;
@@ -126,17 +114,20 @@ const bpCompact = 600;
  * 滚动事件
  */
 let lastScrollY = 0;
+
 function scrollHandler() {
   const scrollPosition = contentFlow.scrollTop;
   const scrollThreshold = 64;
   const scrollDirection = scrollPosition > lastScrollY ? "down" : "up";
-  mobileAppBar.setAttribute("scroll", scrollPosition >= scrollThreshold ? "true" : "false");
 
-  themeRoot.setAttribute("o-increasescroll", scrollDirection === "down" && scrollPosition >= 500 ? "true" : "false");
+  mobileAppBar.setAttribute("scroll", scrollPosition >= scrollThreshold);
 
+  themeRoot.setAttribute("o-increasescroll", scrollDirection === "down" && scrollPosition >= 500);
+
+  const opacityVisibility = scrollPosition >= 400;
   themeScrollToTop.forEach((element) => {
-    element.style.opacity = scrollPosition >= 400 ? "1" : "0";
-    element.style.visibility = scrollPosition >= 400 ? "visible" : "hidden";
+    element.style.opacity = opacityVisibility ? "1" : "0";
+    element.style.visibility = opacityVisibility ? "visible" : "hidden";
   });
 
   lastScrollY = scrollPosition;
@@ -144,7 +135,7 @@ function scrollHandler() {
 
 /**
  * 链接跳转事件
- * @param {string} linkElement
+ * @param {HTMLElement} linkElement
  */
 function handleLinkDelayRedirection(linkElement) {
   linkElement.addEventListener("click", (event) => {
@@ -152,16 +143,14 @@ function handleLinkDelayRedirection(linkElement) {
     const redirectDelay = 240;
     const target = linkElement.target;
 
-    if (target === "_blank") {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (target === "_blank") {
         window.open(linkElement.href);
-      }, redirectDelay);
-    } else {
-      displayLoadingScreen();
-      setTimeout(() => {
+      } else {
+        displayLoadingScreen();
         window.location.href = linkElement.href;
-      }, redirectDelay);
-    }
+      }
+    }, redirectDelay);
   });
 }
 
@@ -169,14 +158,12 @@ function handleLinkDelayRedirection(linkElement) {
  * 初始模态框
  */
 function initializeModal() {
-  themeDialogControllerOpen.forEach((element) =>
-    element.addEventListener("click", async () => {
-      await themeDialog.show();
-    })
-  );
-  themeDialogControllerClose.addEventListener("click", async () => {
-    await themeDialog.close();
-  });
+  const openHandlers = async () => await themeDialog.show();
+  const closeHandler = async () => await themeDialog.close();
+
+  themeDialogControllerOpen.forEach((element) => element.addEventListener("click", openHandlers));
+
+  themeDialogControllerClose.addEventListener("click", closeHandler);
 }
 
 /**
@@ -188,6 +175,7 @@ function displayLoadingScreen() {
 
 /**
  * 移除加载屏幕
+ * @param {number} delay - 延迟时间，默认为450毫秒
  */
 function removeLoadingScreen(delay = 450) {
   setTimeout(() => {
@@ -203,19 +191,19 @@ function rotateBulletPoints() {
   const styleElement = document.createElement("style");
   document.head.appendChild(styleElement);
 
-  const listItems = Array.from(contentRotationListItemsBullet);
-  listItems.forEach((_, index) => {
+  Array.from(contentRotationListItemsBullet).forEach((_, index) => {
     const rotationDegrees = Math.floor(Math.random() * 360);
     const cssRule = `ul li:nth-child(${index + 1})::before { transform: rotate(${rotationDegrees}deg); }`;
     styleElement.sheet.insertRule(cssRule, styleElement.sheet.cssRules.length);
   });
 }
 
-var snackbarQueue = [];
 /**
  * 底部提示条
  * @param {string} message
  */
+var snackbarQueue = [];
+
 function createSnackbar(message) {
   const snackbarElement = document.createElement("div");
   snackbarElement.className = "snackbar";
@@ -225,21 +213,19 @@ function createSnackbar(message) {
   messageElement.id = "snackbar-supporting";
   messageElement.textContent = message;
 
-  snackbarElement.addEventListener("click", () => removeSnackbar());
+  snackbarElement.addEventListener("click", removeSnackbar);
 
   snackbarElement.appendChild(messageElement);
   document.body.appendChild(snackbarElement);
 
   snackbarQueue.unshift(snackbarElement);
-  snackbarQueue.forEach((snackbar) => {
-    snackbar.style.bottom = `${snackbarQueue.indexOf(snackbar) * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`;
-  });
+  updateSnackbarsPosition();
 
   setTimeout(() => {
     snackbarElement.setAttribute("visible", "true");
   }, 0);
 
-  setTimeout(() => removeSnackbar(), 5000);
+  setTimeout(removeSnackbar, 5000);
 
   function removeSnackbar() {
     snackbarElement.setAttribute("visible", "false");
@@ -248,13 +234,16 @@ function createSnackbar(message) {
         const index = snackbarQueue.indexOf(snackbarElement);
         if (index !== -1) {
           snackbarQueue.splice(index, 1);
-          snackbarQueue.forEach(
-            (snackbar) =>
-              (snackbar.style.bottom = `${snackbarQueue.indexOf(snackbar) * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`)
-          );
+          updateSnackbarsPosition();
         }
         snackbarElement.remove();
       }
+    });
+  }
+
+  function updateSnackbarsPosition() {
+    snackbarQueue.forEach((snackbar, index) => {
+      snackbar.style.bottom = `${index * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`;
     });
   }
 }
@@ -275,13 +264,14 @@ function copyAnchorLink() {
  * @param {*} callback
  */
 function observeThemeColorChanges(root, callback) {
-  const observer = new MutationObserver(function (mutationsList) {
-    for (let mutation of mutationsList) {
+  const observer = new MutationObserver((mutationsList) => {
+    mutationsList.forEach((mutation) => {
       if (mutation.type === "attributes" && mutation.attributeName === "color") {
-        callback(mutation.target.getAttribute(mutation.attributeName));
+        callback(mutation.target.getAttribute("color"));
       }
-    }
+    });
   });
+
   const config = { attributes: true, attributeFilter: ["color"] };
   observer.observe(root, config);
 }
@@ -289,18 +279,23 @@ function observeThemeColorChanges(root, callback) {
 /**
  * 布局提示
  */
+let lastLayout = null;
+
 function layoutNotfication() {
   const innerWidth = window.innerWidth;
-  const logMessages = {
-    600: "切换布局到 Compact",
-    840: "切换布局到 Medium",
-    1200: "切换布局到 Expended",
-    1600: "切换布局到 Large",
-  };
+  const logMessages = [
+    { width: bpCompact, message: "切换布局到 Compact" },
+    { width: bpMedium, message: "切换布局到 Medium" },
+    { width: bpExpanded, message: "切换布局到 Expended" },
+    { width: bpLarge, message: "切换布局到 Large" },
+  ];
 
-  for (const width in logMessages) {
-    if (innerWidth === Number(width)) {
-      createSnackbar(logMessages[width]);
+  for (const { width, message } of logMessages) {
+    if (innerWidth <= width) {
+      if (lastLayout !== message) {
+        createSnackbar(message);
+        lastLayout = message;
+      }
       break;
     }
   }
@@ -314,28 +309,18 @@ function initState() {
 
   if (themeFeedflow) {
     const getCardsActualHeight = (element) => {
-      const computedStyle = window.getComputedStyle(element);
-      const height = parseFloat(computedStyle.height);
-      const marginBlockEnd = parseFloat(computedStyle.marginBlockEnd || computedStyle.marginBottom);
-      return height + marginBlockEnd;
+      const style = window.getComputedStyle(element);
+      return parseFloat(style.height) + parseFloat(style.marginBlockEnd || style.marginBottom);
     };
 
     const accumulateHeights = (orderValue) => {
-      const childrenWithOrder = Array.from(themeFeedflow.children).filter((child) => window.getComputedStyle(child).order === orderValue);
-      const totalHeight = childrenWithOrder.reduce((totalHeight, child) => totalHeight + getCardsActualHeight(child), 0);
-      return { count: childrenWithOrder.length, height: totalHeight + 24 };
+      const children = Array.from(themeFeedflow.children).filter((child) => window.getComputedStyle(child).order === orderValue);
+      return children.reduce((totalHeight, child) => totalHeight + getCardsActualHeight(child), 0) + 24;
     };
 
-    const resultOrder1 = accumulateHeights("1");
-    const resultOrder2 = accumulateHeights("2");
+    const [resultOrder1, resultOrder2] = ["1", "2"].map(accumulateHeights);
 
-    if (window.innerWidth <= bpMedium) {
-      var maxHeight = resultOrder1.height + resultOrder2.height;
-    } else {
-      var maxHeight = Math.max(resultOrder1.height, resultOrder2.height);
-    }
-
-    themeFeedflow.style.height = `${maxHeight}px`;
+    themeFeedflow.style.height = `${window.innerWidth <= bpMedium ? resultOrder1 + resultOrder2 : Math.max(resultOrder1, resultOrder2)}px`;
   }
 }
 
@@ -346,8 +331,60 @@ function initState() {
  * @returns
  */
 function getIdByUrl(postsArray, urlValue) {
-  const post = postsArray.find((post) => post.url === urlValue);
-  return post ? post.id : themeCurrentPage;
+  return postsArray.find((post) => post.url === urlValue)?.id || themeCurrentPage;
+}
+
+function initSearch(postsArray) {
+  try {
+    console.log("初始化搜索");
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+      fuzzy: false,
+      json: postsArray,
+      noResultsText: "<p>(´。＿。｀)? 没有找到哦</p>",
+      resultsContainer: document.getElementById("main-layout-search-results-container"),
+      searchInput: document.getElementById("main-layout-search-input-box"),
+      searchResultTemplate: `
+        <a class="main-layout-search-result-item" href="{url}">
+          <div class="card" spec="clear">
+            <div class="card-supporting">
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          </div>
+        </a>`,
+    });
+  } catch (error) {
+    handleSearchInitError(error);
+  }
+}
+
+function getIdByUrlAndLog(postsArray, urlValue) {
+  try {
+    let id = getIdByUrl(postsArray, urlValue);
+    if (id === "/") return;
+    createSnackbar("当前文章id：" + id);
+  } catch (error) {
+    createSnackbar("无法获取文章与对应id：" + error);
+  }
+}
+
+function handleFetchError(error) {
+  createSnackbar("在获取文章索引时发生错误：" + error);
+  console.error("在获取文章索引时发生错误：", error);
+}
+
+function handleSearchInitError(error) {
+  createSnackbar("无法初始化搜索功能：" + error);
+  console.error("在初始化搜索时发生错误：", error);
+}
+
+function copyCodeToClipboard(e) {
+  const highlightBlock = e.target.closest(".highlight");
+  const codeToCopy = highlightBlock.querySelector("code").innerText;
+  navigator.clipboard
+    .writeText(codeToCopy)
+    .then(() => createSnackbar("已将代码复制到剪贴板"))
+    .catch((error) => createSnackbar("未能将代码复制到剪贴板：" + error));
 }
 
 window.onload = () => {
@@ -364,72 +401,23 @@ window.onload = () => {
   const siteRoot = window.location.origin;
   fetch(`${siteRoot}/assets/postsmap.json`)
     .then((response) => {
-      if (!response.ok) {
-        createSnackbar("无法获取文章索引");
-      }
+      if (!response.ok) throw new Error("无法获取文章索引");
       return response.json();
     })
     .then((postsArray) => {
-      try {
-        console.log("初始化搜索");
-        window.simpleJekyllSearch = new SimpleJekyllSearch({
-          fuzzy: false,
-          json: postsArray,
-          noResultsText: "<p>(´。＿。｀)? 没有找到哦</p>",
-          resultsContainer: document.getElementById("main-layout-search-results-container"),
-          searchInput: document.getElementById("main-layout-search-input-box"),
-          searchResultTemplate: `
-          <a class="main-layout-search-result-item" href="{url}">
-            <div class="card" spec="clear">
-              <div class="card-supporting">
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </div>
-            </div>
-          </a>`,
-        });
-      } catch (error) {
-        createSnackbar("无法初始化搜索功能：" + error);
-        console.error("在初始化搜索时发生错误：", error);
-      }
-
-      // 获取文章与对应id
-      try {
-        let id = getIdByUrl(postsArray, window.location.pathname);
-        if (id == "/") {
-          return;
-        }
-        createSnackbar("当前文章id：" + id);
-      } catch (error) {
-        createSnackbar("无法获取文章与对应id：" + error);
-      }
+      initSearch(postsArray);
+      getIdByUrlAndLog(postsArray, window.location.pathname);
     })
-    .catch((error) => {
-      createSnackbar("在获取文章索引时发生错误：" + error);
-      console.error("在获取文章索引时发生错误：", error);
-    });
+    .catch((error) => handleFetchError(error));
 
   // 标题锚点点击事件
-  contentAnchors.forEach((element) => {
-    element.addEventListener("click", copyAnchorLink);
-  });
+  contentAnchors.forEach((element) => element.addEventListener("click", copyAnchorLink));
 
   // 复制按钮点击事件
-  themeCopyButtons.forEach((element) =>
-    element.addEventListener("click", (e) => {
-      const highlightBlock = e.target.closest(".highlight");
-      const codeToCopy = highlightBlock.querySelector("code").innerText;
-      navigator.clipboard
-        .writeText(codeToCopy)
-        .then(() => createSnackbar("已将代码复制到剪贴板"))
-        .catch((error) => createSnackbar("未能将代码复制到剪贴板：" + error));
-    })
-  );
+  themeCopyButtons.forEach((element) => element.addEventListener("click", copyCodeToClipboard));
 
   // 初始化模态框
-  if (themeDialog) {
-    initializeModal();
-  }
+  if (themeDialog) initializeModal();
 
   // 创建跳转延迟
   themeDelayRedirect.forEach(handleLinkDelayRedirection);
@@ -459,16 +447,25 @@ window.onpageshow = () => {
   }
 
   // 初始化侧边栏
+  initNavigationDrawer();
+
+  // 初始化导航栏
+  activateNavigationBar();
+};
+
+function initNavigationDrawer() {
   if (navigationDrawer) {
-    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
     themeRoot.setAttribute("o-showdrawer", window.innerWidth <= bpMedium ? false : true);
-    window.innerWidth <= bpLarge ? contentFlow.addEventListener("click", onDocumentClick) : contentFlow.removeEventListener("click", onDocumentClick);
+
+    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
+    toggleContentFlowClickListener(window.innerWidth <= bpLarge, onDocumentClick);
+
     window.onresize = () => {
       if (window.innerWidth <= bpLarge) {
-        contentFlow.addEventListener("click", onDocumentClick);
+        toggleContentFlowClickListener(true, onDocumentClick);
       } else {
         themeRoot.setAttribute("o-showdrawer", true);
-        contentFlow.removeEventListener("click", onDocumentClick);
+        toggleContentFlowClickListener(false, onDocumentClick);
       }
     };
 
@@ -486,23 +483,27 @@ window.onpageshow = () => {
     document.querySelector("#navigation-drawer-close").addEventListener("click", onCloseClick);
 
     const onH1Click = (event) => {
-      const element = event.target;
-      const parentDetails = element.closest("details");
+      const parentDetails = event.target.closest("details");
       if (parentDetails instanceof HTMLElement) {
         parentDetails.open = !parentDetails.open;
       }
     };
-    const onH2Click = () => {
-      if (window.innerWidth <= bpLarge) {
-        themeRoot.setAttribute("o-showdrawer", false);
-      }
-    };
+    const onH2Click = () => window.innerWidth <= bpLarge && themeRoot.setAttribute("o-showdrawer", false);
 
     navigationDrawerH1Entries.forEach((element) => element.addEventListener("click", onH1Click));
     navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", onH2Click));
   }
+}
 
-  // 初始化导航栏
+function toggleContentFlowClickListener(shouldAdd, callback) {
+  if (shouldAdd) {
+    contentFlow.addEventListener("click", callback);
+  } else {
+    contentFlow.removeEventListener("click", callback);
+  }
+}
+
+function activateNavigationBar() {
   try {
     const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
     const inactiveSegment = activatedSegment.querySelector(".navigation-segment-inactive");
@@ -510,4 +511,4 @@ window.onpageshow = () => {
   } catch (err) {
     document.querySelector("#navigation-destinations > div").className = "navigation-segment-active";
   }
-};
+}
