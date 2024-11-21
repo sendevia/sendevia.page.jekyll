@@ -225,7 +225,15 @@ function createSnackbar(message) {
     snackbarElement.setAttribute("visible", "true");
   }, 0);
 
-  setTimeout(removeSnackbar, 5000);
+  let countdown = 3;
+  const countdownInterval = setInterval(() => {
+    messageElement.textContent = `${message} (${countdown}s)`;
+    countdown--;
+    if (countdown < 0) {
+      clearInterval(countdownInterval);
+      removeSnackbar();
+    }
+  }, 1000);
 
   function removeSnackbar() {
     snackbarElement.setAttribute("visible", "false");
@@ -236,6 +244,7 @@ function createSnackbar(message) {
           snackbarQueue.splice(index, 1);
           updateSnackbarsPosition();
         }
+        clearInterval(countdownInterval);
         snackbarElement.remove();
       }
     });
