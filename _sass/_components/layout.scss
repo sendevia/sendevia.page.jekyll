@@ -9,7 +9,7 @@
 
   height: 100%;
 
-  z-index: 2;
+  z-index: 1;
   transition: var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized);
 
   #main-layout-content-flow {
@@ -166,7 +166,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      grid-column: 12;
+      grid-column: 11/13;
 
       position: sticky;
       bottom: 72px;
@@ -661,7 +661,7 @@
         }
 
         &[spec="next"] {
-          grid-column: 6/12;
+          grid-column: 6/11;
 
           .card .card-supporting {
             align-items: flex-end;
