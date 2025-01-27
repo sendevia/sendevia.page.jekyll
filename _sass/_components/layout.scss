@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "sass:string";
 @use "mixin";
 
 .main-layout {
@@ -879,9 +880,12 @@
         }
 
         .main-layout-quicklinks {
-          &[spec="previous"],
+          &[spec="previous"] {
+            grid-column: 1 string.unquote("/") calc(($columns + 1) / 2);
+          }
+
           &[spec="next"] {
-            grid-column: span calc(($columns - 1) / 2);
+            grid-column: calc(($columns + 1) / 2) string.unquote("/") $columns;
           }
         }
       }
