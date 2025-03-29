@@ -26,13 +26,6 @@
     同时，主题还展示了一些来自Pixiv的图片作品。
     "
 
-- title: "Components"
-  content: "
-    这是一篇介绍Material3组件的文章，包括Snackbar、Buttons、Icon buttons、Cards、Fabs和Progress Indicators。
-    每个组件都有不同的样式和规格，如elevated、filled、tonal、outlined等，以及不同的尺寸和颜色。
-    文章提供了每个组件的HTML代码示例，以及预览图。
-    "
-
 - title: "设置开机自启动的 Jekyll 服务"
   content: "
     这篇文章介绍了如何通过systemd设置Jekyll服务的开机自启动。主要步骤包括：
