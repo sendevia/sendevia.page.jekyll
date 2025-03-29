@@ -14,123 +14,143 @@ import "@material/web/iconbutton/icon-button";
 import "@material/web/progress/linear-progress";
 import "@material/web/ripple/ripple";
 
-/**
- * 主题 - 根节点
- */
-const themeRoot = document.querySelector(".theme-root");
-/**
- * 主题 - 加载闪屏
- */
-const themeLoadingIndicator = document.querySelector(".loading-splash");
-/**
- * 主题 - 定位当前所在页面
- */
-const themeCurrentPage = window.location.pathname;
-/**
- * 主题 - 模态对话框
- */
-const themeDialog = document.querySelector("md-dialog");
-/**
- * 主题 - 模态对话框 - 状态控制器（开启）
- */
-const themeDialogControllerOpen = document.querySelectorAll("#default-header-webinfo, #appbar-InfoIcon");
-/**
- * 主题 - 模态对话框 - 状态控制器（关闭）
- */
-const themeDialogControllerClose = document.querySelector("md-dialog div[slot='actions'] md-text-button");
-/**
- * 主题 - 跳转到页首
- */
-const themeScrollToTop = document.querySelectorAll("#main-layout-scrolltop");
-/**
- * 主题 - 延迟跳转元素
- */
-const themeDelayRedirect = document.querySelectorAll(
-  "#navigation-drawer-backward, .main-layout-search-result-item, #main-layout-content-filler .card a, #navigation-destinations a, .p-posts-timeline-post-card a, .main-layout-quicklinks, .p-pixivgallery a"
-);
-/**
- * 主题 - 复制代码块的按钮
- */
-const themeCopyButtons = document.querySelectorAll("div.blockcopy");
-/**
- * 主题 - 首页文章瀑布流容器
- */
-const themeFeedflow = document.querySelector(".main-layout[spec='feed'] #main-layout-content-filler");
-/**
- * 调色盘 - HEX颜色
- */
-const paletteHEX = document.body.getAttribute("color");
-/**
- * 文章 - 内容流
- */
-const contentFlow = document.querySelector("#main-layout-content-flow");
-/**
- * 文章 - 标题锚点
- */
-const contentAnchors = document.querySelectorAll("#main-layout-content-filler section:nth-child(1) h1");
-/**
- * 文章 - ul随机旋转的marker
- */
-const contentRotationListItemsBullet = document.querySelectorAll("ul li");
-/**
- * 全局导航栏
- */
-const navigationContainer = document.querySelector(".navigation");
-/**
- * 全局导航栏 - 展开
- */
-const navigationDrawer = document.querySelector("#navigation-drawer");
-/**
- * 全局导航栏 - 展开 - 一级目录元素
- */
-const navigationDrawerH1Entries = navigationDrawer ? navigationDrawer.querySelectorAll("details summary > a") : [];
-/**
- * 全局导航栏 - 展开 - 二级目录元素
- */
-const navigationDrawerH2Entries = navigationDrawer ? navigationDrawer.querySelectorAll("details > a") : [];
-/**
- * 全局导航栏 - 状态控制器
- */
-const navigationController = document.querySelector("#navigation-destinations > div");
-/**
- * 全局导航栏 - 状态控制器按钮
- */
-const navigationControllerButton = document.querySelectorAll("#appbar-menu, #navigation-drawer-close");
-/**
- * 搜索 - 状态控制器
- */
-const searchContainerController = document.querySelectorAll("#navigation-fab > button, #appbar-search");
-/**
- * 移动端 - 标题栏
- */
-const mobileAppBar = document.querySelector(".appbar");
+const CONFIG = {
+  BREAKPOINTS: {
+    LARGE: 1600,
+    EXPANDED: 1200,
+    MEDIUM: 840,
+    COMPACT: 600,
+  },
+  TIMING: {
+    REDIRECT_DELAY: 240,
+    LOADING_DELAY: 1500,
+    SNACKBAR_DURATION: 3000,
+  },
+  SELECTORS: {
+    THEME_ROOT: ".theme-root",
+    ROOT_FEED: ".main-layout[spec='feed'] #main-layout-content-filler",
+    ROOT_NAVIGATION: ".navigation",
+    ROOT_CONTENT: "#main-layout-content-flow",
+    PAGE_CURRENT: window.location.pathname,
+    LOADING_SPLASH: ".loading-splash",
+    MWC_DIALOG: "md-dialog",
+    MWC_DIALOG_BUTTON_OPEN: "#default-header-webinfo, #appbar-InfoIcon",
+    MWC_DIALOG_BUTTON_CLOSE: "md-dialog div[slot='actions'] md-text-button",
+    SCROLL_BUTTON: "#main-layout-scrolltop",
+    COPY_BUTTON: ".blockcopy",
+    DELAY_REDIRECT:
+      "#navigation-drawer-backward, .main-layout-search-result-item, #main-layout-content-filler .card a, #navigation-destinations a, .p-posts-timeline-post-card a, .main-layout-quicklinks, .p-pixivgallery a",
+    COLOR_HEX: "color",
+    MOBILE_APPBAR: ".appbar",
+    DRAWER: "#navigation-drawer",
+    DRAWER_H1: "details summary > a",
+    DRAWER_H2: "details > a",
+    NAVIGATION_CONTROLLER: "#navigation-destinations > div",
+    NAVIGATION_CONTROLLER_BUTTON: "#appbar-menu, #navigation-drawer-close",
+    ARTICAL_ANCHOR: "#main-layout-content-filler section:nth-child(1) h1",
+    ARTICAL_BULLET: "ul li",
+  },
+};
 
-const bpLarge = 1600;
-const bpExpanded = 1200;
-const bpMedium = 840;
-const bpCompact = 600;
+const DOM = {
+  THEME: {
+    ROOT: document.querySelector(CONFIG.SELECTORS.THEME_ROOT),
+    ROOT_FEED: document.querySelector(CONFIG.SELECTORS.ROOT_FEED),
+    PAGE_CURRENT: CONFIG.SELECTORS.PAGE_CURRENT,
+    LOADING_SPLASH: document.querySelector(CONFIG.SELECTORS.LOADING_SPLASH),
+    MWC_DIALOG: document.querySelector(CONFIG.SELECTORS.MWC_DIALOG),
+    MWC_DIALOG_BUTTON_OPEN: document.querySelectorAll(CONFIG.SELECTORS.MWC_DIALOG_BUTTON_OPEN),
+    MWC_DIALOG_BUTTON_CLOSE: document.querySelector(CONFIG.SELECTORS.MWC_DIALOG_BUTTON_CLOSE),
+    SCROLL_BUTTON: document.querySelectorAll(CONFIG.SELECTORS.SCROLL_BUTTON),
+    COPY_BUTTON: document.querySelectorAll(CONFIG.SELECTORS.COPY_BUTTON),
+    DELAY_REDIRECT: document.querySelectorAll(CONFIG.SELECTORS.DELAY_REDIRECT),
+    COLOR_HEX: document.body.getAttribute(CONFIG.SELECTORS.COLOR_HEX),
+    MOBILE_APPBAR: document.querySelector(CONFIG.SELECTORS.MOBILE_APPBAR),
+  },
+  NAVIGATION: {
+    ROOT: document.querySelector(CONFIG.SELECTORS.ROOT_NAVIGATION),
+    DRAWER: document.querySelector(CONFIG.SELECTORS.DRAWER),
+    DRAWER_H1: document.querySelectorAll(CONFIG.SELECTORS.DRAWER_H1),
+    DRAWER_H2: document.querySelectorAll(CONFIG.SELECTORS.DRAWER_H2),
+    CONTROLLER: document.querySelector(CONFIG.SELECTORS.NAVIGATION_CONTROLLER),
+    CONTROLLER_BUTTON: document.querySelectorAll(CONFIG.SELECTORS.NAVIGATION_CONTROLLER_BUTTON),
+  },
+  CONTENT: {
+    ROOT: document.querySelector(CONFIG.SELECTORS.ROOT_CONTENT),
+    ARTICAL_ANCHOR: document.querySelectorAll(CONFIG.SELECTORS.ARTICAL_ANCHOR),
+    ARTICAL_BULLET: document.querySelectorAll(CONFIG.SELECTORS.ARTICAL_BULLET),
+  },
+};
 
-/**
- * 滚动事件
- */
-let lastScrollY = 0;
+function throttle(fn, delay) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      fn.apply(this, args);
+      lastCall = now;
+    }
+  };
+}
 
-function scrollHandler() {
-  const scrollPosition = contentFlow.scrollTop;
-  const scrollThreshold = 64;
-  const scrollDirection = scrollPosition > lastScrollY ? "down" : "up";
+function initNavigationDrawer() {
+  if (DOM.NAVIGATION.DRAWER) {
+    DOM.THEME.ROOT.setAttribute("o-showdrawer", window.innerWidth <= CONFIG.BREAKPOINTS.MEDIUM ? false : true);
 
-  mobileAppBar.setAttribute("scroll", scrollPosition >= scrollThreshold);
+    const onDocumentClick = () => DOM.THEME.ROOT.setAttribute("o-showdrawer", false);
+    toggleContentFlowClickListener(window.innerWidth <= CONFIG.BREAKPOINTS.LARGE, onDocumentClick);
 
-  themeRoot.setAttribute("o-increasescroll", scrollDirection === "down" && scrollPosition >= 500);
+    window.onresize = () => {
+      if (window.innerWidth <= CONFIG.BREAKPOINTS.LARGE) {
+        toggleContentFlowClickListener(true, onDocumentClick);
+      } else {
+        DOM.THEME.ROOT.setAttribute("o-showdrawer", true);
+        toggleContentFlowClickListener(false, onDocumentClick);
+      }
+    };
 
-  const opacityVisibility = scrollPosition >= 400;
-  themeScrollToTop.forEach((element) => {
-    element.style.opacity = opacityVisibility ? "1" : "0";
-    element.style.visibility = opacityVisibility ? "visible" : "hidden";
-  });
+    let enterTimeout;
+    const onPointerEnter = () => {
+      enterTimeout = setTimeout(() => DOM.THEME.ROOT.setAttribute("o-showdrawer", true), 500);
+    };
+    const onPointerLeave = () => clearTimeout(enterTimeout);
+    const onClick = () => DOM.THEME.ROOT.setAttribute("o-showdrawer", true);
+    const onCloseClick = () => DOM.THEME.ROOT.setAttribute("o-showdrawer", false);
 
-  lastScrollY = scrollPosition;
+    DOM.NAVIGATION.CONTROLLER.addEventListener("pointerenter", onPointerEnter);
+    DOM.NAVIGATION.CONTROLLER.addEventListener("pointerleave", onPointerLeave);
+    DOM.NAVIGATION.CONTROLLER_BUTTON.forEach((element) => element.addEventListener("click", onClick));
+    document.querySelector("#navigation-drawer-close").addEventListener("click", onCloseClick);
+
+    const onH1Click = (event) => {
+      const parentDetails = event.target.closest("details");
+      if (parentDetails instanceof HTMLElement) {
+        parentDetails.open = !parentDetails.open;
+      }
+    };
+    const onH2Click = () => window.innerWidth <= CONFIG.BREAKPOINTS.LARGE && DOM.THEME.ROOT.setAttribute("o-showdrawer", false);
+
+    DOM.NAVIGATION.DRAWER_H1.forEach((element) => element.addEventListener("click", onH1Click));
+    DOM.NAVIGATION.DRAWER_H2.forEach((element) => element.addEventListener("click", onH2Click));
+  }
+}
+
+function toggleContentFlowClickListener(shouldAdd, callback) {
+  if (shouldAdd) {
+    DOM.CONTENT.ROOT.addEventListener("click", callback);
+  } else {
+    DOM.CONTENT.ROOT.removeEventListener("click", callback);
+  }
+}
+
+function activateNavigationBar() {
+  try {
+    const activatedSegment = document.querySelector(`a[href="${DOM.THEME.PAGE_CURRENT}"]`);
+    const inactiveSegment = activatedSegment.querySelector(".navigation-segment-inactive");
+    inactiveSegment.className = "navigation-segment-active";
+  } catch (err) {
+    document.querySelector("#navigation-destinations > div").className = "navigation-segment-active";
+  }
 }
 
 /**
@@ -158,19 +178,19 @@ function handleLinkDelayRedirection(linkElement) {
  * 初始模态框
  */
 function initializeModal() {
-  const openHandlers = async () => await themeDialog.show();
-  const closeHandler = async () => await themeDialog.close();
+  const openHandlers = async () => await DOM.THEME.MWC_DIALOG.show();
+  const closeHandler = async () => await DOM.THEME.MWC_DIALOG.close();
 
-  themeDialogControllerOpen.forEach((element) => element.addEventListener("click", openHandlers));
+  DOM.THEME.MWC_DIALOG_BUTTON_OPEN.forEach((element) => element.addEventListener("click", openHandlers));
 
-  themeDialogControllerClose.addEventListener("click", closeHandler);
+  DOM.THEME.MWC_DIALOG_BUTTON_CLOSE.addEventListener("click", closeHandler);
 }
 
 /**
  * 增加加载屏幕
  */
 function displayLoadingScreen() {
-  themeRoot.removeAttribute("o-onload");
+  DOM.THEME.ROOT.removeAttribute("o-onload");
 }
 
 /**
@@ -179,8 +199,8 @@ function displayLoadingScreen() {
  */
 function removeLoadingScreen(delay = 450) {
   setTimeout(() => {
-    themeRoot.setAttribute("o-onload", "");
-    themeLoadingIndicator.style.display = "none";
+    DOM.THEME.ROOT.setAttribute("o-onload", "");
+    DOM.THEME.LOADING_SPLASH.style.display = "none";
   }, delay);
 }
 
@@ -191,7 +211,7 @@ function rotateBulletPoints() {
   const styleElement = document.createElement("style");
   document.head.appendChild(styleElement);
 
-  Array.from(contentRotationListItemsBullet).forEach((_, index) => {
+  Array.from(DOM.CONTENT.ARTICAL_BULLET).forEach((_, index) => {
     const rotationDegrees = Math.floor(Math.random() * 360);
     const cssRule = `ul li:nth-child(${index + 1})::before { transform: rotate(${rotationDegrees}deg); }`;
     styleElement.sheet.insertRule(cssRule, styleElement.sheet.cssRules.length);
@@ -252,7 +272,7 @@ function createSnackbar(message) {
 
   function updateSnackbarsPosition() {
     snackbarQueue.forEach((snackbar, index) => {
-      snackbar.style.bottom = `${index * (snackbar.offsetHeight + 10) + (window.innerWidth <= bpMedium ? 90 : 10)}px`;
+      snackbar.style.bottom = `${index * (snackbar.offsetHeight + 10) + (window.innerWidth <= CONFIG.BREAKPOINTS.MEDIUM ? 90 : 10)}px`;
     });
   }
 }
@@ -293,10 +313,10 @@ let lastLayout = null;
 function layoutNotfication() {
   const innerWidth = window.innerWidth;
   const logMessages = [
-    { width: bpCompact, message: "切换布局到 Compact" },
-    { width: bpMedium, message: "切换布局到 Medium" },
-    { width: bpExpanded, message: "切换布局到 Expended" },
-    { width: bpLarge, message: "切换布局到 Large" },
+    { width: CONFIG.BREAKPOINTS.COMPACT, message: "切换布局到 Compact" },
+    { width: CONFIG.BREAKPOINTS.MEDIUM, message: "切换布局到 Medium" },
+    { width: CONFIG.BREAKPOINTS.EXPANDED, message: "切换布局到 Expended" },
+    { width: CONFIG.BREAKPOINTS.LARGE, message: "切换布局到 Large" },
   ];
 
   for (const { width, message } of logMessages) {
@@ -314,22 +334,24 @@ function layoutNotfication() {
  * 初始化的元素状态
  */
 function initState() {
-  navigationContainer.setAttribute("spec", window.innerWidth <= bpMedium ? "bar" : "rail");
+  DOM.NAVIGATION.ROOT.setAttribute("spec", window.innerWidth <= CONFIG.BREAKPOINTS.MEDIUM ? "bar" : "rail");
 
-  if (themeFeedflow) {
+  if (DOM.THEME.ROOT_FEED) {
     const getCardsActualHeight = (element) => {
       const style = window.getComputedStyle(element);
       return parseFloat(style.height) + parseFloat(style.marginBlockEnd || style.marginBottom);
     };
 
     const accumulateHeights = (orderValue) => {
-      const children = Array.from(themeFeedflow.children).filter((child) => window.getComputedStyle(child).order === orderValue);
+      const children = Array.from(DOM.THEME.ROOT_FEED.children).filter((child) => window.getComputedStyle(child).order === orderValue);
       return children.reduce((totalHeight, child) => totalHeight + getCardsActualHeight(child), 0) + 24;
     };
 
     const [resultOrder1, resultOrder2] = ["1", "2"].map(accumulateHeights);
 
-    themeFeedflow.style.height = `${window.innerWidth <= bpMedium ? resultOrder1 + resultOrder2 : Math.max(resultOrder1, resultOrder2)}px`;
+    DOM.THEME.ROOT_FEED.style.height = `${
+      window.innerWidth <= CONFIG.BREAKPOINTS.MEDIUM ? resultOrder1 + resultOrder2 : Math.max(resultOrder1, resultOrder2)
+    }px`;
   }
 }
 
@@ -340,7 +362,7 @@ function initState() {
  * @returns
  */
 function getIdByUrl(postsArray, urlValue) {
-  return postsArray.find((post) => post.url === urlValue)?.id || themeCurrentPage;
+  return postsArray.find((post) => post.url === urlValue)?.id || DOM.THEME.PAGE_CURRENT;
 }
 
 function initSearch(postsArray) {
@@ -396,12 +418,38 @@ function copyCodeToClipboard(e) {
     .catch((error) => createSnackbar("未能将代码复制到剪贴板：" + error));
 }
 
-window.onload = () => {
-  // 初始化滚动监听
-  contentFlow.onscroll = scrollHandler;
+class ContentManager {
+  static init() {
+    this.initScrollBehavior();
+  }
 
-  // 初始化跳转到页首按钮
-  themeScrollToTop.forEach((element) => element.addEventListener("click", () => contentFlow.scrollTo({ top: 0 })));
+  static initScrollBehavior() {
+    let lastScroll = 0;
+
+    DOM.CONTENT.ROOT.addEventListener(
+      "scroll",
+      throttle(() => {
+        const { scrollTop } = DOM.CONTENT.ROOT;
+        const direction = scrollTop > lastScroll ? "down" : "up";
+
+        DOM.THEME.ROOT.setAttribute("o-increasescroll", direction === "down" && scrollTop >= 500);
+
+        this.scrollButton(scrollTop >= 400);
+        lastScroll = scrollTop;
+      }, 100)
+    );
+  }
+
+  static scrollButton(visible) {
+    DOM.THEME.SCROLL_BUTTON.forEach((btn) => {
+      btn.addEventListener("click", () => DOM.CONTENT.ROOT.scrollTo({ top: 0 }));
+      btn.style.cssText = `opacity: ${visible ? 1 : 0}; visibility: ${visible ? "visible" : "hidden"}`;
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  ContentManager.init();
 
   // 随机旋转列表mark
   rotateBulletPoints();
@@ -420,26 +468,26 @@ window.onload = () => {
     .catch((error) => handleFetchError(error));
 
   // 标题锚点点击事件
-  contentAnchors.forEach((element) => element.addEventListener("click", copyAnchorLink));
+  DOM.CONTENT.ARTICAL_ANCHOR.forEach((element) => element.addEventListener("click", copyAnchorLink));
 
   // 复制按钮点击事件
-  themeCopyButtons.forEach((element) => element.addEventListener("click", copyCodeToClipboard));
+  DOM.THEME.COPY_BUTTON.forEach((element) => element.addEventListener("click", copyCodeToClipboard));
 
   // 初始化模态框
-  if (themeDialog) initializeModal();
+  if (DOM.THEME.MWC_DIALOG) initializeModal();
 
   // 创建跳转延迟
-  themeDelayRedirect.forEach(handleLinkDelayRedirection);
+  DOM.THEME.DELAY_REDIRECT.forEach(handleLinkDelayRedirection);
 
   // 移除加载屏幕
   removeLoadingScreen(1500);
 
   // 监听主题色更改
-  observeThemeColorChanges(themeRoot, function (color) {
+  observeThemeColorChanges(DOM.THEME.ROOT, function (color) {
     createSnackbar("主题色已更改为 " + color);
     generateColorPalette(argbFromHex(color));
   });
-};
+});
 
 window.onpageshow = () => {
   initState();
@@ -451,8 +499,8 @@ window.onpageshow = () => {
   });
 
   // 创建主题色调色板
-  if (paletteHEX) {
-    generateColorPalette(argbFromHex(paletteHEX));
+  if (DOM.THEME.COLOR_HEX) {
+    generateColorPalette(argbFromHex(DOM.THEME.COLOR_HEX));
   }
 
   // 初始化侧边栏
@@ -461,63 +509,3 @@ window.onpageshow = () => {
   // 初始化导航栏
   activateNavigationBar();
 };
-
-function initNavigationDrawer() {
-  if (navigationDrawer) {
-    themeRoot.setAttribute("o-showdrawer", window.innerWidth <= bpMedium ? false : true);
-
-    const onDocumentClick = () => themeRoot.setAttribute("o-showdrawer", false);
-    toggleContentFlowClickListener(window.innerWidth <= bpLarge, onDocumentClick);
-
-    window.onresize = () => {
-      if (window.innerWidth <= bpLarge) {
-        toggleContentFlowClickListener(true, onDocumentClick);
-      } else {
-        themeRoot.setAttribute("o-showdrawer", true);
-        toggleContentFlowClickListener(false, onDocumentClick);
-      }
-    };
-
-    let enterTimeout;
-    const onPointerEnter = () => {
-      enterTimeout = setTimeout(() => themeRoot.setAttribute("o-showdrawer", true), 500);
-    };
-    const onPointerLeave = () => clearTimeout(enterTimeout);
-    const onClick = () => themeRoot.setAttribute("o-showdrawer", true);
-    const onCloseClick = () => themeRoot.setAttribute("o-showdrawer", false);
-
-    navigationController.addEventListener("pointerenter", onPointerEnter);
-    navigationController.addEventListener("pointerleave", onPointerLeave);
-    navigationControllerButton.forEach((element) => element.addEventListener("click", onClick));
-    document.querySelector("#navigation-drawer-close").addEventListener("click", onCloseClick);
-
-    const onH1Click = (event) => {
-      const parentDetails = event.target.closest("details");
-      if (parentDetails instanceof HTMLElement) {
-        parentDetails.open = !parentDetails.open;
-      }
-    };
-    const onH2Click = () => window.innerWidth <= bpLarge && themeRoot.setAttribute("o-showdrawer", false);
-
-    navigationDrawerH1Entries.forEach((element) => element.addEventListener("click", onH1Click));
-    navigationDrawerH2Entries.forEach((element) => element.addEventListener("click", onH2Click));
-  }
-}
-
-function toggleContentFlowClickListener(shouldAdd, callback) {
-  if (shouldAdd) {
-    contentFlow.addEventListener("click", callback);
-  } else {
-    contentFlow.removeEventListener("click", callback);
-  }
-}
-
-function activateNavigationBar() {
-  try {
-    const activatedSegment = document.querySelector(`a[href="${themeCurrentPage}"]`);
-    const inactiveSegment = activatedSegment.querySelector(".navigation-segment-inactive");
-    inactiveSegment.className = "navigation-segment-active";
-  } catch (err) {
-    document.querySelector("#navigation-destinations > div").className = "navigation-segment-active";
-  }
-}

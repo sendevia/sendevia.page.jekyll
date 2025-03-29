@@ -8,6 +8,7 @@ const config = {
     path: path.resolve(__dirname, "assets/js"),
     filename: "bundle.js",
   },
+  devtool: "source-map",
 };
 
 module.exports = config;
