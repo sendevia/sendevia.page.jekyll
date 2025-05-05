@@ -72,22 +72,7 @@
     <div id="navigation-drawer-container">
       {% if toc_content != "" and page.toc %}
         {{ toc_content }}
-      {% else %}
-        {% for item in site.posts %}
-          <details>
-            <summary>
-              <a href="{{ item.url }}">
-                <md-ripple></md-ripple>
-                {{ item.title }}</a>
-            </summary>
-          </details>
-        {% endfor %}
       {% endif %}
     </div>
-
-    <md-text-button href="/">
-      查看全部文章
-      <md-icon slot="icon">chevron_left</md-icon>
-    </md-text-button>
   </div>
 </div>
