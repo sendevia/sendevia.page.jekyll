@@ -18,7 +18,7 @@
   "homepage": "https://sendevia.top",
   "dependencies": {
     "@material/material-color-utilities": "0.3.0",
-    "@material/web": "^2.2.0",
+    "@material/web": "^2.3.0",
     "simple-jekyll-search": "1.10.0"
   },
   "devDependencies": {
