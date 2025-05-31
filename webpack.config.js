@@ -1,14 +1,16 @@
-const webpack = require("webpack");
 const path = require("path");
 
-const config = {
-  mode: "production",
-  entry: "./webpack/app.js",
-  output: {
-    path: path.resolve(__dirname, "assets/js"),
-    filename: "bundle.js",
-  },
-  devtool: "source-map",
+module.exports = (argv) => {
+  const isProduction = argv.mode === "production";
+  return {
+    entry: "./webpack/app.js",
+    output: {
+      path: path.resolve(__dirname, "assets/js"),
+      filename: "bundle.js",
+      clean: true,
+    },
+    plugins: [],
+    mode: isProduction ? "production" : "development",
+    devtool: isProduction ? false : "source-map",
+  };
 };
-
-module.exports = config;

@@ -3,8 +3,8 @@
   "version": "25.0329.0",
   "description": "一个博客",
   "scripts": {
-    "dev": "npx webpack -w & bundle exec jekyll serve --livereload --host localhost",
-    "build": "npx webpack && bundle exec jekyll build"
+    "dev": "npx webpack --mode=development -w & bundle exec jekyll serve --livereload --host localhost",
+    "build": "npx webpack --mode=production && bundle exec jekyll build"
   },
   "repository": {
     "type": "git",
