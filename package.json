@@ -18,11 +18,11 @@
   "homepage": "https://sendevia.top",
   "dependencies": {
     "@material/material-color-utilities": "0.3.0",
-    "@material/web": "^2.3.0",
+    "@material/web": "^2.4.0",
     "simple-jekyll-search": "1.10.0"
   },
   "devDependencies": {
-    "webpack": "5.95.0",
-    "webpack-cli": "5.1.4"
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.0"
   }
 }
