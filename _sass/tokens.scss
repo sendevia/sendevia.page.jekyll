@@ -53,7 +53,7 @@
   --md-ref-palette-error90: #ffdad6;
   --md-ref-palette-error100: #ffffff;
 
-  // Motion
+  // Motion(https://m3.material.io/styles/motion/overview/specs)
   --md-sys-motion-duration-short1: 50ms;
   --md-sys-motion-duration-short2: 100ms;
   --md-sys-motion-duration-short3: 150ms;
@@ -70,63 +70,81 @@
   --md-sys-motion-duration-extra-long2: 800ms;
   --md-sys-motion-duration-extra-long3: 900ms;
   --md-sys-motion-duration-extra-long4: 1000ms;
-  --md-sys-motion-easing-liner: cubic-bezier(0, 0, 1, 1);
-  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
   --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
   --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
   --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
   --md-sys-motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
   --md-sys-motion-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
   --md-sys-motion-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --md-sys-motion-easing-liner: cubic-bezier(0, 0, 1, 1);
   --md-sys-motion-path: var(--md-sys-motion-easing-liner);
+  --md-sys-motion-spring-fast-spatial: cubic-bezier(0.42, 1.67, 0.21, 0.9);
+  --md-sys-motion-spring-fast-spatial-duration: 350ms;
+  --md-sys-motion-spring-fast-effect: cubic-bezier(0.31, 0.94, 0.34, 1);
+  --md-sys-motion-spring-fast-effect-duration: 150ms;
+  --md-sys-motion-spring-fast-spatial-standard: cubic-bezier(0.27, 1.06, 0.18, 1);
+  --md-sys-motion-spring-fast-spatial-standard-duration: 350ms;
+  --md-sys-motion-spring-fast-effect-standard: cubic-bezier(0.31, 0.94, 0.34, 1);
+  --md-sys-motion-spring-fast-effect-standard-duration: 150ms;
+  --md-sys-motion-spring-default-spatial: cubic-bezier(0.38, 1.21, 0.22, 1);
+  --md-sys-motion-spring-default-spatial-duration: 500ms;
+  --md-sys-motion-spring-default-effect: cubic-bezier(0.34, 0.8, 0.34, 1);
+  --md-sys-motion-spring-default-effect-duration: 200ms;
+  --md-sys-motion-spring-default-spatial-standard: cubic-bezier(0.27, 1.06, 0.18, 1);
+  --md-sys-motion-spring-default-spatial-standard-duration: 500ms;
+  --md-sys-motion-spring-default-effect-standard: cubic-bezier(0.34, 0.8, 0.34, 1);
+  --md-sys-motion-spring-default-effect-standard-duration: 200ms;
+  --md-sys-motion-spring-slow-spatial: cubic-bezier(0.39, 1.29, 0.35, 0.98);
+  --md-sys-motion-spring-slow-spatial-duration: 650ms;
+  --md-sys-motion-spring-slow-effect: cubic-bezier(0.34, 0.88, 0.34, 1);
+  --md-sys-motion-spring-slow-effect-duration: 300ms;
+  --md-sys-motion-spring-slow-spatial-standard: cubic-bezier(0.27, 1.06, 0.18, 1);
+  --md-sys-motion-spring-slow-spatial-standard-duration: 750ms;
+  --md-sys-motion-spring-slow-effect-standard: cubic-bezier(0.34, 0.88, 0.34, 1);
+  --md-sys-motion-spring-slow-effect-standard-duration: 300ms;
 
-  // Shape
-  --md-sys-shape-corner-full: 100%;
-  --md-sys-shape-corner-extra-large: 28px;
-  --md-sys-shape-corner-extra-large-top: 28px 28px 0px 0px;
-  --md-sys-shape-corner-extra-large-bottom: 0px 0px 28px 28px;
-  --md-sys-shape-corner-extra-large-start: 28px 0px 0px 28px;
-  --md-sys-shape-corner-extra-large-end: 0px 28px 28px 0px;
-  --md-sys-shape-corner-large: 16px;
-  --md-sys-shape-corner-large-top: 16px 16px 0px 0px;
-  --md-sys-shape-corner-large-bottom: 0px 0px 16px 16px;
-  --md-sys-shape-corner-large-start: 16px 0px 0px 16px;
-  --md-sys-shape-corner-large-end: 0px 16px 16px 0px;
-  --md-sys-shape-corner-medium: 12px;
-  --md-sys-shape-corner-medium-top: 12px 12px 0px 0px;
-  --md-sys-shape-corner-medium-bottom: 0px 0px 12px 12px;
-  --md-sys-shape-corner-medium-start: 12px 0px 0px 12px;
-  --md-sys-shape-corner-medium-end: 0px 12px 12px 0px;
-  --md-sys-shape-corner-small: 8px;
+  // Shape(https://m3.material.io/styles/shape/corner-radius-scale)
+  --md-sys-shape-corner-none: 0px;
   --md-sys-shape-corner-extra-small: 4px;
   --md-sys-shape-corner-extra-small-top: 4px 4px 0px 0px;
-  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-large-increased: 20px;
+  --md-sys-shape-corner-large-top: 16px 16px 0px 0px;
+  --md-sys-shape-corner-large-start: 16px 0px 0px 16px;
+  --md-sys-shape-corner-large-end: 0px 16px 16px 0px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-extra-large-top: 28px 28px 0px 0px;
+  --md-sys-shape-corner-extra-large-increased: 32px;
+  --md-sys-shape-corner-extra-extra-large: 40px;
+  --md-sys-shape-corner-full: 100%;
+
+  // MD Ripple(material-web)
+  --md-ripple-hover-color: var(--md-sys-color-primary);
+  --md-ripple-pressed-color: var(--md-sys-color-primary);
 
   // Typography
   $level1-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
   $level2-font-family: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
-
-  @include mixin.typescale("display-large", $level1-font-family, 400, 57, -0.25, 64);
-  @include mixin.typescale("display-medium", $level1-font-family, 400, 45, 0, 52);
-  @include mixin.typescale("display-small", $level1-font-family, 400, 36, 0, 44);
-
-  @include mixin.typescale("headline-large", $level1-font-family, 400, 32, 0, 40);
-  @include mixin.typescale("headline-medium", $level1-font-family, 400, 28, 0, 36);
-  @include mixin.typescale("headline-small", $level1-font-family, 400, 24, 0, 32);
-
-  @include mixin.typescale("title-large", $level1-font-family, 400, 22, 0, 28);
-  @include mixin.typescale("title-medium", $level2-font-family, 500, 16, 0.15, 24);
-  @include mixin.typescale("title-small", $level2-font-family, 500, 14, 0.1, 20);
-
-  @include mixin.typescale("body-large", $level2-font-family, 400, 16, 0.5, 24);
-  @include mixin.typescale("body-medium", $level2-font-family, 400, 14, 0.25, 20);
-  @include mixin.typescale("body-small", $level2-font-family, 400, 12, 0.4, 16);
-
-  @include mixin.typescale("label-large", $level2-font-family, 500, 14, 0.1, 20);
-  @include mixin.typescale("label-medium", $level2-font-family, 500, 12, 0.5, 16);
-  @include mixin.typescale("label-small", $level2-font-family, 500, 11, 0.5, 16);
+  @include mixin.typescale("display-large", $level1-font-family, 400, 57, -0.25, 64, 400, 0, 100, 0, 57, 0, 0, 0, 0);
+  @include mixin.typescale("display-medium", $level1-font-family, 400, 45, 0, 52, 400, 0, 100, 0, 45, 0, 0, 0, 0);
+  @include mixin.typescale("display-small", $level1-font-family, 400, 36, 0, 44, 400, 0, 100, 0, 36, 0, 0, 0, 0);
+  @include mixin.typescale("headline-large", $level1-font-family, 400, 32, 0, 40, 400, 0, 100, 0, 32, 0, 0, 0, 0);
+  @include mixin.typescale("headline-medium", $level1-font-family, 400, 28, 0, 36, 400, 0, 100, 0, 28, 0, 0, 0, 0);
+  @include mixin.typescale("headline-small", $level1-font-family, 400, 24, 0, 32, 400, 0, 100, 0, 24, 0, 0, 0, 0);
+  @include mixin.typescale("title-large", $level1-font-family, 400, 22, 0, 28, 400, 0, 100, 0, 22, 0, 0, 0, 0);
+  @include mixin.typescale("title-medium", $level2-font-family, 500, 16, 0.15, 24, 500, 0, 100, 0, 16, 0, 0, 0, 0);
+  @include mixin.typescale("title-small", $level2-font-family, 500, 14, 0.1, 20, 500, 0, 100, 0, 14, 0, 0, 0, 0);
+  @include mixin.typescale("body-large", $level2-font-family, 400, 16, 0.5, 24, 400, 0, 100, 0, 16, 0, 0, 0, 0);
+  @include mixin.typescale("body-medium", $level2-font-family, 400, 14, 0.25, 20, 400, 0, 100, 0, 14, 0, 0, 0, 0);
+  @include mixin.typescale("body-small", $level2-font-family, 400, 12, 0.4, 16, 400, 0, 100, 0, 12, 0, 0, 0, 0);
+  @include mixin.typescale("label-large", $level2-font-family, 500, 14, 0.1, 20, 500, 0, 100, 0, 14, 0, 0, 0, 0);
+  @include mixin.typescale("label-medium", $level2-font-family, 500, 12, 0.5, 16, 500, 0, 100, 0, 12, 0, 0, 0, 0);
+  @include mixin.typescale("label-small", $level2-font-family, 500, 11, 0.5, 16, 500, 0, 100, 0, 11, 0, 0, 0, 0);
 
   // Svg
   --via-svg-mask: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQyNy44NjQgNDI3Ljg2NGMtMTMuNTc4IDEzLjU3Ny0yNy42MTggOS40NTQtNDMuNTgzIDIwLjEyMi0xNS45NjYgMTAuNjY4LTE3LjUzIDI1LjIxNy0zNS4yNjkgMzIuNTY1LTE3Ljc0IDcuMzQ4LTI5LjEzMy0xLjgzNC00Ny45NjYgMS45MTItMTguODMyIDMuNzQ2LTI1Ljg0NCAxNi41OS00NS4wNDYgMTYuNTktMTkuMjAyIDAtMjYuMjE0LTEyLjg0NC00NS4wNDYtMTYuNTktMTguODMzLTMuNzQ2LTMwLjIyNiA1LjQzNi00Ny45NjYtMS45MTItMTcuNzQtNy4zNDgtMTkuMzAzLTIxLjg5Ny0zNS4yNjktMzIuNTY1LTE1Ljk2NS0xMC42NjgtMzAuMDA1LTYuNTQ1LTQzLjU4My0yMC4xMjItMTMuNTc3LTEzLjU3OC05LjQ1NC0yNy42MTgtMjAuMTIyLTQzLjU4My0xMC42NjgtMTUuOTY2LTI1LjIxNy0xNy41My0zMi41NjUtMzUuMjY5LTcuMzQ4LTE3Ljc0IDEuODM0LTI5LjEzMy0xLjkxMi00Ny45NjYtMy43NDYtMTguODMyLTE2LjU5LTI1Ljg0NC0xNi41OS00NS4wNDYgMC0xOS4yMDIgMTIuODQ0LTI2LjIxNCAxNi41OS00NS4wNDYgMy43NDYtMTguODMzLTUuNDM2LTMwLjIyNiAxLjkxMi00Ny45NjYgNy4zNDgtMTcuNzQgMjEuODk3LTE5LjMwMyAzMi41NjUtMzUuMjY5IDEwLjY2OC0xNS45NjUgNi41NDUtMzAuMDA1IDIwLjEyMi00My41ODMgMTMuNTc4LTEzLjU3NyAyNy42MTgtOS40NTQgNDMuNTgzLTIwLjEyMiAxNS45NjYtMTAuNjY4IDE3LjUzLTI1LjIxNyAzNS4yNjktMzIuNTY1IDE3Ljc0LTcuMzQ4IDI5LjEzMyAxLjgzNCA0Ny45NjYtMS45MTIgMTguODMyLTMuNzQ2IDI1Ljg0NC0xNi41OSA0NS4wNDYtMTYuNTkgMTkuMjAyIDAgMjYuMjE0IDEyLjg0NCA0NS4wNDYgMTYuNTkgMTguODMzIDMuNzQ2IDMwLjIyNi01LjQzNiA0Ny45NjYgMS45MTIgMTcuNzQgNy4zNDggMTkuMzAzIDIxLjg5NyAzNS4yNjkgMzIuNTY1IDE1Ljk2NSAxMC42NjggMzAuMDA1IDYuNTQ1IDQzLjU4MyAyMC4xMjIgMTMuNTc3IDEzLjU3OCA5LjQ1NCAyNy42MTggMjAuMTIyIDQzLjU4MyAxMC42NjggMTUuOTY2IDI1LjIxNyAxNy41MyAzMi41NjUgMzUuMjY5IDcuMzQ4IDE3Ljc0LTEuODM0IDI5LjEzMyAxLjkxMiA0Ny45NjYgMy43NDYgMTguODMyIDE2LjU5IDI1Ljg0NCAxNi41OSA0NS4wNDYgMCAxOS4yMDItMTIuODQ0IDI2LjIxNC0xNi41OSA0NS4wNDYtMy43NDYgMTguODMzIDUuNDM2IDMwLjIyNi0xLjkxMiA0Ny45NjYtNy4zNDggMTcuNzQtMjEuODk3IDE5LjMwMy0zMi41NjUgMzUuMjY5LTEwLjY2OCAxNS45NjUtNi41NDUgMzAuMDA1LTIwLjEyMiA0My41ODN6IiBmaWxsPSIjZmZmIi8+PC9zdmc+");
@@ -159,6 +177,7 @@
   // @include chip-scaffold("input", $level2-font-family, 500, 14, 20);
   // @include chip-scaffold("suggestion", $level2-font-family, 500, 14, 20);
 
+  // Colors scheme
   @media (prefers-color-scheme: light) {
     --md-sys-color-primary: var(--md-ref-palette-primary40);
     --md-sys-color-primary-container: var(--md-ref-palette-primary90);
